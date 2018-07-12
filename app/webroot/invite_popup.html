@@ -1,0 +1,80 @@
+<html>
+<head>
+<script language="javascript">
+
+var pa=parent.document.send_invite.default_msg.value;
+var inmsg=parent.document.send_invite.invite_content.value;
+$('#invite_msg').val(pa);
+$('#invite_default_msg').html(inmsg);
+getSelectedMemebrs();
+
+
+ function getSelectedMemebrs() 
+    {
+        
+        var form = parent.document.send_invite, z = 0;
+        var ch=0, c = 0;
+        var selmemberObj="";
+        var memberlist="";  
+        var mn="";  
+        for(z=0; z<form.length;z++)
+            {
+            //if(form[z].type == 'checkbox')
+                if(form[z].checked ==false){
+                   ch++; 
+                }else{  c++;
+                   if(c > 1){
+                    selmemberObj= form[z];
+                   mn= selmemberObj.value;
+                   mn=mn.replace("##"," ");
+                      memberlist=memberlist.concat(mn, "<br/>");    }
+                   
+                }
+                
+            }
+            ch++;
+            $('#invite_list').html(memberlist);    
+          /*  if(ch==form.length)
+            {
+                alert("Please choose atleast 1 contact to send invitation");
+                return false;
+            }            */
+            return true;
+    }
+
+function myclose()
+{
+    var msg = "";
+    msg = document.getElementById("invite_msg").value;
+    parent.setmsg(msg);
+    parent.tb_remove();
+  
+}
+</script>
+
+</head>
+<body>
+        <div id="pop_content" style="color: #000;">
+            <div align="right">
+                <input type="button" value="Close" onclick="parent.tb_remove();" style=" color: black; width: auto; cursor: pointer; background-color: white;">
+            </div>
+
+            <div > <strong>Invites List</strong>
+                <div id="invite_list" style="height: 75px; overflow: auto;  "> </div>
+            </div>
+            <br/>  <strong>Enter Personal Note :</strong> <br/>
+            <textarea id="invite_msg" rows="5" cols="40"></textarea><br />
+            <br /> <strong>Invite Message :</strong> <br/>
+            <div id="invite_default_msg" style="height: 100px; overflow: auto; border: 1px solid #EDEDED; ">
+                 
+            </div>
+              <br /><br />
+            <span class="flx_button_lft ">
+                <input type="button" value="Invite" onclick="myclose()" class="flx_flexible_btn"> 
+            </span>
+            &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <!--<input type="button" value="Cancel" onclick="parent.tb_remove();">-->
+        </div>
+  
+</body>
+</html>

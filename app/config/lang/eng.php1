@@ -1,0 +1,130 @@
+<?php 
+##define all constants for application here 
+## form label
+//define('MAP_API_KEY','ABQIAAAAlk2ZeEtNAqoFFIJ2zopCVRTDhNZg3e_FdtXZy07jh8RG8uoSbhSTD11JWwoJTjjqHDal3wW90vJ5eg');
+define('MAP_API_KEY','ABQIAAAAlk2ZeEtNAqoFFIJ2zopCVRQn6h1Wbk5K7CchjRp7-tgCPQsPJRTbKM9jOLFzBx5tyQOfY-F7U9Da3Q');
+define('SITENAME','Image Coins LLC');
+define('COPYRIGHTTXT','Copyright  2000-2011 Image Coins LLC || All Rights Reserved ');
+define('SITE_EMAIL','admin@imagecoins.com');
+define('SITE_DOMAIN','www.imagecoins.com');
+
+
+//*Define Common template for each project*//
+
+define("LOGINTERMS", 'terms and conditions');
+define("LOGINPRIVACY", 'privacy policy');
+
+define("COIN_REGISTER_CONFIRMATION", '<html>
+<body style="color:#484747;
+font-family:Arial,Helvetica,sans-serif;
+font-size:14px;
+line-height:normal;">
+<div style="padding:20px; line-height:20px;">
+<p>Dear [[HOLDER_FIRSTNAME]],</p>
+<p>Thank you for registering your Coin Serial #[[COIN_SERIAL]] at <strong>[[PROJECT_NAME]]</strong> at <br /> the website <a href="[[PROJECT_HOMEPAGE_URL]]">[[PROJECT_HOMEPAGE_URL]]</a> on [[COIN_REG_DATE]]! <br /> You will now be able to login your account and enter the <strong>[[PROJECT_NAME]]</strong> <br /> wesite at <a href="[[PROJECT_HOMEPAGE_URL]]">[[PROJECT_HOMEPAGE_URL]]</a> to enter a comment or review past or comments related to Coin Serial #[[COIN_SERIAL]] <br /><br /> Thanks again! <br /> [[PROJECT_NAME]]</p>
+</div>
+</body></html>');
+
+
+define("OFFENSIV_COMMENT_POSTED", '<html>
+<body style="color:#484747;
+font-family:Arial,Helvetica,sans-serif;
+font-size:14px;
+line-height:normal;">
+<div style="padding:20px; line-height:20px;">
+<p>Hello [[TO_FIRSTNAME]],</p>
+You have posted offensive comment on&nbsp; [[COIN_SERIAL]] .
+<p>aecenas urna purus, fermentum id, molestie in, commodo porttitor, felis. Nam blandit quam ut lacus. Quisque ornare risus quis ligula Maecenas urna purus, fermentum id, molestie in, commodo porttitor, felis. Nam blandit quam ut lacus. Quisque ornare risus quis ligula. Maecenas urna purusaecenas urna purus, fermentum id, molestie in, commodo porttitor, felis. Nam blandit quam ut lacus. Quisque ornare risus quis ligula Maecenas urna purus, fermentum id, molestie in, commodo porttitor, felis. Nam blandit quam ut lacus. Quisque ornare risus quis ligula. Maecenas urna purus</p>
+<p>Thanks &amp; Regards<br /> [[FROM_FIRSTNAME]]  <br /> [[PROJECT_NAME]] <br /> <a href="[[PROJECT_HOMEPAGE_URL]]">[[PROJECT_HOMEPAGE_URL]]</a></p>
+</div>
+
+</body></html>');
+
+define("OFFENSIVE_COMMENT_REPORTED", '<html>
+<body style="color:#484747;
+font-family:Arial,Helvetica,sans-serif;
+font-size:14px;
+line-height:normal;">
+<div style="padding:20px; line-height:20px;">
+<p>Dear Sponsor,</p>
+<p>I have found following comment offensive posted on  <strong>[[COIN_SERIAL]]</strong> <br /> Reported Comment: <strong>"[[COMMENT]]"</strong> <br /> <br /> Message on Comment: <strong>[[MESSAGE]]</strong> <br /> <br /> Thanks, <br /> [[USER_NAME]]</p>
+</div>
+</body></html>');
+
+
+
+define("COMMENT_BY_HOLDER", '<html>
+<body style="color:#484747;
+font-family:Arial,Helvetica,sans-serif;
+font-size:14px;
+line-height:normal;">
+<div style="padding:20px; line-height:20px;">
+<p>Dear [[TO_NAME]],</p>
+<strong>[[USER_NAME]]</strong> posted  comment on <strong>[[COIN_SERIAL]]</strong> .
+<p>Thanks &amp; Regards<br /> [[PROJECT_NAME]] <br /> <a href="[[PROJECT_HOMEPAGE_URL]]">[[PROJECT_HOMEPAGE_URL]]</a></p>
+</div>
+
+</body></html>');
+
+
+define("FORGOT_PASSWORD", '<html>
+<body style="color:#484747;
+font-family:Arial,Helvetica,sans-serif;
+font-size:14px;
+line-height:normal;">
+<div style="padding:20px; line-height:20px;">
+
+<p> Dear [[TO_NAME]], <br /> <br />
+
+Forgot your password? <br />
+This message is a response to the Forgot Password request made by you at <a href="[[PROJECT_HOMEPAGE_URL]]">[[PROJECT_HOMEPAGE_URL]]</a>  <br />
+Below is the Username and Password for your <a href="[[PROJECT_HOMEPAGE_URL]]">[[PROJECT_HOMEPAGE_URL]]</a> account:  <br /> <br />
+
+Username : [[USER_NAME]] <br />
+Password: [[USER_PASSWORD]]  <br /> <br />
+
+Sincerely, <br />
+[[PROJECT_NAME]] <br />
+<a href="[[PROJECT_HOMEPAGE_URL]]">[[PROJECT_HOMEPAGE_URL]]</a>
+</p>
+</div>
+
+
+</body></html>');
+
+
+
+define("HOLDER_REG", '<html>
+<body style="color:#484747;
+font-family:Arial,Helvetica,sans-serif;
+font-size:14px;
+line-height:normal;">
+<div style="padding:20px; line-height:20px;">
+<p>Dear [[TO_FIRSTNAME]],<br /> <br /> Thank you for signing up at <a href="[[PROJECT_HOMEPAGE_URL]]">[[PROJECT_HOMEPAGE_URL]] </a> !<br /> <br /> Here are the details you provided during sign-up! <br /> Username : [[USER_NAME]]<br /><br /> Sincerely,<br /> [[PROJECT_NAME]]<br /> <a href="[[PROJECT_HOMEPAGE_URL]]">[[PROJECT_HOMEPAGE_URL]] </a> </p>
+</div>
+</body></html>');
+
+define("SIGN_UP_CONFIRMATION", '<html><body style="color:#484747;font-family:Arial,Helvetica,sans-serif;font-size:14px;line-height:normal;">
+<div style="padding:20px; line-height:20px;">
+<p>Dear [[HOLDER_FIRSTNAME]],</p>
+To confirm your sign up, please click on following link : <br>
+[[CONFIRM_SIGN_UP_LINK]]
+ <br /><br /> Thanks again! <br /> [[PROJECT_NAME]]</p>
+</div></body></html>');
+
+define('HOME_PAGE',"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?");
+define('ABOUT_US',"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?");
+define('SPONSOR_PAGE',"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?");
+define('COINS',"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?");
+
+define('FAQ',"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?");
+define('CONTACT',"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?");
+define('PRIVACY',"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?");
+define('TERMS',"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?");
+
+
+
+
+
+
+?>

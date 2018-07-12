@@ -1,0 +1,1994 @@
+/* CSS Document */
+
+body{
+	background:#b5cacb url(/img/body_bg.jpg) repeat-x top left;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:12px;
+	margin:0;
+	padding:30px 0 0 0;
+	line-height:normal;
+	color:#484747;
+	}
+
+ul, li, p, h1, h2, h3, h4, h5, input, select{
+	padding:0;
+	margin:0;
+	}
+img{
+	border:none;
+	}
+a{
+	text-decoration:none;
+	color:#0079c2;
+	border:none;
+	outline:none;
+	}
+
+a:hover{
+	text-decoration:underline;
+	}
+.clear{
+	clear:both;
+	}
+.left{
+	float:left;
+	}
+.right{
+	float:right;
+	}
+.middle{
+	vertical-align:middle;
+	}
+#wrapper{
+	width:992px;
+	height:auto;
+	margin:0 auto;
+	padding:0;
+	}
+#header{
+	height:146px;
+	margin:0 auto;
+	background:url(/img/header_bg.jpg) no-repeat top center;
+	}
+.logo{
+	float:left;
+	}
+	
+.flx_btn_contnr{
+	height:31px;
+	display:inline-block;
+	vertical-align:middle;
+	}
+
+
+a.flexible_btn{
+	border:none; 
+	background:url(/img/btn_right_cornr2.gif) top right no-repeat; 
+	color:#fff; 
+	height:24px; 
+	padding:7px 14px 0 4px; 
+	font-size:14px;
+	font-family:Arial, Helvetica, sans-serif;
+	font-weight:bold;
+	text-decoration:none;
+	float:left;
+	outline:none;
+	}
+.flexible_btn_left{
+	float:left;
+	width:13px; 
+	height:31px; 
+	background:url(/img/btn_left_cornr2.gif) top left no-repeat;
+	cursor:pointer;
+	}
+	
+
+.menu{
+	background:url(/img/menu_bg.gif) repeat-x top;
+	height:41px;
+	width:auto;
+	clear:both;
+	}
+
+.menu ul, .home{
+	list-style:none;
+	margin:0;
+	padding:0 0 0 0;
+	color:#f8f4e8;
+	font-size:14px;
+	height:41px;
+	}
+.menu li, .home li{
+	float:left;
+	text-align:center;
+	}
+.menu li a, .home li a{
+	color:#777676;
+	padding:13px 15px 0 15px;
+	font-weight:bold;
+	text-decoration:none;
+	display:inline-block;
+	height:28px;
+	border-left:1px solid #cdd6d9;
+	}
+.home li a.first{
+	border-right:1px solid #cdd6d9;
+	border-left:none;
+	}
+
+.menu li a:hover, .menu li a:active, .menu li a.active{
+	background:url(/img/lnk_hoverbg.gif) repeat-x left top;
+	color:#fff;
+	text-decoration:none;
+	}
+	
+	
+.dropmenudiv{
+	position:absolute;
+	top: 0;
+	border-bottom-width: 0;
+	line-height:24px;
+	z-index:100;
+	background-color: #e8e9e9;
+	border:1px solid #cfd1d1;
+	width: 180px;
+	visibility: hidden;
+	color:#d0cfce;
+	font-size:14px;
+	padding:6px 0 5px 0;
+	}
+
+
+.dropmenudiv a{
+	width: auto;
+	display: block;
+	text-indent: 3px;
+	border-bottom: 1px solid #dcdcdc;
+	padding: 3px 0 3px 10px;
+	text-decoration: none;
+	color: #777676;
+	margin:0 10px;
+	font-weight:bold;
+	background:url(/img/drop_bulet.gif) no-repeat top left;
+	}
+.dropmenudiv a.last{
+	border:none;
+	}
+
+* html .dropmenudiv a{ /*IE only hack*/
+	width: 100%;
+	}
+
+.dropmenudiv a:hover{
+	background:url(/img/drop_hover_bulet.gif) no-repeat top left;
+	color:#1a62c0;
+	text-decoration:none;
+	}	
+		
+	
+	
+	
+	
+	
+	
+	
+	
+
+.login{
+	float:right;
+	padding:43px 20px 0 0;
+	font-size:12px;
+	}
+.login_lnk{
+	font-size:18px;
+	color:#5597ed;
+	font-weight:bold;
+	}
+.login strong{
+	padding:0 10px;
+	}
+
+/*classes for mid contents starts here*/
+
+.container{
+	clear:both;
+	padding:25px 0 0 0;
+	height:auto;
+	margin:0;
+	background:#fff;
+	}
+.banner{
+	margin:0;
+	}
+.module_container{
+	background:url(/img/module_bot_bg.gif) no-repeat bottom;
+	width:939px;
+	margin:0 auto;
+	padding:0;
+	list-style:none;
+	}
+.module_head{
+	background:url(/img/module_hed.gif) no-repeat top;
+	height:37px;
+	font-size:18px;
+	color:#ffffff;
+	padding:9px 0 0 18px;
+	margin:0;
+	}
+
+.works_icon{
+	width:300px;
+	float:left;
+	text-align:center;
+	padding:15px 5px 30px 5px;
+	color:#484747;
+	font-size:14px;
+	background:url(/img/icon_seprtor.jpg) no-repeat right;
+	}
+.works_icon.last{
+	background:none;
+	}
+.works_icon p{
+	padding:0 15px;
+	}
+.works_icon img{
+	margin:15px 0;
+	}
+.works_icon h2{
+	color:#227db8;
+	font-size:22px;
+	font-weight:normal;
+	height:50px;
+	margin:0;
+	padding:0;
+	}
+	
+
+.features_icon{
+	width:224px;
+	float:left;
+	text-align:center;
+	padding:0 5px;
+	color:#484747;
+	font-size:14px;
+	background:url(/img/icon_seprtor.jpg) no-repeat right;
+	}
+.features_icon.last{
+	background:none;
+	}
+.features_icon p{
+	padding:0 15px;
+	}
+.features_icon img{
+	margin:15px 0;
+	}
+.features_icon h2{
+	color:#227db8;
+	font-size:18px;
+	font-weight:bold;
+	height:50px;
+	margin:0;
+	padding:0;
+	}
+.spacer{
+	clear:both;
+	height:20px;
+	}
+.spacer2{
+	clear:both;
+	height:25px;
+	}
+/*classes for mid contents ends here*/	
+	
+	
+
+.fotrlnk{
+	color:#011001;
+	}
+
+.fotrlnk a{
+	color:#011001;
+	margin:0 15px;
+	}
+	
+.foter_icons{
+	text-align:center;
+	padding:20px 0;
+	}
+.foter_icons a{
+	color:#5087d0;
+	margin:0 10px;
+	}
+.foter_icons a:hover{
+	text-decoration:none;
+	}
+	
+.foter_icons img{
+	vertical-align:middle;
+	margin:0 0 0 2px;
+	}
+.copyrite{
+	color:#6e6b6b;
+	text-align:center;
+	padding:0;
+	}
+
+
+
+/*new classes added on 4/06/10 starts here*/
+
+
+.round_container{
+	width:47%;
+	margin:0 0 20px 0;
+	}
+.round_hedng{
+	height:35px;
+	}
+.round_hedng p{
+	font-size:18px;
+	color:#FFFFFF;
+	padding:7px 0 0 15px;
+	margin:0;
+	text-transform:uppercase;
+	}
+.round_hedng img{
+	float:right;
+	}
+.round_bot{
+	background:url(/img/wite_lft_bot_cornr.gif) no-repeat bottom left;
+	height:11px;
+	}
+.round_bot img{
+	float:right;
+	}
+.white_bg{
+	background:#FFF;
+	padding:20px 15px 5px 25px;
+	height:auto;
+	border:1px solid #d6d6d6;
+	border-bottom:none;
+	border-top:none;
+	text-align:left;
+	}
+.blue{
+	background:url(/img/lft_top_cornr1.gif) no-repeat top left;
+	}
+.blue img{
+	background:url(/img/rt_top_cornr1.gif) no-repeat top right;
+	width:12px;
+	height:35px;
+	}
+.orange{
+	background:url(/img/lft_top_cornr2.gif) no-repeat top left;
+	}
+.orange img{
+	background:url(/img/rt_top_cornr2.gif) no-repeat top right;
+	width:12px;
+	height:35px;
+	}
+.green{
+	background:url(/img/lft_top_cornr3.gif) no-repeat top left;
+	}
+.green img{
+	background:url(/img/rt_top_cornr3.gif) no-repeat top right;
+	width:12px;
+	height:35px;
+	}
+.black{
+	background:url(/img/lft_top_cornr4.gif) no-repeat top left;
+	}
+.black img{
+	background:url(/img/rt_top_cornr4.gif) no-repeat top right;
+	width:12px;
+	height:35px;
+	}
+.hor_spacer{
+	float:left;
+	width:20px;
+	}
+.list{
+	margin:0;
+	padding:0;
+	/*width:144px;*/
+	float:left;
+	}
+	
+.list li{
+	list-style:none;
+	background:url(/img/list_bulet.gif) no-repeat top left;
+	padding:0 10px 0 15px;
+	float:left;
+	width:112px;
+	}
+.list li a{
+	margin:2px 0;
+	color:#666;
+	display:inline-block;
+	font-size:12px;
+	}
+.list li.placeholder{
+	height:100px;
+	width:125px;
+	list-style:none;
+	background:none;
+	border:1px solid #ccc;
+	margin:0 10px 10px 0;
+	padding:0;
+	text-align:center;
+	}
+
+
+
+/*new classes added on 4/06/10 ends here*/
+
+/*input type css added by brijesh*/
+.contactInput {
+border:1px solid #7F9DB9;
+color:#5A5A5A;
+font-size:11px;
+margin:1px 0;
+padding:2px;
+width:180px;
+}
+
+.onefourthInput {
+border:1px solid #7F9DB9;
+color:#5A5A5A;
+font-size:11px;
+margin:1px 0;
+padding:2px;
+width:70px;
+}
+
+.input7 {
+border:1px solid #7F9DB9;
+color:#5A5A5A;
+font-size:11px;
+margin:1px 0;
+padding:2px;
+size:1;
+}
+
+.require {
+color:red;
+}
+
+ #msg {
+ 	display:none;
+	position:absolute;
+	z-index:200;
+	background:url(/img/msg_arrow.gif) left center no-repeat;
+	padding-left:7px
+	}
+
+#msgcontent {
+	display:block;
+	background:#f3e6e6; 
+	border:2px solid #924949; 
+	border-left:none; padding:5px; 
+	min-width:150px; 
+	max-width:300px
+	font-size:10px;
+	font-family:Arial, Helvetica, sans-serif;
+	font-weight:bold;
+	/*text-decoration:none;*/
+	} 
+	
+.errormsg {
+background:url("/img/msg_error.gif") no-repeat scroll left center #FFEBE8;
+border:1px solid #DD3C10;
+font-family:Arial;
+font-size:11px;
+font-weight:bold;
+margin:2px 2px 5px;
+overflow:hidden;
+padding:5px 2px 5px 20px;
+text-align:left;
+text-decoration:none;
+/*width:233px;*/
+width:auto;
+}
+.error-message{
+display:none;	
+	
+}
+.successmsg  {
+background:url("/img/msg_success.gif") no-repeat scroll left center #E8FCDF;
+border:1px solid #4CA009;
+font-family:Arial;
+font-size:11px;
+font-weight:bold;
+margin:2px 2px 5px;
+overflow:hidden;
+padding:5px 2px 5px 20px;
+text-align:left;
+text-decoration:none;
+width:auto;
+}
+
+/*End input type css*/
+
+/* Added on 08/06/2010 */
+
+.red{
+	color:#d9250f;
+	font-size:14px;
+} 
+/*********update on 13-july-2010********/
+.red_new{
+	background:url(/img/red_lft_top_cornr.gif) no-repeat top left;
+	}
+.red_new img{
+	background:url(/img/red_rt_top_cornr.gif) no-repeat top right;
+	width:12px;
+	height:35px;
+	}
+.round_hedng p.txt_trnsfrm{
+	text-transform:none;
+	}
+	
+
+#frm_page_cont{
+	width:939px;
+	margin:0 auto;
+}
+
+#form_page{
+	width:629px;
+	clear:right;
+	float:left;
+}
+
+#thankyou{
+	width:629px;
+	margin:0 auto;
+	padding:25px;	
+	line-height:36px;
+	color:#d1291c;
+}
+
+#thankyou_black{
+	width:629px;
+	margin:0 auto;
+	padding:25px;	
+	line-height:36px;
+	color:#000000;
+}
+
+#thankyou a{
+	font-size:18px;
+	text-decoration:underline;
+}
+
+#thankyou a:hover{
+	font-size:18px;
+	text-decoration:none;
+}
+
+
+#page_ad{
+	width:310px;
+	float:left;
+}
+
+.frm_row{
+	clear:both;
+	height:30px;
+}
+
+.frm_row_textarea{
+	clear:both;
+	height:60px;
+}
+
+.lbl_txt{
+	width:28%;
+	clear:right;
+	float:left;
+	line-height:24px;
+}
+
+.inpt_txt{
+	width:72%;
+	float:left;
+	line-height:24px;
+}
+
+.inner_inpt_txt{
+	width:auto;
+	padding-right:10px;
+	float:left;
+	line-height:24px;
+}
+
+input.inpt_box{
+	/*width:130px;*/
+	width:179px;
+	padding:2px;
+	/*line-height:24px;
+	height:24px;
+	background:#ffffff url(/img/inpt_bg.jpg) repeat-x left top;
+	border:solid 1px #e5e7e8;*/
+}
+
+input.small_inpt_box{
+	/*width:50px;*/
+	width:100px;
+	line-height:24px;
+	height:24px;
+	background:#ffffff url(/img/inpt_bg.jpg) repeat-x left top;
+	border:solid 1px #e5e7e8;
+}
+
+.inpt_price_box{
+	/*background:url("/img/inpt_bg.gif") repeat-x scroll left top transparent;
+	border:1px solid #E3E5E7;*/
+	display:inline-block;
+	height:15px;
+	padding:3px;
+	vertical-align:middle;
+	/*width:24px;*/
+	width:32px;
+}
+/*below class is for display input box for display adprice*/
+.inpt_price_box_dyn{
+	background:url("/img/inpt_bg.gif") repeat-x scroll left top transparent;
+	border:1px solid #E3E5E7;
+	display:inline-block;
+	height:15px;
+	padding:3px;
+	vertical-align:middle;
+	width:auto;
+}
+select.select_box{
+	width:132px;
+	line-height:24px;
+	height:24px;
+	background:#ffffff url(/img/inpt_bg.jpg) repeat-x left top;
+	border:solid 1px #e5e7e8;
+}
+
+textarea{
+	background:#ffffff url(/img/inpt_bg.jpg) repeat-x left top;
+	border:solid 1px #e5e7e8;
+}
+
+p.cust_grp{
+	padding:8px 0 10px 0;
+}
+
+p.comm{font-size:12px; padding:3px 180px 3px 0; }
+
+#price_box{
+width:400px; clear:both; float:left;
+}
+
+.div_height{
+	height:350px;
+}
+
+.box_style{
+	width:265px; height:240px; border:solid 1px #888888; padding:5px; background-color:white;
+}
+
+.for_half_page{
+	width:265px; height:130px; border:solid 1px #888888; padding:5px; background-color:white;
+}
+
+.small_cards{
+width:145px; height:35px; line-height:35px; float:right; border:solid 1px #888888; background-color:white; margin-bottom:12px;
+}
+
+.anonym{padding-top:40px; padding-left:20px;}
+
+.thanks_txt{
+	font-size:24px;
+}
+.thanks_txt_black{
+	font-size:24px;
+	color:#000000;
+}
+.fielderror{
+	color:#FA5324;
+}
+/* End  08/06/2010 */
+
+/*new classes added on 16/06/10 ends here*/
+
+.inner_contnr{
+	padding:0 20px 10px;
+	height:auto;
+	}
+
+.search_results{
+	background:url(/img/dotted_bordr.gif) repeat-x bottom left;
+	padding:25px 15px 20px 15px;
+	width:922px
+	}
+.search_results p{
+	margin:8px 0;
+	line-height:20px;
+	}
+.search_results h2{
+	font-size:16px;
+	color:#5597ed;
+	margin:0 0 5px 0;
+	}
+.search_results h2 a{
+	font-size:14px;
+	font-weight:normal;
+	float:right;
+	}
+.searched_img{
+	float:left;
+	margin:0 15px 0 0;
+	}	
+.pagination{
+	text-align:center;
+	color:#0079C2;
+	padding:15px 0 0 0;
+	}
+.pagination a{
+	margin:0 3px;
+	}
+.content_bot{
+	background:url(/img/content_bot_new.jpg) no-repeat top center;
+	height:41px;
+	color:#b31810;
+	font-weight:bold;
+	padding:30px 0 0 20px;
+	}
+.inner_contents{
+	padding:20px 15px;
+	width:922px
+	}
+	
+.doted_bordr{
+	background:url(/img/dotted_bordr.gif) repeat-x bottom left;
+	padding:20px 0 0 0;
+	margin-bottom:20px;
+	}
+.nobg{
+	background:none;
+	}
+	
+.round_container270{
+	width:270px;
+	margin:0 0 20px 0;
+	}
+.grey_round_bot{
+	background:url(/img/grey_lft_bot_cornr.gif) no-repeat bottom left;
+	height:11px;
+	float:left;
+	width:100%;
+	}
+.grey_round_bot img{
+	float:right;
+	}
+.grey_bg{
+	background:#fff url(/img/red_mod_midbg.gif) repeat-x bottom left;
+	padding:15px 15px 5px 15px;
+	height:auto;
+	border:1px solid #cfd0cc;
+	border-bottom:none;
+	border-top:none;
+	text-align:left;
+	}
+.red_search{
+	background:url(/img/red_lft_top_cornr.gif) no-repeat top left;
+	}
+.red_search img{
+	background:url(/img/red_rt_top_cornr.gif) no-repeat top right;
+	width:12px;
+	height:35px;
+	}
+.round_hedng p.txt_trnsfrm{
+	text-transform:none;
+	}
+
+
+/*new classes added on 16/06/10 ends here*/
+
+/*new classes added on 17/06/10 starts here*/
+
+.sub_nav{
+	padding:0 0 20px 0;
+	}
+.sub_nav a{
+	background:url(/img/sub_nav.jpg) no-repeat top left;
+	color:#7DA4D6;
+	font-size:14px;
+	display:inline-block;
+	height:20px;
+	text-decoration:none;
+	padding:5px 0 0 0;
+	margin:0 10px 0 0;
+	cursor:default;
+	}
+.sub_nav a span{
+	display:inline-block;
+	width:26px;
+	text-align:center;
+	}
+.sub_nav a:hover, .sub_nav a:active, .sub_nav a.active{
+	background:url(/img/sub_nav_active.jpg) no-repeat top left;
+	color:#1a62c0;
+	font-size:14px;
+	text-decoration:none;
+	}
+	
+.rightpanel{
+	width:220px;
+	float:right;
+	padding:20px 0 0 22px;
+	}	
+.container2{
+	clear:both;
+	padding:0;
+	height:auto;
+	margin:0;
+	background:#fff url(/img/rithtpanel_bg.jpg) repeat-y top right;
+	}
+.leftpanel{
+	float:left;
+	padding:20px 20px;
+	width:710px;
+	}
+.group_logo{
+	border:1px solid #e3e3e3;
+	margin:0 auto;
+	}
+.content_bot2{
+	background:url(/img/content_bot_rt_new1.jpg) no-repeat top center;
+	height:40px;
+	padding:0px 0 0 20px;
+	color:#b31810;
+	font-weight:bold;
+	
+	}	
+
+.redtxt{
+	color:#C30;
+	}	
+.fs18{
+	font-size:18px;
+	}	
+.fs12{
+	font-size:12px;
+	}	
+.lbltxt{
+	display:inline-block;
+	width:auto;
+	margin:10px 0 10px;
+	vertical-align:middle;
+	}	
+.mrgn_b5{
+	margin-bottom:5px;
+	}
+.mrgn_t10b10{
+	margin-bottom:10px;
+	margin-top:10px
+	}
+.donor_lnks{
+	list-style:none;
+	padding:10px 30px 20px 0;
+	}
+.donor_lnks li{
+	border-bottom:1px dashed #ccc;
+	}
+.donor_lnks li a{
+	background:url(/img/arw_bulet.gif) no-repeat top left;
+	padding:5px 0 5px 15px;
+	display:inline-block;
+	}	
+.donor_lnks li a:hover{
+	text-decoration:none;
+	color:#b3110c;
+	}
+	
+.active_link_right{
+	text-decoration:none;
+	color:#b3110c;
+}	
+
+.redh2{
+	font-size:18px;
+	color:#b3110c;
+	}
+	
+.cards{
+	display:inline-block;
+	width:40px;
+	text-align:center;
+	padding-bottom:5px;
+	}
+	
+	
+	
+	
+	
+	
+.flx_btn_contnr{
+	display:inline-block; 
+	height:31px;
+	vertical-align:middle;
+	}
+input.flx_flexible_btn{
+	border:none; 
+	background:url(/img/btn_right_cornr2.gif) right no-repeat;
+	color:#fff; 
+	height:31px; 
+	padding:0px 14px 0 0px; 
+	font-size:14px;
+	font-family:Arial, Helvetica, sans-serif;
+	font-weight:bold;
+	text-decoration:none;
+	float:left;
+	cursor:pointer;
+	}
+.flx_button_lft{
+	float:left;
+	width:13px; 
+	height:31px; 
+	background:url(/img/btn_left_cornr2.gif	) left no-repeat;
+	}	
+	
+.lightblackheading{
+	color:#777676;
+	font-size:15px;
+	font-family:Arial, Helvetica, sans-serif;
+	font-weight:bold;
+	}
+	
+	.blackheading{
+	color:#333333;
+	font-size:15px;
+	font-family:Arial, Helvetica, sans-serif;
+	font-weight:bold;
+	}
+	.bluelabel{
+	color:#0079C2;
+	font-size:16px;
+	font-family:Arial, Helvetica, sans-serif;
+	}		
+
+
+/*new classes added on 17/06/10 ends here*/
+
+
+
+/*new classes added on 18/06/10 ends here*/
+
+
+						/*class for input button starts*/
+.sml_flx_btn_contnr{
+	display:inline-block; 
+	height:22px;
+	vertical-align:middle;
+	}
+input.sml_flx_flexible_btn{
+	border:none; 
+	background:url(/img/sml_btn_right_cornr.jpg) right no-repeat;
+	color:#000; 
+	height:22px; 
+	padding:0px 9px 0 0px; 
+	font-size:12px;
+	font-family:Arial, Helvetica, sans-serif;
+	float:left;
+	cursor:pointer;
+	}
+.sml_flx_button_lft{
+	float:left;
+	width:9px; 
+	height:22px; 
+	background:url(/img/sml_btn_left_cornr.jpg) left no-repeat;
+	}
+						/*class for input button ends*/
+
+
+
+.mrgn_b10{
+	margin-bottom:10px;
+	}
+.doted_bordr2{
+	background:url(/img/dotted_bordr.gif) repeat-x bottom left;
+	padding:10px 0 0 0;
+	margin-bottom:10px;
+	}
+
+
+.lnht20{
+	line-height:20px;
+	}
+.iconic_menu{
+	list-style:none;
+	background:url(/img/dotted_bordr.gif) repeat-x bottom left;
+	padding-bottom:10px;
+	margin-bottom:15px;
+	height:100px;
+	}
+.iconic_menu li{
+	width:101px;
+	display:inline-block;
+	float:left;
+	text-align:center;
+	}
+.iconic_menu li a{
+	display:block;
+	font-size:12px;
+	color:#555;
+	padding:5px 0 0 0;
+	background:url(/img/icon_menu_bg.jpg) no-repeat top center;
+	}
+.iconic_menu li a img{
+	margin-top:3px;
+	}
+.iconic_menu li a span{
+	display:block;
+	padding:15px 0 0 0;
+	}
+.iconic_menu li a:hover, .iconic_menu li a:active,  .iconic_menu li a.active{
+	text-decoration:none;
+	background:url(/img/icon_menu_hover_bg.jpg) no-repeat top center;
+	color:#5597ed
+	}	
+	
+.logout{
+	padding:5px 20px 0 0;
+	float:right;
+	font-size:12px;
+	font-weight:normal;
+	}	
+	
+.title{
+	font-size:20px;
+	color:#555;
+	font-weight:bold;
+	border:1px solid #ebebeb;
+	padding:5px;
+	margin-bottom:15px;
+	text-align:center;
+	}
+
+.pagi_lnk{
+	font-weight:bold;
+	color:#256ac3;
+	font-size:12px;
+	padding:0 0 0 0;
+	float:right;
+	}
+.pagi_lnk a{
+	margin:0 3px;
+	}
+td .pagi_lnk a:hover{
+	text-decoration:underline;
+	}
+.padt5{
+	padding-top:5px;
+	}
+.color1{
+	background:url(/img/td_bg.jpg) repeat-x bottom;
+	}
+.color2{
+	background:url(/img/td_bg2.gif) repeat-x bottom;
+	}
+
+.slct50{
+	border:1px solid #e3e5e7;
+	background:url(/img/inpt_bg.gif) repeat-x top left;
+	padding:3px;
+	width:50px;
+	height:25px;
+	vertical-align:middle;
+	display:inline-block;
+	margin:0 0 0 0;
+	}
+
+.aligntop{
+	vertical-align:top;
+	}
+/*new classes added on 18/06/10 ends here*/
+
+
+/*new classes added on 19/06/10 starts here*/
+
+
+.grdnt_box{
+	background:url(/img/gradient_boxbg.jpg) repeat-x top left;
+	border:1px solid #e5e5e3;
+	padding:15px;
+	}
+.pad_t_b_15{
+	padding:15px 0;
+	}
+
+.title2{
+	font-size:24px;
+	color:#558bd2;
+	font-weight:bold;
+	border-bottom:1px dotted #919191;
+	border-top:1px dotted #919191;
+	padding:5px;
+	margin:15px 0;
+	text-align:center;
+	}
+h3{
+	font-size:18px;
+	color:#555;
+	font-weight:bold;
+	padding:0;
+	margin:5px 0;
+	}
+h4{
+font-size:15px;
+color:#555;
+font-weight:bold;
+padding:0;
+margin:5px 0;
+}
+.profile_photo{
+	float:right;
+	margin:5px 0 0 15px;
+	}
+.round_container100{
+	width:100%;
+	margin:0 0 20px 0;
+	}
+.inpt165{
+	border:1px solid #e3e5e7;
+	background:url(/img/inpt_bg.gif) repeat-x top left;
+	padding:3px;
+	width:165px;
+	height:20px;
+	vertical-align:middle;
+	display:inline-block;
+	margin:0 0 0 0;
+	}
+.inpt205{
+	display:inline-block;
+	margin:0;
+	padding:2px;
+	vertical-align:middle;
+	width:205px;
+	}
+td.nobordr{
+	border-bottom:none;
+	}
+.tip_div{
+	width:250px;
+	float:left;
+	margin:0 0 10px 0;
+	}
+
+.editor{
+	 float:left;
+	 margin-bottom:10px;
+	 }
+
+.emailid{
+	border:1px solid #e9e8e8;
+	width:150px;
+	height:155px;
+	overflow:auto;
+	margin:10px 0;
+	}
+.emailid li{
+	display:inline-block;
+	width:123px;
+	padding:5px 5px;
+	background:#e6effc;
+	}
+.emailid li.wite{
+	background:#fff;
+	}
+
+
+.grey_div{
+	border:1px solid #e9e8e8;
+	background:url(/img/grey_div_top.jpg) repeat-x top left;
+	padding:5px 5px;
+	}
+
+
+/*new classes added on 19/06/10 ends here*/
+
+
+
+.white{
+	color:#fff;
+	}
+.yelow_div{
+	border:1px solid #e5e5e3;
+	background:#f8ed6e;
+	padding:10px 15px;
+	font-size:12px;
+	margin-bottom:15px;
+	line-height:20px;
+	font-weight:bold;
+	}
+.yelow_div a{
+	font-weight:normal;
+	}
+
+.txtarea97perx175{
+	border:1px solid #e3e5e7;
+	background:#fff url(/img/inpt_bg.gif) repeat-x bottom left;
+	padding:3px;
+	width:97%;
+	height:175px;
+	vertical-align:middle;
+	display:inline-block;
+	margin:0 0 10px 0;
+	}
+	
+.photo{
+	border:1px solid #e3e5e7;
+	text-align:center;
+	width:300px;
+	height:300px;
+	margin:0 auto 15px auto;
+	
+	}
+
+.round_container50per{
+	width:50%;
+	margin:0 0 20px 0;
+	}
+.pad_t_15{
+	padding-top:15px;
+	}
+.spacer10{
+	height:10px;
+	_height:0;
+	*height:0px;
+	clear:both;
+	}
+.round_container230{
+	width:230px;
+	margin:0 0 20px 0;
+	}
+.lbl_amount{
+	display:inline-block;
+	width:80px;
+	margin:0;
+	vertical-align:middle;
+	color:#0079c2;
+	text-align:left;
+	}
+
+.graph{
+	float:right;
+	}
+	
+
+.fs15{
+	font-size:15px;
+	}	
+
+.mrgn_rt20{
+	margin-right:20px;
+	}
+	
+	
+	
+/*new classes added on 22nd June starts here*/	
+
+.outer_box{
+	border:2px solid #c2c2c2;
+	background:#f1f1ef;
+	padding:20px 40px;
+	}
+.inner_box{
+	border:2px solid #c2c2c2;
+	background:#f1f1ef;
+	padding:15px;
+	}
+
+
+.conformation_txt{
+	margin-bottom:20px;
+	}
+.conformation_txt p{
+	margin:0 0 10px;
+	line-height:20px;
+	}
+
+
+/*new classes added on 22nd June ends here*/
+
+/*new classes added on 22/06/10 start here*/
+
+
+/*                                         TOOLTIP STYLES                                        */
+/*-----------------------------------------------------------------------------------------------*/
+
+
+.tTip {
+        cursor: pointer;
+        position: relative;
+		
+}
+.tTip:hover{
+		text-decoration:none;
+		z-index:101;
+}
+
+.toolTipWrapper {
+
+        width: 175px;
+
+        position: absolute;
+
+        top: 20px;
+
+        display: none;
+
+        color: #FFF;
+
+        font-weight: bold;
+
+        font-size: 9pt;
+
+}
+
+
+
+.toolTipMid {
+	
+        padding: 8px 15px;
+
+        background: #A1D40A;
+
+}
+
+
+
+/*new classes added on 22/06/10 ends here*/
+
+
+
+
+/*new classes added on 29nd June starts here*/ 
+
+
+.mrgn_t10b10{
+	margin-bottom:10px;
+	margin-top:10px
+	}
+
+/*new classes added on 29nd June ends here*/ 
+
+
+
+/*new classes added on 2nd July starts here*/
+
+
+#header_new{
+	height:146px;
+	margin:0 auto;
+	background:url(/img/header_bg_new.jpg) no-repeat top center;
+	}
+	
+#header_popup{
+	height:146px;
+	margin:0 auto;
+	background:url(/img/header_bg_popup.jpg) no-repeat top center;
+	}
+	
+.slogan{
+	font-size:17px;
+	color:#28898b;
+	font-family:Georgia, "Times New Roman", Times, serif;
+	font-style:italic;
+	display:inline-block;
+	padding:45px 0 0 0;
+	}
+.logo_new{
+	float:left;
+	padding:5px 15px 0 5px;
+	}
+.foter_icons{
+	text-align:center;
+	padding:20px;
+	}
+.content_bot{
+	background:url(/img/content_bot_rt_new.jpg) no-repeat top center;
+	height:11px;
+	padding:0;
+	}
+	
+
+.cover_adver{
+	 padding:0 0 0 20px; 
+	 float:left; 
+	 width:325px;
+	 line-height:20px;
+	}
+
+.cover_adver span{
+	display:inline-block;
+	width:100px;
+	font-size:12px;
+	color:#555;
+	padding:25px 5px 0 0;
+	vertical-align:middle;
+	}	
+	
+.price{}
+#popup_wrapper{
+	width:710px;
+	margin:0 auto;
+	}
+.popup_contents{
+	background:url(/img/popupmid.png) repeat-y top center;
+	padding:0 45px;
+	}
+.close_btn{
+	position:absolute;
+	margin:10px 0 0 -50px;
+	}
+/*new class added on 132 july for popup*/
+/*new classes added on 2nd July ends here*/
+/*new classes added on 12nd July */
+.comming_soon{ 	text-align:center; 	padding:100px 0; 	}
+/*new classes added on 12nd July ends here*/
+
+
+
+
+
+/*CLASSES ADDED & MODIFIED ON 02/08/10 STARTS HERE*/
+
+
+.red_hedng{
+	/*background:url(/img/red_hedng.gif) repeat-x top left;
+	border:1px solid #b42232;*/
+	font-size:18px;
+	font-weight:normal;
+	color:#C00;
+	/*height:27px;*/
+	padding:0 15px 0;
+	}
+
+.grid{
+	clear:both;
+	font-size:12px;
+	border-left:1px solid #e9e8e8;
+	color:#555;
+	}
+	
+	
+	
+.grid td{
+	border:none;
+	padding:5px 10px;
+	border:1px solid #e9e8e8;
+	border-top:none;
+	border-left:none;
+	}
+.grid td .bg2{
+	background:url(/img/td_bg2.gif) repeat-x bottom;
+	}
+.grid td span{
+	display:inline-block;
+	}
+.grid td a{
+	text-decoration:none;
+	}
+.grid td.last{
+	background:none;
+	font-weight:bold;
+	}
+.grid th{
+	border-top:none;
+	border-left:none;
+	border-right:1px solid #e9e8e8;
+	border-bottom:1px solid #e9e8e8;
+	border-top:1px solid #e9e8e8;
+	height:30px;
+	padding:0 10px;
+	background:url(/img/th_bg.jpg) repeat-x bottom left;
+	vertical-align:middle;
+	font-size:14px;
+	color:#fff;
+	font-weight:bold;
+	}
+.grid th a{
+	color:#565656;
+	vertical-align:middle;
+	}
+.grid th a img{
+	vertical-align:middle;
+	}
+.grid th a:hover{
+	color:#268bc1;
+	}
+
+.grid2{
+	clear:both;
+	font-size:12px;
+	border-left:1px solid #e9e8e8;
+	color:#555;
+	border-collapse:collapse;
+	}
+	
+	
+	
+.grid2 td{
+	border:none;
+	padding:5px 5px;
+	border:1px solid #e9e8e8;
+	border-top:none;
+	border-left:none;
+	}
+.grid2 td.first{
+	border-top:1px solid #e9e8e8;
+	}
+.grid2 td .bg2{
+	background:url(/img/td_bg2.gif) repeat-x bottom;
+	}
+.grid2 td span{
+	display:inline-block;
+	}
+.grid2 td a{
+	text-decoration:none;
+	}
+.grid2 td.last{
+	background:none;
+	font-weight:bold;
+	}
+.grid2 th{
+	border-top:none;
+	border-left:none;
+	border-right:1px solid #e9e8e8;
+	border-bottom:1px solid #e9e8e8;
+	border-top:1px solid #e9e8e8;
+	height:30px;
+	padding:0 5px;
+	background:url(/img/th_bg.jpg) repeat-x bottom left;
+	vertical-align:middle;
+	
+	color:#fff;
+	font-weight:bold;
+	}
+.grid2 th a{
+	color:#565656;
+	vertical-align:middle;
+	}
+.grid2 th a img{
+	vertical-align:middle;
+	}
+.grid2 th a:hover{
+	color:#268bc1;
+	}
+
+.inpt{
+	padding:2px;
+	width:175px;
+	vertical-align:middle;
+	display:inline-block;
+	margin:0 0 5px 0;
+	}
+
+.inpt30{
+	/*border:1px solid #e3e5e7;
+	background:url(/img/inpt_bg.gif) repeat-x top left;*/
+	padding:3px;
+	width:30px;
+	/*height:15px;*/
+	vertical-align:middle;
+	display:inline-block;
+	margin:0 0 5px 0;
+	}
+.inpt100{
+	/*border:1px solid #e3e5e7;
+	background:url(/img/inpt_bg.gif) repeat-x top left;*/
+	padding:2px;
+	width:100px;
+	/*height:20px;*/
+	vertical-align:middle;
+	display:inline-block;
+	margin:0 0 5px 0;
+	}
+.inpt324{
+	padding:2px;
+	width:324px;
+	vertical-align:middle;
+	display:inline-block;
+	margin:0 0 5px 0;
+	}
+
+.slct{
+	/* old
+	padding:3px;
+	width:220px;
+	vertical-align:middle;
+	display:inline-block;
+	margin:0 0 5px 0;
+	font-size:12px;
+	*/
+	padding:3px;
+	width:181px;
+	/*height:24px;*/
+	vertical-align:middle;
+	display:inline-block;
+	margin:0 0 5px 0;
+	font-size:12px;
+	}
+.slct100{
+	/*border:1px solid #e3e5e7;
+	background:url(/img/inpt_bg.gif) repeat-x top left;*/
+	padding:3px;
+	width:108px;
+	height:24px;
+	vertical-align:middle;
+	display:inline-block;
+	margin:0 0 10px 0;
+	font-size:12px;
+	}
+.inpt40{
+	padding:3px;
+	width:30px;
+	vertical-align:middle;
+	display:inline-block;
+	margin:0 0 5px 0;
+	}
+.inpt40_new{
+	padding:3px;
+	width:50px;
+	vertical-align:middle;
+	display:inline-block;
+	margin:0 0 0 0;
+	}
+input{
+	font-size:12px;
+	}
+.grid3{
+	clear:both;
+	font-size:12px;
+	font-weight:bold;
+	border-left:1px solid #e9e8e8;
+	border-bottom:1px solid #e9e8e8;
+	color:#555;
+	}
+	
+	
+.grid3 td{
+	border:none;
+	padding:10px 10px;
+	border:1px solid #e9e8e8;
+	border-bottom:none;
+	border-left:none;
+	}
+.grid3 td img{
+	vertical-align:middle;
+	margin-right:10px;
+	}
+	
+#footer{
+	font-size:12px;
+	color:#555555;
+	margin:0 auto;
+	height:150px;
+	padding:30px 0 0 0;
+	clear:both;
+	background:	url(/img/footer_bg.jpg) repeat-x top;
+	}	
+#footer span{
+	padding:0;
+	margin:0;
+	text-align:center;
+	clear:both;
+	display:block;
+	color:#011001;
+	}
+.block{
+	display:inline-block;
+	width:100px;
+	font-size:12px;
+	color:#555;
+	padding:0 15px 0 0;
+	text-align:center;
+	vertical-align:middle;
+	}
+	.block p{
+	padding-bottom:5px;
+	}
+.online_directory{
+	font-size:18px;
+	color:#1a62c0;
+	}
+.online_directory span{
+	display:inline-block;
+	font-size:12px;
+	color:#555;
+	padding:0 15px 0 15px;
+	vertical-align:top;
+/*	text-align:center;
+	vertical-align:middle;*/
+	}
+.online_directory span p{
+	padding-bottom:5px;
+	}
+	
+.container3{
+	clear:both;
+	padding:0;
+	height:auto;
+	margin:0;
+	background:#fff;
+	}
+
+
+
+.lbl100{
+	display:inline-block;
+	width:100px;
+	margin:0 0 5px;
+	vertical-align:middle;
+	}
+.lbl185{
+	display:inline-block;
+	width:185px;
+	margin:0 0 5px;
+	vertical-align:middle;
+	}
+
+.inpt412{
+	/*border:1px solid #e3e5e7;
+	background:url(/img/inpt_bg.gif) repeat-x top left;*/
+	padding:3px;
+	/*width:412px;
+	height:20px;*/
+	vertical-align:middle;
+	display:inline-block;
+	margin:0 0 5px 0;
+	}
+
+.txtarea{
+	border:1px solid #e3e5e7;
+	background:#fff url(/img/inpt_bg.gif) repeat-x bottom left;
+	padding:3px;
+	width:295px;
+	height:192px;
+	vertical-align:middle;
+	display:inline-block;
+	margin:0 0 5px 0;
+	}
+	
+.inpt97per{
+	border:1px solid #e3e5e7;
+	background:url(/img/inpt_bg.gif) repeat-x top left;
+	padding:3px;
+	width:97%;
+	height:20px;
+	vertical-align:middle;
+	display:inline-block;
+	margin:0 0 5px 0;
+	}
+.txtarea97per{
+	border:1px solid #e3e5e7;
+	background:#fff url(/img/inpt_bg.gif) repeat-x bottom left;
+	padding:3px;
+	width:97%;
+	/*height:555px;*/
+	height:340px;
+	vertical-align:middle;
+	display:inline-block;
+	margin:0 0 5px 0;
+	}
+.txtarea97perx150{
+	border:1px solid #e3e5e7;
+	background:#fff url(/img/inpt_bg.gif) repeat-x bottom left;
+	padding:3px;
+	width:97%;
+	height:150px;
+	vertical-align:middle;
+	display:inline-block;
+	margin:0 0 5px 0;
+	}
+.slct70{
+	/*border:1px solid #e3e5e7;
+	background:url(/img/inpt_bg.gif) repeat-x top left;*/
+	padding:2px;
+	width:70px;
+	/*height:27px;*/
+	vertical-align:middle;
+	display:inline-block;
+	margin:0 0 5px 0;
+	
+	}
+.slct200{
+	/*border:1px solid #e3e5e7;
+	background:url(/img/inpt_bg.gif) repeat-x top left;*/
+	padding:3px;
+	width:200px;
+	height:28px;
+	vertical-align:middle;
+	display:inline-block;
+	margin:5px 0 5px 0;
+	}
+.inpt192{
+	border:1px solid #e3e5e7;
+	background:url(/img/inpt_bg.gif) repeat-x bottom left;
+	padding:3px;
+	width:192px;
+	height:20px;
+	vertical-align:middle;
+	display:inline-block;
+	margin:5px 0 5px 0;
+	}
+	
+
+.txtarea470{
+	border:1px solid #e3e5e7;
+	background:#fff url(/img/inpt_bg.gif) repeat-x bottom left;
+	padding:3px;
+	width:470px;
+	height:160px;
+	vertical-align:middle;
+	display:inline-block;
+	margin:5px 0 5px 0;
+	}
+.lbl300{
+	display:inline-block;
+	width:300px;
+	margin:0 0 5px;
+	vertical-align:middle;
+	}
+.lbl_blu{
+	display:inline-block;
+	width:40px;
+	margin:0 0 5px 10px;
+	vertical-align:top;
+	color:#0079c2;
+	text-align:left;
+	font-weight:bold;
+	}
+.lbl125{
+	display:inline-block;
+	width:125px;
+	margin:0 0 5px 10px;
+	vertical-align:middle;
+	/*font-weight:bold;*/
+	font-size:12px;
+	}
+.lbl1255{
+	display:inline-block;
+	width:175px;
+	margin:0 0 5px;
+	vertical-align:middle;
+	font-weight:bold;
+	font-size:12px;
+	}
+.lbl60{
+	display:inline-block;
+	width:40px;
+	margin:0 0 5px 10px;
+	vertical-align:middle;
+	font-weight:bold;
+	font-size:12px;
+	}
+.lbl80{
+	display:inline-block;
+	width:80px;
+	margin:0 0 5px 10px;
+	vertical-align:middle;
+	font-weight:bold;
+	font-size:12px;
+	}
+
+
+.blue_fields{
+	background:#dfe5f4;
+	border:none;
+	border-bottom:1px solid #555;
+	padding:3px;
+	width:300px;
+	margin:0 0 0 0;
+	}
+.blue_fields120{
+	background:#dfe5f4;
+	border:none;
+	border-bottom:1px solid #555;
+	padding:3px;
+	width:108px;
+	margin:0 0 0 0;
+	}
+.blue_fields50{
+	background:#dfe5f4;
+	border:none;
+	border-bottom:1px solid #555;
+	padding:3px;
+	width:50px;
+	margin:0 0 0 0;
+	}
+.blue_fields500{
+	background:#dfe5f4;
+	border:none;
+	border-bottom:1px solid #555;
+	padding:3px;
+	width:500px;
+	}
+
+.mrgnlft10{
+	margin-left:10px;
+	}
+
+.ln_ht30{
+	line-height:30px;
+	}
+
+.instructions{
+	font-size:12px;
+	font-style:italic;
+	color:#484747;
+	}
+
+
+/*new button style added by brijesh 07-08-10*/
+input.searchbuttons {
+background-color:#175ebc;
+border:1px outset #CCCCCC;
+font-size:11px;
+font-weight:bold;
+margin:1px;
+padding:1px;
+text-align:center;
+white-space:nowrap;
+width:auto;
+color:#FFFFFF;
+min-width:65px;
+cursor:pointer;
+}
+
+input.buttonforcommon {
+background-color:#175ebc;
+border:1px outset #CCCCCC;
+font-size:11px;
+font-weight:bold;
+margin:1px;
+padding:1px;
+text-align:center;
+white-space:nowrap;
+width:auto;
+color:#FFFFFF;
+height:24px;
+min-width:65px;
+cursor:pointer;
+}
+
+
+a.buttonforcommon {
+background-color:#175ebc;
+border:1px outset #CCCCCC;
+font-size:15px;
+font-weight:bold;
+margin:1px;
+padding:1px 5px;
+text-align:center;
+white-space:nowrap;
+width:auto;
+color:#FFFFFF;
+height:24px;
+min-width:65px;
+cursor:pointer;
+}
+
+a:hover.buttonforcommon {
+	text-decoration:none;
+}
+
+
+.grey_hedng{
+	font-size:12px;
+	font-weight:bold;
+	color:#333333;
+	background:#CCC;
+	padding:5px 15px;
+	}
+
+/* end new button style added by brijesh 07-08-10*/
+
+

@@ -1,0 +1,55 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="de-DE">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+	<title>DateTimePicker</title>
+</head>
+<body>
+	<label for="pickerfield">A date</label>
+	<input id="pickerfield" type="text" value="" />
+
+	<label for="pickerfield2">Another date</label>
+	<input id="pickerfield2" type="text" value="" />
+
+
+	
+	<script src="jquery-1.4.2.min.js" type="text/javascript"></script>
+	<script src="jquery-ui-1.8.custom.min.js" type="text/javascript"></script> 
+	<script src="i18n/ui.datepicker-de.js" type="text/javascript"></script>
+	<script src="timepicker_plug/jquery.timepicker.js" type="text/javascript"></script>
+	
+	
+
+
+	<script type="text/javascript">
+	/* <![CDATA[ */
+		$(function() {
+				  $('#pickerfield').datetime({
+									userLang	: 'en',
+									americanMode: true,
+								});
+				  $('#pickerfield2').datetime({
+									userLang	: 'de',
+									americanMode: false,
+								});								
+			});
+	/* ]]> */
+	</script>
+
+
+		
+	
+	<link rel="stylesheet" type="text/css" href="timepicker_plug/css/style.css">
+	<link rel="stylesheet" type="text/css" href="smothness/jquery_ui_datepicker.css">
+	
+	
+	<p>Note: This version of Time Picker has been updated to work with jQuery UI version 1.8. 
+	Strange bug was found relating to the show('normal'), hide('normal') calls. 
+	Changed it to fadeIn() and fadeOut() and voila! Fixed for UI 1.8.
+	
+	
+
+	
+	<div id="test" style="position:absolute; left:600px; top:0;">Download this demo by <a href="datetimepicker.zip">clicking here</a></div>
+</body>
+</html>

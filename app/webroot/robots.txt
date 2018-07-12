@@ -1,0 +1,9 @@
+User-agent: *
+Disallow: /cake
+Disallow: /vendors
+Disallow: /app
+Disallow: /plugins
+Disallow: /.htaccess
+Allow: /index.php
+
+

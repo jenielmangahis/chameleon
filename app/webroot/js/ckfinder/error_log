@@ -1,0 +1,1 @@
+[30-Jul-2014 04:40:05] PHP Fatal error:  Call to undefined function  resolveurl() in /home/chamelne/public_html/app/webroot/js/ckfinder/config.php on line 85

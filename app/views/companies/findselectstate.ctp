@@ -1,0 +1,1 @@
+<span class="txtArea_top"><span class="txtArea_bot"><?php echo $form->select("$modelname.state",$statedropdown,$selectedstate,array('id' => 'state', 'class' => "multilist" ,'style'=>'width:230px'),"---Select---"); ?></span></span>
