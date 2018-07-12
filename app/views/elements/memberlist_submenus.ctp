@@ -177,7 +177,7 @@ if($flagSubHideMenuPermission)
 									$html->tag('span', 'Map'),
 									array('controller'=>'admins','action'=>'map'),
 									//'/admins/map',
-									array('class'=> ($this->subtabsel=="map")?'tabSelt':'','escape' => false )
+									array('class'=> ($this->subtabsel=="map")?'tabSelt dropdown-item':'','escape' => false )
 									)
 						);
 					?>
@@ -195,7 +195,7 @@ if($flagSubHideMenuPermission)
 									$html->tag('span', 'Points Detail'),
 									array('controller'=>'admins','action'=>'points_detail'),
 									//'/admins/points_detail',
-									array('class'=> ($this->subtabsel=="points_detail")?'tabSelt':'','escape' => false )
+									array('class'=> ($this->subtabsel=="points_detail")?'tabSelt dropdown-item':'','escape' => false )
 									)
 						);
 					?>
@@ -214,7 +214,7 @@ if($flagSubHideMenuPermission)
 									$html->tag('span', 'Points Setup'),
 									array('controller'=>'admins','action'=>'points'),
 									//'/admins/points',
-									array('class'=> ($this->subtabsel=="points")?'tabSelt':'','escape' => false )
+									array('class'=> ($this->subtabsel=="points")?'tabSelt dropdown-item':'','escape' => false )
 									)
 						);
 					?>
@@ -235,7 +235,7 @@ if($flagSubHideMenuPermission)
 									$html->tag('span', 'Member Type'),
 									array('controller'=>'admins','action'=>'membertypes'),
 									//'/admins/membertypes',
-									array('class'=> ($this->subtabsel=="membertypes")?'tabSelt':'','escape' => false )
+									array('class'=> ($this->subtabsel=="membertypes")?'tabSelt dropdown-item':'','escape' => false )
 									)
 						);
 					?>
@@ -254,7 +254,7 @@ if($flagSubHideMenuPermission)
 									$html->tag('span', 'Level Setup'),
 									array('controller'=>'admins','action'=>'memberlevels'),
 									//'/admins/memberlevels',
-									array('class'=> ($this->subtabsel=="levelsetup")?'tabSelt':'','escape' => false )
+									array('class'=> ($this->subtabsel=="levelsetup")?'tabSelt dropdown-item':'','escape' => false )
 									)
 						);
 					?>

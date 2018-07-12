@@ -119,14 +119,22 @@ function activatecontents(act,op)
 </script>
 <?php $pagination->setPaging($paging); ?> 
  <!-- Body Panel starts -->
-   <div class="container">
+<div class="container clearfix">
    
- <div class="titlCont"><div style="width:960px; margin:0 auto;">
-			<div align="center" class="slider" id="toppanel" style="height: 20px; top:11px;right: -50px;width:545px !important; text-align:right;">			
-<?php echo $form->create("Admins", array("action" => "commentlist",'name' => 'commentlist', 'id' => "commentlist")) ?>   <?php  echo $this->renderElement('new_slider');  ?>			
-</div>  
-             <?php  echo $this->renderElement('project_name');  ?>  
-            <span class="titlTxt">   Comments  </span>
+	<div class="titlCont">
+    	<div class="slider-centerpage clearfix">
+        	<div class="center-Page col-sm-6">
+            	<h2>Comments</h2>
+            </div>
+            
+            <div class="slider-dashboard col-sm-6">
+            	<div class="icon-container">
+                	<?php echo $form->create("Admins", array("action" => "commentlist",'name' => 'commentlist', 'id' => "commentlist")) ?>               	
+                </div>
+                <?php  echo $this->renderElement('new_slider');  ?>
+            </div>
+            
+            <?php  echo $this->renderElement('project_name');  ?>  
             
             <div class="topTabs" style="height:25px;">
                 <?php /*?><ul class="dropdown">
@@ -142,36 +150,44 @@ function activatecontents(act,op)
                     <li><a href="javascript:void(0)" onclick="editcontent();" id="linkedit"><span>Detail</span></a></li>
                 </ul><?php */?>
             </div>
-
-             <?php    $this->loginarea="admins";    $this->subtabsel="commentlist";
-           if($_GET['url'] === 'admins/commentlist/0'){
-             echo $this->renderElement('survey_submenus');
-				}
-				else
-			if($_GET['url'] === 'admins/commentlist/1'){
-             echo $this->renderElement('memberlistsecondlevel_submenus');
-				}
-				else{
-
-		   echo $this->renderElement('comments_submenus');
-}
-		   ?>   
+            
+        </div>
+ 		
              
-        </div></div>  
+            <!--<span class="titlTxt">   Comments  </span>-->
+            
+
+
+</div>  
    
    
-   
 
 
-    <div class="midCont" id="newcommenttab">
+<div class="clearfix nav-submenu-container">
+	<div class="midCont">
+		<?php    $this->loginarea="admins";    $this->subtabsel="commentlist";
+			   if($_GET['url'] === 'admins/commentlist/0'){
+				 echo $this->renderElement('survey_submenus');
+					}
+					else
+				if($_GET['url'] === 'admins/commentlist/1'){
+				 echo $this->renderElement('memberlistsecondlevel_submenus');
+					}
+					else{
+	
+			   echo $this->renderElement('comments_submenus');
+			}
+		   ?> 
+    </div>
+</div>   
 
-
+<div class="midCont" id="newcommenttab">
 	<?php if($session->check('Message.flash')) { echo $this->renderElement('error_message'); } ?>
 
     <!-- top curv image starts -->
     <div>
-    <span class="topLft_curv"></span>
-	<span class="topRht_curv"></span>
+    <!--<span class="topLft_curv"></span>
+	<span class="topRht_curv"></span>-->
     <div class="gryTop">
                
                 <script type='text/javascript'>
@@ -199,7 +215,7 @@ function activatecontents(act,op)
 <?php $i=1; ?>                  
                 
                     <div class="tblData">
-         <table width="100%" border="0" cellspacing="0" cellpadding="0">
+         <table class="table table-bordered table-striped" width="100%" border="0" cellspacing="0" cellpadding="0">
          <tr class="trBg">
          <th align="center" width="1%">#</th>
          <th align="center" width="3%"><input type="checkbox" value="" name="checkall" id="checkall" /></th>     
@@ -354,8 +370,8 @@ function activatecontents(act,op)
 
  </div>
                     <div>
-                    <span class="botLft_curv"></span>
-					<span class="botRht_curv"></span>
+                    <!--<span class="botLft_curv"></span>
+					<span class="botRht_curv"></span>-->
 <div class="gryBot"><?php  echo $this->renderElement('newpagination'); ?>
                     </div>
                     <div class="clear"></div>

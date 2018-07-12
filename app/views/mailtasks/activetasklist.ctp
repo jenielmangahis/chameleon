@@ -120,83 +120,86 @@ function activatecontents(act,op)
 
 <!--container starts here-->
 <?php $pagination->setPaging($paging); ?>
-<div class="container">
+<div class="container clearfix">
 <div class="titlCont">
-
-    <div style="width:960px; margin:0 auto;">
-	<div class="slider" id="toppanel" style="height: 20px; top:13px;right: -50px;width:545px !important; text-align:right;">	
-	<?php echo $form->create("Mailtasks", array("action" => "activetasklist",'name' => 'activetasklist', 'id' => "activetasklist")) ?>
+	<div class="slider-centerpage clearfix">
+    	<div class="center-Page col-sm-6">
+            <h2>Active Email Tasks</h2>
+        </div>
+        
+        <div class=" slider-dashboard col-sm-6">
+        	<div class="icon-container">
+            	<?php echo $form->create("Mailtasks", array("action" => "activetasklist",'name' => 'activetasklist', 'id' => "activetasklist")) ?>
                 <script type='text/javascript'>
                         function setprojectid(projectid){
                                         document.getElementById('projectid').value= projectid;
                                         document.adminhome.submit();
                                 }
                 </script>
-				 		
-<?php
-e($html->link($html->image('new.png') . ' ','addmailtask',array('escape' => false)));
-?>
-<a href="javascript:void(0)" onclick="return activatecontents('asd','del');"> <?php e($html->image('action.png')) ?></a>
-<a href="javascript:void(0)" onclick="editcontent();" id="linkedit">
-<?php e($html->image('edit.png')) ?></a>
-<?php echo $this->renderElement('new_slider');
-?>			
+                            
+				<?php
+                e($html->link($html->image('new.png') . ' ','addmailtask',array('escape' => false)));
+                ?>
+                <a href="javascript:void(0)" onclick="return activatecontents('asd','del');"> <?php e($html->image('action.png')) ?></a>
+                <a href="javascript:void(0)" onclick="editcontent();" id="linkedit">
+                <?php e($html->image('edit.png')) ?></a>                
+            </div>
+            <?php echo $this->renderElement('new_slider');?>
+        </div>
+        
+        <div class="topTabs" style="height:25px;">
+			<?php /*?><ul class="dropdown">
+            <li>
+            <?php
+                //e($html->link(
+            //		$html->tag('span', 'New'),
+            //		array('controller'=>'mailtasks','action'=>'addmailtask'),
+            //		array('escape' => false)
+            //		)
+            //	);
+            
+            
+            ?>
+            
+            </li>
+            <li><a href="javascript:void(0)" class="tab2"> <span>Actions</span></a>
+            <ul class="sub_menu">
+                                             <!--li><a href="javascript:void(0)" onclick="return activatecontents('active','change');">Publish</a></li>
+                                             <li><a href="javascript:void(0)" onclick="return activatecontents('deactive','change');">Unpublish</a></li-->
+                                             <!--li><a href="javascript:void(0)">Copy</a></li-->
+                                             <li><a href="javascript:void(0)" onclick="return activatecontents('asd','del');">Trash</a></li>
+                                 <li class="botCurv"></li>
+                                    </ul>
+            </li>
+            <li><a href="javascript:void(0)" onclick="editcontent();" id="linkedit"><span>Edit</span></a></li>
+            </ul><?php */?>
+        </div>
+        
+    </div>
+
 </div>
-<div class="centerPage">
-<?php /*?><div align="center" class="slider" id="toppanel">
-         <?php  //echo $this->renderElement('new_slider');  ?>
+    
+    
+    
+<div class="clearfix nav-submenu-container">
+    <div class="midCont">
+	 <?php    $this->loginarea="mailtasks";    $this->subtabsel="activetasklist";
 
-</div><?php */?>
-
-
-   
-<span class="titlTxt"> Active Email Tasks  </span>
-
-<div class="topTabs" style="height:25px;">
-<?php /*?><ul class="dropdown">
-<li>
-<?php
-	//e($html->link(
-//		$html->tag('span', 'New'),
-//		array('controller'=>'mailtasks','action'=>'addmailtask'),
-//		array('escape' => false)
-//		)
-//	);
-
-
-?>
-
-</li>
-<li><a href="javascript:void(0)" class="tab2"> <span>Actions</span></a>
-<ul class="sub_menu">
-                                 <!--li><a href="javascript:void(0)" onclick="return activatecontents('active','change');">Publish</a></li>
-                                 <li><a href="javascript:void(0)" onclick="return activatecontents('deactive','change');">Unpublish</a></li-->
-                                 <!--li><a href="javascript:void(0)">Copy</a></li-->
-                                 <li><a href="javascript:void(0)" onclick="return activatecontents('asd','del');">Trash</a></li>
-                     <li class="botCurv"></li>
-                        </ul>
-</li>
-<li><a href="javascript:void(0)" onclick="editcontent();" id="linkedit"><span>Edit</span></a></li>
-</ul><?php */?>
+            if($this->params['pass'][0] === '0'){
+                echo $this->renderElement('emails_submenus'); 
+            }
+            elseif($_GET['url'] === 'mailtasks/activetasklist/2'){
+             echo $this->renderElement('memberlistsecondlevel_submenus');  
+            }
+            else{
+                        echo $this->renderElement('email_menu'); 
+            }
+         ?>  
+    </div>
 </div>
-
-
-            <?php    $this->loginarea="mailtasks";    $this->subtabsel="activetasklist";
-
-if($this->params['pass'][0] === '0'){
-	echo $this->renderElement('emails_submenus'); 
-}
-elseif($_GET['url'] === 'mailtasks/activetasklist/2'){
- echo $this->renderElement('memberlistsecondlevel_submenus');  
-}
-else{
-			echo $this->renderElement('email_menu'); 
-}
-			 ?>  
-</div>
-</div>
-	</div>						
- <div class="midCont" id="newcmmtasktab">
+    
+    					
+<div class="midCont" id="newcmmtasktab">
 
 
 <?php if($session->check('Message.flash')){ ?> 
@@ -213,8 +216,8 @@ else{
 
                             <!-- top curv image starts -->
                             <div>
-                            <span class="topLft_curv"></span>
-                            <span class="topRht_curv"></span>
+                            <!--<span class="topLft_curv"></span>
+                            <span class="topRht_curv"></span>-->
                 
                 <div class="gryTop">
                	<div class="new_filter" >
@@ -228,7 +231,7 @@ else{
 
                         <?php $i=1; ?>  
                         <div class="tblData">
-        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <table class="table table-striped table-bordered" width="100%" border="0" cellspacing="0" cellpadding="0">
         <tr class="trBg">
         <th align="center" style="width:2%;">#</th>
         <th align="center" style="width:3%;"><input type="checkbox" value="" name="checkall" id="checkall" /></th>      
@@ -512,8 +515,8 @@ else{
   </div>
 
       <div>
-      <span class="botLft_curv"></span>
-      <span class="botRht_curv"></span>
+      <!--<span class="botLft_curv"></span>
+      <span class="botRht_curv"></span>-->
       <div class="gryBot"><?php  echo $this->renderElement('newpagination');  ?>
       </div>
       

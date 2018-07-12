@@ -8,7 +8,17 @@ if(!empty($paramArrar['0'])){
 }
 ?>                                                                     
        <div class="clear"></div>
-            <ul id="tab-container-1-nav" class="topTabs2">
+       
+<div class="dropdown-button-container"> 
+	<div class="dropdown">
+     
+     	<button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Select Sub Menu List
+        </button>
+     	
+            <ul id="tab-container-1-nav" class="top-Tabs2 nav nav-pills dropdown-menu" aria-labelledby="dropdownMenuButton">
+            
+            
 <?php	
 if(!isset($hideSubMenuPermission))		
 {
@@ -197,7 +207,7 @@ if($flagSubHideMenuPermission)
 					e($html->link(
 								$html->tag('span', 'Types'),
 								array('controller'=>$controller,'action'=>'event_types'),
-								array('class'=>($this->subtabsel=="event_types")?'tabSelt':'','escape' => false)
+								array('class'=>($this->subtabsel=="event_types")?'tabSelt dropdown-item':'','escape' => false)
 								)
 					);
 				?>
@@ -215,7 +225,7 @@ if($flagSubHideMenuPermission)
 					e($html->link(
 								$html->tag('span', 'RSVP'),
 								array('controller'=>$controller,'action'=>'rsvp'),
-								array('class'=>($this->subtabsel=="rsvp")?'tabSelt':'','escape' => false)
+								array('class'=>($this->subtabsel=="rsvp")?'tabSelt dropdown-item':'','escape' => false)
 								)
 					);
 				?>
@@ -235,7 +245,7 @@ if($flagSubHideMenuPermission)
 				e($html->link(
 								$html->tag('span', 'Send Invite'),
 								array('controller'=>$controller,'action'=>'send_invite'),
-								array('escape' => false,'class'=> 'tabSelt')
+								array('escape' => false,'class'=> 'tabSelt dropdown-item')
 								)
 					);
 				}
@@ -266,7 +276,7 @@ if($flagSubHideMenuPermission)
 			e($html->link(
 				$html->tag('span', 'Event Task'),
 				array('controller'=>$controller,'action'=>'eventtasklist'),
-				array('class'=>($this->subtabsel=="eventtasklist")?'tabSelt':'','escape' => false)
+				array('class'=>($this->subtabsel=="eventtasklist")?'tabSelt dropdown-item':'','escape' => false)
 				)
 			);
 		?>
@@ -286,7 +296,7 @@ if($flagSubHideMenuPermission)
 					e($html->link(
 								$html->tag('span', 'Invites'),
 								array('controller'=>$controller,'action'=>'eventinvitationhistory'),
-								array('class'=>($this->subtabsel=="eventinvitationhistory")?'tabSelt':'','escape' => false)
+								array('class'=>($this->subtabsel=="eventinvitationhistory")?'tabSelt dropdown-item':'','escape' => false)
 								)
 					);
 					}
@@ -313,7 +323,7 @@ if($flagSubHideMenuPermission)
 									//'/admins/donationlist',
 									//'admins/donation',
 									array('controller'=>'admins','action'=>'donation'),
-									array('class'=> ($this->subtabsel=="donationlist")?'tabSelt':'','escape' => false )
+									array('class'=> ($this->subtabsel=="donationlist")?'tabSelt dropdown-item':'','escape' => false )
 									)
 						);
 					?>
@@ -333,7 +343,7 @@ if($flagSubHideMenuPermission)
 						e($html->link(
 									$html->tag('span', 'Volunteers'),
 									'/admins/projectshoppingcart',
-									array('class'=> ($this->subtabsel=="eventinvitationhistory")?'tabSelt':'','escape' => false )
+									array('class'=> ($this->subtabsel=="eventinvitationhistory")?'tabSelt dropdown-item':'','escape' => false )
 									)
 						);
 						}
@@ -357,3 +367,13 @@ if($flagSubHideMenuPermission)
             </ul>
           
     <?php }?>
+
+
+	</div>	
+</div>  
+
+<script type="text/javascript">
+	$('#dropdownMenuButton').on('show.bs.dropdown', function () {
+	  $('.dropdown-toggle').dropdown();
+	});
+</script>  
