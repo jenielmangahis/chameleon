@@ -198,7 +198,7 @@
                 function setprojectid(projectid){
                     document.getElementById('projectid').value= projectid;
                     document.adminhome.submit();
-                }
+                } 
             </script>
 			<div class="new_filter">
             <span class="spnFilt">Filter:</span>

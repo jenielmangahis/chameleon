@@ -247,7 +247,7 @@ $checkSubMenu = "Level Setup";
 $flagSubHideMenuPermission = $common->checkSubMenuPermission($checkSubMenu,$hideSubMenuPermission,$c_name,$f_name);
 if($flagSubHideMenuPermission)
 {	
-?>
+?> 
 					<li>					
 						<?php
 						e($html->link(

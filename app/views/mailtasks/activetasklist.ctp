@@ -227,7 +227,7 @@ function activatecontents(act,op)
                 <span class="srchBg2"><input type="button" value="Reset" label="" onclick="javascript:(window.location=baseUrl+'mailtasks/activetasklist')" id="locaa"></span>
                 
                         </div> </div>
-                        <div class="clear"></div></div>
+                        <div class="clear"></div></div> 
 
                         <?php $i=1; ?>  
                         <div class="tblData">

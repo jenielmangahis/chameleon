@@ -128,7 +128,7 @@ $backUrl = $base_url.'admins/call/1'; ?>
 		<td valign='top' align="right"><label class="boldlabel">Text<span style="color:red">*</span></label></td>
 		<td>
 			<div class="large">
-			<span class="txtArea-top">
+			<span class="txtArea-top"> 
 				<span class="newtxtArea-bot">
 					<?php echo $form->textarea("Sendsms.text", array('id' => 'text', 'div' => false, 'label' => '',
 							'cols' => '35', 'rows' => '8',"class" => "multilists form-control", 'style'=>'width:370px'));?>

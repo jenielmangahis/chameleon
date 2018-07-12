@@ -190,7 +190,7 @@ $base_url_admin = Configure::read('App.base_url_admin');
                     <li><a href="javascript:void(0)" onclick="editevent();" id="linkedit"><span>Edit</span></a></li>         
                 </ul><?php */?>
             </div>
-            
+             
         </div>
 		<!--<span class="titlTxt"> Current Events  </span>-->
         
