@@ -99,31 +99,37 @@
 </script>
 <?php $pagination->setPaging($paging); ?> 
 <!-- Body Panel starts -->
-<div class="container">
-         <div class="titlCont">
-		  <div class="centerPage" >
-            <div class="slider" id="toppanel" style="height: 20px; top:13px;right: -50px;width:545px !important; text-align:right;">			
-            <?php echo $form->create("players", array("action" => "playerslist",'name' => 'playerslist', 'id' => "playerslist")) ?>      
-            <script type='text/javascript'>
-                function setprojectid(projectid){
-                    document.getElementById('projectid').value= projectid;
-                    document.adminhome.submit();
-                }
-            </script>
-<?php
-e($html->link($html->image('new.png', array("alt" => "New")) . ' ',array('controller'=>'players','action'=>'adddetail',$option),array('escape' => false)));
-?>
-<a href="javascript:void(0)" onclick="return activatecontents('asd','del');">
-<?php e($html->image('action.png', array("alt" => "Delete"))); ?>
-</a>
-<a href="javascript:void(0)" onclick="editholder();" id="linkedit">
-<?php e($html->image('edit.png', array("alt" => "Edit"))); ?></a>
-  <?php echo $this->renderElement('new_slider'); 
-?>			
-</div>
-
-           <?php if($usertype==trim("admin")){?> <span class="titlTxt1"><?php echo $project['Project']['project_name'];  ?>&nbsp;</span><?php } ?>
-            <span class="titlTxt"><?php echo ucfirst($option);?> List</span>
+<div class="container clearfix">
+	<div class="titlCont">
+    	<div class="slider-centerpage clearfix">
+        	<div class="center-Page col-sm-6">
+            	<h2><?php echo ucfirst($option);?> List</h2>
+            </div>
+            
+            <div class="slider-dashboard col-sm-6">
+            	<div class="icon-container">
+                	<?php echo $form->create("players", array("action" => "playerslist",'name' => 'playerslist', 'id' => "playerslist")) ?>      
+					<script type='text/javascript'>
+                        function setprojectid(projectid){
+                            document.getElementById('projectid').value= projectid;
+                            document.adminhome.submit();
+                        }
+                    </script>
+                    <?php
+                    e($html->link($html->image('new.png', array("alt" => "New")) . ' ',array('controller'=>'players','action'=>'adddetail',$option),array('escape' => false)));
+                    ?>
+                    <a href="javascript:void(0)" onclick="return activatecontents('asd','del');">
+                    <?php e($html->image('action.png', array("alt" => "Delete"))); ?>
+                    </a>
+                    <a href="javascript:void(0)" onclick="editholder();" id="linkedit">
+                    <?php e($html->image('edit.png', array("alt" => "Edit"))); ?></a>                      
+                </div>
+                <?php echo $this->renderElement('new_slider'); ?>	
+            </div>
+            
+            <?php if($usertype==trim("admin")){?> <span class="titlTxt1"><?php echo $project['Project']['project_name'];  ?>&nbsp;</span><?php } ?>
+            <!--<span class="titlTxt"><?php echo ucfirst($option);?> List</span>-->
+            
             <div class="topTabs" style="height:25px;">
                 <?php /*?><ul class="dropdown">
                     <li>
@@ -161,9 +167,19 @@ e($html->link($html->image('new.png', array("alt" => "New")) . ' ',array('contro
                  
                 </ul><?php */?>
             </div>
-			
-            <div class="clear"></div>
-	         <?php    
+            
+            <!--<div class="slider" id="toppanel" style="height: 20px; top:13px;right: -50px;width:545px !important; text-align:right;">			
+            		
+            </div>-->
+        </div>
+    		  
+        
+     </div>
+     
+     
+<div class="clearfix nav-submenu-container">
+	<div class="midCont submenu-Cont">
+		 <?php    
                     $this->loginarea="players";    $this->subtabsel=$option.'list';
                     if(isset($this->params['pass'][0])&&($this->params['pass'][0]=="merchant"||$this->params['pass'][0]=="nonprofit" || $this->params['pass'][0]=="vendor" || $this->params['pass'][0]=="sale"))
                     {
@@ -186,9 +202,9 @@ e($html->link($html->image('new.png', array("alt" => "New")) . ' ',array('contro
                     {
                         echo $this->renderElement('players/player_submenus');  
                     } 
-            ?>   
-                            
-        </div></div>
+            ?>    
+    </div>
+</div>     
 
 <?php switch($companytypecategoryid){
 				case 7:

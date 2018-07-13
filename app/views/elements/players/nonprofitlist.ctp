@@ -2,8 +2,8 @@
         <?php if($session->check('Message.flash')) { echo $this->renderElement('error_message'); } ?>
         <!-- top curv image starts -->
         <div>
-            <span class="topLft_curv"></span>
-            <span class="topRht_curv"></span>
+            <!--<span class="topLft_curv"></span>
+            <span class="topRht_curv"></span>-->
             <div class="gryTop">
             	<div class="new_filter">   
                 <script type='text/javascript'>
@@ -23,7 +23,7 @@
             <div class="clear"></div></div>
         <?php $i=1; ?>			
         <div class="tblData">
-            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+            <table class="table table-bordered table-striped" width="100%" border="0" cellspacing="0" cellpadding="0">
                 <tr class="trBg">
                     <th align="center" valign="middle" style='width:1%'>#</th>
                     <th align="center" valign="middle" style='width:2%;'><input type="checkbox" value="" name="checkall" id="checkall" /></th>
@@ -154,8 +154,8 @@
             </table> 
         </div>
         <div>
-            <span class="botLft_curv"></span>
-            <span class="botRht_curv"></span>
+            <!--<span class="botLft_curv"></span>
+            <span class="botRht_curv"></span>-->
             <div class="gryBot"><?php if($companydata) { echo $this->renderElement('newpagination'); } ?>
             </div>
             <div class="clear"></div>

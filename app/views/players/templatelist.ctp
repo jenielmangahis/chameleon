@@ -130,7 +130,9 @@ function activatecontents(act,op)
 
 <!--container starts here-->
 <?php $pagination->setPaging($paging); ?>
-<div class="titlCont"><div class="centerPage">
+<div class="titlCont">
+
+<div class="centerPage">
      
 
 <div align="center" class="slider" id="toppanel" style="height: 20px; top:13px;right: -50px;width:545px !important; text-align:right;">			

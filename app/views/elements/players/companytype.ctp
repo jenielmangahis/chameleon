@@ -120,27 +120,31 @@ $resetUrl = $base_url.'players/types/'.$option;
 </script>
 <?php $pagination->setPaging($paging); ?> 
 <!-- Body Panel starts -->
-<div class="container">
-
-         <div class="titlCont">
-		  <div class="centerPage" style="padding-top: 2px;">
+<div class="container clearfix">
+	<div class="titlCont">
+    	<div class="slider-centerpage clearfix">
+        	<div class="center-Page col-sm-6">
+            	<h2><?php echo $page_title; ?></h2>
+            </div>
             
-			<div align="center" class="slider" id="toppanel" style="height: 20px; top:13px;right:-50px;width:545px !important; text-align: right;">			
-
-            <?php echo $form->create("players", array("action" => "types/company",'name' => 'companytype', 'id' => "companytype")) ?>      
-            <script type='text/javascript'>
-                function setprojectid(projectid){
-                    document.getElementById('projectid').value= projectid;
-                    document.adminhome.submit();
-                }
-            </script><?php
-e($html->link($html->image('back.png', array('alt' => 'back')) . ' ',array('controller'=>'players','action'=>'playerslist','company'),array('escape' => false)));
-echo $this->renderElement('new_slider');
-?>			
-</div>
-            <?php //if($usertype=='admin') {?><span class="titlTxt1"><?php //echo $project['Project']['project_name'];  ?> &nbsp;</span> <?php //} ?>
-			<span class="titlTxt1">&nbsp;</span>
-            <span class="titlTxt"><?php echo $page_title; ?></span>
+            <div class="slider-dashboard col-sm-6">
+            	<div class="icon-container">
+					<?php echo $form->create("players", array("action" => "types/company",'name' => 'companytype', 'id' => "companytype")) ?>      
+                    <script type='text/javascript'>
+						function setprojectid(projectid){
+							document.getElementById('projectid').value= projectid;
+							document.adminhome.submit();
+						}
+                    </script>
+                    <?php
+                		e($html->link($html->image('back.png', array('alt' => 'back')) . ' ',array('controller'=>'players','action'=>'playerslist','company'),array('escape' => false))); ?>
+                </div>
+				<?php echo $this->renderElement('new_slider'); ?>                
+            </div>
+            
+            <!--<span class="titlTxt1">&nbsp;</span>
+            <span class="titlTxt"><?php //echo $page_title; ?></span>-->
+             <?php //if($usertype=='admin') {?><span class="titlTxt1"><?php //echo $project['Project']['project_name'];  ?> &nbsp;</span> <?php //} ?>
             <div class="topTabs" style="padding-top:16px; height:25px;">
 			
 				<?php /*?><ul class="dropdown" >
@@ -158,18 +162,29 @@ echo $this->renderElement('new_slider');
 						</ul><?php */?>
 						
 			</div>
-            <div class="clear"></div>
-	         <?php $this->loginarea="players";    $this->subtabsel= 'company';
-                            echo $this->renderElement('players/player_type_submenus');  ?>   
-                            
-        </div></div>
+            
+		<!--<div align="center" class="slider" id="toppanel" style="height: 20px; top:13px;right:-50px;width:545px !important; text-align: right;">			
+
+			</div>-->
+        </div>
+     </div>
+        
+        
+<div class="clearfix nav-submenu-container">
+	<div class="midCont submenu-Cont">
+		 <?php $this->loginarea="players";    $this->subtabsel= 'company';
+			echo $this->renderElement('players/player_type_submenus');  ?>   
+    </div>
+</div>
+
+        
 <div class="midCont" id="newcmptab">
 
 	<?php if($session->check('Message.flash')) { echo $this->renderElement('error_message'); } ?>
 
     <div>
-       <span class="topLft_curv"></span>         		
-       <span class="topRht_curv"></span>
+       <!--<span class="topLft_curv"></span>         		
+       <span class="topRht_curv"></span>-->
         <div class="gryTop">
                 <?php echo $form->create("players", array("action" => "types",'name' => 'companytype', 'id' => "companytype")) ?>
                 <script type='text/javascript'>
@@ -197,7 +212,7 @@ echo $this->renderElement('new_slider');
 </div>
 
 <div class="tblData">
-               <table width="100%" border="0" cellspacing="0" cellpadding="0">
+               <table class="table table-bordered table-striped" width="100%" border="0" cellspacing="0" cellpadding="0">
                 
 
   		<tr class="trBg">
@@ -310,8 +325,8 @@ echo $this->renderElement('new_slider');
 </div><!--inner-container ends here-->
 
      <div>
-                    <span class="botLft_curv"></span>
-     				 <span class="botRht_curv"></span>
+                    <!--<span class="botLft_curv"></span>
+     				 <span class="botRht_curv"></span>-->
                     <div class="gryBot">
                     
 				  <?php if(isset($companytypedata) && !empty($companytypedata)) { echo $this->renderElement('newpagination'); } ?>

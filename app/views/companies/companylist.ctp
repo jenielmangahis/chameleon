@@ -187,7 +187,7 @@ echo $this->renderElement('contact_submenus');  ?>
 
 <?php $i=1; ?>					
      <div class="tblData">
-	<table width="100%" border="0" cellspacing="0" cellpadding="0">
+	<table class="table table-bordered table-striped" width="100%" border="0" cellspacing="0" cellpadding="0">
         <tr class="trBg">
 	<th align="center" valign="middle" style='width:1%'>#</th>
 	<th align="center" valign="middle" style='width:2%'><input type="checkbox" value="" name="checkall" id="checkall" /></th>

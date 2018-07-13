@@ -87,7 +87,7 @@ e($html->link($html->image('new.png', array('alt' => 'New')) . ' ',array('contro
 </div>
 
 <div class="tblData">
-               <table width="100%" border="0" cellspacing="0" cellpadding="0">
+               <table class="table table-bordered table-striped" width="100%" border="0" cellspacing="0" cellpadding="0">
                 
 
   		<tr class="trBg">

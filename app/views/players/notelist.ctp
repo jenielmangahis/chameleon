@@ -107,23 +107,25 @@
 
 <?php $pagination->setPaging($paging); ?> 
 <!-- Body Panel starts -->
-<div class="container">
-         <div class="titlCont">
-		  <div class="centerPage" >
-           
-			<div align="center" class="slider" id="toppanel" style="height: 20px; top:13px;right: -50px;width:545px !important; text-align:right;">
-			<?php echo $form->create("players", array("action" => "notelist",'name' => 'notelist', 'id' => "notelist")) ?>			
-<?php
-e($html->link($html->image('new.png') . ' ' . __(''), "addnote",array('escape' => false)));?>
-<a href="javascript:void(0)" onclick="return activatecontents('asd','del');">
-<?php e($html->image('action.png')) ?></a>
-<a href="javascript:void(0)" onclick="editholder();" id="linkedit">
-<?php e($html->image('edit.png')) ?></a>
-<?php echo $this->renderElement('new_slider'); 
-?>			
-</div>
-
-                  
+<div class="container clearfix">
+	<div class="titlCont">
+         <div class="slider-centerpage clearfix">
+         	<div class="center-Page col-sm-6">
+            	<h2>Note List</h2>
+            </div>
+            <div class="slider-dashboard col-sm-6">
+            	<div class="icon-container">
+                	<?php echo $form->create("players", array("action" => "notelist",'name' => 'notelist', 'id' => "notelist")) ?>			
+					<?php
+                    e($html->link($html->image('new.png') . ' ' . __(''), "addnote",array('escape' => false)));?>
+                    <a href="javascript:void(0)" onclick="return activatecontents('asd','del');">
+                    <?php e($html->image('action.png')) ?></a>
+                    <a href="javascript:void(0)" onclick="editholder();" id="linkedit">
+                    <?php e($html->image('edit.png')) ?></a>                    
+                </div>
+                <?php echo $this->renderElement('new_slider'); ?>
+            </div>
+            
             <script type='text/javascript'>
                 function setprojectid(projectid){
                     document.getElementById('projectid').value= projectid;
@@ -131,7 +133,7 @@ e($html->link($html->image('new.png') . ' ' . __(''), "addnote",array('escape' =
                 }
             </script>
            <span class="titlTxt1"><?php  //echo $current_company_name; echo ($current_company_name !='')? ' : ' :'';  ?></span>&nbsp;
-            <span class="titlTxt"> <?php //echo ucfirst($option); ?> Note List</span>
+            <!--<span class="titlTxt"> <?php //echo ucfirst($option); ?> Note List</span>-->
             <div class="topTabs" style="height:25px;">
                 <?php /*?><ul class="dropdown">
                     <li>
@@ -153,9 +155,24 @@ e($html->link($html->image('new.png') . ' ' . __(''), "addnote",array('escape' =
                     <li><a href="javascript:void(0)" onclick="editholder();" id="linkedit"><span>Edit</span></a></li>
                     
                 </ul><?php */?>
+         	</div>
+            
          </div>
-            <div class="clear" ></div> 
-	         <?php    $this->loginarea="players";    $this->subtabsel='notes'; 
+         
+
+           
+			<!--<div align="center" class="slider" id="toppanel" style="height: 20px; top:13px;right: -50px;width:545px !important; text-align:right;">
+						
+            </div>-->
+
+
+	           
+
+      </div>
+        
+<div class="clearfix nav-submenu-container">
+	<div class="midCont">
+		 <?php    $this->loginarea="players";    $this->subtabsel='notes'; 
 					if($option == 'sale' || $option =='vendor' || $option =='advertiser' || $option =='other')
 					echo $this->renderElement('players/playermerchant_submenus');  
 	         			//echo $this->renderElement('players/advertiser_submenu'); 
@@ -165,15 +182,17 @@ e($html->link($html->image('new.png') . ' ' . __(''), "addnote",array('escape' =
 				else		//echo $this->renderElement('players/player_inner_submenu');
 						echo $this->renderElement('players/playermerchant_submenus');  
 						  
-						?>   
-                            
-        </div></div>
+			?> 
+    </div>
+</div>
+
+        
 <div class="midCont" id="cmplisttab">
         <?php if($session->check('Message.flash')) { echo $this->renderElement('error_message'); } ?>
         <!-- top curv image starts -->
         <div>
-            <span class="topLft_curv"></span>
-            <span class="topRht_curv"></span>
+            <!--<span class="topLft_curv"></span>
+            <span class="topRht_curv"></span>-->
             <div class="gryTop">
             <div class="new_filter">   
                 <script type='text/javascript'>
@@ -190,7 +209,7 @@ e($html->link($html->image('new.png') . ' ' . __(''), "addnote",array('escape' =
             <div class="clear"></div></div>
         <?php $i=1; ?>			
         <div class="tblData">
-            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+            <table class="table table-bordered table-striped" width="100%" border="0" cellspacing="0" cellpadding="0">
                 <tr class="trBg">
                     <th align="center" valign="middle" style='width:1%'>#</th>
                     <th align="center" valign="middle" style='width:2%;'><input type="checkbox" value="" name="checkall" id="checkall" /></th>
@@ -270,8 +289,8 @@ e($html->link($html->image('new.png') . ' ' . __(''), "addnote",array('escape' =
             </table> 
         </div>
         <div>
-            <span class="botLft_curv"></span>
-            <span class="botRht_curv"></span>
+            <!--<span class="botLft_curv"></span>
+            <span class="botRht_curv"></span>-->
             <div class="gryBot"><?php //if($notedata) { 
 			echo $this->renderElement('newpagination'); //} ?>
             </div>

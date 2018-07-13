@@ -115,37 +115,41 @@ $('#playMnu').addClass("butBgSelt");
  		
 <?php $pagination->setPaging($paging); ?> 
   <!-- Body Panel starts -->
-<div class="container">
-         <div class="titlCont">
-		  <div class="centerPage" >
-<div align="center" class="slider" id="toppanel" style="height: 20px; top:13px;right:-50px;width:545px !important; text-align:right;">	
-               
-            <?php echo $form->create("players", array("action" => "tasklist",'name' => 'tasklist', 'id' => "tasklist")) ?>      
-			<script type='text/javascript'>
-                function setprojectid(projectid){
-                    document.getElementById('projectid').value= projectid;
-                    document.adminhome.submit();
-                }
-            </script>
-			<?php 
-			e($html->link($html->image('new.png', array('alt' => 'New')) . ' ',array('controller'=>'players','action'=>'addtask'),array('escape' => false)));
-			?>
-			<a href="javascript:void(0)" onclick="return activatecontents('asd','del');">
-			<?php e($html->image('action.png', array('alt' => 'Delete'))); ?>
-			</a>
-			<a href="javascript:void(0)" onclick="editholder();" id="linkedit">
-			<?php e($html->image('edit.png', array('alt' => 'Edit'))); ?>
-			</a>
-			<?php 
-			e($html->link($html->image('back.png', array('alt' => 'Back')) . ' ',array('controller'=>'players','action'=>'playerslist','company'),array('escape' => false)));
-			?>
-			 <?php  echo $this->renderElement('new_slider');  ?>
+<div class="container clearfix">
+	<div class="titlCont">
+    	<div class="slider-centerpage clearfix">
+        	<div class="center-Page col-sm-6">
+				<?php if($usertype==trim("admin")){ ?> 
+                    <h2><?php echo $project['Project']['project_name'];  ?></h2>
+                <?php } ?>
+            <!--<span class="titlTxt">Email Tasks</span>-->
+            	<h2>Email Tasks</h2>
             </div>
-			<?php if($usertype==trim("admin")){ ?> 
-            	<span class="titlTxt1"><?php echo $project['Project']['project_name'];  ?>&nbsp;</span>
-			<?php } ?>
-            <span class="titlTxt">Email Tasks</span>
-			
+            
+            <div class="slider-dashboard col-sm-6">
+            	<div class="icon-container">
+                	<?php echo $form->create("players", array("action" => "tasklist",'name' => 'tasklist', 'id' => "tasklist")) ?>      
+					<script type='text/javascript'>
+                        function setprojectid(projectid){
+                            document.getElementById('projectid').value= projectid;
+                            document.adminhome.submit();
+                        }
+                    </script>
+                    <?php 
+                    e($html->link($html->image('new.png', array('alt' => 'New')) . ' ',array('controller'=>'players','action'=>'addtask'),array('escape' => false)));
+                    ?>
+                    <a href="javascript:void(0)" onclick="return activatecontents('asd','del');">
+                    <?php e($html->image('action.png', array('alt' => 'Delete'))); ?>
+                    </a>
+                    <a href="javascript:void(0)" onclick="editholder();" id="linkedit">
+                    <?php e($html->image('edit.png', array('alt' => 'Edit'))); ?>
+                    </a>
+                    <?php 
+                    e($html->link($html->image('back.png', array('alt' => 'Back')) . ' ',array('controller'=>'players','action'=>'playerslist','company'),array('escape' => false)));
+                    ?>                     
+                </div>
+                <?php  echo $this->renderElement('new_slider');  ?>
+            </div>
             
             <div class="topTabs" style="height:25px;">
                 <?php /*?><ul class="dropdown">
@@ -181,21 +185,33 @@ $('#playMnu').addClass("butBgSelt");
 					  
 			 </ul><?php */?>
             </div>
-            <div class="clear" ></div>
-	        <?php
-			 		$this->loginarea="players";    $this->subtabsel="tasklist";
-                    echo $this->renderElement('players/player_email_submenu');  
-			?>                               
-        </div></div>
+            
+            <!--<div align="center" class="slider" id="toppanel" style="height: 20px; top:13px;right:-50px;width:545px !important; text-align:right;">	
+                           
+			</div>-->
+            
+        </div>
+    
+    
+	</div>
 
  
+<div class="clearfix nav-submenu-container">
+	<div class="midCont submenu-Cont">
+		<?php
+            $this->loginarea="players";    $this->subtabsel="tasklist";
+            echo $this->renderElement('players/player_email_submenu');  
+        ?>   
+    </div>
+</div>
 
-    <div class="midCont" id="cmplisttab">
+
+<div class="midCont" id="cmplisttab">
         <?php if($session->check('Message.flash')) { echo $this->renderElement('error_message'); } ?>
         <!-- top curv image starts -->
         <div>
-            <span class="topLft_curv"></span>
-				<span class="topRht_curv"></span>
+            <!--<span class="topLft_curv"></span>
+				<span class="topRht_curv"></span>-->
             <div class="gryTop">
 				 <div class="new_filter">
                
@@ -214,7 +230,7 @@ $('#playMnu').addClass("butBgSelt");
             <div class="clear"></div></div>
         <?php $i=1; ?>			
         <div class="tblData">
-            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+            <table class="table table-bordered table-striped" width="100%" border="0" cellspacing="0" cellpadding="0">
                 <tr class="trBg">
                     <th align="center" valign="middle" style='width:1%'>#</th>
                     <th align="center" valign="middle" style='width:2%;'><input type="checkbox" value="" name="checkall" id="checkall" /></th>
@@ -397,8 +413,8 @@ $('#playMnu').addClass("butBgSelt");
             </table> 
         </div>
         <div>
-            <span class="botLft_curv"></span>
-            <span class="botRht_curv"></span>
+            <!--<span class="botLft_curv"></span>
+            <span class="botRht_curv"></span>-->
             <div class="gryBot"><?php  echo $this->renderElement('newpagination'); ?>
             </div>
             <div class="clear"></div>

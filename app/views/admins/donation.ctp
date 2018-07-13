@@ -112,55 +112,80 @@ function activatecontents(act,op)
 
 <div class="container">
   <div class="titlCont">
-    <div class="centerPage">
-      <div align="center" class="slider" id="toppanel" style="height: 20px; top:13px;right:-50px;width:545px !important; text-align:right;"> <?php echo $form->create("Donation", array("action" => "donation",'name' => 'donation', 'id' => "donation")) ?>
-        <script type='text/javascript'>
+  		<div class="slider-centerpage clearfix">
+        	<div class="center-Page col-sm-6">
+            	<h2>Donations</h2>
+            </div>
+            
+            <div class="slider-dashboard col-sm-6">
+            	<div class="icon-container">
+                	<script type='text/javascript'>
                         function setprojectid(projectid){
                                         document.getElementById('projectid').value= projectid;
                                         document.adminhome.submit();
                                 }
-                </script>
-        <?php
-e($html->link($html->image('new.png', array('alt' => 'New')) . ' ',array('controller'=>'admins','action'=>'adddonations'),array('escape' => false)));
-?>
-        <a href="javascript:void(0)" onclick="return activatecontents('asd','del');">
-        <?php e($html->image('action.png', array('alt' => 'Delete'))); ?>
-        </a> <a href="javascript:void(0)" onclick="editcontent();" id="linkedit">
-        <?php e($html->image('edit.png', array('alt' => 'Edit'))); ?>
-        </a>
-        <?php  echo $this->renderElement('new_slider');  ?>
-      </div>
-      <span class="titlTxt"> Donations </span>
-      <div class="topTabs" style="height:25px;">
+                	</script>
+					<?php
+                    e($html->link($html->image('new.png', array('alt' => 'New')) . ' ',array('controller'=>'admins','action'=>'adddonations'),array('escape' => false)));
+                    ?>
+                    <a href="javascript:void(0)" onclick="return activatecontents('asd','del');">
+                    <?php e($html->image('action.png', array('alt' => 'Delete'))); ?>
+                    </a> <a href="javascript:void(0)" onclick="editcontent();" id="linkedit">
+                    <?php e($html->image('edit.png', array('alt' => 'Edit'))); ?>
+                    </a>                                        
+                </div>
+                <?php  echo $this->renderElement('new_slider');  ?>
+            </div>
+            
+            <!--<span class="titlTxt"> Donations </span>-->
+			
+            <div class="topTabs" style="height:25px;">
         <?php /*?><ul class="dropdown">
-<li>
-<?php
-	e($html->link(
-		$html->tag('span', 'New'),
-		array('controller'=>'admins','action'=>'adddonations'),
-		array('escape' => false)
-		)
-	);
-?>
-
-</li>
-<li><a href="javascript:void(0)" class="tab2"><span>Actions</span></a>
-<ul class="sub_menu">
-                                 <!--li><a href="javascript:void(0)" onclick="return activatecontents('active','change');">Publish</a></li>
-                                 <li><a href="javascript:void(0)" onclick="return activatecontents('deactive','change');">Unpublish</a></li-->
-                                 <!--li><a href="javascript:void(0)">Copy</a></li-->
-                                 <li><a href="javascript:void(0)" onclick="return activatecontents('asd','del');">Trash</a></li>
-                     <li class="botCurv"></li>
-                        </ul>
-</li>
-<li><a href="javascript:void(0)" onclick="editcontent();" id="linkedit"><span>Edit</span></a></li>
-</ul><?php */?>
+			<li>
+			<?php
+				e($html->link(
+					$html->tag('span', 'New'),
+					array('controller'=>'admins','action'=>'adddonations'),
+					array('escape' => false)
+					)
+				);
+			?>
+			
+			</li>
+			<li><a href="javascript:void(0)" class="tab2"><span>Actions</span></a>
+			<ul class="sub_menu">
+											 <!--li><a href="javascript:void(0)" onclick="return activatecontents('active','change');">Publish</a></li>
+											 <li><a href="javascript:void(0)" onclick="return activatecontents('deactive','change');">Unpublish</a></li-->
+											 <!--li><a href="javascript:void(0)">Copy</a></li-->
+											 <li><a href="javascript:void(0)" onclick="return activatecontents('asd','del');">Trash</a></li>
+								 <li class="botCurv"></li>
+									</ul>
+			</li>
+			<li><a href="javascript:void(0)" onclick="editcontent();" id="linkedit"><span>Edit</span></a></li>
+			</ul><?php */?>
       </div>
-      <?php    $this->loginarea="links";    $this->subtabsel="activelinklist";
-            echo $this->renderElement('donation_submenus');  ?>
+            
+        </div>
+  
+    <div class="centerPage">
+      <div align="center" class="slider" id="toppanel" style="height: 20px; top:13px;right:-50px;width:545px !important; text-align:right;"> <?php echo $form->create("Donation", array("action" => "donation",'name' => 'donation', 'id' => "donation")) ?>
+        
+      </div>
+      
+      
+      
     </div>
   </div>
-  <div class="midCont" id="newcmmtasktab">
+  
+<div class="clearfix nav-submenu-container">
+	<div class="midCont submenu-Cont">
+		 <?php    $this->loginarea="links";    $this->subtabsel="activelinklist";
+            echo $this->renderElement('donation_submenus');  ?>   
+    </div>
+</div>
+  
+  
+<div class="midCont" id="newcmmtasktab">
     <?php if($session->check('Message.flash')){ ?>
     <div id="blck">
       <div class="msgBoxTopLft">
@@ -181,7 +206,8 @@ e($html->link($html->image('new.png', array('alt' => 'New')) . ' ',array('contro
     </div>
     <?php } ?>
     <!-- top curv image starts -->
-    <div> <span class="topLft_curv"></span> <span class="topRht_curv"></span>
+    <div> 
+    <!--<span class="topLft_curv"></span> <span class="topRht_curv"></span>-->
       <div class="gryTop">
         <div class="new_filter" > <span class="spnFilt">Filter:</span><span class="srchBg"><?php echo $form->input("searchkey", array('id' => 'searchkey', 'div' => false, 'label' => '',"maxlength" => "200"));?></span><span class="srchBg2"><?php echo $form->submit("Go", array('id' => 'searchkeysubmit', 'div' => false, 'label' => '','class'=>'btn'));
                         ?> </span> <span class="srchBg2">
@@ -192,7 +218,7 @@ e($html->link($html->image('new.png', array('alt' => 'New')) . ' ',array('contro
     </div>
     <?php $i=1; ?>
     <div class="tblData">
-      <table width="100%" border="0" cellspacing="0" cellpadding="0">
+      <table class="table table-bordered table-striped" width="100%" border="0" cellspacing="0" cellpadding="0">
         <tr class="trBg">
           <th align="center" style="width:2%;">#</th>
           <th align="center" style="width:3%;"><input type="checkbox" value="" name="checkall" id="checkall" /></th>
@@ -360,7 +386,8 @@ e($html->link($html->image('new.png', array('alt' => 'New')) . ' ',array('contro
         <?php } ?>
       </table>
     </div>
-    <div> <span class="botLft_curv"></span> <span class="botRht_curv"></span>
+    <div> 
+    <!--<span class="botLft_curv"></span> <span class="botRht_curv"></span>-->
       <div class="gryBot">
         <?php  echo $this->renderElement('newpagination');  ?>
       </div>
