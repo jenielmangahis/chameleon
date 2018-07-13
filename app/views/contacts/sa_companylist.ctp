@@ -77,7 +77,7 @@ e($html->link($html->image('take.png') . ' ' . __(''), array('controller'=>'admi
         </div>
 		
 				   <?php    $this->loginarea="contacts";    $this->subtabsel="sa_companylist";
-             echo $this->renderElement('relationships_submenus');  ?> 
+                      echo $this->renderElement('relationships_submenus');  ?> 
 		
 
 			 

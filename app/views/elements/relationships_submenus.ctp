@@ -1,5 +1,20 @@
+<!-- <div class="clear"></div>
+            <ul id="tab-container-1-nav" class="topTabs2"> -->
+
+
+
 <div class="clear"></div>
-            <ul id="tab-container-1-nav" class="topTabs2">
+<div id="tab-container-1" class="dropdown-button-container">
+
+	<div class="dropdown">
+    
+    <button class="btn btn-secondary btn-success dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    	Select Menu List
+    </button>
+
+                    <ul id="tab-container-1-nav" class="nav nav-pills dropdown-menu" aria-labelledby="dropdownMenuButton"> <!--old class = topTabs2-->
+
+
 <?php			
 if(!isset($hideSubMenuPermission))		
 {
@@ -270,6 +285,10 @@ if($flagSubHideMenuPermission)
 				</li> 
 <?php } ?>	
 
+   </ul>
+                    
+                  </div>
+                </div> <!--------END OF DIV------------>
 
-            </ul>
-			<div class="clear"></div>
+      <!--       </ul>
+			<div class="clear"></div> -->
