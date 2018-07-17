@@ -1,7 +1,7 @@
 <?php
 e(
 	$html->link(
-		$html->image('logo.jpg'),
+		$html->image('chameleonLogo.png'),
 		'/',
 		array('escape'=>false)
 	)
