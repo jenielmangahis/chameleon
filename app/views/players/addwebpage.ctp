@@ -14,39 +14,42 @@ $backUrl = $base_url.'players/adddetail/'.$option.'/'.$current_company; ?>
 //}
 </script>
 <?php echo $javascript->link('ckeditor/ckeditor'); ?>
-<div class="container">
-         <div class="titlCont">
-		  <div class="centerPage" >
+<div class="container clearfix">
+	<div class="titlCont">
+    	<div class="slider-centerpage clearfix">
+        	<div class="center-Page col-sm-6">
+            	<h2><?php echo ucfirst($option); ?> Web Pages</h2>
+            </div>
             
-<div align="center" class="slider" id="toppanel" style="height: 20px; top:13px;right: -50px;width:545px !important; text-align:right;">			
-
-       <?php 
-            echo $form->create("players", array("action" => "addwebpage/".$option, 'name' => 'addwebpage', 'type' => 'file','enctype'=>'multipart/form-data', 'id' => "addwebpage"));  
-            echo $form->hidden("option", array('id' => 'option','value'=>"$option"));
-            echo $form->hidden("Company.id", array('id' => 'companyid'));  
-			echo $form->hidden("projectname", array('id' => 'projectname','value'=>"$projectname"));
-			echo $form->hidden("projectid", array('id' => 'projectid','value'=>"$project_id"));
- 	   ?>
-          <script type='text/javascript'>
-              function setprojectid(projectid){
-                  document.getElementById('projectid').value= projectid;
-                  document.adminhome.submit();
-               }
-          </script>
-<button type="submit" value="Submit" class="sendBut" name="data[Action][redirectpage]">
-<?php e($html->image('save.png', array('alt' => 'Save'))); ?></button>
-<button type="submit" value="Submit" class="sendBut" name="data[Action][noredirection]">
-<?php e($html->image('apply.png', array('alt' => 'Apply'))); ?></button>
-<button type="button" id="saveForm" class="sendBut"  ONCLICK="javascript:(window.location='<?php echo $backUrl ?>')"><?php e($html->image('cancle.png', array('alt' => 'Cancle'))); ?></button>
-		  <?php
-//e($html->link($html->image('help.png', array('width' => '42', 'height' => '41')) . ' ','coming_soon/help',array('escape' => false)));
-echo $this->renderElement('new_slider'); 
-?>			
-</div>
-
+            <div class="slider-dashboard col-sm-6">
+            	<div class="icon-container">
+                	<?php 
+						echo $form->create("players", array("action" => "addwebpage/".$option, 'name' => 'addwebpage', 'type' => 'file','enctype'=>'multipart/form-data', 'id' => "addwebpage"));  
+						echo $form->hidden("option", array('id' => 'option','value'=>"$option"));
+						echo $form->hidden("Company.id", array('id' => 'companyid'));  
+						echo $form->hidden("projectname", array('id' => 'projectname','value'=>"$projectname"));
+						echo $form->hidden("projectid", array('id' => 'projectid','value'=>"$project_id"));
+				   ?>
+					  <script type='text/javascript'>
+						  function setprojectid(projectid){
+							  document.getElementById('projectid').value= projectid;
+							  document.adminhome.submit();
+						   }
+					  </script>
+					<button type="submit" value="Submit" class="sendBut" name="data[Action][redirectpage]">
+					<?php e($html->image('save.png', array('alt' => 'Save'))); ?></button>
+					<button type="submit" value="Submit" class="sendBut" name="data[Action][noredirection]">
+					<?php e($html->image('apply.png', array('alt' => 'Apply'))); ?></button>
+					<button type="button" id="saveForm" class="sendBut"  ONCLICK="javascript:(window.location='<?php echo $backUrl ?>')"><?php e($html->image('cancle.png', array('alt' => 'Cancle'))); ?></button>					
+                </div>
+                <?php
+					//e($html->link($html->image('help.png', array('width' => '42', 'height' => '41')) . ' ','coming_soon/help',array('escape' => false)));
+					echo $this->renderElement('new_slider');?>
+            </div>
             
-          <span class="titlTxt1"><?php  //echo $current_company_name; echo ($current_company_name !='')? ' : ' :'';  ?></span>&nbsp;
-          <span class="titlTxt"><?php echo ucfirst($option); ?> Web Pages</span>
+            <!--<span class="titlTxt1"><?php  //echo $current_company_name; echo ($current_company_name !='')? ' : ' :'';  ?></span>&nbsp;
+          <span class="titlTxt"><?php echo ucfirst($option); ?> Web Pages</span>-->     
+          
           <div class="topTabs" style="height:25px;">
              <?php /*?><ul>
 				 <li><button type="submit" value="Submit" class="button" name="data[Action][redirectpage]"><span>Save</span></button></li>
@@ -54,16 +57,28 @@ echo $this->renderElement('new_slider');
 				 <li><button type="button" id="saveForm" class="button"  ONCLICK="javascript:(window.location='<?php echo $backUrl ?>')"><span> Cancel</span></button></li>
 			  </ul><?php */?>
           </div>
-          <div class="clear "></div> 
+          
+        <!--<div align="center" class="slider" id="toppanel" style="height: 20px; top:13px;right: -50px;width:545px !important; text-align:right;">			
         
-	         <?php $this->loginarea="players";    $this->subtabsel='webpages';   
-			 
-			// echo $this->renderElement('players/player_inner_submenu');  
-			    echo $this->renderElement('players/playermerchant_submenus'); 
-			 ?>
-	        
-             </div>                 
+                                
+                </div>-->
+                 
         </div>
+    
+		                   
+    </div>
+        
+        
+
+<div class="clearfix nav-submenu-container">
+	<div class="midCont">
+	  <?php $this->loginarea="players";    $this->subtabsel='webpages';                
+		// echo $this->renderElement('players/player_inner_submenu');  
+			echo $this->renderElement('players/playermerchant_submenus'); 
+		 ?>
+    </div>
+</div>
+        
 <div id="addcmp"  class="midCont">	
 <?php if($session->check('Message.flash')) { echo $this->renderElement('error_message'); } ?>
 <table cellspacing="10" cellpadding="0">
@@ -77,10 +92,9 @@ echo $this->renderElement('new_slider');
 	<tr>
 		<td valign='top' align="right"><label class="boldlabel"><?php echo ucfirst($option); ?> Webpages</label></td>
 		<td width="85%">
-			 <span class="txtArea_top">
-				<span class="newtxtArea_bot">
-					 
-					<?php echo $form->select("Content.id",$webpagedropdown,$selectedwebpage,array('id' => 'id','class'=>'multilist'),"---Select---"); ?>
+			 <span class="txtArea-top">
+				<span class="newtxtArea-bot">					 
+					<?php echo $form->select("Content.id",$webpagedropdown,$selectedwebpage,array('id' => 'id','class'=>'multilistss select-box form-control'),"---Select---"); ?>
 				</span>
 			 </span>
 			<!--  <span style="margin-top:7px;" class="btnLft">

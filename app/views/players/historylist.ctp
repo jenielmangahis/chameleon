@@ -104,29 +104,39 @@
 </script>
 <?php $pagination->setPaging($paging); ?> 
 <!-- Body Panel starts -->
-<div class="container">
-         <div class="titlCont">
-		  <div class="centerPage" >
+<div class="container clearfix">
+	<div class="titlCont">
+    	<div class="slider-centerpage clearfix">
+        	<div class="center-Page col-sm-6">
+            	<h2><?php echo ucfirst($option); ?> List</h2>
+            </div>
             
-			<div align="center" class="slider" id="toppanel" style="height: 20px; top:13px;right: -50px;width:545px !important; text-align:right;">			
+            <div class="slider-dashboard col-sm-6">
+            	<div class="icon-container">
+                	 <?php echo $form->create("players", array("action" => "historylist",'name' => 'historylist', 'id' => "historylist")) ?>      
+					<script type='text/javascript'>
+                        function setprojectid(projectid){
+                            document.getElementById('projectid').value= projectid;
+                            document.adminhome.submit();
+                        }
+                    </script>				
+                </div>
+                <?php echo $this->renderElement('new_slider');?>
+            </div>
+            <!--<span class="titlTxt1" style="padding-top:17px !important">&nbsp;<?php  //echo $current_company_name; echo ($current_company_name !='')? ' : ' :'';  ?></span>&nbsp;
+            <span class="titlTxt"> <?php echo ucfirst($option); ?> List</span>-->
+            <!--<div align="center" class="slider" id="toppanel" style="height: 20px; top:13px;right: -50px;width:545px !important; text-align:right;">			
 
-            <?php echo $form->create("players", array("action" => "historylist",'name' => 'historylist', 'id' => "historylist")) ?>      
-            <script type='text/javascript'>
-                function setprojectid(projectid){
-                    document.getElementById('projectid').value= projectid;
-                    document.adminhome.submit();
-                }
-            </script><?php
-echo $this->renderElement('new_slider');
-
-?>			
-</div>
-			
-            <span class="titlTxt1" style="padding-top:17px !important">&nbsp;<?php  //echo $current_company_name; echo ($current_company_name !='')? ' : ' :'';  ?></span>&nbsp;
-            <span class="titlTxt"> <?php echo ucfirst($option); ?> List</span>
-          
-             <div class="clear" ></div> 
-	         <?php  $this->loginarea="players"; $this->subtabsel='histories';  
+			</div>-->
+            
+        </div>
+        
+	</div>
+        
+        
+<div class="clearfix nav-submenu-container">
+	<div class="midCont">
+	  <?php  $this->loginarea="players"; $this->subtabsel='histories';  
 	         if($option == 'sale' || $option =='vendor' || $option =='advertiser' || $option =='other' && $_GET['url'] !=  'players/historylist/advertiser/0'){
 			 echo $this->renderElement('players/playermerchant_submenus');
 	         	//echo $this->renderElement('players/advertiser_submenu');
@@ -136,15 +146,16 @@ echo $this->renderElement('new_slider');
 		   }
 		   else{
 	         	echo $this->renderElement('players/player_inner_submenu');
-	        } ?>   
-                            
-        </div></div>
+	        } ?>  
+    </div>
+</div>        
+        
 <div class="midCont" id="cmplisttab">
         <?php if($session->check('Message.flash')) { echo $this->renderElement('error_message'); } ?>
         <!-- top curv image starts -->
         <div>
-            <span class="topLft_curv"></span>
-            <span class="topRht_curv"></span>
+            <!--<span class="topLft_curv"></span>
+            <span class="topRht_curv"></span>-->
             <div class="gryTop">
             <div class="new_filter">   
                 <script type='text/javascript'>
@@ -161,7 +172,7 @@ echo $this->renderElement('new_slider');
             <div class="clear"></div></div>
         <?php $i=1; ?>			
         <div class="tblData">
-            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+            <table class="table table-bordered table-striped" width="100%" border="0" cellspacing="0" cellpadding="0">
                   <tr class="trBg">
                     <th align="center" valign="middle" style='width:1%;'>#</th>
                     <th align="center" valign="middle" style='width:2%;'><input type="checkbox" value="" name="checkall" id="checkall" /></th>
@@ -260,8 +271,8 @@ echo $this->renderElement('new_slider');
             </table> 
         </div>
         <div>
-            <span class="botLft_curv"></span>
-            <span class="botRht_curv"></span>
+            <!--<span class="botLft_curv"></span>
+            <span class="botRht_curv"></span>-->
             <div class="gryBot"><?php echo $this->renderElement('newpagination');  ?>
             </div>
             <div class="clear"></div>

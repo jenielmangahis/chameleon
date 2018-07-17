@@ -132,50 +132,65 @@ function activatecontents(act,op)
 
 <!--container starts here-->
 <?php $pagination->setPaging($paging); ?>
-<div class="container">
-<div class="titlCont"><div class="myclass">
+<div class="container clearfix">
+	<div class="titlCont">
+    	<div class="slider-centerpage clearfix">
+        	<div class="center-Page col-sm-6">
+            	<h2>
+                	<?php if($usertype==trim("admin")){  echo $this->renderElement('project_name'); } ?>
+					Email Tasks History
+                </h2>
+            </div>
+            
+            <div class="slider-dashboard col-sm-6">
+            	<div class="icon-container">
+                	<?php echo $form->create("players", array("action" => "taskhistory",'name' => 'taskhistory', 'id' => "taskhistory")) ?>
+					<script type='text/javascript'>
+                            function setprojectid(projectid){
+                                            document.getElementById('projectid').value= projectid;
+                                            document.adminhome.submit();
+                                    }
+                    </script>
+    
+                    <a href="javascript:void(0)" onclick="return activatecontents('asd','del');">
+                    <?php e($html->image('action.png', array('alt' => 'Delete'))); ?>
+                    </a>
+                </div>
+                 <?php echo $this->renderElement('new_slider');?>
+            </div>
+            
+            <div class="topTabs" style="height:25px;">
+				<?php /*?><ul class="dropdown">
+                <!-- <li><a href="/admins/addcommtask"><span>New</span></a></li>-->
+                <li><a href="javascript:void(0)" class="tab2"><span>Actions</span></a>
+                <ul class="sub_menu">
+                                                 <!--li><a href="javascript:void(0)" onclick="return activatecontents('active','change');">Publish</a></li>
+                                                 <li><a href="javascript:void(0)" onclick="return activatecontents('deactive','change');">Unpublish</a></li-->
+                                                 <!--li><a href="javascript:void(0)">Copy</a></li-->
+                                                 <li><a href="javascript:void(0)" onclick="return activatecontents('asd','del');">Trash</a></li>
+                                     <li class="botCurv"></li>
+                                        </ul>
+                </li>
+                <!--li><a href="javascript:void(0)" onclick="editcontent();" id="linkedit"><span>Edit</span></a></li-->
+                </ul><?php */?>
+            </div>
+            
+           <!-- <div align="center" class="slider" id="toppanel" style="height: 20px; top:13px;right: -50px;width:545px !important; text-align:right;">
 
-<div align="center" class="slider" id="toppanel" style="height: 20px; top:13px;right: -50px;width:545px !important; text-align:right;">			
-
-   <?php echo $form->create("players", array("action" => "taskhistory",'name' => 'taskhistory', 'id' => "taskhistory")) ?>
-                <script type='text/javascript'>
-                        function setprojectid(projectid){
-                                        document.getElementById('projectid').value= projectid;
-                                        document.adminhome.submit();
-                                }
-                </script>
-
-<a href="javascript:void(0)" onclick="return activatecontents('asd','del');">
-<?php e($html->image('action.png', array('alt' => 'Delete'))); ?>
-</a>
-<?php echo $this->renderElement('new_slider');
-?>			
+            </div>-->
+            
+        </div>
 </div>
- <?php if($usertype==trim("admin")){  echo $this->renderElement('project_name'); } ?>
-<span class="titlTxt">Email Tasks History </span>
 
-<div class="topTabs" style="height:25px;">
-<?php /*?><ul class="dropdown">
-<!-- <li><a href="/admins/addcommtask"><span>New</span></a></li>-->
-<li><a href="javascript:void(0)" class="tab2"><span>Actions</span></a>
-<ul class="sub_menu">
-                                 <!--li><a href="javascript:void(0)" onclick="return activatecontents('active','change');">Publish</a></li>
-                                 <li><a href="javascript:void(0)" onclick="return activatecontents('deactive','change');">Unpublish</a></li-->
-                                 <!--li><a href="javascript:void(0)">Copy</a></li-->
-                                 <li><a href="javascript:void(0)" onclick="return activatecontents('asd','del');">Trash</a></li>
-                     <li class="botCurv"></li>
-                        </ul>
-</li>
-<!--li><a href="javascript:void(0)" onclick="editcontent();" id="linkedit"><span>Edit</span></a></li-->
-</ul><?php */?>
+<div class="clearfix nav-submenu-container">
+	<div class="midCont submenu-Cont">
+		<?php    $this->loginarea="players";    $this->subtabsel="taskhistory";
+        echo $this->renderElement('players/player_email_submenu');  ?>  
+    </div>
 </div>
-               <?php    $this->loginarea="players";    $this->subtabsel="taskhistory";
-            echo $this->renderElement('players/player_email_submenu');  ?>
-</div>
-</div>
-                            <div class="midCont" id="newcmmtasktab">
 
 
+<div class="midCont" id="newcmmtasktab">
 <?php if($session->check('Message.flash')){ ?> 
 <div id="blck"> 
         <div class="msgBoxTopLft"><div class="msgBoxTopRht"><div class="msgBoxTopBg"></div></div></div>
@@ -192,8 +207,8 @@ function activatecontents(act,op)
 
                             <!-- top curv image starts -->
                             <div>
-                            <span class="topLft_curv"></span>
-								<span class="topRht_curv"></span>
+                            <!--<span class="topLft_curv"></span>
+								<span class="topRht_curv"></span>-->
                 
                 <div class="gryTop">
                <div class="new_filter">
@@ -207,7 +222,7 @@ function activatecontents(act,op)
 
                         <?php $i=1; ?>  
                         <div class="tblData">
-        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <table class="table table-bordered table-striped" width="100%" border="0" cellspacing="0" cellpadding="0">
         <tr class="trBg">
         <th align="center" style="width:2%;">#</th>
         <th align="center" style="width:3%;"><input type="checkbox" value="" name="checkall" id="checkall" /> <input type="hidden" id="current_domain" name="current_domain" value="<?php echo $current_domain;?>">                                    </th>   
@@ -339,8 +354,8 @@ function activatecontents(act,op)
   </div>
 
       <div>
-      <span class="botLft_curv"></span>
-	<span class="botRht_curv"></span>      
+      <!--<span class="botLft_curv"></span>
+	<span class="botRht_curv"></span>-->      
       <div class="gryBot"><?php echo $this->renderElement('newpagination');?>
       </div>
       <!--inner-container ends here-->

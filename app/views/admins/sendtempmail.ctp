@@ -9,76 +9,77 @@
 
 </script>
 
- <div class="container">  
-<div class="titlCont"><div style="width:960px; margin:0 auto;">
-            
-
-<div align="right" class="slider" id="toppanel" style="height: 20px; top:13px;right:-50px;width: 485px !important;text-align:right">
-                <?php  //echo $this->renderElement('new_slider');  ?>
-	         <?php echo $form->create("Admins", array("url" => "sendtempmail/$recordid",'name' => 'sendtempmail', 'id' => "sendtempmail")); ?>			
-				
-
-	<button class="sendBut" type="submit" value="Submit" name="data[Action][redirectpage]">
-		
-		<?php e($html->image('send.png')) ?>
-		</button>
-
-<?php
-$ids = $this->params['pass'][0]; 
-e($html->link($html->image('back.png') . ' ' . __(''), $base_url_admin."editholder/".$ids,array('escape' => false)));?>
-<?php /*?><button type="button" id="saveForm" class="sendBut"  ONCLICK="javascript:(window.location='<?php echo $cancleurl ?>')"><?php //e($html->image('cancle.png')) ?></button><?php */?>
-<?php e($html->link($html->image('cancle.png') . ' ' . __(''), array('controller'=>'players','action'=>'playerslist','company'),array('escape' => false))); 
- echo $this->renderElement('new_slider'); 
-
-?>
-
-
-<?php //e($html->link($html->image('cancle.png', array('width' => '42', 'height' => '41')) . ' ' . __(''), $base_url_admin."coming_soon/help",array('escape' => false)));
-
-?>
-		
-		
-		
+<div class="container clearfix">  
+	<div class="titlCont">
+    	<div class="slider-centerpage clearfix">
+        	<div class="center-Page col-sm-6">
+            	<h2>Send Mail</h2>
             </div>
-   
-     
-              <span class="titlTxt"> Send Mail </span>
             
-            <div class="topTabs" style="height:25px;">
+            <div class="slider-dashboard col-sm-6">
+            	<div class="icon-container">
+                	<?php  //echo $this->renderElement('new_slider');  ?>
+					<?php echo $form->create("Admins", array("url" => "sendtempmail/$recordid",'name' => 'sendtempmail', 'id' => "sendtempmail")); ?>			
+                    
+                    <button class="sendBut" type="submit" value="Submit" name="data[Action][redirectpage]">
+                    
+                    <?php e($html->image('send.png')) ?>
+                    </button>
+                    
+                    <?php
+                    $ids = $this->params['pass'][0]; 
+                    e($html->link($html->image('back.png') . ' ' . __(''), $base_url_admin."editholder/".$ids,array('escape' => false)));?>
+                    <?php e($html->link($html->image('cancle.png') . ' ' . __(''), array('controller'=>'players','action'=>'playerslist','company'),array('escape' => false)));?>
+                </div>
+                <?php echo $this->renderElement('new_slider'); ?>
+                
+            </div>
+        	
+            <!--<div align="right" class="slider" id="toppanel" style="height: 20px; top:13px;right:-50px;width: 485px !important;text-align:right">
+			</div>-->
+            <!--<span class="titlTxt"> Send Mail </span>-->
+            
+        	<div class="topTabs" style="height:25px;">
                 <!--<ul class="dropdown">
                               
                               <li><button type="button" id="saveForm" class="button"  ONCLICK="javascript:(window.location='<?php echo $backUrl ?>')"><span> Cancel</span></button></li>
                     
                 </ul>-->
             </div>
-			<div class="clear"></div>
-			
-            <?php    $this->loginarea="admins";    $this->subtabsel="emails";
-
-if($_GET['url'] === 'admins/sendtempmail/0'){
-?><div style=""><?php
-	echo $this->renderElement('players/advertiser_submenu'); 
-	?></div><?php
-}
-else if($_GET['url'] === 'admins/sendtempmail/company'){
-?><div style=""><?php
-	echo $this->renderElement('players/playermerchant_submenus'); 	
-?></div><?php
-	}
-elseif($_GET['url'] === 'admins/sendtempmail/sendmail'){
-?><div><?php
-	echo $this->renderElement('relationships_submenus'); 
-	?></div><?php
-}
-else{
-			echo $this->renderElement('member_submenus'); 
-}
-			 ?>  
-        </div></div>
+        
+        </div>
+    
+     </div>
 
 
 
-<div class="midPadd" id="sndmail">
+<div class="clearfix nav-submenu-container">
+	<div class="midCont">
+	         <?php    $this->loginarea="admins";    $this->subtabsel="emails";
+
+			if($_GET['url'] === 'admins/sendtempmail/0'){
+			?><div style=""><?php
+				echo $this->renderElement('players/advertiser_submenu'); 
+				?></div><?php
+			}
+			else if($_GET['url'] === 'admins/sendtempmail/company'){
+			?><div style=""><?php
+				echo $this->renderElement('players/playermerchant_submenus'); 	
+			?></div><?php
+				}
+			elseif($_GET['url'] === 'admins/sendtempmail/sendmail'){
+			?><div><?php
+				echo $this->renderElement('relationships_submenus'); 
+				?></div><?php
+			}
+			else{
+						echo $this->renderElement('member_submenus'); 
+			}
+						 ?>   
+    </div>
+</div>
+
+<div class="midPadd midCont" id="sndmail">
     <?php if($session->check('Message.flash')) { echo $this->renderElement('error_message'); } 
 	
 	
@@ -112,9 +113,9 @@ else{
                                         
 		<label class="boldlabel">Select Template </label>                                     
                                     </td>
-                                    <td><span class="txtArea_top">
-                                         <span class="txtArea_bot">
-                                         <?php echo $form->select("EmailTemplate.id",isset($templatedropdown)?$templatedropdown:'',null,array('id' => 'templateid','class'=>'multilist','onchange'=>'showselecttemplate(this.value)'),"---Select---"); ?>
+                                    <td><span class="txtArea-top">
+                                         <span class="txtArea-bot">
+                                         <?php echo $form->select("EmailTemplate.id",isset($templatedropdown)?$templatedropdown:'',null,array('id' => 'templateid','class'=>'multilists form-control','onchange'=>'showselecttemplate(this.value)'),"---Select---"); ?>
                                          <?php echo $form->error('EmailTemplate.id', array('class' => 'errormsg')); ?> 
                                          </span>     </span></td>
                                 </tr>
@@ -125,8 +126,8 @@ else{
     
                                     </td>
                                     <td>
-                                    <span class="intpSpan" style="vertical-align: top"> 
-                                            <?php echo $form->input("EmailTemplate.subject", array('id' => 'subject', 'div' => false, 'label' => '','style' =>'width:231px;',"class" => "inpt_txt_fld","maxlength" => "250"));?>
+                                    <span class="intp-Span" style="vertical-align: top"> 
+                                            <?php echo $form->input("EmailTemplate.subject", array('id' => 'subject', 'div' => false, 'label' => '','style' =>'width:231px;',"class" => "inpt-txt-fld form-control","maxlength" => "250"));?>
                                         </span>
                                     </td>
                                 </tr>
@@ -138,8 +139,8 @@ else{
 
                                     </td>
                                     <td>
-                                    <span class="intpSpan" style="vertical-align: top">
-                                            <?php echo $form->input("EmailTemplate.fromid", array('id' => 'fromid', 'div' => false, 'label' => '','style' =>'width:231px;',"class" => "inpt_txt_fld",'value'=>$adminmail));?>
+                                    <span class="intp-Span" style="vertical-align: top">
+                                            <?php echo $form->input("EmailTemplate.fromid", array('id' => 'fromid', 'div' => false, 'label' => '','style' =>'width:231px;',"class" => "inpt-txt-fld form-control",'value'=>$adminmail));?>
                                         </span>
                                     </td>
                                 </tr>
@@ -168,7 +169,7 @@ else{
                     <td valign="top" colspan="2"> <?php   echo $form->textarea('EmailTemplate.content', array('id'=>'content','class'=>'ckeditor'));      ?> </td>
                 </tr>       
                 <tr>
-                <td colspan="2"><button type="submit" value="Submit" class="button" name="data[Action][redirectpage]"><span>Send</span></button></td>
+                <td colspan="2"><button style="margin-top:10px" class="btn btn-secondary" type="submit" value="Submit"  name="data[Action][redirectpage]"><span>Send</span></button></td>
                 </tr> 
                         
                <tr><td colspan="2"><div class="top-bar" style="text-align: left; padding-top: 5px; ">

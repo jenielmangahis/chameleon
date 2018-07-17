@@ -105,28 +105,32 @@
 </script>
 <?php $pagination->setPaging($paging); ?> 
 <!-- Body Panel starts -->
-<div class="container">
-         <div class="titlCont">
-		  <div class="centerPage" >
+<div class="container clearfix">
+	<div class="titlCont">
+    	<div class="slider-centerpage clearfix">
+        	<div class="center-Page col-sm-6">
+            	<h2><?php echo ucfirst($option); ?> Branch List</h2>
+            </div>
             
-			<div align="center" class="slider" id="toppanel" style="height: 20px; top:13px;right: -50px;width:545px !important; text-align:right;">			
-
-            <?php echo $form->create("players", array("action" => "playerslist",'name' => 'playerslist', 'id' => "playerslist")) ?>      
-            <script type='text/javascript'>
-                function setprojectid(projectid){
-                    document.getElementById('projectid').value= projectid;
-                    document.adminhome.submit();
-                }
-            </script>
-			<?php
-e($html->link($html->image('new.png', array('alt' => 'New')) . ' ',array('controller'=>'players','action'=>'adddetail',$option,'branch'),array('escape' => false)));?>
-<a href="javascript:void(0)" onclick="return activatecontents('asd','del');"><?php e($html->image('action.png', array('alt' => 'Delete'))); ?></a>
-<a href="javascript:void(0)" onclick="editholder();" id="linkedit"><?php e($html->image('edit.png', array('alt' => 'Edit'))); ?></a>
-<?php echo $this->renderElement('new_slider');
-?>			
-</div>
-               <span class="titlTxt1"><?php  //echo $current_company_name; echo ($current_company_name !='')? ' : ' :'';  ?></span>&nbsp;
-            <span class="titlTxt"><?php echo ucfirst($option); ?> Branch List</span>
+            <div class="slider-dashboard col-sm-6">
+            	<div class="icon-container">
+					<?php echo $form->create("players", array("action" => "playerslist",'name' => 'playerslist', 'id' => "playerslist")) ?>      
+                    <script type='text/javascript'>
+                        function setprojectid(projectid){
+                            document.getElementById('projectid').value= projectid;
+                            document.adminhome.submit();
+                        }
+                    </script>
+                    <?php
+                    e($html->link($html->image('new.png', array('alt' => 'New')) . ' ',array('controller'=>'players','action'=>'adddetail',$option,'branch'),array('escape' => false)));?>
+                    <a href="javascript:void(0)" onclick="return activatecontents('asd','del');"><?php e($html->image('action.png', array('alt' => 'Delete'))); ?></a>
+                    <a href="javascript:void(0)" onclick="editholder();" id="linkedit"><?php e($html->image('edit.png', array('alt' => 'Edit'))); ?></a>
+                </div>
+                <?php echo $this->renderElement('new_slider');?>
+            </div>
+            
+			<!--<span class="titlTxt1"><?php  //echo $current_company_name; echo ($current_company_name !='')? ' : ' :'';  ?></span>&nbsp;
+            <span class="titlTxt"><?php echo ucfirst($option); ?> Branch List</span>-->
             <div class="topTabs" style="height:25px;">
                 <?php /*?><ul class="dropdown">
                     <li>
@@ -149,23 +153,31 @@ e($html->link($html->image('new.png', array('alt' => 'New')) . ' ',array('contro
                     
                 </ul><?php */?>
             </div>
-            <div class="clear"></div>
-        
-
-	         <?php    $this->loginarea="players";    $this->subtabsel='branches';
-                           // echo $this->renderElement('players/player_inner_submenu'); 
-  echo $this->renderElement('players/playermerchant_submenus'); 
-						   ?>   
-
+            
+            <!--<div align="center" class="slider" id="toppanel" style="height: 20px; top:13px;right: -50px;width:545px !important; text-align:right;">			
+            
+                        </div>-->
         </div>
+
+
     </div>
+
+
+
+<div class="clearfix nav-submenu-container">
+	<div class="midCont">
+	 <?php    $this->loginarea="players";    $this->subtabsel='branches';
+                   // echo $this->renderElement('players/player_inner_submenu'); 
+      echo $this->renderElement('players/playermerchant_submenus'); ?>
+    </div>
+</div>
 
 <div class="midCont" id="cmplisttab">
         <?php if($session->check('Message.flash')) { echo $this->renderElement('error_message'); } ?>
         <!-- top curv image starts -->
         <div>
-            <span class="topLft_curv"></span>
-            <span class="topRht_curv"></span>
+            <!--<span class="topLft_curv"></span>
+            <span class="topRht_curv"></span>-->
             <div class="gryTop">
             <div class="new_filter">   
                 <script type='text/javascript'>
@@ -182,7 +194,7 @@ e($html->link($html->image('new.png', array('alt' => 'New')) . ' ',array('contro
             <div class="clear"></div></div>
         <?php $i=1; ?>			
         <div class="tblData">
-            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+            <table class="table table-bordered table-striped" width="100%" border="0" cellspacing="0" cellpadding="0">
                 <tr class="trBg">
                     <th align="center" valign="middle" style='width:1%'>#</th>
                     <th align="center" valign="middle" style='width:2%;'><input type="checkbox" value="" name="checkall" id="checkall" /></th>
@@ -312,8 +324,8 @@ e($html->link($html->image('new.png', array('alt' => 'New')) . ' ',array('contro
             </table> 
         </div>
         <div>
-            <span class="botLft_curv"></span>
-            <span class="botRht_curv"></span>
+            <!--<span class="botLft_curv"></span>
+            <span class="botRht_curv"></span>-->
             <div class="gryBot"><?php //if($companydata) { 
 			echo $this->renderElement('newpagination'); //} ?>
             </div>

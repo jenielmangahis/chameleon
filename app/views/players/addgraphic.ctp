@@ -10,51 +10,66 @@ $backUrl = $base_url.'players/playerslist/'.$option;
 ?> 
 
 <div class="container">
-         <div class="titlCont">
-		  <div class="centerPage" >
-           
-            <div align="center" class="slider" id="toppanel" style="height: 20px; top:13px;right: -50px;width:545px !important; text-align:right;">			
-
-           <?php echo $form->create("players", array("action" => "addgraphic/".$option, 'name' => 'addgraphic', 'type' => 'file','enctype'=>'multipart/form-data', 'id' => "addgraphic"));  
-            echo $form->hidden("option", array('id' => 'option','value'=>"$option"));
-            echo $form->hidden("Company.id", array('id' => 'companyid'));  
-			echo $form->hidden("projectname", array('id' => 'projectname','value'=>"$projectname"));
-			echo $form->hidden("projectid", array('id' => 'projectid','value'=>"$project_id"));
-	 	   ?>
+    <div class="titlCont">
+    	<div class="slider-centerpage clearfix">
+        	<div class="center-Page col-sm-6">
+            	<h2><?php echo ucfirst($option); ?> Graphics</h2>
+            </div>
+            
+            <div class="slider-dashboard col-sm-6">
+            	<div class="icon-container">
+                	<?php echo $form->create("players", array("action" => "addgraphic/".$option, 'name' => 'addgraphic', 'type' => 'file','enctype'=>'multipart/form-data', 'id' => "addgraphic"));  
+					echo $form->hidden("option", array('id' => 'option','value'=>"$option"));
+					echo $form->hidden("Company.id", array('id' => 'companyid'));  
+					echo $form->hidden("projectname", array('id' => 'projectname','value'=>"$projectname"));
+					echo $form->hidden("projectid", array('id' => 'projectid','value'=>"$project_id"));
+				   ?>
                  
-            <script type='text/javascript'>
-                function setprojectid(projectid){
-                    document.getElementById('projectid').value= projectid;
-                    document.adminhome.submit();
-                }
-            </script>
-			<button type="submit" value="Submit" class="sendBut" name="data[Action][redirectpage]">
-			<?php e($html->image('save.png', array('alt' => 'Save'))); ?></button>
-<button type="submit" value="Submit" class="sendBut" name="data[Action][noredirection]">
-<?php e($html->image('apply.png', array('alt' => 'Apply'))); ?></button>
-<button type="button" id="saveForm" class="sendBut"  ONCLICK="javascript:(window.location='<?php echo $backUrl ?>')"><?php e($html->image('cancle.png', array('alt' => 'Cancle'))); ?></button>
-<?php
-//e($html->link($html->image('help.png', array('width' => '42', 'height' => '41')) . ' ','coming_soon/help',array('escape' => false)));
-echo $this->renderElement('new_slider'); 
-?>			
-</div>
-            <span class="titlTxt1"><?php  //echo $current_company_name; echo ($current_company_name !='')? ' : ' :'';  ?></span>&nbsp;
-             <span class="titlTxt"><?php echo ucfirst($option); ?> Graphics</span>
-           <div class="topTabs" style="height:25px;">
+					<script type='text/javascript'>
+                        function setprojectid(projectid){
+                            document.getElementById('projectid').value= projectid;
+                            document.adminhome.submit();
+                        }
+                    </script>
+                    <button type="submit" value="Submit" class="sendBut" name="data[Action][redirectpage]">
+                    <?php e($html->image('save.png', array('alt' => 'Save'))); ?></button>
+                    <button type="submit" value="Submit" class="sendBut" name="data[Action][noredirection]">
+                    <?php e($html->image('apply.png', array('alt' => 'Apply'))); ?></button>
+                    <button type="button" id="saveForm" class="sendBut"  ONCLICK="javascript:(window.location='<?php echo $backUrl ?>')"><?php e($html->image('cancle.png', array('alt' => 'Cancle'))); ?></button>                    
+                </div>
+                	<?php
+                    //e($html->link($html->image('help.png', array('width' => '42', 'height' => '41')) . ' ','coming_soon/help',array('escape' => false)));
+                    echo $this->renderElement('new_slider'); ?>	
+            </div>
+			<!--<span class="titlTxt1"><?php  //echo $current_company_name; echo ($current_company_name !='')? ' : ' :'';  ?></span>&nbsp;
+             <span class="titlTxt"><?php echo ucfirst($option); ?> Graphics</span>-->
+            
+            <div class="topTabs" style="height:25px;">
                <?php /*?><ul>
 					<li><button type="submit" value="Submit" class="button" name="data[Action][redirectpage]"><span>Save</span></button></li>
 					<li><button type="submit" value="Submit" class="button" name="data[Action][noredirection]"><span>Apply</span></button></li>
 					<li><button type="button" id="saveForm" class="button"  ONCLICK="javascript:(window.location='<?php echo $backUrl ?>')"><span> Cancel</span></button></li>
 				</ul><?php */?>
-            </div>
-            <div class="clear" ></div> 
-        	<?php    $this->loginarea="players";    $this->subtabsel='graphics';
-                         //   echo $this->renderElement('players/player_inner_submenu');  
-						   echo $this->renderElement('players/playermerchant_submenus'); 
-						 ?>   
-        	
-             </div>
+            </div>	
+            
+            <!--<div align="center" class="slider" id="toppanel" style="height: 20px; top:13px;right: -50px;width:545px !important; text-align:right;">			
+
+           		
+            </div>	-->
         </div>
+    		  
+	</div>
+        
+
+<div class="clearfix nav-submenu-container">
+	<div class="midCont">
+		<?php    $this->loginarea="players";    $this->subtabsel='graphics';
+         //   echo $this->renderElement('players/player_inner_submenu');  
+           echo $this->renderElement('players/playermerchant_submenus'); ?>   
+    </div>
+</div>        
+
+        
 <div id="addcmp"  class="midCont">	
 <?php if($session->check('Message.flash')) { echo $this->renderElement('error_message'); } ?>
 <table cellspacing="10" cellpadding="0">
