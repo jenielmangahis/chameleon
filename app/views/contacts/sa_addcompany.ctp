@@ -10,6 +10,9 @@ $('#compAnies').addClass("butBgSelt");
 				$act = 'add';
 		}      
 ?>
+
+
+
 <div class="titlCont"><div style="width:960px;margin:0 auto">
     
    <div class="slider" id="toppanel" style="height: 20px; top:13px;right: -50px;width:545px !important; text-align:right;">
@@ -44,7 +47,7 @@ $('#compAnies').addClass("butBgSelt");
              echo $this->renderElement('memberlistsecondlevel_submenus');  ?> 
 </div>
 </div>
-<div class="rightpanel">
+<div class="midCont">
 <div id="center-column">
 	<div class="left">
 		
@@ -268,7 +271,7 @@ $('#compAnies').addClass("butBgSelt");
 				
 			</div></div>
  
-</div><!--inner-container ends here-->
+</div><!--inner-rightpanel1 ends here-->
 
   
 <div class="clear"></div>
