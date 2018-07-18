@@ -126,31 +126,28 @@ $('#playMnu').addClass("butBgSelt");
 </script>
 <?php $pagination->setPaging($paging); ?> 
 <!-- Body Panel starts -->
-<div class="container">
-         <div class="titlCont">
-		  <div class="centerPage"  style="padding-top: 2px;">
-		  
-			<div align="center" class="slider" id="toppanel" style="height: 20px; top:13px;right:10px;width:545px !important; text-align:right;">			
-
-            <?php echo $form->create("players", array("action" => "types/contact",'name' => 'contacttype', 'id' => "contacttype")) ?> 
-                 
-            <script type='text/javascript'>
-                function setprojectid(projectid){
-                    document.getElementById('projectid').value= projectid;
-                    document.adminhome.submit();
-                }
-            </script><?php
-//e($html->link($html->image('help.png', array('width' => '42', 'height' => '41')) . ' ','coming_soon/help',array('escape' => false)));
-echo $this->renderElement('new_slider');
-?>			
-</div>
-           <?php if($usertype==trim("admin")){?>
-		    
-			<span class="titlTxt1"><?php echo $project['Project']['project_name'];  ?>:&nbsp;</span>
-			<?php } ?>
-			
-            <span class="titlTxt"><?php echo $page_title; ?></span>
-             <div class="topTabs" style="padding-top:42px;">
+<div class="container clearfix">
+	<div class="titlCont">
+    	<div class="slider-centerpage clearfix">
+        	<div class="center-Page col-sm-6">
+            	<h2><?php echo $page_title; ?></h2>
+            </div>
+            
+            <div class="slider-dashboard col-sm-6">
+            	<div class="icon-container">
+                	<?php echo $form->create("players", array("action" => "types/contact",'name' => 'contacttype', 'id' => "contacttype")) ?>                  
+					<script type='text/javascript'>
+                        function setprojectid(projectid){
+                            document.getElementById('projectid').value= projectid;
+                            document.adminhome.submit();
+                        }
+                    </script>
+                    	
+                </div>
+                <?php echo $this->renderElement('new_slider'); ?>
+            </div>
+            
+            <div class="topTabs" style="padding-top:42px;">
 			
 			<?php if(isset($usertype) &&  $usertype == 'admin') { ?>
 			<ul class="dropdown" >
@@ -175,12 +172,23 @@ echo $this->renderElement('new_slider');
 			</ul>
 			<?php } ?>
 </div>
-            <div class="clear"></div>
+
+			<!--<div align="center" class="slider" id="toppanel" style="height: 20px; top:13px;right:10px;width:545px !important; text-align:right;">			
+
+			</div>-->
             
-	         <?php    $this->loginarea="players";    $this->subtabsel= $option;
-                            echo $this->renderElement('players/player_type_submenus');  ?>   
-                            
-        </div></div>
+        </div>
+    
+   </div>
+   
+   
+<div class="clearfix nav-submenu-container">
+	<div class="midCont submenu-Cont">
+		<?php    $this->loginarea="players";    $this->subtabsel= $option;
+            echo $this->renderElement('players/player_type_submenus');  ?>    
+    </div>
+</div>
+   
 <div class="midCont" id="newcnttab">	
 
 	<?php if($session->check('Message.flash')) { echo $this->renderElement('error_message'); } ?>
@@ -188,8 +196,8 @@ echo $this->renderElement('new_slider');
 
 
     <div>
-    <span class="topLft_curv"></span>
-    <span class="topRht_curv"></span>                
+    <!--<span class="topLft_curv"></span>
+    <span class="topRht_curv"></span> -->               
         <div class="gryTop">
         		
                 <?php echo $form->create("Admins", array("action" => "addcontacttype",'name' => 'addcontacttype', 'id' => "addcontacttype")) ?>
@@ -219,7 +227,7 @@ echo $this->renderElement('new_slider');
 </div>
 
 <div class="tblData">
-                      <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                      <table class="table table-bordered table-striped" width="100%" border="0" cellspacing="0" cellpadding="0">
                 <tr class="trBg"> 
 					<th align="center" valign="middle" style="width:1%">#</th>
 					<th align="center" valign="middle" style="width:1%"><input type="checkbox" id="checkall" name="checkall" value=""></th>
@@ -293,8 +301,8 @@ echo $this->renderElement('new_slider');
 </div><!--inner-container ends here-->
 
    <div>
-                    <span class="botLft_curv"></span>
-                    <span class="botRht_curv"></span>
+                    <!--<span class="botLft_curv"></span>
+                    <span class="botRht_curv"></span>-->
       
                     <div class="gryBot">
                     

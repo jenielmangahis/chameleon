@@ -119,59 +119,68 @@ $('#playMnu').addClass("butBgSelt");
 </script>
 <?php $pagination->setPaging($paging); ?> 
 <!-- Body Panel starts -->
-<div class="container">
-         <div class="titlCont">
-		  <div class="centerPage" >
-		  
-         
-			<div align="center" class="slider" id="toppanel" style="height: 20px; top:13px;right:10px;width:545px !important; text-align:right;">			
-
-            <?php echo $form->create("players", array("action" => "types/nonprofit",'name' => 'nonprofitlist', 'id' => "nonprofitlist")) ?>      
-            <script type='text/javascript'>
-                function setprojectid(projectid){
-                    document.getElementById('projectid').value= projectid;
-                    document.adminhome.submit();
-                }
-            </script>
-			<?php if(isset($usertype) &&  $usertype == 'admin') { ?>
-			
-					<?php
-							e($html->link(
-								$html->image('new.png'),
-								array('controller'=>'players','action'=>'addnonprofittype'),
-								array('escape' => false)
-								)
-							);
-						?>
-					<a href="javascript:void(0)" onclick="return activatecontents('asd','del');"><?php e($html->image('action.png')); ?></a>
-                     <button type="button" id="saveForm" class="sendBut"  ONCLICK="javascript:(window.location='<?php echo $backUrl ?>')"><?php e($html->image('cancle.png')); ?></button>
-			
-			<?php } ?>
-			<?php
-//e($html->link($html->image('help.png', array('width' => '42', 'height' => '41')) . ' ','coming_soon/help',array('escape' => false)));
-echo $this->renderElement('new_slider');
-?>			
-</div>
-			<?php if($usertype==trim("admin")){?>
-	            <span class="titlTxt" style="padding-top:18px !important"><?php //echo $project['Project']['project_name'];  ?>&nbsp;</span>
-			 <?php } ?>		
-			 
-            <span class="titlTxt" style="padding-top:18px !important"><?php echo $page_title; ?></span>
-            <div class="topTabs" style="height:25px;">
-			
-</div>
-            <div class="clear"></div>
+<div class="container clearfixs">
+	<div class="titlCont">
+    	<div class="slider-centerpage clearfix">
+        	 <div class="center-Page col-sm-6">
+            	<h2><?php echo $page_title; ?></h2>
+            </div>
+            <div class="slider-dashboard col-sm-6">
+            	<div class="icon-container">
+                	<?php echo $form->create("players", array("action" => "types/nonprofit",'name' => 'nonprofitlist', 'id' => "nonprofitlist")) ?>      
+					<script type='text/javascript'>
+                        function setprojectid(projectid){
+                            document.getElementById('projectid').value= projectid;
+                            document.adminhome.submit();
+                        }
+                    </script>
+                    <?php if(isset($usertype) &&  $usertype == 'admin') { ?>
+                    
+                            <?php
+                                    e($html->link(
+                                        $html->image('new.png'),
+                                        array('controller'=>'players','action'=>'addnonprofittype'),
+                                        array('escape' => false)
+                                        )
+                                    );
+                                ?>
+                            <a href="javascript:void(0)" onclick="return activatecontents('asd','del');"><?php e($html->image('action.png')); ?></a>
+                             <button type="button" id="saveForm" class="sendBut"  ONCLICK="javascript:(window.location='<?php echo $backUrl ?>')"><?php e($html->image('cancle.png')); ?></button>
+                    
+                    <?php } ?>                    
+                </div>
+                <?php echo $this->renderElement('new_slider');?>
+            </div>
             
-	         <?php    $this->loginarea="players";    $this->subtabsel= $option;
-                            echo $this->renderElement('players/player_type_submenus');  ?>   
-                            
-        </div></div>
+            <?php /*?><?php if($usertype==trim("admin")){?>
+	            <span class="titlTxt" style="padding-top:18px !important"><?php //echo $project['Project']['project_name'];  ?>&nbsp;</span>
+			 <?php } ?><?php */?>		
+			 
+            <!--<span class="titlTxt" style="padding-top:18px !important"><?php echo $page_title; ?></span>-->
+            <div class="topTabs" style="height:25px;">
+            
+            </div>
+            
+            <!--<div align="center" class="slider" id="toppanel" style="height: 20px; top:13px;right:10px;width:545px !important; text-align:right;">			
+			</div>-->
+        </div>
+                
+</div>
+
+
+<div class="clearfix nav-submenu-container">
+	<div class="midCont submenu-Cont">
+		<?php    $this->loginarea="players";    $this->subtabsel= $option;
+        echo $this->renderElement('players/player_type_submenus');  ?>   
+    </div>
+</div>
+
 <div class="midCont" id="newcntlist">
         <?php if($session->check('Message.flash')) { echo $this->renderElement('error_message'); } ?>
          <!-- top curv image starts -->
         <div>
-            <span class="topLft_curv"></span>
-            <span class="topRht_curv"></span>
+            <!--<span class="topLft_curv"></span>
+            <span class="topRht_curv"></span>-->
             <div class="gryTop">
 				<div class="new_filter">
                 <span class="spnFilt">Filter:</span><span class="srchBg"><?php echo $form->input("searchkey", array('id' => 'searchkey', 'div' => false, 'label' => '',"maxlength" => "200"));?></span><span class="srchBg2"><?php echo $form->submit("Go", array('id' => 'searchkeysubmit', 'div' => false, 'label' => ''));
@@ -186,7 +195,7 @@ echo $this->renderElement('new_slider');
         <div class="tblData">
 
 
-            <table width="100%" border="0" cellspacing="0" cellpadding="0" class="admgrid"> 
+            <table class="table table-bordered table-striped" width="100%" border="0" cellspacing="0" cellpadding="0" class="admgrid"> 
                 <tr class="trBg">
                     <th align="center" valign="middle" style="width:1%">#</th>
                     <th align="center" valign="middle" style="width:2%"><input type="checkbox" value="" name="checkall" id="checkall" /></th>
@@ -282,8 +291,8 @@ echo $this->renderElement('new_slider');
 
         </div>
         <div>
-            <span class="botLft_curv"></span>
-            <span class="botRht_curv"></span>
+            <!--<span class="botLft_curv"></span>
+            <span class="botRht_curv"></span>-->
             <div class="gryBot"><?php echo $this->renderElement('newpagination');  ?>
             </div>
             <div class="clear"></div>

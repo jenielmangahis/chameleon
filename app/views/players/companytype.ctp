@@ -11,25 +11,29 @@ $('#type').addClass("butBgSelt");
 <!--container starts here-->
 <?php $pagination->setPaging($paging); ?>
 <div class="titlCont">
-<div class="centerPage">
-      
-		<div align="center" class="slider" id="toppanel" style="height: 20px; top:13px;right: -50px;width:545px !important; text-align:right;">	 <?php echo $form->create("Admins", array("action" => "companytype",'name' => 'companytype', 'id' => "companytype"))?> 		
-<?php
-e($html->link($html->image('new.png', array('alt' => 'New')) . ' ',array('controller'=>'admins','action'=>'addcompanytype'),array('escape' => false))); ?>
- <ul class="sub_menu">
-                        <li><a onclick="return activatecontents('active','change');" href="javascript:void(0)">Publish</a></li>
-                        <li><a onclick="return activatecontents('deactive','change');" href="javascript:void(0)">Unpublish</a></li>
-                        <li><a onclick="return activatecontents('asd','del');" href="javascript:void(0)">Trash</a></li>
-                        <li class="botCurv"></li>
-                </ul></li>
-    <a id="linkedit" onclick="editholder();" href="javascript:void(0)"><?php e($html->image('edit.png', array('alt' => 'Edit'))); ?></a>
-        </ul>
-<?php echo $this->renderElement('new_slider'); 
-?>			
-</div>
-
-<span class="titlTxt">Company Types </span>
-<div class="topTabs" style="height:25px;">
+	<div class="slider-centerpage clearfix">
+        <div class="center-Page col-sm-6">
+            <h2>Company Types</h2>
+        </div>
+        
+        <div class="slider-dashboard col-sm-6">
+        	<div class="icon-container">
+            	<?php echo $form->create("Admins", array("action" => "companytype",'name' => 'companytype', 'id' => "companytype"))?> 		
+				<?php
+                e($html->link($html->image('new.png', array('alt' => 'New')) . ' ',array('controller'=>'admins','action'=>'addcompanytype'),array('escape' => false))); ?>
+                <ul class="sub_menu">
+                                <li><a onclick="return activatecontents('active','change');" href="javascript:void(0)">Publish</a></li>
+                                <li><a onclick="return activatecontents('deactive','change');" href="javascript:void(0)">Unpublish</a></li>
+                                <li><a onclick="return activatecontents('asd','del');" href="javascript:void(0)">Trash</a></li>
+                                <li class="botCurv"></li>
+                        </ul></li>
+                <a id="linkedit" onclick="editholder();" href="javascript:void(0)"><?php e($html->image('edit.png', array('alt' => 'Edit'))); ?></a>
+                </ul>
+            </div>
+             <?php echo $this->renderElement('new_slider'); ?>
+        </div>
+        
+        <div class="topTabs" style="height:25px;">
         <?php /*?><ul class="dropdown">
                 <li class="">
 				<?php
@@ -51,9 +55,17 @@ e($html->link($html->image('new.png', array('alt' => 'New')) . ' ',array('contro
                 <li><a id="linkedit" onclick="editholder();" href="javascript:void(0)"><span>Edit</span></a></li>
         </ul><?php */?>
         </div>
-		<div class="clear"></div>
-            <?php $this->companytype="tabSelt";echo $this->renderElement('super_admin_types'); ?>
-</div></div>
+        
+    </div>
+
+</div>
+
+<div class="clearfix nav-submenu-container">
+	<div class="midCont submenu-Cont">
+		<?php $this->companytype="tabSelt";echo $this->renderElement('super_admin_types'); ?>   
+    </div>
+</div>
+
 <div class="midCont" id="newcmptab">
 
 	<?php if($session->check('Message.flash')) { echo $this->renderElement('error_message'); } ?>
