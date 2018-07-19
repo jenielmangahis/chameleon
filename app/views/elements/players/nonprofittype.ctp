@@ -122,7 +122,7 @@ $('#playMnu').addClass("butBgSelt");
 <div class="container clearfixs">
 	<div class="titlCont">
     	<div class="slider-centerpage clearfix">
-        	 <div class="center-Page col-sm-6">
+            <div class="center-Page col-sm-6">
             	<h2><?php echo $page_title; ?></h2>
             </div>
             <div class="slider-dashboard col-sm-6">

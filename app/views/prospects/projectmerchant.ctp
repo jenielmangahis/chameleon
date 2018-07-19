@@ -113,48 +113,50 @@ $('#prosMnu').addClass("butBgSelt");
 </script>
 <?php $pagination->setPaging($paging); ?> 
   <!-- Body Panel starts -->
-<div class="container">
-         <div class="titlCont">
-		  <div class="centerPage" >
+<div class="container clearfix">
+	<div class="titlCont">
+    	<div class="slider-centerpage clearfix">
+        	<div class="center-Page col-sm-3">
+            	<h2>Prospects</h2>
+            </div>
             
-			<div align="center" class="slider" id="toppanel" style="height: 20px; top:13px;right: -50px;width:545px !important; text-align:right;">			
-
-            <?php echo $form->create("prospects", array("action" => "projectmerchant",'name' => 'projectmerchant', 'id' => "projectmerchant")) ?>      
-            <script type='text/javascript'>
-                function setprojectid(projectid){
-                    document.getElementById('projectid').value= projectid;
-                    document.adminhome.submit();
-                }
-            </script>
-<?php
-$ids = $this->params['pass'][0]; 
-e($html->link($html->image('call.png') . ' ' . __(''), array('controller'=>'admins','action'=>'call',$ids),array('escape' => false)));
-
-e($html->link($html->image('email.png') . ' ' . __(''), array('controller'=>'admins','action'=>'sendtempmail',$ids),array('escape' => false)));
-
-e($html->link($html->image('sms.png') . ' ' . __(''), array('controller'=>'admins','action'=>'sendsms','1'),array('escape' => false)));
-
-
-e($html->link($html->image('message.png') . ' ' . __(''), array('controller'=>'admins','action'=>'messagenew',$ids),array('escape' => false)));
-
-e($html->link($html->image('event.png') . ' ' . __(''), array('controller'=>'admins','action'=>'appointment',$ids),array('escape' => false)));
-
-e($html->link($html->image('note.png') . ' ' . __(''), "../players/notelist/2",array('escape' => false)));
-
-e($html->link($html->image('take.png') . ' ' . __(''), array('controller'=>'admins','action'=>'coming_soon','task'),array('escape' => false)));
-e($html->link($html->image('new.png') . ' ',array('controller'=>'prospects','action'=>'addmerchant'),array('escape' => false))); ?>
-<a href="javascript:void(0)" onclick="return activatecontents('asd','del');"><?php e($html->image('action.png')); ?></a>
-<a href="javascript:void(0)" onclick="editholder();" id="linkedit"><?php e($html->image('edit.png')); ?></a>
-<?php echo $this->renderElement('new_slider'); 
-?>			
-</div>
-           
-			<?php if($usertype==trim('admin')){?>
+            <div class="slider-dashboard col-sm-9">
+            	<div class="icon-big-container">
+                	<?php echo $form->create("prospects", array("action" => "projectmerchant",'name' => 'projectmerchant', 'id' => "projectmerchant")) ?>      
+					<script type='text/javascript'>
+                        function setprojectid(projectid){
+                            document.getElementById('projectid').value= projectid;
+                            document.adminhome.submit();
+                        }
+                    </script>
+                    <?php
+                    $ids = $this->params['pass'][0]; 
+                    e($html->link($html->image('call.png') . ' ' . __(''), array('controller'=>'admins','action'=>'call',$ids),array('escape' => false)));
+                    
+                    e($html->link($html->image('email.png') . ' ' . __(''), array('controller'=>'admins','action'=>'sendtempmail',$ids),array('escape' => false)));
+                    
+                    e($html->link($html->image('sms.png') . ' ' . __(''), array('controller'=>'admins','action'=>'sendsms','1'),array('escape' => false)));
+                    
+                    
+                    e($html->link($html->image('message.png') . ' ' . __(''), array('controller'=>'admins','action'=>'messagenew',$ids),array('escape' => false)));
+                    
+                    e($html->link($html->image('event.png') . ' ' . __(''), array('controller'=>'admins','action'=>'appointment',$ids),array('escape' => false)));
+                    
+                    e($html->link($html->image('note.png') . ' ' . __(''), "../players/notelist/2",array('escape' => false)));
+                    
+                    e($html->link($html->image('take.png') . ' ' . __(''), array('controller'=>'admins','action'=>'coming_soon','task'),array('escape' => false)));
+                    e($html->link($html->image('new.png') . ' ',array('controller'=>'prospects','action'=>'addmerchant'),array('escape' => false))); ?>
+                    <a href="javascript:void(0)" onclick="return activatecontents('asd','del');"><?php e($html->image('action.png')); ?></a>
+                    <a href="javascript:void(0)" onclick="editholder();" id="linkedit"><?php e($html->image('edit.png')); ?></a>                    
+                </div>
+                <?php echo $this->renderElement('new_slider'); ?>
+            </div>
+            
+            <?php /*?><?php if($usertype==trim('admin')){?>
 			 <span class="titlTxt1">
 				<?php echo $project['Project']['project_name'];  ?>&nbsp;</span>
 				<span class="titlTxt">Prospects</span>
-			<?php }else{ echo '<span class="titlTxt">Prospects List</span>';} ?>
-            
+			<?php }else{ echo '<span class="titlTxt">Prospects List</span>';} ?><?php */?>
             
             <div class="topTabs" style="height:25px;">
                 <?php /*?><ul class="dropdown">
@@ -178,34 +180,41 @@ e($html->link($html->image('new.png') . ' ',array('controller'=>'prospects','act
                     
                 </ul><?php */?>
             </div>
-
-	         <?php    $this->loginarea="prospects";    $this->subtabsel="projectmerchant";
-
-			 if($this->params['pass'][0] === '0'){
-			 echo $this->renderElement('prospect_submenus');
-			 
-			 }
-			 elseif ($_GET['url'] === 'prospects/projectmerchant/1'){
-			  echo $this->renderElement('prospect_inner_submenu');
-			 }
-			 
-			 else{
-			  echo $this->renderElement('relationships_submenus'); 
-				}
-
-							?>   
-                            
+            
+            <!--<div align="center" class="slider" id="toppanel" style="height: 20px; top:13px;right: -50px;width:545px !important; text-align:right;">			
+	
+            </div>-->
+            
         </div>
-		</div>
 
- 
+</div>
 
-    <div class="midCont" id="cmplisttab">
+<div class="clearfix nav-submenu-container">
+	<div class="midCont submenu-Cont">
+		<?php    $this->loginarea="prospects";    $this->subtabsel="projectmerchant";
+
+			if($this->params['pass'][0] === '0'){
+			echo $this->renderElement('prospect_submenus');
+			
+			}
+			elseif ($_GET['url'] === 'prospects/projectmerchant/1'){
+			echo $this->renderElement('prospect_inner_submenu');
+			}
+			
+			else{
+			echo $this->renderElement('relationships_submenus'); 
+			}
+		
+		?>   
+    </div>
+</div> 
+
+<div class="midCont" id="cmplisttab">
         <?php if($session->check('Message.flash')) { echo $this->renderElement('error_message'); } ?>
         <!-- top curv image starts -->
         <div>
-            <span class="topLft_curv"></span>
-			<span class="topRht_curv"></span>
+            <!--<span class="topLft_curv"></span>
+			<span class="topRht_curv"></span>-->
             <div class="gryTop">
 			<div class="new_filter">
                
@@ -225,7 +234,7 @@ e($html->link($html->image('new.png') . ' ',array('controller'=>'prospects','act
             <div class="clear"></div></div>
         <?php $i=1; ?>			
         <div class="tblData">
-            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+            <table class="table table-bordered table-striped" width="100%" border="0" cellspacing="0" cellpadding="0">
                 <tr class="trBg">
                     <th align="center" valign="middle" style='width:1%'>#</th>
                     <th align="center" valign="middle" style='width:2%;'><input type="checkbox" value="" name="checkall" id="checkall" /></th>
@@ -478,8 +487,8 @@ e($html->link($html->image('new.png') . ' ',array('controller'=>'prospects','act
             </table> 
         </div>
         <div>
-            <span class="botLft_curv"></span>
-			<span class="botRht_curv"></span>
+            <!--<span class="botLft_curv"></span>
+			<span class="botRht_curv"></span>-->
             <div class="gryBot"><?php if($companydata) { echo $this->renderElement('newpagination'); } ?>
             </div>
             <div class="clear"></div>
