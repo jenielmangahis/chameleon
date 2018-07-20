@@ -126,7 +126,7 @@ function activatecontents(act,op)
 			<a href="javascript:void(0)" onclick="editsurvey();" id="linkedit"><?php e($html->image('edit.png')); ?> </a>
 			<?php  echo $this->renderElement('new_slider');  ?>
 			</div>
-			<span class="titlTxt"> Survey List</span>
+			<span class="titlTxt"> Survey List</span><br /><Br /><br />
 
 			<div class="topTabs" style="height:25px;">
 				<?php /*?><ul class="dropdown">
@@ -159,11 +159,11 @@ function activatecontents(act,op)
 				</ul><?php */?>
 			</div>
 
-			<?php    $this->loginarea="surveys";    $this->subtabsel="survey_history";
-             echo $this->renderElement('survey_submenus');  ?>
+			<?php    $this->loginarea="surveys";    $this->subtabsel="survey_history";?>
 		</div>
 	</div>
 	<div class="midCont">
+		<?php echo $this->renderElement('survey_submenus');  ?>
 		<?php if($session->check('Message.flash')) { echo $this->renderElement('error_message'); } ?>
 		<!-- top curv image starts -->
 		<div>

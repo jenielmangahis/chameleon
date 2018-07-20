@@ -111,7 +111,7 @@ e($html->link($html->image('new.png', array('alt' => 'New')) . ' ',array('contro
 					}else {
 						$titleshow = "Inquries";
 					} ?>
-            <span class="titlTxt"><?php echo $titleshow.': '. ucfirst($enqtype) ?></span>
+            <span class="titlTxt"><?php echo $titleshow.': '. ucfirst($enqtype) ?></span><br /><Br /><Br />
 			
             
             <div class="topTabs" style="height:25px;">
@@ -145,13 +145,14 @@ e($html->link($html->image('new.png', array('alt' => 'New')) . ' ',array('contro
 						$subtabsel = "historylist";
 					}
 					$this->loginarea="admins";    $this->subtabsel=$subtabsel;
-                    echo $this->renderElement('forms_submenus');  
+                    
 			?>                               
         </div></div>
 
  
 
     <div class="midCont" id="cmplisttab">
+    	<?php echo $this->renderElement('forms_submenus');   ?>
         <?php if($session->check('Message.flash')) { echo $this->renderElement('error_message'); } ?>
         <!-- top curv image starts -->
         <div>
