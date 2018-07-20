@@ -16,7 +16,7 @@ $backUrl = $base_url_admin.'memberlist';
     .ui-datepicker-trigger{position:absolute;background:none;margin-left:5px;}
 </style>
 <!--container starts here-->
-<div class="midCon">
+<div class="container">
   <div class="titlCont">
     <div style="width:960px; margin:0 auto;">
      <div class="slider" id="toppanel" style="height: 20px; top:13px;right: -50px;width:545px !important; text-align:right;">

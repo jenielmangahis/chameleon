@@ -417,5 +417,7 @@ if($flagSubHideMenuPermission)
 <?php }?>
 </ul>
                     
-                  </div>
-                </div> <!--------END OF DIV------------>
+      </div>
+    </div> <!--------END OF DIV------------>
+
+<div class="clear"></div>                
