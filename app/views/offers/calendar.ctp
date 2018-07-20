@@ -26,40 +26,47 @@ $('#calendar').fullCalendar({
 <?php //$pagination->setPaging($paging); ?> 
 <!-- Body Panel starts -->
 <div class="container">
-
-   <div class="titlCont">
-   <div class="myclass">
-
-<div align="center" class="slider" id="toppanel" style="height: 20px; top:13px;right:-50px;width:545px !important; text-align:right;">			
-
-            <?php echo $form->create("Offer", array("action" => "contactlist",'name' => 'contactlist', 'id' => "contactlist")) ?>
-            <script type='text/javascript'>
-                function setprojectid(projectid){
-                    document.getElementById('projectid').value= projectid;
-                    document.adminhome.submit();
-                }
-            </script>
-<?php  echo $this->renderElement('new_slider');  ?>			
+	<div class="titlCont">
+    	<div class="slider-centerpage clearfix">
+        	<div class="center-Page col-sm-6">
+            	<h2>Calendar</h2>
+            </div>
+            <div class="slider-dashboard col-sm-6">
+            	<div class="icon-container">
+                	<?php echo $form->create("Offer", array("action" => "contactlist",'name' => 'contactlist', 'id' => "contactlist")) ?>
+					<script type='text/javascript'>
+                        function setprojectid(projectid){
+                            document.getElementById('projectid').value= projectid;
+                            document.adminhome.submit();
+                        }
+                    </script>
+					<?php  echo $this->renderElement('new_slider');  ?>
+                </div>
+            </div>
+            <?php /*?><?php if($usertype==trim("admin")){ ?>
+			<?php  echo $this->renderElement('project_name');  ?> 
+            <?php } ?>	
+            <span style="padding-top:19px !important" class="titlTxt1">&nbsp;</span>	   
+            <span class="titlTxt">Calendar</span><?php */?>
+            
+            <!--<div align="center" class="slider" id="toppanel" style="height: 20px; top:13px;right:-50px;width:545px !important; text-align:right;">			
+			</div>-->
+            
+        </div>
+   
 </div>
-			
-<?php if($usertype==trim("admin")){ ?>
-           <?php  echo $this->renderElement('project_name');  ?> 
-<?php } ?>	
-<span style="padding-top:19px !important" class="titlTxt1">&nbsp;</span>	   
-            <span class="titlTxt">Calendar</span>
 
-           
-          <?php    $this->loginarea="offers";    $this->subtabsel="calendar";
-		  if($_GET['url']==='offers/calendar/1'){
-		  	  echo $this->renderElement('offers_submenus'); 
-		  }
-		  else{
-		  
-             echo $this->renderElement('offersecondlevel_submenus'); } ?>    
 
-        </div>
-        </div>
-
+<div class="clearfix nav-submenu-container">
+	<div class="midCont submenu-Cont">
+		<?php    $this->loginarea="offers";    $this->subtabsel="calendar";
+        if($_GET['url']==='offers/calendar/1'){
+          echo $this->renderElement('offers_submenus'); 
+        }
+        else{        
+         echo $this->renderElement('offersecondlevel_submenus'); } ?>   
+    </div>
+</div>
 
 <div class="midCont">
 

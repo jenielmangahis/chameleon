@@ -121,30 +121,28 @@ $('#OfferMnu').removeClass("butBg");
 <?php $pagination->setPaging($paging); ?> 
 <!-- Body Panel starts -->
 <div class="container">
-
-   <div class="titlCont">
-   <div class="myclass">
-			<div class="slider" id="toppanel" style="height: 20px; top:13px;right:-50px;width:545px !important; text-align:right;">			
-<?php echo $form->create("offers", array("action" => "offerpages",'name' => 'offerpages', 'id' => "offerpages")) ?>
-            <script type='text/javascript'>
-                function setprojectid(projectid){
-                    document.getElementById('projectid').value= projectid;
-                    document.adminhome.submit();
-                }
-            </script>
-<?php
-e($html->link($html->image('new.png', array('alt' => 'New')) . ' ',array('controller'=>'offers','action'=>'addoffer'),array('escape' => false)));
-?>	
-<a href="javascript:void(0)" onClick="return activatecontents('asd','del');"><?php e($html->image('action.png')); ?></a>
-<a href="javascript:void(0)" onClick="editoffer();" id="linkedit"><?php e($html->image('edit.png')); ?></a>
-<?php  echo $this->renderElement('new_slider');  ?>		
-</div>
-
-          <?php if($usertype==trim("admin")){ ?>
-		   <span class="titlTxt1"><?php echo $current_project_name;  ?>&nbsp;</span>
-		  <?php } ?> 
-		  
-            <span class="titlTxt"> Offer Pages </span>
+	<div class="titlCont">
+    	<div class="slider-centerpage clearfix">
+        	<div class="center-Page col-sm-6">
+            	<h2>Offer Pages</h2>
+            </div>
+            <div class="slider-dashboard col-sm-6">
+            	<div class="icon-container">
+                	<?php echo $form->create("offers", array("action" => "offerpages",'name' => 'offerpages', 'id' => "offerpages")) ?>
+					<script type='text/javascript'>
+                        function setprojectid(projectid){
+                            document.getElementById('projectid').value= projectid;
+                            document.adminhome.submit();
+                        }
+                    </script>
+                    <?php
+                    e($html->link($html->image('new.png', array('alt' => 'New')) . ' ',array('controller'=>'offers','action'=>'addoffer'),array('escape' => false)));
+                    ?>	
+                    <a href="javascript:void(0)" onClick="return activatecontents('asd','del');"><?php e($html->image('action.png')); ?></a>
+                    <a href="javascript:void(0)" onClick="editoffer();" id="linkedit"><?php e($html->image('edit.png')); ?></a>                    
+                </div>
+                <?php  echo $this->renderElement('new_slider');  ?>
+            </div>
             
             <div class="topTabs">
                 <?php /*?><ul class="dropdown">
@@ -181,20 +179,32 @@ e($html->link($html->image('new.png', array('alt' => 'New')) . ' ',array('contro
 					  </li>					
                 </ul><?php */?>
             </div>
-           
-           
-          <?php    $this->loginarea="offers";    $this->subtabsel="offerpages";
-             echo $this->renderElement('offers_pages_submenus');  ?>    
-        </div>
-        </div>
+            
+            <!--<?php if($usertype==trim("admin")){ ?>
+            <span class="titlTxt1"><?php echo $current_project_name;  ?>&nbsp;</span>
+            <?php } ?> 
+            <span class="titlTxt"> Offer Pages </span>-->
+        <!--<div class="slider" id="toppanel" style="height: 20px; top:13px;right:-50px;width:545px !important; text-align:right;">			
+        </div>-->
 
+            
+        </div>
+</div>
+
+
+<div class="clearfix nav-submenu-container">
+	<div class="midCont submenu-Cont">
+		<?php    $this->loginarea="offers";    $this->subtabsel="offerpages";
+             echo $this->renderElement('offers_pages_submenus');  ?>  
+    </div>
+</div>
 
 <div class="midCont">
     <?php if($session->check('Message.flash')) { echo $this->renderElement('error_message'); } ?>  
     <!-- top curv image starts -->
     <div>
-        <span class="topLft_curv"></span>
-        <span class="topRht_curv"></span>
+        <!--<span class="topLft_curv"></span>
+        <span class="topRht_curv"></span>-->
         
         <div class="gryTop">
             <?php echo $form->create("Offer", array("action" => "offerpages",'name' => 'offerpages', 'id' => "offerpages")) ?>
@@ -223,7 +233,7 @@ e($html->link($html->image('new.png', array('alt' => 'New')) . ' ',array('contro
 
     <div class="tblData">
 
-        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <table class="table table-border table-striped" width="100%" border="0" cellspacing="0" cellpadding="0">
             <tr class="trBg">
                 <th align="center" width="1%">#</th>
                 <th align="center" width="2%"><input type="checkbox" value="" name="checkall" id="checkall" /></th>
@@ -368,8 +378,8 @@ $testArr[] = array('0' =>$eachrow['Offer']['merchant_detail_page'],'1'=>$eachrow
 
     </div>
     <div>
-        <span class="botLft_curv"></span>
-        <span class="botRht_curv"></span>
+        <!--<span class="botLft_curv"></span>
+        <span class="botRht_curv"></span>-->
         <div class="gryBot"><?php  echo $this->renderElement('newpagination'); ?>
         </div>
         <div class="clear"></div>

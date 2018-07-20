@@ -124,47 +124,57 @@ $base_url_admin = Configure::read('App.base_url_admin');
 <?php $pagination->setPaging($paging); ?> 
 <!-- Body Panel starts -->
 <div class="container">
-
-   <div class="titlCont">
-   <div class="myclass">
-
-<div align="center" class="slider" id="toppanel" style="height: 20px; top:13px;right:-50px;width:545px !important; text-align:right;">			
-
-            <?php echo $form->create("offers", array("action" => "Category",'name' => 'Category', 'id' => "Category")) ?>
-            <script type='text/javascript'>
-                function setprojectid(projectid){
-                    document.getElementById('projectid').value= projectid;
-                    document.adminhome.submit();
-                }
-            </script>
-<a href="javascript:void(0)" onclick="editoffer();" id="linkedit"><?php e($html->image('edit.png')); ?></a>	
- <?php  echo $this->renderElement('new_slider');  ?>		
-</div>
-<?php if($usertype==trim("admin")){ ?>
-           <span class="titlTxt1"><?php echo $current_project_name;  ?>&nbsp;</span>
-		  <?php } ?> 
-            <span class="titlTxt"> Offer Category  </span>
+	<div class="titlCont">
+    	<div class="slider-centerpage clearfix">
+        	<div class="center-Page col-sm-6">
+            	<h2>Offer Category</h2>
+            </div>
+            <div class="slider-dashboard col-sm-6">
+            	<div class="icon-container">
+					<?php echo $form->create("offers", array("action" => "Category",'name' => 'Category', 'id' => "Category")) ?>
+                    <script type='text/javascript'>
+                        function setprojectid(projectid){
+                            document.getElementById('projectid').value= projectid;
+                            document.adminhome.submit();
+                        }
+                    </script>
+                    <a href="javascript:void(0)" onclick="editoffer();" id="linkedit"><?php e($html->image('edit.png')); ?></a>	                     	
+                </div>
+                <?php  echo $this->renderElement('new_slider');  ?>
+            </div>
             
+            <?php /*?><?php if($usertype==trim("admin")){ ?>
+            <span class="titlTxt1"><?php echo $current_project_name;  ?>&nbsp;</span>
+            <?php } ?> 
+            <span class="titlTxt"> Offer Category  </span><?php */?>
+
             <div class="topTabs" style="height:25px;">
                 <?php /*?><ul class="dropdown">
 
                     <li><a href="javascript:void(0)" onclick="editoffer();" id="linkedit"><span>Edit</span></a></li>         
                 </ul><?php */?>
             </div>
-           
-           
-          <?php    $this->loginarea="offers";    $this->subtabsel="category";
-             echo $this->renderElement('offers_submenus');  ?>    
+            
+            <!--<div align="center" class="slider" id="toppanel" style="height: 20px; top:13px;right:-50px;width:545px !important; text-align:right;">			
+			</div>-->
+            
         </div>
-        </div>
+</div>
 
+
+<div class="clearfix nav-submenu-container">
+	<div class="midCont submenu-Cont">
+		<?php    $this->loginarea="offers";    $this->subtabsel="category";
+             echo $this->renderElement('offers_submenus');  ?>  
+    </div>
+</div>
 
 <div class="midCont">
     <?php if($session->check('Message.flash')) { echo $this->renderElement('error_message'); } ?>  
     <!-- top curv image starts -->
     <div>
-        <span class="topLft_curv"></span>
-        <span class="topRht_curv"></span>
+        <!--<span class="topLft_curv"></span>
+        <span class="topRht_curv"></span>-->
         
         <div class="gryTop">
             <?php echo $form->create("offers", array("action" => "category",'name' => 'category', 'id' => "offerlist")) ?>
@@ -189,7 +199,7 @@ $base_url_admin = Configure::read('App.base_url_admin');
 
     <div class="tblData">
 
-        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <table class="table table-bordered table-striped" width="100%" border="0" cellspacing="0" cellpadding="0">
             <tr class="trBg">
                 <th align="center" valign="middle" width="1%">#</th>
                 <th align="center" valign="middle" width="2%"><input type="checkbox" value="" name="checkall" id="checkall" /></th>
@@ -391,8 +401,8 @@ $base_url_admin = Configure::read('App.base_url_admin');
 
     </div>
     <div>
-        <span class="botLft_curv"></span>
-        <span class="botRht_curv"></span>
+        <!--<span class="botLft_curv"></span>
+        <span class="botRht_curv"></span>-->
         <div class="gryBot"><?php echo $this->renderElement('newpagination');  ?>
         </div>
         <div class="clear"></div>
