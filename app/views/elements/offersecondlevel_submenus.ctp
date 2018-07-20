@@ -19,8 +19,12 @@ if(!isset($f_name))
 	$f_name = "";
 }
 ?>
-  <div class="clear"></div>                                                                     
-            <ul id="tab-container-1-nav" class="topTabs2">
+  <div class="clear"></div>    
+  	<div class="dropdown">
+    	<button class="btn btn-secondary btn-success dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    		Select Menu List
+   		</button>    
+   			<ul id="tab-container-1-nav" class="nav nav-pills dropdown-menu" aria-labelledby="dropdownMenuButton">
 					  <li>
 						<?php 
 							e($html->link(
@@ -78,5 +82,6 @@ if(!isset($f_name))
 
 				   
             </ul>
+    </div>
            <div class="clear"></div> 
 <?php }?>
