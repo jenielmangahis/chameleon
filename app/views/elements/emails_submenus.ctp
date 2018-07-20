@@ -1,5 +1,9 @@
 <div class="clear"></div>
-            <ul id="tab-container-1-nav" class="topTabs2">
+	<div class="dropdown">
+    	<button class="btn btn-secondary btn-success dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    		Select Menu List
+   		</button>
+        <ul id="tab-container-1-nav" class="nav nav-pills dropdown-menu" aria-labelledby="dropdownMenuButton">
 <?php		
 if(!isset($hideSubMenuPermission))		
 {
@@ -157,3 +161,4 @@ if(!isset($f_name))
 					?>
 				</li> 
             </ul>
+    </div>
