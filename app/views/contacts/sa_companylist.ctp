@@ -13,46 +13,37 @@ $resetUrl = $base_url.'contacts/sa_companylist';
 <!--container starts here-->
 <?php $pagination->setPaging($paging); ?>
 
-<div class="container">
-<div class="titlCont">
-
-<div class="centerPage">
- <div class="slider" id="toppanel" style="height: 20px; top:13px;right: -50px;width:545px !important; text-align:right;">
- <?php echo $form->create("contacts", array("action" => "sa_companylist",'name' => 'companylist1', 'id' => "companylist1"))?>
-      
-         <?php 
-		 
-		 $ids = $this->params['pass'][0]; 
-e($html->link($html->image('call.png') . ' ' . __(''), array('controller'=>'admins','action'=>'call',$ids),array('escape' => false)));
-
-e($html->link($html->image('email.png') . ' ' . __(''), array('controller'=>'admins','action'=>'sendtempmail',$ids),array('escape' => false)));
-
-e($html->link($html->image('sms.png') . ' ' . __(''), array('controller'=>'admins','action'=>'sendsms','1'),array('escape' => false)));
-
-
-e($html->link($html->image('message.png') . ' ' . __(''), array('controller'=>'admins','action'=>'messagenew',$ids),array('escape' => false)));
-
-e($html->link($html->image('event.png') . ' ' . __(''), array('controller'=>'admins','action'=>'appointment',$ids),array('escape' => false)));
-
-e($html->link($html->image('note.png') . ' ' . __(''), "../players/notelist/2",array('escape' => false)));
-
-e($html->link($html->image('take.png') . ' ' . __(''), array('controller'=>'admins','action'=>'coming_soon','task'),array('escape' => false)));
-		 e($html->link($html->image('new.png') . ' ' . __(''), array('controller'=>'contacts','action'=>'sa_addcompany'),array('escape' => false)));?>
-		 <a onclick="return activatecompanycontents('asd','del');" href="javascript:void(0)">
-		 <?php e($html->image('action.png')) ?>
-		 </a>
-		 <a id="linkedit" onclick="editholder();" href="javascript:void(0)">
-		  <?php e($html->image('edit.png')) ?>
-		 </a>
-		 <?php  echo $this->renderElement('new_slider');  ?>
-
-</div>
-
-
-
-<span class="titlTxt">Company List  </span>
-
-<div class="topTabs" style="height:25px;">
+<div class="container clearfix">
+	<div class="titlCont">
+    	<div class="slider-centerpage clearfix">
+        	<div class="center-Page col-sm-3">
+            	<h2>Company List</h2>
+            </div>
+            <div class="slider-dashboard col-sm-9">
+            	<div class="icon-big-container">
+                	<?php echo $form->create("contacts", array("action" => "sa_companylist",'name' => 'companylist1', 'id' => "companylist1"))?>
+					 <?php 
+                     
+                     $ids = $this->params['pass'][0]; 
+                        e($html->link($html->image('call.png') . ' ' . __(''), array('controller'=>'admins','action'=>'call',$ids),array('escape' => false)));
+                        e($html->link($html->image('email.png') . ' ' . __(''), array('controller'=>'admins','action'=>'sendtempmail',$ids),array('escape' => false)));
+                        e($html->link($html->image('sms.png') . ' ' . __(''), array('controller'=>'admins','action'=>'sendsms','1'),array('escape' => false)));
+                        e($html->link($html->image('message.png') . ' ' . __(''), array('controller'=>'admins','action'=>'messagenew',$ids),array('escape' => false)));
+                        e($html->link($html->image('event.png') . ' ' . __(''), array('controller'=>'admins','action'=>'appointment',$ids),array('escape' => false)));
+                        e($html->link($html->image('note.png') . ' ' . __(''), "../players/notelist/2",array('escape' => false)));
+                        e($html->link($html->image('take.png') . ' ' . __(''), array('controller'=>'admins','action'=>'coming_soon','task'),array('escape' => false)));
+                        e($html->link($html->image('new.png') . ' ' . __(''), array('controller'=>'contacts','action'=>'sa_addcompany'),array('escape' => false)));?>
+                     <a onclick="return activatecompanycontents('asd','del');" href="javascript:void(0)">
+                     <?php e($html->image('action.png')) ?>
+                     </a>
+                     <a id="linkedit" onclick="editholder();" href="javascript:void(0)">
+                      <?php e($html->image('edit.png')) ?>
+                     </a>
+                </div>
+                <?php  echo $this->renderElement('new_slider');  ?>
+            </div>
+            <!--<span class="titlTxt">Company List</span>-->
+            <div class="topTabs" style="height:25px;">
 
         <?php /*?><ul class="dropdown">
                 <li class="">
@@ -75,13 +66,18 @@ e($html->link($html->image('take.png') . ' ' . __(''), array('controller'=>'admi
                 <li><a id="linkedit" onclick="editholder();" href="javascript:void(0)"><span>Edit</span></a></li>
         </ul><?php */?>
         </div>
-		
-				   <?php    $this->loginarea="contacts";    $this->subtabsel="sa_companylist";
-                      echo $this->renderElement('relationships_submenus');  ?> 
-		
+        	<!--<div class="slider" id="toppanel" style="height: 20px; top:13px;right: -50px;width:545px !important; text-align:right;">
+			</div>-->
+        </div>
 
-			 
 </div>
+
+
+<div class="clearfix nav-submenu-container">
+	<div class="midCont submenu-Cont">
+		<?php    $this->loginarea="contacts";    $this->subtabsel="sa_companylist";
+			echo $this->renderElement('relationships_submenus');  ?>  
+    </div>
 </div>
 
 <div class="midCont" id="newcmptab">
@@ -100,8 +96,8 @@ e($html->link($html->image('take.png') . ' ' . __(''), array('controller'=>'admi
 											
 
         <div>
-                            <span class="topLft_curv"></span>
-                            <span class="topRht_curv"></span>
+                            <!--<span class="topLft_curv"></span>
+                            <span class="topRht_curv"></span>-->
 	
         <div class="gryTop">
 		 	<div class="new_filter" >
@@ -129,7 +125,7 @@ e($html->link($html->image('take.png') . ' ' . __(''), array('controller'=>'admi
 </div>
 
 <div class="tblData">
-     <table width="100%" border="0" cellspacing="0" cellpadding="0">
+     <table class="table table-bordered table-striped" width="100%" border="0" cellspacing="0" cellpadding="0">
      <tr class="trBg"> 
       <th align="center" valign="middle" style="width:1%;">#</th>
       <th align="center" valign="middle" style="width:2%"><input type="checkbox" id="checkall" name="checkall" value=""></th>
@@ -340,8 +336,8 @@ e($html->link($html->image('take.png') . ' ' . __(''), array('controller'=>'admi
 </div><!--inner-container ends here-->
 
    <div>
-                    <span class="botLft_curv"></span>
-      <span class="botRht_curv"></span>
+    <!--<span class="botLft_curv"></span>
+    <span class="botRht_curv"></span>-->
                     <div class="gryBot">
                     
         <?php if($companydata) { echo $this->renderElement('newpagination'); } ?>
