@@ -111,44 +111,48 @@ function activatecontents(act,op)
 
 <!--container starts here-->
 <?php $pagination->setPaging($paging); ?>
-<div class="container">
-<div class="titlCont">
-<div class="centerPage">
-
-<div align="center" class="slider" id="toppanel" style="height: 20px; top:13px;right:-50px;width:545px !important; text-align:right;">			
-   <?php echo $form->create("Relationship", array("action" => "correspondents",'name' => 'correspondents', 'id' => "correspondents")) ?>
-                <script type='text/javascript'>
-                        function setprojectid(projectid){
-                                        document.getElementById('projectid').value= projectid;
-                                        document.adminhome.submit();
-                                }
-                </script>
-				
-<?php
-$ids = $this->params['pass'][0]; 
-e($html->link($html->image('call.png') . ' ' . __(''), array('controller'=>'admins','action'=>'call',$ids),array('escape' => false)));
-
-e($html->link($html->image('email.png') . ' ' . __(''), array('controller'=>'admins','action'=>'sendtempmail',$ids),array('escape' => false)));
-
-e($html->link($html->image('sms.png') . ' ' . __(''), array('controller'=>'admins','action'=>'sendsms','1'),array('escape' => false)));
-
-
-e($html->link($html->image('message.png') . ' ' . __(''), array('controller'=>'admins','action'=>'messagenew',$ids),array('escape' => false)));
-
-e($html->link($html->image('event.png') . ' ' . __(''), array('controller'=>'admins','action'=>'appointment',$ids),array('escape' => false)));
-
-e($html->link($html->image('note.png') . ' ' . __(''), "../players/notelist/2",array('escape' => false)));
-
-e($html->link($html->image('take.png') . ' ' . __(''), array('controller'=>'admins','action'=>'coming_soon','task'),array('escape' => false)));
-e($html->link($html->image('new.png') . ' ',  array('controller'=>'relationships','action'=>'addcorrespondent'),array('escape' => false)));?>
-<a href="javascript:void(0)" onclick="editcontent();" id="linkedit">
-<?php e($html->image('edit.png')) ?></a>
-<?php echo $this->renderElement('new_slider');?>			
-</div>
-
-<span class="titlTxt"> Correspondents List </span>
-
-<div class="topTabs" style="height:25px;">
+<div class="container clearfix">
+	<div class="titlCont">
+    	<div class="slider-centerpage clearfix">
+        	<div class="center-Page col-sm-3">
+            	<h2>Correspondents List</h2>
+            </div>
+            <div class="slider-dashboard col-sm-9">
+            	<div class="icon-big-container">
+                	<?php echo $form->create("Relationship", array("action" => "correspondents",'name' => 'correspondents', 'id' => "correspondents")) ?>
+					<script type='text/javascript'>
+                            function setprojectid(projectid){
+                                            document.getElementById('projectid').value= projectid;
+                                            document.adminhome.submit();
+                                    }
+                    </script>
+                    
+                    <?php
+                    $ids = $this->params['pass'][0]; 
+                    e($html->link($html->image('call.png') . ' ' . __(''), array('controller'=>'admins','action'=>'call',$ids),array('escape' => false)));
+                    
+                    e($html->link($html->image('email.png') . ' ' . __(''), array('controller'=>'admins','action'=>'sendtempmail',$ids),array('escape' => false)));
+                    
+                    e($html->link($html->image('sms.png') . ' ' . __(''), array('controller'=>'admins','action'=>'sendsms','1'),array('escape' => false)));
+                    
+                    
+                    e($html->link($html->image('message.png') . ' ' . __(''), array('controller'=>'admins','action'=>'messagenew',$ids),array('escape' => false)));
+                    
+                    e($html->link($html->image('event.png') . ' ' . __(''), array('controller'=>'admins','action'=>'appointment',$ids),array('escape' => false)));
+                    
+                    e($html->link($html->image('note.png') . ' ' . __(''), "../players/notelist/2",array('escape' => false)));
+                    
+                    e($html->link($html->image('take.png') . ' ' . __(''), array('controller'=>'admins','action'=>'coming_soon','task'),array('escape' => false)));
+                    e($html->link($html->image('new.png') . ' ',  array('controller'=>'relationships','action'=>'addcorrespondent'),array('escape' => false)));?>
+                    <a href="javascript:void(0)" onclick="editcontent();" id="linkedit">
+                    <?php e($html->image('edit.png')) ?></a>                    
+                </div>
+                <?php echo $this->renderElement('new_slider');?>
+            </div>
+            <!--<div align="center" class="slider" id="toppanel" style="height: 20px; top:13px;right:-50px;width:545px !important; text-align:right;">			
+            </div>
+            <span class="titlTxt"> Correspondents List </span>-->
+            <div class="topTabs" style="height:25px;">
 <?php /*?><ul class="dropdown">
 <li>
 <?php
@@ -171,13 +175,18 @@ e($html->link($html->image('new.png') . ' ',  array('controller'=>'relationships
 <li><a href="javascript:void(0)" onclick="editcontent();" id="linkedit"><span>Edit</span></a></li>
 </ul><?php */?>
 </div>
-
-
-            <?php    $this->loginarea="relationships";    $this->subtabsel="correspondents";
-             echo $this->renderElement('relationships_submenus');  ?>  
+        </div>
+    
 </div>
+
+<div class="clearfix nav-submenu-container">
+	<div class="midCont submenu-Cont">
+		<?php    $this->loginarea="relationships";    $this->subtabsel="correspondents";
+             echo $this->renderElement('relationships_submenus');  ?>   
+    </div>
 </div>
-                            <div class="midCont" id="newcmmtasktab">
+
+<div class="midCont" id="newcmmtasktab">
 
 
 <?php if($session->check('Message.flash')){ ?> 
@@ -194,8 +203,8 @@ e($html->link($html->image('new.png') . ' ',  array('controller'=>'relationships
 
                             <!-- top curv image starts -->
                             <div>
-                            <span class="topLft_curv"></span>
-                            <span class="topRht_curv"></span>
+                            <!--<span class="topLft_curv"></span>
+                            <span class="topRht_curv"></span>-->
                 
                 <div class="gryTop">
                 <div class="new_filter" >
@@ -209,7 +218,7 @@ e($html->link($html->image('new.png') . ' ',  array('controller'=>'relationships
 
 
 <div class="tblData">
-                      <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                      <table class="table table-bordered table-striped" width="100%" border="0" cellspacing="0" cellpadding="0">
       <tr class="trBg">
       <th style="width:1%" align="center" valign="middle">#</th>
       <th  style="width:2%" align="center" valign="middle"><input type="checkbox" id="checkall" name="checkall" value=""></th>
@@ -451,8 +460,8 @@ e($html->link($html->image('new.png') . ' ',  array('controller'=>'relationships
 </div><!--inner-container ends here-->
 
       <div>
-      <span class="botLft_curv"></span>
-      <span class="botRht_curv"></span>
+      <!--<span class="botLft_curv"></span>
+      <span class="botRht_curv"></span>-->
       <div class="gryBot"><?php  echo $this->renderElement('newpagination');  ?>
       </div>
       

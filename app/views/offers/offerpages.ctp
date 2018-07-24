@@ -120,7 +120,7 @@ $('#OfferMnu').removeClass("butBg");
 </script>
 <?php $pagination->setPaging($paging); ?> 
 <!-- Body Panel starts -->
-<div class="container">
+<div class="container clearfix">
 	<div class="titlCont">
     	<div class="slider-centerpage clearfix">
         	<div class="center-Page col-sm-6">
