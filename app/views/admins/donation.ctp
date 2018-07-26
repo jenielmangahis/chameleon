@@ -179,7 +179,8 @@ function activatecontents(act,op)
   
 <div class="clearfix nav-submenu-container">
 	<div class="midCont submenu-Cont">
-		 <?php    $this->loginarea="links";    $this->subtabsel="activelinklist";
+		 <?php    $this->loginarea="links";  
+             $this->subtabsel="activelinklist";
             echo $this->renderElement('donation_submenus');  ?>   
     </div>
 </div>
