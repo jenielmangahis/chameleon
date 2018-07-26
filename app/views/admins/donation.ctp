@@ -210,7 +210,7 @@ function activatecontents(act,op)
     <div> 
     <!--<span class="topLft_curv"></span> <span class="topRht_curv"></span>-->
       <div class="gryTop">
-        <div class="new_filter" > <span class="spnFilt">Filter:</span><span class="srchBg"><?php echo $form->input("searchkey", array('id' => 'searchkey', 'div' => false, 'label' => '',"maxlength" => "200"));?></span><span class="srchBg2"><?php echo $form->submit("Go", array('id' => 'searchkeysubmit', 'div' => false, 'label' => '','class'=>'btn'));
+        <div class="new_filter" > <span class="spnFilt">Filter:</span><span class="srchBg"><?php echo $form->input("searchkey", array('id' => 'searchkey', 'div' => false, 'label' => '',"maxlength" => "200"));?></span><span class="srchBg2"><?php echo $form->submit("Go", array('id' => 'searchkeysubmit', 'div' => false, 'label' => '','class'=>''));
                         ?> </span> <span class="srchBg2">
           <input type="button" value="Reset" label="" onclick="javascript:(window.location=baseUrl+'admins/typelist')" id="locaa">
           </span> </div>
