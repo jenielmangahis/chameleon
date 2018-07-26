@@ -10,36 +10,35 @@ $baseUrlAdmin = Configure::read('App.base_url_admin');
 $baseUrl = Configure::read('App.base_url');
 ?>
 <?php $pagination->setPaging($paging); ?>
-<div class="titlCont"><div style="width:960px;margin:0 auto">
-<div class="slider" id="toppanel" style="height: 20px; top:13px;right: -50px;width:545px !important; text-align:right;">
-  
-	<?php echo $form->create("relationships", array("action" => "others",'name' => 'los', 'id' => "los"))?>		
-<?php
-$ids = $this->params['pass'][0]; 
-e($html->link($html->image('call.png') . ' ' . __(''), array('controller'=>'admins','action'=>'call',$ids),array('escape' => false)));
-
-e($html->link($html->image('email.png') . ' ' . __(''), array('controller'=>'admins','action'=>'sendtempmail',$ids),array('escape' => false)));
-
-e($html->link($html->image('sms.png') . ' ' . __(''), array('controller'=>'admins','action'=>'sendsms','1'),array('escape' => false)));
-
-
-e($html->link($html->image('message.png') . ' ' . __(''), array('controller'=>'admins','action'=>'messagenew',$ids),array('escape' => false)));
-
-e($html->link($html->image('event.png') . ' ' . __(''), array('controller'=>'admins','action'=>'appointment',$ids),array('escape' => false)));
-
-e($html->link($html->image('note.png') . ' ' . __(''), "../players/notelist/2",array('escape' => false)));
-
-e($html->link($html->image('take.png') . ' ' . __(''), array('controller'=>'admins','action'=>'coming_soon','task'),array('escape' => false)));
-e($html->link($html->image('new.png') . ' ',array('controller'=>'contacts','action'=>'sa_addcontacts'),array('escape' => false)));?>
-<a onclick="return activatecontents('asd','del');" href="javascript:void(0)">
-<?php e($html->image('action.png')); ?></a>
-<a id="linkedit" onclick="editholder();" href="javascript:void(0)">
-<?php e($html->image('edit.png')); ?></a>
-<?php echo $this->renderElement('new_slider');
-?>			
-</div>
-<span class="titlTxt">Others List</span>
-<div class="topTabs" style="height:25px;">
+	<div class="titlCont">
+		<div class="slider-centerpage clearfix">
+        	<div class="center-Page col-sm-3">
+            	<h2>Others List</h2>
+            </div>
+            <div class="slider-dashboard col-sm-9">
+            	<div class="icon-big-container">
+                	<?php echo $form->create("relationships", array("action" => "others",'name' => 'los', 'id' => "los"))?>		
+					<?php
+                    $ids = $this->params['pass'][0]; 
+                    e($html->link($html->image('call.png') . ' ' . __(''), array('controller'=>'admins','action'=>'call',$ids),array('escape' => false)));
+                    e($html->link($html->image('email.png') . ' ' . __(''), array('controller'=>'admins','action'=>'sendtempmail',$ids),array('escape' => false)));
+                    e($html->link($html->image('sms.png') . ' ' . __(''), array('controller'=>'admins','action'=>'sendsms','1'),array('escape' => false)));
+                    e($html->link($html->image('message.png') . ' ' . __(''), array('controller'=>'admins','action'=>'messagenew',$ids),array('escape' => false)));
+                    e($html->link($html->image('event.png') . ' ' . __(''), array('controller'=>'admins','action'=>'appointment',$ids),array('escape' => false)));
+                    e($html->link($html->image('note.png') . ' ' . __(''), "../players/notelist/2",array('escape' => false)));
+                    e($html->link($html->image('take.png') . ' ' . __(''), array('controller'=>'admins','action'=>'coming_soon','task'),array('escape' => false)));
+                    e($html->link($html->image('new.png') . ' ',array('controller'=>'contacts','action'=>'sa_addcontacts'),array('escape' => false)));?>
+                    <a onclick="return activatecontents('asd','del');" href="javascript:void(0)">
+                    <?php e($html->image('action.png')); ?></a>
+                    <a id="linkedit" onclick="editholder();" href="javascript:void(0)">
+                    <?php e($html->image('edit.png')); ?></a>                    
+                </div>
+                <?php echo $this->renderElement('new_slider');?>
+            </div>
+            <!--<div class="slider" id="toppanel" style="height: 20px; top:13px;right: -50px;width:545px !important; text-align:right;">
+			</div>
+            <span class="titlTxt">Others List</span>-->
+			<div class="topTabs" style="height:25px;">
         <?php /*?><ul class="dropdown">
 	<li class="">
           <?php
@@ -60,18 +59,27 @@ e($html->link($html->image('new.png') . ' ',array('controller'=>'contacts','acti
         </li>
                 <li><a id="linkedit" onclick="editholder();" href="javascript:void(0)"><span>Edit</span></a></li>
         </ul><?php */?>
+        </div>	
+            
         </div>
-        
-            <?php    $this->loginarea="relationships";    $this->subtabsel="others";
-             echo $this->renderElement('relationships_submenus');  ?>  
-</div></div>
+
+</div>
+
+<div class="clearfix nav-submenu-container">
+	<div class="midCont submenu-Cont">
+		<?php    $this->loginarea="relationships";    $this->subtabsel="others";
+             echo $this->renderElement('relationships_submenus');  ?>   
+    </div>
+</div>
+
 <div class="midCont" id="newcnttab">
 
   <?php if($session->check('Message.flash')) { echo $this->renderElement('error_message'); } ?>
 
 
-    <div><span class="topLft_curv"></span>  
-    <span class="topRht_curv"></span>             
+    <div>
+    <!--<span class="topLft_curv"></span>  
+    <span class="topRht_curv"></span>-->             
         <div class="gryTop">
                 <?php echo $form->create("contacts", array("action" => "others",'name' => 'others', 'id' => "contactlist1")) ?>
                 <script type='text/javascript'>
@@ -94,7 +102,7 @@ e($html->link($html->image('new.png') . ' ',array('controller'=>'contacts','acti
        
 
 <div class="tblData">
-                      <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                      <table class="table table-bordered table-striped" width="100%" border="0" cellspacing="0" cellpadding="0">
       <tr class="trBg">
       <th style="width:1%" align="center" valign="middle">#</th>
       <th  style="width:2%" align="center" valign="middle"><input type="checkbox" id="checkall" name="checkall" value=""></th>
@@ -383,8 +391,8 @@ e($html->link($html->image('new.png') . ' ',array('controller'=>'contacts','acti
   
 </div>
    <div>
-                    <span class="botLft_curv"></span>
-              <span class="botRht_curv"></span>
+        <!--<span class="botLft_curv"></span>
+        <span class="botRht_curv"></span>-->
                     <div class="gryBot">
                     
                   <?php if($contactdata) { echo $this->renderElement('newpagination'); } ?>
