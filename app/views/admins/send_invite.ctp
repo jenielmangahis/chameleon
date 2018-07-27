@@ -9,17 +9,24 @@
 
 </script>
 
- <div class="container">  
-<div class="titlCont"><div style="width:960px; margin:0 auto;">
-            <div align="center" class="slider" id="toppanel" style="height: 20px; top:13px;right:-50px;width:545px !important; text-align:right;">
-              <?php echo $form->create("Admins", array("action" => "send_invite",'name' => 'send_invite', 'id' => "send_invite")); ?>
-			<button type="submit" value="Submit" class="sendBut" name="data[Action][redirectpage]"><?php e($html->image('save.png')); ?></button>
-			<button type="submit" value="Submit" class="sendBut" name="data[Action][noredirection]"><?php e($html->image('apply.png')); ?></button>
-              <button type="button" id="saveForm" class="sendBut"  ONCLICK="javascript:(window.location='<?php echo $base_url_admin ?>eventlist')"><?php e($html->image('cancle.png')); ?></button>
-     <?php  echo $this->renderElement('new_slider');  ?>
+<div class="container clearfix">  
+	<div class="titlCont">
+    	<div class="slider-centerpage clearfix">
+        	<div class="center-Page col-sm-6">            	
+                <h2>Send Mail</h2>
             </div>
-            <span class="titlTxt"> Send Mail </span>
-            
+            <div class="slider-dashboard col-sm-6">
+            	<div class="icon-container">
+                	<?php echo $form->create("Admins", array("action" => "send_invite",'name' => 'send_invite', 'id' => "send_invite")); ?>
+                    <button type="submit" value="Submit" class="sendBut" name="data[Action][redirectpage]"><?php e($html->image('save.png')); ?></button>
+                    <button type="submit" value="Submit" class="sendBut" name="data[Action][noredirection]"><?php e($html->image('apply.png')); ?></button>
+                    <button type="button" id="saveForm" class="sendBut"  ONCLICK="javascript:(window.location='<?php echo $base_url_admin ?>eventlist')"><?php e($html->image('cancle.png')); ?></button>             
+                </div>
+                <?php  echo $this->renderElement('new_slider');  ?>
+            </div>
+            <!--<div align="center" class="slider" id="toppanel" style="height: 20px; top:13px;right:-50px;width:545px !important; text-align:right;">              
+            </div>
+            <span class="titlTxt"> Send Mail </span>-->
             <div class="topTabs" style="height:25px;">
                 <?php /*?><ul class="dropdown">
                              <li><button type="submit" value="Submit" class="button" name="data[Action][redirectpage]"><span>Send</span></button></li>
@@ -28,23 +35,22 @@
                     
                 </ul><?php */?>
             </div>
-
             <div class="clear"><img src="<?php echo $base_url ?>img/spacer.gif" width="1" height="12px;" /></div>
-            <div style="height: 30px; clear:both;">
-                
-                   <?php    $this->loginarea="admins";    $this->subtabsel="sendInvite";
-                //    echo $this->renderElement('eventlist_submenus'); 
-echo $this->renderElement('events_submenus');
-				?>
-                
-            </div>  
-            <div class="clear"></div>
+        </div>
 
-        </div></div>
+        
+</div>
 
+<div class="clearfix nav-submenu-container">
+	<div class="midCont submenu-Cont">
+		<?php    $this->loginarea="admins";    $this->subtabsel="sendInvite";
+        //    echo $this->renderElement('eventlist_submenus'); 
+            echo $this->renderElement('events_submenus');
+            ?>
+    </div>
+</div>
 
-
-<div class="midPadd" id="sndmail">
+<div class="midPadd midCont" id="sndmail">
     <?php if($session->check('Message.flash')) { echo $this->renderElement('error_message'); } ?>          
         <div class="top-bar" style="border-left:0px;">
         
@@ -53,7 +59,7 @@ echo $this->renderElement('events_submenus');
                 
 <div class="" style="border:none;">  
             <!-- START: New Design for send mail as per Requirement --> 
-            <table cellspacing="5" cellpadding="0" align="left" width="100%">
+            <table class="table table-borderless" cellspacing="5" cellpadding="0" align="left" width="100%">
             <tbody>
                 <tr>
                     <td width="50%" valign="top">     
@@ -66,9 +72,9 @@ echo $this->renderElement('events_submenus');
 
                                          
                                     </td>
-                                    <td><span class="txtArea_top">
-                                         <span class="txtArea_bot">
-                                         <?php echo $form->select("EmailTemplate.id",$templatedropdown,null,array('id' => 'templateid','class'=>'multilist','onchange'=>'showselecttemplate(this.value)'),"---Select---"); ?>
+                                    <td><!--<span class="txtArea_top">
+                                         <span class="txtArea_bot">-->
+                                         <?php echo $form->select("EmailTemplate.id",$templatedropdown,null,array('id' => 'templateid','class'=>'multilists form-control','onchange'=>'showselecttemplate(this.value)'),"---Select---"); ?>
                                          <?php echo $form->error('EmailTemplate.id', array('class' => 'errormsg')); ?> 
                                          </span>     </span></td>
                                 </tr>
@@ -79,8 +85,8 @@ echo $this->renderElement('events_submenus');
     
                                     </td>
                                     <td>
-                                    <span class="intpSpan" style="vertical-align: top"> 
-                                            <?php echo $form->input("EmailTemplate.subject", array('id' => 'subject', 'div' => false, 'label' => '','style' =>'width:231px;',"class" => "inpt_txt_fld","maxlength" => "250"));?>
+                                    <span class="intp-Span" style="vertical-align: top"> 
+                                            <?php echo $form->input("EmailTemplate.subject", array('id' => 'subject', 'div' => false, 'label' => '','style' =>'',"class" => "inpt-txt-fld form-control","maxlength" => "250"));?>
                                         </span>
                                     </td>
                                 </tr>
@@ -92,15 +98,15 @@ echo $this->renderElement('events_submenus');
 
                                     </td>
                                     <td>
-                                    <span class="intpSpan" style="vertical-align: top">
-                                            <?php echo $form->input("EmailTemplate.fromid", array('id' => 'fromid', 'div' => false, 'label' => '','style' =>'width:231px;',"class" => "inpt_txt_fld"));?>
+                                    <span class="intp-Span" style="vertical-align: top">
+                                            <?php echo $form->input("EmailTemplate.fromid", array('id' => 'fromid', 'div' => false, 'label' => '','style' =>'',"class" => "inpt-txt-fld form-control"));?>
                                         </span>
                                     </td>
                                 </tr>
                                 
+                                 <!--<tr><td>&nbsp;</td><td>&nbsp;</td></tr>
                                  <tr><td>&nbsp;</td><td>&nbsp;</td></tr>
-                                 <tr><td>&nbsp;</td><td>&nbsp;</td></tr>
-                                 <tr><td>&nbsp;</td><td>&nbsp;</td></tr>
+                                 <tr><td>&nbsp;</td><td>&nbsp;</td></tr>-->
                                 <tr>
                                     <td align="right">
                                        
@@ -108,9 +114,9 @@ echo $this->renderElement('events_submenus');
                                         
                                     </td>
                                     <td>
-                                    <span class="txtArea_top">
-                                            <span class="newtxtArea_bot">
-                                                <?php echo $form->input("EmailTemplate.toid", array('id' => 'toid', 'div' => false, 'label' => '','rows'=>'7','cols'=>'65','style' =>'width:230px;',"class" => "noBg",'value'=>$toid));?>
+                                    <span class="txtArea-top">
+                                            <span class="newtxtArea-bot">
+                                                <?php echo $form->input("EmailTemplate.toid", array('id' => 'toid', 'div' => false, 'label' => '','rows'=>'7','cols'=>'65','style' =>'',"class" => "noBg form-control",'value'=>$toid));?>
                                             </span>
                                         </span>
                                     </td>
@@ -131,10 +137,10 @@ echo $this->renderElement('events_submenus');
                                         <label class="boldlabel">Member Type</label>
                                     </td>
                                     <td>
-                                    <span class="txtArea_top">
-                                            <span class="txtArea_bot">
+                                    <span class="txtArea-top">
+                                            <span class="txtArea-bot">
                                                 <?php 
-                                                    echo $form->select("EmailTemplate.member_type",$member_type,'0', array('id' => 'member_type', 'div' => false, 'label' => '','style' =>'background: none repeat scroll 0% 0% transparent; margin-bottom: 6px; width:230px;',"class" =>"","maxlength" => "250"),"---Select---");?>                                  </span>
+                                                    echo $form->select("EmailTemplate.member_type",$member_type,'0', array('id' => 'member_type', 'div' => false, 'label' => '','style' =>'background: none repeat scroll 0% 0% transparent; margin-bottom: 6px;',"class" =>"form-control","maxlength" => ""),"---Select---");?>                                  </span>
                                        </span>
                                         
                                     </td>
@@ -142,7 +148,7 @@ echo $this->renderElement('events_submenus');
                                 <tr>
                                     <td colspan="2">
                                         <p ><label class="boldlabel">1. Select person you want to send email to</label></p>
-                                        <div id="contactemails" style=" background: none repeat scroll 0 0 #EBEBEB;  border: 1px solid #D3D3D3; display: block; font-size: 10px; height: 175px; overflow: auto; width: 100%;" > 
+                                        <div id="contactemails" class="form-control" style=" background: none repeat scroll 0 0 #EBEBEB;  border: 1px solid #D3D3D3; display: block; font-size: 10px; height: 175px; overflow: auto; width: 100%;" > 
                                         <!-- Contact Email list comes here --->
                                         </div>
                                       
@@ -150,7 +156,7 @@ echo $this->renderElement('events_submenus');
                                         <!-- <p ><i>Hint: Use the Ctrt or Shift keys to select multiple names</i> </p> -->
                                         <p><label class="boldlabel">2. Click button below to add selected names to recipients</label></p>                    
                                         <span><br />
-                                            <button type="button"  id="addrecipients" class="button"><span>Add Recipients</span> </button>            
+                                            <button type="button"  id="addrecipients" class="btn"><span>Add Recipients</span> </button>            
                                         </span>
 
                                     </td>
@@ -165,7 +171,7 @@ echo $this->renderElement('events_submenus');
                     <td valign="top" colspan="2"> <?php   echo $form->textarea('EmailTemplate.content', array('id'=>'content','class'=>'ckeditor'));      ?> </td>
                 </tr>       
                 <tr>
-                <td colspan="2"><button type="submit" value="Submit" class="button" name="data[Action][redirectpage]"><span>Send</span></button></td>
+                <td colspan="2"><button type="submit" value="Submit" class="btn" name="data[Action][redirectpage]"><span>Send</span></button></td>
                 </tr> 
                         
                <tr><td colspan="2"><div class="top-bar" style="text-align: left; padding-top: 5px; ">

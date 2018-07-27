@@ -114,43 +114,54 @@ function activatecontents(act,op)
 
 <!--container starts here-->
 <?php $pagination->setPaging($paging); ?>
-<div class="container">
-<div class="titlCont">
-<div class="centerPage">
-
-<div align="center" class="slider" id="toppanel" style="height: 20px; top:13px;right:-50px;width:545px !important; text-align:right;">
-   <?php echo $form->create("Links", array("action" => "history",'name' => 'history', 'id' => "history")) ?>
-                <script type='text/javascript'>
-                        function setprojectid(projectid){
-                                        document.getElementById('projectid').value= projectid;
-                                        document.adminhome.submit();
-                                }
-                </script>
-<a href="javascript:void(0)" onclick="return activatecontents('asd','del');"><?php e($html->image('action.png')); ?></a>			
-<?php  echo $this->renderElement('new_slider');  ?>
+<div class="container clearfix">
+	<div class="titlCont">
+    	<div class="slider-centerpage clearfix">
+        	<div class="center-Page col-sm-6">
+                <h2>History List</h2>
+            </div>
+            <div class="slider-dashboard col-sm-6">
+            	<div class="icon-container">
+                	<?php echo $form->create("Links", array("action" => "history",'name' => 'history', 'id' => "history")) ?>
+						<script type='text/javascript'>
+                                function setprojectid(projectid){
+                                                document.getElementById('projectid').value= projectid;
+                                                document.adminhome.submit();
+                                        }
+                        </script>
+                    <a href="javascript:void(0)" onclick="return activatecontents('asd','del');"><?php e($html->image('action.png')); ?></a>			
+                </div>
+                <?php  echo $this->renderElement('new_slider');  ?>
+            </div>
+            <!--<div align="center" class="slider" id="toppanel" style="height: 20px; top:13px;right:-50px;width:545px !important; text-align:right;">
+            </div>
+            <span class="titlTxt"> History List </span>-->
+            <div class="topTabs" style="height:25px;">
+			<?php /*?><ul class="dropdown">
+            <li><a href="javascript:void(0)" class="tab2"><span>Actions</span></a>
+            <ul class="sub_menu">
+                                             <!--li><a href="javascript:void(0)" onclick="return activatecontents('active','change');">Publish</a></li>
+                                             <li><a href="javascript:void(0)" onclick="return activatecontents('deactive','change');">Unpublish</a></li-->
+                                             <!--li><a href="javascript:void(0)">Copy</a></li-->
+                                             <li><a href="javascript:void(0)" onclick="return activatecontents('asd','del');">Trash</a></li>
+                                 <li class="botCurv"></li>
+                                    </ul>
+            </li>
+            </ul><?php */?>
+            </div>
+        </div>
+    
 </div>
-<span class="titlTxt"> History List </span>
 
-<div class="topTabs" style="height:25px;">
-<?php /*?><ul class="dropdown">
-<li><a href="javascript:void(0)" class="tab2"><span>Actions</span></a>
-<ul class="sub_menu">
-                                 <!--li><a href="javascript:void(0)" onclick="return activatecontents('active','change');">Publish</a></li>
-                                 <li><a href="javascript:void(0)" onclick="return activatecontents('deactive','change');">Unpublish</a></li-->
-                                 <!--li><a href="javascript:void(0)">Copy</a></li-->
-                                 <li><a href="javascript:void(0)" onclick="return activatecontents('asd','del');">Trash</a></li>
-                     <li class="botCurv"></li>
-                        </ul>
-</li>
-</ul><?php */?>
+<div class="clearfix nav-submenu-container">
+	<div class="midCont submenu-Cont">
+		<?php    $this->loginarea="links";    $this->subtabsel="history";
+             echo $this->renderElement('links_submenus');  ?> 
+    </div>
 </div>
 
 
-            <?php    $this->loginarea="links";    $this->subtabsel="history";
-             echo $this->renderElement('links_submenus');  ?>  
-</div>
-</div>
-                            <div class="midCont" id="newcmmtasktab">
+<div class="midCont" id="newcmmtasktab">
 
 
 <?php if($session->check('Message.flash')){ ?> 
@@ -167,12 +178,12 @@ function activatecontents(act,op)
 
                             <!-- top curv image starts -->
                             <div>
-                            <span class="topLft_curv"></span>
-                            <span class="topRht_curv"></span>
+                            <!--<span class="topLft_curv"></span>
+                            <span class="topRht_curv"></span>-->
                 
                 <div class="gryTop">
                	<div class="new_filter" >
-                <span class="spnFilt">Filter:</span><span class="srchBg"><?php echo $form->input("searchkey", array('id' => 'searchkey', 'div' => false, 'label' => '',"maxlength" => "200"));?></span><span class="srchBg2"><?php echo $form->submit("Go", array('id' => 'searchkeysubmit', 'div' => false, 'label' => '','class'=>'btn'));
+                <span class="spnFilt">Filter:</span><span class="srchBg"><?php echo $form->input("searchkey", array('id' => 'searchkey', 'div' => false, 'label' => '',"maxlength" => "200"));?></span><span class="srchBg2"><?php echo $form->submit("Go", array('id' => 'searchkeysubmit', 'div' => false, 'label' => '','class'=>''));
                         ?> 
                 </span>
                 <span class="srchBg2"><input type="button" value="Reset" label="" onclick="javascript:(window.location=baseUrl+'links/history')" id="locaa"></span>
@@ -182,7 +193,7 @@ function activatecontents(act,op)
 
                         <?php $i=1; ?>  
                         <div class="tblData">
-        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <table class="table table-bordered table-striped" width="100%" border="0" cellspacing="0" cellpadding="0">
         <tr class="trBg">
         <th align="center" style="width:2%;">#</th>
         <th align="center" style="width:3%;"><input type="checkbox" value="" name="checkall" id="checkall" /></th>
@@ -315,8 +326,8 @@ function activatecontents(act,op)
   </div>
 
       <div>
-      <span class="botLft_curv"></span>
-      <span class="botRht_curv"></span>
+      <!--<span class="botLft_curv"></span>
+      <span class="botRht_curv"></span>-->
       <div class="gryBot"><?php  echo $this->renderElement('newpagination');  ?>
       </div>
       

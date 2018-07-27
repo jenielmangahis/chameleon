@@ -113,27 +113,33 @@ function activatecontents(act,op)
 
 <!--container starts here-->
 <?php $pagination->setPaging($paging); ?>
-<div class="container">
-<div class="titlCont">
-<div class="centerPage">
-<div class="slider" id="toppanel" style="height: 20px; top:13px;right:-50px;width:545px !important; text-align:right;">			
-<?php echo $form->create("Links", array("action" => "groupslink",'name' => 'groupslink', 'id' => "groupslink")) ?>
-<script type='text/javascript'>
+<div class="container clearfix">
+	<div class="titlCont">
+    	<div class="slider-centerpage clearfix">
+        	<div class="center-Page col-sm-6">
+                <h2>Group's List</h2>
+            </div>
+            <div class="slider-dashboard col-sm-6">
+            	<div class="icon-container">
+                	<?php echo $form->create("Links", array("action" => "groupslink",'name' => 'groupslink', 'id' => "groupslink")) ?>
+					<script type='text/javascript'>
                         function setprojectid(projectid){
                                         document.getElementById('projectid').value= projectid;
                                         document.adminhome.submit();
                                 }
-</script>
-<?php
-e($html->link($html->image('new.png', array('alt' => 'New')) . ' ',array('controller'=>'links','action'=>'add_group'),array('escape' => false)));
-?>
-<a href="javascript:void(0)" onclick="return activatecontents('asd','del');"><?php e($html->image('action.png')); ?></a>
-<a href="javascript:void(0)" onclick="editcontent();" id="linkedit"><?php e($html->image('edit.png')); ?></a>
- <?php  echo $this->renderElement('new_slider');  ?>			
-</div>
-<span class="titlTxt"> Group's List </span>
-
-<div class="topTabs" style="height:25px;">
+                    </script>
+                    <?php
+                    e($html->link($html->image('new.png', array('alt' => 'New')) . ' ',array('controller'=>'links','action'=>'add_group'),array('escape' => false)));
+                    ?>
+                    <a href="javascript:void(0)" onclick="return activatecontents('asd','del');"><?php e($html->image('action.png')); ?></a>
+                    <a href="javascript:void(0)" onclick="editcontent();" id="linkedit"><?php e($html->image('edit.png')); ?></a>                    			
+                </div>
+                <?php  echo $this->renderElement('new_slider');  ?>
+            </div>
+            <!--<div class="slider" id="toppanel" style="height: 20px; top:13px;right:-50px;width:545px !important; text-align:right;">			
+            </div>
+            <span class="titlTxt"> Group's List </span>-->
+            <div class="topTabs" style="height:25px;">
 <?php /*?><ul class="dropdown">
 <li>
 <?php
@@ -158,13 +164,19 @@ e($html->link($html->image('new.png', array('alt' => 'New')) . ' ',array('contro
 <li><a href="javascript:void(0)" onclick="editcontent();" id="linkedit"><span>Edit</span></a></li>
 </ul><?php */?>
 </div>
+        </div>
+</div>
 
 
-            <?php    $this->loginarea="links";    $this->subtabsel="groupslink";
-             echo $this->renderElement('links_submenus');  ?>  
+<div class="clearfix nav-submenu-container">
+	<div class="midCont submenu-Cont">
+		<?php    $this->loginarea="links";    $this->subtabsel="groupslink";
+             echo $this->renderElement('links_submenus');  ?>   
+    </div>
 </div>
-</div>
-                            <div class="midCont" id="newcmmtasktab">
+
+
+<div class="midCont" id="newcmmtasktab">
 
 
 <?php if($session->check('Message.flash')){ ?> 
@@ -181,12 +193,12 @@ e($html->link($html->image('new.png', array('alt' => 'New')) . ' ',array('contro
 
                             <!-- top curv image starts -->
                             <div>
-                            <span class="topLft_curv"></span>
-                            <span class="topRht_curv"></span>
+                            <!--<span class="topLft_curv"></span>
+                            <span class="topRht_curv"></span>-->
                 
                 <div class="gryTop">
                	<div class="new_filter" >
-                <span class="spnFilt">Filter:</span><span class="srchBg"><?php echo $form->input("searchkey", array('id' => 'searchkey', 'div' => false, 'label' => '',"maxlength" => "200"));?></span><span class="srchBg2"><?php echo $form->submit("Go", array('id' => 'searchkeysubmit', 'div' => false, 'label' => '','class'=>'btn'));
+                <span class="spnFilt">Filter:</span><span class="srchBg"><?php echo $form->input("searchkey", array('id' => 'searchkey', 'div' => false, 'label' => '',"maxlength" => "200"));?></span><span class="srchBg2"><?php echo $form->submit("Go", array('id' => 'searchkeysubmit', 'div' => false, 'label' => '','class'=>''));
                         ?> 
                 </span>
                 <span class="srchBg2"><input type="button" value="Reset" label="" onclick="javascript:(window.location=baseUrl+'links/groupslink')" id="locaa"></span>
@@ -196,7 +208,7 @@ e($html->link($html->image('new.png', array('alt' => 'New')) . ' ',array('contro
 
                         <?php $i=1; ?>  
                         <div class="tblData">
-        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <table class="table table-bordered table-striped" width="100%" border="0" cellspacing="0" cellpadding="0">
         <tr class="trBg">
         <th align="center" style="width:2%;">#</th>
         <th align="center" style="width:3%;"><input type="checkbox" value="" name="checkall" id="checkall" /></th>
@@ -280,8 +292,8 @@ e($html->link($html->image('new.png', array('alt' => 'New')) . ' ',array('contro
   </div>
 
       <div>
-      <span class="botLft_curv"></span>
-      <span class="botRht_curv"></span>
+      <!--<span class="botLft_curv"></span>
+      <span class="botRht_curv"></span>-->
       <div class="gryBot"><?php  echo $this->renderElement('newpagination');  ?>
       </div>
       

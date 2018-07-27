@@ -4160,6 +4160,10 @@ p.subtext {
 
 #main > a img src="../img/chameleonLogo.png" { display:none;}
 
+.table-borderless td {
+	border:none !important;
+}
+
 
 /*----------------------------NAVIGATION AREA--------------------*/
 

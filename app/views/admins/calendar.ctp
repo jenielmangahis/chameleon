@@ -18,31 +18,36 @@ $('#calendar').fullCalendar({
 
 <?php $pagination->setPaging($paging); ?> 
 <!-- Body Panel starts -->
-<div class="container">
-
+<div class="container clearfix">
    <div class="titlCont">
-   <div class="myclass">
-          <div class="slider" id="toppanel" style="height: 20px; top:13px;right: -50px;width:545px !important; text-align:right;">
-                
-            <?php echo $form->create("Admin", array("action" => "contactlist",'name' => 'contactlist', 'id' => "contactlist")) ?>
-            <script type='text/javascript'>
-                function setprojectid(projectid){
-                    document.getElementById('projectid').value= projectid;
-                    document.adminhome.submit();
-                }
-            </script>
-
-<?php  echo $this->renderElement('new_slider');  ?>
+   		<div class="slider-centerpage clearfix">
+        	<div class="center-Page col-sm-6">
+                <h2>Calendar</h2>
             </div>
-           <span class="titlTxt1" style="padding-top:18px;">Calendar</span>
-
-           
-          <?php    $this->loginarea="admins";    $this->subtabsel="calendar";
-             echo $this->renderElement('events_submenus');  ?>    
-
+            <div class="slider-dashboard col-sm-6">
+            	<div class="icon-container">
+                	<?php echo $form->create("Admin", array("action" => "contactlist",'name' => 'contactlist', 'id' => "contactlist")) ?>
+					<script type='text/javascript'>
+                        function setprojectid(projectid){
+                            document.getElementById('projectid').value= projectid;
+                            document.adminhome.submit();
+                        }
+                    </script>
+                </div>
+                <?php  echo $this->renderElement('new_slider');  ?>
+            </div>
+            <!--<div class="slider" id="toppanel" style="height: 20px; top:13px;right: -50px;width:545px !important; text-align:right;">
+            </div>
+           <span class="titlTxt1" style="padding-top:18px;">Calendar</span>-->
         </div>
-        </div>
+</div>
 
+<div class="clearfix nav-submenu-container">
+	<div class="midCont submenu-Cont">
+		<?php    $this->loginarea="admins";    $this->subtabsel="calendar";
+             echo $this->renderElement('events_submenus');  ?>
+    </div>
+</div>
 
 <div class="midCont">
 

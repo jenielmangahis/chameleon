@@ -118,19 +118,26 @@ function activatecontents(act,op)
 
 <!--container starts here-->
 <?php $pagination->setPaging($paging); ?>
-<div class="container">
-<div class="titlCont"><div class="myclass">
-<div class="slider" id="toppanel" style="height: 20px; top:13px;right: -50px;width:545px !important; text-align:right;">
-<?php echo $form->create("Admins", array("action" => "mailautoresponderlist",'type' => 'file','enctype'=>'multipart/form-data','name' => 'contentlist', 'id' => "mailautoresponderlist"))?>
-<?php e($html->link($html->image('new.png') . ' ',array('controller'=>'admins','action'=>'addmailtemplate','event'),array('escape' => false))); ?>
-<a href="javascript:void(0)" onclick="return activatecontents('asd','del');"><?php e($html->image('action.png')); ?></a>
-<a href="javascript:void(0)" onclick="editcontent();" id="linkedit"><?php e($html->image('edit.png')); ?></a>
-<?php  echo $this->renderElement('new_slider');  ?> 
-</div>
- <?php  echo $this->renderElement('project_name');  ?>
-<span class="titlTxt">AutoResponse </span>
-
-<div class="topTabs">
+<div class="container clearfix">
+	<div class="titlCont">
+		<div class="slider-centerpage clearfix">
+        	<div class="center-Page col-sm-6">            	
+                <h2>AutoResponse</h2>
+            </div>
+            <div class="slider-dashboard col-sm-6">
+            	<div class="icon-container">
+                	<?php echo $form->create("Admins", array("action" => "mailautoresponderlist",'type' => 'file','enctype'=>'multipart/form-data','name' => 'contentlist', 'id' => "mailautoresponderlist"))?>
+					<?php e($html->link($html->image('new.png') . ' ',array('controller'=>'admins','action'=>'addmailtemplate','event'),array('escape' => false))); ?>
+                    <a href="javascript:void(0)" onclick="return activatecontents('asd','del');"><?php e($html->image('action.png')); ?></a>
+                    <a href="javascript:void(0)" onclick="editcontent();" id="linkedit"><?php e($html->image('edit.png')); ?></a>                     
+                </div>
+                <?php  echo $this->renderElement('new_slider');  ?>
+            </div>
+            <!--<div class="slider" id="toppanel" style="height: 20px; top:13px;right: -50px;width:545px !important; text-align:right;">
+            </div>          
+            <?php  //echo $this->renderElement('project_name');  ?>   
+            <span class="titlTxt">AutoResponse </span>-->
+            <div class="topTabs">
 <?php /*?><ul class="dropdown">
 <li>
 	<?php
@@ -154,25 +161,28 @@ function activatecontents(act,op)
 <li><a href="javascript:void(0)" onclick="editcontent();" id="linkedit"><span>Edit</span></a></li>
 </ul><?php */?>
 </div>
+        </div>
+</div>
 
 
-
-  
-          <?php    $this->loginarea="admins";    $this->subtabsel="eventautoresponders";
-             echo $this->renderElement('events_submenus');  ?>    
-             
-</div></div>
+<div class="clearfix nav-submenu-container">
+	<div class="midCont submenu-Cont">
+		<?php    $this->loginarea="admins";    $this->subtabsel="eventautoresponders";
+             echo $this->renderElement('events_submenus');  ?>
+    </div>
+</div>
 
 <!--inner-container starts here-->
-                            <div class="midCont" id="newmailtemptab">
+
+<div class="midCont" id="newmailtemptab">
 
 	<?php if($session->check('Message.flash')) { echo $this->renderElement('error_message'); } ?>
 
 
                             <!-- top curv image starts -->
                             <div>
-                            <span class="topLft_curv"></span>
-							 <span class="topRht_curv"></span>
+                            <!--<span class="topLft_curv"></span>
+							 <span class="topRht_curv"></span>-->
                 <div class="gryTop">
                
                 <script type='text/javascript'>
@@ -194,7 +204,7 @@ function activatecontents(act,op)
 
                         <?php $i=1; ?>  
                         <div class="tblData">
-    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+    <table class="table table-bordered table-striped" width="100%" border="0" cellspacing="0" cellpadding="0">
     <tr class="trBg">
     <th align="center" width="2%">#</th>
     <th align="center" width="3%"><input type="checkbox" value="" name="checkall" id="checkall" /></th>
@@ -395,8 +405,8 @@ function activatecontents(act,op)
         
  </div>
      <div>
-     <span class="botLft_curv"></span>
-	 <span class="botRht_curv"></span>
+     <!--<span class="botLft_curv"></span>
+	 <span class="botRht_curv"></span>-->
 <div class="gryBot">
 <?php //if($emailtemplates) { 
 echo $this->renderElement('newpagination'); //} ?>
