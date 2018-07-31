@@ -3,40 +3,47 @@ $base_url_Admin = Configure::read('App.base_url_Admin');
 $backUrl = $base_url_Admin;
 ?>
 
- <div class="container">      
- <div class="titlCont"><div style="width:960px; margin:0 auto;">
-
-             <div align="center" class="slider" id="toppanel" style="height: 20px; top:13px;right:-50px;width:545px !important; text-align:right;">	
-<button type="button" id="saveForm" class="sendBut"  ONCLICK="javascript:(window.location='<?php echo $backUrl ?>editprojectdtl')"><?php e($html->image('cancle.png')); ?></button>	
-		 <?php  echo $this->renderElement('new_slider');  ?>
-			</div>    
-             <?php  echo $this->renderElement('project_name');  ?> 
-            <span class="titlTxt">   Shopping Cart            </span>
-            
+<div class="container clearfix">      
+	<div class="titlCont">
+    	<div class="slider-centerpage clearfix">
+        	<div class="center-Page col-sm-6">            	
+                <h2>Shopping Cart</h2>
+            </div>
+            <div class="slider-dashboard col-sm-6">
+            	<div class="icon-container">
+                	<button type="button" id="saveForm" class="sendBut"  ONCLICK="javascript:(window.location='<?php echo $backUrl ?>editprojectdtl')"><?php e($html->image('cancle.png')); ?></button>	
+                </div>
+				<?php  echo $this->renderElement('new_slider');  ?>
+            </div>
+            <!--<?php  //echo $this->renderElement('project_name');  ?> 
+            <span class="titlTxt">   Shopping Cart</span>-->
             <div class="topTabs" style="height:25px;">
                 <?php /*?><ul class="dropdown">
                          <li><button type="button" id="saveForm" class="button"  ONCLICK="javascript:(window.location='<?php echo $backUrl ?>editprojectdtl')"><span> Cancel</span></button></li>    
                 </ul><?php */?>
             </div>
+        </div>
+ 
+</div>
 
-  
-                      
- <?php    $this->loginarea="admins";    $this->subtabsel="projectshoppingcart";
-                   
-if($_GET['url'] === 'admins/projectshoppingcart/0'){
-   echo $this->renderElement('setting_submenus');
-}else{
-echo $this->renderElement('setup_submenus');
 
-}					
-      echo $javascript->link('/js/myiFrame.js');               
-                      ?> 
-                    
-        </div></div>
-
+<div class="clearfix nav-submenu-container">
+	<div class="midCont submenu-Cont">
+		 <?php    $this->loginarea="admins";    $this->subtabsel="projectshoppingcart";
+		                    
+			if($_GET['url'] === 'admins/projectshoppingcart/0'){
+			echo $this->renderElement('setting_submenus');
+			}else{
+			echo $this->renderElement('setup_submenus');
+			
+			}					
+			echo $javascript->link('/js/myiFrame.js');               
+ 		?>    
+    </div>
+</div>
      
-     <div class="midCont" id="newcoinsettab">
-           <table width="100%" align="center" cellpadding="1" cellspacing="1">
+<div class="midCont" id="newcoinsettab">
+           <table class="table table-bordered table-striped" width="100%" align="center" cellpadding="1" cellspacing="1">
               <tr>
                 <td width="100%" colspan=2 style="vertical-align:top" >
                <!--  <script type="text/javascript" src="http://localhost:9090/js/myiFrame.js"></script>-->

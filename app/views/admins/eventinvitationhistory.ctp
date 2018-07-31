@@ -129,25 +129,25 @@ function activatecontents(act,op)
 <!--container starts here-->
 <?php $pagination->setPaging($paging); ?>
 <div class="container">
-<div class="titlCont"><div class="myclass">
- <div align="center" class="slider" id="toppanel" style="height: 20px; top:13px;right:-50px;width:545px !important; text-align:right;">
-        
-   <?php echo $form->create("Admins", array("action" => "eventinvitationhistory",'name' => 'eventinvitationhistory', 'id' => "eventinvitationhistory")) ?>
-                <script type='text/javascript'>
-                        function setprojectid(projectid){
-                                        document.getElementById('projectid').value= projectid;
-                                        document.adminhome.submit();
-                                }
-                </script> 
-				<?php e($html->link($html->image('cancle.png',array('alt'=>'Cancle')),array('controller'=>'admins','action'=>'eventlist'),array('escape' => false,'id' =>'linkedit'))); ?>
-<?php  echo $this->renderElement('new_slider');  ?>
-
-</div>
-
-                                     </th>   
-<span class="titlTxt">Invites List </span>
-
-<div class="topTabs" style="height:25px;">
+	<div class="titlCont">
+    	<div class="slider-centerpage clearfix">
+        	<div class="center-Page col-sm-6">            	
+                <h2>Invites List</h2>
+            </div>
+            <div class="slider-dashboard col-sm-6">
+            	<div class="icon-container">
+                	<?php echo $form->create("Admins", array("action" => "eventinvitationhistory",'name' => 'eventinvitationhistory', 'id' => "eventinvitationhistory")) ?>
+						<script type='text/javascript'>
+                                function setprojectid(projectid){
+                                                document.getElementById('projectid').value= projectid;
+                                                document.adminhome.submit();
+                                        }
+                        </script> 
+                        <?php e($html->link($html->image('cancle.png',array('alt'=>'Cancle')),array('controller'=>'admins','action'=>'eventlist'),array('escape' => false,'id' =>'linkedit'))); ?>
+                </div>
+                <?php  echo $this->renderElement('new_slider');  ?>
+            </div>
+            <div class="topTabs" style="height:25px;">
 <?php /*?><ul class="dropdown">
 <li>
 	
@@ -162,19 +162,22 @@ function activatecontents(act,op)
 </li>  
 </ul><?php */?>
 </div>
+			<div class="clear"><img src="../../img/spacer.gif" width="1" height="12px;" /></div>
+        </div>
 
-<div class="clear"><img src="../../img/spacer.gif" width="1" height="12px;" /></div>
-<div style="height: 30px; clear: both; ">
-<?php    $this->loginarea="admins";    $this->subtabsel="eventinvitationhistory";
-//             echo $this->renderElement('eventlist_submenus'); 
-
-echo $this->renderElement('events_submenus');
-			 ?>   
-</div>
-<div class="clear"></div>
 
 </div>
+
+
+<div class="clearfix nav-submenu-container">
+	<div class="midCont submenu-Cont">
+		<?php    $this->loginarea="admins"; $this->subtabsel="eventinvitationhistory";
+			echo $this->renderElement('events_submenus');
+		?>    
+    </div>
 </div>
+
+
 <div class="midCont" id="newcmmtasktab">
 <?php if($session->check('Message.flash')){ ?> 
 <div id="blck"> 
@@ -192,8 +195,8 @@ echo $this->renderElement('events_submenus');
 
                             <!-- top curv image starts -->
                             <div>
-                            <span class="topLft_curv"></span>
-							<span class="topRht_curv"></span>
+                            <!--<span class="topLft_curv"></span>
+							<span class="topRht_curv"></span>-->
                 
                 <div class="gryTop">
                <div class="new_filter">
@@ -207,7 +210,7 @@ echo $this->renderElement('events_submenus');
 
                         <?php $i=1; ?>  
                         <div class="tblData">
-        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <table class="table table-bordered table-striped" width="100%" border="0" cellspacing="0" cellpadding="0">
         <tr class="trBg">
         <th align="center" style="width:2%;">#</th>
         <th align="center" style="width:3%;"><input type="checkbox" value="" name="checkall" id="checkall" /> <input type="hidden" id="current_domain" name="current_domain" value="<?php echo $current_domain;?>">                                    </th>   
@@ -354,8 +357,8 @@ echo $this->renderElement('events_submenus');
   </div>
 
       <div>
-      <span class="botLft_curv"></span>
-      <span class="botRht_curv"></span>
+      <!--<span class="botLft_curv"></span>
+      <span class="botRht_curv"></span>-->
       <div class="gryBot"><?php echo $this->renderElement('newpagination'); ?>
       </div>
       <!--inner-container ends here-->

@@ -4164,6 +4164,15 @@ p.subtext {
 	border:none !important;
 }
 
+.tr_Bg { 
+	background-color: #4F9BD7 !important;
+    color: #fff;
+	}
+	
+.tbl-Data1 .form-control { display:inline-block; height:28px;}	
+.tbl-Data1 .socialtxtArea1.form-control { height:inherit;}
+.tbl-Data1 .table td { vertical-align:middle;}
+
 
 /*----------------------------NAVIGATION AREA--------------------*/
 

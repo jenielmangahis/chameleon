@@ -144,24 +144,28 @@ function activatecontents(act,op)
    </script>
 <?php $pagination->setPaging($paging); ?> 
  <!-- Body Panel starts -->
-   <div class="container">
-   <div class="titlCont"><div style="width:960px; margin:0 auto;">
-            <div class="slider" id="toppanel" style="height: 20px; top:13px;right: -50px;width:545px !important; text-align:right;">
-             <?php //echo $form->create("Admin", array("action" => "contactlist",'name' => 'contactlist', 'id' => "contactlist")) ?>
-            <script type='text/javascript'>
-                function setprojectid(projectid){
-                    document.getElementById('projectid').value= projectid;
-                    document.adminhome.submit();
-                }
-            </script>
-<?php e($html->link($html->image('new.png') . ' ',array('controller'=>'admins','action'=>'blogadd'),array('escape' => false))); ?>
-<a href="javascript:void(0)" onclick="return activatecontents('asd','del');" ><?php e($html->image('action.png')); ?></a>
-<a href="javascript:void(0)" onclick="editblog();" id="linkedit"><?php e($html->image('edit.png')); ?></a>
-<?php  echo $this->renderElement('new_slider');  ?>
+<div class="container">
+	<div class="titlCont">
+    	<div class="slider-centerpage clearfix">
+            <div class="center-Page col-sm-6">
+            	<?php  //echo $this->renderElement('project_name');  ?> 
+                <h2>Blogs</h2>
             </div>
-            <?php  echo $this->renderElement('project_name');  ?>   
-            <span class="titlTxt">   Blogs  </span>
-            
+            <div class="slider-dashboard col-sm-6">
+            	<div class="icon-container">
+					<?php //echo $form->create("Admin", array("action" => "contactlist",'name' => 'contactlist', 'id' => "contactlist")) ?>
+                    <script type='text/javascript'>
+                        function setprojectid(projectid){
+                            document.getElementById('projectid').value= projectid;
+                            document.adminhome.submit();
+                        }
+                    </script>
+                    <?php e($html->link($html->image('new.png') . ' ',array('controller'=>'admins','action'=>'blogadd'),array('escape' => false))); ?>
+                    <a href="javascript:void(0)" onclick="return activatecontents('asd','del');" ><?php e($html->image('action.png')); ?></a>
+                    <a href="javascript:void(0)" onclick="editblog();" id="linkedit"><?php e($html->image('edit.png')); ?></a>                    
+                </div>
+                <?php  echo $this->renderElement('new_slider');  ?>
+            </div>
             <div class="topTabs">
                 <?php /*?><ul class="dropdown">
                    <li>
@@ -185,31 +189,32 @@ function activatecontents(act,op)
                     <li><a href="javascript:void(0)" onclick="editblog();" id="linkedit"><span>Edit</span></a></li>
                 </ul><?php */?>
             </div>
-     
-
-             <?php    
-				$this->loginarea="admins";
-				$this->subtabsel="bloglist";
-                echo $this->renderElement('setting_submenus');
-			  ?>   
-                    
-        </div></div>
+        </div>
+   
+</div>
   
    
 
+<div class="clearfix nav-submenu-container">
+	<div class="midCont submenu-Cont">
+		<?php    
+		$this->loginarea="admins";
+		$this->subtabsel="bloglist";
+		echo $this->renderElement('setting_submenus');
+	  	?>  
+    </div>
+</div> 
 
-    <div class="midCont">
 
-
-
+<div class="midCont">
 	
 	<?php if($session->check('Message.flash')) { echo $this->renderElement('error_message'); } ?>
 
 
     <!-- top curv image starts -->
     <div>
-    <span class="topLft_curv"></span>
-	<span class="topRht_curv"></span>
+    <!--<span class="topLft_curv"></span>
+	<span class="topRht_curv"></span>-->
     <div class="gryTop">
 		<?php echo $form->create("Admin", array("action" => "bloglist",'name' => 'bloglist', 'id' => "bloglist")) ?>
 		<script type='text/javascript'>
@@ -233,7 +238,7 @@ function activatecontents(act,op)
 		
                     <div class="tblData">
 
-			<table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<table class="table table-bordered table-striped" width="100%" border="0" cellspacing="0" cellpadding="0">
                    <tr class="trBg">
 	<th align="left" valign="middle" width="15px">#</th>
 	   <th align="left" valign="middle" width="10px"><input type="checkbox" value="" name="checkall" id="checkall" /></th>
@@ -307,8 +312,8 @@ function activatecontents(act,op)
 			
  </div>
                     <div>
-                    <span class="botLft_curv"></span>
-					<span class="botRht_curv"></span>
+                    <!--<span class="botLft_curv"></span>
+					<span class="botRht_curv"></span>-->
 <div class="gryBot"><?php //if($blogdata) { 
 echo $this->renderElement('newpagination'); //} ?>
                     </div>
