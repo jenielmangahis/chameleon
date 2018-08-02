@@ -4173,6 +4173,20 @@ p.subtext {
 .tbl-Data1 .socialtxtArea1.form-control { height:inherit;}
 .tbl-Data1 .table td { vertical-align:middle;}
 
+.gray-top, .gray-bot { padding:15px}
+
+
+ul.form-style { display:block;}
+ul.form-style li .intpSpan { display:block; margin-bottom:10px;}
+
+.themetbl1 textarea { width:100%; margin:0 0 15px 0; padding:5px; height:40px;}
+.themeTblData .form-style > li { margin-bottom:30px;}
+.themeTblData fieldset { border:none !important;}
+.themeTblData legend { border:none;}
+.themeTblData label { text-align:left !important;}
+
+
+
 
 /*----------------------------NAVIGATION AREA--------------------*/
 

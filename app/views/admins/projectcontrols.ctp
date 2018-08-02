@@ -10,29 +10,35 @@ $backUrl = $base_url_Admin;
 ?>
 
 <div class="titlCont">
-<div style="width:960px; margin:0 auto;">
-
-<div class="slider" id="toppanel" style="height: 20px; top:13px;right: -50px;width:545px !important; text-align:right;">
-	<?php echo $form->create("Admin", array("action" => "projectcontrols",'type' => 'file','enctype'=>'multipart/form-data','name' => 'projectcontrols', 'id' => "projectcontrols"))?>
-	<?php echo $form->hidden("ProjectType.id", array('id' => 'typeid'));?>	
-	<button type="submit" value="Submit" class="sendBut" name="data[Action][redirectpage]"><?php e($html->image('save.png')); ?></button>
-<button type="submit" value="Submit" class="sendBut" name="data[Action][noredirection]"><?php e($html->image('apply.png')); ?></button>
-<button type="button" id="saveForm" class="sendBut"  ONCLICK="javascript:(window.location='<?php echo $backUrl ?>projectdashboard')"><?php e($html->image('cancle.png')); ?></button> 
-	<?php  echo $this->renderElement('new_slider');  ?>
+	<div class="slider-centerpage clearfix">
+    	<div class="center-Page col-sm-6">
+		   <?php //echo $project['Project']['project_name'];  ?>
+            <h2>Controls</h2>
+        </div>
+    	<div class="slider-dashboard col-sm-6">
+        	<div class="icon-container">
+            	<?php echo $form->create("Admin", array("action" => "projectcontrols",'type' => 'file','enctype'=>'multipart/form-data','name' => 'projectcontrols', 'id' => "projectcontrols"))?>
+				<?php echo $form->hidden("ProjectType.id", array('id' => 'typeid'));?>	
+                <button type="submit" value="Submit" class="sendBut" name="data[Action][redirectpage]"><?php e($html->image('save.png')); ?></button>
+                <button type="submit" value="Submit" class="sendBut" name="data[Action][noredirection]"><?php e($html->image('apply.png')); ?></button>
+                <button type="button" id="saveForm" class="sendBut"  ONCLICK="javascript:(window.location='<?php echo $backUrl ?>projectdashboard')"><?php e($html->image('cancle.png')); ?></button> 
+            </div>
+            <?php  echo $this->renderElement('new_slider');  ?>
+        </div>
+        <div class="topTabs">
 </div>
-<span class="titlTxt1"><?php echo $project['Project']['project_name'];  ?>&nbsp;</span>
-<span class="titlTxt"> Controls
-</span>
-
-<div class="topTabs">
-</div>
-<?php    $this->loginarea="admins";    $this->subtabsel="projectcontrols";
-                    echo $this->renderElement('setting_submenus');  ?> 
+    </div>
  </div>
- </div>   
+ 
+<div class="clearfix nav-submenu-container">
+	<div class="midCont submenu-Cont">
+		<?php    $this->loginarea="admins";    $this->subtabsel="projectcontrols";
+			echo $this->renderElement('setting_submenus');  ?> 
+    </div>
+</div>
     
 <?php if($session->check('Message.flash')) { echo $this->renderElement('error_message'); } ?>    
-<div class="midPadd" id="ProjectType">
+<div class="midPadd midCont clearfix" id="ProjectType">
    <div class="left" style="min-height:300px">
   <table width="800px" align="center" cellpadding="1" cellspacing="1">
 							<?php if($session->check('Message.flash')){

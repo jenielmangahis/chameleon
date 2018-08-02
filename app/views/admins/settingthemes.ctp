@@ -70,23 +70,35 @@ $backUrl = $base_url_admin.'contentlist';
 ?>
 
 <div class="titlCont">
-  <div class="myclass">
-<div class="slider" id="toppanel" style="height: 20px; top:13px;right: -50px;width:545px !important; text-align:right;">
-	<?php echo $form->create("Admins", array("action" => "settingthemes",'type' => 'file','enctype'=>'multipart/form-data','name' => 'settingthemes', 'id' => "settingthemes")); ?>
-<button type="submit" value="Submit" class="sendBut" name="data[Action][redirectpage]"><?php e($html->image('save.png')); ?></button>
-<button type="submit" value="Submit" class="sendBut" name="data[Action][noredirection]"><?php e($html->image('apply.png')); ?></button>
-<button type="button" id="saveForm" class="sendBut"  ONCLICK="javascript:(window.location='<?php echo $backUrl ?>')"><?php e($html->image('cancle.png')); ?></button>
-      <?php  echo $this->renderElement('new_slider');  ?>
+	<div class="slider-centerpage clearfix">
+    	<div class="center-Page col-sm-6">
+		   <?php  //echo $this->renderElement('project_name');  ?>
+            <h2>Themes</h2>
+        </div>
+        <div class="slider-dashboard col-sm-6">
+        	<div class="icon-container">
+            	<?php echo $form->create("Admins", array("action" => "settingthemes",'type' => 'file','enctype'=>'multipart/form-data','name' => 'settingthemes', 'id' => "settingthemes")); ?>
+                <button type="submit" value="Submit" class="sendBut" name="data[Action][redirectpage]"><?php e($html->image('save.png')); ?></button>
+                <button type="submit" value="Submit" class="sendBut" name="data[Action][noredirection]"><?php e($html->image('apply.png')); ?></button>
+                <button type="button" id="saveForm" class="sendBut"  ONCLICK="javascript:(window.location='<?php echo $backUrl ?>')"><?php e($html->image('cancle.png')); ?></button>
+            </div>
+            <?php  echo $this->renderElement('new_slider');  ?>	
+        </div>
+        <!--<span class="titlTxt1"><?php //echo $project_name;  ?>&nbsp;</span> <span class="titlTxt"> Themes </span>-->
     </div>
-   <span class="titlTxt1"><?php echo $project_name;  ?>&nbsp;</span> <span class="titlTxt"> Themes </span>
+  
+</div>
 
-    <?php    
+<div class="clearfix nav-submenu-container">
+	<div class="midCont submenu-Cont">
+		<?php    
 			$this->loginarea="admins";
 			$this->subtabsel="settingthemes";
              echo $this->renderElement('setting_submenus');  
 		?>
-  </div>
+    </div>
 </div>
+
 <!--rightpanel ends here--> 
 <!--inner-container starts here-->
 <div class="centerPage" id="newsettab">
@@ -111,7 +123,7 @@ $backUrl = $base_url_admin.'contentlist';
   <?php } ?>
   <div class="themeTblData">
     <div id="Themes">
-    <table width="100%" align="center" cellpadding="0" cellspacing="0">
+    <table class="table table-borderless" width="100%" align="center" cellpadding="0" cellspacing="0">
       <?php if($session->check('Message.flash')){ ?>
       <tr>
         <td align="center">
@@ -122,9 +134,9 @@ $backUrl = $base_url_admin.'contentlist';
       <tr>
         <td>
           <input type="hidden" value="<?php echo $this->data['Theme']['id'] ?>" id="themeid" name="data[Theme][themeid]"/>
-          <table class="themetbl1" width="100%" cellpadding="0" cellspacing="10">
-            <tr>
-              <td class="themetbl1_td1" >
+          <table class="themetbl1 table table-borderless" width="100%" cellpadding="0" cellspacing="10">
+            <tr class="clearfix">
+              <td class="col-sm-6 themetbl1-td1" >
                 <fieldset>
                   <legend>Page Layout</legend>
                   <ul class="form-style">
@@ -162,31 +174,31 @@ $backUrl = $base_url_admin.'contentlist';
                       <span class="intpSpan"><em>#</em><?php echo $form->input('Theme.dropdowntextcolor',array('class'=>'inpt_txt_fld1','div'=>false,'label'=>false)); ?></span></li>
                   </ul>
                 </fieldset>              </td>
-              <td class="themetbl1_td2" >
+              <td class="col-sm-6 themetbl1-td2" >
                 <fieldset>
                   <legend>Coins &minus; Register &minus; Comments &minus; Component</legend>
                   <ul class="form-style">
                     <li>
                       <label class="themetbl1_td2_lbl">Around Coins</label>
                       <span class="intpSpan"><em>#</em><?php echo $form->input('Theme.bgaroundcoins',array('id'=>'bgaroundcoins','class'=>'inpt_txt_fld1','div'=>false,'label'=>false)); ?></span>
-                      <textarea  id="codeval1" cols="200" rows="2"></textarea>
-                      <button type="button" value="Getsource1" class="button" name="Getsource" onClick="getsource1();"><span>Get iFrame Source</span></button>
-					                       <button type="button" id="coins_clip_button" value="Copy" class="newblue" name="copyb" ><span>Copy</span></button>
+                      <textarea class="form-control" id="codeval1" cols="200" rows="2"></textarea>
+                      <button type="button" value="Getsource1" class="btn btn-sm btn-primary" name="Getsource" onClick="getsource1();"><span>Get iFrame Source</span></button>
+					                       <button type="button" id="coins_clip_button" value="Copy" class="new-blue btn btn-sm btn-success" name="copyb" ><span>Copy</span></button>
                     </li>
                     <li>
                       <label class="themetbl1_td2_lbl" >Register Button</label>
                       <span class="intpSpan"><em>#</em><?php echo $form->input('Theme.bgregisterbtn',array('id'=>'bgregisterbtn','class'=>'inpt_txt_fld1','div'=>false,'label'=>false)); ?></span>
-                      <textarea  id="codeval2" cols="200" rows="2"  ></textarea>
-                      <button type="button" value="Getsource2" class="button" name="Getsource" onClick="getsource2();"><span>Get iFrame Source</span></button>
-                      <button type="button" id="register_clip_button" value="Copy" class="newblue" name="copyb" ><span>Copy</span></button>
+                      <textarea class="form-control" id="codeval2" cols="200" rows="2"  ></textarea>
+                      <button type="button" value="Getsource2" class="btn btn-sm btn-primary" name="Getsource" onClick="getsource2();"><span>Get iFrame Source</span></button>
+                      <button type="button" id="register_clip_button" value="Copy" class="new-blue btn btn-sm btn-success" name="copyb" ><span>Copy</span></button>
 					 
 					</li>
                     <li>
                       <label class="themetbl1_td2_lbl" >Comment Button</label>
                       <span class="intpSpan"><em>#</em><?php echo $form->input('Theme.bgcommentbtn',array('id'=>'bgcommentbtn','class'=>'inpt_txt_fld1','div'=>false,'label'=>false)); ?></span>
-                      <textarea  id="codeval3" cols="200" rows="2"></textarea>
-                      <button type="button" value="Getsource3" class="button" name="Getsource" onClick="getsource3();"><span>Get iFrame Source</span></button>
-                      <button type="button" id="comment_clip_button" value="Copy" class="newblue" name="copyb" ><span>Copy</span></button>
+                      <textarea class="form-control"  id="codeval3" cols="200" rows="2"></textarea>
+                      <button type="button" value="Getsource3" class=" btn btn-sm btn-primary" name="Getsource" onClick="getsource3();"><span>Get iFrame Source</span></button>
+                      <button type="button" id="comment_clip_button" value="Copy" class="new-blue btn btn-sm btn-success" name="copyb" ><span>Copy</span></button>
                     </li>
                   </ul>
                 </fieldset>              </td>
@@ -196,7 +208,7 @@ $backUrl = $base_url_admin.'contentlist';
       </tr>
       <tr>
         <td>
-          <table class="themetbl2" width="100%" cellpadding="0" cellspacing="8">
+          <table class="themetbl2 table table-borderless" width="100%" cellpadding="0" cellspacing="8">
             <tr>
               <td class="themetbl2_td1">
                 <fieldset style="border: 1px solid #d2d2d2; padding: 10px;">
@@ -451,9 +463,9 @@ $backUrl = $base_url_admin.'contentlist';
       </tr>
       <tr>
         <td>
-          <table class="themetbl3" width="100%" cellpadding="0" cellspacing="8" id="toggle_options">
+          <table class="themetbl3 table table-borderless" width="100%" cellpadding="0" cellspacing="8" id="toggle_options">
             <tr>
-              <td class="themetbl3_td1">
+              <td class="themetbl3_td1 col-sm-3">
                 <fieldset class="theme_menutext inOne">
                   <legend>For Register and Login Page</legend>
                   <ul class="form-style"><li>
@@ -467,7 +479,7 @@ $backUrl = $base_url_admin.'contentlist';
                     <span class="intpSpan"><em>#</em><?php echo $form->input('Theme.systemlinkcolor',array('id'=>'systemlinkcolor','class'=>'inpt_txt_fld1','div'=>false,'label'=>false)); ?></span> </li></ul>
                 </fieldset>
               </td>
-              <td width="60%" class="themetbl3_td2" >
+              <td class="themetbl3_td2 col-sm-7" >
                 <fieldset class="theme_menutext dashBorad">
                   <legend>Member Dashboard &amp; Pages</legend>
                   <ul class="form-style box1"><li>

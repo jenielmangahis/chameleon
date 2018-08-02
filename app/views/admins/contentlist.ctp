@@ -137,66 +137,73 @@ $resetUrl = $base_url_admin.'contentlist';
 </style>
 <!--container starts here-->
 <?php $pagination->setPaging($paging); ?>
-<div class="container">
-<div class="titlCont"><div class="myclass">
-<div class="slider" id="toppanel" style="height: 20px; top:13px;right: -50px;width:545px !important; text-align:right;">
-<?php echo $form->create("Admins", array("action" => "contentlist",'type' => 'file','enctype'=>'multipart/form-data','name' => 'contentlist', 'id' => "contentlist"))?>
-        <script type='text/javascript'>
-            function setprojectid(projectid){
-                document.getElementById('projectid').value= projectid;
-                document.adminhome.submit();
-            }
-        </script>
-		<?php e($html->link($html->image('new.png') . ' ',array('controller'=>'admins','action'=>'addcontentpage'),array('escape' => false))); ?>
-		<a href="javascript:void(0)" onclick="return activatecontents('asd','permanant_del');"><?php e($html->image('action.png')); ?></a>
-		<a href="javascript:void(0)" onclick="editcontent();" id="linkedit"><?php e($html->image('edit.png')); ?></a>
-		 <?php  echo $this->renderElement('new_slider');  ?>
+<div class="container clearfix">
+	<div class="titlCont">
+        <div class="slider-centerpage clearfix">
+            <div class="center-Page col-sm-6">
+                <?php  //echo $this->renderElement('project_name');  ?>
+                <h2>Web pages</h2>
+            </div>
+            <div class="slider-dashboard col-sm-6">
+                <div class="icon-container">
+                    <?php echo $form->create("Admins", array("action" => "contentlist",'type' => 'file','enctype'=>'multipart/form-data','name' => 'contentlist', 'id' => "contentlist"))?>
+                    <script type='text/javascript'>
+                    function setprojectid(projectid){
+                        document.getElementById('projectid').value= projectid;
+                        document.adminhome.submit();
+                    }
+                    </script>
+                    <?php e($html->link($html->image('new.png') . ' ',array('controller'=>'admins','action'=>'addcontentpage'),array('escape' => false))); ?>
+                    <a href="javascript:void(0)" onclick="return activatecontents('asd','permanant_del');"><?php e($html->image('action.png')); ?></a>
+                    <a href="javascript:void(0)" onclick="editcontent();" id="linkedit"><?php e($html->image('edit.png')); ?></a>                            
+                </div>
+                <?php  echo $this->renderElement('new_slider');  ?>
+                <div class="topTabs">
+                <?php /*?><ul class="dropdown">
+                    <li>
+                    <?php
+                    e($html->link(
+                        $html->tag('span', 'New'),
+                        array('controller'=>'admins','action'=>'addcontentpage'),
+                        array('escape' => false)
+                        )
+                    );
+                    ?>
+                    </li>
+                    <li><a href="javascript:void(0)" class="tab2"><span>Actions</span></a>
+                        <ul class="sub_menu">
+                            <li><a href="javascript:void(0)" onclick="return activatecontents('active','change');">Publish</a></li>
+                            <li><a href="javascript:void(0)" onclick="return activatecontents('deactive','change');">Unpublish</a></li>
+                            <!--li><a href="javascript:void(0)">Copy</a></li-->
+                            <li><a href="javascript:void(0)" onclick="return activatecontents('asd','permanant_del');">Trash</a></li>
+                            <li><a href="javascript:void(0)" onclick="return activatecontents('asd','del');">Archive</a></li>
+                            <li class="botCurv"></li>
+                        </ul>
+                    </li>
+                    <li><a href="javascript:void(0)" onclick="editcontent();" id="linkedit"><span>Edit</span></a></li>
+                </ul><?php */?>
+            </div>
+                <script language='javascript'>
+                    function showcontentwindow(id){
+                        //alert(id);
+                        var url = baseUrlAdmin +'showcontentwindow/'+id+'/Content';
+                        window.open(url,'mywindow','status=no,toolbar=no, height=520,width=700,top=80 , left=150, scrollbars=yes');
+                        //window.open(url);
+                        //jQuery.facebox({ ajax: url });
+                    }
+                </script>
+            </div>
         </div>
-         <?php  echo $this->renderElement('project_name');  ?> 
-        <span class="titlTxt">
-            Web pages
-        </span>
-        <div class="topTabs">
-            <?php /*?><ul class="dropdown">
-                <li>
-				<?php
-				e($html->link(
-					$html->tag('span', 'New'),
-					array('controller'=>'admins','action'=>'addcontentpage'),
-					array('escape' => false)
-					)
-				);
-				?>
-				</li>
-                <li><a href="javascript:void(0)" class="tab2"><span>Actions</span></a>
-                    <ul class="sub_menu">
-                        <li><a href="javascript:void(0)" onclick="return activatecontents('active','change');">Publish</a></li>
-                        <li><a href="javascript:void(0)" onclick="return activatecontents('deactive','change');">Unpublish</a></li>
-                        <!--li><a href="javascript:void(0)">Copy</a></li-->
-                        <li><a href="javascript:void(0)" onclick="return activatecontents('asd','permanant_del');">Trash</a></li>
-                        <li><a href="javascript:void(0)" onclick="return activatecontents('asd','del');">Archive</a></li>
-                        <li class="botCurv"></li>
-                    </ul>
-                </li>
-                <li><a href="javascript:void(0)" onclick="editcontent();" id="linkedit"><span>Edit</span></a></li>
-            </ul><?php */?>
-        </div>
+</div>
 
 
-          <?php    $this->loginarea="admins";    $this->subtabsel="contentlist";
-                    echo $this->renderElement('setting_submenus');  ?>   
-    </div></div>
 
-
-<script language='javascript'>
-    function showcontentwindow(id){
-		//alert(id);
-        var url = baseUrlAdmin +'showcontentwindow/'+id+'/Content';
-        window.open(url,'mywindow','status=no,toolbar=no, height=520,width=700,top=80 , left=150, scrollbars=yes');
-        //window.open(url);
-        //jQuery.facebox({ ajax: url });
-    }
-</script>
+<div class="clearfix nav-submenu-container">
+	<div class="midCont submenu-Cont">
+		<?php    $this->loginarea="admins";    $this->subtabsel="contentlist";
+                    echo $this->renderElement('setting_submenus');  ?> 
+    </div>
+</div>
 
 <!--inner-container starts here-->
 
@@ -206,15 +213,15 @@ $resetUrl = $base_url_admin.'contentlist';
 
     <!-- top curv image starts -->
     <div>
-        <span class="topLft_curv"></span>
- <span class="topRht_curv"></span>
-        <div class="gryTop">
+            <!--<span class="topLft_curv"></span>
+            <span class="topRht_curv"></span>-->
+        <div class="gryTop gray-top">
 			<?php
 			if(!isset($key))
 			$key = '';
 			?>
 			<div class="new_filter">
-            <span class="spnFilt">Filter:</span><span class="srchBg"><?php echo $form->input("searchkey", array('id' => 'searchkey', 'div' => false, 'label' => '',"maxlength" => "200",'value'=>$key));?></span><span class="srchBg2"><?php echo $form->submit("Go", array('id' => 'searchkeysubmit', 'div' => false, 'label' => '','class'=>'btn'));
+            <span class="spnFilt">Filter:</span><span class="srchBg"><?php echo $form->input("searchkey", array('id' => 'searchkey', 'div' => false, 'label' => '',"maxlength" => "200",'value'=>$key));?></span><span class="srchBg2"><?php echo $form->submit("Go", array('id' => 'searchkeysubmit', 'div' => false, 'label' => '','class'=>''));
                 ?> 
             </span>
             <span class="srchBg2"><input type="button" value="Reset" label="" onclick="javascript:(window.location='<?php echo $resetUrl ?>')" id="locaa"></span>
@@ -226,7 +233,7 @@ $resetUrl = $base_url_admin.'contentlist';
         <div class="clear"></div></div>
 
     <div class="tblData">
-        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <table class="table table-bordered table-striped table-hover" width="100%" border="0" cellspacing="0" cellpadding="0">
             <tr class="trBg">
                 <th align="center" width="3%">#</th>
                 <th align="center" width="3%"><input type="checkbox" value="" name="checkall" id="checkall" /></th>
@@ -620,9 +627,9 @@ $resetUrl = $base_url_admin.'contentlist';
     </div>
 
     <div>
-        <span class="botLft_curv"></span>
-<span class="botRht_curv"></span>
-        <div class="gryBot">  <?php //if(isset($contentdata)) { 
+           <!-- <span class="botLft_curv"></span>
+            <span class="botRht_curv"></span>-->
+        <div class="gryBot gray-top">  <?php //if(isset($contentdata)) { 
 		echo $this->renderElement('newpagination'); //} ?>
         </div>
         <!--inner-container ends here-->

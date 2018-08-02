@@ -255,8 +255,8 @@ Configure::write('Cache.disable', true);
 		@Type			Created 
 		@Date			April 10, 2012
 	*/	
-	Configure::write('App.base_url', 'http://localhost/Project/chameleoncrm/');  
-	Configure::write('App.base_url_admin', 'http://localhost/Project/chameleoncrm/admins/');  
+	Configure::write('App.base_url', 'http://localhost/wolf/chameleon/');  
+	Configure::write('App.base_url_admin', 'http://localhost/wolf/chameleon/admins/');  
 	$baseUrl = 'http://chameleoncrm.net/';
 	
 	Configure::write('Cart.InstallURL', $baseUrl.'ocart/cartautoinstall.php');
@@ -277,5 +277,5 @@ Configure::write('Cache.disable', true);
 	Configure::write('Cart.dbpass', 'zGO=9@lI7],E');	 
 	
 	Configure::write('Pagging.limit', '20');
-	Configure::write('SITE_HTTP_HOST', 'http://localhost/Project/chameleoncrm/');
+	Configure::write('SITE_HTTP_HOST', 'http://localhost/wolf/chameleon/');
 ?>

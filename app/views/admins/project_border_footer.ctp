@@ -6,35 +6,41 @@ $backUrl = $base_url_admin.'project_border_footer';
 
 <!--container starts here-->
 
-<div class="container">
-<div class="titlCont">
-<div class="myclass">
-<div class="slider" id="toppanel" style="height: 20px; top:13px;right: -50px;width:545px !important; text-align:right;">
-<?php echo $form->create("Admins", array("action" => "project_border_footer",'name' => 'project_border_footer', 'id' => "project_border_footer"))?>
-<button type="submit" value="Submit" class="sendBut" name="data[Action][redirectpage]"><?php e($html->image('save.png')); ?></button>
-<button type="submit" value="Submit" class="sendBut" name="data[Action][noredirection]"><?php e($html->image('apply.png')); ?></button>
-<button type="button" id="saveForm" class="sendBut"  ONCLICK="javascript:(window.location='<?php echo $backUrl ?>')"><?php e($html->image('cancle.png')); ?></button>
-<?php  echo $this->renderElement('new_slider');  ?>
+<div class="container clearfix">
+	<div class="titlCont">
+    	<div class="slider-centerpage clearfix">
+        	<div class="center-Page col-sm-6">
+			   <?php  //echo $this->renderElement('project_name');  ?>
+                <h2>Border Footer</h2>
+            </div>
+            <div class="slider-dashboard col-sm-6">
+            	<div class="icon-container">
+                	<?php echo $form->create("Admins", array("action" => "project_border_footer",'name' => 'project_border_footer', 'id' => "project_border_footer"))?>
+                    <button type="submit" value="Submit" class="sendBut" name="data[Action][redirectpage]"><?php e($html->image('save.png')); ?></button>
+                    <button type="submit" value="Submit" class="sendBut" name="data[Action][noredirection]"><?php e($html->image('apply.png')); ?></button>
+                    <button type="button" id="saveForm" class="sendBut"  ONCLICK="javascript:(window.location='<?php echo $backUrl ?>')"><?php e($html->image('cancle.png')); ?></button>
+                </div>
+                <?php  echo $this->renderElement('new_slider');  ?>
+            </div>
+        </div>
+    
 </div>
+    
+    
+<!--    <?php    //if($session->check('Message.flash')){ ?><div style="width:400px;margin:0 auto;"><?php //$session->flash();?></div><?php //}?>
+<div class="clear"></div>-->
 
-        <?php  echo $this->renderElement('project_name');  ?> 
-        <span class="titlTxt">
-            Border Footer
-        </span> 
-        <?php    
+<div class="clearfix nav-submenu-container">
+	<div class="midCont submenu-Cont">
+		 <?php    
 			$this->loginarea="admins";
 			$this->subtabsel="project_border_footer";
             echo $this->renderElement('setting_submenus');
-		?>   
-    </div></div>
-    
-    
-    <?php    //if($session->check('Message.flash')){ ?><div style="width:400px;margin:0 auto;"><?php //$session->flash();?></div><?php //}?>
-<div class="clear"></div>
-
-
+		?> 
+    </div>
+</div>
         
-<div class="rightpanel">
+<div class="rightpanel midCont">
 
 
 <?php if($session->check('Message.flash')){ ?> 
