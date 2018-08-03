@@ -128,24 +128,28 @@ $('#ConFigs').addClass("butBgSelt");
 </script>
 <?php $pagination->setPaging($paging); ?> 
 <!-- Body Panel starts -->
-<div class="container">
-<div class="titlCont"><div style="width:960px; margin:0 auto;">
-<div class="slider" id="toppanel" style="height: 20px; top:13px;right:-50px;width:545px !important; text-align:right;">
-<?php echo $form->create("Setup", array("action" => "coinsetlist",'name' => 'coinsetlist', 'id' => "coinsetlist")) ?>  
-<script type='text/javascript'>
-                function setprojectid(projectid){
-                    document.getElementById('projectid').value= projectid;
-                    document.adminhome.submit();
-                }
-</script>	
-<?php e($html->link($html->image('new.png', array('alt' => 'New')) . ' ',array('controller'=>'setups','action'=>'addcoinset'),array('escape' => false))); ?>
-<a href="javascript:void(0)" onclick="return activatecontents('asd','del');"><?php e($html->image('action.png')); ?></a>
-<a href="javascript:void(0)" onclick="editholder();" id="linkedit"><?php e($html->image('edit.png')); ?></a>
-<?php  echo $this->renderElement('new_slider');  ?>			
-</div>    
-                        
-            <span class="titlTxt"> Coinset List  </span>
-            
+<div class="container clearfix">
+	<div class="titlCont">
+		<div class="slider-centerpage clearfix">
+        	<div class="center-Page col-sm-6">
+				<?php  //$prname =$this->data['Project']['project_name'];   ?>
+                <h2>Coinset List</h2>
+            </div>
+            <div class="slider-dashboard col-sm-6">
+            	<div class="icon-container">
+                	<?php echo $form->create("Setup", array("action" => "coinsetlist",'name' => 'coinsetlist', 'id' => "coinsetlist")) ?>  
+					<script type='text/javascript'>
+                            function setprojectid(projectid){
+                                document.getElementById('projectid').value= projectid;
+                                document.adminhome.submit();
+                            }
+                    </script>	
+                    <?php e($html->link($html->image('new.png', array('alt' => 'New')) . ' ',array('controller'=>'setups','action'=>'addcoinset'),array('escape' => false))); ?>
+                    <a href="javascript:void(0)" onclick="return activatecontents('asd','del');"><?php e($html->image('action.png')); ?></a>
+                    <a href="javascript:void(0)" onclick="editholder();" id="linkedit"><?php e($html->image('edit.png')); ?></a>
+                </div>
+                <?php  echo $this->renderElement('new_slider');  ?>
+            </div>
             <div class="topTabs" style="height:25px;">
                 <?php /*?><ul class="dropdown">
                         <li>
@@ -172,15 +176,16 @@ $('#ConFigs').addClass("butBgSelt");
                 <li><a href="javascript:void(0)" onclick="editholder();" id="linkedit"><span>Edit</span></a></li>
                 </ul><?php */?>
             </div>
+        </div>
+       
+</div>
 
-     
-                     
- <?php    $this->loginarea="setups";    $this->subtabsel="coinsetlist";
-                    echo $this->renderElement('setup_submenus');  ?> 
-                    
-        </div></div>
-
-
+<div class="clearfix nav-submenu-container">
+	<div class="midCont submenu-Cont">
+		<?php    $this->loginarea="setups";    $this->subtabsel="coinsetlist";
+            echo $this->renderElement('setup_submenus');  ?> 
+    </div>
+</div>
 
 <div class="midCont" id="newcoinsettab">
 
@@ -188,8 +193,8 @@ $('#ConFigs').addClass("butBgSelt");
     <?php if($session->check('Message.flash')) { echo $this->renderElement('error_message'); } ?>
     <!-- top curv image starts -->
     <div>
-        <span class="topLft_curv"></span>
-		<span class="topRht_curv"></span>
+        <!--<span class="topLft_curv"></span>
+		<span class="topRht_curv"></span>-->
         <div class="gryTop">
            
             <script type='text/javascript'>
@@ -214,7 +219,7 @@ $('#ConFigs').addClass("butBgSelt");
     <div class="tblData">
 
 
-        <table width="100%" border="0" cellspacing="0" cellpadding="0" class="admgrid"> 
+        <table class="table table-bordered table-striped" width="100%" border="0" cellspacing="0" cellpadding="0" class="admgrid"> 
 
             <tr class="trBg">
                 <th align="center" style='width:1%' valign="middle">#</th>
@@ -402,7 +407,7 @@ $('#ConFigs').addClass("butBgSelt");
 
     </div>
     <div>
-        <span class="botLft_curv"></span><span class="botRht_curv"></span>
+        <!--<span class="botLft_curv"></span><span class="botRht_curv"></span>-->
         <div class="gryBot"><?php  echo $this->renderElement('newpagination');  ?></div>
         
         <div class="clear"></div>

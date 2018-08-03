@@ -8,30 +8,28 @@
 	//pr($this->data);
 ?>
 
-<div class="container">
-    <div class="titlCont"><div style="width:960px; margin:0 auto;">
-
-            
-			 <div align="center" class="slider" id="toppanel" style="height: 20px; top:13px;right:0px;width:545px !important; text-align:right;">	
-			 
-            <?php echo $form->create("Admin", array("action" => "editprojectdtl",'type' => 'file','enctype'=>'multipart/form-data','name' => 'editprojectdtl', 'id' => "editprojectdtl",'onsubmit' => 'return validateproject("editdtl");'))?>
-			 <button type="submit" value="Submit" class="sendBut" name="data[Action][redirectpage]">
-			 <?php e($html->image('save.png')) ?>
-			 </button>
-			 <button type="submit" value="Submit" class="sendBut" name="data[Action][noredirection]">
-			 <?php e($html->image('apply.png')) ?>
-			 </button>
-			 <button type="button" id="saveForm" class="sendBut"  ONCLICK="javascript:(window.location='<?php echo $backUrl?>')">
-			 <?php e($html->image('cancle.png')) ?>
-			 </button>
-  <?php  echo $this->renderElement('new_slider');  ?>			
-</div>	
-			 
-
-            <?php  $prname =$this->data['Project']['project_name'];   ?>
-            <span class="titlTxt1"><?php echo $this->data['Project']['project_name'];?>&nbsp;</span>
-            <span class="titlTxt">Edit Project Details</span>
-
+<div class="container clearfix">
+	<div class="titlCont">
+    	<div class="slider-centerpage clearfix">
+        	<div class="center-Page col-sm-6">
+				<?php  //$prname =$this->data['Project']['project_name'];   ?>
+                <h2>Edit Project Details</h2>
+            </div>
+            <div class="slider-dashboard col-sm-6">
+            	<div class="icon-container">
+                	<?php echo $form->create("Admin", array("action" => "editprojectdtl",'type' => 'file','enctype'=>'multipart/form-data','name' => 'editprojectdtl', 'id' => "editprojectdtl",'onsubmit' => 'return validateproject("editdtl");'))?>
+                     <button type="submit" value="Submit" class="sendBut" name="data[Action][redirectpage]">
+                     <?php e($html->image('save.png')) ?>
+                     </button>
+                     <button type="submit" value="Submit" class="sendBut" name="data[Action][noredirection]">
+                     <?php e($html->image('apply.png')) ?>
+                     </button>
+                     <button type="button" id="saveForm" class="sendBut"  ONCLICK="javascript:(window.location='<?php echo $backUrl?>')">
+                     <?php e($html->image('cancle.png')) ?>
+                     </button>
+                </div>
+                <?php  echo $this->renderElement('new_slider');  ?>
+            </div>
             <div class="topTabs" style="height:25px;">
                <?php /*?> <ul>
                     <li><button type="submit" value="Submit" class="button" name="data[Action][redirectpage]"><span>Save</span></button></li>
@@ -39,18 +37,23 @@
                     <li><button type="button" id="saveForm" class="button"  ONCLICK="javascript:(window.location='<?php echo $backUrl?>')"><span> Cancel</span></button></li>
                 </ul><?php */?>
             </div>
-
-            <?php    
-				$this->loginarea="admins";
-				$this->subtabsel="editprojectdtl";
-           //     echo $this->renderElement('project_submenus');
-		     echo $this->renderElement('setup_submenus');
-			
-			?>   
-
         </div>
+        
+</div>
+    
+<div class="clearfix nav-submenu-container">
+	<div class="midCont submenu-Cont">
+		<?php    
+			$this->loginarea="admins";
+			$this->subtabsel="editprojectdtl";
+	   //     echo $this->renderElement('project_submenus');
+		 echo $this->renderElement('setup_submenus');
+		
+		?>
     </div>
-    <div class="midCont" id="Detail">   
+</div>     
+    
+<div class="midCont" id="Detail">   
     		<?php 
 				echo $form->hidden("Project.id", array('id' => 'projectid'));
 				echo $form->hidden("Sponsor.id", array('id' => 'sponsorid','value'=>$sponserid));
@@ -60,20 +63,20 @@
     
         <div class='left' style="width:1050px;" >	
             <div class="frmbox mgrt115">
-                <table cellpadding="0" align="center" width="435px" class='left' cellspacing="10" style="margin-top:-5px;">
+                <table class="table table-borderless" cellpadding="0" align="center" width="435px" class='left' cellspacing="10" style="margin-top:-5px;">
                     <tbody>
 			          <tr>  
                             <td width="36%" align="right" class="lbltxtarea"><label class="boldlabel">Project Name </label></td>
                             <td width="30%"><label for="detail_project_name"></label>
-                                <span class="intpSpan"><?php echo $form->input("Project.detail_project_name", array('id' => 'detail_project_name','readonly' => true, 'div' => false, 'label' => '',"class" => "inpt_txt_fld","maxlength" => "200"));?></span></td>
+                                <span class="intp-Span"><?php echo $form->input("Project.detail_project_name", array('id' => 'detail_project_name','readonly' => true, 'div' => false, 'label' => '',"class" => "inpt-txt-fld form-control","maxlength" => "200"));?></span></td>
 
                         </tr>							
 
                         <tr style="display:none;"> 
                             <td  align="right" class="lbltxtarea"><label class="boldlabel">Serial # Prefix <span class="red">*</span></label></td>
                             <td><label for="serialprefix"></label>
-                                <span class="intpSpan">
-                                <?php echo $form->input("Project.serialprefix", array('id' => 'serialprefix', 'div' => false, 'label' => '',"class" => "inpt_txt_fld","maxlength" => "3"));?></span></td>
+                                <span class="intp-Span">
+                                <?php echo $form->input("Project.serialprefix", array('id' => 'serialprefix', 'div' => false, 'label' => '',"class" => "inpt-txt-fld form-control","maxlength" => "3"));?></span></td>
 
                         </tr>
                         <?php 
@@ -94,14 +97,14 @@
 						<tr>
                             <td valign="top" align="right" class="lbltxtarea"><label class="boldlabel">Project Coinsets </label></td>
                             <td>
-                                <div class="txtArea_top">
-                                    <span class="newtxtArea_bot">
+                                <div class="txtArea-top">
+                                    <span class="newtxtArea-bot">
                                         <?php 
 										
-										echo $form->select('coinsetsdisplay',$arraycoinset, null,array('multiple'=>'multiple','id'=>'emaillists','size'=>'7','empty'=>false,'class'=>'multilist multi'));?>
+										echo $form->select('coinsetsdisplay',$arraycoinset, null,array('multiple'=>'multiple','id'=>'emaillists','size'=>'7','empty'=>false,'class'=>'multilist multi form-control'));?>
                                     </span>
                                 </div>
-                                <span class="btnLft"><input type="button" class="btnRht" value="View" name="view" id="view_coinset"/></span><span style="display:inline-block;width:8px"></span><span class="btnLft"><input type="button"  class="btnRht" value="Add" name="Add" ONCLICK="javascript:(window.location='<?php echo $base_url_admin ?>addcoinset')" /></span>
+                                <span class="btn-Lft"><input type="button" class="btn-Rht btn btn-sm btn-primary" value="View" name="view" id="view_coinset"/></span><span style="display:inline-block;width:8px"></span><span class="btn-Lft"><input type="button"  class="btn-Rht btn btn-sm btn-primary" value="Add" name="Add" ONCLICK="javascript:(window.location='<?php echo $base_url_admin ?>addcoinset')" /></span>
                             </td> 
                         </tr>
 
@@ -109,7 +112,7 @@
                        
                         <tr id="distributor_content">
                             <td align="right"> <label class="boldlabel">Distributor </label></td>
-                            <td><br /><span class="intpSpan"><?php echo $form->input("Project.distributor", array('id' => 'distributor', 'div' => false, 'label' => '',"class" => "inpt_txt_fld","maxlength" => "150"));?>
+                            <td><br /><span class="intp-Span"><?php echo $form->input("Project.distributor", array('id' => 'distributor', 'div' => false, 'label' => '',"class" => "inpt-txt-fld form-control","maxlength" => "150"));?>
                                 </span>
                             </td>
                         </tr> 
@@ -184,10 +187,10 @@
 						<tr>
                         <td align="right"><label class="boldlabel">Current Billing Type</label></td>
                         <td style="padding-top: 0px;">
-                        <span class="txtArea_top"><span class="txtArea_bot">
+                        <span class="txtArea-top"><span class="txtArea-bot">
                                 <?php 
 								//pr($billingType_list);
-								echo $form->select("Project.billing_type_id",$billingType_list,null,array('id' => 'billing_type_id',"class"=>"multilist",'disabled'=>'disabled' ),"---Select---"); ?>
+								echo $form->select("Project.billing_type_id",$billingType_list,null,array('id' => 'billing_type_id',"class"=>"multilist form-control",'disabled'=>'disabled' ),"---Select---"); ?>
                         </span></span>
                         
                         </td>
@@ -195,7 +198,7 @@
                        <tr>
                         <td align="right"><label class="boldlabel">Next Billing Date</label></td>
                         <td style="padding-top: 0px;">
-                       <span class="intpSpan"><label for="title"></label>   <?php echo $form->input("Project.next_billing_date", array('id' => 'next_billing_date','readonly' => true,'value'=> isset($nextBdate)?$nextBdate:'', 'div' => false, 'label' => '',"class" => "inpt_txt_fld","maxlength" => "200"));?>
+                       <span class="intp-Span"><label for="title"></label>   <?php echo $form->input("Project.next_billing_date", array('id' => 'next_billing_date','readonly' => true,'value'=> isset($nextBdate)?$nextBdate:'', 'div' => false, 'label' => '',"class" => "inpt-txt-fld form-control","maxlength" => "200"));?>
                     </span>
                         
                         </td>
@@ -208,30 +211,30 @@
                 <table cellspacing="10" class='left' width="432px" style="margin-top:-5px;">
                     <tr>
                         <td align="right" class="lbltxtarea"><label class="boldlabel">Date Created </label></td>
-                        <td ><span class="intpSpan"><?php echo $form->text("createddate", array('value'=>$datecre,'id' => 'created', 'div' => false, 'label' => '',"class" => "inpt_txt_fld","maxlength" => "200",'readonly'=>'readonly'));?></span></td>
+                        <td ><span class="intp-Span"><?php echo $form->text("createddate", array('value'=>$datecre,'id' => 'created', 'div' => false, 'label' => '',"class" => "inpt-txt-fld form-control","maxlength" => "200",'readonly'=>'readonly'));?></span></td>
                     </tr>
                      <tr>
                         <td  align="right" class="lbltxtarea"><label class="boldlabel">Legal Entity Name <span class="red">*</span> </label></td>
-                        <td><span class="intpSpan"><?php echo $form->input("sponsorname", array('id' => 'sponsorname', 'div' => false, 'label' => '',"class" => "inpt_txt_fld","maxlength" => "200",'value'=>$sp_name,'readonly'=>'readonly'));?></span></td>
+                        <td><span class="intp-Span"><?php echo $form->input("sponsorname", array('id' => 'sponsorname', 'div' => false, 'label' => '',"class" => "inpt-txt-fld form-control","maxlength" => "200",'value'=>$sp_name,'readonly'=>'readonly'));?></span></td>
                     </tr>
 					<tr>
                         <td  align="right" class="lbltxtarea"><label class="boldlabel">Notification Email<span class="red">*</span> </label></td>
                         <td>
-						<span class="intpSpan"><?php echo $form->input("Sponsor.email", array('id' => 'email', 'div' => false, 'label' => '',"class" => "inpt_txt_fld","maxlength" => "150"));?>
+						<span class="intp-Span"><?php echo $form->input("Sponsor.email", array('id' => 'email', 'div' => false, 'label' => '',"class" => "inpt-txt-fld form-control","maxlength" => "150"));?>
 						</span>
 						</td>
                     </tr>
 					<tr>
                         <td  align="right" class="lbltxtarea"><label class="boldlabel">Address 1<span class="red">*</span> </label></td>
                         <td>
-						<span class="intpSpan"><?php echo $form->input("Sponsor.address1", array('id' => 'address1', 'div' => false, 'label' => '',"class" => "inpt_txt_fld","maxlength" => "150"));?>
+						<span class="intp-Span"><?php echo $form->input("Sponsor.address1", array('id' => 'address1', 'div' => false, 'label' => '',"class" => "inpt-txt-fld form-control","maxlength" => "150"));?>
 						</span>
 						</td>
                     </tr>
 					<tr>
                         <td  align="right" class="lbltxtarea"><label class="boldlabel">Address 2</label></td>
                         <td>
-						<span class="intpSpan"><?php echo $form->input("Sponsor.address2", array('id' => 'email', 'div' => false, 'label' => '',"class" => "inpt_txt_fld","maxlength" => "150"));?>
+						<span class="intp-Span"><?php echo $form->input("Sponsor.address2", array('id' => 'email', 'div' => false, 'label' => '',"class" => "inpt-txt-fld form-control","maxlength" => "150"));?>
 						</span>
 						</td>
                     </tr>
@@ -239,32 +242,32 @@
 					<tr>
       <td align="right"><label class="boldlabel">Country <span class="red">*</span></label></td>
       <td><label for="project_name"></label>
-       <span class="txtArea_top">
+       <span class="txtArea-top">
                                 
-								<span class="txtArea_bot">
-                                    <span id="compdiv"> <?php echo $form->select("Sponsor.country",$countrydropdown,null,array('id' => 'country','class'=>'multilist','onchange'=>'return getstateoptions(this.value,"Company")'),array('254'=>'United States')); ?></span></span></span></td>
+								<span class="txtArea-bot">
+                                    <span id="compdiv"> <?php echo $form->select("Sponsor.country",$countrydropdown,null,array('id' => 'country','class'=>'multilist form-control','onchange'=>'return getstateoptions(this.value,"Company")'),array('254'=>'United States')); ?></span></span></span></td>
      
     </tr>
 	<tr>
       <td align="right"><label class="boldlabel">State <span class="red">*</span></label></td>
       <td><label for="project_name"></label>
-        <span class="txtArea_top">
+        <span class="txtArea-top">
                                 
-								<span class="txtArea_bot">
+								<span class="txtArea-bot">
                                    <span id="statediv">
-                                    <?php echo $form->select("Sponsor.state",$statedropdown,null,array('id' => 'state',"class" => "multilist"),"---Select---"); ?></span></span></span></td>
+                                    <?php echo $form->select("Sponsor.state",$statedropdown,null,array('id' => 'state',"class" => "multilist form-control"),"---Select---"); ?></span></span></span></td>
       
     </tr>
      <tr>
       <td align="right"><label class="boldlabel">Zip/Postal Code <span class="red">*</span></label></td>
       <td><label for="project_name"></label>
-        <span class="intpSpan"><?php echo $form->input("Sponsor.zipcode", array('id' => 'zipcode', 'div' => false, 'label' => '',"class" => "inpt_txt_fld","maxlength" => "10"));?></span></td>
+        <span class="intp-Span"><?php echo $form->input("Sponsor.zipcode", array('id' => 'zipcode', 'div' => false, 'label' => '',"class" => "inpt-txt-fld form-control","maxlength" => "10"));?></span></td>
       
     </tr>
     <tr>
       <td align="right"><label class="boldlabel">City <span class="red">*</span></label></td>
       <td ><label for="project_name"></label>
-        <span class="intpSpan"><?php echo $form->input("Sponsor.city",array('id' => 'city', 'div' => false, 'label' => '',"class" => "inpt_txt_fld","maxlength" => "150")); ?></span></td>
+        <span class="intp-Span"><?php echo $form->input("Sponsor.city",array('id' => 'city', 'div' => false, 'label' => '',"class" => "inpt-txt-fld form-control","maxlength" => "150")); ?></span></td>
      
     </tr>
 	
@@ -275,7 +278,7 @@
 					<tr>
                         <td  align="right" class="lbltxtarea"><label class="boldlabel">Login ID<span class="red">*</span> </label></td>
                         <td>
-						<span class="intpSpan"><?php echo $form->input("User.username", array('id' => 'username', 'div' => false, 'label' => '',"class" => "inpt_txt_fld","maxlength" => "150",'value'=>$user_name,'readonly'=>true,'onchange' => 'ajaxuniquesponsorname(this.value)'));?>
+						<span class="intp-Span"><?php echo $form->input("User.username", array('id' => 'username', 'div' => false, 'label' => '',"class" => "inpt-txt-fld form-control","maxlength" => "150",'value'=>$user_name,'readonly'=>true,'onchange' => 'ajaxuniquesponsorname(this.value)'));?>
 						</span>
 						</td>
                     </tr>
@@ -284,20 +287,20 @@
 					<tr>
                         <td  align="right" class="lbltxtarea"><label class="boldlabel">Old Password<span class="red">*</span> </label></td>
                         <td>
-						<span class="intpSpan"><?php echo $form->password("User.old_password", array('id' => 'old_password', 'div' => false, 'label' => '',"class" => "inpt_txt_fld","maxlength" => "150"));?></span>
+						<span class="intp-Span"><?php echo $form->password("User.old_password", array('id' => 'old_password', 'div' => false, 'label' => '',"class" => "inpt-txt-fld form-control","maxlength" => "150"));?></span>
 						</td>
                     </tr>
 					<tr>
                         <td  align="right" class="lbltxtarea"><label class="boldlabel">New Password<span class="red">*</span> </label></td>
                         <td>
-						<span class="intpSpan"><?php echo $form->password("User.new_password", array('id' => 'new_password', 'div' => false, 'label' => '',"class" => "inpt_txt_fld","maxlength" => "150"));?></span>
+						<span class="intp-Span"><?php echo $form->password("User.new_password", array('id' => 'new_password', 'div' => false, 'label' => '',"class" => "inpt-txt-fld form-control","maxlength" => "150"));?></span>
 						</td>
                     </tr>
 					
 					<tr>
                         <td  align="right" class="lbltxtarea"><label class="boldlabel">Confirm Password<span class="red">*</span> </label></td>
                         <td>
-						<span class="intpSpan"><?php echo $form->password("User.con_password", array('id' => 'con_password', 'div' => false, 'label' => '',"class" => "inpt_txt_fld","maxlength" => "150"));?></span>
+						<span class="intp-Span"><?php echo $form->password("User.con_password", array('id' => 'con_password', 'div' => false, 'label' => '',"class" => "inpt-txt-fld form-control","maxlength" => "150"));?></span>
 						</td>
                     </tr>
 					

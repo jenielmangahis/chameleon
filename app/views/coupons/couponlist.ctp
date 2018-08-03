@@ -129,29 +129,29 @@ $csvUrl = $base_url.'coupons/download_coupon_list/current';
 </script>
 <?php $pagination->setPaging($paging); ?> 
 <!-- Body Panel starts -->
-<div class="container">
-
-   <div class="titlCont">
-   <div class="myclass">
-
-		<div align="center" class="slider" id="toppanel" style="height: 20px; top:13px;right:-50px;width:545px !important; text-align:right;">			
-
-            <?php echo $form->create("coupons", array("action" => "couponlist",'name' => 'couponlist', 'id' => "couponlist")) ?>
-            <script type='text/javascript'>
-                function setprojectid(projectid){
-                    document.getElementById('projectid').value= projectid;
-                    document.adminhome.submit();
-                }
-            </script>
-			<?php
-e($html->link($html->image('new.png', array('alt' => 'New')) . ' ',array('controller'=>'coupons','action'=>'addcoupon'),array('escape' => false)));
-?>	
-<a href="javascript:void(0)" onclick="return activatecontents('asd','del');"><?php e($html->image('action.png')); ?></a>
-<a href="javascript:void(0)" onclick="editoffer();" id="linkedit"><?php e($html->image('edit.png')); ?></a>
-<?php  echo $this->renderElement('new_slider');  ?>		
-</div>
-            <span class="titlTxt"> Current  Active Coupons  </span>
-            
+<div class="container clearfix">
+	<div class="titlCont">
+   		<div class="slider-centerpage clearfix">
+        	<div class="center-Page col-sm-6">
+            	<h2>Current  Active Coupons</h2>
+            </div>
+            <div class="slider-dashboard col-sm-6">
+            	<div class="icon-container">
+                	<?php echo $form->create("coupons", array("action" => "couponlist",'name' => 'couponlist', 'id' => "couponlist")) ?>
+					<script type='text/javascript'>
+                        function setprojectid(projectid){
+                            document.getElementById('projectid').value= projectid;
+                            document.adminhome.submit();
+                        }
+                    </script>
+                    <?php
+                    e($html->link($html->image('new.png', array('alt' => 'New')) . ' ',array('controller'=>'coupons','action'=>'addcoupon'),array('escape' => false)));
+                    ?>	
+                    <a href="javascript:void(0)" onclick="return activatecontents('asd','del');"><?php e($html->image('action.png')); ?></a>
+                    <a href="javascript:void(0)" onclick="editoffer();" id="linkedit"><?php e($html->image('edit.png')); ?></a>
+                </div>
+                <?php  echo $this->renderElement('new_slider');  ?>
+            </div>
             <div class="topTabs" style="height:25px;">
                 <?php /*?><ul class="dropdown">
                       <li>
@@ -176,20 +176,24 @@ e($html->link($html->image('new.png', array('alt' => 'New')) . ' ',array('contro
                     <li><a href="javascript:void(0)" onclick="editoffer();" id="linkedit"><span>Edit</span></a></li>         
                 </ul><?php */?>
             </div>
-           
-           
-          <?php    $this->loginarea="coupons";    $this->subtabsel="couponlist";
-             echo $this->renderElement('coupons_submenus');  ?>    
         </div>
-        </div>
+        
+</div>
 
+
+<div class="clearfix nav-submenu-container">
+	<div class="midCont submenu-Cont">
+		<?php    $this->loginarea="coupons";    $this->subtabsel="couponlist";
+             echo $this->renderElement('coupons_submenus');  ?>
+    </div>
+</div> 
 
 <div class="midCont">
     <?php if($session->check('Message.flash')) { echo $this->renderElement('error_message'); } ?>  
     <!-- top curv image starts -->
     <div>
-        <span class="topLft_curv"></span>
-        <span class="topRht_curv"></span>
+        <!--<span class="topLft_curv"></span>
+        <span class="topRht_curv"></span>-->
         
         <div class="gryTop">
             <?php echo $form->create("Coupon", array("action" => "couponlist",'name' => 'couponlist', 'id' => "couponlist")) ?>
@@ -218,7 +222,7 @@ e($html->link($html->image('new.png', array('alt' => 'New')) . ' ',array('contro
 
     <div class="tblData">
 
-        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <table class="table table-bordered table-striped" width="100%" border="0" cellspacing="0" cellpadding="0">
             <tr class="trBg">
                 <th align="center" valign="middle" width="1%">#</th>
                 <th align="center" valign="middle" width="2%"><input type="checkbox" value="" name="checkall" id="checkall" /></th>
@@ -367,9 +371,9 @@ e($html->link($html->image('new.png', array('alt' => 'New')) . ' ',array('contro
 
     </div>
     <div>
-        <span class="botLft_curv"></span>
-        <span class="botRht_curv"></span>
-        <div class="gryBot"><?php  echo $this->renderElement('newpagination'); ?>
+        <!--<span class="botLft_curv"></span>
+        <span class="botRht_curv"></span>-->
+        <div class="gryBot gray-bot"><?php  echo $this->renderElement('newpagination'); ?>
         </div>
         <div class="clear"></div>
     </div>

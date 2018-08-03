@@ -28,33 +28,44 @@ $backUrl = $base_url_admin.'qrcodegenerate';
     }
 </style>
 
-<div class="titlCont"><div style="width:960px; margin:0 auto;">
-
-       <div align="center" class="slider" id="toppanel" style="height: 20px; top:13px;right:-50px;width:545px !important; text-align:right;">
-	   <button type="button" id="saveForm" class="sendBut"  ONCLICK="javascript:(window.location='<?php echo $backUrl ?>')"><?php e($html->image('cancle.png')); ?></button>			
- <?php  echo $this->renderElement('new_slider');  ?>			
-</div>
-        <script type='text/javascript'>
-            function setprojectid(projectid){
-                document.getElementById('projectid').value= projectid;
-                document.adminhome.submit();
-            }
-        </script>
-
-        <?php  echo $this->renderElement('project_name');  ?>   
-        <span class="titlTxt">    QR- Code Generator    </span>
-
+<div class="titlCont">
+	<div class="slider-centerpage clearfix">
+    	<div class="center-Page col-sm-6">
+        	<?php  //echo $this->renderElement('project_name');  ?> 
+            <h2>QR- Code Generator</h2>
+        </div>
+        <div class="slider-dashboard col-sm-6">
+        	<div class="icon-container">
+            	<script type='text/javascript'>
+					function setprojectid(projectid){
+						document.getElementById('projectid').value= projectid;
+						document.adminhome.submit();
+					}
+				</script>
+            	<button type="button" id="saveForm" class="sendBut"  ONCLICK="javascript:(window.location='<?php echo $backUrl ?>')"><?php e($html->image('cancle.png')); ?></button>			
+            </div>
+            <?php  echo $this->renderElement('new_slider');  ?>	
+        </div>
         <div class="topTabs" style="height:25px;">
             <?php /*?><ul class="dropdown">
                 <li><button type="button" id="saveForm" class="button"  ONCLICK="javascript:(window.location='<?php echo $backUrl ?>')"><span> Cancel</span></button></li>       
             </ul><?php */?>
         </div>
-            <?php    
-				$this->loginarea="admins"; 
-				$this->subtabsel="qrcodegenerate";
-				echo $this->renderElement('coupons_submenus');
-			?>   
-    </div></div>
+    </div>
+
+</div>
+
+
+
+<div class="clearfix nav-submenu-container">
+	<div class="midCont submenu-Cont">
+		<?php    
+            $this->loginarea="admins"; 
+            $this->subtabsel="qrcodegenerate";
+            echo $this->renderElement('coupons_submenus');
+        ?>
+    </div>
+</div> 
 
 <!--inner-container starts here-->
 
@@ -69,7 +80,7 @@ $backUrl = $base_url_admin.'qrcodegenerate';
     <!-- ADD Sub Admin  FORM EOF -->
     <div style="border: 0px solid #CFCFCF;  line-height: 25px; ">
         <?php echo $form->create("Admins", array("action" => "qrcodegenerate",'name' => 'qrcodegenerator', 'id' => "qrcodegenerator", 'onsubmit' => "javascript : return validateQRData(this.value);")); ?>  
-        <table  style="border: 1px solid #CFCFCF;  line-height: 25px; " cellspacing="5"  width="100%" class="border_shadow">
+        <table class="table table-borderless"  style="border: 1px solid #CFCFCF;  line-height: 25px; " cellspacing="5"  width="100%" class="border_shadow">
             <tr>
                 <td width="60%" style="border-right: 2px solid #CFCFCF;" valign="top">
                 
@@ -83,7 +94,7 @@ $backUrl = $base_url_admin.'qrcodegenerate';
                         <p>
                             <input type="hidden" name="qr_cnt_frmt" id="qr_cnt_frmt" value="" />
 
-                            <input  checked="checked"   type="radio" name="qr_cnt_type" id="qr_cnt_type_url" value="qr_cnt_type_url"  <?php if(isset($qr_cnt_type) &&  $qr_cnt_type=="qr_cnt_type_url") {?> checked="checked" <?php } ?>/>
+                            <input  checked="checked"    type="radio" name="qr_cnt_type" id="qr_cnt_type_url" value="qr_cnt_type_url"  <?php if(isset($qr_cnt_type) &&  $qr_cnt_type=="qr_cnt_type_url") {?> checked="checked" <?php } ?>/>
                             <label style="display: inline-block; width: auto; text-align: left; margin-bottom: 3px; margin-right: 10px;" for="qr_cnt_type_url">URL</label>
 
                          <!--   <input  type="radio" name="qr_cnt_type" id="qr_cnt_type_text" value="qr_cnt_type_text"  />
@@ -104,7 +115,7 @@ $backUrl = $base_url_admin.'qrcodegenerate';
                         <p>
                             <span id="fs">
                                 <label style="display: inline-block; width: 150px; text-align: left; margin-right: 16px;  margin-bottom: 10px; vertical-align: top;" for="qr_cnt">URL</label>    
-                                <span class="intpSpan"><input type="text" name="qr_cnt" id="qr_cnt" value="<?php if(isset($qr_cnt) &&  $qr_cnt!="") { echo $qr_cnt; }else{ echo "http://example.com";} ?>" class="inpt_txt_fld" style="vertical-align: baseline;"  /> </span>
+                                <span class="intp-Span"><input type="text" name="qr_cnt" id="qr_cnt" value="<?php if(isset($qr_cnt) &&  $qr_cnt!="") { echo $qr_cnt; }else{ echo "http://example.com";} ?>" class="inpt-txt-fld form-control" style="vertical-align: baseline;"  /> </span>
                             </span>
                         </p>
 
@@ -113,9 +124,9 @@ $backUrl = $base_url_admin.'qrcodegenerate';
                     <p>
                         <label  style="display: inline-block; width: 150px; text-align: left; margin-right: 16px; font-weight: bold; margin-bottom: 10px; vertical-align: top;" for="qr_size">Size</label>
                         <?php if(!isset($qr_size) ||  $qr_size==""){$qr_size="L"; } ?>
-                        <span class="txtArea_top">
-                            <span class="txtArea_bot">
-                                <select style="border: medium none; width: 235px; margin-top: -5px;" class="noBg"  name="qr_size" id="qr_size">
+                        <span class="txtArea-top">
+                            <span class="txtArea-bot">
+                                <select style="border:1px solid #ddd; width: 235px; margin-top: -5px;" class="noBg form-control"  name="qr_size" id="qr_size">
 
                                     <option   value="S"  <?php if(isset($qr_size) &&  $qr_size=="S") {?> selected="selected"  <?php } ?> >Small</option>
 
@@ -131,7 +142,7 @@ $backUrl = $base_url_admin.'qrcodegenerate';
                     </p>
                     <p>&nbsp;</p> 
                     <p>
-                        <button name="getqrcode" id="getqrcode" class="button" value="getqrcode" type="submit" ><span>Generate QR Code</span></button>
+                        <button name="getqrcode" id="getqrcode" class="btn btn-success btn-sm" value="getqrcode" type="submit" ><span>Generate QR Code</span></button>
                     </p>
                 </td> 
 
@@ -168,7 +179,7 @@ $backUrl = $base_url_admin.'qrcodegenerate';
 						   
 							 <input type="hidden" id="current_domain" value="<?php echo $current_domain;?>"></p>   
 								  <p>
-									  <button name="downloadqrcode" id="downloadqrcode" class="button" value="getqrcode" type="submit" onclick="javascript : setDownload();"><span>Download QR Code</span></button>  
+									  <button name="downloadqrcode" id="downloadqrcode" class="btn btn-sm btn-primary" value="getqrcode" type="submit" onclick="javascript : setDownload();"><span>Download QR Code</span></button>  
 									
 								 </p>
 								 <p> OR </p>     
