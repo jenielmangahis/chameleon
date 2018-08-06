@@ -2,28 +2,36 @@
 $base_url_Admin = Configure::read('App.base_url_Admin');
 $backUrl = $base_url_Admin;
 ?>
-<div class="container">
-<div class="titlCont"><div class="myclass">
-<div align="center" class="slider" id="toppanel" style="height: 20px; top:13px;right:-50px;width:545px !important; text-align:right;">	
-<?php $this->changePassword="tabSelt";
-echo $form->create("Admins", array("action" => "admin_changePassword",'name' => 'adduser', 'id' => "adduser", 'class' => 'adduser', 'enctype' => "multipart/form-data",'onsubmit' => 'return validatepassword();'))?>
-<button type="submit" value="Submit" class="sendBut" name="data[Action][redirectpage]"><?php e($html->image('save.png')); ?></button>
-<button type="submit" value="Submit" class="sendBut" name="data[Action][noredirection]"><?php e($html->image('apply.png')); ?></button>
-<button type="button" id="saveForm" class="sendBut"  ONCLICK="javascript:(window.location='<?php echo $backUrl ?>projectdashboard')"><?php e($html->image('cancle.png')); ?></button>
-<?php  echo $this->renderElement('new_slider');  ?>			
-</div>    
-<?php  echo $this->renderElement('project_name');  ?>
- <span class="titlTxt1"><?php echo $project_name;  ?>&nbsp;</span>  
-<span class="titlTxt">
-Change Password
-</span>
-<div class="topTabs" style="height:25px;">
+<div class="container clearfix">
+	<div class="titlCont">
+    	<div class="slider-centerpage clearfix">
+        	<div class="center-Page col-sm-6">
+			   <?php  //echo $this->renderElement('project_name');  ?>
+                <h2>Change Password</h2>
+            </div>
+            <div class="slider-dashboard col-sm-6">
+            	<div class="icon-container">
+                	<?php $this->changePassword="tabSelt";
+					echo $form->create("Admins", array("action" => "admin_changePassword",'name' => 'adduser', 'id' => "adduser", 'class' => 'adduser', 'enctype' => "multipart/form-data",'onsubmit' => 'return validatepassword();'))?>
+					<button type="submit" value="Submit" class="sendBut" name="data[Action][redirectpage]"><?php e($html->image('save.png')); ?></button>
+					<button type="submit" value="Submit" class="sendBut" name="data[Action][noredirection]"><?php e($html->image('apply.png')); ?></button>
+					<button type="button" id="saveForm" class="sendBut"  ONCLICK="javascript:(window.location='<?php echo $backUrl ?>projectdashboard')"><?php e($html->image('cancle.png')); ?></button>					
+                </div>
+                <?php  echo $this->renderElement('new_slider');  ?>	
+            </div>
+            <div class="topTabs" style="height:25px;">
+</div>
+        </div>
+    
 </div>
 
- <?php    $this->loginarea="admins";    $this->subtabsel="change_password";
-                    echo $this->renderElement('setup_submenus');  ?> 
-</div>
-</div>
+
+<div class="clearfix nav-submenu-container">
+	<div class="midCont submenu-Cont">
+		<?php    $this->loginarea="admins";    $this->subtabsel="change_password";
+			echo $this->renderElement('setup_submenus');  ?> 
+    </div>
+</div> 
 
  <!-- Body Panel starts -->
   <div class="navigation">
@@ -87,21 +95,21 @@ Change Password
 		<td align="right" width="22%" style="padding-bottom: 10px;"><label class="boldlabel">Old Password <span style="color: red;">*</span></label>		
 		</td>
 		<td>
-            <span class="intpSpan"><?php echo $form->input("Admin.Opassword", array('id' => 'Opassword', 'div' => false, 'label' => '', 'type' => 'password', "class" => "inpt_txt_fld",'onchange' => 'ajaxpwdcheck(this.value)')); ?>
+            <span class="intp-Span"><?php echo $form->input("Admin.Opassword", array('id' => 'Opassword', 'div' => false, 'label' => '', 'type' => 'password', "class" => "inpt-txt-fld form-control",'onchange' => 'ajaxpwdcheck(this.value)')); ?>
 			</td><td><span id="updatediv1"></span><div id="loadingdivimg" style="display:none">Loading..<img src="img/ajax-loader.gif"></div></td>
 		</tr>	
 		
 	  	
 		<tr> 
 		<td align="right" style="padding-bottom: 10px;"><label class="boldlabel">New Password <span style="color: red;">*</span></label></td>
-			<td><span class="intpSpan"><?php echo $form->input("Admin.password", array('id' => 'password', 'div' => false, 'label' => '','value' => '', 'type' => 'password', "class" => "inpt_txt_fld")); ?>
+			<td><span class="intp-Span"><?php echo $form->input("Admin.password", array('id' => 'password', 'div' => false, 'label' => '','value' => '', 'type' => 'password', "class" => "inpt-txt-fld form-control")); ?>
 			
 			</td>
 		</tr>	
 		
 		<tr> 
 			<td align="right" style="padding-bottom: 10px;"><label class="boldlabel">Confirm Password <span style="color: red;">*</span></label></td>
-			<td><span class="intpSpan"><?php echo $form->input("Admin.Cpassword", array('id' => 'Cpassword', 'div' => false, 'label' => '', 'type' => 'password', "class" => "inpt_txt_fld")); ?>
+			<td><span class="intp-Span"><?php echo $form->input("Admin.Cpassword", array('id' => 'Cpassword', 'div' => false, 'label' => '', 'type' => 'password', "class" => "inpt-txt-fld form-control")); ?>
 			
 			</td>
 		</tr>	

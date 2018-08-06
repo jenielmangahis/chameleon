@@ -1,24 +1,35 @@
 <?php  echo $javascript->link('ckeditor/ckeditor'); ?>
-<div class="container">
-<div class="titlCont"><div style="width:960px; margin:0 auto;">
-<div align="center" class="slider" id="toppanel" style="height: 20px; top:13px;right:-50px;width:545px !important; text-align:right;">
-<?php echo $form->create("Admin", array("action" => "projectbackup",'name' => 'projectbackup', 'id' => "projectbackup"));?>   	
-<?php  echo $this->renderElement('new_slider');  ?>
-</div>                                                                                                     
-            <span class="titlTxt1"><?php echo $project['Project']['project_name'];  ?>&nbsp;</span>
-            <span class="titlTxt">   User Agreement     </span>
-            
+<div class="container clearfix">
+	<div class="titlCont">
+		<div class="slider-centerpage clearfix">
+        	<div class="center-Page col-sm-6">
+			   <?php  //echo $this->renderElement('project_name');  ?>
+                <h2>User Agreement</h2>
+            </div>
+            <div class="slider-dashboard col-sm-6">
+            	<div class="icon-container">
+                	<?php echo $form->create("Admin", array("action" => "projectbackup",'name' => 'projectbackup', 'id' => "projectbackup"));?>   	
+                </div>
+                <?php  echo $this->renderElement('new_slider');  ?>
+            </div>
             <div class="topTabs" style="height:25px;">
                
             </div>
-
-            <?php    $this->loginarea="admins";    $this->subtabsel="user_agreement_project";
-                  //  echo $this->renderElement('project_submenus'); 
- echo $this->renderElement('setup_submenus');
-				  ?> 
+        </div>
         
-		</div></div> 
         
+</div>
+        
+        
+         
+<div class="clearfix nav-submenu-container">
+	<div class="midCont submenu-Cont">
+		<?php    $this->loginarea="admins";    $this->subtabsel="user_agreement_project";
+		//  echo $this->renderElement('project_submenus'); 
+		echo $this->renderElement('setup_submenus');
+		?> 
+    </div>
+</div>        
         
 
 <div class="midCont" id="newcoinsettab">
