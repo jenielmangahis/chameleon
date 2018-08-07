@@ -7,7 +7,7 @@
 
 <!--container starts here-->
 <?php //$pagination->setPaging($paging); ?>
-<div class="titlCont">
+<div class="titlCont container-fluid">
     <div class="slider-centerpage clearfix">
         												        
         <div class="center-Page col-sm-6">            
