@@ -68,7 +68,13 @@ var baseUrlAdmin = '<?php echo Configure::read('App.base_url_admin'); ?>';
 </head>
 <body <?php if($pageactname=="addcommtask"){ ?>onload="init();" <?php } ?> class="clearfix" >
 <!-- header starts -->
-<?php  echo $this->renderElement('new_admin_header'); ?>
+<?php
+if( isMobile() ){
+  echo $this->renderElement('new_admin_header_mobile');
+}else{
+  echo $this->renderElement('new_admin_header');
+}
+?>
 <!-- header starts -->
 
 <?php echo $this->element("menuhil");?> 

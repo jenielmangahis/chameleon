@@ -1,3 +1,17 @@
+<style>
+.dropdown-menu{
+
+}
+.header li a {
+color:#000000 !important;
+}
+.header li{
+	float: none;
+}
+.header .butBgSelt, .header .butBgSelt:hover, .header .butBg:hover{
+	width:100%;
+}
+</style>
 <?php
 $loginUser = $session->read('Admin');
 $userType = $loginUser['Admin']['user_type'];
@@ -30,12 +44,16 @@ $userType = $loginUser['Admin']['user_type'];
       </li>
       <?php } ?>
     </ul>
-    <ul class="mainMeNu" >
+    <div class="dropdown">
+    	<button class="btn btn-secondary btn-success dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    		Select Menu List
+   		</button>
+        <ul id="tab-container-1-nav" class="nav nav-pills dropdown-menu" aria-labelledby="dropdownMenuButton">
       <?php 
 
 if($userType === '1') {
 ?>
-      <li> <a id="hoRe" class="butBg" href="/chameleon/admins" target="_blank"> <span>Home</span> </a> </li>
+      <li> <a id="hoRe" class="" href="/chameleon/admins" target="_blank">Home</a> </li>
       <?php
 }
 ?>
@@ -393,5 +411,6 @@ e($html->link(
       </li>
       <?php }?>
     </ul>
+    </div>
   </div>
 </div>
