@@ -138,8 +138,9 @@ $(document).ready(function() {
                 <a href="javascript:void(0)" onclick="return activatecontents('asd','del');">
                 <?php e($html->image('action.png',array('alt' => "Delete"))) ?></a>
                 <a href="javascript:void(0)" onclick="viewmessage();" id="linkedit"><span><?php e($html->image('note.png',array('alt' => "View"))) ?></span></a>                
+                <?php  echo $this->renderElement('new_slider');  ?>
             </div>
-            <?php  echo $this->renderElement('new_slider');  ?>	
+            	
         </div>
     </div>
     
@@ -252,7 +253,7 @@ $(document).ready(function() {
 		
 
 <?php $i=1; ?>			
-<div class="tblData">
+<div class="tblData table-responsive">
 <table class="table table-striped table-bordered" width="100%" border="0" cellspacing="0" cellpadding="0">
 <tr class="trBg">
 <th align="center" width="3%">#</th>

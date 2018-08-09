@@ -128,9 +128,10 @@
                     e($html->link($html->image('new.png') . ' ' . __(''), $base_url_admin."addholder/non",array('escape' => false)));?>
                     <a href="javascript:void(0)" onclick="return activatecontents('asd','del');">
                     <?php e($html->image('action.png')); ?></a>
-                    <a href="javascript:void(0)" onclick="editholder();" id="linkedit"><?php e($html->image('edit.png')); ?></a>                        
+                    <a href="javascript:void(0)" onclick="editholder();" id="linkedit"><?php e($html->image('edit.png')); ?></a>
+                    <?php echo $this->renderElement('new_slider');?>                        
                 </div>
-                <?php echo $this->renderElement('new_slider');?>
+                
             </div>
             
         </div>
@@ -141,8 +142,8 @@
     
        
     
-        <span class="titlTxt1"><?php echo $project['Project']['project_name'];  ?>:&nbsp;</span>
-        <!--<span class="titlTxt">   Non-Holders </span>-->
+        <!--<span class="titlTxt1"><?php //echo $project['Project']['project_name'];  ?>:&nbsp;</span>
+        <span class="titlTxt">   Non-Holders </span>-->
     
         <div class="topTabs" style="height:25px;">
             <?php /*?><ul class="dropdown">
@@ -198,7 +199,7 @@
          </div>
         <!-- top curv image ends -->
         <?php $i=1; ?>
-        <div class="tblData">
+        <div class="tblData table-responsive">
             <table class=" table table-striped table-bordered" width="100%" border="0" cellspacing="0" cellpadding="0">
                     <tr class="trBg">
                 <th align="center" valign="middle" style="width:1%">#</th>

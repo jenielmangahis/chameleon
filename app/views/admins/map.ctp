@@ -139,8 +139,8 @@ google.maps.event.addDomListener(window, 'load', initialize);
                         document.adminhome.submit();
                     }
                 </script>
+                <?php echo $this->renderElement('new_slider');?>
                 </div>
-				<?php echo $this->renderElement('new_slider');?>
             </div>
         </div>
         
@@ -202,8 +202,8 @@ google.maps.event.addDomListener(window, 'load', initialize);
                             <!-- top curv image starts -->
                          
 
-  <div>
-          <table class="table">
+  <div class="table-responsive">
+          <table class="table table-borderless">
           <tr>
             <td valign="top" align="left">
               <h2><label class="boldlabel">Relationship Type</label></h2>
@@ -234,10 +234,10 @@ google.maps.event.addDomListener(window, 'load', initialize);
             </tr>
           </table>
   </div>                          
-  <div>
+  <div class="container-fluid">
 
         
-        <div id="googleMap" style="width:1000px;height:500px;"></div>  
+        <div id="googleMap" style="width:auto;height:500px;"></div>  
 
   </div>
 

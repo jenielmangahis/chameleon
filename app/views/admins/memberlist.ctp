@@ -143,10 +143,11 @@ $backDownloadholder = $base_url_admin.'downloadholder';
                                     </a>			                                 
                         <?php
                         //e($html->link($html->image('help.png', array('width' => '42', 'height' => '41')) . ' ','coming_soon/help',array('escape' => false)));
-                        
+                        echo $this->renderElement('new_slider');
                         ?>
+                        <?php //  ?>	
                     </div>
-                    <?php echo $this->renderElement('new_slider');  ?>
+                    
             </div>
             <?php echo $form->create("Admin", array("action" => "memberlist",'name' => 'memberlist', 'id' => "memberlist")) ?>
             <!--<span class="titlTxt1"><?php echo $project['Project']['project_name'];  ?>&nbsp;</span>-->            
@@ -232,7 +233,7 @@ $backDownloadholder = $base_url_admin.'downloadholder';
 		</div>
         </div>
         <div class="clear"></div></div>
-    <div class="tblData">
+    <div class="tblData table-responsive">
         <table class="table table-striped table-bordered" width="100%" border="0" cellspacing="0" cellpadding="0">
             <tr class="trBg">
                 <th align="center" valign="middle" style="width:1%">#</th>

@@ -129,8 +129,9 @@
                                 document.adminhome.submit();
                             }
                         </script> 
+                        <?php  echo $this->renderElement('new_slider');  ?>
                 </div>    
-            	<?php  echo $this->renderElement('new_slider');  ?>
+            	
             </div>
             
        </div>
@@ -176,7 +177,7 @@
 </div>
         </div>
         <div class="clear"></div></div>
-    <div class="tblData">
+    <div class="tblData table-responsive">
         <table class="table table-striped table-bordered" width="100%" border="0" cellspacing="0" cellpadding="0">
               <tr class="trBg">
                 <th align="center" valign="middle" style="width:1%">#</th>

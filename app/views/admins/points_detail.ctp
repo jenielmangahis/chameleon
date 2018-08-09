@@ -110,7 +110,7 @@
 </script>  
 <!--container starts here-->
 <?php $pagination->setPaging($paging); ?>
-<div class="container">
+<div class="container clearfix">
        <div class="titlCont">
            <div class="slider-centerpage clearfix">
                 <div class="center-Page col-sm-6">
@@ -124,21 +124,14 @@
                                 document.getElementById('projectid').value= projectid;
                                 document.adminhome.submit();
                             }
-                        </script>                    
+                        </script>    
+                        <?php  echo $this->renderElement('new_slider');  ?>                
                     </div>
-                    <?php  echo $this->renderElement('new_slider');  ?>	
                 </div>
            </div>
        
-       <div style="width:960px; margin:0 auto;">
-       
-        <div align="center" class="slider" id="toppanel" style="height: 20px; top:13px;right:-50px;width:545px !important; text-align:right;">			
+       <!--<div style="width:960px; margin:0 auto;">
 
-
-            
-			
-					
-</div>
 			<!--<span class="titlTxt1" style="padding-top:17px !important">&nbsp;</span>
             <span class="titlTxt">   Points Awarded Detail  </span>
 			<span class="titlTxt1" style="padding-top:17px !important">&nbsp;</span>-->
@@ -156,12 +149,12 @@
                 </li>
                 <li><a href="javascript:void(0)" onclick="editholder();" id="linkedit"><span>Edit</span></a></li>
                 </ul>
-            </div>-->
+            </div>
 
 
             <div class="clear"></div>
             
-        </div>
+        </div>-->
         
   </div>
   
@@ -204,7 +197,7 @@
 </div>
         </div>
         <div class="clear"></div></div>
-    <div class="tblData">
+    <div class="tblData table-responsive">
         <table class="table table-striped table-bordered" width="100%" border="0" cellspacing="0" cellpadding="0">
             <tr class="trBg">
                 <th align="center" valign="middle" style="width:1%">#</th>

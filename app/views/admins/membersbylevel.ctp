@@ -129,9 +129,9 @@ $backDownloadholder = $base_url_admin.'download_memberbylevel';
 					
 					?>
 					<a href="javascript:void(0)" onclick="return activatecontents('asd','del');"><?php e($html->image('action.png')); ?></a>	
-					<a href="javascript:void(0)" onclick="editholder();" id="linkedit"><?php e($html->image('edit.png')); ?></a>					 	
-                </div>
-                <?php  echo $this->renderElement('new_slider');  ?>
+					<a href="javascript:void(0)" onclick="editholder();" id="linkedit"><?php e($html->image('edit.png')); ?></a>	
+                    <?php  echo $this->renderElement('new_slider');  ?>				 	
+                </div>                
             </div>     											
        </div>
        
@@ -206,7 +206,7 @@ $backDownloadholder = $base_url_admin.'download_memberbylevel';
 </div>
         </div>
         <div class="clear"></div></div>
-    <div class="tblData">
+    <div class="tblData table-responsive">
         <table class="table table-striped table-bordered" width="100%" border="0" cellspacing="0" cellpadding="0">
             <tr class="trBg">
                 <th align="center" valign="middle" style="width:1%">#</th>

@@ -7,7 +7,7 @@
 
 <!--container starts here-->
 <?php //$pagination->setPaging($paging); ?>
-<div class="titlCont container-fluid">
+<div class="titlCont container-fluid clearfix">
     <div class="slider-centerpage clearfix">
         												        
         <div class="center-Page col-sm-6">            
@@ -15,7 +15,9 @@
             <!--<div class="topTabs"></div>-->
         </div>        
         <div class="slider-dashboard col-sm-6 clearfix"> <!--<div class="slider col-sm-6" id="toppanel">-->
-            <?php  echo $this->renderElement('new_slider');  ?>
+        	<div class="icon-container">
+            	<?php  echo $this->renderElement('new_slider');  ?>
+            </div>
         </div>
         
     </div>

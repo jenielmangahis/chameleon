@@ -26,7 +26,7 @@ $userType = $loginUser['Admin']['user_type'];
 			e($html->link(
 						$html->tag('span', 'Logout'),
 						array('controller'=>'admins','action'=>'logout'),
-						array('class'=>'preV btn btn-primary','escape' => false)
+						array('class'=>'preV btn btn-sm btn-danger','escape' => false)
 						)
 			);
 		?>
@@ -37,16 +37,16 @@ $userType = $loginUser['Admin']['user_type'];
 	e($html->link(
 				$html->tag('span', 'Logout'),
 				array('controller'=>'admins','action'=>'logout'),
-				array('class'=>'preV btn btn-primary','escape' => false)
+				array('class'=>'preV btn btn-sm btn-danger','escape' => false)
 				)
 	);
 ?>
       </li>
       <?php } ?>
     </ul>
-    <div class="dropdown">
-    	<button class="btn btn-secondary btn-success dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    		Select Menu List
+    <div class="dropdown main-menu-mobile">
+    	<button class="btn btn-sm btn-info dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    		Main Menu
    		</button>
         <ul id="tab-container-1-nav" class="nav nav-pills dropdown-menu" aria-labelledby="dropdownMenuButton">
       <?php 
