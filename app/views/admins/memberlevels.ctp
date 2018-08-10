@@ -131,13 +131,10 @@
                     e($html->link($html->image('new.png') . ' ' . __(''), $base_url_admin."memberlevels_add",array('escape' => false))); ?>
                     <a href="javascript:void(0)" onclick="return activatecontents('asd','del');">
                     <?php e($html->image('action.png')); ?></a>
-                    <a href="javascript:void(0)" onclick="editDonationLevel();" id="linkedit"><?php e($html->image('edit.png')); ?></a>	                
+                    <a href="javascript:void(0)" onclick="editDonationLevel();" id="linkedit"><?php e($html->image('edit.png')); ?></a>	 
+                    <?php echo $this->renderElement('new_slider'); ?>               
                 </div>
-                <?php echo $this->renderElement('new_slider'); ?>
             </div>
-       </div>
-       
-            <!--<span class="titlTxt">   Member Levels List  </span>  -->          
             <div class="topTabs" style="height:25px;">
                 <?php /*?><ul class="dropdown">
                 <li>
@@ -162,9 +159,9 @@
                 <li><a href="javascript:void(0)" onclick="editDonationLevel();" id="linkedit"><span>Edit</span></a></li>
                 </ul><?php */?>
             </div>
-
-        
-        </div>
+       </div>
+       
+</div>
         
         
  <div class="clearfix nav-submenu-container">
@@ -200,7 +197,7 @@
 </div>
         </div>
         <div class="clear"></div></div>
-    <div class="tblData">
+    <div class="tblData table-responsive">
         <table class="table table-striped table-bordered" width="100%" border="0" cellspacing="0" cellpadding="0">
                 
 

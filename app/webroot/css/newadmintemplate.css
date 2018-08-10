@@ -4308,6 +4308,7 @@ ul.form-style li .intpSpan { display:block; margin-bottom:10px;}
 	
 	.nav-submenu-container { padding:0 20px;}
 	.midCont { width:100%; padding:10px 3px;}
+	.midPadd { width:100%; min-width:inherit; max-width:none;}
 	
 	.gryTop { padding:15px 5px;}
 	.srchBg { padding:0;}
@@ -4317,6 +4318,7 @@ ul.form-style li .intpSpan { display:block; margin-bottom:10px;}
 	#pagination table { width:auto;}
 	
 	.table-responsive .right { margin-right:5px; float:none;}
+	.points.table-responsive > tbody tr td {}
 	
 	.row .box.col-xs-4 { width: auto; display:block; float:none;}
 	

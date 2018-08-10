@@ -23,16 +23,10 @@ $backUrl =$base_url_admin.'points';
                 <button type="submit" value="Submit" class="sendBut" name="data[Action][noredirection]">
                 <?php e($html->image('apply.png')); ?></button>
                 <button type="button" id="saveForm" class="sendBut"  ONCLICK="javascript:(window.location='<?php echo $backUrl?>')"><?php e($html->image('cancle.png')); ?></button>
+                <?php echo $this->renderElement('new_slider'); ?>
             </div>
-            <?php
-			//e($html->link($html->image('help.png', array('width' => '42', 'height' => '41')) . ' ','coming_soon/help',array('escape' => false)));
-			echo $this->renderElement('new_slider'); 
-			?>
         </div>
-    </div>
- 
- 
- 	<div class="topTabs" style="height:25px;">
+        <div class="topTabs" style="height:25px;">
 		<?php /*?><ul class="dropdown">
           
             <li><button type="submit" value="Submit" class="button" name="data[Action][redirectpage]"><span>Save</span></button></li>
@@ -40,7 +34,7 @@ $backUrl =$base_url_admin.'points';
             <li><button type="button" id="saveForm" class="button"  ONCLICK="javascript:(window.location='<?php echo $backUrl?>')"><span> Cancel</span></button></li> 
         </ul><?php */?>
     </div>
- 
+    </div>
  
 </div>
    
@@ -55,7 +49,7 @@ $backUrl =$base_url_admin.'points';
     
 <div class="midPadd">
     <!-- <p class="boxTop1"><?php //echo $html->image('/img/'.$project_name.'/rhtBox_top.gif', array('class'=>'right'));?></p>-->
-    <div class="midCont clearfix"> 
+    <div class="midCont clearfix table-responsive"> 
         <?php if($session->check('Message.flash')){ ?> 
             <div id="blck"> 
                 <div class="msgBoxTopLft"><div class="msgBoxTopRht"><div class="msgBoxTopBg"></div></div></div>
@@ -68,10 +62,10 @@ $backUrl =$base_url_admin.'points';
                     <div class="msgBoxBotLft"><div class="msgBoxBotRht"><div class="msgBoxBotBg"></div></div></div>
                 </div>
             </div> <?php } ?>
-        <div class="top-bar" style="border-left: 0px none; text-align: right; padding-top: 5px; color: rgb(255, 255, 255);">
+        <!--<div class="top-bar" style="border-left: 0px none; text-align: right; padding-top: 5px; color: rgb(255, 255, 255);">
 
-        </div>
-        <table class="points clearfix" cellspacing="10" cellpadding="0" align="center" width="100%">
+        </div>-->
+        <table class="points clearfix table-responsive" cellspacing="10" cellpadding="0" align="center" width="100%">
             
                 <?php
                     // echo $form->hidden("Term.id", array('id' => 'termid'));

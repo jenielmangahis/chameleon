@@ -145,7 +145,7 @@ $backDownloadholder = $base_url_admin.'downloadholder';
                         //e($html->link($html->image('help.png', array('width' => '42', 'height' => '41')) . ' ','coming_soon/help',array('escape' => false)));
                         echo $this->renderElement('new_slider');
                         ?>
-                        <?php //  ?>	
+                       	
                     </div>
                     
             </div>
