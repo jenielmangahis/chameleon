@@ -30,8 +30,9 @@ $baseUrl = Configure::read('App.base_url');
                     e($html->link($html->image('new.png') . ' ', $base_url.'sa_addcontacts',array('escape' => false)));?>
                     <a onclick="return activatecontents('asd','del');" href="javascript:void(0)"><?php e($html->image('action.png')); ?></a>
                     <a id="linkedit" onclick="editholder();" href="javascript:void(0)"><?php e($html->image('edit.png')); ?></a>
+                    <?php echo $this->renderElement('new_slider');?>
                 </div>
-                <?php echo $this->renderElement('new_slider');?>
+                
             </div>
             <!--<span class="titlTxt">Contact List</span>-->
             <div class="topTabs" style="height:25px;">
@@ -97,7 +98,7 @@ $baseUrl = Configure::read('App.base_url');
         </div>
        
 
-<div class="tblData">
+<div class="tblData table-responsive">
                       <table class="table table-bordered table-striped" width="100%" border="0" cellspacing="0" cellpadding="0">
       <tr class="trBg">
       <th style="width:1%" align="center" valign="middle">#</th>

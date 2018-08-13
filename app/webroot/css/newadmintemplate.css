@@ -4303,7 +4303,7 @@ ul.form-style li .intpSpan { display:block; margin-bottom:10px;}
 	.titlCont { width:auto; display:block;}
 	 
 	.titlCont .slider-centerpage { width:100%;}
-	.titlCont .slider-centerpage .icon-big-container { position:relative;}
+	.titlCont .slider-centerpage .icon-big-container { position:relative; padding-left:0;}
 	.titlCont .slider-centerpage .icon-container { position:relative; padding-left:0;}
 	
 	.nav-submenu-container { padding:0 20px;}
@@ -4317,7 +4317,11 @@ ul.form-style li .intpSpan { display:block; margin-bottom:10px;}
 	.gryTop div:first-child { left:0;}
 	#pagination table { width:auto;}
 	
+	.intp-Span .form-control, textarea.form-control { width:auto;}
+	
 	.table-responsive .right { margin-right:5px; float:none;}
+	.table-responsive .ckeditor { width:auto !important; border:1px solid #ddd;}
+	
 	.points.table-responsive > tbody tr td {}
 	
 	.row .box.col-xs-4 { width: auto; display:block; float:none;}
@@ -4364,12 +4368,27 @@ ul.form-style li .intpSpan { display:block; margin-bottom:10px;}
 @media (min-width: 768px) and (max-width: 991.98px) {
 	html { padding-bottom:0;}
 	body { width:100%; padding-bottom:0;}
-	.header { width:100%;}
+	.header { width:100%; padding:20px;}
+	.header .dropdown button { font-size:12px;}
+	.header ul.logOut li a { color:#fff !important;}
+	.header li a.butBgSelt { line-height:16px; background:#ddd;}
+	
+
+	.slider-dashboard .tab { display:inline-block; position:relative;}
+	.tab #open { float:none;}
+	#panel { position:relative;}
+	
 	.centerPage { width:auto;}
 	.titlCont { width:auto; display:block;}
-	 
+	.titlCont .slider-centerpage .icon-container { position:relative; padding-left:0; line-height:6;}
 	.titlCont .slider-centerpage { width:100%;}
-	.midCont { width:100%;}
+
+	.nav-submenu-container { padding:0 20px;}
+	.midCont { width:100%; padding:10px 3px;}
+	
+	.gryTop { padding:15px 5px;}
+	.new_filter { position:relative; left:0;}
+	#pagination table { width:auto;}
 	
 	.footerTxt { position:relative; margin-bottom:0;}
 	

@@ -147,9 +147,10 @@ $('#prosMnu').addClass("butBgSelt");
                     e($html->link($html->image('take.png') . ' ' . __(''), array('controller'=>'admins','action'=>'coming_soon','task'),array('escape' => false)));
                     e($html->link($html->image('new.png') . ' ',array('controller'=>'prospects','action'=>'addmerchant'),array('escape' => false))); ?>
                     <a href="javascript:void(0)" onclick="return activatecontents('asd','del');"><?php e($html->image('action.png')); ?></a>
-                    <a href="javascript:void(0)" onclick="editholder();" id="linkedit"><?php e($html->image('edit.png')); ?></a>                    
+                    <a href="javascript:void(0)" onclick="editholder();" id="linkedit"><?php e($html->image('edit.png')); ?></a>  
+                    <?php echo $this->renderElement('new_slider'); ?>                  
                 </div>
-                <?php echo $this->renderElement('new_slider'); ?>
+                
             </div>
             
             <?php /*?><?php if($usertype==trim('admin')){?>
@@ -233,7 +234,7 @@ $('#prosMnu').addClass("butBgSelt");
                 </div>	
             <div class="clear"></div></div>
         <?php $i=1; ?>			
-        <div class="tblData">
+        <div class="tblData table-responsive">
             <table class="table table-bordered table-striped" width="100%" border="0" cellspacing="0" cellpadding="0">
                 <tr class="trBg">
                     <th align="center" valign="middle" style='width:1%'>#</th>

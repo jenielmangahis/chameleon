@@ -142,9 +142,10 @@ function activatecontents(act,op)
                 ?>
                 <a href="javascript:void(0)" onclick="return activatecontents('asd','del');"> <?php e($html->image('action.png')) ?></a>
                 <a href="javascript:void(0)" onclick="editcontent();" id="linkedit">
-                <?php e($html->image('edit.png')) ?></a>                
+                <?php e($html->image('edit.png')) ?></a>
+                <?php echo $this->renderElement('new_slider');?>                
             </div>
-            <?php echo $this->renderElement('new_slider');?>
+            
         </div>
         
         <div class="topTabs" style="height:25px;">
@@ -221,7 +222,7 @@ function activatecontents(act,op)
                 
                 <div class="gryTop">
                	<div class="new_filter" >
-                <span class="spnFilt">Filter:</span><span class="srchBg"><?php echo $form->input("searchkey", array('id' => 'searchkey', 'div' => false, 'label' => '',"maxlength" => "200"));?></span><span class="srchBg2"><?php echo $form->submit("Go", array('id' => 'searchkeysubmit', 'div' => false, 'label' => '','class'=>'btn'));
+                <span class="spnFilt">Filter:</span><span class="srchBg"><?php echo $form->input("searchkey", array('id' => 'searchkey', 'div' => false, 'label' => '',"maxlength" => "200"));?></span><span class="srchBg2"><?php echo $form->submit("Go", array('id' => 'searchkeysubmit', 'div' => false, 'label' => '','class'=>''));
                         ?> 
                 </span>
                 <span class="srchBg2"><input type="button" value="Reset" label="" onclick="javascript:(window.location=baseUrl+'mailtasks/activetasklist')" id="locaa"></span>
@@ -230,7 +231,7 @@ function activatecontents(act,op)
                         <div class="clear"></div></div> 
 
                         <?php $i=1; ?>  
-                        <div class="tblData">
+                        <div class="tblData table-responsive">
         <table class="table table-striped table-bordered" width="100%" border="0" cellspacing="0" cellpadding="0">
         <tr class="trBg">
         <th align="center" style="width:2%;">#</th>

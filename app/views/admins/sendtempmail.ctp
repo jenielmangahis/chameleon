@@ -30,8 +30,9 @@
                     $ids = $this->params['pass'][0]; 
                     e($html->link($html->image('back.png') . ' ' . __(''), $base_url_admin."editholder/".$ids,array('escape' => false)));?>
                     <?php e($html->link($html->image('cancle.png') . ' ' . __(''), array('controller'=>'players','action'=>'playerslist','company'),array('escape' => false)));?>
+                    <?php echo $this->renderElement('new_slider'); ?>
                 </div>
-                <?php echo $this->renderElement('new_slider'); ?>
+                
                 
             </div>
         	
@@ -79,7 +80,7 @@
     </div>
 </div>
 
-<div class="midPadd midCont" id="sndmail">
+<div class="midPadd midCont table-responsive" id="sndmail">
     <?php if($session->check('Message.flash')) { echo $this->renderElement('error_message'); } 
 	
 	
@@ -89,9 +90,9 @@
         </div>		 
   
                 
-<div class="" style="border:none;">  
+<div class="table-responsive" style="border:none;">  
             <!-- START: New Design for send mail as per Requirement --> 
-            <table cellspacing="5" cellpadding="0" align="left" width="100%">
+            <table class="table table-borderless" cellspacing="5" cellpadding="0" align="left" width="100%">
             <tbody>
                 <tr>
                     <td width="50%" valign="top">     

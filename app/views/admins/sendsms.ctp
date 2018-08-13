@@ -30,9 +30,9 @@ $backUrl = $base_url.'admins/call/1'; ?>
 						<?php //e($html->link($html->image('help.png', array('width' => '42', 'height' => '42')) . ' ','coming_soon/help',array('escape' => false)));
 						
 						?>
-						
+						<?php  echo $this->renderElement('new_slider');  ?>
                     </div>
-                    <?php  echo $this->renderElement('new_slider');  ?>
+                    
                     
                      <?php 
 						echo $form->create("players", array("action" => "addnote/".$option, 'name' => 'addnote', 'id' => "addnote")); 
@@ -90,7 +90,7 @@ $backUrl = $base_url.'admins/call/1'; ?>
     </div>
 </div>        
         
-<div id="addcmp"  class="midCont">	
+<div id="addcmp"  class="midCont table-responsive">	
 <?php if($session->check('Message.flash')) { echo $this->renderElement('error_message'); } ?>
 <table cellspacing="10" cellpadding="0">
 		

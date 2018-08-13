@@ -71,9 +71,10 @@ google.maps.event.addDomListener(window, 'load', initialize);
                                             document.getElementById('projectid').value= projectid;
                                             document.adminhome.submit();
                                     }
-                    </script>                   			
+                    </script>    
+                    <?php echo $this->renderElement('new_slider');?>               			
                 </div>
-                 <?php echo $this->renderElement('new_slider');?>
+                 
             </div>
             <!--<span style="padding-top:17px !important" class="titlTxt1">&nbsp;</span>
             <span class="titlTxt"> Map Relationship </span>-->
@@ -167,7 +168,7 @@ google.maps.event.addDomListener(window, 'load', initialize);
   <div>
 
         
-        <div id="googleMap" style="width:1000px;height:500px;"></div>  
+        <div id="googleMap" style="width:auto;height:500px;"></div>  
 
   </div>
 

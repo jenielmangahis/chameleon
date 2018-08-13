@@ -144,9 +144,10 @@ function activatecontents(act,op)
                     e($html->link($html->image('take.png') . ' ' . __(''), array('controller'=>'admins','action'=>'coming_soon','task'),array('escape' => false)));
                     e($html->link($html->image('new.png') . ' ',array('controller'=>'contacts','action'=>'sa_addcontacts','cutomer'),array('escape' => false)));?>
                     <a href="javascript:void(0)" onclick="return activatecontents('asd','del');"><?php e($html->image('action.png')); ?></a>
-                    <a href="javascript:void(0)" onclick="editcontent();" id="linkedit"><?php e($html->image('edit.png')); ?></a>                    
+                    <a href="javascript:void(0)" onclick="editcontent();" id="linkedit"><?php e($html->image('edit.png')); ?></a>   
+                    <?php echo $this->renderElement('new_slider');?>                 
                 </div>
-                <?php echo $this->renderElement('new_slider');?>
+                
             </div>
             <!--<div class="slider" id="toppanel" style="height: 20px; top:13px;right: -50px;width:545px !important; text-align:right;">			
 			</div>-->
@@ -209,7 +210,7 @@ function activatecontents(act,op)
                 
                 <div class="gryTop">
                	<div class="new_filter" >
-                <span class="spnFilt">Filter:</span><span class="srchBg"><?php echo $form->input("searchkey", array('id' => 'searchkey', 'div' => false, 'label' => '',"maxlength" => "200"));?></span><span class="srchBg2"><?php echo $form->submit("Go", array('id' => 'searchkeysubmit', 'div' => false, 'label' => '','class'=>'btn'));
+                <span class="spnFilt">Filter:</span><span class="srchBg"><?php echo $form->input("searchkey", array('id' => 'searchkey', 'div' => false, 'label' => '',"maxlength" => "200"));?></span><span class="srchBg2"><?php echo $form->submit("Go", array('id' => 'searchkeysubmit', 'div' => false, 'label' => '','class'=>''));
                         ?> 
                 </span>
                 <span class="srchBg2"><input type="button" value="Reset" label="" onclick="javascript:(window.location=baseUrl+'relationships/customers')" id="locaa"></span>
@@ -218,7 +219,7 @@ function activatecontents(act,op)
                         <div class="clear"></div></div>
 
 
-<div class="tblData">
+<div class="tblData table-responsive">
                       <table class="table table-bordered table-striped" width="100%" border="0" cellspacing="0" cellpadding="0">
       <tr class="trBg">
       <th style="width:1%" align="center" valign="middle">#</th>

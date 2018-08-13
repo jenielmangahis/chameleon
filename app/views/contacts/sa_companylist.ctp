@@ -39,8 +39,9 @@ $resetUrl = $base_url.'contacts/sa_companylist';
                      <a id="linkedit" onclick="editholder();" href="javascript:void(0)">
                       <?php e($html->image('edit.png')) ?>
                      </a>
+                     <?php  echo $this->renderElement('new_slider');  ?>
                 </div>
-                <?php  echo $this->renderElement('new_slider');  ?>
+                
             </div>
             <!--<span class="titlTxt">Company List</span>-->
             <div class="topTabs" style="height:25px;">
@@ -124,7 +125,7 @@ $resetUrl = $base_url.'contacts/sa_companylist';
         <div class="clear"></div>
 </div>
 
-<div class="tblData">
+<div class="tblData table-responsive">
      <table class="table table-bordered table-striped" width="100%" border="0" cellspacing="0" cellpadding="0">
      <tr class="trBg"> 
       <th align="center" valign="middle" style="width:1%;">#</th>

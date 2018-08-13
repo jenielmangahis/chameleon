@@ -32,8 +32,9 @@ $backUrl = $base_url.'admins/memberlist/secondlevel';
                         <button type="button" id="saveForm" class="sendBut"  ONCLICK="javascript:(window.location='<?php echo $backUrl ?>')">
                          <?php e($html->image('back.png')) ?>
                         </button>
+                        <?php  echo $this->renderElement('new_slider');  ?>
                     </div>
-                    <?php  echo $this->renderElement('new_slider');  ?>
+                    
                 </div>
                 
                 
@@ -95,7 +96,7 @@ $backUrl = $base_url.'admins/memberlist/secondlevel';
     </div>
 </div>
         
-<div id="addcmp"  class="midCont">	
+<div id="addcmp"  class="midCont table-responsive">	
 <?php if($session->check('Message.flash')) { echo $this->renderElement('error_message'); } ?>
 <table cellspacing="10" cellpadding="0">
 		

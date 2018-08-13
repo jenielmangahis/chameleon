@@ -143,9 +143,10 @@
                     
                     ?>
                     <a href="javascript:void(0)" onclick="return activatecontents('asd','del');"><?php e($html->image('action.png', array('alt' => 'Delete'))); ?></a>
-                    <a href="javascript:void(0)" onclick="editholder();" id="linkedit"><?php e($html->image('edit.png', array('alt' => 'Edit'))) ;?></a>	                    
+                    <a href="javascript:void(0)" onclick="editholder();" id="linkedit"><?php e($html->image('edit.png', array('alt' => 'Edit'))) ;?></a>
+                    <?php  echo $this->renderElement('new_slider');  ?>	                    
                 </div>
-                <?php  echo $this->renderElement('new_slider');  ?>	
+                	
             </div>
             
             <!--<span class="titlTxt1"><?php echo $company_name;  ?>&nbsp;</span>
@@ -217,7 +218,7 @@
                 </div>	
             <div class="clear"></div></div>
         <?php $i=1; ?>			
-        <div class="tblData">
+        <div class="tblData table-responsive">
             <table class="table table-bordered table-striped" width="100%" border="0" cellspacing="0" cellpadding="0">
                 <tr class="trBg">
                     <th align="center" valign="middle" style='width:1%'>#</th>
