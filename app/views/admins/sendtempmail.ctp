@@ -153,7 +153,7 @@
                         </table>  
                     </td>
 
-                    <td width="50%" valign="top">
+                    <!--<td width="50%" valign="top">
                         <table cellspacing="10" cellpadding="0" align="center" width="100%">
                             <tbody>
                                
@@ -163,7 +163,7 @@
 
                             </tbody>
                         </table>      
-                    </td>
+                    </td>-->
                 </tr>
 
                 <tr>

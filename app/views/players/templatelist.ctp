@@ -148,9 +148,10 @@ function activatecontents(act,op)
                 e($html->link($html->image('new.png', array('alt' => 'New')) . ' ',array('controller'=>'players','action'=>'addtemplate'),array('escape' => false))); ?>
                 <a onclick="return activatecontents('asd','del');" href="javascript:void(0)"><?php e($html->image('action.png', array('alt' => 'Delete'))); ?></a>
                 <a id="linkedit" onclick="editmailcontent();" href="javascript:void(0)">
-                <?php e($html->image('edit.png', array('alt' => 'Edit'))); ?></a>                
+                <?php e($html->image('edit.png', array('alt' => 'Edit'))); ?></a>  
+                <?php echo $this->renderElement('new_slider'); ?>              
             </div>
-            <?php echo $this->renderElement('new_slider'); ?>
+            
         </div>
         
         <!--<div align="center" class="slider" id="toppanel" style="height: 20px; top:13px;right: -50px;width:545px !important; text-align:right;">			
@@ -220,7 +221,7 @@ function activatecontents(act,op)
         <div class="clear"></div>
     </div>
 
-    <div class="tblData">
+    <div class="tblData table-responsive">
       <?php $i=1; ?>   
 
     <table class="table table-bordered table-striped" width="100%" border="0" cellspacing="0" cellpadding="0">

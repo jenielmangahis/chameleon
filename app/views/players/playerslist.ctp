@@ -122,9 +122,10 @@
                     <?php e($html->image('action.png', array("alt" => "Delete"))); ?>
                     </a>
                     <a href="javascript:void(0)" onclick="editholder();" id="linkedit">
-                    <?php e($html->image('edit.png', array("alt" => "Edit"))); ?></a>                      
+                    <?php e($html->image('edit.png', array("alt" => "Edit"))); ?></a>   
+                    <?php echo $this->renderElement('new_slider'); ?>	                   
                 </div>
-                <?php echo $this->renderElement('new_slider'); ?>	
+                
             </div>
             
             <?php if($usertype==trim("admin")){?> <span class="titlTxt1"><?php echo $project['Project']['project_name'];  ?>&nbsp;</span><?php } ?>

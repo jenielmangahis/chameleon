@@ -40,11 +40,10 @@ $backUrl = $base_url.'players/adddetail/'.$option.'/'.$current_company; ?>
 					<?php e($html->image('save.png', array('alt' => 'Save'))); ?></button>
 					<button type="submit" value="Submit" class="sendBut" name="data[Action][noredirection]">
 					<?php e($html->image('apply.png', array('alt' => 'Apply'))); ?></button>
-					<button type="button" id="saveForm" class="sendBut"  ONCLICK="javascript:(window.location='<?php echo $backUrl ?>')"><?php e($html->image('cancle.png', array('alt' => 'Cancle'))); ?></button>					
+					<button type="button" id="saveForm" class="sendBut"  ONCLICK="javascript:(window.location='<?php echo $backUrl ?>')"><?php e($html->image('cancle.png', array('alt' => 'Cancle'))); ?></button>
+                    <?php echo $this->renderElement('new_slider');?>					
                 </div>
-                <?php
-					//e($html->link($html->image('help.png', array('width' => '42', 'height' => '41')) . ' ','coming_soon/help',array('escape' => false)));
-					echo $this->renderElement('new_slider');?>
+                
             </div>
             
             <!--<span class="titlTxt1"><?php  //echo $current_company_name; echo ($current_company_name !='')? ' : ' :'';  ?></span>&nbsp;
@@ -79,7 +78,7 @@ $backUrl = $base_url.'players/adddetail/'.$option.'/'.$current_company; ?>
     </div>
 </div>
         
-<div id="addcmp"  class="midCont">	
+<div id="addcmp"  class="midCont table-responsive">	
 <?php if($session->check('Message.flash')) { echo $this->renderElement('error_message'); } ?>
 <table cellspacing="10" cellpadding="0">
 		

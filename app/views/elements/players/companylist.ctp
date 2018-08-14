@@ -20,7 +20,7 @@
                 </div>	
             <div class="clear"></div></div>
         <?php $i=1; ?>			
-        <div class="tblData">
+        <div class="tblData table-responsive">
             <table class="table table-bordered table-striped" width="100%" border="0" cellspacing="0" cellpadding="0">
                 <tr class="trBg">
                     <th align="center" valign="middle" style='width:1%'>#</th>
