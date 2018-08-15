@@ -1504,9 +1504,10 @@ ul .sub {
 
 /*-------------------------------------------CONTACTS PAGE INNER*/
 .titlCont .slider-centerpage .icon-container {
-	position:absolute;
-	padding-left:49%;
+	position:relative;
+	padding-left:0;
 	left:0;
+	float:right;
 }
 
 .titlCont .slider-centerpage .icon-big-container { padding-left:9%; position:absolute; left:0;}
