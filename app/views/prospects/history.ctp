@@ -114,9 +114,10 @@ $('#prosMnu').addClass("butBgSelt");
             
             <div class="slider-dashboard col-sm-6">
             	<div class="icon-container">
-					<?php echo $form->create("prospects", array("url" => "history/$cid",'name' => 'history', 'id' => "history")); ?>                     
+					<?php echo $form->create("prospects", array("url" => "history/$cid",'name' => 'history', 'id' => "history")); ?> 
+                    <?php  echo $this->renderElement('new_slider');  ?>                    
                 </div>
-                <?php  echo $this->renderElement('new_slider');  ?>
+                
             </div>
             
             <?php /*?><span class="titlTxt1"><?php //echo $current_company_name;  ?>&nbsp;</span>
@@ -154,7 +155,7 @@ $('#prosMnu').addClass("butBgSelt");
             <div class="clear"></div>
 			</div>
         <?php $i=1; ?>			
-        <div class="tblData">
+        <div class="tblData table-responsive">
             <table class="table table-bordered table-striped" width="100%" border="0" cellspacing="0" cellpadding="0">
                 <tr class="trBg">
                     <th align="center" valign="middle" style='width:1%;'>#</th>
