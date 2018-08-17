@@ -138,7 +138,6 @@ function activatecontents(act,op)
                
             </div>
             
-            <!--<span class="titlTxt"> Donations </span>-->
 			
             <div class="topTabs" style="height:25px;">
         <?php /*?><ul class="dropdown">

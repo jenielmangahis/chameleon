@@ -36,9 +36,7 @@
                 
             </div>
         	
-            <!--<div align="right" class="slider" id="toppanel" style="height: 20px; top:13px;right:-50px;width: 485px !important;text-align:right">
-			</div>-->
-            <!--<span class="titlTxt"> Send Mail </span>-->
+          
             
         	<div class="topTabs" style="height:25px;">
                 <!--<ul class="dropdown">

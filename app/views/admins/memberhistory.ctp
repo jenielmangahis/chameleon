@@ -120,13 +120,7 @@ $('#memBrs').addClass("butBgSelt");
                 
             </div>
             
-            <!--<span class="titlTxt1" style="padding-top:17px !important">&nbsp;</span>             
-            <span class="titlTxt"> History List</span>
-            <span class="titlTxt1" style="padding-top:17px !important">&nbsp;</span>-->
             
-            <!--<div align="center" class="slider" id="toppanel" style="height: 20px; top:13px;right: -50px;width:545px !important; text-align:right;">			
-				
-            </div>-->
             
         </div>
         
