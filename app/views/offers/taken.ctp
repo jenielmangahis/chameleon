@@ -168,9 +168,10 @@ $base_url_admin = Configure::read('App.base_url_admin');
                     
                     ?>
                     <a href="javascript:void(0)" onclick="return activatecontents('asd','del');"><?php e($html->image('action.png')) ?></a>
-                    <a href="javascript:void(0)" onclick="editoffer();" id="linkedit"><?php e($html->image('edit.png')) ?></a>                     	
+                    <a href="javascript:void(0)" onclick="editoffer();" id="linkedit"><?php e($html->image('edit.png')) ?></a>  
+                    <?php echo $this->renderElement('new_slider');  ?>                   	
                 </div>
-                <?php echo $this->renderElement('new_slider');  ?>
+                
             </div>
             
             <?php /*?><?php if($usertype==trim('admin')){?>
@@ -245,7 +246,7 @@ $base_url_admin = Configure::read('App.base_url_admin');
 
     <?php $i=1; ?>			
 
-    <div class="tblData">
+    <div class="tblData table-responsive">
 
         <table class="table table-bordered table-striped" width="100%" border="0" cellspacing="0" cellpadding="0">
             <tr class="trBg">

@@ -131,20 +131,24 @@ function activatecontents(act,op)
 <!--container starts here-->
 <?php $pagination->setPaging($paging); ?>
 <div class="container">
-<div class="titlCont"><div class="centerPage">
-    
-<div  class="slider" id="toppanel" style="height: 20px; top:13px;right:-50px;width:545px !important; text-align:right;">			
-
-<?php echo $form->create("offers", array("action" => "offerresponderlist",'name' => 'offerresponderlist', 'id' => "offerresponderlist"))?>
-<?php
-e($html->link($html->image('new.png', array('alt' => 'New')) . ' ',array('controller'=>'offers','action'=>'addofferresponder'),array('escape' => false)));
-?>	
-<a onclick="return activatecontents('asd','del');" href="javascript:void(0)"><?php e($html->image('action.png')); ?></a>
-<a id="linkedit" onclick="editmailcontent();" href="javascript:void(0)"><?php e($html->image('edit.png')); ?></a>
-<?php  echo $this->renderElement('new_slider');  ?>		
-</div>
-   <span class="titlTxt">Email Templates List </span>
-        <div class="topTabs" style="height:25px;">
+	<div class="titlCont">
+    	<div class="slider-centerpage clearfix">
+        	<div class="center-Page col-sm-6">
+            	<?php if($usertype==trim("admin")){ echo $this->renderElement('project_name'); } ?>
+                <h2>Email Templates List </h2>
+            </div>
+            <div class="slider-dashboard col-sm-6">
+            	<div class="icon-container">
+                	<?php echo $form->create("offers", array("action" => "offerresponderlist",'name' => 'offerresponderlist', 'id' => "offerresponderlist"))?>
+					<?php
+                    e($html->link($html->image('new.png', array('alt' => 'New')) . ' ',array('controller'=>'offers','action'=>'addofferresponder'),array('escape' => false)));
+                    ?>	
+                    <a onclick="return activatecontents('asd','del');" href="javascript:void(0)"><?php e($html->image('action.png')); ?></a>
+                    <a id="linkedit" onclick="editmailcontent();" href="javascript:void(0)"><?php e($html->image('edit.png')); ?></a>
+                    <?php  echo $this->renderElement('new_slider');  ?>	
+                </div>
+            </div>
+            <div class="topTabs" style="height:25px;">
             <?php /*?><ul class="dropdown">
                 <li class="">
 				<?php
@@ -167,19 +171,26 @@ e($html->link($html->image('new.png', array('alt' => 'New')) . ' ',array('contro
                 <li><a id="linkedit" onclick="editmailcontent();" href="javascript:void(0)"><span>Edit</span></a></li>
             </ul><?php */?>
         </div>
-        <div class="clear"></div>
+        </div>
+
+</div>
+    
+<div class="clearfix nav-submenu-container">
+    <div class="midCont submenu-Cont">
         <?php 
 			$this->loginarea="offers";$this->subtabsel="offerresponder"; echo $this->renderElement('offer_email_submenus');  			
 		?>
+    </div>
+</div>     
 
-    </div></div>
+    
 <div class="midCont">
 
 
     <?php if($session->check('Message.flash')) { echo $this->renderElement('error_message'); } ?>
 
-    <div><span class="topLft_curv"></span>
-    <span class="topRht_curv"></span>                
+    <div><!--<span class="topLft_curv"></span>
+    <span class="topRht_curv"></span> -->               
         <div class="gryTop">
         	
             <div class="new_filter">
@@ -195,7 +206,7 @@ e($html->link($html->image('new.png', array('alt' => 'New')) . ' ',array('contro
         <div class="clear"></div>
     </div>
 
-    <div class="tblData">
+    <div class="tblData table-responsive">
       <?php $i=1; ?>   
 
 
@@ -311,8 +322,8 @@ e($html->link($html->image('new.png', array('alt' => 'New')) . ' ',array('contro
       </div><!--inner-container ends here-->
 
     <div>
-        <span class="botLft_curv"></span>
-<span class="botRht_curv"></span>
+        <!--<span class="botLft_curv"></span>
+<span class="botRht_curv"></span>-->
         <div class="gryBot">
 
             <?php  echo $this->renderElement('newpagination');  ?>

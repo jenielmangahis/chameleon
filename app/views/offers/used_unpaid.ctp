@@ -165,9 +165,10 @@ $base_url_admin = Configure::read('App.base_url_admin');
                     e($html->link($html->image('new.png', array('alt' => 'New')) . ' ',array('controller'=>'offers','action'=>'addoffer'),array('escape' => false)));
                     ?>	
                     <a href="javascript:void(0)" onclick="return activatecontents('asd','del');"><?php e($html->image('action.png')); ?></a>
-                    <a href="javascript:void(0)" onclick="editoffer();" id="linkedit"><?php e($html->image('edit.png')); ?></a>                     
+                    <a href="javascript:void(0)" onclick="editoffer();" id="linkedit"><?php e($html->image('edit.png')); ?></a> 
+                    <?php  echo $this->renderElement('new_slider');  ?>                    
                 </div>
-                <?php  echo $this->renderElement('new_slider');  ?>
+                
             </div>
             <div class="topTabs" style="height:25px;">
                 <?php /*?><ul class="dropdown">
@@ -241,7 +242,7 @@ $base_url_admin = Configure::read('App.base_url_admin');
 
     <?php $i=1; ?>			
 
-    <div class="tblData">
+    <div class="tblData table-responsive">
 
         <table width="100%" border="0" cellspacing="0" cellpadding="0">
             <tr class="trBg">

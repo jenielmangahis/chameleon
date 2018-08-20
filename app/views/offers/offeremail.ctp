@@ -148,9 +148,10 @@ $csvUrl = $base_url.'/offers/download_offer_email_list';
                     <a href="javascript:void(0)" onclick="editoffer();" id="linkedit"><?php e($html->image('edit.png')); ?></a>
                     <?php
                     e($html->link($html->image('back.png', array('alt' => 'Back')) . ' ',array('controller'=>'offers','action'=>'offerlist'),array('escape' => false)));
-                    ?>                     
+                    ?>       
+                    <?php  echo $this->renderElement('new_slider');  ?>              
                 </div>
-                <?php  echo $this->renderElement('new_slider');  ?>
+                
             </div>
             <!--<span class="titlTxt1"><?php //echo $current_project_name;  ?>:&nbsp;</span>-->
             <!--<span class="titlTxt"> Current Offer Emails  </span>-->
@@ -230,7 +231,7 @@ $csvUrl = $base_url.'/offers/download_offer_email_list';
 
     <?php $i=1; ?>			
 
-    <div class="tblData">
+    <div class="tblData table-responsive">
 
         <table class="table table-border table-striped" width="100%" border="0" cellspacing="0" cellpadding="0">
             <tr class="trBg">

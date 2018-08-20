@@ -147,30 +147,32 @@ $('#OfferMnu').removeClass("butBg");
 <div class="container">
 
    <div class="titlCont">
-   <div class="myclass">
-			<div align="center" class="slider" id="toppanel" style="height: 20px; top:13px;right:-50px;width:545px !important; text-align:right;">			
-
-            <?php echo $form->create("Admin", array("action" => "bymember",'name' => 'bymember', 'id' => "bymember")) ?>
-            <script type='text/javascript'>
-                function setprojectid(projectid){
-                    document.getElementById('projectid').value= projectid;
-                    document.adminhome.submit();
-                }
-            </script>
-<?php
-e($html->link($html->image('new.png', array('alt' => 'New')) . ' ',array('controller'=>'offers','action'=>'addoffer'),array('escape' => false)));
-
-?>	
-<a href="javascript:void(0)" onclick="return activatecontents('asd','del');"><?php e($html->image('action.png')) ?></a>	
-<a href="javascript:void(0)" onclick="editoffer();" id="linkedit"><?php e($html->image('edit.png')) ?></a>
-  <?php  echo $this->renderElement('new_slider');  ?>	
-</div>
-<?php if($usertype==trim('admin')){?>
-           <span class="titlTxt1"><?php echo $current_project_name;  ?>&nbsp;</span>
-<?php } ?>		   
-            <span class="titlTxt"> Member Offer  </span>
-            
-            <div class="topTabs">
+   		<div class="slider-centerpage clearfix">
+        	<div class="center-Page col-sm-6">
+            	<?php if($usertype==trim('admin')){?>
+               		<h2><?php echo $current_project_name;  ?></h2>
+                <?php } ?>
+            	<h2>Member Offer</h2>
+            </div>
+             <div class="slider-dashboard col-sm-6">
+             	<div class="icon-container">
+                	<?php echo $form->create("Admin", array("action" => "bymember",'name' => 'bymember', 'id' => "bymember")) ?>
+					<script type='text/javascript'>
+                        function setprojectid(projectid){
+                            document.getElementById('projectid').value= projectid;
+                            document.adminhome.submit();
+                        }
+                    </script>
+                    <?php
+                    e($html->link($html->image('new.png', array('alt' => 'New')) . ' ',array('controller'=>'offers','action'=>'addoffer'),array('escape' => false)));
+                    
+                    ?>	
+                    <a href="javascript:void(0)" onclick="return activatecontents('asd','del');"><?php e($html->image('action.png')) ?></a>	
+                    <a href="javascript:void(0)" onclick="editoffer();" id="linkedit"><?php e($html->image('edit.png')) ?></a>
+                    <?php  echo $this->renderElement('new_slider');  ?>	
+                </div>
+             </div>
+             <div class="topTabs">
                 <?php /*?><ul class="dropdown">
                       <li>
 						<?php
@@ -194,20 +196,24 @@ e($html->link($html->image('new.png', array('alt' => 'New')) . ' ',array('contro
                     <li><a href="javascript:void(0)" onclick="editoffer();" id="linkedit"><span>Edit</span></a></li>         
                 </ul><?php */?>
             </div>
-           
-           
-          <?php    $this->loginarea="offers";    $this->subtabsel="bymember";
-             echo $this->renderElement('offersecondlevel_submenus');  ?>    
         </div>
-        </div>
+   
+</div>
 
+
+<div class="clearfix nav-submenu-container">
+	<div class="midCont submenu-Cont">
+		<?php    $this->loginarea="offers";    $this->subtabsel="bymember";
+             echo $this->renderElement('offersecondlevel_submenus');  ?>    
+    </div>
+</div>
 
 <div class="midCont">
     <?php if($session->check('Message.flash')) { echo $this->renderElement('error_message'); } ?>  
     <!-- top curv image starts -->
     <div>
-        <span class="topLft_curv"></span>
-        <span class="topRht_curv"></span>
+        <!--<span class="topLft_curv"></span>
+        <span class="topRht_curv"></span>-->
         
         <div class="gryTop">
             <?php echo $form->create("Admin", array("action" => "bymember",'name' => 'bymember', 'id' => "bymember")) ?>
@@ -226,11 +232,12 @@ e($html->link($html->image('new.png', array('alt' => 'New')) . ' ',array('contro
 
         </div>
         </div>	
-        <div class="clear"></div></div>
+        <div class="clear"></div>
+    </div>
 
     <?php $i=1; ?>			
 
-    <div class="tblData">
+    <div class="tblData table-responsive">
 
         <table width="100%" border="0" cellspacing="0" cellpadding="0">
             <tr class="trBg">
@@ -395,8 +402,8 @@ e($html->link($html->image('new.png', array('alt' => 'New')) . ' ',array('contro
 
     </div>
     <div>
-        <span class="botLft_curv"></span>
-        <span class="botRht_curv"></span>
+        <!--<span class="botLft_curv"></span>
+        <span class="botRht_curv"></span>-->
         <div class="gryBot"><?php  echo $this->renderElement('newpagination'); ?>
         </div>
         <div class="clear"></div>
@@ -405,6 +412,6 @@ e($html->link($html->image('new.png', array('alt' => 'New')) . ' ',array('contro
 
     <?php echo $form->end();?>
 
-                    </div>
+</div>
 
 <div class="clear"></div>

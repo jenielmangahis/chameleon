@@ -139,9 +139,10 @@ $('#OfferMnu').removeClass("butBg");
                     e($html->link($html->image('new.png', array('alt' => 'New')) . ' ',array('controller'=>'offers','action'=>'addoffer'),array('escape' => false)));
                     ?>	
                     <a href="javascript:void(0)" onClick="return activatecontents('asd','del');"><?php e($html->image('action.png')); ?></a>
-                    <a href="javascript:void(0)" onClick="editoffer();" id="linkedit"><?php e($html->image('edit.png')); ?></a>                    
+                    <a href="javascript:void(0)" onClick="editoffer();" id="linkedit"><?php e($html->image('edit.png')); ?></a>   
+                     <?php  echo $this->renderElement('new_slider');  ?>                 
                 </div>
-                <?php  echo $this->renderElement('new_slider');  ?>
+               
             </div>
             
             <div class="topTabs">
@@ -231,7 +232,7 @@ $('#OfferMnu').removeClass("butBg");
 
     <?php $i=1; ?>			
 
-    <div class="tblData">
+    <div class="tblData table-responsive">
 
         <table class="table table-border table-striped" width="100%" border="0" cellspacing="0" cellpadding="0">
             <tr class="trBg">
