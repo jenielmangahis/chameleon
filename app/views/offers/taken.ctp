@@ -210,6 +210,7 @@ $base_url_admin = Configure::read('App.base_url_admin');
 </div>
 
 
+
 <div class="clearfix nav-submenu-container">
 	<div class="midCont submenu-Cont">
 		<?php    $this->loginarea="offers";    $this->subtabsel="taken";
