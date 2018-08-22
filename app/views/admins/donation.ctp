@@ -119,6 +119,7 @@ function activatecontents(act,op)
             
             <div class="slider-dashboard col-sm-6">
             	<div class="icon-container">
+                <?php echo $form->create("Donation", array("action" => "donation",'name' => 'donation', 'id' => "donation")) ?>
                 	<script type='text/javascript'>
                         function setprojectid(projectid){
                                         document.getElementById('projectid').value= projectid;
@@ -166,16 +167,7 @@ function activatecontents(act,op)
       </div>
             
         </div>
-  
-    <div class="centerPage">
-      <div align="center" class="slider" id="toppanel" style="height: 20px; top:13px;right:-50px;width:545px !important; text-align:right;"> <?php echo $form->create("Donation", array("action" => "donation",'name' => 'donation', 'id' => "donation")) ?>
-        
-      </div>
-      
-      
-      
-    </div>
-  </div>
+</div>
   
 <div class="clearfix nav-submenu-container">
 	<div class="midCont submenu-Cont">

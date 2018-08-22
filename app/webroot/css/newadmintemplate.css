@@ -4157,7 +4157,7 @@ p.subtext {
 .btn-Rht { margin:10px 0; }
 
 
-.submenu-Cont { padding:20px 0 0;}
+.submenu-Cont { padding:20px 0;}
 
 #main > a img src="../img/chameleonLogo.png" { display:none;}
 
@@ -4391,6 +4391,7 @@ ul.form-style li .intpSpan { display:block; margin-bottom:10px;}
 	
 	
 	.table-responsive .ckeditor { width:100% !important; border:1px solid #ddd;}
+	.rightpanel { width:100%; min-height:0; min-width:0;}
 
 	.nav-submenu-container { padding:0 20px;}
 	.midCont { width:100%; padding:10px 3px;}

@@ -133,8 +133,9 @@ function activatecontents(act,op)
                     ?>
                     <a href="javascript:void(0)" onclick="return activatecontents('asd','del');"><?php e($html->image('action.png', array('alt' => 'Delete'))); ?></a>
                     <a href="javascript:void(0)" onclick="editcontent();" id="linkedit"><?php e($html->image('edit.png', array('alt' => 'Edit'))); ?></a>
+                    <?php  echo $this->renderElement('new_slider');  ?>
                 </div>
-                <?php  echo $this->renderElement('new_slider');  ?>	
+                	
             </div>
             <!--<div align="center" class="slider" id="toppanel" style="height: 20px; top:13px;right: -50px;width:545px !important; text-align:right;">			
             </div>
@@ -204,7 +205,7 @@ function activatecontents(act,op)
                         <div class="clear"></div></div>
 
                         <?php $i=1; ?>  
-                        <div class="tblData">
+                        <div class="tblData table-responsive">
         <table class="table table-bordered table-striped" width="100%" border="0" cellspacing="0" cellpadding="0">
         <tr class="trBg">
         <th align="center" style="width:2%;">#</th>

@@ -115,22 +115,24 @@ function activatecontents(act,op)
 <?php $pagination->setPaging($paging); ?>
 <div class="container">
 	<div class="titlCont">
-		<div class="myclass">
-
-			<div align="center" class="slider" id="toppanel" style="height: 20px; top:13px;right:-50px;width:360px !important; text-align:right;">	
-		<?php echo $form->create("mail", array("action" => "opt_out_history",'name' => 'opt_out_history', 'id' => "opt_out_history")) ?>
-			<script type='text/javascript'>
-                        function setprojectid(projectid){
-                                        document.getElementById('projectid').value= projectid;
-                                        document.adminhome.submit();
-                                }
-                </script>
-<a href="javascript:void(0)" onclick="return activatecontents('asd','del');"><?php e($html->image('action.png')); ?></a>		
-	<?php  echo $this->renderElement('new_slider');  ?>			
-</div>
-			<span class="titlTxt">Opt-Out History </span>
-
-			<div class="topTabs" style="height:25px;">
+    	<div class="slider-centerpage clearfix">
+        	<div class="center-Page col-sm-6">
+                <h2>Opt-Out History</h2>
+            </div>
+            <div class="slider-dashboard col-sm-6">
+            	<div class="icon-container">
+                	<?php echo $form->create("mail", array("action" => "opt_out_history",'name' => 'opt_out_history', 'id' => "opt_out_history")) ?>
+					<script type='text/javascript'>
+                                function setprojectid(projectid){
+                                                document.getElementById('projectid').value= projectid;
+                                                document.adminhome.submit();
+                                        }
+                        </script>
+                    <a href="javascript:void(0)" onclick="return activatecontents('asd','del');"><?php e($html->image('action.png')); ?></a>		
+                    <?php  echo $this->renderElement('new_slider');  ?>	
+                </div>
+            </div>
+            <div class="topTabs" style="height:25px;">
 				<?php /*?><ul class="dropdown">
 					<!-- <li><a href="/admins/addcommtask"><span>New</span></a></li>-->
 					<li><a href="javascript:void(0)" class="tab2"><span>Actions</span>
@@ -147,11 +149,19 @@ function activatecontents(act,op)
 					<!--li><a href="javascript:void(0)" onclick="editcontent();" id="linkedit"><span>Edit</span></a></li-->
 				</ul><?php */?>
 			</div>
-			<?php    $this->loginarea="admins";    $this->subtabsel="opt_out_history";
-             echo $this->renderElement('emails_submenus');  ?>
-		</div>
+        </div>
+    
+		
 	</div>
-	<div class="midCont" id="newcmmtasktab">
+    
+<div class="clearfix nav-submenu-container">
+	<div class="midCont submenu-Cont">
+		 <?php    $this->loginarea="admins";    $this->subtabsel="opt_out_history";
+             echo $this->renderElement('emails_submenus');  ?>
+    </div>
+</div>    
+    
+<div class="midCont" id="newcmmtasktab">
 
 
 		<?php if($session->check('Message.flash')){ ?>
@@ -178,12 +188,12 @@ function activatecontents(act,op)
 
 		<!-- top curv image starts -->
 		<div>
-			<span class="topLft_curv"></span> <span class="topRht_curv"></span>
+			<!--<span class="topLft_curv"></span> <span class="topRht_curv"></span>-->
 			<div class="gryTop">
 
 				<div class="new_filter">
 					<span class="spnFilt">Filter:</span><span class="srchBg"><?php echo $form->input("searchkey", array('id' => 'searchkey', 'div' => false, 'label' => '',"maxlength" => "200"));?>
-					</span><span class="srchBg2"><?php echo $form->submit("Go", array('id' => 'searchkeysubmit', 'div' => false, 'label' => '','class'=>'btn'));
+					</span><span class="srchBg2"><?php echo $form->submit("Go", array('id' => 'searchkeysubmit', 'div' => false, 'label' => '','class'=>''));
 					?> </span> <span class="srchBg2"><input type="button" value="Reset"
 						label=""
 						onclick="javascript:(window.location='<?php echo $base_url_admin ?>commopt_out_history')"
@@ -195,8 +205,8 @@ function activatecontents(act,op)
 		</div>
  
 		<?php $i=1; ?> 
-		<div class="tblData">
-			<table width="100%" border="0" cellspacing="0" cellpadding="0"> 
+		<div class="tblData table-responsive">
+			<table class="table table-bordered table-striped" width="100%" border="0" cellspacing="0" cellpadding="0"> 
 				<tr class="trBg">
 					<th align="center" style="width: 1%;">#</th>
 					<th align="center" style="width: 2%;"><input type="checkbox"
@@ -300,7 +310,7 @@ function activatecontents(act,op)
 		</div>
 
 		<div>
-			<span class="botLft_curv"></span> <span class="botRht_curv"></span>
+			<!--<span class="botLft_curv"></span> <span class="botRht_curv"></span>-->
 			<div class="gryBot">
 				<?php echo $this->renderElement('newpagination');  ?>
 			</div>

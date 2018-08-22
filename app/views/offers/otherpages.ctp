@@ -142,8 +142,9 @@ $('#OfferMnu').removeClass("butBg");
                         }
                     </script>
                     <a href="javascript:void(0)" onClick="editoffer();" id="linkedit"><?php e($html->image('edit.png')); ?></a>
+                    <?php  echo $this->renderElement('new_slider');  ?>
                 </div>
-                <?php  echo $this->renderElement('new_slider');  ?>
+                
             </div>
             <?php if($paramsVal){
 				echo $form->hidden("paramsVal", array('id' => 'paramsVal','value' =>"$paramsVal"));			
@@ -217,7 +218,7 @@ $('#OfferMnu').removeClass("butBg");
 
     <?php $i=1; ?>			
 
-    <div class="tblData">
+    <div class="tblData table-responsive">
 
         <table class="table table-bordered table-striped" width="100%" border="0" cellspacing="0" cellpadding="0">
             <tr class="trBg">

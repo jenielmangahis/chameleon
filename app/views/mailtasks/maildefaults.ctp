@@ -12,17 +12,21 @@ $('#EmailMnu').addClass("butBgSelt");
 
 <!-- Body Panel starts -->
 <div class="titlCont">
-	<div class="centerPage">
-<div class="slider" id="toppanel" style="height: 20px; top:13px;right:-50px;width:545px !important; text-align:right;">			
-<?php 
-        echo $form->create("mailtasks", array("action" => "maildefaults", 'name' => 'maildefaults', 'id' => "maildefaults", 'onsubmit'=>'return validateform()'));
- ?>
- <button type="submit" value="Submit" class="sendBut" name="data[Action][redirectpage]"><?php e($html->image('save.png')); ?></button>
-<button type="submit" value="Submit" class="sendBut" name="data[Action][noredirection]"><?php e($html->image('apply.png')); ?></button>
-<button type="button" id="saveForm" class="sendBut"  ONCLICK="javascript:(window.location='<?php echo $backUrl;?>')"><?php e($html->image('cancle.png')); ?></button>	
-<?php  echo $this->renderElement('new_slider');  ?>		
-</div>
-               <span class="titlTxt"> Email "Forms" Defaults </span>
+	<div class="slider-centerpage clearfix">
+    	<div class="center-Page col-sm-6">
+            <h2>Email "Forms" Defaults</h2>
+        </div>
+        <div class="slider-dashboard col-sm-6">
+        	<div class="icon-container">
+            	<?php 
+						echo $form->create("mailtasks", array("action" => "maildefaults", 'name' => 'maildefaults', 'id' => "maildefaults", 'onsubmit'=>'return validateform()'));
+				 ?>
+				 <button type="submit" value="Submit" class="sendBut" name="data[Action][redirectpage]"><?php e($html->image('save.png')); ?></button>
+				<button type="submit" value="Submit" class="sendBut" name="data[Action][noredirection]"><?php e($html->image('apply.png')); ?></button>
+				<button type="button" id="saveForm" class="sendBut"  ONCLICK="javascript:(window.location='<?php echo $backUrl;?>')"><?php e($html->image('cancle.png')); ?></button>	
+				<?php  echo $this->renderElement('new_slider');  ?>	
+            </div>
+        </div>
         <div class="topTabs" style="height:25px;">
             <?php /*?><ul>
                 <li><button type="submit" value="Submit" class="button" name="data[Action][redirectpage]"><span>Save</span></button></li>
@@ -30,25 +34,29 @@ $('#EmailMnu').addClass("butBgSelt");
                 <li><button type="button" id="saveForm" class="button"  ONCLICK="javascript:(window.location='<?php echo $backUrl;?>')"><span> Cancel</span></button></li>
             </ul><?php */?>
         </div>
- <div class="clear"></div>
-       
-           <?php   
+    </div>
+    
+</div>
+
+
+<div class="clearfix nav-submenu-container">
+	<div class="midCont submenu-Cont">
+		 <?php   
            	 $this->maildefaults="tabSelt";
            	 $this->subtabsel="maildefaults";
-             echo $this->renderElement('emails_submenus');  ?>  
-       
+             echo $this->renderElement('emails_submenus');  ?>
     </div>
-     </div>
+</div>
      
-<div class="midPadd">
+<div class="midPadd midCont">
     <div class="boxBor1">
 
         <?php if($session->check('Message.flash')) { echo $this->renderElement('error_message'); } ?>
         <div class="clear"></div>
     </div>
     <br/>
-    <div class="boxBor1">
-        <table cellspacing="10" cellpadding="0" align="center" width="100%">   
+    <div class="boxBor1 table-responsive">
+        <table class="table table-borderless" cellspacing="10" cellpadding="0" align="center" width="100%">   
             <tbody>
                 <tr>
                     <td width="60%">

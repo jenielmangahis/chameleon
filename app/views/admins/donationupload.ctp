@@ -153,6 +153,7 @@ function activatecontents(act,op)
             </div>
             <div class="slider-dashboard col-sm-6">
             	<div class="icon-container">
+                <?php echo $form->create("Admin", array("action" => "Donationupload",'name' => 'Donationupload', 'id' => "Donationupload")) ?>
                 	<script type='text/javascript'>
 							function setprojectid(projectid){
 											document.getElementById('projectid').value= projectid;
@@ -166,11 +167,12 @@ function activatecontents(act,op)
 					<?php e($html->image('action.png', array('alt' => 'Delete'))); ?>
 					</a> <a href="javascript:void(0)" onclick="editcontent();" id="linkedit">
 					<?php e($html->image('edit.png', array('alt' => 'Edit'))); ?>
-					</a>					
+					</a>			
+                    <?php  echo $this->renderElement('new_slider');  ?>		
                 </div>
-                <?php  echo $this->renderElement('new_slider');  ?>
+                
             </div>
-            <!--<div align="center" class="slider" id="toppanel" style="height: 20px; top:13px;right:-50px;width:545px !important; text-align:right;"> <?php echo $form->create("Admin", array("action" => "Donationupload",'name' => 'Donationupload', 'id' => "Donationupload")) ?>
+            <!--<div align="center" class="slider" id="toppanel" style="height: 20px; top:13px;right:-50px;width:545px !important; text-align:right;"> 
 			</div>
             <span class="titlTxt"> Donation Uploads List </span>
         	<div class="topTabs" style="height:25px;">-->
@@ -223,7 +225,7 @@ function activatecontents(act,op)
       <div class="clear"></div>
     </div>
     <?php $i=1; ?>
-    <div class="tblData">
+    <div class="tblData table-responsive">
       <table class="table table-bordered table-striped" width="100%" border="0" cellspacing="0" cellpadding="0">
         <tr class="trBg">
           <th align="center" style="width:2%;">#</th>

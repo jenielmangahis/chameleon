@@ -106,19 +106,22 @@ function activatecontents(act,op)
 
 <!--container starts here-->
 <?php $pagination->setPaging($paging); ?>
-<div class="titlCont"><div class="centerPage">
-    
-<div align="center" class="slider" id="toppanel" style="height: 20px; top:13px;right:-50px;width:545px !important; text-align:right;">			
-
-<?php echo $form->create("mailtasks", array("action" => "mailtemplatelist",'name' => 'mailtemplatelist', 'id' => "mailtemplatelist"))?>
-<?php
-e($html->link($html->image('new.png', array('alt' => 'New')) . ' ',array('controller'=>'mailtasks','action'=>'addmailtemplate'),array('escape' => false)));
-?>	
-<a onclick="return activatecontents('asd','del');" href="javascript:void(0)"><?php e($html->image('action.png')); ?></a>
-<a id="linkedit" onclick="editmailcontent();" href="javascript:void(0)"><?php e($html->image('edit.png')); ?></a>
- <?php  echo $this->renderElement('new_slider');  ?>		
-</div>
-   <span class="titlTxt">Mail Templates </span>
+<div class="titlCont">
+	<div class="slider-centerpage clearfix">
+    	<div class="center-Page col-sm-6">
+            <h2>Mail Templates</h2>
+        </div>
+        <div class="slider-dashboard col-sm-6">
+        	<div class="icon-container">
+            	<?php echo $form->create("mailtasks", array("action" => "mailtemplatelist",'name' => 'mailtemplatelist', 'id' => "mailtemplatelist"))?>
+				<?php
+                e($html->link($html->image('new.png', array('alt' => 'New')) . ' ',array('controller'=>'mailtasks','action'=>'addmailtemplate'),array('escape' => false)));
+                ?>	
+                <a onclick="return activatecontents('asd','del');" href="javascript:void(0)"><?php e($html->image('action.png')); ?></a>
+                <a id="linkedit" onclick="editmailcontent();" href="javascript:void(0)"><?php e($html->image('edit.png')); ?></a>
+                 <?php  echo $this->renderElement('new_slider');  ?>
+            </div>
+        </div>
         <div class="topTabs" style="height:25px;">
             <?php /*?><ul class="dropdown">
                 <li class="">
@@ -142,17 +145,24 @@ e($html->link($html->image('new.png', array('alt' => 'New')) . ' ',array('contro
                 <li><a id="linkedit" onclick="editmailcontent();" href="javascript:void(0)"><span>Edit</span></a></li>
             </ul><?php */?>
         </div>
-        <div class="clear"></div>
-        <?php $this->subtabsel="mailtemplatelist";   echo $this->renderElement('emails_submenus');?>  
+    </div>
 
-    </div></div>
+</div>
+    
+<div class="clearfix nav-submenu-container">
+	<div class="midCont submenu-Cont">
+		  <?php $this->subtabsel="mailtemplatelist";   echo $this->renderElement('emails_submenus');?>
+    </div>
+</div>     
+    
 <div class="midCont">
 
 
     <?php if($session->check('Message.flash')) { echo $this->renderElement('error_message'); } ?>
 
-    <div><span class="topLft_curv"></span>
-    <span class="topRht_curv"></span>                
+    <div>
+    <!--<span class="topLft_curv"></span>
+    <span class="topRht_curv"></span>-->                
         <div class="gryTop">
         	
             <div class="new_filter">
@@ -168,12 +178,12 @@ e($html->link($html->image('new.png', array('alt' => 'New')) . ' ',array('contro
         <div class="clear"></div>
     </div>
 
-    <div class="tblData">
+    <div class="tblData table-responsive">
       <?php $i=1; ?>   
 
 
 
-    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+    <table class="table table-bordered table-striped" width="100%" border="0" cellspacing="0" cellpadding="0">
     <tr class="trBg">
     <th align="center" width="1%">#</th>
     <th align="center" width="2%"><input type="checkbox" value="" name="checkall" id="checkall" /></th>
@@ -279,8 +289,8 @@ e($html->link($html->image('new.png', array('alt' => 'New')) . ' ',array('contro
       </div><!--inner-container ends here-->
 
     <div>
-        <span class="botLft_curv"></span>
-<span class="botRht_curv"></span>
+        <!--<span class="botLft_curv"></span>
+        <span class="botRht_curv"></span>-->
         <div class="gryBot">
 
             <?php echo $this->renderElement('newpagination');  ?>
