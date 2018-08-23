@@ -6,63 +6,70 @@ $('#EmailMmu').addClass("butBgSelt");
 </script>
 <?php  echo $javascript->link('ckeditor/ckeditor'); ?>
 <div class="container">
-<div class="titlCont"><div style="width:960px; margin:0 auto;">
-
-			<div align="center" class="slider" id="toppanel" style="height: 20px; top:13px;right:-50px;width:545px !important; text-align:right;">			
-
-              <?php echo $form->create("Admin", array("action" => "projectbackup",'name' => 'projectbackup', 'id' => "projectbackup"));?>          <?php  echo $this->renderElement('new_slider');  ?>			
-</div>                                                                                                         
-            <span class="titlTxt1"><?php echo $project['Project']['project_name'];  ?>&nbsp;</span>
-            <span class="titlTxt">   Spam Policy     </span>
-            
+	<div class="titlCont">
+		<div class="slider-centerpage clearfix">
+        	<div class="center-Page col-sm-6">
+                <h2>Spam Policy</h2>
+            </div>
+            <div class="slider-dashboard col-sm-6">
+            	<div class="icon-container">
+                	<?php echo $form->create("Admin", array("action" => "projectbackup",'name' => 'projectbackup', 'id' => "projectbackup"));?>          
+			  		<?php  echo $this->renderElement('new_slider');  ?>
+                </div>
+            </div>
             <div class="topTabs">
                 <ul class="dropdown">
                             <!--<li><button type="button" id="saveForm" class="button"  ONCLICK="javascript:(window.location='/admins/dashboard')"><span> Cancel</span></button></li>-->
                 </ul>
             </div>
+        </div>
+ </div> 
+        
 
-            <?php    $this->loginarea="admins";   
-				$this->subtabsel="spam_policy_project";
-                    echo $this->renderElement('emails_submenus');  ?> 
-        </div></div> 
-        
-        
+<div class="clearfix nav-submenu-container">
+	<div class="midCont submenu-Cont">
+		<?php    $this->loginarea="admins";   
+		$this->subtabsel="spam_policy_project";
+		echo $this->renderElement('emails_submenus');  ?>   
+    </div>
+</div>         
 
 <div class="midCont" id="newcoinsettab">
 
-
-    <?php if($session->check('Message.flash')) { echo $this->renderElement('error_message'); } ?>
+	<div class="table-responsive">
+		<?php if($session->check('Message.flash')) { echo $this->renderElement('error_message'); } ?>
+        
+            <table class="table table-borderless" width="100%" cellpadding="1" cellspacing="1">
+                        <tr>
+                            <td colspan='3'><?php if($session->check('Message.flash')){ $session->flash(); }
+                                    echo $form->error('SpamPolicy.policy_content', array('class' => 'errormsg'));
+                            ?></td>
+                        </tr>
     
-        <table width="100%" cellpadding="1" cellspacing="1">
-                    <tr>
-                        <td colspan='3'><?php if($session->check('Message.flash')){ $session->flash(); }
-                                echo $form->error('SpamPolicy.policy_content', array('class' => 'errormsg'));
-                        ?></td>
-                    </tr>
-
-                                       
-                    <tr>
-                    <td width="100%" colspan="5">
-                    <?php    
-                        echo $form->textarea('SpamPolicy.policy_content', array('id'=>'policy_content','class'=>'ckeditor'));                        
+                                           
+                        <tr>
+                        <td width="100%" colspan="5">
+                        <?php    
+                            echo $form->textarea('SpamPolicy.policy_content', array('id'=>'policy_content','class'=>'ckeditor'));                        
+                            
+                            ?>
+                        </td>
+                        </tr>
+    
+    
+                        <tr><td>&nbsp;</td></tr>
+    
+                        <!-- ADD FIELD EOF -->      
+                        <!-- BUTTON SECTION BOF -->  
                         
-                        ?>
-                    </td>
-                    </tr>
+                        <tr><td>&nbsp;</td></tr>
+    
+                    </table>    </div>
+           
+         <?php                   echo $form->end();    ?>
 
-
-                    <tr><td>&nbsp;</td></tr>
-
-                    <!-- ADD FIELD EOF -->      
-                    <!-- BUTTON SECTION BOF -->  
-                    
-                    <tr><td>&nbsp;</td></tr>
-
-                </table>    </div>
-       
-     <?php                   echo $form->end();    ?>
-
-    <div class="clear"></div>
+    	<div class="clear"></div>
+    </div>
 </div>     
 <script type="text/javascript">
     if(document.getElementById("flashMessage")!=null)

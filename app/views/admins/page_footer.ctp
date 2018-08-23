@@ -6,28 +6,27 @@ $backUrl = $base_url_admin.'contentlist';
 
 <!--container starts here-->
 <div class="container">
-<div class="titlCont">
-<div class="myclass">
-        
-<div align="center" class="slider" id="toppanel" style="height: 20px; top:13px;right:-50px;width:545px !important; text-align:right;">			
-
-        <?php echo $form->create("Admins", array("action" => "page_footer",'name' => 'page_footer', 'id' => "page_footer"))?>
-        <script type='text/javascript'>
-            function setprojectid(projectid){
-                document.getElementById('projectid').value= projectid;
-                document.adminhome.submit();
-            }
-        </script>
-		<button type="submit" value="Submit" class="sendBut" name="data[Action][redirectpage]"><?php e($html->image('save.png')); ?></button>
- <button type="submit" value="Submit" class="sendBut" name="data[Action][noredirection]"><?php e($html->image('apply.png')); ?></button>
-<button type="button" id="saveForm" class="sendBut"  ONCLICK="javascript:(window.location='<?php echo $backUrl ?>')"><?php e($html->image('cancle.png')); ?></button>
-<?php  echo $this->renderElement('new_slider');  ?>
-</div>
-         <?php  echo $this->renderElement('project_name');  ?> 
-        <span class="titlTxt">
-            Page Footer
-        </span>
-     <div class="topTabs" style="height:25px;">
+	<div class="titlCont">
+    	<div class="slider-centerpage clearfix">
+        	<div class="center-Page col-sm-6">
+                <h2>Page Footer</h2>
+            </div>
+            <div class="slider-dashboard col-sm-6">
+            	<div class="icon-container">
+                	<?php echo $form->create("Admins", array("action" => "page_footer",'name' => 'page_footer', 'id' => "page_footer"))?>
+					<script type='text/javascript'>
+                        function setprojectid(projectid){
+                            document.getElementById('projectid').value= projectid;
+                            document.adminhome.submit();
+                        }
+                    </script>
+                    <button type="submit" value="Submit" class="sendBut" name="data[Action][redirectpage]"><?php e($html->image('save.png')); ?></button>
+             		<button type="submit" value="Submit" class="sendBut" name="data[Action][noredirection]"><?php e($html->image('apply.png')); ?></button>
+                    <button type="button" id="saveForm" class="sendBut"  ONCLICK="javascript:(window.location='<?php echo $backUrl ?>')"><?php e($html->image('cancle.png')); ?></button>
+                    <?php  echo $this->renderElement('new_slider');  ?>
+                </div>
+            </div>
+            <div class="topTabs" style="height:25px;">
                 <?php /*?><ul>
         <li><button type="submit" value="Submit" class="button" name="data[Action][redirectpage]"><span>Save</span></button></li>
         <li><button type="submit" value="Submit" class="button" name="data[Action][noredirection]"><span>Apply</span></button></li>
@@ -37,10 +36,17 @@ $backUrl = $base_url_admin.'contentlist';
                 <li><a href="/admins/"><span>Cancel</span></a></li>
                 --></ul><?php */?>
             
-        </div> 
+        </div>
+        </div>
+    
+</div>
+    
+<div class="clear"></div>
 
 
-        <?php    $this->loginarea="admins";    $this->subtabsel="page_footer";
+<div class="clearfix nav-submenu-container">
+	<div class="midCont submenu-Cont">
+		<?php    $this->loginarea="admins";    $this->subtabsel="page_footer";
 if($_GET['url'] === 'admins/page_footer/0'){
 		echo $this->renderElement('emails_submenus'); 
 
@@ -49,15 +55,12 @@ if($_GET['url'] === 'admins/page_footer/0'){
 }
 
 					?>   
-    </div></div>
-    
-    
-    <?php    //if($session->check('Message.flash')){ ?><div style="width:400px;margin:0 auto;"><?php //$session->flash();?></div><?php //}?>
-<div class="clear"></div>
+    </div>
+</div>
 
 
         
-<div class="rightpanel">
+<div class="right-panel table-responsive">
 
 
 <?php if($session->check('Message.flash')){ ?> 
@@ -80,11 +83,11 @@ if($_GET['url'] === 'admins/page_footer/0'){
 </div>
                                             <?php } ?>
 
-<div id="center-column">
+<div id="center-column" class="table-responsive">
             
         <!-- ADD USER FORM -->
     
-        <table width="100%" align="center" cellpadding="1" cellspacing="1">
+        <table class="table" width="100%" align="center" cellpadding="1" cellspacing="1">
         <tr>
               <td width="100%" colspan=2 style="vertical-align:top" >
             <?php    
