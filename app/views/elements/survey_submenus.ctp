@@ -107,6 +107,7 @@
 					?>
 				</li>  	
             </ul>
+        </div>
     <div class="clear"></div> 
     <br />
     <?php }?>
