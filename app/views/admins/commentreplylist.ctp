@@ -119,24 +119,19 @@ function activatecontents(act,op)
 <?php $pagination->setPaging($paging); ?> 
 
  <!-- Body Panel starts -->
-  <div class="container">
- <div class="titlCont">
- <div style="width:960px; margin:0 auto;">
- <div class="slider" id="toppanel" style="height: 20px; top:11px;right: -50px;width:545px !important; text-align:right;">	
-<?php echo $form->create("Admins", array("action" => "commentreplylist",'name' => 'commentreplylist', 'id' => "commentreplylist")) ?>    
-<?php  echo $this->renderElement('new_slider');  ?>
-</div>
-			 <?php  echo $this->renderElement('project_name');  ?>   
-              <span class="titlTxt">Replies  </span>
-            <?php    $this->loginarea="admins";    $this->subtabsel="commentreplylist";
-if($_GET['url'] === 'admins/commentreplylist/0'){   
-  echo $this->renderElement('survey_submenus');       
-}else{
-		  echo $this->renderElement('comments_submenus');
-}
-
-		  ?>   
-           <div class="topTabs">
+<div class="container">
+	<div class="titlCont">
+ 		<div class="slider-centerpage clearfix">
+        	<div class="center-Page col-sm-6">
+            	<h2>Replies</h2>
+            </div>
+            <div class="slider-dashboard col-sm-6">
+            	<div class="icon-container">
+                	<?php echo $form->create("Admins", array("action" => "commentreplylist",'name' => 'commentreplylist', 'id' => "commentreplylist")) ?>    
+					<?php  echo $this->renderElement('new_slider');  ?>
+                </div>
+            </div>
+            <div class="topTabs">
                <?php /*?> <ul class="dropdown">
                     <!--li><a href="/admins/addcontentpage"><span>New</span></a></li-->
                 <li><a href="javascript:void(0)" class="tab2"><span>Actions</span></a>
@@ -148,8 +143,23 @@ if($_GET['url'] === 'admins/commentreplylist/0'){
                                      <li class="botCurv"></li>
                 </ul><?php */?>  
    </div>
-   </div>
-   </div> 
+        </div>
+ </div> 
+   
+   
+<div class="clearfix nav-submenu-container">
+	<div class="midCont">
+				<?php    $this->loginarea="admins";    $this->subtabsel="commentreplylist";
+        if($_GET['url'] === 'admins/commentreplylist/0'){   
+        echo $this->renderElement('survey_submenus');       
+        }else{
+        echo $this->renderElement('comments_submenus');
+        }
+        
+        ?>   
+    </div>
+</div> 
+   
 <div class="midCont" id="cmttab">
 	<?php if($session->check('Message.flash')) { echo $this->renderElement('error_message'); } ?>
 
@@ -158,8 +168,8 @@ if($_GET['url'] === 'admins/commentreplylist/0'){
 
                                                             <!-- top curv image starts -->
                                                             <div>
-                                                            <span class="topLft_curv"></span>
-															<span class="topRht_curv"></span>
+                                                            <!--<span class="topLft_curv"></span>
+															<span class="topRht_curv"></span>-->
                 <div class="gryTop">
                 
                 <script type='text/javascript'>
@@ -169,7 +179,7 @@ if($_GET['url'] === 'admins/commentreplylist/0'){
                                 }
                 </script>
 				<div class="new_filter">
-                <span class="spnFilt">Filter:</span><span class="srchBg"><?php echo $form->input("searchkey", array('id' => 'searchkey', 'div' => false, 'label' => '',"maxlength" => "200"));?></span><span class="srchBg2"><?php echo $form->submit("Go", array('id' => 'searchkeysubmit', 'div' => false, 'label' => '','class'=>'btn'));
+                <span class="spnFilt">Filter:</span><span class="srchBg"><?php echo $form->input("searchkey", array('id' => 'searchkey', 'div' => false, 'label' => '',"maxlength" => "200"));?></span><span class="srchBg2"><?php echo $form->submit("Go", array('id' => 'searchkeysubmit', 'div' => false, 'label' => '','class'=>''));
                         ?> 
                 </span>
                 <span class="srchBg2"><input type="button" value="Reset" label="" onclick="javascript:(window.location=baseUrlAdmin+'commentreplylist')" id="locaa"></span>
@@ -183,8 +193,8 @@ if($_GET['url'] === 'admins/commentreplylist/0'){
                     <div class="clear"></div></div>
 
 <?php $i=1; ?>  
-                    <div class="tblData">
-        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                    <div class="tblData table-responsive">
+        <table class="table table-bordered table-striped" width="100%" border="0" cellspacing="0" cellpadding="0">
         <tr class="trBg">
         <th align="center" width="1%">#</th>
         <th align="center" width="3%"><input type="checkbox" value="" name="checkall" id="checkall" /></th>             
@@ -336,8 +346,8 @@ if($_GET['url'] === 'admins/commentreplylist/0'){
 
      </div>
          <div>
-         <span class="botLft_curv"></span>
-      <span class="botRht_curv"></span>
+         <!--<span class="botLft_curv"></span>
+      <span class="botRht_curv"></span>-->
         <div class="gryBot">        <?php echo $this->renderElement('newpagination'); ?>
         </div>
         <!--inner-container ends here-->

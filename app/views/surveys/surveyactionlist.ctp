@@ -117,19 +117,20 @@ function activatecontents(act,op)
 <!-- Body Panel starts -->
 <div class="container">
 	<div class="titlCont">
-
-		<div class="myclass">
-			<div class="slider" id="toppanel" style="height: 20px; top:13px;right: -50px;width:545px !important; text-align:right;">
-				
-			<?php echo $form->create("Surveys", array("action" => "surveyactionlist",'name' => 'surveyactionlist', 'id' => "surveyactionlist")) ?>
-			<?php e($html->link($html->image('new.png') . ' ',array('controller'=>'surveys','action'=>'survey_action'),array('escape' => false))); ?>
-			<a href="javascript:void(0)" onclick="return activatecontents('asd','del');"><?php e($html->image('action.png')); ?></a>
-			<a href="javascript:void(0)" onclick="editsurvey();" id="linkedit"><?php e($html->image('edit.png')); ?> </a>
-			<?php  echo $this->renderElement('new_slider');  ?>
-			</div>
-			<span class="titlTxt"> Survey List</span>
-
-			<div class="topTabs" style="height:25px;">
+		<div class="slider-centerpage clearfix">
+        	<div class="center-Page col-sm-6">
+            	<h2>Survey List</h2>
+            </div>
+            <div class="slider-dashboard col-sm-6">
+            	<div class="icon-container">
+                	<?php echo $form->create("Surveys", array("action" => "surveyactionlist",'name' => 'surveyactionlist', 'id' => "surveyactionlist")) ?>
+					<?php e($html->link($html->image('new.png') . ' ',array('controller'=>'surveys','action'=>'survey_action'),array('escape' => false))); ?>
+                    <a href="javascript:void(0)" onclick="return activatecontents('asd','del');"><?php e($html->image('action.png')); ?></a>
+                    <a href="javascript:void(0)" onclick="editsurvey();" id="linkedit"><?php e($html->image('edit.png')); ?> </a>
+                    <?php  echo $this->renderElement('new_slider');  ?>
+                </div>
+            </div>
+            <div class="topTabs" style="height:25px;">
 				<?php /*?><ul class="dropdown">
 					<li><?php
 					e($html->link(
@@ -157,16 +158,22 @@ function activatecontents(act,op)
 					<li><a href="javascript:void(0)" onclick="editsurvey();" id="linkedit"><span>Edit</span> </a></li>
 				</ul><?php */?>
 			</div>
-
-			<?php    $this->loginarea="surveys";    $this->subtabsel="surveyactionlist";
+        </div>
+        
+</div>
+    
+<div class="clearfix nav-submenu-container">
+    <div class="midCont submenu-Cont">
+        <?php    $this->loginarea="surveys";    $this->subtabsel="surveyactionlist";
              echo $this->renderElement('survey_submenus');  ?>
-		</div>
-	</div>
+    </div>
+</div>    
+    
 	<div class="midCont">
 		<?php if($session->check('Message.flash')) { echo $this->renderElement('error_message'); } ?>
 		<!-- top curv image starts -->
 		<div>
-			<span class="topLft_curv"></span> <span class="topRht_curv"></span>
+			<!--<span class="topLft_curv"></span> <span class="topRht_curv"></span>-->
 			<div class="gryTop">
 				<div class="new_filter">
 
@@ -184,9 +191,9 @@ function activatecontents(act,op)
 
 		<?php $i=1; ?>
 
-		<div class="tblData">
+		<div class="tblData table-responsive">
 
-			<table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<table class="table-bordered table table-striped" width="100%" border="0" cellspacing="0" cellpadding="0">
 				<tr class="trBg">
 					<th align="center" valign="middle" width="1%">#</th>
 					<th align="center" valign="middle" width="3%"><input type="checkbox" value="" name="checkall" id="checkall" /></th>
@@ -261,7 +268,7 @@ function activatecontents(act,op)
 			</table>
 		</div>
 		<div>
-			<span class="botLft_curv"></span> <span class="botRht_curv"></span>
+			<!--<span class="botLft_curv"></span> <span class="botRht_curv"></span>-->
 			<div class="gryBot">
 				<?php  echo $this->renderElement('newpagination');  ?>
 			</div>

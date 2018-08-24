@@ -129,30 +129,30 @@ function activatecontents(act,op)
    </script>
 <?php $pagination->setPaging($paging); ?> 
  <!-- Body Panel starts -->
-   <div class="container">
-<div class="titlCont">
-
-<div class="myclass">
-<div align="center" class="slider" id="toppanel" style="height: 20px; top:13px;right:-50px;width:545px !important; text-align:right;">			
-
-        <?php echo $form->create("Admins", array("action" => "formtypelist",'name' => 'bloglist', 'id' => "formtypelist")) ?>
-        <script type='text/javascript'>
-            function setformid(formid){
-                 //   document.getElementById('projectid').value= projectid;
-                    window.location=baseUrlAdmin+'formtype_add/'+formid
-                }
-        </script>
-		<?php
-e($html->link($html->image('new.png', array('alt' => 'New')) . ' ',array('controller'=>'admins','action'=>'formtype_add'),array('escape' => false)));
-?>
-<a href="javascript:void(0)" onclick="return activatecontents('asd','del');" ><?php e($html->image('action.png')); ?></a>
-<a href="javascript:void(0)" onclick="editformtype();" id="linkedit"><?php e($html->image('edit.png')); ?></a>
-<?php  echo $this->renderElement('new_slider');  ?>			
-</div>
-
-<span class="titlTxt">Forms List</span>
-
-<div class="topTabs" style="height:25px;">
+<div class="container">
+	<div class="titlCont">
+		<div class="slider-centerpage clearfix">
+        	<div class="center-Page col-sm-6">
+            	<h2>Forms List</h2>
+            </div>
+            <div class="slider-dashboard col-sm-6">
+            	<div class="icon-container">
+                	<?php echo $form->create("Admins", array("action" => "formtypelist",'name' => 'bloglist', 'id' => "formtypelist")) ?>
+					<script type='text/javascript'>
+                        function setformid(formid){
+                             //   document.getElementById('projectid').value= projectid;
+                                window.location=baseUrlAdmin+'formtype_add/'+formid
+                            }
+                    </script>
+                    <?php
+                    e($html->link($html->image('new.png', array('alt' => 'New')) . ' ',array('controller'=>'admins','action'=>'formtype_add'),array('escape' => false)));
+                    ?>
+                    <a href="javascript:void(0)" onclick="return activatecontents('asd','del');" ><?php e($html->image('action.png')); ?></a>
+                    <a href="javascript:void(0)" onclick="editformtype();" id="linkedit"><?php e($html->image('edit.png')); ?></a>
+                    <?php  echo $this->renderElement('new_slider');  ?>			
+                </div>
+            </div>
+            <div class="topTabs" style="height:25px;">
 <?php /*?><ul class="dropdown">
 <li>
 <?php
@@ -177,14 +177,20 @@ e($html->link($html->image('new.png', array('alt' => 'New')) . ' ',array('contro
 <li><a href="javascript:void(0)" onclick="editformtype();" id="linkedit"><span>Edit</span></a></li>   
 </ul><?php */?>
 </div>
-     
-              <?php    $this->loginarea="admins";    $this->subtabsel="formtypelist";
-             echo $this->renderElement('forms_submenus');  ?>    
-</div></div>
+        </div>
+
+</div>
 
 
+<div class="clearfix nav-submenu-container">
+	<div class="midCont submenu-Cont">
+		<?php    $this->loginarea="admins";    $this->subtabsel="formtypelist";
+             echo $this->renderElement('forms_submenus');  ?>  
+    </div>
+</div>
 
-    <div class="midCont">
+
+<div class="midCont">
 
 
 
@@ -194,8 +200,8 @@ e($html->link($html->image('new.png', array('alt' => 'New')) . ' ',array('contro
 
     <!-- top curv image starts -->
     <div>
-    <span class="topLft_curv"></span>
-	<span class="topRht_curv"></span>
+    <!--<span class="topLft_curv"></span>
+	<span class="topRht_curv"></span>-->
     <div class="gryTop">
 		<div class="new_filter">
 
@@ -210,9 +216,9 @@ e($html->link($html->image('new.png', array('alt' => 'New')) . ' ',array('contro
 
 <?php $i=1; ?>			
 		
-                    <div class="tblData">
+                    <div class="tblData table-responsive">
 
-			<table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<table class="table table-bordered table-striped" width="100%" border="0" cellspacing="0" cellpadding="0">
                      <tr class="trBg">
     <th align="center" valign="middle"  width="1%">#</th>
        <th align="center" valign="middle" width="3%" ><input type="checkbox" value="" name="checkall" id="checkall" /></th>
@@ -324,8 +330,8 @@ e($html->link($html->image('new.png', array('alt' => 'New')) . ' ',array('contro
 			
  </div>
                     <div>
-                    <span class="botLft_curv"></span>
-						<span class="botRht_curv"></span>
+                    <!--<span class="botLft_curv"></span>
+						<span class="botRht_curv"></span>-->
 <div class="gryBot"><?php  echo $this->renderElement('newpagination');  ?>
                     </div>
                     <div class="clear"></div>

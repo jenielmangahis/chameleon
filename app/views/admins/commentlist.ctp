@@ -129,9 +129,10 @@ function activatecontents(act,op)
             
             <div class="slider-dashboard col-sm-6">
             	<div class="icon-container">
-                	<?php echo $form->create("Admins", array("action" => "commentlist",'name' => 'commentlist', 'id' => "commentlist")) ?>               	
+                	<?php echo $form->create("Admins", array("action" => "commentlist",'name' => 'commentlist', 'id' => "commentlist")) ?> 
+                    <?php  echo $this->renderElement('new_slider');  ?>              	
                 </div>
-                <?php  echo $this->renderElement('new_slider');  ?>
+                
             </div>
             
             <?php  echo $this->renderElement('project_name');  ?>  
@@ -214,7 +215,7 @@ function activatecontents(act,op)
 
 <?php $i=1; ?>                  
                 
-                    <div class="tblData">
+                    <div class="tblData table-responsive">
          <table class="table table-bordered table-striped" width="100%" border="0" cellspacing="0" cellpadding="0">
          <tr class="trBg">
          <th align="center" width="1%">#</th>

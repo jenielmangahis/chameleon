@@ -118,32 +118,31 @@ function activatecontents(act,op)
    </script>
 <?php $pagination->setPaging($paging); ?> 
  <!-- Body Panel starts -->
-   <div class="container">
-<div class="titlCont">
-
-<div class="myclass">
-<div align="center" class="slider" id="toppanel" style="height: 20px; top:13px;right:-50px;width:545px !important; text-align:right;">			
-
-        <?php echo $form->create("Admin", array("action" => "formstatustypelist",'name' => 'formstatustypelist', 'id' => "formstatustypelist")) ?>
-        <script type='text/javascript'>
-            function setprojectid(projectid){
-                    document.getElementById('projectid').value= projectid;
-                    document.adminhome.submit();
-                }
-        </script>
-<?php
-e($html->link($html->image('new.png', array('alt' => 'New')) . ' ',array('controller'=>'admins','action'=>'formstatustype_add'),array('escape' => false)));
-
-?>
-<a href="javascript:void(0)" onclick="return activatecontents('asd','del');" ><?php e($html->image('action.png')); ?></a>
-<a href="javascript:void(0)" onclick="editstatustype();" id="linkedit"><?php e($html->image('edit.png')); ?></a>
-<?php  echo $this->renderElement('new_slider');  ?>			
-</div>
-
-<span class="titlTxt">
-Forms Status Types List
-</span>
-<div class="topTabs" style="height:25px;">
+<div class="container">
+	<div class="titlCont">
+    	<div class="slider-centerpage clearfix">
+        	<div class="center-Page col-sm-6">
+            	<h2>Forms Status Types List</h2>
+            </div>
+            <div class="slider-dashboard col-sm-6">
+            	<div class="icon-container">
+                	<?php echo $form->create("Admin", array("action" => "formstatustypelist",'name' => 'formstatustypelist', 'id' => "formstatustypelist")) ?>
+					<script type='text/javascript'>
+                        function setprojectid(projectid){
+                                document.getElementById('projectid').value= projectid;
+                                document.adminhome.submit();
+                            }
+                    </script>
+                    <?php
+                    e($html->link($html->image('new.png', array('alt' => 'New')) . ' ',array('controller'=>'admins','action'=>'formstatustype_add'),array('escape' => false)));
+                    
+                    ?>
+                    <a href="javascript:void(0)" onclick="return activatecontents('asd','del');" ><?php e($html->image('action.png')); ?></a>
+                    <a href="javascript:void(0)" onclick="editstatustype();" id="linkedit"><?php e($html->image('edit.png')); ?></a>
+                    <?php  echo $this->renderElement('new_slider');  ?>			
+                </div>
+            </div>
+            <div class="topTabs" style="height:25px;">
 <?php /*?><ul class="dropdown">
 <li>
 
@@ -168,15 +167,21 @@ Forms Status Types List
 <li><a href="javascript:void(0)" onclick="editstatustype();" id="linkedit"><span>Edit</span></a></li>   
 </ul><?php */?>
 </div>
-         
-        <?php    $this->loginarea="admins";    $this->subtabsel="formstatustypelist";
-             echo $this->renderElement('forms_submenus');  ?>    
-             
-</div></div>
+        </div>
+    
+</div>
+
+
+<div class="clearfix nav-submenu-container">
+	<div class="midCont submenu-Cont">
+		<?php    $this->loginarea="admins";    $this->subtabsel="formstatustypelist";
+             echo $this->renderElement('forms_submenus');  ?>  
+    </div>
+</div>
 
 
 
-    <div class="midCont">
+<div class="midCont">
 
 
 
@@ -186,8 +191,8 @@ Forms Status Types List
 
     <!-- top curv image starts -->
     <div>
-    <span class="topLft_curv"></span>
-	<span class="topRht_curv"></span>
+    <!--<span class="topLft_curv"></span>
+	<span class="topRht_curv"></span>-->
     <div class="gryTop">
 		<div class="new_filter">
 					<span class="spnFilt">Filter:</span><span class="srchBg"><?php echo $form->input("searchkey", array('id' => 'searchkey', 'div' => false, 'label' => '',"maxlength" => "200"));?></span><span class="srchBg2"><?php echo $form->submit("Go", array('id' => 'searchkeysubmit', 'div' => false, 'label' => ''));
@@ -201,9 +206,9 @@ Forms Status Types List
 
 <?php $i=1; ?>			
 		
-                    <div class="tblData">
+                    <div class="tblData table-responsive">
 
-			<table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<table class="table table-bordered table-striped" width="100%" border="0" cellspacing="0" cellpadding="0">
                    <tr class="trBg">
 	               <th align="center" valign="middle" width="2%">#</th>
 	               <th align="center" valign="middle" width="3%"><input type="checkbox" value="" name="checkall" id="checkall" /></th>
@@ -282,8 +287,8 @@ Forms Status Types List
 			
  </div>
                     <div>
-                    <span class="botLft_curv"></span>
-					<span class="botRht_curv"></span>
+                    <!--<span class="botLft_curv"></span>
+					<span class="botRht_curv"></span>-->
 <div class="gryBot"><?php echo $this->renderElement('newpagination');  ?>
                     </div>
 					
