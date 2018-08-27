@@ -42,9 +42,10 @@ $backUrl = $base_url_admin.'qrcodegenerate';
 						document.adminhome.submit();
 					}
 				</script>
-            	<button type="button" id="saveForm" class="sendBut"  ONCLICK="javascript:(window.location='<?php echo $backUrl ?>')"><?php e($html->image('cancle.png')); ?></button>			
+            	<button type="button" id="saveForm" class="sendBut"  ONCLICK="javascript:(window.location='<?php echo $backUrl ?>')"><?php e($html->image('cancle.png')); ?></button>
+                <?php  echo $this->renderElement('new_slider');  ?>	
             </div>
-            <?php  echo $this->renderElement('new_slider');  ?>	
+            
         </div>
         <div class="topTabs" style="height:25px;">
             <?php /*?><ul class="dropdown">
@@ -78,7 +79,7 @@ $backUrl = $base_url_admin.'qrcodegenerate';
     <!-- top curv image starts -->
 
     <!-- ADD Sub Admin  FORM EOF -->
-    <div style="border: 0px solid #CFCFCF;  line-height: 25px; ">
+    <div class="table-responsive" style="border: 0px solid #CFCFCF;  line-height: 25px; ">
         <?php echo $form->create("Admins", array("action" => "qrcodegenerate",'name' => 'qrcodegenerator', 'id' => "qrcodegenerator", 'onsubmit' => "javascript : return validateQRData(this.value);")); ?>  
         <table class="table table-borderless"  style="border: 1px solid #CFCFCF;  line-height: 25px; " cellspacing="5"  width="100%" class="border_shadow">
             <tr>

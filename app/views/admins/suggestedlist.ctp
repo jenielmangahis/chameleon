@@ -2,13 +2,19 @@
 	$base_url_admin = Configure::read('App.base_url_admin');
 	$backUrl = $base_url_admin.'projectdashboard';
 ?>
-<div class="titlCont"><div style="width:960px; margin:0 auto;">
-       <div align="center" class="slider" id="toppanel" style="height: 20px; top:11px;right: -50px;width:545px !important; text-align:right;">	
-       <?php echo $form->create("Admin", array("action" => "suggestedlist",'type' => 'file','enctype'=>'multipart/form-data','name' => 'projectcontrols', 'id' => "projectcontrols"))?>
-	   <button id = "submit" type="submit" value="Submit" class="sendBut" name="data[Action][redirectpage]"><?php e($html->image('save.png')); ?></button>
-<button id = "apply" type="submit" value="Submit" class="sendBut" name="data[Action][noredirection]"><?php e($html->image('apply.png')); ?></button>
-<button type="button" id="saveForm" class="sendBut"  ONCLICK="javascript:(window.location='<?php echo $backUrl ?>')"><?php e($html->image('cancle.png')); ?></button>
-<?php  echo $this->renderElement('new_slider');  ?>
+<div class="titlCont">
+	<div class="slider-centerpage clearfix">
+    	<div class="center-Page col-sm-6">
+            <h2>Suggested Comments</h2>
+        </div>
+        <div class="slider-dashboard col-sm-6">
+        	<div class="icon-container">
+            	<?php echo $form->create("Admin", array("action" => "suggestedlist",'type' => 'file','enctype'=>'multipart/form-data','name' => 'projectcontrols', 'id' => "projectcontrols"))?>
+                <button id = "submit" type="submit" value="Submit" class="sendBut" name="data[Action][redirectpage]"><?php e($html->image('save.png')); ?></button>
+                <button id = "apply" type="submit" value="Submit" class="sendBut" name="data[Action][noredirection]"><?php e($html->image('apply.png')); ?></button>
+                <button type="button" id="saveForm" class="sendBut"  ONCLICK="javascript:(window.location='<?php echo $backUrl ?>')"><?php e($html->image('cancle.png')); ?></button>
+                <?php  echo $this->renderElement('new_slider');  ?>
+            </div>
         </div>
         <div class="topTabs" style="height:25px;">
             <?php /*?><ul>
@@ -17,19 +23,21 @@
                 <li><button type="button" id="saveForm" class="button"  ONCLICK="javascript:(window.location='<?php echo $backUrl ?>')"><span> Cancel</span></button></li>
             </ul><?php */?>
         </div>
-		<?php  echo $this->renderElement('project_name');  ?>   
-        <span class="titlTxt">
-            Suggested Comments
-        </span>
-         <?php echo $form->hidden("selectedtab", array('id' => 'selectedtab')); ?>     
+    </div>
+</div>   
+
+<div class="clearfix nav-submenu-container">
+	<div class="midCont submenu-Cont">
+		<?php echo $form->hidden("selectedtab", array('id' => 'selectedtab')); ?>     
           <?php    $this->loginarea="admins";    $this->subtabsel="suggestedlist";
 if($_GET['url'] === 'admins/suggestedlist/0'){
 	 echo $this->renderElement('survey_submenus');     
 	}else{
 		  echo $this->renderElement('comments_submenus'); 
-	}		 ?>   
+	}		 ?> 
     </div>
-</div>   
+</div>
+
 
 <div class="midCont">
     <?php if($session->check('Message.flash')){ ?> 
@@ -54,8 +62,8 @@ if($_GET['url'] === 'admins/suggestedlist/0'){
             </div>
         </div> 
         <?php } ?>
-    <div class="left" style="min-height:360px">
-        <table width="700px" align="center" cellpadding="1" cellspacing="0">
+    <div class="left table-responsive" style="min-height:360px">
+        <table class="table table-borderless" width="700px" align="center" cellpadding="1" cellspacing="0">
             <tr>
                 <td colspan='3'><?php if($session->check('Message.flash')){ $session->flash(); }
                         echo $form->error('ProjectType.project_type_name', array('class' => 'errormsg'));

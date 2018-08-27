@@ -129,14 +129,10 @@ function activatecontents(act,op)
                 	<?php echo $form->create("Admins", array("action" => "mailautoresponderlist",'type' => 'file','enctype'=>'multipart/form-data','name' => 'contentlist', 'id' => "mailautoresponderlist"))?>
 					<?php e($html->link($html->image('new.png') . ' ',array('controller'=>'admins','action'=>'addmailtemplate','event'),array('escape' => false))); ?>
                     <a href="javascript:void(0)" onclick="return activatecontents('asd','del');"><?php e($html->image('action.png')); ?></a>
-                    <a href="javascript:void(0)" onclick="editcontent();" id="linkedit"><?php e($html->image('edit.png')); ?></a>                     
-                </div>
-                <?php  echo $this->renderElement('new_slider');  ?>
-            </div>
-            <!--<div class="slider" id="toppanel" style="height: 20px; top:13px;right: -50px;width:545px !important; text-align:right;">
+                    <a href="javascript:void(0)" onclick="editcontent();" id="linkedit"><?php e($html->image('edit.png')); ?></a>  
+                    <?php  echo $this->renderElement('new_slider');  ?>                   
+                </div>               
             </div>          
-            <?php  //echo $this->renderElement('project_name');  ?>   
-            <span class="titlTxt">AutoResponse </span>-->
             <div class="topTabs">
 <?php /*?><ul class="dropdown">
 <li>
@@ -203,7 +199,7 @@ function activatecontents(act,op)
                         <div class="clear"></div></div>
 
                         <?php $i=1; ?>  
-                        <div class="tblData">
+                        <div class="tblData table-responsive">
     <table class="table table-bordered table-striped" width="100%" border="0" cellspacing="0" cellpadding="0">
     <tr class="trBg">
     <th align="center" width="2%">#</th>

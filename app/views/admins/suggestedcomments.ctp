@@ -1,24 +1,26 @@
 <!--container starts here-->
 <?php $pagination->setPaging($paging); ?>
-<div class="titlCont"><div style="width:960px; margin:0 auto;">
-            <div align="center" class="slider" id="toppanel" style="height: 20px; top:11px;right: -50px;width:545px !important; text-align:right;">
-             <?php echo $form->create("Admins", array("action" => "suggestedcomments",'name' => 'suggestedcomments', 'id' => "suggestedcomments"))?>
-            <script type='text/javascript'>
-                function setprojectid(projectid){
-                    document.getElementById('projectid').value= projectid;
-                    document.adminhome.submit();
-                }
-            </script>
-			<?php e($html->link($html->image('new.png') . ' ',array('controller'=>'admins','action'=>'addcommenttype'),array('escape' => false))); ?>
-			<a onclick="return activatecontents('asd','del');" href="javascript:void(0)"><?php e($html->image('action.png')); ?></a>
-			<a id="linkedit" onclick="editholder();" href="javascript:void(0)"><?php e($html->image('edit.png')); ?></a>
-			<?php  echo $this->renderElement('new_slider');  ?>
+<div class="titlCont">
+	<div class="slider-centerpage clearfix">
+    	<div class="center-Page col-sm-6">
+            <h2>Comment Types</h2>
+        </div>
+        <div class="slider-dashboard col-sm-6">
+        	<div class="icon-container">
+            	<?php echo $form->create("Admins", array("action" => "suggestedcomments",'name' => 'suggestedcomments', 'id' => "suggestedcomments"))?>
+				<script type='text/javascript'>
+                    function setprojectid(projectid){
+                        document.getElementById('projectid').value= projectid;
+                        document.adminhome.submit();
+                    }
+                </script>
+                <?php e($html->link($html->image('new.png') . ' ',array('controller'=>'admins','action'=>'addcommenttype'),array('escape' => false))); ?>
+                <a onclick="return activatecontents('asd','del');" href="javascript:void(0)"><?php e($html->image('action.png')); ?></a>
+                <a id="linkedit" onclick="editholder();" href="javascript:void(0)"><?php e($html->image('edit.png')); ?></a>
+                <?php  echo $this->renderElement('new_slider');  ?>
             </div>
-
-           <?php  echo $this->renderElement('project_name');  ?>   
-            <span class="titlTxt">   Comment Types  </span>
-            
-            <div class="topTabs" style="height:25px;">
+        </div>
+        <div class="topTabs" style="height:25px;">
                 <?php /*?><ul class="dropdown">
                     <li>
 						
@@ -41,26 +43,31 @@
                 <li><a id="linkedit" onclick="editholder();" href="javascript:void(0)"><span>Edit</span></a></li>
                 </ul><?php */?>
             </div>
-         
-              <?php    $this->loginarea="admins";    $this->subtabsel="suggestedcomments";
-         
-if($_GET['url'] === 'admins/suggestedcomments/0'){
-	 echo $this->renderElement('survey_submenus');     
-	}else{
-		 echo $this->renderElement('comments_submenus'); 
-}
-			 ?>   
-             
-        </div></div>
+    </div>
+</div>
 
 
 
-    <div class="midCont" id="newsuggtab">
+<div class="clearfix nav-submenu-container">
+	<div class="midCont submenu-Cont">
+		<?php    $this->loginarea="admins";    $this->subtabsel="suggestedcomments";
+        
+        if($_GET['url'] === 'admins/suggestedcomments/0'){
+        echo $this->renderElement('survey_submenus');     
+        }else{
+        echo $this->renderElement('comments_submenus'); 
+        }
+        ?>   
+    </div>
+</div>
+
+<div class="midCont" id="newsuggtab">
 
 	<?php if($session->check('Message.flash')) { echo $this->renderElement('error_message'); } ?>
 
-    <div><span class="topLft_curv"></span> 
-<span class="topRht_curv"></span>	
+    <div>
+    <!--<span class="topLft_curv"></span> 
+	<span class="topRht_curv"></span>-->	
         <div class="gryTop">
                 <?php echo $form->create("Admins", array("action" => "commenttype",'name' => 'commenttype', 'id' => "commenttype")) ?>
                 <script type='text/javascript'>
@@ -84,8 +91,8 @@ if($_GET['url'] === 'admins/suggestedcomments/0'){
         <div class="clear"></div>
 </div>
 
-<div class="tblData">
-   <table width="100%" border="0" cellspacing="0" cellpadding="0">
+<div class="tblData table-responsive">
+   <table class="table table-bordered table-striped" width="100%" border="0" cellspacing="0" cellpadding="0">
      <tr class="trBg"> 
      <th align="center" valign="middle" style="width:1%">#</th>
      <th align="center" valign="middle" style="width:2%"><input type="checkbox" id="checkall" name="checkall" value=""></th>
@@ -206,8 +213,8 @@ if($_GET['url'] === 'admins/suggestedcomments/0'){
 </div><!--inner-container ends here-->
 
    <div>
-                    <span class="botLft_curv"></span>
-      <span class="botRht_curv"></span>
+                    <!--<span class="botLft_curv"></span>
+      <span class="botRht_curv"></span>-->
                     <div class="gryBot">
                     
                   <?php  echo $this->renderElement('newpagination'); ?>

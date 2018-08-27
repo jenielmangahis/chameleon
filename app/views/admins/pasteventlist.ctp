@@ -157,16 +157,17 @@ $base_url_admin = Configure::read('App.base_url_admin');
                             document.getElementById('projectid').value= projectid;
                             document.adminhome.submit();
                         }
-                    </script>                    
+                    </script>  
+                    <?php  echo $this->renderElement('new_slider');  ?>                  
                 </div>
-                <?php  echo $this->renderElement('new_slider');  ?>
+                
             </div>
             <!--<div class="slider" id="toppanel" style="height: 20px; top:13px;right: -50px;width:545px !important; text-align:right;">
             </div>
             <span class="titlTxt1" style="padding-top:18px;"> Past Events  </span>-->
-            <div class="topTabs" style="height:25px;">
+            <!--<div class="topTabs" style="height:25px;">
                 
-            </div>
+            </div>-->
         </div>
    
 </div>
@@ -205,7 +206,7 @@ $base_url_admin = Configure::read('App.base_url_admin');
 		
 		
     <?php $i=1; ?>			
-    <div class="tblData">
+    <div class="tblData table-responsive">
 
         <table class="table table-bordered table-striped" width="100%" border="0" cellspacing="0" cellpadding="0">
             <tr class="trBg">

@@ -33,8 +33,9 @@ $('#calendar').fullCalendar({
                             document.adminhome.submit();
                         }
                     </script>
+                    <?php  echo $this->renderElement('new_slider');  ?>
                 </div>
-                <?php  echo $this->renderElement('new_slider');  ?>
+                
             </div>
             <!--<div class="slider" id="toppanel" style="height: 20px; top:13px;right: -50px;width:545px !important; text-align:right;">
             </div>

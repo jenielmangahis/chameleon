@@ -29,20 +29,25 @@ $('#calendar').fullCalendar({
 
 <!-- Body Panel starts -->
 <div class="container">
-
-   <div class="titlCont">
-   <div class="myclass">
-
-			<div align="center" class="slider" id="toppanel" style="height: 20px; top:13px;right:-50px;width:545px !important; text-align:right;">			
-<?php  echo $this->renderElement('new_slider');  ?>			
-</div>
-            <span class="titlTxt1" style="padding-top:18px;"> Coupon Calendar  </span>
-          
-          <?php    $this->loginarea="coupons";    $this->subtabsel="calendar";
-             echo $this->renderElement('coupons_submenus');  ?>    
+	<div class="titlCont">
+    	<div class="slider-centerpage clearfix">
+        	<div class="center-Page col-sm-6">
+            	<h2>Coupon Calendar</h2>
+            </div>
+            <div class="slider-dashboard col-sm-6">
+            	<div class="icon-container">
+                	<?php  echo $this->renderElement('new_slider');  ?>			
+                </div>
+            </div>           
         </div>
-        </div>
+	</div>
 
+<div class="clearfix nav-submenu-container">
+	<div class="midCont submenu-Cont">
+		<?php    $this->loginarea="coupons";    $this->subtabsel="calendar";
+             echo $this->renderElement('coupons_submenus');  ?>
+    </div>
+</div> 
 
 <div class="midCont">
 
