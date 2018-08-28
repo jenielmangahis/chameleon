@@ -21,8 +21,8 @@
                     <button type="submit" value="Submit" class="sendBut" name="data[Action][redirectpage]"><?php e($html->image('save.png')); ?></button>
                     <button type="submit" value="Submit" class="sendBut" name="data[Action][noredirection]"><?php e($html->image('apply.png')); ?></button>
                     <button type="button" id="saveForm" class="sendBut"  ONCLICK="javascript:(window.location='<?php echo $base_url_admin ?>eventlist')"><?php e($html->image('cancle.png')); ?></button>             
-                </div>
-                <?php  echo $this->renderElement('new_slider');  ?>
+                    <?php  echo $this->renderElement('new_slider');  ?>
+                </div>                
             </div>
             <!--<div align="center" class="slider" id="toppanel" style="height: 20px; top:13px;right:-50px;width:545px !important; text-align:right;">              
             </div>
@@ -57,7 +57,7 @@
         </div>		 
   
                 
-<div class="" style="border:none;">  
+<div class="table-responsive" style="border:none;">  
             <!-- START: New Design for send mail as per Requirement --> 
             <table class="table table-borderless" cellspacing="5" cellpadding="0" align="left" width="100%">
             <tbody>

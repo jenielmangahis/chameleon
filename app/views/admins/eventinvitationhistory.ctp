@@ -144,8 +144,8 @@ function activatecontents(act,op)
                                         }
                         </script> 
                         <?php e($html->link($html->image('cancle.png',array('alt'=>'Cancle')),array('controller'=>'admins','action'=>'eventlist'),array('escape' => false,'id' =>'linkedit'))); ?>
-                </div>
-                <?php  echo $this->renderElement('new_slider');  ?>
+                        <?php  echo $this->renderElement('new_slider');  ?>
+                </div>                
             </div>
             <div class="topTabs" style="height:25px;">
 <?php /*?><ul class="dropdown">
@@ -200,7 +200,7 @@ function activatecontents(act,op)
                 
                 <div class="gryTop">
                <div class="new_filter">
-                <span class="spnFilt">Filter:</span><span class="srchBg"><?php echo $form->input("searchkey", array('id' => 'searchkey', 'div' => false, 'label' => '',"maxlength" => "200",'value'=>(isset($key))?$key:''));?></span><span class="srchBg2"><?php echo $form->submit("Go", array('id' => 'searchkeysubmit', 'div' => false, 'label' => '','class'=>'btn'));
+                <span class="spnFilt">Filter:</span><span class="srchBg"><?php echo $form->input("searchkey", array('id' => 'searchkey', 'div' => false, 'label' => '',"maxlength" => "200",'value'=>(isset($key))?$key:''));?></span><span class="srchBg2"><?php echo $form->submit("Go", array('id' => 'searchkeysubmit', 'div' => false, 'label' => '','class'=>''));
                         ?> 
                 </span>
                 <span class="srchBg2"><input type="button" value="Reset" label="" onclick="javascript:(window.location='<?php echo $base_url_admin ; ?>eventinvitationhistory')" id="locaa"></span>
@@ -209,7 +209,7 @@ function activatecontents(act,op)
                         <div class="clear"></div></div>
 
                         <?php $i=1; ?>  
-                        <div class="tblData">
+                        <div class="tblData table-responsive">
         <table class="table table-bordered table-striped" width="100%" border="0" cellspacing="0" cellpadding="0">
         <tr class="trBg">
         <th align="center" style="width:2%;">#</th>

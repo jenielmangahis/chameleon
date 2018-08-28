@@ -4310,6 +4310,9 @@ ul.form-style li .intpSpan { display:block; margin-bottom:10px;}
 	.nav-submenu-container { padding:0 20px;}
 	.midCont { width:100%; padding:10px 3px;}
 	.midPadd { width:100%; min-width:inherit; max-width:none;}
+	.midCont.newscltab { width:100%;}
+	.midCont1 { width:100%;}
+	.newtab { width:100%;}
 	
 	.gryTop { padding:15px 5px;}
 	.srchBg { padding:0;}
@@ -4357,6 +4360,9 @@ ul.form-style li .intpSpan { display:block; margin-bottom:10px;}
 	.nav-submenu-container { padding:0 20px;}
 	.midCont { width:100%; padding:10px 3px;}
 	.midPadd { width:100%; min-width:0 !important; max-width:none;}
+	.midCont.newscltab { width:100%;}
+	.midCont1 { width:100%;}
+	.newtab { width:100%;}
 	
 	.gryTop { padding:15px 5px;}
 	.srchBg { padding:0;}
@@ -4396,6 +4402,9 @@ ul.form-style li .intpSpan { display:block; margin-bottom:10px;}
 	.nav-submenu-container { padding:0 20px;}
 	.midCont { width:100%; padding:10px 3px;}
 	.midPadd { width:100%; min-width:0 !important; max-width:none;}
+	.midCont.newscltab { width:100%;}
+	.midCont1 { width:100%;}
+	.newtab { width:100%;}
 	
 	.gryTop { padding:15px 5px;}
 	.new_filter { position:relative; left:0;}

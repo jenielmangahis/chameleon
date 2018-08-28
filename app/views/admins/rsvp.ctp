@@ -124,8 +124,9 @@ $rec_event_id = '';
 						}
 					</script>
                 	<?php e($html->link($html->image('cancle.png') . ' ',array('controller'=>'admins','action'=>'eventlist'),array('escape' => false))); ?>
+                    <?php  echo $this->renderElement('new_slider');  ?>
                 </div>
-                <?php  echo $this->renderElement('new_slider');  ?>
+                
             </div>
             <div class="topTabs" style="height:25px;">
                 <?php /*?><ul class="dropdown">
@@ -192,7 +193,7 @@ $rec_event_id = '';
 
     <?php $i=1; ?>            
 
-    <div class="tblData">
+    <div class="tblData table-responsive">
 
         <table class="table table-bordered table-striped" width="100%" border="0" cellspacing="0" cellpadding="0">
             <tr class="trBg">

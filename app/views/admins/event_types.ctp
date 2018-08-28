@@ -139,9 +139,9 @@ $base_url_admin = Configure::read('App.base_url_admin');
                     </script>
                     <?php e($html->link($html->image('new.png') . ' ',array('controller'=>'admins','action'=>'addeventtype'),array('escape' => false))); ?>
                     <a href="javascript:void(0)" onclick="return activatecontents('asd','del');"><?php e($html->image('action.png')); ?></a>
-                    <a href="javascript:void(0)" onclick="editevent();" id="linkedit"><?php e($html->image('edit.png')); ?></a>                    
-                </div>
-                <?php  echo $this->renderElement('new_slider');  ?>
+                    <a href="javascript:void(0)" onclick="editevent();" id="linkedit"><?php e($html->image('edit.png')); ?></a> 
+                    <?php  echo $this->renderElement('new_slider');  ?>                   
+                </div>              
             </div>
             <!--<div align="center" class="slider" id="toppanel" style="height: 20px; top:13px;right:-50px;width:545px !important; text-align:right;">            
             </div>
@@ -212,7 +212,7 @@ $base_url_admin = Configure::read('App.base_url_admin');
 
     <?php $i=1; ?>			
 
-    <div class="tblData">
+    <div class="tblData table-responsive">
 
         <table class="table table-bordered table-striped" width="100%" border="0" cellspacing="0" cellpadding="0">
             <tr class="trBg" style="width: 100%;">

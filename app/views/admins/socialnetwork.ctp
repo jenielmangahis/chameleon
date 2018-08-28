@@ -49,8 +49,9 @@ $backUrl = $base_url_admin.'socialnetwork';
                 <button type="submit" value="Submit" class="sendBut" name="data[Action][redirectpage]"><?php e($html->image('save.png')); ?></button>
                 <button type="submit" value="Submit" class="sendBut" name="data[Action][noredirection]"><?php e($html->image('apply.png')); ?></button>
                 <button type="button" id="saveForm" class="sendBut"  ONCLICK="javascript:(window.location='<?php echo $backUrl ?>')"><?php e($html->image('cancle.png')); ?></button>
+                <?php  echo $this->renderElement('new_slider');  ?>
             </div>
-            <?php  echo $this->renderElement('new_slider');  ?>
+            
         </div>
          <?php  //echo $this->renderElement('project_name');  ?>
          <div class="topTabs">
@@ -83,7 +84,7 @@ $backUrl = $base_url_admin.'socialnetwork';
     
 		<!-- top curv image starts -->
         
-	    <div class="tbl-Data1">
+	    <div class="tbl-Data1 table-responsive">
 		<table class="table table-striped table-bordered table-hover" width="960px;" border="0" cellspacing="0" cellpadding="0" class="admgrid"> 
 		<tr class="tr_Bg">
 		<th class="" style='width:70px;' align="center" valign="middle">

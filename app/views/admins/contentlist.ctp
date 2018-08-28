@@ -155,9 +155,10 @@ $resetUrl = $base_url_admin.'contentlist';
                     </script>
                     <?php e($html->link($html->image('new.png') . ' ',array('controller'=>'admins','action'=>'addcontentpage'),array('escape' => false))); ?>
                     <a href="javascript:void(0)" onclick="return activatecontents('asd','permanant_del');"><?php e($html->image('action.png')); ?></a>
-                    <a href="javascript:void(0)" onclick="editcontent();" id="linkedit"><?php e($html->image('edit.png')); ?></a>                            
+                    <a href="javascript:void(0)" onclick="editcontent();" id="linkedit"><?php e($html->image('edit.png')); ?></a>   
+                    <?php  echo $this->renderElement('new_slider');  ?>                         
                 </div>
-                <?php  echo $this->renderElement('new_slider');  ?>
+                
                 <div class="topTabs">
                 <?php /*?><ul class="dropdown">
                     <li>
@@ -232,7 +233,7 @@ $resetUrl = $base_url_admin.'contentlist';
         </div>
         <div class="clear"></div></div>
 
-    <div class="tblData">
+    <div class="tblData table-responsive">
         <table class="table table-bordered table-striped table-hover" width="100%" border="0" cellspacing="0" cellpadding="0">
             <tr class="trBg">
                 <th align="center" width="3%">#</th>

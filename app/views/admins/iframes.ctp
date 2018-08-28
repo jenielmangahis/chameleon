@@ -21,8 +21,9 @@ $backUrl = $base_url_Admin;
                 <button type="submit" value="Submit" class="sendBut" name="data[Action][redirectpage]"><?php e($html->image('save.png')); ?></button>
                 <button type="submit" value="Submit" class="sendBut" name="data[Action][noredirection]"><?php e($html->image('apply.png')); ?></button>
                 <button type="button" id="saveForm" class="sendBut"  ONCLICK="javascript:(window.location='<?php echo $backUrl ?>contentlist')"><?php e($html->image('cancle.png')); ?></button>
+                <?php  echo $this->renderElement('new_slider');  ?>
             </div>
-            <?php  echo $this->renderElement('new_slider');  ?>
+            
         </div>
         <div class="topTabs">
            
@@ -47,137 +48,139 @@ $backUrl = $base_url_Admin;
     <?php if($session->check('Message.flash')) { echo $this->renderElement('error_message'); } ?>
     <!-- top curv image starts -->
     <!-- ADD Sub Admin  FORM EOF -->
-    <table class="table table-borderless">
-        <tr>
-            <td width="180px" align="right"><span class="spnclass"> Register Component</span></td>
-            <td width="600px">
-                <div style="padding-left:0px;"><span class="txtArea-top1">
-                        <span class="txtArea-bot1"><textarea  id="codeval1" class="multilist_1 form-control" cols="2000" rows="5"></textarea></span></span></div>
-                &nbsp;&nbsp;&nbsp; 
-            </td>
-            <td><div class="">
-                    <ol style="list-style: none;">
-                        <li>&nbsp;&nbsp;<button type="button" value="Getsource1" class="btn btn-primary" name="Getsource" onclick="getsource1();"><span>Get iFrame Source</span></button></li>
-                        &nbsp
-                        <li>&nbsp;&nbsp;<button type="button" id="d_clip_button" value="Copy" class="new-blue btn btn-success" name="copyb" Onclick="this.form.codeval1.focus();this.form.codeval1.select(); copy(document.editcontent.codeval1.value);"><span>Copy</span></button></li>
-                    </ol>
-                </div>
-            </td>
-        </tr>
-        <tr>
-            <td width="180px" align="right"><span class="spnclass"> Login Component</span></td>
-            <td width="600px">
-                <div style="padding-left:0px;"><span class="txtArea-top1">
-                        <span class="txtArea-bot1"><textarea  id="codeval2" class="multilist_1 form-control" cols="2000" rows="5"></textarea></span></span></div>
-                &nbsp;&nbsp;&nbsp; 
-            </td>
-            <td><div class="">
-                    <ol style="list-style: none;">
-                        <li>&nbsp;&nbsp;<button type="button" value="Getsource2" class="btn btn-primary" name="Getsource" onclick="getsource2();"><span>Get iFrame Source</span></button></li>
-                        &nbsp
-                        <li id="d_clip_container1">&nbsp;&nbsp;<button type="button" id="d_clip_button1" value="Copy" class="new-blue btn btn-success" name="copyb" Onclick="this.form.codeval2.focus();this.form.codeval2.select(); copy(document.editcontent.codeval2.value);"><span>Copy</span></button></li>
-                    </ol>
-                </div>
-            </td>
-        </tr>
-        <tr>
-            <td width="180px" align="right"><span class="spnclass">Coin & Comments Component</span></td>
-            <td width="600px">
-                <div style="padding-left:0px;"><span class="txtArea-top1">
-                        <span class="txtArea-bot1"><textarea  id="codeval3" class="multilist_1 form-control" cols="2000" rows="5"></textarea></span></span></div>
-                &nbsp;&nbsp;&nbsp;
-            </td>
-            <td><div class="">
-                    <ol style="list-style: none;">
-                        <li>&nbsp;&nbsp;<button type="button" value="Getsource3" class="btn btn-primary" name="Getsource" onclick="getsource3();"><span>Get iFrame Source</span></button></li>
-                        &nbsp
-                        <li id="d_clip_container2">&nbsp;&nbsp;<button id="d_clip_button2" type="button" value="Copy" class="new-blue btn btn-success" name="copyb" Onclick="this.form.codeval3.focus();this.form.codeval3.select(); copy(document.editcontent.codeval3.value);"><span>Copy</span></button></li>
-                    </ol>
-                </div>
-            </td>
-        </tr>
-
-        <tr>
-            <td width="180px" align="right"><span class="spnclass">Event Component</span></td>
-            <td width="600px">
-                <div style="padding-left:0px;"><span class="txtArea-top1">
-                        <span class="txtArea-bot1"><textarea  id="codeval4" class="multilist_1 form-control" cols="2000" rows="5"></textarea></span></span></div>
-                &nbsp;&nbsp;&nbsp;
-            </td>
-            <td><div class="">
-                    <ol style="list-style: none;">
-                        <li>&nbsp;&nbsp;<button type="button" value="Getsource4" class="btn btn-primary" name="Getsource" onclick="getsource4();"><span>Get iFrame Source</span></button></li>
-                        &nbsp
-                        <li id="d_clip_container3">&nbsp;&nbsp;<button id="d_clip_button3" type="button" value="Copy" class="new-blue btn btn-success" name="copyb" Onclick="this.form.codeval4.focus();this.form.codeval4.select(); copy(document.editcontent.codeval4.value);"><span>Copy</span></button></li>
-                    </ol>
-                </div>
-            </td>
-        </tr>
-
-        <tr>
-            <td width="180px" align="right"><span class="spnclass">Blog Component</span></td>
-            <td width="600px">
-                <div style="padding-left:0px;"><span class="txtArea-top1">
-                        <span class="txtArea-bot1"><textarea  id="codeval5" class="multilist_1 form-control" cols="2000" rows="5"></textarea></span></span></div>
-                &nbsp;&nbsp;&nbsp;
-            </td>
-            <td><div class="">
-                    <ol style="list-style: none;">
-                        <li>&nbsp;&nbsp;<button type="button" value="Getsource5" class="btn btn-primary" name="Getsource" onclick="getsource5();"><span>Get iFrame Source</span></button></li>
-                        &nbsp
-                        <li id="d_clip_container4">&nbsp;&nbsp;<button id="d_clip_button4" type="button" value="Copy" class="new-blue btn btn-success" name="copyb" Onclick="this.form.codeval5.focus();this.form.codeval5.select(); copy(document.editcontent.codeval5.value);"><span>Copy</span></button></li>
-                    </ol>
-                </div>
-            </td>
-        </tr>
-
-        <tr>
-            <td width="180px" align="right"><span class="spnclass">Chat Component</span></td>
-            <td width="600px">
-                <div style="padding-left:0px;"><span class="txtArea-top1">
-                        <span class="txtArea-bot1"><textarea name="codeval6"  id="codeval6" class="multilist_1 form-control" cols="2000" rows="5"></textarea></span></span></div>
-                &nbsp;&nbsp;&nbsp;
-            </td>
-            <td><div class="">
-                    <ol style="list-style: none;">
-                        <li>&nbsp;&nbsp;<button type="button" value="Getsource6" class="btn btn-primary" name="Getsource" onclick="getsource6();"><span>Get iFrame Source</span></button></li>
-                        &nbsp
-                        <li id="d_clip_container5">&nbsp;&nbsp;<button id="d_clip_button5" type="button" value="Copy" class="new-blue btn btn-success" name="copyb" Onclick="this.form.codeval6.focus();this.form.codeval6.select(); copy(document.editcontent.codeval6.value);"><span>Copy</span></button></li>
-                    </ol>
-                </div>
-            </td>
-        </tr>
-        
-        <tr>
-            <td width="180px" align="right"><span class="spnclass">Single Event Component</span></td>
-            <td width="600px">
-            Select Event:
-            <span class="txtArea-top">
-                    <span class="txtArea-bot">
-            <?php 
-                        echo $form->select("Event.event_title",$event_titles,0, array('id' => 'event_title', 'div' => false, 'label' => '','style' =>'background: none repeat scroll 0% 0% transparent; margin-bottom: 6px; width:230px;',"class" =>"form-controld","maxlength" => "250"),"---Select---");
-
-            ?>
-            </span>
-            </span>
-            <br />
-                <div style="padding-left:0px;"><span class="txtArea-top1">
-                        <span class="txtArea-bot1"><textarea name="codeval7"  id="codeval7" class="multilist_1 form-control" cols="2000" rows="5"></textarea></span></span></div>
-                &nbsp;&nbsp;&nbsp;
-            </td>
-            <td><div class="">
-                    <ol style="list-style: none;">
-                        <li>&nbsp;&nbsp;<button type="button" value="Getsource7" class="btn btn-primary" name="Getsource" onclick="getsource7();"><span>Get iFrame Source</span></button></li>
-                        &nbsp
-                        <li id="d_clip_container6">&nbsp;&nbsp;<button id="d_clip_button6" type="button" value="Copy" class="new-blue btn btn-success" name="copyb" Onclick="this.form.codeval7.focus();this.form.codeval7.select(); copy(document.editcontent.codeval7.value);"><span>Copy</span></button></li>
-                    </ol>
-                </div>
-            </td>
-        </tr>
-        
-
-
-    </table>        
+    <div class="table-responsive">
+        <table class="table table-borderless">
+            <tr>
+                <td width="180px" align="right"><span class="spnclass"> Register Component</span></td>
+                <td width="600px">
+                    <div style="padding-left:0px;"><span class="txtArea-top1">
+                            <span class="txtArea-bot1"><textarea  id="codeval1" class="multilist_1 form-control" cols="2000" rows="5"></textarea></span></span></div>
+                    &nbsp;&nbsp;&nbsp; 
+                </td>
+                <td><div class="">
+                        <ol style="list-style: none;">
+                            <li>&nbsp;&nbsp;<button type="button" value="Getsource1" class="btn btn-primary" name="Getsource" onclick="getsource1();"><span>Get iFrame Source</span></button></li>
+                            &nbsp
+                            <li>&nbsp;&nbsp;<button type="button" id="d_clip_button" value="Copy" class="new-blue btn btn-success" name="copyb" Onclick="this.form.codeval1.focus();this.form.codeval1.select(); copy(document.editcontent.codeval1.value);"><span>Copy</span></button></li>
+                        </ol>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td width="180px" align="right"><span class="spnclass"> Login Component</span></td>
+                <td width="600px">
+                    <div style="padding-left:0px;"><span class="txtArea-top1">
+                            <span class="txtArea-bot1"><textarea  id="codeval2" class="multilist_1 form-control" cols="2000" rows="5"></textarea></span></span></div>
+                    &nbsp;&nbsp;&nbsp; 
+                </td>
+                <td><div class="">
+                        <ol style="list-style: none;">
+                            <li>&nbsp;&nbsp;<button type="button" value="Getsource2" class="btn btn-primary" name="Getsource" onclick="getsource2();"><span>Get iFrame Source</span></button></li>
+                            &nbsp
+                            <li id="d_clip_container1">&nbsp;&nbsp;<button type="button" id="d_clip_button1" value="Copy" class="new-blue btn btn-success" name="copyb" Onclick="this.form.codeval2.focus();this.form.codeval2.select(); copy(document.editcontent.codeval2.value);"><span>Copy</span></button></li>
+                        </ol>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td width="180px" align="right"><span class="spnclass">Coin & Comments Component</span></td>
+                <td width="600px">
+                    <div style="padding-left:0px;"><span class="txtArea-top1">
+                            <span class="txtArea-bot1"><textarea  id="codeval3" class="multilist_1 form-control" cols="2000" rows="5"></textarea></span></span></div>
+                    &nbsp;&nbsp;&nbsp;
+                </td>
+                <td><div class="">
+                        <ol style="list-style: none;">
+                            <li>&nbsp;&nbsp;<button type="button" value="Getsource3" class="btn btn-primary" name="Getsource" onclick="getsource3();"><span>Get iFrame Source</span></button></li>
+                            &nbsp
+                            <li id="d_clip_container2">&nbsp;&nbsp;<button id="d_clip_button2" type="button" value="Copy" class="new-blue btn btn-success" name="copyb" Onclick="this.form.codeval3.focus();this.form.codeval3.select(); copy(document.editcontent.codeval3.value);"><span>Copy</span></button></li>
+                        </ol>
+                    </div>
+                </td>
+            </tr>
+    
+            <tr>
+                <td width="180px" align="right"><span class="spnclass">Event Component</span></td>
+                <td width="600px">
+                    <div style="padding-left:0px;"><span class="txtArea-top1">
+                            <span class="txtArea-bot1"><textarea  id="codeval4" class="multilist_1 form-control" cols="2000" rows="5"></textarea></span></span></div>
+                    &nbsp;&nbsp;&nbsp;
+                </td>
+                <td><div class="">
+                        <ol style="list-style: none;">
+                            <li>&nbsp;&nbsp;<button type="button" value="Getsource4" class="btn btn-primary" name="Getsource" onclick="getsource4();"><span>Get iFrame Source</span></button></li>
+                            &nbsp
+                            <li id="d_clip_container3">&nbsp;&nbsp;<button id="d_clip_button3" type="button" value="Copy" class="new-blue btn btn-success" name="copyb" Onclick="this.form.codeval4.focus();this.form.codeval4.select(); copy(document.editcontent.codeval4.value);"><span>Copy</span></button></li>
+                        </ol>
+                    </div>
+                </td>
+            </tr>
+    
+            <tr>
+                <td width="180px" align="right"><span class="spnclass">Blog Component</span></td>
+                <td width="600px">
+                    <div style="padding-left:0px;"><span class="txtArea-top1">
+                            <span class="txtArea-bot1"><textarea  id="codeval5" class="multilist_1 form-control" cols="2000" rows="5"></textarea></span></span></div>
+                    &nbsp;&nbsp;&nbsp;
+                </td>
+                <td><div class="">
+                        <ol style="list-style: none;">
+                            <li>&nbsp;&nbsp;<button type="button" value="Getsource5" class="btn btn-primary" name="Getsource" onclick="getsource5();"><span>Get iFrame Source</span></button></li>
+                            &nbsp
+                            <li id="d_clip_container4">&nbsp;&nbsp;<button id="d_clip_button4" type="button" value="Copy" class="new-blue btn btn-success" name="copyb" Onclick="this.form.codeval5.focus();this.form.codeval5.select(); copy(document.editcontent.codeval5.value);"><span>Copy</span></button></li>
+                        </ol>
+                    </div>
+                </td>
+            </tr>
+    
+            <tr>
+                <td width="180px" align="right"><span class="spnclass">Chat Component</span></td>
+                <td width="600px">
+                    <div style="padding-left:0px;"><span class="txtArea-top1">
+                            <span class="txtArea-bot1"><textarea name="codeval6"  id="codeval6" class="multilist_1 form-control" cols="2000" rows="5"></textarea></span></span></div>
+                    &nbsp;&nbsp;&nbsp;
+                </td>
+                <td><div class="">
+                        <ol style="list-style: none;">
+                            <li>&nbsp;&nbsp;<button type="button" value="Getsource6" class="btn btn-primary" name="Getsource" onclick="getsource6();"><span>Get iFrame Source</span></button></li>
+                            &nbsp
+                            <li id="d_clip_container5">&nbsp;&nbsp;<button id="d_clip_button5" type="button" value="Copy" class="new-blue btn btn-success" name="copyb" Onclick="this.form.codeval6.focus();this.form.codeval6.select(); copy(document.editcontent.codeval6.value);"><span>Copy</span></button></li>
+                        </ol>
+                    </div>
+                </td>
+            </tr>
+            
+            <tr>
+                <td width="180px" align="right"><span class="spnclass">Single Event Component</span></td>
+                <td width="600px">
+                Select Event:
+                <span class="txtArea-top">
+                        <span class="txtArea-bot">
+                <?php 
+                            echo $form->select("Event.event_title",$event_titles,0, array('id' => 'event_title', 'div' => false, 'label' => '','style' =>'background: none repeat scroll 0% 0% transparent; margin-bottom: 6px; width:230px;',"class" =>"form-controld","maxlength" => "250"),"---Select---");
+    
+                ?>
+                </span>
+                </span>
+                <br />
+                    <div style="padding-left:0px;"><span class="txtArea-top1">
+                            <span class="txtArea-bot1"><textarea name="codeval7"  id="codeval7" class="multilist_1 form-control" cols="2000" rows="5"></textarea></span></span></div>
+                    &nbsp;&nbsp;&nbsp;
+                </td>
+                <td><div class="">
+                        <ol style="list-style: none;">
+                            <li>&nbsp;&nbsp;<button type="button" value="Getsource7" class="btn btn-primary" name="Getsource" onclick="getsource7();"><span>Get iFrame Source</span></button></li>
+                            &nbsp
+                            <li id="d_clip_container6">&nbsp;&nbsp;<button id="d_clip_button6" type="button" value="Copy" class="new-blue btn btn-success" name="copyb" Onclick="this.form.codeval7.focus();this.form.codeval7.select(); copy(document.editcontent.codeval7.value);"><span>Copy</span></button></li>
+                        </ol>
+                    </div>
+                </td>
+            </tr>
+            
+    
+    
+        </table>     
+    </div>   
 </div>
 <!--inner-container ends here-->
 <div class="clear"></div><!--container ends here-->
