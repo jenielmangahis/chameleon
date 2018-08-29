@@ -22,8 +22,9 @@ $backUrl = $base_url_Admin;
                 <button type="submit" value="Submit" class="sendBut" name="data[Action][redirectpage]"><?php e($html->image('save.png')); ?></button>
                 <button type="submit" value="Submit" class="sendBut" name="data[Action][noredirection]"><?php e($html->image('apply.png')); ?></button>
                 <button type="button" id="saveForm" class="sendBut"  ONCLICK="javascript:(window.location='<?php echo $backUrl ?>projectdashboard')"><?php e($html->image('cancle.png')); ?></button> 
+                <?php  echo $this->renderElement('new_slider');  ?>
             </div>
-            <?php  echo $this->renderElement('new_slider');  ?>
+            
         </div>
         <div class="topTabs">
 </div>
@@ -38,9 +39,9 @@ $backUrl = $base_url_Admin;
 </div>
     
 <?php if($session->check('Message.flash')) { echo $this->renderElement('error_message'); } ?>    
-<div class="midPadd midCont clearfix" id="ProjectType">
+<div class="midPadd midCont clearfix table-responsive" id="ProjectType">
    <div class="left" style="min-height:300px">
-  <table width="800px" align="center" cellpadding="1" cellspacing="1">
+  <table class="table table-borderless" width="800px" align="center" cellpadding="1" cellspacing="1">
 							<?php if($session->check('Message.flash')){
 							?><tr>
 							<td colspan='3'><?php $session->flash(); 

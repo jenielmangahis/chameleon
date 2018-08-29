@@ -19,8 +19,9 @@ $backUrl = $base_url_admin.'project_border_footer';
                     <button type="submit" value="Submit" class="sendBut" name="data[Action][redirectpage]"><?php e($html->image('save.png')); ?></button>
                     <button type="submit" value="Submit" class="sendBut" name="data[Action][noredirection]"><?php e($html->image('apply.png')); ?></button>
                     <button type="button" id="saveForm" class="sendBut"  ONCLICK="javascript:(window.location='<?php echo $backUrl ?>')"><?php e($html->image('cancle.png')); ?></button>
+                    <?php  echo $this->renderElement('new_slider');  ?>
                 </div>
-                <?php  echo $this->renderElement('new_slider');  ?>
+                
             </div>
         </div>
     
@@ -63,11 +64,11 @@ $backUrl = $base_url_admin.'project_border_footer';
 </div>
                                             <?php } ?>
 
-<div id="center-column">
+<div class="table-reponsive" id="center-column">
             
         <!-- ADD USER FORM -->
     
-        <table width="100%" align="center" cellpadding="1" cellspacing="1">
+        <table class="table table-borderless" width="100%" align="center" cellpadding="1" cellspacing="1">
         <tr>
               <td width="100%" colspan=2 style="vertical-align:top" >
             <?php    

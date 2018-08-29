@@ -81,8 +81,9 @@ $backUrl = $base_url_admin.'contentlist';
                 <button type="submit" value="Submit" class="sendBut" name="data[Action][redirectpage]"><?php e($html->image('save.png')); ?></button>
                 <button type="submit" value="Submit" class="sendBut" name="data[Action][noredirection]"><?php e($html->image('apply.png')); ?></button>
                 <button type="button" id="saveForm" class="sendBut"  ONCLICK="javascript:(window.location='<?php echo $backUrl ?>')"><?php e($html->image('cancle.png')); ?></button>
+                <?php  echo $this->renderElement('new_slider');  ?>
             </div>
-            <?php  echo $this->renderElement('new_slider');  ?>	
+            	
         </div>
         <!--<span class="titlTxt1"><?php //echo $project_name;  ?>&nbsp;</span> <span class="titlTxt"> Themes </span>-->
     </div>
@@ -121,7 +122,7 @@ $backUrl = $base_url_admin.'contentlist';
     </div>
   </div>
   <?php } ?>
-  <div class="themeTblData">
+  <div class="themeTblData table-responsive">
     <div id="Themes">
     <table class="table table-borderless" width="100%" align="center" cellpadding="0" cellspacing="0">
       <?php if($session->check('Message.flash')){ ?>

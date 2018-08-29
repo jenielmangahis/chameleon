@@ -138,9 +138,10 @@ $resetUrl = $base_url_admin.'systemlist';
                                     document.getElementById('projectid').value= projectid;
                                     document.adminhome.submit();
                                 }
-                            </script>                     
+                            </script>       
+                     <?php  echo $this->renderElement('new_slider');  ?>                     
                 </div>
-                <?php  echo $this->renderElement('new_slider');  ?>
+                
             </div>
             <div class="topTabs">
            <!--  <ul class="dropdown">
@@ -205,7 +206,7 @@ $resetUrl = $base_url_admin.'systemlist';
         <div class="clear"></div></div>
 
     <?php $i=1; ?>  
-    <div class="tblData">
+    <div class="tblData table-responsive">
         <table class="table table-bordered table-striped" width="100%" border="0" cellspacing="0" cellpadding="0">
             <tr class="trBg">
                 <th align="center" width="3%">#</th>

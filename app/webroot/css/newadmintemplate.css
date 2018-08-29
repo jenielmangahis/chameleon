@@ -4311,7 +4311,8 @@ ul.form-style li .intpSpan { display:block; margin-bottom:10px;}
 	.midCont { width:100%; padding:10px 3px;}
 	.midPadd { width:100%; min-width:inherit; max-width:none;}
 	.midCont.newscltab { width:100%;}
-	.midCont1 { width:100%;}
+	.midCont1, .rightpanel { width:100%;}
+	.rightpanel { min-height:0; min-width:0;}
 	.newtab { width:100%;}
 	
 	.gryTop { padding:15px 5px;}
@@ -4320,6 +4321,9 @@ ul.form-style li .intpSpan { display:block; margin-bottom:10px;}
 	.new_filter { position:relative; left:0;}
 	.gryTop div:first-child { left:0;}
 	#pagination table { width:auto;}
+	
+	.checkbox input[type="checkbox"] { margin-left:0;}
+	.checkbox { margin:0;}
 	
 	.intp-Span .form-control, textarea.form-control { width:auto;}
 	
@@ -4361,7 +4365,8 @@ ul.form-style li .intpSpan { display:block; margin-bottom:10px;}
 	.midCont { width:100%; padding:10px 3px;}
 	.midPadd { width:100%; min-width:0 !important; max-width:none;}
 	.midCont.newscltab { width:100%;}
-	.midCont1 { width:100%;}
+	.midCont1, .rightpanel { width:100%;}
+	.rightpanel { min-height:0; min-width:0;}
 	.newtab { width:100%;}
 	
 	.gryTop { padding:15px 5px;}
@@ -4369,6 +4374,9 @@ ul.form-style li .intpSpan { display:block; margin-bottom:10px;}
 	.srchBg input { width:105px;}
 	.new_filter { position:relative; left:0;}
 	#pagination table { width:auto;}
+	
+	.checkbox input[type="checkbox"] { margin-left:0;}
+	.checkbox { margin:0;}
 	
 	.row .box.col-xs-4 { width: auto; display:block; float:none;}
 	
@@ -4410,6 +4418,9 @@ ul.form-style li .intpSpan { display:block; margin-bottom:10px;}
 	.new_filter { position:relative; left:0;}
 	.gryTop div:first-child { left:0;}
 	#pagination table { width:auto;}
+	
+	.checkbox input[type="checkbox"] { margin-left:0;}
+	.checkbox { margin:0;}
 	
 	.footerTxt { position:relative; margin-bottom:0;}
 	
