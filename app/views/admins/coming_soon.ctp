@@ -22,9 +22,8 @@ if(isset($paging)){
 			<?php echo ucfirst($tabpagename); ?></h2>
         </div>
         <div class="slider-dashboard col-sm-6">
-        	<div class="icon-container">				
-            </div>
-            <?php  if($_GET['url']==='admins/coming_soon/help')
+        	<div class="icon-container">	
+            	<?php  if($_GET['url']==='admins/coming_soon/help')
                 { ?>
                 <?php  echo $this->renderElement('new_slider');  ?>			
                 
@@ -33,7 +32,9 @@ if(isset($paging)){
                 <?php  echo $this->renderElement('new_slider');  ?>	
                 
                 <?php	  //echo $this->renderElement('new_slider'); 
-                }?>
+                }?>			
+            </div>
+            
         </div>
         <div class="topTabs">
                             <!--  <ul>

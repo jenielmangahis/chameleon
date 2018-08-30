@@ -8,9 +8,10 @@
             </div>
             <div class="slider-dashboard col-sm-6">
             	<div class="icon-container">
-                	<?php echo $form->create("Admin", array("action" => "projectbackup",'name' => 'projectbackup', 'id' => "projectbackup"));?>   	
+                	<?php echo $form->create("Admin", array("action" => "projectbackup",'name' => 'projectbackup', 'id' => "projectbackup"));?>  
+                    <?php  echo $this->renderElement('new_slider');  ?> 	
                 </div>
-                <?php  echo $this->renderElement('new_slider');  ?>
+                
             </div>
             <div class="topTabs" style="height:25px;">
                

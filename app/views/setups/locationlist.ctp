@@ -126,8 +126,9 @@
                     ?>	
                     <a href="javascript:void(0)" onclick="return activatecontents('asd','del');"><?php e($html->image('action.png')); ?></a>	
                     <a id="linkedit" onclick="editholder();" href="javascript:void(0)"><?php e($html->image('edit.png')); ?></a>
+                    <?php  echo $this->renderElement('new_slider');  ?>
                 </div>
-                <?php  echo $this->renderElement('new_slider');  ?>
+                
             </div>
             <div class="topTabs" style="height:25px;">
 			<?php /*?><ul class="dropdown">
@@ -186,7 +187,7 @@
                 </div>
             <div class="clear"></div></div>
         <?php $i=1; ?>			
-        <div class="tblData">
+        <div class="tblData table-responsive">
             <table class="table table-bordered table-striped" width="100%" border="0" cellspacing="0" cellpadding="0">
                   <tr class="trBg">
                     <th align="center" valign="middle" style='width:1%;'>#</th>

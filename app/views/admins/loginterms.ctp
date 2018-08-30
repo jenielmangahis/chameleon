@@ -19,8 +19,9 @@ $backUrl = $base_url_Admin;
 				<button type="submit" value="Submit" class="sendBut" name="data[Action][redirectpage]"><?php e($html->image('save.png')); ?></button>
 				<button type="submit" value="Submit" class="sendBut" name="data[Action][noredirection]"><?php e($html->image('apply.png')); ?></button>
 				<button type="button" id="saveForm" class="sendBut"  ONCLICK="javascript:(window.location='<?php echo $backUrl ?>?projectdashboard')"><?php e($html->image('cancle.png')); ?></button>					
+                <?php  echo $this->renderElement('new_slider');  ?>
             </div>
-            <?php  echo $this->renderElement('new_slider');  ?>
+            
         </div>
         <div class="topTabs" style="height:25px;">
 <?php /*?><ul>
@@ -41,7 +42,7 @@ $backUrl = $base_url_Admin;
 </div>
 
 
-<div class="midPadd midCont" id="logintab">
+<div class="midPadd midCont table-responsive" id="logintab">
  <!-- <p class="boxTop1"><?php //echo $html->image('/img/'.$project_name.'/rhtBox_top.gif', array('class'=>'right'));?></p>-->
 <div>	
 
@@ -52,7 +53,7 @@ $backUrl = $base_url_Admin;
 <!-- <div class="top-bar" style="border-left: 0px none; text-align: right; padding-top: 5px; color: rgb(255, 255, 255);">-->
     
    </div>
-		<table cellspacing="5" cellpadding="0" align="center" width="100%">
+		<table class="table table-borderless" cellspacing="5" cellpadding="0" align="center" width="100%">
 		  <tbody>
 			<?php
 				

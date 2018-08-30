@@ -4315,6 +4315,9 @@ ul.form-style li .intpSpan { display:block; margin-bottom:10px;}
 	.rightpanel { min-height:0; min-width:0;}
 	.newtab { width:100%;}
 	
+	.midCont .frmbox { float:none; width:auto;}
+	.mgrt115 { margin:0;}
+	
 	.gryTop { padding:15px 5px;}
 	.srchBg { padding:0;}
 	.srchBg input { width:104px;}
@@ -4368,6 +4371,8 @@ ul.form-style li .intpSpan { display:block; margin-bottom:10px;}
 	.midCont1, .rightpanel { width:100%;}
 	.rightpanel { min-height:0; min-width:0;}
 	.newtab { width:100%;}
+	
+	.frmbox { float:none; width:auto;}
 	
 	.gryTop { padding:15px 5px;}
 	.srchBg { padding:0;}

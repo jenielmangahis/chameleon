@@ -10,8 +10,9 @@
             <div class="slider-dashboard col-sm-6">
             	<div class="icon-container">
                 	<?php echo $form->create("Setup", array("action" => "backup",'name' => 'backup', 'id' => "backup"));?>
+                    <?php  echo $this->renderElement('new_slider');  ?>
                 </div>
-                <?php  echo $this->renderElement('new_slider');  ?>
+                
             </div>
             <div class="topTabs" style="height:25px;">
         <!-- <ul class="dropdown">
@@ -29,7 +30,7 @@
     </div>
 </div>
 
-<div class="midCont" id="newcoinsettab">
+<div class="midCont table-responsive" id="newcoinsettab">
     <?php if($session->check('Message.flash')) { echo $this->renderElement('error_message'); } ?>
     <table>
       <tr>

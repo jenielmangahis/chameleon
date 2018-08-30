@@ -13,8 +13,9 @@ $dt=$value[0]['GetStart']['getdata'];
             <div class="slider-dashboard col-sm-6">
             	<div class="icon-container">
                 	<button type="button" id="saveForm" class="sendBut"  ONCLICK="javascript:(window.location='<?php echo $backUrl?>editprojectdtl')"><?php e($html->image('cancle.png')); ?></button>
+                    <?php  echo $this->renderElement('new_slider');  ?>
                 </div>
-                <?php  echo $this->renderElement('new_slider');  ?>
+                
             </div>
         </div>
     
@@ -29,8 +30,8 @@ $dt=$value[0]['GetStart']['getdata'];
 </div> 
 
      
-<div class="midCont" id="newcoinsettab">
-           <table width="100%" align="center" cellpadding="1" cellspacing="1">
+<div class="midCont table-responsive" id="newcoinsettab">
+           <table class="table table-borderless" width="100%" align="center" cellpadding="1" cellspacing="1">
               <tr>
                 <td width="100%" colspan=2 style="vertical-align:top" >
                   <?php echo $dt;?>

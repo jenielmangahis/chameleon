@@ -27,8 +27,9 @@
                      <button type="button" id="saveForm" class="sendBut"  ONCLICK="javascript:(window.location='<?php echo $backUrl?>')">
                      <?php e($html->image('cancle.png')) ?>
                      </button>
+                     <?php  echo $this->renderElement('new_slider');  ?>
                 </div>
-                <?php  echo $this->renderElement('new_slider');  ?>
+                
             </div>
             <div class="topTabs" style="height:25px;">
                <?php /*?> <ul>
@@ -53,7 +54,7 @@
     </div>
 </div>     
     
-<div class="midCont" id="Detail">   
+<div class="midCont table-responsive id="Detail">   
     		<?php 
 				echo $form->hidden("Project.id", array('id' => 'projectid'));
 				echo $form->hidden("Sponsor.id", array('id' => 'sponsorid','value'=>$sponserid));
@@ -61,7 +62,7 @@
 			
         <?php if($session->check('Message.flash')) { echo $this->renderElement('error_message'); } ?>
     
-        <div class='left' style="width:1050px;" >	
+        <div>	
             <div class="frmbox mgrt115">
                 <table class="table table-borderless" cellpadding="0" align="center" width="435px" class='left' cellspacing="10" style="margin-top:-5px;">
                     <tbody>
