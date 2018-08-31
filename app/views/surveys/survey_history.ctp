@@ -342,5 +342,5 @@ function activatecontents(act,op)
 		<?php echo $form->end();?>
 
 	</div>
-
+</div>
 	<div class="clear"></div>

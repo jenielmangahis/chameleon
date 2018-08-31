@@ -552,46 +552,53 @@ function create_csv()
             }    
         ?>  
 <div class="container"> 
-<div class="titlCont ">
-<div class="centerPage">
-<div class="slider" id="toppanel" style="height: 20px; top:13px;right: -50px;width:545px !important; text-align:right;">
-	<?php echo $form->create("Admin", array("action" => "eventcreate",'type' => 'file','enctype'=>'multipart/form-data','name' => 'eventcreate', 'id' => "eventcreate","onsubmit"=>"return validateevent('$act');"))?>
-    <input type="hidden" id="current_domain" name="current_domain" value="<?php echo $current_domain;?>">
-     <button type="submit" value="Submit" class="sendBut" name="data[Action][redirectpage]"><?php e($html->image('save.png')); ?></button>
-		<button type="submit" value="Submit" class="sendBut" name="data[Action][noredirection]"><?php e($html->image('apply.png')); ?></button>
-		<button type="button" id="saveForm" class="sendBut"  ONCLICK="javascript:(window.location='<?php echo $backUrl ?>')"><?php e($html->image('cancle.png')); ?></button>
-	 <?php echo $this->renderElement('new_slider');  ?>
-	 </div>
-	 <span class="titlTxt">
-		Event Detail Add/Edit
-	</span>
-	<div class="topTabs" style="height:25px;">
+	<div class="titlCont ">
+    	<div class="slider-centerpage clearfix">
+        	<div class="center-Page col-sm-6">			   
+                <h2>Event Detail Add/Edit</h2>
+            </div>
+            <div class="slider-dashboard col-sm-6">
+            	<div class="icon-container">
+                	<?php echo $form->create("Admin", array("action" => "eventcreate",'type' => 'file','enctype'=>'multipart/form-data','name' => 'eventcreate', 'id' => "eventcreate","onsubmit"=>"return validateevent('$act');"))?>
+                    <input type="hidden" id="current_domain" name="current_domain" value="<?php echo $current_domain;?>">
+                    <button type="submit" value="Submit" class="sendBut" name="data[Action][redirectpage]"><?php e($html->image('save.png')); ?></button>
+                    <button type="submit" value="Submit" class="sendBut" name="data[Action][noredirection]"><?php e($html->image('apply.png')); ?></button>
+                    <button type="button" id="saveForm" class="sendBut"  ONCLICK="javascript:(window.location='<?php echo $backUrl ?>')"><?php e($html->image('cancle.png')); ?></button>
+                    <?php echo $this->renderElement('new_slider');  ?>
+                </div>
+            </div>
+            <div class="topTabs" style="height:25px;">
 		<?php /*?><ul>
 		<li><button type="submit" value="Submit" class="button" name="data[Action][redirectpage]"><span>Save</span></button></li>
 		<li><button type="submit" value="Submit" class="button" name="data[Action][noredirection]"><span>Apply</span></button></li>
 		<li><button type="button" id="saveForm" class="button"  ONCLICK="javascript:(window.location='<?php echo $backUrl ?>')"><span> Cancel</span></button></li>
 		</ul><?php */?>
 	</div>
-   <?php   //if($eid>0){ $this->loginarea="admins";    $this->subtabsel="eventlist";
-                    //echo $this->renderElement('eventlist_submenus'); } ?>
-					 <?php    $this->loginarea="admins";    $this->subtabsel="eventlist";
-		 
-			if($_GET['url'] === 'admins/eventlist/1'){
-             echo $this->renderElement('memberlistsecondlevel_submenus');
-				}
-				else{
-				
-             echo $this->renderElement('events_submenus'); } ?>    
-</div>
-</div>
-<div class="" style="width:990px; margin:0 auto">
-</div>
-<br>
+        </div>
+	</div>
+<!--<div class="" style="width:990px; margin:0 auto">
+</div>-->
 
-<div style="border-left: 0px none; text-align: right; padding-top: 5px; color: rgb(255, 255, 255);" class="top-bar">
-    
-   </div>
-<div class="" style="padding-left:110px">	
+<div class="clearfix nav-submenu-container">
+	<div class="midCont submenu-Cont">
+		<?php   //if($eid>0){ $this->loginarea="admins";    $this->subtabsel="eventlist";
+	//echo $this->renderElement('eventlist_submenus'); } ?>
+	 <?php    $this->loginarea="admins";    $this->subtabsel="eventlist";
+		
+		if($_GET['url'] === 'admins/eventlist/1'){
+		echo $this->renderElement('memberlistsecondlevel_submenus');
+		}
+		else{
+		
+		echo $this->renderElement('events_submenus'); } ?>     
+    </div>
+</div>
+
+
+<!--<div style="border-left: 0px none; text-align: right; padding-top: 5px; color: rgb(255, 255, 255);" class="top-bar">
+
+</div>-->
+<div class="midCont table-responsive">	
 
 
     <?php if($session->check('Message.flash')){ ?>
@@ -608,7 +615,7 @@ function create_csv()
 		</div>
 </div>
                                             <?php }?>
-<table>
+<table class="table table-borderless">
 <tr>
 <td width="50%" valign="top">
 <table cellspacing="5" cellpadding="0" >
