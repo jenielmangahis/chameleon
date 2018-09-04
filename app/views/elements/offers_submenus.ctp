@@ -240,5 +240,7 @@ if($flagSubHideMenuPermission)
                  -->  
 				   
             </ul>
+	</div>  
+</div>          
            <div class="clear"></div> 
 <?php }?>

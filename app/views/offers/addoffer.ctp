@@ -515,83 +515,80 @@ if($this->data['Offer']['id']){
             }
             ?>
 
-      	<div class="container">  
-		     
-<div class="titlCont<?php //echo $div_class;?> ">
-
-		 <div style="width:960px; margin:0 auto;">
-<div class="slider" id="toppanel" style="height: 20px; top:45px;right: -50px;width:545px !important; text-align:right;">
-		<?php echo $form->create("Offer", array("action" => "addoffer",'type' => 'file', 'id' => "addoffer","onsubmit"=>"return validateoffer('$act');"))?>
-		<button type="submit" value="Submit" class="sendBut" name="data[Action][redirectpage]">
-						<?php e($html->image('save.png', array('alt' => 'Save'))); ?>
-					</button>
-			<button type="submit" value="Submit" class="sendBut" name="data[Action][noredirection]">
-						<?php e($html->image('apply.png', array('alt' => 'Apply'))); ?>
-					</button>
-				<button type="button" id="saveForm" class="sendBut" onclick="javascript:(window.location='<?php echo $backUrl ?>')">
-						<?php e($html->image('cancle.png', array('alt' => 'Cancle'))); ?>
-					</button>
-			<?php  echo $this->renderElement('new_slider');  ?>
-		</div>
-
-		<span class="titlTxt"> <?php  echo $header_text;?>
-		</span>
-
-		
-		<input type="hidden" id="current_domain" name="current_domain"
-			value="<?php echo $current_domain; ?>">
-			
-			<?php if(!empty($params)) echo $form->hidden("params", array('id' => 'params','value'=>"$params"));?>
-				
-		
-
-		<div class="topTabs" style="height:25px;">
-			<?php /*?><ul>
-				<li><button type="submit" value="Submit" class="button"
-						name="data[Action][redirectpage]">
-						<span>Save</span>
-					</button></li>
-				<li><button type="submit" value="Submit" class="button"
-						name="data[Action][noredirection]">
-						<span>Apply</span>
-					</button></li>
-				<li><button type="button" id="saveForm" class="button"
-						onclick="javascript:(window.location='<?php echo $backUrl ?>')">
-						<span> Cancel</span>
-					</button></li>
-			</ul><?php */?>
-		</div>
- <?php    
-                $this->loginarea="offers";    $this->subtabsel="offerlist";
-                if(isset($this->params['pass'][0])&&$this->params['pass'][0]=="secondlevel")
-                {
-                    echo $this->renderElement('offersecondlevel_submenus');  
-                }  
-                else
-                {  
-                    echo $this->renderElement('offers_submenus');  
-                }
-
-             ?>
-	</div>
+<div class="container">  		     
+    <div class="titlCont<?php //echo $div_class;?> ">
+        <div class="slider-centerpage clearfix">
+            <div class="center-Page col-sm-6">
+                <h2><?php  echo $header_text;?></h2>
+            </div>
+            <div class="slider-dashboard col-sm-6">
+                <div class="icon-container">
+                    <?php echo $form->create("Offer", array("action" => "addoffer",'type' => 'file', 'id' => "addoffer","onsubmit"=>"return validateoffer('$act');"))?>
+                    <button type="submit" value="Submit" class="sendBut" name="data[Action][redirectpage]">
+                                <?php e($html->image('save.png', array('alt' => 'Save'))); ?>
+                            </button>
+                    <button type="submit" value="Submit" class="sendBut" name="data[Action][noredirection]">
+                                <?php e($html->image('apply.png', array('alt' => 'Apply'))); ?>
+                            </button>
+                        <button type="button" id="saveForm" class="sendBut" onclick="javascript:(window.location='<?php echo $backUrl ?>')">
+                                <?php e($html->image('cancle.png', array('alt' => 'Cancle'))); ?>
+                            </button>
+                    <?php  echo $this->renderElement('new_slider');  ?>
+                </div>
+            </div>
+            <input type="hidden" id="current_domain" name="current_domain"
+                value="<?php echo $current_domain; ?>">
+                
+                <?php if(!empty($params)) echo $form->hidden("params", array('id' => 'params','value'=>"$params"));?>
+            <div class="topTabs" style="height:25px;">
+                <?php /*?><ul>
+                    <li><button type="submit" value="Submit" class="button"
+                            name="data[Action][redirectpage]">
+                            <span>Save</span>
+                        </button></li>
+                    <li><button type="submit" value="Submit" class="button"
+                            name="data[Action][noredirection]">
+                            <span>Apply</span>
+                        </button></li>
+                    <li><button type="button" id="saveForm" class="button"
+                            onclick="javascript:(window.location='<?php echo $backUrl ?>')">
+                            <span> Cancel</span>
+                        </button></li>
+                </ul><?php */?>
+            </div>
+        </div>             
+    </div>
 </div>
+
+
+<div class="clearfix nav-submenu-container">
+    <div class="midCont submenu-Cont">
+        <?php    
+			$this->loginarea="offers";    $this->subtabsel="offerlist";
+			if(isset($this->params['pass'][0])&&$this->params['pass'][0]=="secondlevel")
+			{
+				echo $this->renderElement('offersecondlevel_submenus');  
+			}  
+			else
+			{  
+				echo $this->renderElement('offers_submenus');  
+			}
+		
+		 ?>
+    </div>
 </div>
-<div></div>
 <!--rightpanel ends here-->
 
 <!--inner-container starts here-->
 
-<div class="centerPage"></div>
+<!--<div class="centerPage"></div>-->
 
 <!-- ADD Sub Admin FORM BOF -->
 
 <!-- ADD FIELD BOF -->
-<br>
 
-<div
-	style="border-left: 0px none; text-align: right; padding-top: 5px; color: rgb(255, 255, 255);"
-	class="top-bar"></div>
-<div class="" style="padding-left: 110px">
+<!--<div style="border-left: 0px none; text-align: right; padding-top: 5px; color: rgb(255, 255, 255);" class="top-bar"></div>-->
+<div class="midCont">
 
 
 	<?php if($session->check('Message.flash')){ ?>
@@ -619,9 +616,9 @@ if($this->data['Offer']['id']){
 		</div>
 	</div>
 	<?php }?>
-	<table width="80%">
+	<table class="table table-borderless">
 		<tr>
-			<td width="50%" valign="top">
+			<td width="50%" valign="top" style="display:inline-block;">
 				<table cellspacing="5" cellpadding="0">
 
 					<tr>
@@ -1294,7 +1291,7 @@ echo $form->input("Offer.monthly_weekof_noof_months", array('id' => 'monthly_wee
 
 
 			</td>
-			<td width="50%" valign="top">
+			<td width="50%" valign="top" style="display:inline;">
 
 				<table cellspacing="5" cellspacing="0">
 					<tr>
@@ -1417,7 +1414,7 @@ echo $form->input("Offer.monthly_weekof_noof_months", array('id' => 'monthly_wee
 	<!--inner-container ends here-->
 	<?php echo $form->end();?>
 </div>
-<div></div>
+
 
 <div class="clear"></div>
 <script type="text/javascript">
