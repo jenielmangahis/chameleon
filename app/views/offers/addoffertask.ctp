@@ -39,48 +39,52 @@ function addnewcontact(){
 </script>
 
    <!-- Body Panel starts -->
-   <div class="container">
-<div class="titlCont1" style="height:91px;">
-<div class="centerPage">
-<div align="center" class="slider" id="toppanel" style="height: 20px; top:13px;right:-50px;width:545px !important; text-align:right;">	
-	
-
-	<?php echo $form->create("offers", array("action" => "addoffertask",'type' => 'file','enctype'=>'multipart/form-data','name' => 'addoffertask', 'id' => "addoffertask","onsubmit"=>"return validateTaskForm();"));
-	 echo $form->hidden("projectname", array('id' => 'projectname','value'=>"$current_project_name"));
-	 echo $form->hidden("CommunicationTask.project_id", array('id' => 'project_id','value'=>"$project_id"));
-	 echo $form->hidden("CommunicationTask.id", array('id' => 'id'));
-	?>
-	
-	<button type="submit" value="Submit" class="sendBut" name="data[Action][redirectpage]"><?php e($html->image('save.png')); ?></button>
-<button type="submit" value="Submit" class="sendBut" name="data[Action][noredirection]"><?php e($html->image('apply.png')); ?></button>
-<button type="button" id="saveForm" class="sendBut"  ONCLICK="javascript:(window.location='<?php echo $backUrl;?>')"><?php e($html->image('cancle.png')); ?></button> 
-<?php  echo $this->renderElement('new_slider');  ?>
-</div>
-	<span class="titlTxt">Email Task</span>	
-	<div id="showtaskreport" title="Task Report" style="display: none;"></div>
-	<div class="topTabs" style="height:25px;">
+<div class="container">
+	<div class="titlCont">
+    	<div class="slider-centerpage clearfix">
+        	<div class="center-Page col-sm-6">
+                <h2>Email Task</h2>
+            </div>
+            <div class="slider-dashboard col-sm-6">
+            	<div class="icon-container">
+                	<?php echo $form->create("offers", array("action" => "addoffertask",'type' => 'file','enctype'=>'multipart/form-data','name' => 'addoffertask', 'id' => "addoffertask","onsubmit"=>"return validateTaskForm();"));
+					echo $form->hidden("projectname", array('id' => 'projectname','value'=>"$current_project_name"));
+					echo $form->hidden("CommunicationTask.project_id", array('id' => 'project_id','value'=>"$project_id"));
+					echo $form->hidden("CommunicationTask.id", array('id' => 'id'));
+					?>
+					
+					<button type="submit" value="Submit" class="sendBut" name="data[Action][redirectpage]"><?php e($html->image('save.png')); ?></button>
+					<button type="submit" value="Submit" class="sendBut" name="data[Action][noredirection]"><?php e($html->image('apply.png')); ?></button>
+					<button type="button" id="saveForm" class="sendBut"  ONCLICK="javascript:(window.location='<?php echo $backUrl;?>')"><?php e($html->image('cancle.png')); ?></button> 
+					<?php  echo $this->renderElement('new_slider');  ?>
+                </div>
+            </div>
+            <div id="showtaskreport" title="Task Report" style="display: none;"></div>
+            <div class="topTabs" style="height:25px;">
 		<?php /*?><ul class="dropdown">   
 		<li><button type="submit" value="Submit" class="button" name="data[Action][redirectpage]"><span>Save</span></button></li>
 		<li><button type="submit" value="Submit" class="button" name="data[Action][noredirection]"><span>Apply</span></button></li>
 		<li><button type="button" id="saveForm" class="button"  ONCLICK="javascript:(window.location='<?php echo $backUrl;?>')"><span> Cancel</span></button></li>
 		</ul><?php */?>
 	</div>
-	<div class="clear"></div>    
-	
-</div>
- <div style="margin-left:5px;"><?php $this->loginarea="offers";$this->subtabsel="projectmerchantlist";
-      // echo $this->renderElement('offer_email_submenus');  ?></div>
-	   
+        </div>	   
 </div>
 
 
-<div id="addcmp"  class="midCont">	
+<div class="clearfix nav-submenu-container">
+    <div class="midCont submenu-Cont">
+       <?php $this->loginarea="offers";$this->subtabsel="projectmerchantlist";
+      // echo $this->renderElement('offer_email_submenus');  ?>
+    </div>
+</div>
+
+<div id="addcmp"  class="midCont clearfix">	
 
 
 <?php if($session->check('Message.flash')) { echo $this->renderElement('error_message'); } ?>
-<div class="midform">
+<div class="mid-form clearfix table-responsive">
 
-<table cellspacing="0" cellpadding="0" align="left" width="100%">
+<table class="table table-borderless" cellspacing="0" cellpadding="0" align="left" width="100%">
 	<tbody>
 		<tr>
 			<td width="50%" valign="top">

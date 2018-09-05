@@ -588,7 +588,7 @@ if($this->data['Offer']['id']){
 <!-- ADD FIELD BOF -->
 
 <!--<div style="border-left: 0px none; text-align: right; padding-top: 5px; color: rgb(255, 255, 255);" class="top-bar"></div>-->
-<div class="midCont">
+<div class="midCont table-responsive">
 
 
 	<?php if($session->check('Message.flash')){ ?>

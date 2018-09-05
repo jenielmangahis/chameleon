@@ -118,23 +118,24 @@ $('#btn_relate_to_comment').live('click',function(){
 
 <?php echo $form->create("mailtasks", array("action" => "addmailtask",'name' => 'addmailtask', 'id' => "addmailtask", 'class' => 'adduser'));
     echo $form->hidden("CommunicationTask.id", array('id' => 'taskid'));   ?>
-<div class="container"> 
-<div class="titlCont">
+<div class="container-1"> 
+	<div class="titlCont">
+		<div class="slider-centerpage clearfix">
+        	<div class="center-Page col-sm-6">
+                <h2>Mail Tasks</h2>
+            </div>
+            <div class="slider-dashboard col-sm-6">
+            	<div class="icon-container">
+                	<button type="submit" value="Submit" class="sendBut" name="data[Action][redirectpage]">
 
-
-<div class="myclass">
-<div class="slider" id="toppanel" style="height: 20px; top:13px;right:0px;width:545px !important; text-align:right;">	
-<button type="submit" value="Submit" class="sendBut" name="data[Action][redirectpage]">
-
- <?php e($html->image('save.png')) ?>	</button>
- <button type="submit" value="Submit" class="sendBut" name="data[Action][noredirection]">
-<?php e($html->image('apply.png')) ?> </button>
-<button type="button" id="saveForm" class="sendBut"  ONCLICK="javascript:(window.location='<?php echo $backUrl ?>')"><?php e($html->image('cancle.png')) ?></button>
-	<?php  echo $this->renderElement('new_slider');  ?>
-</div>
-
-<span class="titlTxt">Mail Tasks </span>
-<div class="topTabs" style="height:25px;">
+					<?php e($html->image('save.png')) ?>	</button>
+                    <button type="submit" value="Submit" class="sendBut" name="data[Action][noredirection]">
+                    <?php e($html->image('apply.png')) ?> </button>
+                    <button type="button" id="saveForm" class="sendBut"  ONCLICK="javascript:(window.location='<?php echo $backUrl ?>')"><?php e($html->image('cancle.png')) ?></button>
+                    <?php  echo $this->renderElement('new_slider');  ?>
+                </div>
+            </div>
+            <div class="topTabs" style="height:25px;">
 <?php /*?><ul class="dropdown">
 <li>
 <button type="submit" value="Submit" class="sendBut" name="data[Action][redirectpage]">
@@ -153,24 +154,30 @@ $('#btn_relate_to_comment').live('click',function(){
 </li>
 <li>
 </ul><?php */?>
-</div> 
-<?php $this->loginarea="mailtasks";    $this->subtabsel="activetasklist";
-echo $this->renderElement('emails_submenus'); 
-?>
-<div class="clear"></div>
-<?php $this->mail_tasks="tabSelt"; ?>   
+</div>
+        </div>
 </div>
 
+<div class="clearfix nav-submenu-container">
+    <div class="midCont submenu-Cont">
+       <?php $this->loginarea="mailtasks";    $this->subtabsel="activetasklist";
+		echo $this->renderElement('emails_submenus'); 
+		?>
+		<div class="clear"></div>
+		<?php $this->mail_tasks="tabSelt"; ?>   
+    </div>
 </div>
-<div class="midPadd" id="addcmp">
+
+
+<div class="midPadd midCont" id="addcmp">
 
 <?php if($session->check('Message.flash')) { echo $this->renderElement('error_message'); } ?>          
 
 <br />
 
 <div id="loading" style="display: none;"><img src="/img/ajax-pageloader.gif" alt="Imagecoins:pageloader" /></div>
-<div id="addcomm">
-<table cellspacing="0" cellpadding="0" align="left" width="100%">
+<div id="addcomm" class="clearfix table-responsive">
+<table class="table table-borderless" cellspacing="0" cellpadding="0" align="left" width="100%">
 	<tbody>
 		<tr>
 			<td width="50%" valign="top">
@@ -182,17 +189,17 @@ echo $this->renderElement('emails_submenus');
 								name="current_domain" value=""> <label class="boldlabel">Task
 									Name <span style="color: red;">*</span>
 							</label></td>
-							<td><span class="intpSpan"><?php echo $form->input("CommunicationTask.task_name", array('id' => 'task_name', 'div' => false, 'label' => '','style' =>'width:200px;',"class"=>"inpt_txt_fld","maxlength" => "250"));?>
+							<td><span class="intp-Span"><?php echo $form->input("CommunicationTask.task_name", array('id' => 'task_name', 'div' => false, 'label' => '','style' =>'width:100%;',"class"=>"inpt-txt-fld form-control","maxlength" => "250"));?>
 							</span></td>
 						</tr>
 						<tr>
 							<td align="right"><label class="boldlabel">Select Template <span
 									style="color: red;">*</span>
 							</label></td>
-							<td><span class="txtArea_top"> <span class="txtArea_bot"> <?php 
-			echo $form->select("CommunicationTask.email_template_id",$templatedropdown,$sel_email_temp,array('id' => 'email_template_id','class'=>'multilist','onchange'=>'getEmailTemplate(this.value)'),array('0'=>'--Select--')); ?>
+							<td><span class="txtArea-top"> <span class="txtArea-bot"> <?php 
+			echo $form->select("CommunicationTask.email_template_id",$templatedropdown,$sel_email_temp,array('id' => 'email_template_id','class'=>'multi-list form-control','onchange'=>'getEmailTemplate(this.value)'),array('0'=>'--Select--')); ?>
 								</span>
-							</span> <span class="btnLft"><input type="button" class="btnRht"
+							</span> <span class="btn-Lft"><input type="button" class="btn btn-primary btn-sm"
 									value="Add" name="Add" onclick="addEmailTempforTask();" />
 							</span></td>
 						</tr>
@@ -201,7 +208,7 @@ echo $this->renderElement('emails_submenus');
 							<td align="right"><label class="boldlabel">Subject <span
 									style="color: red;">*</span>
 							</label></td>
-							<td><span class="intpSpan" style="vertical-align: top"> <?php echo $form->input("CommunicationTask.email_subject", array('id' => 'email_subject', 'div' => false, 'label' => '','style' =>'width:231px;',"class" => "inpt_txt_fld","maxlength" => "250"));?>
+							<td><span class="intp-Span" style="vertical-align: top"> <?php echo $form->input("CommunicationTask.email_subject", array('id' => 'email_subject', 'div' => false, 'label' => '','style' =>'width:100%;',"class" => "inpt-txt-fld form-control","maxlength" => "250"));?>
 							</span></td>
 						</tr>
 
@@ -209,7 +216,7 @@ echo $this->renderElement('emails_submenus');
 							<td align="right"><label class="boldlabel">Email from <span
 									style="color: red;">*</span>
 							</label></td>
-							<td><span class="intpSpan" style="vertical-align: top"> <?php echo $form->input("CommunicationTask.email_from", array('id' => 'email_from', 'div' => false, 'label' => '','style' =>'width:231px;',"class" => "inpt_txt_fld",'value'=>$email_from));?>
+							<td><span class="intp-Span" style="vertical-align: top"> <?php echo $form->input("CommunicationTask.email_from", array('id' => 'email_from', 'div' => false, 'label' => '','style' =>'width:100%;',"class" => "inpt-txt-fld form-control",'value'=>$email_from));?>
 							</span>
 							</td>
 						</tr>
@@ -217,15 +224,15 @@ echo $this->renderElement('emails_submenus');
 						<tr>
 							<td width="174px" align="right"><label class="boldlabel">Subscription
 									Type</label></td>
-							<td><span class="txtArea_top"> <span class="txtArea_bot"> <?php echo $form->select("CommunicationTask.subscription_type",$subscription_types,$sel_subscription_types,array('id' => 'subscription_type',"class"=>"multilist"),array(''=>'--Select--')); ?>
+							<td><span class="txtArea-top"> <span class="txtArea-bot"> <?php echo $form->select("CommunicationTask.subscription_type",$subscription_types,$sel_subscription_types,array('id' => 'subscription_type',"class"=>"multi-list form-control"),array(''=>'--Select--')); ?>
 								</span>
 							</span></td>
 						</tr>
 
 						<tr>
 							<td align="right"><label class="boldlabel">Member Type</label></td>
-							<td><span class="txtArea_top"> <span class="txtArea_bot"> <?php 
-							echo $form->select("CommunicationTask.member_type",$member_types,$sel_member_types, array('id' => 'member_type', 'div' => false, 'label' => '','style' =>'background: none repeat scroll 0% 0% transparent; margin-bottom: 6px; width:230px;',"class" =>"","maxlength" => "250"),"---Select---");
+							<td><span class="txtArea-top"> <span class="txtArea-bot"> <?php 
+							echo $form->select("CommunicationTask.member_type",$member_types,$sel_member_types, array('id' => 'member_type', 'div' => false, 'label' => '','style' =>'background: none repeat scroll 0% 0% transparent; margin-bottom: 6px; width:100%;',"class" =>"","maxlength" => "250"),"---Select---");
 							?>
 								</span>
 							</span></td>
@@ -250,9 +257,9 @@ echo $this->renderElement('emails_submenus');
 	 $ageto="00-00-0000";
 	 if(isset($this->data['CommunicationTask']['member_ageto'])  && $this->data['CommunicationTask']['member_ageto']!='0000-00-00'){
 		 $ageto= date('m-d-Y', strtotime($this->data['CommunicationTask']['member_ageto']));
-	 } ?> <span class="intpSpan middle"> <?php echo $form->text("CommunicationTask.member_agefrom", array('id' => 'member_agefrom', 'value'=>$agefrom, 'div' => false, 'label' => '',"class" => "inpt_txt_fld","style" => "width:75px","maxlength" => "200",'readonly'=>'readonly'));?>
+	 } ?> <span class="intp-Span middle"> <?php echo $form->text("CommunicationTask.member_agefrom", array('id' => 'member_agefrom', 'value'=>$agefrom, 'div' => false, 'label' => '',"class" => "inpt-txt-fld form-control","style" => "width:75px","maxlength" => "200",'readonly'=>'readonly'));?>
 							</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-								to &nbsp; <span class="intpSpan middle"><?php echo $form->text("CommunicationTask.member_ageto", array('id' => 'member_ageto', 'value'=>$ageto, 'div' => false, 'label' => '',"class" => "inpt_txt_fld","style" => "width:75px","maxlength" => "200",'readonly'=>'readonly'));?>
+								to &nbsp; <span class="intp-Span middle"><?php echo $form->text("CommunicationTask.member_ageto", array('id' => 'member_ageto', 'value'=>$ageto, 'div' => false, 'label' => '',"class" => "inpt-txt-fld form-control","style" => "width:75px","maxlength" => "200",'readonly'=>'readonly'));?>
 							</span></td>
 						</tr>
 
@@ -265,7 +272,7 @@ echo $this->renderElement('emails_submenus');
 	 }else{
 		  $chked="";
 	 }
-	 echo $form->input('CommunicationTask.member_birthday', array('id'=>'member_birthday','type'=>'checkbox', 'label' => '', 'checked' => $chked)); ?></td>
+	 echo $form->input('CommunicationTask.member_birthday', array('id'=>'member_birthday','type'=>'checkbox', 'label' => '', "style" => "margin-left:1px", 'checked' => $chked)); ?></td>
 						</tr>
 
 						<tr>
@@ -294,16 +301,16 @@ echo $this->renderElement('emails_submenus');
                                         <label class="boldlabel">Days Since</label>
                                     </td>
                                     <td>
-                                    <span class="txtArea_top">
-                                            <span class="txtArea_bot">
+                                    <span class="txtArea-top">
+                                            <span class="txtArea-bot">
                                                 <?php 
-                                                    echo $form->select("CommunicationTask.member_days_since",$days_since,$sel_days_since, array('id' => 'member_days_since', 'div' => false, 'label' => '','style' =>'background: none repeat scroll 0% 0% transparent; margin-bottom: 6px; width:230px;',"class" =>"","maxlength" => "250"),"---Select---");
+                                                    echo $form->select("CommunicationTask.member_days_since",$days_since,$sel_days_since, array('id' => 'member_days_since', 'div' => false, 'label' => '','style' =>'background: none repeat scroll 0% 0% transparent; margin-bottom: 6px; width:100%;',"class" =>"","maxlength" => "250"),"---Select---");
                                                 ?>
                                             </span>
                                         </span>
                                      <div id="div_days_ago">
-                                        <label class="boldlabel">Days Ago :</label>    &nbsp;&nbsp; <span class="intpSpan" style="vertical-align: top"> 
-                                            <?php echo $form->input("CommunicationTask.member_noof_days_since", array('id' => 'member_noof_days_since', 'div' => false, 'label' => '','style' =>'width:125px;',"class" => "inpt_txt_fld","maxlength" => "250"));?>
+                                        <label class="boldlabel">Days Ago :</label>    &nbsp;&nbsp; <span class="intp-Span" style="vertical-align: top"> 
+                                            <?php echo $form->input("CommunicationTask.member_noof_days_since", array('id' => 'member_noof_days_since', 'div' => false, 'label' => '','style' =>'width:125px;',"class" => "inpt-txt-fld form-control","maxlength" => "250"));?>
                                         </span>
                                      </div>   
                                     </td>
@@ -311,14 +318,14 @@ echo $this->renderElement('emails_submenus');
 
 						<tr>
 							<td align="right"><label class="boldlabel">Country</label></td>
-							<td><span class="txtArea_top"> <span class="newtxtArea_bot"> <?php echo $form->select("CommunicationTask.member_country",$countrydropdown,$sel_country,array('id' => 'country','class'=>'multilist','onchange'=>'return getstateoptions(this.value,"Company")')); ?>
+							<td><span class="txtArea-top"> <span class="newtxtArea-bot"> <?php echo $form->select("CommunicationTask.member_country",$countrydropdown,$sel_country,array('id' => 'country','class'=>'multi-list form-control','onchange'=>'return getstateoptions(this.value,"Company")')); ?>
 								</span>
 							</span></td>
 						</tr>
 						<tr>
 							<td align="right"><label class="boldlabel">Select State</label></td>
-							<td><span class="txtArea_top"> <span class="txtArea_bot"> <span
-										id="statediv"> <?php echo $form->select("CommunicationTask.member_state",$statedropdown,$sel_state,array('id' => 'state','class'=>'multilist'),"---Select---"); ?>
+							<td><span class="txtArea-top"> <span class="txtArea-bot"> <span
+										id="statediv"> <?php echo $form->select("CommunicationTask.member_state",$statedropdown,$sel_state,array('id' => 'state','class'=>'multi-list form-control'),"---Select---"); ?>
 									</span>
 								</span>
 							</span></td>
@@ -329,19 +336,19 @@ echo $this->renderElement('emails_submenus');
 							</td>
 							<td><?php
 							$sdate = '';
-							?> <span class="intpSpan middle"><?php echo $form->text("CommunicationTask.member_zipcode_from", array('id' => 'member_zipcode_from',  'div' => false, 'label' => '',"class" => "inpt_txt_fld","style" => "width:125px","maxlength" => "200"));?>
-							</span>&nbsp; to &nbsp; <span class="intpSpan middle"><?php echo $form->text("CommunicationTask.member_zipcode_to", array('id' => 'member_zipcode_to',  'div' => false, 'label' => '',"class" => "inpt_txt_fld","style" => "width:125px","maxlength" => "200"));?>
+							?> <span class="intp-Span middle"><?php echo $form->text("CommunicationTask.member_zipcode_from", array('id' => 'member_zipcode_from',  'div' => false, 'label' => '',"class" => "inpt-txt-fld form-control","style" => "width:125px","maxlength" => "200"));?>
+							</span>&nbsp; to &nbsp; <span class="intp-Span middle"><?php echo $form->text("CommunicationTask.member_zipcode_to", array('id' => 'member_zipcode_to',  'div' => false, 'label' => '',"class" => "inpt-txt-fld form-control","style" => "width:125px","maxlength" => "200"));?>
 							</span></td>
 
 						</tr>
 						
 						<tr>
 							<td align="right"><label class="boldlabel">Event</label></td>
-							<td><span class="txtArea_top"> <span class="txtArea_bot"> <span
+							<td><span class="txtArea-top"> <span class="txtArea-bot"> <span
 										id="statediv"> 
 										<?php 
 									
-										echo $form->select("CommunicationTask.event_id",$eventdropdown,$sel_event,array('id' => 'event_id','class'=>'multilist'),"---Select---"); ?>
+										echo $form->select("CommunicationTask.event_id",$eventdropdown,$sel_event,array('id' => 'event_id','class'=>'multi-list form-control'),"---Select---"); ?>
 									</span>
 								</span>
 							</span></td>
@@ -349,8 +356,8 @@ echo $this->renderElement('emails_submenus');
 
 						<tr>
 							<td align="right"><label class="boldlabel">RSVP Type</label></td>
-							<td><span class="txtArea_top"> <span class="txtArea_bot"> <span
-										id="statediv"> <?php echo $form->select("CommunicationTask.event_rsvp_type",$event_rsvp,$sel_event_rsvp,array('id' => 'event_rsvp_type','class'=>'multilist'),"---Select---"); ?>
+							<td><span class="txtArea-top"> <span class="txtArea-bot"> <span
+										id="statediv"> <?php echo $form->select("CommunicationTask.event_rsvp_type",$event_rsvp,$sel_event_rsvp,array('id' => 'event_rsvp_type','class'=>'multi-list form-control'),"---Select---"); ?>
 									</span>
 								</span>
 							</span></td>
@@ -360,8 +367,8 @@ echo $this->renderElement('emails_submenus');
 						<tr>
 							<td align="right"><label class="boldlabel">Social Network Members</label>
 							</td>
-							<td><span class="txtArea_top"> <span class="txtArea_bot"> <span
-										id="countrydiv"> <?php echo $form->select("CommunicationTask.social_network_members",$social_networks,$sel_social_networks,array('id' => 'social_network_members',"class"=>"multilist"),array(''=>'--Select--')); ?>
+							<td><span class="txtArea-top"> <span class="txtArea-bot"> <span
+										id="countrydiv"> <?php echo $form->select("CommunicationTask.social_network_members",$social_networks,$sel_social_networks,array('id' => 'social_network_members',"class"=>"multi-list form-control"),array(''=>'--Select--')); ?>
 									</span>
 								</span>
 							</span></td>
@@ -369,8 +376,8 @@ echo $this->renderElement('emails_submenus');
 
 						<tr>
 							<td align="right"><label class="boldlabel">Non-Network Members</label>&nbsp;</td>
-							<td><span class="txtArea_top"> <span class="txtArea_bot"> <span
-										id="countrydiv"> <?php echo $form->select("CommunicationTask.non_network_members",$social_networks,$sel_non_networks,array('id' => 'non_network_members',"class"=>"multilist"),array(''=>'--Select--')); ?>
+							<td><span class="txtArea-top"> <span class="txtArea-bot"> <span
+										id="countrydiv"> <?php echo $form->select("CommunicationTask.non_network_members",$social_networks,$sel_non_networks,array('id' => 'non_network_members',"class"=>"multi-list form-control"),array(''=>'--Select--')); ?>
 									</span>
 								</span>
 							</span>&nbsp;&nbsp;</td>
@@ -412,7 +419,7 @@ echo $this->renderElement('emails_submenus');
 						
 					<tr>
 						<td width="174px" align="right"><label class="boldlabel">Send Time</label></td>
-							<td><span class="txtArea_top"> <span class="txtArea_bot"> <select id="stime" name="data[Event][stime]" class="noBg" style="border: none; width: 230px; margin-bottom: 7px;"> 
+							<td><span class="txtArea-top"> <span class="txtArea-bot"> <select id="stime" name="data[Event][stime]" class="noBg" style="border: none; width:100%; margin-bottom: 7px;"> 
                     <?php echo $option_stime; ?>
                     </select>
 								</span>
@@ -424,9 +431,9 @@ echo $this->renderElement('emails_submenus');
 						<tr>
 							<td align="right" width="140px"><label class="boldlabel">Recur Pattern</label></td>
 							<td>
-								<span class="txtArea_top"> <span class="txtArea_bot">
+								<span class="txtArea-top"> <span class="txtArea-bot">
 									<span	id="countrydiv">
-										<?php echo $form->select("CommunicationTask.recur_pattern",$recur_pattern,$sel_recur_pattern,array('id' => 'recur_pattern',"class"=>"multilist"),false); ?>
+										<?php echo $form->select("CommunicationTask.recur_pattern",$recur_pattern,$sel_recur_pattern,array('id' => 'recur_pattern',"class"=>"multi-list form-control"),false); ?>
 										<script type="text/javascript">
 										 	$(function() { showRecurPatternOptions(); });
 										</script>
@@ -683,13 +690,13 @@ echo $form->input("CommunicationTask.monthly_weekof_noof_months", array('id' => 
 									class="red">*</span>
 							</label>
 							</td>
-							<td><span class="intpSpan"><?php
+							<td><span class="intp-Span"><?php
 					if($this->data['CommunicationTask']['task_startdate']!=""){
 							$task_startdate= $this->data['CommunicationTask']['task_startdate'];
 					}else{
 						   $task_startdate= date('m-d-Y');
 					}
-		   echo $form->text("CommunicationTask.task_startdate", array('id' => 'task_startdate', 'div' => false, 'label' => '',"class"=>"inpt_txt_fld","maxlength" => "200","style" => "width:200px", 'value'=>$task_startdate,'readonly'=>'readonly'));?>
+		   echo $form->text("CommunicationTask.task_startdate", array('id' => 'task_startdate', 'div' => false, 'label' => '',"class"=>"inpt-txt-fld form-control","maxlength" => "200","style" => "width:200px", 'value'=>$task_startdate,'readonly'=>'readonly'));?>
 							</span></td>
 						</tr>
 
@@ -711,13 +718,13 @@ echo $form->input("CommunicationTask.monthly_weekof_noof_months", array('id' => 
 								name='data[CommunicationTask][task_end]' id="by_date"
 								value='by_date'
 								<?php if($this->data['CommunicationTask']['task_end']=='by_date'){  echo ' checked="checked" ';}else{ echo ' ';}?>>
-								By: <span class="intpSpan"><?php echo $form->text("CommunicationTask.task_end_by_date", array('id' => 'task_end_by_date', 'div' => false, 'label' => '',"class"=>"inpt_txt_fld","maxlength" => "200","style" => "width:160px",'readonly'=>'readonly'));?>
+								By: <span class="intp-Span"><?php echo $form->text("CommunicationTask.task_end_by_date", array('id' => 'task_end_by_date', 'div' => false, 'label' => '',"class"=>"inpt-txt-fld form-control","maxlength" => "200","style" => "width:160px",'readonly'=>'readonly'));?>
 							</span></td>
 						</tr>
 						<tr>
 							<td align="right" width="140px"><label class="boldlabel">Note</label>
 							</td>
-							<td><span class="txtArea_top"> <span class="txtArea_bot"><?php echo $form->input("CommunicationTask.task_note", array('id' => 'task_note', 'div' => false, 'label' => '','rows'=>'8','cols'=>'36','class' =>'noBg'));?>
+							<td><span class="txtArea-top"> <span class="txtArea-bot"><?php echo $form->input("CommunicationTask.task_note", array('id' => 'task_note', 'div' => false, 'label' => '','rows'=>'8','cols'=>'36','class' =>'form-control noBg'));?>
 								</span>
 							</span></td>
 						</tr>
@@ -729,8 +736,8 @@ echo $form->input("CommunicationTask.monthly_weekof_noof_months", array('id' => 
 						</tr>
 							<tr>
 										<td align="right" width="140px">&nbsp;</td>
-										<td><span class="btnLft">
-												<button name="runreport" id="runreport" class="btnRht"
+										<td><span class="btn-Lft">
+												<button name="runreport" id="runreport" class="btn btn-primary btn-sm"
 													value="RunReport" type="button">Run Report</button>
 										</span></td>
 									</tr>
