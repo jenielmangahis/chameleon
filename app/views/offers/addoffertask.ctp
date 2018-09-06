@@ -101,9 +101,9 @@ function addnewcontact(){
 									</label>
 							</td>
 							<td>
-								<span class="intpSpan">
+								<span class="intp-Span">
 									<?php echo $form->input("CommunicationTask.task_name", array('id' => 'task_name', 'div' => 			
-									false, 'label' => '','style' =>'width:200px;',"class"=>"inpt_txt_fld","maxlength" => "250"));?>
+									false, 'label' => '','style' =>'width:200px;',"class"=>"inpt-txt-fld form-control","maxlength" => "250"));?>
 								</span>
 							</td>
 						</tr>
@@ -114,15 +114,15 @@ function addnewcontact(){
 								</label>
 							</td>
 							<td>
-								<span class="txtArea_top">
-									 <span class="txtArea_bot"> 
+								<span class="txtArea-top">
+									 <span class="txtArea-bot"> 
                 						<?php echo $form->select("CommunicationTask.email_template_id", $templatedropdown, 
-										$sel_email_temp , array('id' => 'email_template_id','class'=>'multilist','onchange'=>
+										$sel_email_temp , array('id' => 'email_template_id','class'=>'multi-list form-control','onchange'=>
 										'getEmailTemplate(this.value)'),array('0'=>'--Select--')); ?>														
 									 </span>
 								</span> 
-								<span class="btnLft">
-									<input type="button" class="btnRht"	value="Add" name="Add" onclick="addEmailTempforTask();" />
+								<span class="btn-Lft">
+									<input type="button" class="btn-Rht btn btn-primary btn-sm"	value="Add" name="Add" onclick="addEmailTempforTask();" />
             					</span>
 							</td>
 						</tr>
@@ -133,9 +133,9 @@ function addnewcontact(){
 								</label>
 							</td>
 							<td>
-								<span class="intpSpan" style="vertical-align: top"> 
+								<span class="intp-Span" style="vertical-align: top"> 
 									<?php echo $form->input("CommunicationTask.email_subject", array('id' => 'email_subject', 'div'
-									 => false, 'label' => '','style' =>'width:231px;',"class" => "inpt_txt_fld","maxlength" => 
+									 => false, 'label' => '','style' =>'width:231px;',"class" => "inpt-txt-fld form-control","maxlength" => 
 									 "250"));?>
 								</span>
 							</td>
@@ -147,9 +147,9 @@ function addnewcontact(){
 								</label>
 							</td>
 							<td>
-								<span class="intpSpan" style="vertical-align: top"> 
+								<span class="intp-Span" style="vertical-align: top"> 
 									<?php echo $form->input("CommunicationTask.email_from", array('id' => 'email_from', 'div' => 
-									false, 'label' => '','style' =>'width:231px;',"class" => "inpt_txt_fld"));?>
+									false, 'label' => '','style' =>'width:231px;',"class" => "inpt-txt-fld form-control"));?>
 								</span>
 							</td>
 						</tr>
@@ -161,10 +161,10 @@ function addnewcontact(){
 							</td>
 							<td>
 								
-								<span class="txtArea_top">
-									 <span class="txtArea_bot">
+								<span class="txtArea-top">
+									 <span class="txtArea-bot">
 									 	 <?php echo $form->select("CommunicationTask.company_type", $companytypedropdown, 
-										 $sel_companytypeid,array('id' => 'companytypeid','class'=>'multilist'),"---Select---"); ?>
+										 $sel_companytypeid,array('id' => 'companytypeid','class'=>'multi-list form-control'),"---Select---"); ?>
 									 </span>
 							</span></td>
 						</tr>
@@ -175,10 +175,10 @@ function addnewcontact(){
 								</label>
 							</td>
 							<td>
-								<span class="txtArea_top"> 
-									<span class="txtArea_bot">
+								<span class="txtArea-top"> 
+									<span class="txtArea-bot">
 										 <?php echo $form->select("CommunicationTask.contact_type" ,$contacttypedropdown, 
-										 $sel_contactypeid,array('id' => 'contactypeid','class'=>'multilist'),"---Select---"); ?>
+										 $sel_contactypeid,array('id' => 'contactypeid','class'=>'multi-list form-control'),"---Select---"); ?>
 									</span>
 								</span>
 							</td>
@@ -190,11 +190,11 @@ function addnewcontact(){
 								</label>
 							</td>
 							<td>
-								<span class="txtArea_top">
-									 <span class="txtArea_bot">
+								<span class="txtArea-top">
+									 <span class="txtArea-bot">
 										<?php echo $form->select("CommunicationTask.non_profit_type_id", 
 										$nonprofittypedropdown,$sel_nonprofittype,array('id' => 'non_profit_type_id','class'=>
-										'multilist'),"---Select---"); ?>
+										'multi-list form-control'),"---Select---"); ?>
 									</span>
 								</span>
 							</td>
@@ -206,10 +206,10 @@ function addnewcontact(){
 								</label>
 							</td>
 							<td>
-								<span class="txtArea_top">
-									 <span class="txtArea_bot">
+								<span class="txtArea-top">
+									 <span class="txtArea-bot">
 									 	 <?php echo $form->select("CommunicationTask.offer_id", $offertypedropdown, 
-										 $sel_offerid,array('id' => 'offer_id','class'=>'multilist'),"---Select---"); ?>
+										 $sel_offerid,array('id' => 'offer_id','class'=>'multi-list form-control'),"---Select---"); ?>
 									 </span>
 								</span>
 							</td>
@@ -221,10 +221,10 @@ function addnewcontact(){
 								</label>
 							</td>
 							<td>
-								<span class="txtArea_top">
-									 <span class="txtArea_bot">
+								<span class="txtArea-top">
+									 <span class="txtArea-bot">
 									 	 <?php echo $form->select("CommunicationTask.category_id", $categorydropdown, 
-										 $selectedcategory,array('id' => 'category_id','class'=>'multilist'),"---Select---"); ?>
+										 $selectedcategory,array('id' => 'category_id','class'=>'multi-list form-control'),"---Select---"); ?>
 									</span>
 								</span>
 							</td>
@@ -236,11 +236,11 @@ function addnewcontact(){
 								</label>
 							</td>
 							<td>
-								<span class="txtArea_top">
-									 <span class="txtArea_bot"> 
+								<span class="txtArea-top">
+									 <span class="txtArea-bot"> 
 									 	<span id="statediv"> 
 											<?php echo $form->select("CommunicationTask.event_id",$eventdropdown, 
-											$sel_event,array('id' => 'event_id','class'=>'multilist'),"---Select---"); ?>
+											$sel_event,array('id' => 'event_id','class'=>'multi-list form-control'),"---Select---"); ?>
 										</span>
 									</span>
 								</span>
@@ -253,8 +253,8 @@ function addnewcontact(){
 								</label>
 							</td>
 							<td>
-								<span class="txtArea_top">
-									 <span class="txtArea_bot"> 
+								<span class="txtArea-top">
+									 <span class="txtArea-bot"> 
 									 	<?php echo $form->select("CommunicationTask.member_days_since",$days_since,$sel_days_since,
 										 array('id' => 'member_days_since', 'div' => false, 'label' => '','style' =>'background: 
 										 none repeat scroll 0% 0% transparent; margin-bottom: 6px; width:230px;',"class" =>
@@ -271,10 +271,10 @@ function addnewcontact(){
 									<label class="boldlabel"> 
 										&nbsp;&nbsp;&nbsp; Days Ago :
 									</label>
-										<span class="intpSpan" style="vertical-align: top">
+										<span class="intp-Span" style="vertical-align: top">
 											 <?php echo $form->input("CommunicationTask.member_noof_days_since", array('id' => 
 											 'member_noof_days_since', 'div' => false, 'label' => '','style' =>
-											 'width:125px;',"class" => "inpt_txt_fld","maxlength" => "250"));?>
+											 'width:125px;',"class" => "inpt-txt-fld form-control","maxlength" => "250"));?>
 										</span>
 								</div>
 							</td>
@@ -286,10 +286,10 @@ function addnewcontact(){
 								</label>
 							</td>
 							<td>
-								<span class="txtArea_top">
-									 <span class="newtxtArea_bot">
+								<span class="txtArea-top">
+									 <span class="newtxtArea-bot">
 									 	 <?php echo $form->select("CommunicationTask.member_country", $countrydropdown 
-										 ,$selectedcountry,array('id' => 'country','class'=>'multilist','onchange'=>'return 
+										 ,$selectedcountry,array('id' => 'country','class'=>'multi-list form-control','onchange'=>'return 
 										 getstateoptions(this.value,"Company")'),array('254'=>'United States')); ?>
 									</span>
 								</span>
@@ -302,11 +302,11 @@ function addnewcontact(){
 								</label>
 							</td>
 							<td>
-								<span class="txtArea_top">
-									 <span class="txtArea_bot">
+								<span class="txtArea-top">
+									 <span class="txtArea-bot">
 									 	 <span id="statediv">
 										 	 <?php echo $form->select("CommunicationTask.member_state", $statedropdown, 
-											 $selectedstate, array('id' => 'state','class'=>'multilist'),"---Select---"); ?>
+											 $selectedstate, array('id' => 'state','class'=>'multi-list form-control'),"---Select---"); ?>
 										</span>
 									</span>
 								</span>
@@ -322,13 +322,13 @@ function addnewcontact(){
 								<?php
 									$sdate = '';
 								?>
-								 <span class="intpSpan middle">
-								 	<?php echo $form->text("CommunicationTask.member_zipcode_from", array('id' => 'member_zipcode_from',  'div' => false, 'label' => '',"class" => "inpt_txt_fld","style" => "width:125px","maxlength" => "200"));?>
+								 <span class="intp-Span middle">
+								 	<?php echo $form->text("CommunicationTask.member_zipcode_from", array('id' => 'member_zipcode_from',  'div' => false, 'label' => '',"class" => "inpt-txt-fld form-control","style" => "width:125px","maxlength" => "200"));?>
 								</span>
 									&nbsp; to &nbsp; 
-								<span class="intpSpan middle">
+								<span class="intp-Span middle">
 									<?php echo $form->text("CommunicationTask.member_zipcode_to", array('id' => 
-									'member_zipcode_to',  'div' => false, 'label' => '',"class" => "inpt_txt_fld","style" => 
+									'member_zipcode_to',  'div' => false, 'label' => '',"class" => "inpt-txt-fld form-control","style" => 
 									"width:125px","maxlength" => "200"));?>
 								</span>
 							</td>
@@ -369,11 +369,11 @@ function addnewcontact(){
 				</tr>
 						<tr>
 							<td align="right" width="140px"><label class="boldlabel">Recur Pattern</label></td>
-							<td><span class="txtArea_top"> <span class="txtArea_bot"> <span
+							<td><span class="txtArea-top"> <span class="txtArea-bot"> <span
 										id="countrydiv">
 										 <?php echo $form->
 										 select("CommunicationTask.recur_pattern",$recur_pattern,$sel_recur_pattern,array('id' => 
-										 'recur_pattern',"class"=>"multilist"),false); ?>
+										 'recur_pattern',"class"=>"multi-list form-control"),false); ?>
 										<script type="text/javascript">
 										 	$(function() { showRecurPatternOptions(); });
 										</script>
@@ -630,13 +630,13 @@ echo $form->input("CommunicationTask.monthly_weekof_noof_months", array('id' => 
 									class="red">*</span>
 							</label>
 							</td>
-							<td><span class="intpSpan"><?php
+							<td><span class="intp-Span"><?php
 							if($this->data['CommunicationTask']['task_startdate']!=""){
 							$task_startdate= $this->data['CommunicationTask']['task_startdate'];
 					}else{
 						   $task_startdate= date('m-d-Y');
 					}
-		   echo $form->text("CommunicationTask.task_startdate", array('id' => 'task_startdate', 'div' => false, 'label' => '',"class"=>"inpt_txt_fld","maxlength" => "200","style" => "width:200px", 'value'=>$task_startdate,'readonly'=>'readonly'));?></span>
+		   echo $form->text("CommunicationTask.task_startdate", array('id' => 'task_startdate', 'div' => false, 'label' => '',"class"=>"inpt-txt-fld form-control","maxlength" => "200","style" => "width:200px", 'value'=>$task_startdate,'readonly'=>'readonly'));?></span>
 							</td>
 						</tr>
 
@@ -658,13 +658,13 @@ echo $form->input("CommunicationTask.monthly_weekof_noof_months", array('id' => 
 								name='data[CommunicationTask][task_end]' id="by_date"
 								value='by_date'
 								<?php if($this->data['CommunicationTask']['task_end']=='by_date'){  echo ' checked="checked" ';}else{ echo ' ';}?>>
-								By: <span class="intpSpan"><?php echo $form->text("CommunicationTask.task_end_by_date", array('id' => 'task_end_by_date', 'div' => false, 'label' => '',"class"=>"inpt_txt_fld","maxlength" => "200","style" => "width:160px",'readonly'=>'readonly'));?>
+								By: <span class="intp-Span"><?php echo $form->text("CommunicationTask.task_end_by_date", array('id' => 'task_end_by_date', 'div' => false, 'label' => '',"class"=>"inpt-txt-fld form-control","maxlength" => "200","style" => "width:160px",'readonly'=>'readonly'));?>
 							</span></td>
 						</tr>
 						<tr>
 							<td align="right" width="140px"><label class="boldlabel">Note</label>
 							</td>
-							<td><span class="txtArea_top"> <span class="txtArea_bot"><?php echo $form->input("CommunicationTask.task_note", array('id' => 'task_note', 'div' => false, 'label' => '','rows'=>'8','cols'=>'36','class' =>'noBg'));?>
+							<td><span class="txtArea-top"> <span class="txtArea-bot"><?php echo $form->input("CommunicationTask.task_note", array('id' => 'task_note', 'div' => false, 'label' => '','rows'=>'8','cols'=>'36','class' =>'form-control noBg'));?>
 								</span>
 							</span></td>
 						</tr>
@@ -677,8 +677,8 @@ echo $form->input("CommunicationTask.monthly_weekof_noof_months", array('id' => 
 
 						<tr>
 							<td align="right" width="140px">&nbsp;</td>
-							<td><span class="btnLft">
-									<button name="runreport" id="runreport" class="btnRht"
+							<td><span class="btn-Lft">
+									<button name="runreport" id="runreport" class="btn-Rht btn btn-primary btn-sm"
 										value="RunReport" type="button">Run Report</button>
 							</span></td>
 						</tr>
