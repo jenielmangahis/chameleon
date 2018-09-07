@@ -552,72 +552,80 @@ function create_csv()
             }    
         ?>  
 <div class="container"> 
-<div class="titlCont">
-<div class="centerPage">
-	<div class="slider" id="toppanel" style="height: 20px; top:13px;right: -50px;width:545px !important; text-align:right;">
-	<?php echo $form->create("Admin", array("action" => "eventcreate",'type' => 'file','enctype'=>'multipart/form-data','name' => 'eventcreate', 'id' => "eventcreate","onsubmit"=>"return validateevent('$act');"))?>
-	<input type="hidden" id="current_domain" name="current_domain" value="<?php echo $current_domain;?>">
-	<?php
-$ids = $this->params['pass'][0]; 
-e($html->link($html->image('call.png') . ' ' . __(''), $base_url_admin."call/1",array('escape' => false)));
-
-e($html->link($html->image('email.png') . ' ' . __(''), $base_url_admin."sendtempmail/".$ids,array('escape' => false)));
-
-e($html->link($html->image('sms.png') . ' ' . __(''), $base_url_admin."sendsms/1",array('escape' => false)));
-
-
-e($html->link($html->image('message.png') . ' ' . __(''), $base_url_admin."messagenew",array('escape' => false)));
-
-e($html->link($html->image('note.png') . ' ' . __(''), "../players/notelist/2",array('escape' => false)));
-
-e($html->link($html->image('take.png') . ' ' . __(''), $base_url_admin."coming_soon/task",array('escape' => false))); ?>
-
-	
-<button type="submit" value="Submit" class="sendBut" name="data[Action][redirectpage]">
-	<?php e($html->image('save.png')) ?>
-</button>
-<button type="submit" value="Submit" class="sendBut" name="data[Action][noredirection]">
-	<?php e($html->image('send.png')) ?>
-</button>
-<button type="button" id="saveForm" class="sendBut"  ONCLICK="javascript:(window.location='<?php echo $backUrl ?>')">
-<?php e($html->image('back.png')) ?>
-</button>
-		 <?php  echo $this->renderElement('new_slider');  ?>
-
-	</div>
-
-	<span class="titlTxt">
-		Appointment/Event Details Add/Edit
-	</span>
-	
-	<div class="topTabs" style="height:25px;">
+	<div class="titlCont">
+    	<div class="slider-centerpage clearfix">
+        	<div class="center-Page col-sm-4">
+                <h2>Appointment/Event Details Add/Edit</h2>
+            </div>
+            <div class="slider-dashboard col-sm-8">
+            	<div class="icon-big-container">
+                	<?php echo $form->create("Admin", array("action" => "eventcreate",'type' => 'file','enctype'=>'multipart/form-data','name' => 'eventcreate', 'id' => "eventcreate","onsubmit"=>"return validateevent('$act');"))?>
+                    <input type="hidden" id="current_domain" name="current_domain" value="<?php echo $current_domain;?>">
+                    <?php
+                    $ids = $this->params['pass'][0]; 
+                    e($html->link($html->image('call.png') . ' ' . __(''), $base_url_admin."call/1",array('escape' => false)));
+                    
+                    e($html->link($html->image('email.png') . ' ' . __(''), $base_url_admin."sendtempmail/".$ids,array('escape' => false)));
+                    
+                    e($html->link($html->image('sms.png') . ' ' . __(''), $base_url_admin."sendsms/1",array('escape' => false)));
+                    
+                    
+                    e($html->link($html->image('message.png') . ' ' . __(''), $base_url_admin."messagenew",array('escape' => false)));
+                    
+                    e($html->link($html->image('note.png') . ' ' . __(''), "../players/notelist/2",array('escape' => false)));
+                    
+                    e($html->link($html->image('take.png') . ' ' . __(''), $base_url_admin."coming_soon/task",array('escape' => false))); ?>
+                    
+                    
+                    <button type="submit" value="Submit" class="sendBut" name="data[Action][redirectpage]">
+                    <?php e($html->image('save.png')) ?>
+                    </button>
+                    <button type="submit" value="Submit" class="sendBut" name="data[Action][noredirection]">
+                    <?php e($html->image('send.png')) ?>
+                    </button>
+                    <button type="button" id="saveForm" class="sendBut"  ONCLICK="javascript:(window.location='<?php echo $backUrl ?>')">
+                    <?php e($html->image('back.png')) ?>
+                    </button>
+                    <?php  echo $this->renderElement('new_slider');  ?>
+                </div>
+            </div>
+            <!--<div class="topTabs" style="height:25px;">
 		<?php /*?><ul>
 		<li><button type="submit" value="Submit" class="button" name="data[Action][redirectpage]"><span>Save</span></button></li>
 		<li><button type="submit" value="Submit" class="button" name="data[Action][noredirection]"><span>Apply</span></button></li>
 		<li><button type="button" id="saveForm" class="button"  ONCLICK="javascript:(window.location='<?php echo $backUrl ?>')"><span> Cancel</span></button></li>
 		</ul><?php */?>
-	</div>
-   <?php   //if($eid>0){ $this->loginarea="admins";    $this->subtabsel="eventlist";
-                    //echo $this->renderElement('eventlist_submenus'); } ?>
-					 <?php    $this->loginarea="admins";    $this->subtabsel="eventlist";
-		 
-			if($_GET['url'] === 'admins/appointment'){
-             //echo $this->renderElement('memberlistsecondlevel_submenus');
-			 echo $this->renderElement('events_submenus'); 
-				}
-				else{
-				
-             echo $this->renderElement('events_submenus'); } ?>    
+	</div>-->
+        </div>
+
 </div>
-</div>
-<div class="" style="width:990px; margin:0 auto">
+<!--<div class="" style="width:990px; margin:0 auto">
 </div>
 <br>
 
 <div style="border-left: 0px none; text-align: right; padding-top: 5px; color: rgb(255, 255, 255);" class="top-bar">
     
-   </div>
-<div class="" style="padding-left:110px">	
+   </div>-->
+   
+
+<div class="clearfix nav-submenu-container">
+    <div class="midCont submenu-Cont">
+      <?php   //if($eid>0){ $this->loginarea="admins";    $this->subtabsel="eventlist";
+	//echo $this->renderElement('eventlist_submenus'); } ?>
+			 <?php    $this->loginarea="admins";    $this->subtabsel="eventlist";
+        
+        if($_GET['url'] === 'admins/appointment'){
+        //echo $this->renderElement('memberlistsecondlevel_submenus');
+        echo $this->renderElement('events_submenus'); 
+        }
+        else{
+        
+        echo $this->renderElement('events_submenus'); } ?>    
+    </div>
+</div>
+   
+   
+<div class="midCont">	
 
 
     <?php if($session->check('Message.flash')){ ?>
@@ -659,7 +667,7 @@ e($html->link($html->image('take.png') . ' ' . __(''), $base_url_admin."coming_s
         </div>
         </td>
 			<td>
-			<span class="intpSpan"><?php echo $form->input("Event.title", array('id' => 'title', 'div' => false, 'label' => '',"class" => "inpt_txt_fld","maxlength" => "150"));?></span></td>
+			<span class="intp-Span"><?php echo $form->input("Event.title", array('id' => 'title', 'div' => false, 'label' => '',"class" => "inpt-txt-fld form-control","maxlength" => "150"));?></span></td>
 		</tr>
         
         <tr>
@@ -670,8 +678,8 @@ e($html->link($html->image('take.png') . ' ' . __(''), $base_url_admin."coming_s
         
         </td>
             <td>
-                <span class="txtArea_top">
-                    <span class="txtArea_bot">
+                <span class="txtArea-top">
+                    <span class="txtArea-bot">
 					
                    <?php  echo $form->select("Event.event_type",$event_type,null, array('id' => 'event_type', 'div' => false, 'label' => '','style' =>'background: none repeat scroll 0% 0% transparent; margin-bottom: 6px; width:230px;',"class" =>"","maxlength" => "250"),"---Select---");
 					?>                    
@@ -686,11 +694,11 @@ e($html->link($html->image('take.png') . ' ' . __(''), $base_url_admin."coming_s
         </div>
         </td>
             <td>
-                                      <span class="txtArea_top">
-                    <span class="txtArea_bot">        <select id="stime" name="data[Event][stime]" class="noBg" style="border: none; width: 230px; margin-bottom: 7px;"> 
+                                      <span class="txtArea-top">
+                    <span class="txtArea-bot">        <select id="stime" name="data[Event][stime]" class="form-control noBg" style="border: none; width: 230px; margin-bottom: 7px;"> 
                     <?php echo $option_stime; ?>
                     </select>
-                    <?php //echo $form->select("Event.stime",$timedropdown,$sel_stime,array('id' => 'country','class'=>'multilist',"---Select---"); ?>
+                    <?php //echo $form->select("Event.stime",$timedropdown,$sel_stime,array('id' => 'country','class'=>'multi-list form-control',"---Select---"); ?>
                 </span>
                 </span>
                </td>
@@ -702,12 +710,12 @@ e($html->link($html->image('take.png') . ' ' . __(''), $base_url_admin."coming_s
         </div>
         </td>
             <td>
-                  <span class="txtArea_top">
-                    <span class="txtArea_bot">
-                    <select id="etime" name="data[Event][etime]" class="noBg" style="border: none; width: 230px; margin-bottom: 7px;">
+                  <span class="txtArea-top">
+                    <span class="txtArea-bot">
+                    <select id="etime" name="data[Event][etime]" class="form-control noBg" style="border: none; width: 230px; margin-bottom: 7px;">
                     <?php echo $option_etime; ?> 
                     </select>
-                    <?php //echo $form->select("Event.etime",$timedropdown,$sel_etime,array('id' => 'country','class'=>'multilist',"---Select---"); ?>
+                    <?php //echo $form->select("Event.etime",$timedropdown,$sel_etime,array('id' => 'country','class'=>'multi-list form-control',"---Select---"); ?>
                 </span>
                 </span></td>
             </tr>
@@ -723,9 +731,9 @@ e($html->link($html->image('take.png') . ' ' . __(''), $base_url_admin."coming_s
         </div>
         </td>
         <td>
-                  <span class="txtArea_top">
-                    <span class="txtArea_bot">
-                    <?php echo $form->select("Event.timezone_id",$timeZoneDropDown,null,array('id' => 'timezone_id','class'=>'multilist'),array(''=>"---Select---")); ?>
+                  <span class="txtArea-top">
+                    <span class="txtArea-bot">
+                    <?php echo $form->select("Event.timezone_id",$timeZoneDropDown,null,array('id' => 'timezone_id','class'=>'multi-list form-control'),array(''=>"---Select---")); ?>
                    
                 </span>
                 </span></td>
@@ -739,7 +747,7 @@ e($html->link($html->image('take.png') . ' ' . __(''), $base_url_admin."coming_s
         
         </td>
             <td>
-                <span class="intpSpan middle dateBut"><?php echo $form->text("Event.starttime", array('id' => 'starttime', 'value'=>(isset($sdate))?$sdate:'', 'div' => false, 'label' => '',"class" => "inpt_txt_fld","maxlength" => "200",'readonly'=>'readonly'));?></span></td>
+                <span class="intp-Span middle dateBut"><?php echo $form->text("Event.starttime", array('id' => 'starttime', 'value'=>(isset($sdate))?$sdate:'', 'div' => false, 'label' => '',"class" => "inpt-txt-fld form-control","maxlength" => "200",'readonly'=>'readonly'));?></span></td>
             </tr>      
         
    
@@ -755,7 +763,7 @@ e($html->link($html->image('take.png') . ' ' . __(''), $base_url_admin."coming_s
         </td>       
             <td>
             <div id="end_date_field" style="display: none;">
-                <span class="intpSpan middle"><?php echo $form->text("Event.endtime", array('id' => 'endtime','value'=>(isset($edate))?$edate:'', 'div' => false, 'label' => '',"class" => "inpt_txt_fld","maxlength" => "200",'readonly'=>'readonly'));?></span></div>
+                <span class="intp-Span middle"><?php echo $form->text("Event.endtime", array('id' => 'endtime','value'=>(isset($edate))?$edate:'', 'div' => false, 'label' => '',"class" => "inpt-txt-fld form-control","maxlength" => "200",'readonly'=>'readonly'));?></span></div>
             </td>
                 
         
@@ -961,7 +969,7 @@ e($html->link($html->image('take.png') . ' ' . __(''), $base_url_admin."coming_s
         <label class="boldlabel">Send Email Template </label>
 		
 		<div style="margin:7px 5px 0 0;">
-							       <span class="btnLft"><input type="button"  class="btnRht" value="Add" name="Add" onclick="addEmailTempforRSVP();" /></span>					
+							       <span class="btn-Lft"><input type="button"  class="btn-Rht btn btn-primary btn-sm" value="Add" name="Add" onclick="addEmailTempforRSVP();" /></span>					
 						</div>
 						
 						
@@ -971,14 +979,14 @@ e($html->link($html->image('take.png') . ' ' . __(''), $base_url_admin."coming_s
  
 	  
 	    <td style=" vertical-align: top;">
-            <span class="txtArea_top">
-                <span class="txtArea_bot">
+            <span class="txtArea-top">
+                <span class="txtArea-bot">
 			
 				<?php  $template = $this->data['EmailTemplate']['email_template_name']; 
 				
 				?>
 										
-<select onchange="showselecttemplate(this.value)" class="multilist" id="templateid" name="data[EmailTemplate][id]">
+<select onchange="showselecttemplate(this.value)" class="multi-list form-control" id="templateid" name="data[EmailTemplate][id]">
 <option value="select">---Select---</option>
 <?php
 foreach($email_templates as $key =>$temp){
@@ -997,9 +1005,9 @@ foreach($email_templates as $key =>$temp){
 				
 				
 				
-				 <?php //echo $form->select("EmailTemplate.id",isset($templatedropdown)?$templatedropdown:'',null,array('id' => 'templateid','class'=>'multilist','onchange'=>'showselecttemplate(this.value)'),"---Select---"); ?>
+				 <?php //echo $form->select("EmailTemplate.id",isset($templatedropdown)?$templatedropdown:'',null,array('id' => 'templateid','class'=>'multi-list form-control','onchange'=>'showselecttemplate(this.value)'),"---Select---"); ?>
 				
-                <?php //echo $form->select("Event.rsvp_email",$respondaremail,null,array('id' => 'rsvp_email','class'=>'multilist'),array(''=>'--Select--')); ?>
+                <?php //echo $form->select("Event.rsvp_email",$respondaremail,null,array('id' => 'rsvp_email','class'=>'multi-list form-control'),array(''=>'--Select--')); ?>
                 </span>
             </span>
      
@@ -1046,9 +1054,9 @@ foreach($email_templates as $key =>$temp){
         </div>
         </td>
         <td>
-            <span class="txtArea_top">
-                <span class="txtArea_bot">
-                <?php echo $form->select("Event.branch",$respondarbranch,null,array('id' => 'branch','class'=>'multilist'),array(''=>'--Select--')); ?>
+            <span class="txtArea-top">
+                <span class="txtArea-bot">
+                <?php echo $form->select("Event.branch",$respondarbranch,null,array('id' => 'branch','class'=>'multi-list form-control'),array(''=>'--Select--')); ?>
                 </span>
             </span>
             
@@ -1063,8 +1071,8 @@ foreach($email_templates as $key =>$temp){
 			   
 				</td>
 				<td>
-					<span class="intpSpan"><?php echo $form->input("Event.location", array('id' => 'location', 'div' => false, 'label' => 
-					'',"class" => "inpt_txt_fld","maxlength" => "150"));?></span>
+					<span class="intp-Span"><?php echo $form->input("Event.location", array('id' => 'location', 'div' => false, 'label' => 
+					'',"class" => "inpt-txt-fld form-control","maxlength" => "150"));?></span>
 				</td>
 				</tr>
 				
@@ -1075,7 +1083,7 @@ foreach($email_templates as $key =>$temp){
 				</div>
 			   </td>
 					<td>
-					<span class="intpSpan"><?php echo $form->input("Event.address", array('id' => 'address', 'div' => false, 'label' => '',"class" => "inpt_txt_fld","maxlength" => "150"));?></span>
+					<span class="intp-Span"><?php echo $form->input("Event.address", array('id' => 'address', 'div' => false, 'label' => '',"class" => "inpt-txt-fld form-control","maxlength" => "150"));?></span>
 				   </td>
 				</tr> 
 				
@@ -1085,7 +1093,7 @@ foreach($email_templates as $key =>$temp){
 					<label class="boldlabel">Country </label>
 					</div>
 					</td>
-					<td><span class="txtArea_top"><span class="txtArea_bot">
+					<td><span class="txtArea-top"><span class="txtArea-bot">
 					<?php echo $form->select("Event.country",$countrydropdown,$selectedcountry,array('id' => 'country','style'=>'background: none repeat scroll 0% 0% transparent; margin-bottom: 6px; width:230px;','onchange'=>'return getstateoptions(this.value,"Event")'),array('254'=>'United States')); ?>
 					<?php echo $form->error('Event.country', array('class' => 'errormsg')); ?> </span>
 					</td>
@@ -1096,7 +1104,7 @@ foreach($email_templates as $key =>$temp){
 						<label class="boldlabel">State</label>
 						</div>
 						</td>
-						<td><span class="txtArea_top"><span class="txtArea_bot">
+						<td><span class="txtArea-top"><span class="txtArea-bot">
 							<span id="statediv"><?php echo $form->select("Event.state",$statedropdown,$selectedstate,array('id' => 'state','style'=>'background: none repeat scroll 0% 0% transparent; margin-bottom: 6px; width:230px;'),"---Select---"); ?></span> </span></td>
             		</tr>
 					<tr>
@@ -1106,8 +1114,8 @@ foreach($email_templates as $key =>$temp){
 						</div>
 						</td>
 						<td>
-						<label for="project_name"></label><span class="intpSpan">
-							<?php echo $form->input("Event.city",array('id' => 'city', 'div' => false, 'label' => '',"class" => "inpt_txt_fld","maxlength" => "150")); ?></span></td>
+						<label for="project_name"></label><span class="intp-Span">
+							<?php echo $form->input("Event.city",array('id' => 'city', 'div' => false, 'label' => '',"class" => "inpt-txt-fld form-control","maxlength" => "150")); ?></span></td>
 				</tr>
 
 				<tr>
@@ -1117,8 +1125,8 @@ foreach($email_templates as $key =>$temp){
 					</div>
 					</td>
 					<td >
-					<label for="project_name"></label><span class="intpSpan">
-					<?php echo $form->input("Event.zipcode", array('id' => 'zipcode', 'div' => false, 'label' => '',"class" => "inpt_txt_fld","maxlength" => "10"));?></span></td>
+					<label for="project_name"></label><span class="intp-Span">
+					<?php echo $form->input("Event.zipcode", array('id' => 'zipcode', 'div' => false, 'label' => '',"class" => "inpt-txt-fld form-control","maxlength" => "10"));?></span></td>
 				</tr>       
            <tr>
         <td>
@@ -1127,8 +1135,8 @@ foreach($email_templates as $key =>$temp){
         </div>
        </td>
             <td>
-            <span class="txtArea_top">
-                <span class="txtArea_bot"><?php echo $form->textarea("Event.eventdescription", array('id' => 'eventdescription', 'div' => false, 'label' => '','cols' => '35', 'rows' => '4',"class" => "noBg",'style'=>'width:231px;'));?></span></span></td>
+            <span class="txtArea-top">
+                <span class="txtArea-bot"><?php echo $form->textarea("Event.eventdescription", array('id' => 'eventdescription', 'div' => false, 'label' => '','cols' => '35', 'rows' => '4',"class" => "form-control noBg",'style'=>'width:231px;'));?></span></span></td>
         </tr> 
         
 		

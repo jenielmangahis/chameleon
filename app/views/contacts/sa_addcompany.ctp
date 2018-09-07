@@ -13,17 +13,19 @@ $('#compAnies').addClass("butBgSelt");
 
 
 
-<div class="titlCont"><div style="width:960px;margin:0 auto">
-    
-   <div class="slider" id="toppanel" style="height: 20px; top:13px;right: -50px;width:545px !important; text-align:right;">
-<?php echo $form->create("contacts", array("action" => "sa_addcompany",'type' => 'file','enctype'=>'multipart/form-data','name' => 'addcompany', 'id' => "addcompany1","onsubmit"=>"return validatecompany('$act');"))?>
-<button class="sendBut" id="Submit" name="redirectpage" type="submit"><?php e($html->image('save.png')); ?> </button>
-<button class="sendBut" id="Submit" name="redirectpage" type="submit"><?php e($html->image('apply.png')); ?></button>
-    <?php  echo $this->renderElement('new_slider');  ?>
-   
-</div> 
-
-  <span class="titlTxt"><?php echo $PageHeading; ?> </span>
+<div class="titlCont">
+	<div class="slider-centerpage clearfix">
+    	<div class="center-Page col-sm-6">
+            <h2><?php echo $PageHeading; ?></h2>
+        </div>
+        <div class="slider-dashboard col-sm-6">
+        	<div class="icon-container">
+            	<?php echo $form->create("contacts", array("action" => "sa_addcompany",'type' => 'file','enctype'=>'multipart/form-data','name' => 'addcompany', 'id' => "addcompany1","onsubmit"=>"return validatecompany('$act');"))?>
+                <button class="sendBut" id="Submit" name="redirectpage" type="submit"><?php e($html->image('save.png')); ?> </button>
+                <button class="sendBut" id="Submit" name="redirectpage" type="submit"><?php e($html->image('apply.png')); ?></button>
+                <?php  echo $this->renderElement('new_slider');  ?>
+            </div>
+        </div>
         <div class="topTabs" style="height:25px;">
                 <?php /*?><ul>
                 <li><button class="button" id="Submit" name="redirectpage" type="submit"><span> Save</span> </button>&nbsp;</li>
@@ -43,20 +45,27 @@ $('#compAnies').addClass("butBgSelt");
 				</li>
                 </ul><?php */?>
         </div>
-		<?php    $this->loginarea="contacts";    $this->subtabsel="sa_contactlist";
-             echo $this->renderElement('memberlistsecondlevel_submenus');  ?> 
+    </div>
 </div>
+
+
+<div class="clearfix nav-submenu-container">
+    <div class="midCont submenu-Cont">
+       <?php    $this->loginarea="contacts";    $this->subtabsel="sa_contactlist";
+             echo $this->renderElement('memberlistsecondlevel_submenus');  ?>
+    </div>
 </div>
+
 <div class="midCont">
 <div id="center-column">
-	<div class="left">
+	<div class="form-container">
 		
 		<!-- ADD Sub Admin FORM BOF -->
                   
                      <!-- ADD FIELD BOF -->
 
 		
-<div class='left' style="width:816px;">		
+<div class="table-responsive">		
  <?php if($session->check('Message.flash')){ ?> 
 <div id="blck"> 
         <div class="msgBoxTopLft"><div class="msgBoxTopRht"><div class="msgBoxTopBg"></div></div></div>
@@ -94,9 +103,9 @@ $('#compAnies').addClass("butBgSelt");
     <tr>
       <td align="right"><label class="boldlabel">Company Type <span class="red">*</span></label></td>
       <td><label for="project_name"></label>
-      	<span class="txtArea_top">
-                                <span class="txtArea_bot">
-                                    <span id="compdiv"><?php echo $form->select("Company.company_type_id",$companytypedropdown,$selectedcompanytype,array('id' => 'company_type_id','class'=>'multilist'),"---Select---"); ?></span></span></span>
+      	<span class="txtArea-top">
+                                <span class="txtArea-bot">
+                                    <span id="compdiv"><?php echo $form->select("Company.company_type_id",$companytypedropdown,$selectedcompanytype,array('id' => 'company_type_id','class'=>'multi-list form-control'),"---Select---"); ?></span></span></span>
 		</td>
      
     </tr>
@@ -107,12 +116,12 @@ $('#compAnies').addClass("butBgSelt");
 	  <td valign="top"><label class="boldlabel">Owner of Project(s)</label></td>
 	  <td>
 		<label for="project_name"></label>
-		<span class="txtArea_top">
-			<span class="txtArea_bot">
+		<span class="txtArea-top">
+			<span class="txtArea-bot">
 				<span id="compdiv">
 				<?php
 				 //$realetedProjects = array();
-				 echo $form->select('ProjectOwner.owners',$realetedProjectsC, null,array('multiple'=>'multiple','id'=>'companies_bb','size'=>'4','empty'=>false,'class'=>'multilist','tabindex'=>2,'style'=>'min-height:32px;','disabled'=>'disabled'));
+				 echo $form->select('ProjectOwner.owners',$realetedProjectsC, null,array('multiple'=>'multiple','id'=>'companies_bb','size'=>'4','empty'=>false,'class'=>'multi-list form-control','tabindex'=>2,'style'=>'min-height:32px;','disabled'=>'disabled'));
 				?>
 				</span>
 			</span>
@@ -126,30 +135,30 @@ $('#compAnies').addClass("butBgSelt");
     <tr>
       <td align="right"><label class="boldlabel">Company Name <span class="red">*</span></label></td>
       <td ><label for="project_name"></label>
-        <span class="intpSpan"><?php echo $form->input("Company.company_name", array('id' => 'company_name', 'div' => false, 'label' => '',"class" => "inpt_txt_fld","maxlength" => "150"));?></span></td>
+        <span class="intp-Span"><?php echo $form->input("Company.company_name", array('id' => 'company_name', 'div' => false, 'label' => '',"class" => "inpt-txt-fld form-control","maxlength" => "150"));?></span></td>
      
     </tr>
     
     <tr>
       <td align="right"><label class="boldlabel">Address 1 <span class="red">*</span></label></td>
       <td ><label for="project_name"></label>
-        <span class="intpSpan"><?php echo $form->input("Company.address1", array('id' => 'address1', 'div' => false, 'label' => '',"class" => "inpt_txt_fld","maxlength" => "200"));?></span></td>
+        <span class="intp-Span"><?php echo $form->input("Company.address1", array('id' => 'address1', 'div' => false, 'label' => '',"class" => "inpt-txt-fld form-control","maxlength" => "200"));?></span></td>
      
     </tr>
     
     <tr>
       <td align="right"><label class="boldlabel">Address 2 </label></td>
       <td ><label for="project_name"></label>
-        <span class="intpSpan"><?php echo $form->input("Company.address2", array('id' => 'address2', 'div' => false, 'label' => '',"class" => "inpt_txt_fld","maxlength" => "200"));?></span></td>
+        <span class="intp-Span"><?php echo $form->input("Company.address2", array('id' => 'address2', 'div' => false, 'label' => '',"class" => "inpt-txt-fld form-control","maxlength" => "200"));?></span></td>
      
     </tr>
     
     <tr>
       <td align="right"><label class="boldlabel">Country <span class="red">*</span></label></td>
       <td><label for="project_name"></label>
-       <span class="txtArea_top">
-                                <span class="txtArea_bot">
-                                    <span id="compdiv"> <?php echo $form->select("Company.country",$countrydropdown,$selectedcountry,array('id' => 'country','class'=>'multilist','onchange'=>'return getstateoptions(this.value,"Company")'),array('254'=>'United States')); ?></span></span></span></td>
+       <span class="txtArea-top">
+                                <span class="txtArea-bot">
+                                    <span id="compdiv"> <?php echo $form->select("Company.country",$countrydropdown,$selectedcountry,array('id' => 'country','class'=>'multi-list form-control','onchange'=>'return getstateoptions(this.value,"Company")'),array('254'=>'United States')); ?></span></span></span></td>
      
     </tr>
     
@@ -157,45 +166,45 @@ $('#compAnies').addClass("butBgSelt");
      <tr>
       <td align="right"><label class="boldlabel">State <span class="red">*</span></label></td>
       <td><label for="project_name"></label>
-        <span class="txtArea_top">
-                                <span class="txtArea_bot">
+        <span class="txtArea-top">
+                                <span class="txtArea-bot">
                                    <span id="statediv">
-                                    <?php echo $form->select("Company.state",$statedropdown,$selectedstate,array('id' => 'state',"class" => "multilist"),"---Select---"); ?></span></span></span></td>
+                                    <?php echo $form->select("Company.state",$statedropdown,$selectedstate,array('id' => 'state',"class" => "multi-list form-control"),"---Select---"); ?></span></span></span></td>
       
     </tr>
     
     <tr>
       <td align="right"><label class="boldlabel">City <span class="red">*</span></label></td>
       <td ><label for="project_name"></label>
-        <span class="intpSpan"><?php echo $form->input("Company.city",array('id' => 'city', 'div' => false, 'label' => '',"class" => "inpt_txt_fld","maxlength" => "150")); ?></span></td>
+        <span class="intp-Span"><?php echo $form->input("Company.city",array('id' => 'city', 'div' => false, 'label' => '',"class" => "inpt-txt-fld form-control","maxlength" => "150")); ?></span></td>
      
     </tr>
     
      <tr>
       <td align="right"><label class="boldlabel">Zip/Postal Code <span class="red">*</span></label></td>
       <td><label for="project_name"></label>
-        <span class="intpSpan"><?php echo $form->input("Company.zipcode", array('id' => 'zipcode', 'div' => false, 'label' => '',"class" => "inpt_txt_fld","maxlength" => "10"));?></span></td>
+        <span class="intp-Span"><?php echo $form->input("Company.zipcode", array('id' => 'zipcode', 'div' => false, 'label' => '',"class" => "inpt-txt-fld form-control","maxlength" => "10"));?></span></td>
       
     </tr>
     
       <tr>
       <td align="right"><label class="boldlabel">Email <span class="red">*</span></label></td>
       <td><label for="project_name"></label>
-        <span class="intpSpan"><?php echo $form->input("Company.email", array('id' => 'email', 'div' => false, 'label' => '',"class" => "inpt_txt_fld","maxlength" => "200"));?></span></td>
+        <span class="intp-Span"><?php echo $form->input("Company.email", array('id' => 'email', 'div' => false, 'label' => '',"class" => "inpt-txt-fld form-control","maxlength" => "200"));?></span></td>
      
     </tr>
     
      <tr>
       <td align="right"><label class="boldlabel">Phone </label></td>
       <td><label for="project_name"></label>
-       <span class="intpSpan"> <?php echo $form->input("Company.phone", array('id' => 'phone', 'div' => false, 'label' => '',"class" => "inpt_txt_fld","maxlength" => "12"));?></span></td>
+       <span class="intp-Span"> <?php echo $form->input("Company.phone", array('id' => 'phone', 'div' => false, 'label' => '',"class" => "inpt-txt-fld form-control","maxlength" => "12"));?></span></td>
      
     </tr>
     
      <tr>
       <td align="right"><label class="boldlabel">Fax </label></td>
       <td><label for="project_name"></label>
-         <span class="intpSpan"> <?php echo $form->input("Company.fax", array('id' => 'fax', 'div' => false, 'label' => '',"class" => "inpt_txt_fld","maxlength" => "10"));?></span></td>
+         <span class="intp-Span"> <?php echo $form->input("Company.fax", array('id' => 'fax', 'div' => false, 'label' => '',"class" => "inpt-txt-fld form-control","maxlength" => "10"));?></span></td>
      
     </tr>
     
@@ -212,11 +221,11 @@ $('#compAnies').addClass("butBgSelt");
 					<tr>
 					  <td  valign='top'><label class="boldlabel">Contacts </label></td>
 				      <td>
-				      	<div style="width: 230px;min-height: 150px; overflow: auto; border: solid 1px #ccc" class='multilist'>
+				      	<div style="width: 230px;min-height: 150px; overflow: auto; border: solid 1px #ccc" class='multi-list form-control'>
 				      	<?php 
 						//print_r($contacts);
-						//echo $form->select('contacts',$contacts, null,array('multiple'=>'multiple','id'=>'contacts','size'=>'10','empty'=>false,'style'=>'width:300px;','disabled'=>'disabled','class'=>'multilist'));?>
-				      	<table class='multilist' style="width:300px;min-height:150px;" border="1">
+						//echo $form->select('contacts',$contacts, null,array('multiple'=>'multiple','id'=>'contacts','size'=>'10','empty'=>false,'style'=>'width:300px;','disabled'=>'disabled','class'=>'multi-list form-control'));?>
+				      	<table class='multi-list form-control' style="width:300px;min-height:150px;" border="1">
 							<tr><th align="left" width="45%">Name</th><th align="left" width="55%">Title</th></tr>
 							<?php foreach($contacts as $title=>$name) {?>
 							<tr><td><?php echo $title ?></td><td><?php echo $name ?></td></tr>
@@ -233,14 +242,14 @@ $('#compAnies').addClass("butBgSelt");
 				 <tr>
 				  <td align="right"><label class="boldlabel">Website </label></td>
 				  <td ><label for="project_name"></label>
-					<span class="intpSpan"> <?php echo $form->input("Company.website", array('id' => 'website', 'div' => false, 'label' => '',"class" => "inpt_txt_fld","maxlength" => "250"));?></span></td>
+					<span class="intp-Span"> <?php echo $form->input("Company.website", array('id' => 'website', 'div' => false, 'label' => '',"class" => "inpt-txt-fld form-control","maxlength" => "250"));?></span></td>
 				 
 				</tr>
 				
 				 <tr>
 				  <td align="right"><label class="boldlabel">Note </label></td>
 				  <td ><label for="project_name"></label>
-				   <span class="txtArea_top"><span class="txtArea_bot"><?php echo $form->textarea("Company.notes", array('id' => 'notes', 'div' => false, 'label' => '','cols' => '24', 'rows' => '4',"class" => "noBg"));?></span></span></td>
+				   <span class="txtArea-top"><span class="txtArea-bot"><?php echo $form->textarea("Company.notes", array('id' => 'notes', 'div' => false, 'label' => '','cols' => '24', 'rows' => '4',"class" => "noBg"));?></span></span></td>
 				 
 				</tr>
 				<tr>
