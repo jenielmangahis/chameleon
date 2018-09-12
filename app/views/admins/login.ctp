@@ -1,4 +1,4 @@
-<?php ?><div id="container">
+<?php ?><div id="container" class="responsive-container">
 
 <div class="info">
 	<h2>

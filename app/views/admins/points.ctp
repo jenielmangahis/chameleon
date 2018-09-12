@@ -80,7 +80,7 @@ $backUrl =$base_url_admin.'points';
 
                 <tr>
                 
-                <td width="40%" style="padding:0 10px" >
+                <td class="col-sm-6">
                 <table class="table table-bordered" cellspacing="10" cellpadding="0">
                 <tr>
                     <td width="2%"><b>Use</b></td>
@@ -134,7 +134,7 @@ $backUrl =$base_url_admin.'points';
 
                 
                 
-                <td width="60%" style="padding:0 10px" valign="top">
+                <td class="col-sm-6" valign="top">
                 <table class="table table-bordered" cellspacing="5" cellpadding="0">
                 
                 <tr>
