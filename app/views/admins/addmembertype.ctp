@@ -6,24 +6,25 @@
  $base_url_admin = Configure::read('App.base_url_admin');
 $backUrl = $base_url_admin.'membertypes';
  ?>
-<div class="titlCont"><div style="width:960px;margin:0 auto">
-
-   <div class="slider" id="toppanel" style="height: 20px; top:13px;right: -50px;width:545px !important; text-align:right;">	
-   <?php echo $form->create("Admins", array("action" => "addmembertype",'name' => 'addmembertype', 'id' => "addmembertype",'onsubmit' => 'return validateMemberType("add");'));
-       echo $form->hidden("MemberType.id", array('id' => 'membertypeid','value'=>"$membertypeid")); 
-      
-?>
-   <button type="submit" value="Submit" class="sendBut" name="data[Action][redirectpage]">
-   <?php e($html->image('save.png')); ?></button>	
-   <button type="submit" value="Submit" class="sendBut" name="data[Action][noredirection]">
-   <?php e($html->image('apply.png')); ?></button>	
-   <button type="button" id="saveForm" class="sendBut"  onclick="javascript:(window.location='<?php echo $backUrl;?>'); "  ><?php e($html->image('cancle.png')); ?></button>
-<?php
-//e($html->link($html->image('new.png') . ' ','coming_soon/help',array('escape' => false)));
-echo $this->renderElement('new_slider');
-?>			
-</div>
-  <span class="titlTxt"><?php echo $pageactionname;?> Member Type </span>
+<div class="titlCont">
+	<div class="slider-centerpage clearfix">
+    	<div class="center-Page col-sm-6">
+            <h2><?php echo $pageactionname;?> Member Type</h2>
+        </div>
+        <div class="slider-dashboard col-sm-6">
+        	<div class="icon-container">
+            	<?php echo $form->create("Admins", array("action" => "addmembertype",'name' => 'addmembertype', 'id' => "addmembertype",'onsubmit' => 'return validateMemberType("add");'));
+				echo $form->hidden("MemberType.id", array('id' => 'membertypeid','value'=>"$membertypeid")); 
+				
+				?>
+				<button type="submit" value="Submit" class="sendBut" name="data[Action][redirectpage]">
+				<?php e($html->image('save.png')); ?></button>	
+				<button type="submit" value="Submit" class="sendBut" name="data[Action][noredirection]">
+				<?php e($html->image('apply.png')); ?></button>	
+				<button type="button" id="saveForm" class="sendBut"  onclick="javascript:(window.location='<?php echo $backUrl;?>'); "  ><?php e($html->image('cancle.png')); ?></button>
+				<?php echo $this->renderElement('new_slider'); ?>			
+            </div>
+        </div>
         <div class="topTabs" style="height:25px;">
                 <?php /*?><ul>
                 <li><button type="submit" value="Submit" class="button" name="data[Action][redirectpage]"><span>Save</span></button></li>
@@ -31,14 +32,19 @@ echo $this->renderElement('new_slider');
           <li><button type="button" id="saveForm" class="button"  onclick="javascript:(window.location='<?php echo $backUrl;?>'); "  ><span> Cancel</span></button></li>
             </ul><?php */?>
         </div>
-		  <?php    $this->loginarea="admins";    $this->subtabsel="membertypes";
-                    echo $this->renderElement('memberlist_submenus');  ?>  
-</div></div>
+    </div>
+</div>
 
 
+<div class="clearfix nav-submenu-container">
+	<div class="midCont">
+		<?php    $this->loginarea="admins";    $this->subtabsel="membertypes";
+                    echo $this->renderElement('memberlist_submenus');  ?> 
+    </div>
+</div>
     
 	
-<div class="midPadd" style="float:left;padding-left:195px;">
+<div class="midCont table-responsive">
 		<div id="addcmp" style="height:300px;">
 
 	<?php if($session->check('Message.flash')) { echo $this->renderElement('error_message'); } ?>
@@ -46,22 +52,22 @@ echo $this->renderElement('new_slider');
 
 		<!-- ADD Sub Admin FORM BOF -->
                   
-		<table width="100%" align="left" cellpadding="3" cellspacing="3">
+		<table class="table table-borderless" width="100%" align="left" cellpadding="3" cellspacing="3">
 		
 		<tr><td align="right" style="width: 15%;" valign="top"><label class="boldlabel">Member Type <span class="red">*</span></label></td>
-				<td style="width: 85%;"> <span class="intpSpan">
+				<td style="width: 85%;"> <span class="intp-Span">
 				<?php  if(!empty($membertypeid)){
 					$readonly = 'disabled';
 				}else{
 					$readonly = '';
 				}
-				echo $form->input("MemberType.member_type", array('id' => 'member_type', 'div' => false, 'label' => '','disabled' => $readonly, "class" => "inpt_txt_fld","maxlength" => "200"));?></span></td><td>&nbsp;</td><td>&nbsp;</td>
+				echo $form->input("MemberType.member_type", array('id' => 'member_type', 'div' => false, 'label' => '','disabled' => $readonly, "class" => "inpt-txt-fld form-control","maxlength" => "200"));?></span></td><td>&nbsp;</td><td>&nbsp;</td>
 	        </tr>
 			<tr>
 			<td align="right" style="width: 15%;" valign="top">
 				&nbsp;&nbsp;<label class="boldlabel">Google PIN Color</label>
 				</td><td>
-			 <span class="intpSpan"><?php echo $form->input('MemberType.pincolor',array('class'=>'inpt_txt_fld1','div'=>false,'label'=>false,'style' =>'width:115px;')); ?></span> &nbsp;&nbsp;
+			 <span class="intp-Span"><?php echo $form->input('MemberType.pincolor',array('class'=>'inpt-txt-fld form-control','div'=>false,'label'=>false,'style' =>'width:115px;')); ?></span> &nbsp;&nbsp;
 				
 			</td>
 			
@@ -69,9 +75,9 @@ echo $this->renderElement('new_slider');
                        
          
             <tr><td align="right" valign="top"><label class="boldlabel">Notes </label></td>
-                <td><span class="txtArea_top">
-                          <span class="newtxtArea_bot">
-                          <?php echo $form->textarea("MemberType.note", array('id' => 'note', 'div' => false, 'label' => '','cols' => '27', 'rows' => '5',"class" => "noBg"));?>
+                <td><span class="txtArea-top">
+                          <span class="newtxtArea-bot">
+                          <?php echo $form->textarea("MemberType.note", array('id' => 'note', 'div' => false, 'label' => '','cols' => '27', 'rows' => '5',"class" => "form-control noBg"));?>
                           </span></span>
                 </td>
 

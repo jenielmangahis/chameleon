@@ -17,59 +17,64 @@
 <!--container starts here-->
 
 
-<div class="titlCont"><div style="width:960px; margin:0 auto;">
-<div class="slider" id="toppanel" style="height: 20px; top:13px;right: -50px;width:545px !important; text-align:right;">
-<?php 
-		//,"onsubmit"=>"return validateholder('add');"
-		echo $form->create("Admin", array("action" => "addholder",'type' => 'file','enctype'=>'multipart/form-data','name' => 'addholder','onsubmit'=>"return validateholders();", 'id' => "addholder"))?>
-
-<button type="submit" value="Submit" class="sendBut" name="data[Action][redirectpage]">
-<?php e($html->image('save.png')); ?></button>
-<button type="submit" value="Submit" class="sendBut" name="data[Action][noredirection]"><?php e($html->image('apply.png')); ?></button>
-<button type="button" id="saveForm" class="sendBut"  ONCLICK="javascript:(window.location='<?php echo $lgrt;?>')"><?php e($html->image('cancle.png')); ?></button>
-	 <?php  echo $this->renderElement('new_slider');  ?>
-
-
-</div>
- 
-<?php  //echo $this->renderElement('project_name');  ?>  
-<span class="titlTxt"><?php e($titlTxtHeading); ?></span>
-
-<div class="topTabs" style="height:25px;">
+<div class="titlCont">
+	<div class="slider-centerpage clearfix">
+    	<div class="center-Page col-sm-6">
+            <h2><?php e($titlTxtHeading); ?></h2>
+        </div>
+        <div class="slider-dashboard col-sm-6">
+        	<div class="icon-container">
+            	<?php 
+				//,"onsubmit"=>"return validateholder('add');"
+				echo $form->create("Admin", array("action" => "addholder",'type' => 'file','enctype'=>'multipart/form-data','name' => 'addholder','onsubmit'=>"return validateholders();", 'id' => "addholder"))?>
+				
+				<button type="submit" value="Submit" class="sendBut" name="data[Action][redirectpage]">
+				<?php e($html->image('save.png')); ?></button>
+				<button type="submit" value="Submit" class="sendBut" name="data[Action][noredirection]"><?php e($html->image('apply.png')); ?></button>
+				<button type="button" id="saveForm" class="sendBut"  ONCLICK="javascript:(window.location='<?php echo $lgrt;?>')"><?php e($html->image('cancle.png')); ?></button>
+				<?php  echo $this->renderElement('new_slider');  ?>
+            </div>
+        </div>
+        <div class="topTabs" style="height:25px;">
 <?php /*?><ul>
 <li><button type="submit" value="Submit" class="button" name="data[Action][redirectpage]"><span>Save</span></button></li>
 <li><button type="submit" value="Submit" class="button" name="data[Action][noredirection]"><span>Apply</span></button></li>
 <li><button type="button" id="saveForm" class="button"  ONCLICK="javascript:(window.location='<?php echo $lgrt;?>')"><span> Cancel</span></button></li>
 </ul><?php */?>
 </div>
-<div class="clear"></div>
- <?php  
-                    
-                    if(isset($this->params['pass'][0])&&$this->params['pass'][0]=="secondlevel")
-                    {
-						$this->loginarea="admins";    $this->subtabsel="memberlist";
-                        echo $this->renderElement('memberlistsecondlevel_submenus');  
-                    }  
-                    else
-                    {   if($_GET['url']==='admins/addholder/non') 
-						{
-							$this->loginarea="admins";    $this->subtabsel="nonholderslist";
-							
-						}
-						if($_GET['url']==='admins/addholder') 
-						{
-							$this->loginarea="admins";    $this->subtabsel="holderslist";
-							
-						}
-                        echo $this->renderElement('memberlist_submenus');
-                    }
-
-             ?>
-</div>
+    </div>
 
 </div><!--rightpanel ends here-->
 
-                            <!--inner-container starts here--><div  style="width:960px; margin:0 auto">
+
+<div class="clearfix nav-submenu-container">
+    <div class="midCont submenu-Cont">
+        <?php  
+                    
+				if(isset($this->params['pass'][0])&&$this->params['pass'][0]=="secondlevel")
+				{
+					$this->loginarea="admins";    $this->subtabsel="memberlist";
+					echo $this->renderElement('memberlistsecondlevel_submenus');  
+				}  
+				else
+				{   if($_GET['url']==='admins/addholder/non') 
+					{
+						$this->loginarea="admins";    $this->subtabsel="nonholderslist";
+						
+					}
+					if($_GET['url']==='admins/addholder') 
+					{
+						$this->loginarea="admins";    $this->subtabsel="holderslist";
+						
+					}
+					echo $this->renderElement('memberlist_submenus');
+				}
+
+		 ?>
+    </div>
+</div>
+
+ <!--inner-container starts here--><div  style="width:960px; margin:0 auto">
 
 <div class="">
 
@@ -125,8 +130,8 @@
 	<?php }?>    
       <tr>
       <td width="25%" align="right"><label class="boldlabel">Email <span style="color:red">*</span></label></td>
-      <td width="20%"><span class="intpSpan">
-        <?php echo $form->input("Holder.email", array('id' => 'email', 'div' => false, 'label' => '',"class" => "inpt_txt_fld","maxlength" => "150"));?> </span></td>
+      <td width="20%"><span class="intp-Span">
+        <?php echo $form->input("Holder.email", array('id' => 'email', 'div' => false, 'label' => '',"class" => "inpt-txt-fld form-control","maxlength" => "150"));?> </span></td>
       <td width="20%"><?php echo $form->error('Holder.email', array('class' => 'errormsg')); ?></td>
       <td width="20%">&nbsp;</td>
       <td width="20%">&nbsp;</td>
@@ -136,8 +141,8 @@
     
     <tr>
       <td  align="right"><label class="boldlabel">Password <span style="color:red">*</span></label></td>
-      <td><span class="intpSpan">
-          <?php echo $form->password("User.password", array('id' => 'password', 'div' => false, 'label' => '',"class" => "inpt_txt_fld","maxlength" => "150"));?> </span></td>
+      <td><span class="intp-Span">
+          <?php echo $form->password("User.password", array('id' => 'password', 'div' => false, 'label' => '',"class" => "inpt-txt-fld form-control","maxlength" => "150"));?> </span></td>
        <td><?php echo $form->error('User.password', array('class' => 'errormsg'));?></td>
       <td>&nbsp;</td>
       <td>&nbsp;</td>
@@ -146,8 +151,8 @@
     <tr>
       <td   align="right"><label class="boldlabel">Screen Name <span style="color:red">*</span></label></td>
      
-      <td ><span class="intpSpan">
-          <?php echo $form->input("Holder.screenname", array('id' => 'screenname', 'div' => false, 'label' => '',"class" => "inpt_txt_fld","maxlength" => "150"));?> </span></td>
+      <td ><span class="intp-Span">
+          <?php echo $form->input("Holder.screenname", array('id' => 'screenname', 'div' => false, 'label' => '',"class" => "inpt-txt-fld form-control","maxlength" => "150"));?> </span></td>
    
       <td><?php echo $form->error('Holder.screenname', array('class' => 'errormsg'));?></td>
       <td>&nbsp;</td>
@@ -155,8 +160,8 @@
     </tr>
     <tr>
       <td align="right"><label class="boldlabel" >First Name <span style="color:red">*</span></label></td>
-      <td><span class="intpSpan">
-          <?php echo $form->input("Holder.firstname", array('id' => 'firstname', 'div' => false, 'label' => '',"class" => "inpt_txt_fld","maxlength" => "150"));?> </span></td>
+      <td><span class="intp-Span">
+          <?php echo $form->input("Holder.firstname", array('id' => 'firstname', 'div' => false, 'label' => '',"class" => "inpt-txt-fld form-control","maxlength" => "150"));?> </span></td>
        <td><?php echo $form->error('Holder.firstname', array('class' => 'errormsg'));?></td>
       <td>&nbsp;</td>
       <td>&nbsp;</td>
@@ -164,8 +169,8 @@
     
     <tr>
       <td  align="right"><label class="boldlabel">Last Name <span style="color:red">*</span></label></td>
-      <td><span class="intpSpan">
-          <?php echo $form->input("Holder.lastnameshow", array('id' => 'lastnameshow', 'div' => false, 'label' => '',"class" => "inpt_txt_fld","maxlength" => "150"));?> </span></td>
+      <td><span class="intp-Span">
+          <?php echo $form->input("Holder.lastnameshow", array('id' => 'lastnameshow', 'div' => false, 'label' => '',"class" => "inpt-txt-fld form-control","maxlength" => "150"));?> </span></td>
       <td><?php echo $form->error('Holder.lastnameshow', array('class' => 'errormsg')); ?></td>
       <td>&nbsp;</td>
       <td>&nbsp;</td>
@@ -173,8 +178,8 @@
     
     <tr>
       <td  align="right"><label class="boldlabel">Address1 </label></td>
-      <td><span class="intpSpan">
-          <?php echo $form->input("Holder.address1", array('id' => 'address1', 'div' => false, 'label' => '',"class" => "inpt_txt_fld","maxlength" => "150"));?> </span></td>
+      <td><span class="intp-Span">
+          <?php echo $form->input("Holder.address1", array('id' => 'address1', 'div' => false, 'label' => '',"class" => "inpt-txt-fld form-control","maxlength" => "150"));?> </span></td>
        <td>&nbsp;</td>
       <td>&nbsp;</td>
       <td>&nbsp;</td>
@@ -183,8 +188,8 @@
     
     <tr>
       <td  align="right"><label class="boldlabel">Address2 </label></td>
-      <td><span class="intpSpan">
-           <?php echo $form->input("Holder.address2", array('id' => 'address2', 'div' => false, 'label' => '',"class" => "inpt_txt_fld","maxlength" => "150"));?> </span></td>
+      <td><span class="intp-Span">
+           <?php echo $form->input("Holder.address2", array('id' => 'address2', 'div' => false, 'label' => '',"class" => "inpt-txt-fld form-control","maxlength" => "150"));?> </span></td>
        <td>&nbsp;</td>
       <td>&nbsp;</td>
       <td>&nbsp;</td>
@@ -193,10 +198,10 @@
     
     <tr>
       <td  align="right"><label class="boldlabel">Country <span style="color:red">*</span></label></td>
-           <td><span class="txtArea_top">
-                                <span class="txtArea_bot">
+           <td><span class="txtArea-top">
+                                <span class="txtArea-bot">
                                     <span id="countrydiv">
-           <?php echo $form->select("Holder.country",$countrydropdown,$selectedcountry,array('id' => 'country',"class"=>"multilist",'onchange'=>'return findgetstates(this.value,"Holder")'),array('254'=>'United States')); ?></span></span></span></td>
+           <?php echo $form->select("Holder.country",$countrydropdown,$selectedcountry,array('id' => 'country',"class"=>"multi-list form-control",'onchange'=>'return findgetstates(this.value,"Holder")'),array('254'=>'United States')); ?></span></span></span></td>
            <td><?php echo $form->error('Holder.country', array('class' => 'errormsg')); ?> </td>
       <td>&nbsp;</td>
       <td>&nbsp;</td>
@@ -204,10 +209,10 @@
     
      <tr>
       <td  align="right"><label class="boldlabel">State </label></td>
-          <td><span id="statediv"><span class="txtArea_top">
-                                <span class="txtArea_bot">
+          <td><span id="statediv"><span class="txtArea-top">
+                                <span class="txtArea-bot">
                                     <span id="countrydiv">
-          <?php echo $form->select("Holder.state",$statedropdown,$selectedstate,array('id' => 'state','style'=>'background: none repeat scroll 0% 0% transparent; margin-bottom: 6px; width:230px;'),"---Select---"); ?></span> </span></span></td>
+          <?php echo $form->select("Holder.state",$statedropdown,$selectedstate,array('id' => 'state','class' =>'form-control','style'=>'margin-bottom: 6px; width:230px;'), "---Select---"); ?></span> </span></span></td>
        <td>&nbsp;</td>
       <td>&nbsp;</td>
       <td>&nbsp;</td>
@@ -215,8 +220,8 @@
     
     <tr>
       <td  align="right"><label class="boldlabel">City </label></td>
-      <td><span class="intpSpan">
-           <?php echo $form->input("Holder.city",array('id' => 'city', 'div' => false, 'label' => '',"class" => "inpt_txt_fld","maxlength" => "150")); ?> </span></td>
+      <td><span class="intp-Span">
+           <?php echo $form->input("Holder.city",array('id' => 'city', 'div' => false, 'label' => '',"class" => "inpt-txt-fld form-control","maxlength" => "150")); ?> </span></td>
        <td>&nbsp;</td>
       <td>&nbsp;</td>
       <td>&nbsp;</td>
@@ -224,8 +229,8 @@
     
      <tr>
       <td  align="right"><label class="boldlabel">Zip/Postal Code <span style="color:red">*</span></label></td>
-      <td><span class="intpSpan">
-           <?php echo $form->input("Holder.zipcode", array('id' => 'zipcode', 'div' => false, 'label' => '',"class" => "inpt_txt_fld","maxlength" => "10"));?> </span></td>
+      <td><span class="intp-Span">
+           <?php echo $form->input("Holder.zipcode", array('id' => 'zipcode', 'div' => false, 'label' => '',"class" => "inpt-txt-fld form-control","maxlength" => "10"));?> </span></td>
       <td><?php echo $form->error('Holder.zipcode', array('class' => 'errormsg'));?></td>
       <td>&nbsp;</td>
       <td>&nbsp;</td>
@@ -233,8 +238,8 @@
     
       <tr>
       <td  align="right"><label class="boldlabel">Phone </label></td>
-      <td><span class="intpSpan">
-          <?php echo $form->input("Holder.phone", array('id' => 'phone', 'div' => false, 'label' => '',"class" => "inpt_txt_fld","maxlength" => "10"));?> </span></td>
+      <td><span class="intp-Span">
+          <?php echo $form->input("Holder.phone", array('id' => 'phone', 'div' => false, 'label' => '',"class" => "inpt-txt-fld form-control","maxlength" => "10"));?> </span></td>
       <td>&nbsp;</td>
       <td>&nbsp;</td>
       <td>&nbsp;</td>
@@ -243,8 +248,8 @@
     
       <tr>
       <td  align="right"><label class="boldlabel">Birthday </label></td>
-      <td><span class="intpSpan">
-          <?php echo $form->text("Holder.birthday", array('id' => 'birthday', 'div' => false, 'label' => '',"class" => "inpt_txt_fld",'readonly'=>'readonly'));?> </span> </td>
+      <td><span class="intp-Span">
+          <?php echo $form->text("Holder.birthday", array('id' => 'birthday', 'div' => false, 'label' => '',"class" => "inpt-txt-fld form-control",'readonly'=>'readonly'));?> </span> </td>
       <td><!--<input type="button" class="calendarcls" id="birthdayBP"> --></td>
       <td>&nbsp;</td>
       <td>&nbsp;</td>
@@ -252,8 +257,8 @@
     
       <tr>
       <td  align="right"> <label class="boldlabel">Facebook </label></td>
-      <td><span class="intpSpan">
-          <?php echo $form->input("Holder.facebook", array('id' => 'facebook', 'div' => false, 'label' => '',"class" => "inpt_txt_fld"));?> </span></td>
+      <td><span class="intp-Span">
+          <?php echo $form->input("Holder.facebook", array('id' => 'facebook', 'div' => false, 'label' => '',"class" => "inpt-txt-fld form-control"));?> </span></td>
       <td>&nbsp;</td>
       <td>&nbsp;</td>
       <td>&nbsp;</td>
@@ -261,8 +266,8 @@
     
       <tr>
       <td  align="right"><label class="boldlabel">Twitter </label></td>
-      <td><span class="intpSpan">
-          <?php echo $form->input("Holder.twitter", array('id' => 'twitter', 'div' => false, 'label' => '',"class" => "inpt_txt_fld"));?> </span></td>
+      <td><span class="intp-Span">
+          <?php echo $form->input("Holder.twitter", array('id' => 'twitter', 'div' => false, 'label' => '',"class" => "inpt-txt-fld form-control"));?> </span></td>
       <td>&nbsp;</td>
       <td>&nbsp;</td>
       <td>&nbsp;</td>

@@ -1510,7 +1510,7 @@ ul .sub {
 	float:right;
 }
 
-.titlCont .slider-centerpage .icon-big-container { padding-left:9%; position:absolute; left:0;}
+.titlCont .slider-centerpage .icon-big-container { padding-left:0; position:relative; left:0; float:right;}
 
 
 .topTabs2 li {
@@ -4286,6 +4286,11 @@ ul.form-style li .intpSpan { display:block; margin-bottom:10px;}
 
 
 
+
+.addoffer .btn-Lft { display:inline-block; margin-bottom:10px;}
+
+.txtArea-bot .input .checkbox input[type="checkbox"] { margin-left:0;}	
+
 /*--------------------------------RESPONSIVE AREA--------------------------*/
 
 
@@ -4340,6 +4345,9 @@ ul.form-style li .intpSpan { display:block; margin-bottom:10px;}
 	.points.table-responsive > tbody tr td.col-sm-6:first-child  { display:block; padding-left:0; padding-right:0;}
 	.points.table-responsive > tbody tr td.col-sm-6:last-child {  display:inline-block; padding-left:0; padding-right:0;}
 	
+	.sa_addcontacts > tbody tr td.col-sm-6:first-child  { display:block; padding-left:0; padding-right:0;}
+	.sa_addcontacts > tbody tr td.col-sm-6:last-child {  display:inline-block; padding-left:0; padding-right:0;}
+	
 	.row .box.col-xs-4 { width: auto; display:block; float:none;}
 	
 	.footerTxt { position:relative; margin-bottom:0;}
@@ -4369,6 +4377,12 @@ ul.form-style li .intpSpan { display:block; margin-bottom:10px;}
 	
 	.table-responsive .right { margin-right:5px; float:none;}
 	.table-responsive .ckeditor { width:auto !important; border:1px solid #ddd;}
+	
+	.points.table-responsive > tbody tr td.col-sm-6:first-child  { display:block; padding-left:0; padding-right:0;}
+	.points.table-responsive > tbody tr td.col-sm-6:last-child {  display:inline-block; padding-left:0; padding-right:0;}
+	
+	.sa_addcontacts > tbody tr td.col-sm-6:first-child  { display:block; padding-left:0; padding-right:0;}
+	.sa_addcontacts > tbody tr td.col-sm-6:last-child {  display:inline-block; padding-left:0; padding-right:0;}
 	
 	.nav-submenu-container { padding:0 20px;}
 	.midCont { width:100%; padding:10px 3px;}
