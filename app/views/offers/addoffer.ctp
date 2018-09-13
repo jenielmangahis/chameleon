@@ -640,8 +640,8 @@ if($this->data['Offer']['id']){
 							</div>
 
 						</td>
-						<td><span class="txtArea_top"> <span
-								class="txtArea_bot"> <?php echo $form->select("Offer.merchant_id",$merchantdropdown,$selectedmerchant, array('id' => 'merchant_id', 'div' => false, 'label' => '','style' =>'background: none repeat scroll 0% 0% transparent; margin-bottom: 6px; width:230px;',"class" =>"","maxlength" => "250"),"---Select---"); ?>
+						<td><span class="txtArea-top"> <span
+								class="txtArea-bot"> <?php echo $form->select("Offer.merchant_id",$merchantdropdown,$selectedmerchant, array('id' => 'merchant_id', 'div' => false, 'label' => '','style' =>'background: none repeat scroll 0% 0% transparent; margin-bottom: 6px; width:230px;',"class" =>"","maxlength" => "250"),"---Select---"); ?>
 							</span>
 						</span></td>
 					</tr>
@@ -655,8 +655,8 @@ if($this->data['Offer']['id']){
 							</div>
 
 						</td>
-						<td><span class="txtArea_top"> <span
-								class="txtArea_bot"> <?php 
+						<td><span class="txtArea-top"> <span
+								class="txtArea-bot"> <?php 
 						echo $form->select("Offer.category_id",$categorydropdown,$selectedcategory, array('id' => 'category_id','div' => false, 'label' => '','style' =>'background: none repeat scroll 0% 0% transparent; margin-bottom: 6px; width:230px;',"class" =>"","maxlength" => "250"),"---Select---");
 						?>
 							</span>
@@ -673,8 +673,8 @@ if($this->data['Offer']['id']){
 							</div>
 
 						</td>
-						<td><span class="txtArea_top"> <span
-								class="txtArea_bot"> <?php 
+						<td><span class="txtArea-top"> <span
+								class="txtArea-bot"> <?php 
 						echo $form->select("Offer.offer_type",$offertypetempdropdown,$selectedoffertypetemp, array('id' => 'offer_type', 'div' => false, 'label' => '','style' =>'background: none repeat scroll 0% 0% transparent; margin-bottom: 6px; width:230px;',"class" =>"","maxlength" => "250"),"---Select---");
 						?>
 							</span>
@@ -720,7 +720,7 @@ if($this->data['Offer']['id']){
 								</label>
 							</div>
 						</td>
-						<td><span class="intpSpan"><?php echo $form->input("Offer.offer_title", array('id' => 'offer_title','div' => false, 'label' => '',"class" => "inpt_txt_fld","maxlength" => "150"));?>
+						<td><span class="intp-Span"><?php echo $form->input("Offer.offer_title", array('id' => 'offer_title','div' => false, 'label' => '',"class" => "inpt-txt-fld form-control","maxlength" => "150"));?>
 						</span></td>
 					</tr>
 
@@ -737,11 +737,11 @@ if($this->data['Offer']['id']){
 						<td>
 							<table align="center" style="vertical-align: middle;">
 								<tr>
-									<td><span class="intpSpan"> <?php echo $form->input("Offer.coupon_cost", array('id' => 'coupon_cost', 'div' => false, 'label' => '',"class" => "inpt_txt_fld_small","maxlength" => "150"));?>
+									<td><span class="intp-Span"> <?php echo $form->input("Offer.coupon_cost", array('id' => 'coupon_cost', 'div' => false, 'label' => '',"class" => "inpt-txt-fld form-control","maxlength" => "150"));?>
 									</span></td>
 									<td width="165px"><label class="boldlabel">&nbsp;OR&nbsp;&nbsp;Coupon
 											Value<span style="color: red;">*</span></label></td>
-									<td><span class="intpSpan"> <?php echo $form->input("Offer.coupon_value", array('id' => 'coupon_value', 'div' => false, 'label' => '',"class" => "inpt_txt_fld_small","maxlength" => "150"));?>
+									<td><span class="intp-Span"> <?php echo $form->input("Offer.coupon_value", array('id' => 'coupon_value', 'div' => false, 'label' => '',"class" => "inpt-txt-fld form-control","maxlength" => "150"));?>
 									</span></td>
 								</tr>
 							</table>
@@ -760,11 +760,11 @@ if($this->data['Offer']['id']){
 						<td>
 							<table align="center" style="vertical-align: middle;">
 								<tr>
-									<td><span class="intpSpan"> <?php echo $form->input("Offer.percent_pledge", array('id' => 'percent_pledge', 'div' => false, 'label' => '',"class" => "inpt_txt_fld_small","maxlength" => "150"));?>
+									<td><span class="intp-Span"> <?php echo $form->input("Offer.percent_pledge", array('id' => 'percent_pledge', 'div' => false, 'label' => '',"class" => "inpt-txt-fld form-control","maxlength" => "150"));?>
 									</span></td>
 									<td width="165px"><label class="boldlabel">&nbsp;OR&nbsp;&nbsp;Pledge
 											$</label></td>
-									<td><span class="intpSpan"><?php echo $form->input("Offer.fixed_pledge", array('id' => 'fixed_pledge', 'div' => false, 'label' => '',"class" => "inpt_txt_fld_small","maxlength" => "150"));?>
+									<td><span class="intp-Span"><?php echo $form->input("Offer.fixed_pledge", array('id' => 'fixed_pledge', 'div' => false, 'label' => '',"class" => "inpt-txt-fld form-control","maxlength" => "150"));?>
 									</span></td>
 								</tr>
 							</table>
@@ -782,12 +782,12 @@ if($this->data['Offer']['id']){
 						<td>
 							<table align="center" style="vertical-align: middle;">
 								<tr>
-									<td><span class="intpSpan"><?php echo $form->input("Offer.percent_discount", array('id' => 'percent_discount', 'div' => false, 'label' => '',"class" => "inpt_txt_fld_small","maxlength" => "150"));?>
+									<td><span class="intp-Span"><?php echo $form->input("Offer.percent_discount", array('id' => 'percent_discount', 'div' => false, 'label' => '',"class" => "inpt-txt-fld form-control","maxlength" => "150"));?>
 									</span></td>
 
 									<td width="165px"><label class="boldlabel">&nbsp;OR&nbsp;&nbsp;Discount
 											$</label></td>
-									<td><span class="intpSpan"><?php echo $form->input("Offer.fixed_discount", array('id' => 'fixed_discount', 'div' => false, 'label' => '',"class" => "inpt_txt_fld_small","maxlength" => "150"));?>
+									<td><span class="intp-Span"><?php echo $form->input("Offer.fixed_discount", array('id' => 'fixed_discount', 'div' => false, 'label' => '',"class" => "inpt-txt-fld form-control","maxlength" => "150"));?>
 									</span></td>
 								</tr>
 							</table>
@@ -801,7 +801,7 @@ if($this->data['Offer']['id']){
 								<label class="boldlabel">Minimum Purchase</label>
 							</div>
 						</td>
-						<td><span class="intpSpan"><?php echo $form->input("Offer.minimum_purchase", array('id' => 'minimum_purchase', 'div' => false, 'label' => '',"class" => "inpt_txt_fld","maxlength" => "150"));?>
+						<td><span class="intp-Span"><?php echo $form->input("Offer.minimum_purchase", array('id' => 'minimum_purchase', 'div' => false, 'label' => '',"class" => "inpt-txt-fld form-control","maxlength" => "150"));?>
 						</span></td>
 					</tr>				
 
@@ -814,8 +814,8 @@ if($this->data['Offer']['id']){
 						</td>
 						<td>
 							<div class="large">
-								<span class="txtArea_top">
-									<span class="newtxtArea_bot">
+								<span class="txtArea-top">
+									<span class="newtxtArea-bot">
 										<div class="scrolldown" id="charity">
 										
 										</div>
@@ -832,7 +832,7 @@ if($this->data['Offer']['id']){
 								<label class="boldlabel">Related Event</label>
 							</div>
 						</td>
-						<td><span class="txtArea_top"> <span class="txtArea_bot"> <span id="countrydiv"> <?php echo $form->select("Offer.event_id",$eventdropdown,$selectedevent,array('id' => 'event_id',"class"=>"multilist"),"None"); ?>
+						<td><span class="txtArea-top"> <span class="txtArea-bot"> <span id="countrydiv"> <?php echo $form->select("Offer.event_id",$eventdropdown,$selectedevent,array('id' => 'event_id',"class"=>"multilist"),"None"); ?>
 								</span>
 							</span>
 						</span></td>
@@ -844,7 +844,7 @@ if($this->data['Offer']['id']){
 								<label class="boldlabel">Maximum Coupon</label>
 							</div>
 						</td>
-						<td><span class="intpSpan"><?php echo $form->input("Offer.maximum_coupon", array('id' => 'maximum_coupon', 'div' => false, 'label' => '',"class" => "inpt_txt_fld","maxlength" => "150"));?>
+						<td><span class="intp-Span"><?php echo $form->input("Offer.maximum_coupon", array('id' => 'maximum_coupon', 'div' => false, 'label' => '',"class" => "inpt-txt-fld form-control","maxlength" => "150"));?>
 						</span></td>
 					</tr>
 					
@@ -855,8 +855,8 @@ if($this->data['Offer']['id']){
 								<label class="boldlabel">Recur Pattern </label>
 							</div>
 						</td>
-						<td><span class="txtArea_top"> <span
-								class="txtArea_bot"> <span id="countrydiv"> <?php echo $form->select("Offer.recur_pattern",$recur_pattern,null,array('id' => 'recur_pattern',"class"=>"multilist"),"--Select--"); ?>
+						<td><span class="txtArea-top"> <span
+								class="txtArea-bot"> <span id="countrydiv"> <?php echo $form->select("Offer.recur_pattern",$recur_pattern,null,array('id' => 'recur_pattern',"class"=>"multilist"),"--Select--"); ?>
 								</span>
 							</span>
 						</span></td>
@@ -871,7 +871,7 @@ if($this->data['Offer']['id']){
 							</div>
 
 						</td>
-						<td><span class="intpSpan middle"><?php echo $form->text("Offer.starttime", array('id' => 'starttime', 'div' => false, 'label' => '',"class" => "inpt_txt_fld","maxlength" => "200",'readonly'=>'readonly'));?>
+						<td><span class="intp-Span middle"><?php echo $form->text("Offer.starttime", array('id' => 'starttime', 'div' => false, 'label' => '',"class" => "inpt-txt-fld form-control","maxlength" => "200",'readonly'=>'readonly'));?>
 						</span></td>
 					</tr>
 
@@ -887,7 +887,7 @@ if($this->data['Offer']['id']){
 						</td>
 						<td>
 							<div id="end_date_field" style="display: none;">
-								<span class="intpSpan middle"><?php echo $form->text("Offer.endtime", array('id' => 'endtime', 'div' => false, 'label' => '',"class" => "inpt_txt_fld","maxlength" => "200",'readonly'=>'readonly'));?>
+								<span class="intp-Span middle"><?php echo $form->text("Offer.endtime", array('id' => 'endtime', 'div' => false, 'label' => '',"class" => "inpt-txt-fld form-control","maxlength" => "200",'readonly'=>'readonly'));?>
 								</span>
 							</div>
 						</td>
@@ -1175,7 +1175,7 @@ echo $form->input("Offer.monthly_weekof_noof_months", array('id' => 'monthly_wee
 									name="data[Offer][task_end]"
 									<?php echo (isset($end_by))?$end_by:'';?>> End by
 								&nbsp; &nbsp;
-								<span class="intpSpan middle"><?php echo $form->text("Offer.end_by_date", array('id' => 'end_by_date', 'div' => false, 'label' => '',"class" => "inpt_txt_fld","maxlength" => "200",'readonly'=>'readonly','value'=>$end_by_date));?>
+								<span class="intp-Span middle"><?php echo $form->text("Offer.end_by_date", array('id' => 'end_by_date', 'div' => false, 'label' => '',"class" => "inpt-txt-fld form-control","maxlength" => "200",'readonly'=>'readonly','value'=>$end_by_date));?>
 						</span>
 								<br /> <br />
 
@@ -1192,8 +1192,8 @@ echo $form->input("Offer.monthly_weekof_noof_months", array('id' => 'monthly_wee
 								<label class="boldlabel">Start Time </label>
 							</div>
 						</td>
-						<td><span class="txtArea_top"> <span
-								class="txtArea_bot"> 
+						<td><span class="txtArea-top"> <span
+								class="txtArea-bot"> 
 								<select id="stime"
 									name="data[Offer][stime]" class="noBg"
 									style="border: none; width: 230px; margin-bottom: 7px;">
@@ -1210,8 +1210,8 @@ echo $form->input("Offer.monthly_weekof_noof_months", array('id' => 'monthly_wee
 								<label class="boldlabel">End Time </label>
 							</div>
 						</td>
-						<td><span class="txtArea_top"> <span
-								class="txtArea_bot"> <select id="etime"
+						<td><span class="txtArea-top"> <span
+								class="txtArea-bot"> <select id="etime"
 									name="data[Offer][etime]" class="noBg"
 									style="border: none; width: 230px; margin-bottom: 7px;">
 										<?php echo $option_etime; ?>
@@ -1227,8 +1227,8 @@ echo $form->input("Offer.monthly_weekof_noof_months", array('id' => 'monthly_wee
 							<label class="boldlabel">Auto Respond Offer Email </label>
 						</div>
 					</td>
-					<td><span class="txtArea_top"> <span
-							class="txtArea_bot"> <?php echo $form->select("Offer.auto_respond_offer_email",$responderdropdown,$sel_responder,array('id' => 'auto_respond_offer_email','class'=>'multilist'),array(''=>'--Select--')); ?>
+					<td><span class="txtArea-top"> <span
+							class="txtArea-bot"> <?php echo $form->select("Offer.auto_respond_offer_email",$responderdropdown,$sel_responder,array('id' => 'auto_respond_offer_email','class'=>'multilist'),array(''=>'--Select--')); ?>
 						</span>
 					</span> <span class="btnLft"><input type="button" class="btnRht"
 							value="Add" name="Add" onclick="addEmailTempforAutoRespond();" />
@@ -1243,8 +1243,8 @@ echo $form->input("Offer.monthly_weekof_noof_months", array('id' => 'monthly_wee
 								<label class="boldlabel">Event Detail Page </label>
 							</div>
 						</td>
-						<td><span class="txtArea_top"> <span
-								class="txtArea_bot"> 
+						<td><span class="txtArea-top"> <span
+								class="txtArea-bot"> 
 				<?php  
 				echo $form->select("Offer.event_detail_page",$submenu,$event_detail_page,array('id' => 'event_detail_page','class'=>'multilist'),array(''=>'--Select--')); ?>
 							</span>
@@ -1261,8 +1261,8 @@ echo $form->input("Offer.monthly_weekof_noof_months", array('id' => 'monthly_wee
 								<label class="boldlabel">Merchant Detail Page </label>
 							</div>
 						</td>
-						<td><span class="txtArea_top"> <span
-								class="txtArea_bot"> 
+						<td><span class="txtArea-top"> <span
+								class="txtArea-bot"> 
 								
 					<?php  echo $form->select("Offer.merchant_detail_page",null,$merchant_detail_page,array('id' => 'merchant_detail_page','class'=>'multilist'),array(''=>'--Select--')); ?>
 							</span>
@@ -1277,8 +1277,8 @@ echo $form->input("Offer.monthly_weekof_noof_months", array('id' => 'monthly_wee
 								<label class="boldlabel">Offer Inquiry Page </label>
 							</div>
 						</td>
-						<td><span class="txtArea_top"> <span
-								class="txtArea_bot"> <?php echo $form->select("Offer.offer_inquiry_page",$submenu,null,array('id' => 'offer_inquiry_page','class'=>'multilist'),array(''=>'--Select--')); ?>
+						<td><span class="txtArea-top"> <span
+								class="txtArea-bot"> <?php echo $form->select("Offer.offer_inquiry_page",$submenu,null,array('id' => 'offer_inquiry_page','class'=>'multilist'),array(''=>'--Select--')); ?>
 							</span>
 						</span> <span class="btnLft"><input type="button" class="btnRht"
 								value="Add" name="Add" onclick="addContentforOfferDetails();" />
@@ -1305,8 +1305,8 @@ echo $form->input("Offer.monthly_weekof_noof_months", array('id' => 'monthly_wee
 						
 					
 							<div class="large" >
-							<span class="txtArea_top">
-					  		<span class="newtxtArea_bot">
+							<span class="txtArea-top">
+					  		<span class="newtxtArea-bot">
 								<div class="scrolldown" id="merchant_location">
 								
 					  			
@@ -1324,8 +1324,8 @@ echo $form->input("Offer.monthly_weekof_noof_months", array('id' => 'monthly_wee
 								<label class="boldlabel">Short Description </label>
 							</div>
 						</td>
-						<td><span class="txtArea_top"> <span
-								class="txtArea_bot"><?php echo $form->textarea("Offer.offerdescription", array('id' => 'offerdescription', 'div' => false, 'label' => '','cols' => '35', 'rows' => '4',"class" => "noBg",'style'=>'width:231px;'));?>
+						<td><span class="txtArea-top"> <span
+								class="txtArea-bot"><?php echo $form->textarea("Offer.offerdescription", array('id' => 'offerdescription', 'div' => false, 'label' => '','cols' => '35', 'rows' => '4',"class" => "noBg",'style'=>'width:231px;'));?>
 							</span>
 						</span></td>
 					</tr>
@@ -1336,8 +1336,8 @@ echo $form->input("Offer.monthly_weekof_noof_months", array('id' => 'monthly_wee
 								<label class="boldlabel">Meta Description </label>
 							</div>
 						</td>
-						<td><span class="txtArea_top"> <span
-								class="txtArea_bot"><?php echo $form->textarea("Offer.meta_description", array('id' => 'meta_description', 'div' => false, 'label' => '','cols' => '35', 'rows' => '4',"class" => "noBg",'style'=>'width:231px;'));?>
+						<td><span class="txtArea-top"> <span
+								class="txtArea-bot"><?php echo $form->textarea("Offer.meta_description", array('id' => 'meta_description', 'div' => false, 'label' => '','cols' => '35', 'rows' => '4',"class" => "noBg",'style'=>'width:231px;'));?>
 							</span>
 						</span></td>
 					</tr>
