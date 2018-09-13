@@ -641,7 +641,7 @@ if($this->data['Offer']['id']){
 
 						</td>
 						<td><span class="txtArea_top"> <span
-								class="txtArea_bot"> <?php echo $form->select("Offer.merchant_id",$merchantdropdown,$selectedmerchant, array('id' => 'merchant_id', 'div' => false, 'label' => '','style' =>'background: none repeat scroll 0% 0% transparent; margin-bottom: 6px; width:230px;',"class" =>"","maxlength" => "250"),"---Select---"); ?>
+								class="txtArea_bot"> <?php echo $form->select("Offer.merchant_id",$merchantdropdown,$selectedmerchant, array('id' => 'merchant_id', 'style' =>'background: none repeat scroll 0% 0% transparent; margin-bottom: 6px; width:230px;',"class" =>"sample-class","maxlength" => "250"),"---Select---"); ?>
 							</span>
 						</span></td>
 					</tr>
