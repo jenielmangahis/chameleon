@@ -65,7 +65,7 @@ $('#compAnies').addClass("butBgSelt");
                      <!-- ADD FIELD BOF -->
 
 		
-<div class="table-responsive">		
+<div class="table-responsive clearfix">		
  <?php if($session->check('Message.flash')){ ?> 
 <div id="blck"> 
         <div class="msgBoxTopLft"><div class="msgBoxTopRht"><div class="msgBoxTopBg"></div></div></div>
@@ -86,7 +86,10 @@ $('#compAnies').addClass("butBgSelt");
 	                <div class="msgBoxBotLft"><div class="msgBoxBotRht"><div class="msgBoxBotBg"></div></div></div>
 		</div>
 </div> <?php } ?>
-		<table cellspacing="10" cellpadding="0" align="center" width="455px" class='left'>
+
+	
+		<div class="frmbox">
+			<table cellspacing="10" cellpadding="0" align="center">
 		
   <tbody>
     <tr>
@@ -214,62 +217,63 @@ $('#compAnies').addClass("butBgSelt");
 
   </tbody>
 </table>
+		</div>
 
-
-<table class='left' width="360px" style="margin-top: 20px;">
-				<?php if($this->data['Company']['id']) { ?>	
-					<tr>
-					  <td  valign='top'><label class="boldlabel">Contacts </label></td>
-				      <td>
-				      	<div style="width: 230px;min-height: 150px; overflow: auto; border: solid 1px #ccc" class='multi-list form-control'>
-				      	<?php 
-						//print_r($contacts);
-						//echo $form->select('contacts',$contacts, null,array('multiple'=>'multiple','id'=>'contacts','size'=>'10','empty'=>false,'style'=>'width:300px;','disabled'=>'disabled','class'=>'multi-list form-control'));?>
-				      	<table class='multi-list form-control' style="width:300px;min-height:150px;" border="1">
-							<tr><th align="left" width="45%">Name</th><th align="left" width="55%">Title</th></tr>
-							<?php foreach($contacts as $title=>$name) {?>
-							<tr><td><?php echo $title ?></td><td><?php echo $name ?></td></tr>
-							<?php } ?>
-						</table>
-						</div>
-						<span class="btnLft"><input type="button" class="btnRht" value="View" name="view" ONCLICK="viewcontact()") /> </span>
-                        <span style="display:inline-block;width:8px"></span>
-                        <span class="btnLft"><input type="button"  class="btnRht" value="Add" ONCLICK="addcontact();" /></span>
-						<input type="hidden" value="<?php echo $this->data['Company']['id']; ?>" id="companyvalue"/>
-						</td>
-					</tr>
-				<?php } ?>
-				 <tr>
-				  <td align="right"><label class="boldlabel">Website </label></td>
-				  <td ><label for="project_name"></label>
-					<span class="intp-Span"> <?php echo $form->input("Company.website", array('id' => 'website', 'div' => false, 'label' => '',"class" => "inpt-txt-fld form-control","maxlength" => "250"));?></span></td>
-				 
-				</tr>
-				
-				 <tr>
-				  <td align="right"><label class="boldlabel">Note </label></td>
-				  <td ><label for="project_name"></label>
-				   <span class="txtArea-top"><span class="txtArea-bot"><?php echo $form->textarea("Company.notes", array('id' => 'notes', 'div' => false, 'label' => '','cols' => '24', 'rows' => '4',"class" => "noBg"));?></span></span></td>
-				 
-				</tr>
-				<tr>
-				 
-				  <td valign='top' align="right"><label class="boldlabel">Company Logo</label></td>
-				  <td><?php  echo $form->file('Company.complogo',array('id'=> 'logo',"class" => "contactInput"));?><br>
-				  <span style="color: LightSlateGray;font-size: 11px;font-style: italic;">Recommended file size 250x250.</span>
-				   <br />&nbsp; 
-				   <?php 
-				   if($this->data['Company']['logo'] !='')
-					echo $html->image('uploads/'.$this->data['Company']['logo'],array('width'=>'100','height'=>'100','alt'=>''));
-				   else
-					echo $html->image('nologo.jpg');
-				   ?> 
-				   </td>
-				 
-				 </tr>
-		       
-			</table>
-
+		<div class="frmbox2">
+            <table style="margin-top: 20px;">
+                            <?php if($this->data['Company']['id']) { ?>	
+                                <tr>
+                                  <td  valign='top'><label class="boldlabel">Contacts </label></td>
+                                  <td>
+                                    <div style="width: 230px;min-height: 150px; overflow: auto; border: solid 1px #ccc" class='multi-list form-control'>
+                                    <?php 
+                                    //print_r($contacts);
+                                    //echo $form->select('contacts',$contacts, null,array('multiple'=>'multiple','id'=>'contacts','size'=>'10','empty'=>false,'style'=>'width:300px;','disabled'=>'disabled','class'=>'multi-list form-control'));?>
+                                    <table class='multi-list form-control' style="width:300px;min-height:150px;" border="1">
+                                        <tr><th align="left" width="45%">Name</th><th align="left" width="55%">Title</th></tr>
+                                        <?php foreach($contacts as $title=>$name) {?>
+                                        <tr><td><?php echo $title ?></td><td><?php echo $name ?></td></tr>
+                                        <?php } ?>
+                                    </table>
+                                    </div>
+                                    <span class="btnLft"><input type="button" class="btnRht" value="View" name="view" ONCLICK="viewcontact()") /> </span>
+                                    <span style="display:inline-block;width:8px"></span>
+                                    <span class="btnLft"><input type="button"  class="btnRht" value="Add" ONCLICK="addcontact();" /></span>
+                                    <input type="hidden" value="<?php echo $this->data['Company']['id']; ?>" id="companyvalue"/>
+                                    </td>
+                                </tr>
+                            <?php } ?>
+                             <tr>
+                              <td align="right"><label class="boldlabel">Website </label></td>
+                              <td ><label for="project_name"></label>
+                                <span class="intp-Span"> <?php echo $form->input("Company.website", array('id' => 'website', 'div' => false, 'label' => '',"class" => "inpt-txt-fld form-control","maxlength" => "250"));?></span></td>
+                             
+                            </tr>
+                            
+                             <tr>
+                              <td align="right"><label class="boldlabel">Note </label></td>
+                              <td ><label for="project_name"></label>
+                               <span class="txtArea-top"><span class="txtArea-bot"><?php echo $form->textarea("Company.notes", array('id' => 'notes', 'div' => false, 'label' => '','cols' => '24', 'rows' => '4',"class" => "noBg"));?></span></span></td>
+                             
+                            </tr>
+                            <tr>
+                             
+                              <td valign='top' align="right"><label class="boldlabel">Company Logo</label></td>
+                              <td><?php  echo $form->file('Company.complogo',array('id'=> 'logo',"class" => "contactInput"));?><br>
+                              <span style="color: LightSlateGray;font-size: 11px;font-style: italic;">Recommended file size 250x250.</span>
+                               <br />&nbsp; 
+                               <?php 
+                               if($this->data['Company']['logo'] !='')
+                                echo $html->image('uploads/'.$this->data['Company']['logo'],array('width'=>'100','height'=>'100','alt'=>''));
+                               else
+                                echo $html->image('nologo.jpg');
+                               ?> 
+                               </td>
+                             
+                             </tr>
+                           
+                        </table>
+		</div>
 
 
 </div>
