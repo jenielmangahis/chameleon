@@ -4342,7 +4342,7 @@ ul.form-style li .intpSpan { display:block; margin-bottom:10px;}
 	.intp-Span .form-control, textarea.form-control { width:auto;}
 	
 	.table-responsive .right { margin-right:5px; float:none;}
-	.table-responsive .ckeditor { width:auto !important; border:1px solid #ddd;}
+	.table-responsive .ckeditor { width:100% !important; border:1px solid #ddd;}
 	
 	.points.table-responsive > tbody tr td.col-sm-6:first-child  { display:block; padding-left:0; padding-right:0;}
 	.points.table-responsive > tbody tr td.col-sm-6:last-child {  display:inline-block; padding-left:0; padding-right:0;}
@@ -4378,7 +4378,7 @@ ul.form-style li .intpSpan { display:block; margin-bottom:10px;}
 	.titlCont .slider-centerpage .icon-container { position:relative; padding-left:0;}
 	
 	.table-responsive .right { margin-right:5px; float:none;}
-	.table-responsive .ckeditor { width:auto !important; border:1px solid #ddd;}
+	.table-responsive .ckeditor { width:100% !important; border:1px solid #ddd;}
 	
 	.points.table-responsive > tbody tr td.col-sm-6:first-child  { display:block; padding-left:0; padding-right:0;}
 	.points.table-responsive > tbody tr td.col-sm-6:last-child {  display:inline-block; padding-left:0; padding-right:0;}

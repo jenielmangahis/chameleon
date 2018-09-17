@@ -137,10 +137,9 @@ google.maps.event.addDomListener(window, 'load', initialize);
   <div>
           <table class="table">
           <tr>
-            <td valign="top" align="left">
-              <h2><label class="boldlabel">Relationship Type</label></h2>
-            </td>
             <td>
+            <h2><label class="boldlabel">Relationship Type</label></h2>
+            
           <?php
               $groupdata = array(
                                       '1' => 'Company',
@@ -154,12 +153,13 @@ google.maps.event.addDomListener(window, 'load', initialize);
 									  '9' => 'Others'
                                 );
           ?>
-          <!--<span class="txtArea_top"> <span class="txtArea_bot"> -->
+          <span class="txtArea-top"> 
+          	<span class="txtArea-bot"> 
           <?php
             echo $form->input("Relationship.group",array('type' => 'select','options' => $groupdata,
     'multiple' => 'checkbox','class'=>'multilist','label' => false,'selected' => $chkSelected)); 
           ?>
-          </span>
+          	</span>
           </span>
               </td>
             </tr>
