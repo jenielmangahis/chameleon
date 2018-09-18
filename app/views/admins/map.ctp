@@ -205,33 +205,32 @@ google.maps.event.addDomListener(window, 'load', initialize);
   <div class="table-responsive">
           <table class="table table-borderless">
           <tr>
-            <td valign="top" align="left">
-              <h2><label class="boldlabel">Relationship Type</label></h2>
-            </td>
-            <td>
-          <?php
-              $groupdata = array(
-                                      '1' => 'Company',
-                                      '2' => 'Contact',
-                                      '3' => 'Customer',
-                                      '4' => 'Branches',
-                                      '5' => 'Los',
-									  '6' => 'Employees',
-									  '7' => 'Correspondents',
-									  '8' => 'Brokers',
-									  '9' => 'Others'
-                                );
-          ?>
-          <!--<span class="txtArea_top"> 
-          <span class="txtArea_bot">--> 
-			  <?php
-                echo $form->input("Relationship.group",array('type' => 'select','options' => $groupdata,
-                'multiple' => 'checkbox','class'=>'multilist','label' => false,'selected' => $chkSelected)); 
-              ?>
-          <!--</span>
-          </span>-->
-              </td>
-            </tr>
+          	<td>
+            	<h2><label class="boldlabel">Relationship Type</label></h2>
+                
+				  <?php
+                      $groupdata = array(
+                                              '1' => 'Company',
+                                              '2' => 'Contact',
+                                              '3' => 'Customer',
+                                              '4' => 'Branches',
+                                              '5' => 'Los',
+                                              '6' => 'Employees',
+                                              '7' => 'Correspondents',
+                                              '8' => 'Brokers',
+                                              '9' => 'Others'
+                                        );
+                  ?>
+                  <span class="txtArea-top"> 
+                      <span class="txtArea-bot"> 
+                          <?php
+                            echo $form->input("Relationship.group",array('type' => 'select','options' => $groupdata,
+                            'multiple' => 'checkbox','class'=>'multi-list form-control','label' => false,'selected' => $chkSelected)); 
+                          ?>
+                      </span>
+                  </span>
+              </td>                       
+          </tr>
           </table>
   </div>                          
   <div class="container-fluid">

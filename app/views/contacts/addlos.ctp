@@ -15,21 +15,24 @@ $('#coNtact').addClass("butBgSelt");
 ?>
 
 <div class="titlCont">
-  <div style="width:960px;margin:0 auto">
-   
-    <div class="slider" id="toppanel" style="height: 20px; top:13px;right: -50px;width:545px !important; text-align:right;">
-	<?php echo $form->create("contacts", array("action" => "addlos",'type' => 'file','enctype'=>'multipart/form-data','name' => 'addlos', 'id' => "addlos","onsubmit"=>"return validatecontactslos('$act');"))?>
-	<button class="sendBut" id="Submit" name="redirectpage" type="submit">
-	<?php e($html->image('save.png')); ?> </button>
-        
-          <button class="sendBut" id="Submit" name="noredirection" type="submit">
-		  <?php e($html->image('apply.png')); ?>  </button>
-      <?php  
-	  e($html->link($html->image('cancle.png') . ' ' . __(''),array('controller'=>'relationships','action'=>'los'),array('escape' => false)));
-	  echo $this->renderElement('new_slider');  ?>
-    </div>
-    <span class="titlTxt"><?php echo $head; ?> </span>
-    <div class="topTabs" style="height:25px;">
+	<div class="slider-centerpage clearfix">
+    	<div class="center-Page col-sm-6">
+            <h2><?php echo $head; ?></h2>
+        </div>
+        <div class="slider-dashboard col-sm-6">
+        	<div class="icon-container">
+            	<?php echo $form->create("contacts", array("action" => "addlos",'type' => 'file','enctype'=>'multipart/form-data','name' => 'addlos', 'id' => "addlos","onsubmit"=>"return validatecontactslos('$act');"))?>
+                <button class="sendBut" id="Submit" name="redirectpage" type="submit">
+                <?php e($html->image('save.png')); ?> </button>
+                
+                  <button class="sendBut" id="Submit" name="noredirection" type="submit">
+                  <?php e($html->image('apply.png')); ?>  </button>
+                <?php  
+                e($html->link($html->image('cancle.png') . ' ' . __(''),array('controller'=>'relationships','action'=>'los'),array('escape' => false)));
+                echo $this->renderElement('new_slider');  ?>
+            </div>
+        </div>
+        <div class="topTabs" style="height:25px;">
       <?php /*?><ul>
         <li>
           <button class="button" id="Submit" name="redirectpage" type="submit"><span> Save</span> </button>
@@ -49,12 +52,18 @@ $('#coNtact').addClass("butBgSelt");
         </li>
       </ul><?php */?>
     </div>
-	<?php    $this->loginarea="contacts";    $this->subtabsel="sa_contactlist";
-             echo $this->renderElement('memberlistsecondlevel_submenus');  ?> 
-  </div>
+    </div>  
 </div>
-<div class="rightpanel">
-  <div id="center-column">
+
+<div class="clearfix nav-submenu-container">
+    <div class="midCont submenu-Cont">
+       <?php    $this->loginarea="contacts";    $this->subtabsel="sa_contactlist";
+             echo $this->renderElement('memberlistsecondlevel_submenus');  ?> 
+    </div>
+</div>
+
+<div class="midCont clearfix">
+  <div id="center-column" class="clearfix">
     <?php if($session->check('Message.flash')){ ?>
     <div id="blck">
       <div class="msgBoxTopLft">
@@ -82,7 +91,7 @@ $('#coNtact').addClass("butBgSelt");
       </div>
     </div>
     <?php } ?>
-    <div class="left">
+    <div class="clearfix addlos">
       <!-- ADD Sub Admin FORM BOF -->
       <!-- ADD FIELD BOF -->
       <table width="100%">
@@ -97,240 +106,244 @@ $('#coNtact').addClass("butBgSelt");
 
       	?>
             <span id='companydata'></span>
-		</td>
-        </tr> 	 	
-        <tr>
-          <td valign="top"><table cellspacing="10" cellpadding="0" align="center">
-              <tbody>
-                <tr>
-                  <td width="37%" align="right"><label class="boldlabel">Job Type</label></td>
-                  <td width="30%"><label for="project_name"></label>
-                    <span class="txtArea_top"><span class="txtArea_bot">
-                    <?php 
-
-                    	echo $form->input("Contact.project_id", array('id' => 'project_id', 'type'=>'hidden', 'value'=>'1' ,'div' => false, 'label' => '','style' =>'width:200px;',"class"=>"inpt_txt_fld","maxlength" => "250"));
-
-                    	echo $form->input("Contact.contact_type_id", array('id' => 'contact_type_id', 'type'=>'hidden', 'value'=>'262' ,'div' => false, 'label' => '','style' =>'width:200px;',"class"=>"inpt_txt_fld","maxlength" => "250"));
-
+			</td>
+        </tr> 	 	      
+      </table>
+      
+      <div class="frmbox">
+      	<table cellspacing="10" cellpadding="0" align="center">
+          <tbody>
+            <tr>
+              <td width="37%" align="right"><label class="boldlabel">Job Type</label></td>
+              <td width="30%"><label for="project_name"></label>
+                <span class="txtArea-top"><span class="txtArea-bot">
+                <?php 
+        
+                    echo $form->input("Contact.project_id", array('id' => 'project_id', 'type'=>'hidden', 'value'=>'1' ,'div' => false, 'label' => '','style' =>'width:200px;',"class"=>"inpt-txt-fld form-control","maxlength" => "250"));
+        
+                    echo $form->input("Contact.contact_type_id", array('id' => 'contact_type_id', 'type'=>'hidden', 'value'=>'262' ,'div' => false, 'label' => '','style' =>'width:200px;',"class"=>"inpt-txt-fld form-control","maxlength" => "250"));
+        
+                ?>
+        
+                <?php
+                    $jobtypedropdown = array(
+                                                'type1' => 'Type1',
+                                                'type2' => 'Type2'
+                                            );
+        
+                    echo $form->input('Contact.jobtype', array('options'=>$jobtypedropdown,'id' => 'jobtype', 'class'=>'multi-list form-control','label' => false,
+                              'empty'=>'------ Select ------'));
+        
+        
                     ?>
-
-                    <?php
-                    	$jobtypedropdown = array(
-                    								'type1' => 'Type1',
-                    								'type2' => 'Type2'
-                    							);
-	
- 						echo $form->input('Contact.jobtype', array('options'=>$jobtypedropdown,'id' => 'jobtype', 'class'=>'multilist','label' => false,
-                                  'empty'=>'------ Select ------'));
-
-
-						?>
-                    </span></span> </td>
-                  <td>&nbsp;</td>
-                  <td>&nbsp;</td>
-                  <td>&nbsp;</td>
-                </tr>
-				
-                <tr>
-                  <td width="20%" align="right"><label class="boldlabel">First Name <span class="red">*</span></label></td>
-                  <td width="30%"><label for="project_name"></label>
-                    <span class="intpSpan"><?php echo $form->input("Contact.firstname", array('id' => 'firstname', 'div' => false, 'label' => '',"class" => "inpt_txt_fld","maxlength" => "150"));?></span></td>
-                  <td>&nbsp;</td>
-                  <td>&nbsp;</td>
-                  <td>&nbsp;</td>
-                </tr>
-
-                <tr>
-                  <td width="20%" align="right"><label class="boldlabel">Last Name <span class="red">*</span></label></td>
-                  <td width="30%"><label for="project_name"></label>
-                    <span class="intpSpan"><?php echo $form->input("Contact.lastname", array('id' => 'lastname', 'div' => false, 'label' => '',"class" => "inpt_txt_fld","maxlength" => "150"));?></span></td>
-                  <td>&nbsp;</td>
-                  <td>&nbsp;</td>
-                  <td>&nbsp;</td>
-                </tr>
-
-                <tr>
-                                        <td width="20%" align="right"><label class="boldlabel">Avatar </label></td>
-                                         <td width="30%">
-                                         <div style="float: left; width: 80%;">
-                                           <span class="intpSpan">
-                                            
-                                            <?php echo $form->input("Contact.avatar", array('div' => false, 'label' => '',"class"=>"inpt_txt_fld1",'type'=>'file', 'style' => 'width: 165px; vertical-align: middle;'));?>
-                                </span>
-
-                                    </div> 
-                                        <div style="float: right; width: 20%;"> <!-- style="margin-left: 160px;" -->
-                                        <?php
-                                            if($avatarArray['User']['avatar_url'])
-                                            {
-                                                $str=explode("/",$avatarArray['User']['avatar_url']);
-                                                if($str[0]=="img"){  ?>
-                                                <img src="<?php echo $this->webroot.$avatarArray['User']['avatar_url']; ?>" width="50px" height="50px" >
-                                                <?php   
-                                                }else{       //its facebook url       ?>       
-                                                <img src="<?php echo $avatarArray['User']['avatar_url']; ?>" width="50px" height="50px">
-                                                <?php 
-                                                }
-
-                                            }else{       ?>
-                                            <!-- if no avatr image- show defailt -->  
-                                            <img src="<?php echo $this->webroot."img/avatar/image-not-available.png"; ?>" width="50px" height="50px" >   
-                                            <?php    }    
-                                            if(isset($badge)) {      ?>
-                                            <img src="<?php echo $this->webroot."img/avatar/image-not-available.png"; ?>" width="30px" height="30px" >   
-                                            <!-- <img src="<?php echo $this->webroot.$badge; ?>" width="30px" height="30px">-->
-                                        <?php }?>
-                                     </div>
-                                     <br/>
-                                        </td>
-				</tr>
-
-                <tr>
-                  <td width="20%" align="right"><label class="boldlabel">Title </label></td>
-                  <td width="30%"><label for="project_name"></label>
-                    <span class="intpSpan"> <?php echo $form->input("Contact.jobtitle", array('id' => 'jobtitle', 'div' => false, 'label' => '',"class" => "inpt_txt_fld","maxlength" => "200"));?></span></span></td>
-					<td>&nbsp;</td>
-					<td>&nbsp;</td>
-					<td>&nbsp;</td>
-                </tr>
-
-                <tr>
-                  <td width="20%" align="right"><label class="boldlabel">MNLS#</label></td>
-                  <td width="30%"><label for="project_name"></label>
-                    <span class="intpSpan"> <?php echo $form->input("Contact.nmls", array('id' => 'nmls', 'div' => false, 'label' => '',"class" => "inpt_txt_fld","maxlength" => "200"));?></span></span></td>
-					<td>&nbsp;</td>
-					<td>&nbsp;</td>
-					<td>&nbsp;</td>
-                </tr>
-
-
-
-               
-                <tr>
-                  <td width="20%" align="right"><label class="boldlabel">Address1</label></td>
-                  <td width="30%"><label for="project_name"></label>
-                    <span class="intpSpan"><?php echo $form->input("Contact.address1", array('id' => 'address1', 'div' => false, 'label' => '',"class" => "inpt_txt_fld","maxlength" => "200"));?></span></td>
-                  <td>&nbsp;</td>
-                  <td>&nbsp;</td>
-                  <td>&nbsp;</td>
-                </tr>
-
-
-                <tr>
-                  <td width="20%" align="right"><label class="boldlabel">Address2</label></td>
-                  <td width="30%"><label for="project_name"></label>
-                    <span class="intpSpan"><?php echo $form->input("Contact.address2", array('id' => 'address2', 'div' => false, 'label' => '',"class" => "inpt_txt_fld","maxlength" => "200"));?></span></td>
-                  <td>&nbsp;</td>
-                  <td>&nbsp;</td>
-                  <td>&nbsp;</td>
-                </tr>
-
-                <tr>
-                  <td width="20%" align="right"><label class="boldlabel">Country <span class="red">*</span></label></td>
-                  <td width="30%"><label for="project_name"></label>
-                    <span class="txtArea_top"><span class="txtArea_bot"> <?php echo $form->select("Contact.country",$countrydropdown,$selectedcountry,array('id' => 'country','class'=>'multilist','onchange'=>'return getstateoptions(this.value,"Contact")'),array('254'=>'United States')); ?> </span></span></td>
-                  <td>&nbsp;</td>
-                  <td>&nbsp;</td>
-                  <td>&nbsp;</td>
-                </tr>
-                <tr>
-                  <td width="20%" align="right"><label class="boldlabel">State <span class="red">*</span></label></td>
-                  <td width="30%"><label for="project_name"></label>
-                    <span class="txtArea_top"><span class="txtArea_bot"> <span id="statediv"> <?php echo $form->select("Contact.state",$statedropdown,$selectedstate,array('id' => 'state','class'=>'multilist'),"---Select---"); ?> </span></span> </span> </td>
-                  <td>&nbsp;</td>
-                  <td>&nbsp;</td>
-                  <td>&nbsp;</td>
-                </tr>
-                <tr>
-                  <td width="20%" align="right"><label class="boldlabel">City</label></td>
-                  <td width="30%"><label for="project_name"></label>
-                    <span class="intpSpan"> <?php echo $form->input("Contact.city",array('id' => 'city', 'div' => false, 'label' => '',"class" => "inpt_txt_fld","maxlength" => "150")); ?></span></td>
-                  <td>&nbsp;</td>
-                  <td>&nbsp;</td>
-                  <td>&nbsp;</td>
-                </tr>
-                <tr>
-                  <td width="20%" align="right"><label class="boldlabel">Zip/Postal Code <span class="red">*</span></label></td>
-                  <td width="30%"><label for="project_name"></label>
-                    <span class="intpSpan"> <?php echo $form->input("Contact.zipcode", array('id' => 'zipcode', 'div' => false, 'label' => '',"class" => "inpt_txt_fld","maxlength" => "10"));?></span></td>
-                  <td>&nbsp;</td>
-                  <td>&nbsp;</td>
-                  <td>&nbsp;</td>
-                </tr>
-
-
-                <tr>
-                  <td width="20%" align="right"><label class="boldlabel">Phone </label></td>
-                  <td width="30%"><label for="project_name"></label>
-                    <span class="intpSpan"> <?php echo $form->input("Contact.busphone", array('id' => 'busphone', 'div' => false, 'label' => '',"class" => "inpt_txt_fld","maxlength" => "12",'onblur' =>'USPhoneNumberFormat(this.value)'));?></span></td>
-                  <td>&nbsp;</td>
-                  <td>&nbsp;</td>
-                  <td>&nbsp;</td>
-                </tr>
-                <tr>
-                  <td width="20%" align="right"><label class="boldlabel">Cell Phone </label></td>
-                  <td width="30%"><label for="project_name"></label>
-                    <span class="intpSpan"> <?php echo $form->input("Contact.mobile", array('id' => 'mobile', 'div' => false, 'label' => '',"class" => "inpt_txt_fld","maxlength" => "12",'onblur' =>'USCellphoneNumberFormat(this.value)'));?></span></td>
-                  <td>&nbsp;</td>
-                  <td>&nbsp;</td>
-                  <td>&nbsp;</td>
-                </tr>
-                <tr>
-                  <td width="20%" align="right"><label class="boldlabel">Email <span class="red">*</span></label></td>
-                  <td width="30%"><label for="project_name"></label>
-                    <span class="intpSpan"> <?php echo $form->input("Contact.email", array('id' => 'email', 'div' => false, 'label' => '',"class" => "inpt_txt_fld","maxlength" => "200"));?></span></td>
-                  <td>&nbsp;</td>
-                  <td>&nbsp;</td>
-                  <td>&nbsp;</td>
-                </tr>
-
-<tr>			   	
-				  <td width="20%" align="right">
-					<label class="boldlabel">Emails Sent</label>
-				 </td>
-				 <td width="30%">
-					  <div class="small" >
-					  	<span class="txtArea_top">
-					  		<span class="newtxtArea_bot">
-					  			<div class="scrolldown">
-								<table cellpadding="5" cellspacing="5" width="100%" >
-									<tr align="left">
-										<th width="10%">
-											<input type="checkbox" id="emailsentcheckall" />
-										</th>
-										<th width="20%">
-											Date
-										</th>
-										<th width="20%">
-											Subject
-										</th>
-										<th width="25%">
-											Templates
-										</th>
-									 </tr>
-								<?php 									
-											foreach($targetProject as $projectdata):																
-					   				  		echo '<tr><td><input type="checkbox" id="emailsentcheck'.$projectdata['Project']['id'].'" name="data[Project][ids][]" value="'.$projectdata['Project']['id'].'" ';
-											
-echo (!empty($checkedrelproject) && in_array($projectdata['Project']['id'],$checkedrelproject))?'checked="checked"' :'';											
-										
-										 echo	' /></td> <td>'.$projectdata['Project']['project_name'].'</td><td>'.$projectdata['Sponsor']['city'].'</td><td>'. AppController::getstatename($projectdata['Sponsor']['state']).'</td></tr>';
-									  endforeach; ?>
-								</table>
-								</div>
-							</span>
-						</span>
-						</div> 
-				</td>
-				
-			   </tr>
-
-                <tr>
-                  <td colspan="5"><b>Any item with a</b> "<span class="red">*</span>" <b>requires an entry.</b></td>
-                </tr>
-              </tbody>
-            </table></td>
-          <td valign="top"><table cellspacing="10" cellpadding="0" align="center">
+                </span></span> </td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+            </tr>
+            
+            <tr>
+              <td width="20%" align="right"><label class="boldlabel">First Name <span class="red">*</span></label></td>
+              <td width="30%"><label for="project_name"></label>
+                <span class="intp-Span"><?php echo $form->input("Contact.firstname", array('id' => 'firstname', 'div' => false, 'label' => '',"class" => "inpt-txt-fld form-control","maxlength" => "150"));?></span></td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+            </tr>
+        
+            <tr>
+              <td width="20%" align="right"><label class="boldlabel">Last Name <span class="red">*</span></label></td>
+              <td width="30%"><label for="project_name"></label>
+                <span class="intp-Span"><?php echo $form->input("Contact.lastname", array('id' => 'lastname', 'div' => false, 'label' => '',"class" => "inpt-txt-fld form-control","maxlength" => "150"));?></span></td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+            </tr>
+        
+            <tr>
+                                    <td width="20%" align="right"><label class="boldlabel">Avatar </label></td>
+                                     <td width="30%">
+                                     <div style="float: left; width: 80%;">
+                                       <span class="intp-Span">
+                                        
+                                        <?php echo $form->input("Contact.avatar", array('div' => false, 'label' => '',"class"=>"inpt-txt-fld form-control1",'type'=>'file', 'style' => 'width: 165px; vertical-align: middle;'));?>
+                            </span>
+        
+                                </div> 
+                                    <div style="float: right; width: 20%;"> <!-- style="margin-left: 160px;" -->
+                                    <?php
+                                        if($avatarArray['User']['avatar_url'])
+                                        {
+                                            $str=explode("/",$avatarArray['User']['avatar_url']);
+                                            if($str[0]=="img"){  ?>
+                                            <img src="<?php echo $this->webroot.$avatarArray['User']['avatar_url']; ?>" width="50px" height="50px" >
+                                            <?php   
+                                            }else{       //its facebook url       ?>       
+                                            <img src="<?php echo $avatarArray['User']['avatar_url']; ?>" width="50px" height="50px">
+                                            <?php 
+                                            }
+        
+                                        }else{       ?>
+                                        <!-- if no avatr image- show defailt -->  
+                                        <img src="<?php echo $this->webroot."img/avatar/image-not-available.png"; ?>" width="50px" height="50px" >   
+                                        <?php    }    
+                                        if(isset($badge)) {      ?>
+                                        <img src="<?php echo $this->webroot."img/avatar/image-not-available.png"; ?>" width="30px" height="30px" >   
+                                        <!-- <img src="<?php echo $this->webroot.$badge; ?>" width="30px" height="30px">-->
+                                    <?php }?>
+                                 </div>
+                                 <br/>
+                                    </td>
+            </tr>
+        
+            <tr>
+              <td width="20%" align="right"><label class="boldlabel">Title </label></td>
+              <td width="30%"><label for="project_name"></label>
+                <span class="intp-Span"> <?php echo $form->input("Contact.jobtitle", array('id' => 'jobtitle', 'div' => false, 'label' => '',"class" => "inpt-txt-fld form-control","maxlength" => "200"));?></span></span></td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+            </tr>
+        
+            <tr>
+              <td width="20%" align="right"><label class="boldlabel">MNLS#</label></td>
+              <td width="30%"><label for="project_name"></label>
+                <span class="intp-Span"> <?php echo $form->input("Contact.nmls", array('id' => 'nmls', 'div' => false, 'label' => '',"class" => "inpt-txt-fld form-control","maxlength" => "200"));?></span></span></td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+            </tr>
+        
+        
+        
+           
+            <tr>
+              <td width="20%" align="right"><label class="boldlabel">Address1</label></td>
+              <td width="30%"><label for="project_name"></label>
+                <span class="intp-Span"><?php echo $form->input("Contact.address1", array('id' => 'address1', 'div' => false, 'label' => '',"class" => "inpt-txt-fld form-control","maxlength" => "200"));?></span></td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+            </tr>
+        
+        
+            <tr>
+              <td width="20%" align="right"><label class="boldlabel">Address2</label></td>
+              <td width="30%"><label for="project_name"></label>
+                <span class="intp-Span"><?php echo $form->input("Contact.address2", array('id' => 'address2', 'div' => false, 'label' => '',"class" => "inpt-txt-fld form-control","maxlength" => "200"));?></span></td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+            </tr>
+        
+            <tr>
+              <td width="20%" align="right"><label class="boldlabel">Country <span class="red">*</span></label></td>
+              <td width="30%"><label for="project_name"></label>
+                <span class="txtArea-top"><span class="txtArea-bot"> <?php echo $form->select("Contact.country",$countrydropdown,$selectedcountry,array('id' => 'country','class'=>'multi-list form-control','onchange'=>'return getstateoptions(this.value,"Contact")'),array('254'=>'United States')); ?> </span></span></td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+            </tr>
+            <tr>
+              <td width="20%" align="right"><label class="boldlabel">State <span class="red">*</span></label></td>
+              <td width="30%"><label for="project_name"></label>
+                <span class="txtArea-top"><span class="txtArea-bot"> <span id="statediv"> <?php echo $form->select("Contact.state",$statedropdown,$selectedstate,array('id' => 'state','class'=>'multi-list form-control'),"---Select---"); ?> </span></span> </span> </td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+            </tr>
+            <tr>
+              <td width="20%" align="right"><label class="boldlabel">City</label></td>
+              <td width="30%"><label for="project_name"></label>
+                <span class="intp-Span"> <?php echo $form->input("Contact.city",array('id' => 'city', 'div' => false, 'label' => '',"class" => "inpt-txt-fld form-control","maxlength" => "150")); ?></span></td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+            </tr>
+            <tr>
+              <td width="20%" align="right"><label class="boldlabel">Zip/Postal Code <span class="red">*</span></label></td>
+              <td width="30%"><label for="project_name"></label>
+                <span class="intp-Span"> <?php echo $form->input("Contact.zipcode", array('id' => 'zipcode', 'div' => false, 'label' => '',"class" => "inpt-txt-fld form-control","maxlength" => "10"));?></span></td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+            </tr>
+        
+        
+            <tr>
+              <td width="20%" align="right"><label class="boldlabel">Phone </label></td>
+              <td width="30%"><label for="project_name"></label>
+                <span class="intp-Span"> <?php echo $form->input("Contact.busphone", array('id' => 'busphone', 'div' => false, 'label' => '',"class" => "inpt-txt-fld form-control","maxlength" => "12",'onblur' =>'USPhoneNumberFormat(this.value)'));?></span></td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+            </tr>
+            <tr>
+              <td width="20%" align="right"><label class="boldlabel">Cell Phone </label></td>
+              <td width="30%"><label for="project_name"></label>
+                <span class="intp-Span"> <?php echo $form->input("Contact.mobile", array('id' => 'mobile', 'div' => false, 'label' => '',"class" => "inpt-txt-fld form-control","maxlength" => "12",'onblur' =>'USCellphoneNumberFormat(this.value)'));?></span></td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+            </tr>
+            <tr>
+              <td width="20%" align="right"><label class="boldlabel">Email <span class="red">*</span></label></td>
+              <td width="30%"><label for="project_name"></label>
+                <span class="intp-Span"> <?php echo $form->input("Contact.email", array('id' => 'email', 'div' => false, 'label' => '',"class" => "inpt-txt-fld form-control","maxlength" => "200"));?></span></td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+            </tr>
+        
+        <tr>			   	
+              <td width="20%" align="right">
+                <label class="boldlabel">Emails Sent</label>
+             </td>
+             <td width="30%">
+                  <div class="small" >
+                    <span class="txtArea-top">
+                        <span class="newtxtArea-bot">
+                            <div class="scrolldown form-control">
+                            <table cellpadding="5" cellspacing="5" width="100%" >
+                                <tr align="left">
+                                    <th width="10%">
+                                        <input type="checkbox" id="emailsentcheckall" />
+                                    </th>
+                                    <th width="20%">
+                                        Date
+                                    </th>
+                                    <th width="20%">
+                                        Subject
+                                    </th>
+                                    <th width="25%">
+                                        Templates
+                                    </th>
+                                 </tr>
+                            <?php 									
+                                        foreach($targetProject as $projectdata):																
+                                        echo '<tr><td><input type="checkbox" id="emailsentcheck'.$projectdata['Project']['id'].'" name="data[Project][ids][]" value="'.$projectdata['Project']['id'].'" ';
+                                        
+        echo (!empty($checkedrelproject) && in_array($projectdata['Project']['id'],$checkedrelproject))?'checked="checked"' :'';											
+                                    
+                                     echo	' /></td> <td>'.$projectdata['Project']['project_name'].'</td><td>'.$projectdata['Sponsor']['city'].'</td><td>'. AppController::getstatename($projectdata['Sponsor']['state']).'</td></tr>';
+                                  endforeach; ?>
+                            </table>
+                            </div>
+                        </span>
+                    </span>
+                    </div> 
+            </td>
+            
+           </tr>
+        
+            <tr>
+              <td colspan="5"><b>Any item with a</b> "<span class="red">*</span>" <b>requires an entry.</b></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="frmbox2">
+      	<table cellspacing="10" cellpadding="0" align="center">
               <tbody>
 
               			</tr>   
@@ -341,10 +354,10 @@ echo (!empty($checkedrelproject) && in_array($projectdata['Project']['id'],$chec
                   <td width="32%" align="right">
 				  <label class="boldlabel">Production Level</label></td>
                   <td width="30%"><label for="project_name"></label>
-                    <span class="txtArea_top"><span class="txtArea_bot"> 
+                    <span class="txtArea-top"><span class="txtArea-bot"> 
 					<?php 
 					$plevel = array('1' => 'PLevel1','2' => 'PLevel2');
-					echo $form->select("Contact.production_level",$plevel,null,array('id' => 'production_level','class'=>'multilist'),"---Select---");
+					echo $form->select("Contact.production_level",$plevel,null,array('id' => 'production_level','class'=>'multi-list form-control'),"---Select---");
 					?></span></span>
                   <td>&nbsp;</td>
                   <td>&nbsp;</td>
@@ -357,9 +370,9 @@ echo (!empty($checkedrelproject) && in_array($projectdata['Project']['id'],$chec
 				 </td>
 				 <td width="30%">
 					  <div class="small" >
-					  	<span class="txtArea_top">
-					  		<span class="newtxtArea_bot">
-					  			<div class="scrolldown">
+					  	<span class="txtArea-top">
+					  		<span class="newtxtArea-bot">
+					  			<div class="scrolldown form-control">
 								<table cellpadding="5" cellspacing="5" width="100%" >
 									<tr align="left">
 										<th width="10%">
@@ -401,9 +414,9 @@ echo (!empty($checkedrelproject) && in_array($projectdata['Project']['id'],$chec
 				 </td>
 				 <td width="30%">
 					  <div class="small" >
-					  	<span class="txtArea_top">
-					  		<span class="newtxtArea_bot">
-					  			<div class="scrolldown">
+					  	<span class="txtArea-top">
+					  		<span class="newtxtArea-bot">
+					  			<div class="scrolldown form-control">
 								<table cellpadding="5" cellspacing="5" width="100%" >
 									<tr align="left">
 										<th width="10%">
@@ -436,35 +449,35 @@ echo (!empty($checkedrelproject) && in_array($projectdata['Project']['id'],$chec
 				<tr><td colspan="5">&nbsp;</td></tr>
 				  <tr>
                                         <td align="right" ><label class="boldlabel">Facebook</label></td>
-                                        <td ><label for="project_name"></label><span class="intpSpan">
-                                            <?php echo $form->input("Contact.facebook", array('id' => 'facebook', 'div' => false, 'label' => '',"class" => "inpt_txt_fld","maxlength" => "10"));?></span></td>
+                                        <td ><label for="project_name"></label><span class="intp-Span">
+                                            <?php echo $form->input("Contact.facebook", array('id' => 'facebook', 'div' => false, 'label' => '',"class" => "inpt-txt-fld form-control","maxlength" => "10"));?></span></td>
 
                                     </tr>
 
                                     <tr>
                                         <td align="right" ><label class="boldlabel">Twitter</label>&nbsp;</td>
-                                        <td ><label for="project_name"></label><span class="intpSpan">
-                                            <?php echo $form->input("Contact.twitter", array('id' => 'twitter', 'div' => false, 'label' => '',"class" => "inpt_txt_fld","maxlength" => "10"));?></span></td>
+                                        <td ><label for="project_name"></label><span class="intp-Span">
+                                            <?php echo $form->input("Contact.twitter", array('id' => 'twitter', 'div' => false, 'label' => '',"class" => "inpt-txt-fld form-control","maxlength" => "10"));?></span></td>
 
                                     </tr>
 
                                     <tr>
                                         <td align="right" ><label class="boldlabel">Google</label>&nbsp;</td>
-                                        <td ><label for="project_name"></label><span class="intpSpan">
-                                            <?php echo $form->input("Contact.google", array('id' => 'google', 'div' => false, 'label' => '',"class" => "inpt_txt_fld","maxlength" => "10"));?></span></td>
+                                        <td ><label for="project_name"></label><span class="intp-Span">
+                                            <?php echo $form->input("Contact.google", array('id' => 'google', 'div' => false, 'label' => '',"class" => "inpt-txt-fld form-control","maxlength" => "10"));?></span></td>
 
                                     </tr>
 
                                     <tr>
                                         <td align="right" ><label class="boldlabel">LinkedIn</label>&nbsp;</td>
-                                        <td ><label for="project_name"></label><span class="intpSpan">
-                                            <?php echo $form->input("Contact.linkedin", array('id' => 'linkedin', 'div' => false, 'label' => '',"class" => "inpt_txt_fld","maxlength" => "10"));?></span></td>
+                                        <td ><label for="project_name"></label><span class="intp-Span">
+                                            <?php echo $form->input("Contact.linkedin", array('id' => 'linkedin', 'div' => false, 'label' => '',"class" => "inpt-txt-fld form-control","maxlength" => "10"));?></span></td>
 
                                     </tr>
 									 <tr>
                                         <td align="right" ><label class="boldlabel">Pinterest</label>&nbsp;</td>
-                                        <td ><label for="project_name"></label><span class="intpSpan">
-                                            <?php echo $form->input("Contact.pinterest", array('id' => 'pinterest', 'div' => false, 'label' => '',"class" => "inpt_txt_fld","maxlength" => "10"));?></span></td>
+                                        <td ><label for="project_name"></label><span class="intp-Span">
+                                            <?php echo $form->input("Contact.pinterest", array('id' => 'pinterest', 'div' => false, 'label' => '',"class" => "inpt-txt-fld form-control","maxlength" => "10"));?></span></td>
 
                                     </tr>
 
@@ -508,9 +521,10 @@ echo (!empty($checkedrelproject) && in_array($projectdata['Project']['id'],$chec
 				
 				?>
               </tbody>
-            </table></td>
-        </tr>
-      </table>
+            </table>
+      </div>
+      
+      
       <?php echo $form->end();?>
       <!-- ADD Sub Admin  FORM EOF -->
     </div>

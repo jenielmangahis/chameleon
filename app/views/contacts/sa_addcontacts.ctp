@@ -15,48 +15,51 @@ $('#coNtact').addClass("butBgSelt");
 ?>
 
 <div class="titlCont">
-  <div style="width:960px;margin:0 auto">
+	<div class="slider-centerpage clearfix">
+    	<div class="center-Page col-sm-4">
+            <h2><?php echo $head; ?></h2>
+        </div>
+        <div class="slider-dashboard col-sm-8">
+        	<div class="icon-big-container">
+            	<?php echo $form->create("contacts", array("action" => "sa_addcontacts",'type' => 'file','enctype'=>'multipart/form-data','name' => 'addcontacts', 'id' => "addcontacts1","onsubmit"=>"return validatecontacts('$act');"))?>
+				<?php
+                $ids = $this->params['pass'][0]; 
+                e($html->link($html->image('call.png') . ' ' . __(''), array('controller'=>'admins','action'=>'call',$ids),array('escape' => false)));
+                
+                e($html->link($html->image('email.png') . ' ' . __(''), array('controller'=>'admins','action'=>'sendtempmail',$ids),array('escape' => false)));
+                
+                e($html->link($html->image('sms.png') . ' ' . __(''), array('controller'=>'admins','action'=>'sendsms','1'),array('escape' => false)));
+                
+                
+                e($html->link($html->image('message.png') . ' ' . __(''), array('controller'=>'admins','action'=>'messagenew',$ids),array('escape' => false)));
+                
+                e($html->link($html->image('event.png') . ' ' . __(''), array('controller'=>'admins','action'=>'appointment',$ids),array('escape' => false)));
+                
+                e($html->link($html->image('note.png') . ' ' . __(''), "../players/notelist/2",array('escape' => false)));
+                
+                e($html->link($html->image('take.png') . ' ' . __(''), array('controller'=>'admins','action'=>'coming_soon','task'),array('escape' => false))); ?>
+                <button class="sendBut" id="Submit" name="redirectpage" type="submit">
+                <?php e($html->image('save.png')) ?>
+                </button>
+                <button class="sendBut" id="Submit" name="noredirection" type="submit">
+                <?php e($html->image('apply.png')) ?>
+                </button>
+                <?php
+                if($this->params['pass'][2]==='customer')
+                {
+                e($html->link($html->image('cancle.png') . ' ' . __(''), array('controller'=>'relationships','action'=>'customers'),array('escape' => false)));
+                }
+                else
+                {
+                e($html->link($html->image('cancle.png') . ' ' . __(''), array('controller'=>'relationships','action'=>'sa_contactlist'),array('escape' => false)));
+                } 
+                
+                echo $this->renderElement('new_slider');
+                ?>
 
-	<div class="slider" id="toppanel" style="height: 20px; top:13px;right: -50px;width: 545px !important; text-align:right;"> 
-    <?php echo $form->create("contacts", array("action" => "sa_addcontacts",'type' => 'file','enctype'=>'multipart/form-data','name' => 'addcontacts', 'id' => "addcontacts1","onsubmit"=>"return validatecontacts('$act');"))?>
-	<?php
-$ids = $this->params['pass'][0]; 
-e($html->link($html->image('call.png') . ' ' . __(''), array('controller'=>'admins','action'=>'call',$ids),array('escape' => false)));
-
-e($html->link($html->image('email.png') . ' ' . __(''), array('controller'=>'admins','action'=>'sendtempmail',$ids),array('escape' => false)));
-
-e($html->link($html->image('sms.png') . ' ' . __(''), array('controller'=>'admins','action'=>'sendsms','1'),array('escape' => false)));
-
-
-e($html->link($html->image('message.png') . ' ' . __(''), array('controller'=>'admins','action'=>'messagenew',$ids),array('escape' => false)));
-
-e($html->link($html->image('event.png') . ' ' . __(''), array('controller'=>'admins','action'=>'appointment',$ids),array('escape' => false)));
-
-e($html->link($html->image('note.png') . ' ' . __(''), "../players/notelist/2",array('escape' => false)));
-
-e($html->link($html->image('take.png') . ' ' . __(''), array('controller'=>'admins','action'=>'coming_soon','task'),array('escape' => false))); ?>
-	<button class="sendBut" id="Submit" name="redirectpage" type="submit">
-	<?php e($html->image('save.png')) ?>
-	</button>
-	<button class="sendBut" id="Submit" name="noredirection" type="submit">
-	<?php e($html->image('apply.png')) ?>
-	</button>
-	<?php
-	if($this->params['pass'][2]==='customer')
-	{
-e($html->link($html->image('cancle.png') . ' ' . __(''), array('controller'=>'relationships','action'=>'customers'),array('escape' => false)));
-}
-else
-{
-e($html->link($html->image('cancle.png') . ' ' . __(''), array('controller'=>'relationships','action'=>'sa_contactlist'),array('escape' => false)));
-} 
-
-echo $this->renderElement('new_slider');
-?>
-
-	</div>
-	<span class="titlTxt"><?php echo $head; ?> </span>
-    <div class="topTabs" style="height:25px;">
+            </div>
+        </div>
+        <div class="topTabs" style="height:25px;">
       <?php /*?><ul>
         <li>
           <button class="button" id="Submit" name="redirectpage" type="submit"><span> Save</span> </button>
@@ -76,14 +79,19 @@ echo $this->renderElement('new_slider');
         </li>
       </ul><?php */?>
     </div>
-	 <?php    //$this->loginarea="contacts";    $this->subtabsel="sa_contactlist";
-            // echo $this->renderElement('relationships_submenus');  ?> 
-			<?php    $this->loginarea="contacts";    $this->subtabsel="sa_contactlist";
-             echo $this->renderElement('memberlistsecondlevel_submenus');  ?> 
-  </div>
+    </div>
 </div>
-<div class="rightpanel">
-  <div id="center-column">
+
+<div class="clearfix nav-submenu-container">
+	<div class="midCont">
+        <?php    $this->loginarea="contacts";    $this->subtabsel="sa_contactlist";
+         echo $this->renderElement('memberlistsecondlevel_submenus');  ?> 
+    </div>
+</div>
+
+
+<div class="midCont clearfix">
+  <div id="center-column" class="clearfix">
     <?php if($session->check('Message.flash')){ ?>
     <div id="blck">
       <div class="msgBoxTopLft">
@@ -111,10 +119,10 @@ echo $this->renderElement('new_slider');
       </div>
     </div>
     <?php } ?>
-    <div class="left">
+    <div class="table-responsive">
       <!-- ADD Sub Admin FORM BOF -->
       <!-- ADD FIELD BOF -->
-      <table width="100%">
+      <table class="sa_addcontacts table table-borderless" width="100%">
         <tr>
           <td>
 		  <?php
@@ -123,7 +131,7 @@ echo $this->renderElement('new_slider');
 		  if($this->params['pass'][2] === 'customer')
 		  {
 		  $customer = $this->params['pass'][2]; 
-		echo $form->input("Contact.customer", array('id' => 'customer', 'value'=>$customer, 'type'=>'hidden', 'div' => false, 'label' => '',"class" => "inpt_txt_fld","maxlength" => "150"));
+		echo $form->input("Contact.customer", array('id' => 'customer', 'value'=>$customer, 'type'=>'hidden', 'div' => false, 'label' => '',"class" => "inpt-txt-fld form-control","maxlength" => "150"));
 		  }
 		  ?>
 		  
@@ -140,12 +148,13 @@ echo $this->renderElement('new_slider');
 		</td>
         </tr>
         <tr>
-          <td valign="top"><table cellspacing="10" cellpadding="0" align="center">
+          <td class="col-sm-6" valign="top">
+          	<table cellspacing="10" cellpadding="0" align="center">
               <tbody>
                 <tr>
                   <td width="37%" align="right"><label class="boldlabel">Company <span class="red">*</span></label></td>
                   <td width="30%"><label for="project_name"></label>
-                    <span class="txtArea_top"><span class="txtArea_bot">
+                    <span class="txtArea-top"><span class="txtArea-bot">
                     <?php 
 			//var_dump($selectedcompany);
 			//print_r($companydropdown);
@@ -164,7 +173,7 @@ echo $this->renderElement('new_slider');
 				}
 			*/
 			echo "<script type='text/javascript'>getcompanyaddress($selectedcompany);</script>";
-			echo $form->select("Contact.company_id",$companydropdown,$selectedcompany,array('id' => 'company_id','class'=>'multilist',"onchange"=>"getcompanyaddress(this.value);"),"---Select---"); ?>
+			echo $form->select("Contact.company_id",$companydropdown,$selectedcompany,array('id' => 'company_id','class'=>'multilist form-control',"onchange"=>"getcompanyaddress(this.value);"),"---Select---"); ?>
                     </span></span> </td>
                   <td>&nbsp;</td>
                   <td>&nbsp;</td>
@@ -178,7 +187,7 @@ echo $this->renderElement('new_slider');
 				  <td>
 				<?php
 				 //$realetedProjects = array();
-				 echo $form->select('ProjectOwner.owners',$realetedProjects, null,array('multiple'=>'multiple','id'=>'companies_bb','size'=>'4','empty'=>false,'class'=>'multilist','tabindex'=>2,'style'=>'min-height:32px;','disabled'=>'disabled'));
+				 echo $form->select('ProjectOwner.owners',$realetedProjects, null,array('multiple'=>'multiple','id'=>'companies_bb','size'=>'4','empty'=>false,'class'=>'multilist form-control','tabindex'=>2,'style'=>'min-height:32px;','disabled'=>'disabled'));
 				?>
 				</td>
 				  <td>&nbsp;</td>
@@ -191,7 +200,7 @@ echo $this->renderElement('new_slider');
                 <tr>
                   <td width="20%" align="right"><label class="boldlabel">First Name <span class="red">*</span></label></td>
                   <td width="30%"><label for="project_name"></label>
-                    <span class="intpSpan"><?php echo $form->input("Contact.firstname", array('id' => 'firstname', 'div' => false, 'label' => '',"class" => "inpt_txt_fld","maxlength" => "150"));?></span></td>
+                    <span class="intp-Span"><?php echo $form->input("Contact.firstname", array('id' => 'firstname', 'div' => false, 'label' => '',"class" => "inpt-txt-fld form-control","maxlength" => "150"));?></span></td>
                   <td>&nbsp;</td>
                   <td>&nbsp;</td>
                   <td>&nbsp;</td>
@@ -199,7 +208,7 @@ echo $this->renderElement('new_slider');
                 <tr>
                   <td width="20%" align="right"><label class="boldlabel">Last Name <span class="red">*</span></label></td>
                   <td width="30%"><label for="project_name"></label>
-                    <span class="intpSpan"><?php echo $form->input("Contact.lastname", array('id' => 'lastname', 'div' => false, 'label' => '',"class" => "inpt_txt_fld","maxlength" => "150"));?></span></td>
+                    <span class="intp-Span"><?php echo $form->input("Contact.lastname", array('id' => 'lastname', 'div' => false, 'label' => '',"class" => "inpt-txt-fld form-control","maxlength" => "150"));?></span></td>
                   <td>&nbsp;</td>
                   <td>&nbsp;</td>
                   <td>&nbsp;</td>
@@ -207,7 +216,7 @@ echo $this->renderElement('new_slider');
                 <tr>
                   <td width="20%" align="right"><label class="boldlabel">Title <span class="red">*</span></label></td>
                   <td width="30%"><label for="project_name"></label>
-                    <span class="intpSpan"> <?php echo $form->input("Contact.jobtitle", array('id' => 'jobtitle', 'div' => false, 'label' => '',"class" => "inpt_txt_fld","maxlength" => "200"));?></span></span></td>
+                    <span class="intp-Span"> <?php echo $form->input("Contact.jobtitle", array('id' => 'jobtitle', 'div' => false, 'label' => '',"class" => "inpt-txt-fld form-control","maxlength" => "200"));?></span></span></td>
 					<td>&nbsp;</td>
 					<td>&nbsp;</td>
 					<td>&nbsp;</td>
@@ -223,7 +232,7 @@ echo $this->renderElement('new_slider');
                 <tr>
                   <td width="20%" align="right"><label class="boldlabel">Address <span class="red">*</span></label></td>
                   <td width="30%"><label for="project_name"></label>
-                    <span class="intpSpan"><?php echo $form->input("Contact.address1", array('id' => 'address1', 'div' => false, 'label' => '',"class" => "inpt_txt_fld","maxlength" => "200"));?></span></td>
+                    <span class="intp-Span"><?php echo $form->input("Contact.address1", array('id' => 'address1', 'div' => false, 'label' => '',"class" => "inpt-txt-fld form-control","maxlength" => "200"));?></span></td>
                   <td>&nbsp;</td>
                   <td>&nbsp;</td>
                   <td>&nbsp;</td>
@@ -231,7 +240,7 @@ echo $this->renderElement('new_slider');
                 <tr>
                   <td width="20%" align="right"><label class="boldlabel">Country <span class="red">*</span></label></td>
                   <td width="30%"><label for="project_name"></label>
-                    <span class="txtArea_top"><span class="txtArea_bot"> <?php echo $form->select("Contact.country",$countrydropdown,$selectedcountry,array('id' => 'country','class'=>'multilist','onchange'=>'return getstateoptions(this.value,"Contact")'),array('254'=>'United States')); ?> </span></span></td>
+                    <span class="txtArea-top"><span class="txtArea-bot"> <?php echo $form->select("Contact.country",$countrydropdown,$selectedcountry,array('id' => 'country','class'=>'multilist form-control','onchange'=>'return getstateoptions(this.value,"Contact")'),array('254'=>'United States')); ?> </span></span></td>
                   <td>&nbsp;</td>
                   <td>&nbsp;</td>
                   <td>&nbsp;</td>
@@ -239,7 +248,7 @@ echo $this->renderElement('new_slider');
                 <tr>
                   <td width="20%" align="right"><label class="boldlabel">State <span class="red">*</span></label></td>
                   <td width="30%"><label for="project_name"></label>
-                    <span class="txtArea_top"><span class="txtArea_bot"> <span id="statediv"> <?php echo $form->select("Contact.state",$statedropdown,$selectedstate,array('id' => 'state','class'=>'multilist'),"---Select---"); ?> </span></span> </span> </td>
+                    <span class="txtArea-top"><span class="txtArea-bot"> <span id="statediv"> <?php echo $form->select("Contact.state",$statedropdown,$selectedstate,array('id' => 'state','class'=>'multilist form-control'),"---Select---"); ?> </span></span> </span> </td>
                   <td>&nbsp;</td>
                   <td>&nbsp;</td>
                   <td>&nbsp;</td>
@@ -247,7 +256,7 @@ echo $this->renderElement('new_slider');
                 <tr>
                   <td width="20%" align="right"><label class="boldlabel">City <span class="red">*</span></label></td>
                   <td width="30%"><label for="project_name"></label>
-                    <span class="intpSpan"> <?php echo $form->input("Contact.city",array('id' => 'city', 'div' => false, 'label' => '',"class" => "inpt_txt_fld","maxlength" => "150")); ?></span></td>
+                    <span class="intp-Span"> <?php echo $form->input("Contact.city",array('id' => 'city', 'div' => false, 'label' => '',"class" => "inpt-txt-fld form-control","maxlength" => "150")); ?></span></td>
                   <td>&nbsp;</td>
                   <td>&nbsp;</td>
                   <td>&nbsp;</td>
@@ -255,7 +264,7 @@ echo $this->renderElement('new_slider');
                 <tr>
                   <td width="20%" align="right"><label class="boldlabel">Zip/Postal Code <span class="red">*</span></label></td>
                   <td width="30%"><label for="project_name"></label>
-                    <span class="intpSpan"> <?php echo $form->input("Contact.zipcode", array('id' => 'zipcode', 'div' => false, 'label' => '',"class" => "inpt_txt_fld","maxlength" => "10"));?></span></td>
+                    <span class="intp-Span"> <?php echo $form->input("Contact.zipcode", array('id' => 'zipcode', 'div' => false, 'label' => '',"class" => "inpt-txt-fld form-control","maxlength" => "10"));?></span></td>
                   <td>&nbsp;</td>
                   <td>&nbsp;</td>
                   <td>&nbsp;</td>
@@ -265,16 +274,17 @@ echo $this->renderElement('new_slider');
                 </tr>
               </tbody>
             </table></td>
-          <td valign="top"><table cellspacing="10" cellpadding="0" align="center">
+          <td class="col-sm-6" valign="top">
+          	<table cellspacing="10" cellpadding="0" align="center">
               <tbody>
                 <tr>
                   <td width="32%" align="right">
 				  <label class="boldlabel">Contact Type <span class="red">*</span></label></td>
                   <td width="30%"><label for="project_name"></label>
-                    <span class="txtArea_top"><span class="txtArea_bot"> 
+                    <span class="txtArea-top"><span class="txtArea-bot"> 
 					<?php 
 					
-					echo $form->select("Contact.contact_type_id",$contacttypedropdown,null,array('id' => 'contact_type_id','class'=>'multilist'),"---Select---");
+					echo $form->select("Contact.contact_type_id",$contacttypedropdown,null,array('id' => 'contact_type_id','class'=>'multilist form-control'),"---Select---");
 					echo $form->hidden("default_contactType",array('value'=>$default_contactType,'id'=>'defaultContactType'));
 					?></span></span>
                   <td>&nbsp;</td>
@@ -284,7 +294,7 @@ echo $this->renderElement('new_slider');
                 <tr>
                   <td width="20%" align="right"><label class="boldlabel">Phone </label></td>
                   <td width="30%"><label for="project_name"></label>
-                    <span class="intpSpan"> <?php echo $form->input("Contact.busphone", array('id' => 'busphone', 'div' => false, 'label' => '',"class" => "inpt_txt_fld","maxlength" => "12",'onblur' =>'USPhoneNumberFormat(this.value)'));?></span></td>
+                    <span class="intp-Span"> <?php echo $form->input("Contact.busphone", array('id' => 'busphone', 'div' => false, 'label' => '',"class" => "inpt-txt-fld form-control","maxlength" => "12",'onblur' =>'USPhoneNumberFormat(this.value)'));?></span></td>
                   <td>&nbsp;</td>
                   <td>&nbsp;</td>
                   <td>&nbsp;</td>
@@ -292,7 +302,7 @@ echo $this->renderElement('new_slider');
                 <tr>
                   <td width="20%" align="right"><label class="boldlabel">Fax </label></td>
                   <td width="30%"><label for="project_name"></label>
-                    <span class="intpSpan"> <?php echo $form->input("Contact.fax", array('id' => 'fax', 'div' => false, 'label' => '',"class" => "inpt_txt_fld","maxlength" => "12",'onblur' =>'USFaxNumberFormat(this.value)'));?></span></td>
+                    <span class="intp-Span"> <?php echo $form->input("Contact.fax", array('id' => 'fax', 'div' => false, 'label' => '',"class" => "inpt-txt-fld form-control","maxlength" => "12",'onblur' =>'USFaxNumberFormat(this.value)'));?></span></td>
                   <td>&nbsp;</td>
                   <td>&nbsp;</td>
                   <td>&nbsp;</td>
@@ -300,7 +310,7 @@ echo $this->renderElement('new_slider');
                 <tr>
                   <td width="20%" align="right"><label class="boldlabel">Cell Phone </label></td>
                   <td width="30%"><label for="project_name"></label>
-                    <span class="intpSpan"> <?php echo $form->input("Contact.mobile", array('id' => 'mobile', 'div' => false, 'label' => '',"class" => "inpt_txt_fld","maxlength" => "12",'onblur' =>'USCellphoneNumberFormat(this.value)'));?></span></td>
+                    <span class="intp-Span"> <?php echo $form->input("Contact.mobile", array('id' => 'mobile', 'div' => false, 'label' => '',"class" => "inpt-txt-fld form-control","maxlength" => "12",'onblur' =>'USCellphoneNumberFormat(this.value)'));?></span></td>
                   <td>&nbsp;</td>
                   <td>&nbsp;</td>
                   <td>&nbsp;</td>
@@ -308,7 +318,7 @@ echo $this->renderElement('new_slider');
                 <tr>
                   <td width="20%" align="right"><label class="boldlabel">Email <span class="red">*</span></label></td>
                   <td width="30%"><label for="project_name"></label>
-                    <span class="intpSpan"> <?php echo $form->input("Contact.email", array('id' => 'email', 'div' => false, 'label' => '',"class" => "inpt_txt_fld","maxlength" => "200"));?></span></td>
+                    <span class="intp-Span"> <?php echo $form->input("Contact.email", array('id' => 'email', 'div' => false, 'label' => '',"class" => "inpt-txt-fld form-control","maxlength" => "200"));?></span></td>
                   <td>&nbsp;</td>
                   <td>&nbsp;</td>
                   <td>&nbsp;</td>
@@ -332,14 +342,14 @@ echo $this->renderElement('new_slider');
 						<tr>
 						  <td width="20%" align="right"><label class="boldlabel">Username</label></td>
 						  <td width="30%">
-						   <span class="intpSpan"><?php echo $form->input("Sponsor.username", array('id' => 'username', 'div' => false, 'label' => '',"class" => "inpt_txt_fld","maxlength" => "150",'onchange' => 'ajaxuniquesponsorname(this.value)'));?>
+						   <span class="intp-Span"><?php echo $form->input("Sponsor.username", array('id' => 'username', 'div' => false, 'label' => '',"class" => "inpt-txt-fld form-control","maxlength" => "150",'onchange' => 'ajaxuniquesponsorname(this.value)'));?>
 						 </span></td>
 						 
 						</tr>
 						<tr>
 						  <td width="20%" align="right"><label class="boldlabel">Password</label></td>
 						  <td width="30%">
-						  <span class="intpSpan"><?php echo $form->password("Sponsor.password", array('id' => 'password', 'div' => false, 'label' => '',"class" => "inpt_txt_fld","maxlength" => "150"));?></span></td>
+						  <span class="intp-Span"><?php echo $form->password("Sponsor.password", array('id' => 'password', 'div' => false, 'label' => '',"class" => "inpt-txt-fld form-control","maxlength" => "150"));?></span></td>
 						  
 						</tr>
 					</table>
@@ -351,7 +361,9 @@ echo $this->renderElement('new_slider');
 				
 				?>
               </tbody>
-            </table></td>
+            </table>
+          </td>
+          </td>
         </tr>
       </table>
       <?php echo $form->end();?>

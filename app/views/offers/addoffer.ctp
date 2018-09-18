@@ -523,16 +523,16 @@ if($this->data['Offer']['id']){
             </div>
             <div class="slider-dashboard col-sm-6">
                 <div class="icon-container">
-                    <?php echo $form->create("Offer", array("action" => "addoffer",'type' => 'file', 'id' => "addoffer","onsubmit"=>"return validateoffer('$act');"))?>
+					<?php echo $form->create("Offer", array("action" => "addoffer",'type' => 'file', 'id' => "addoffer","onsubmit"=>"return validateoffer('$act');"))?>
                     <button type="submit" value="Submit" class="sendBut" name="data[Action][redirectpage]">
-                                <?php e($html->image('save.png', array('alt' => 'Save'))); ?>
-                            </button>
+                    <?php e($html->image('save.png', array('alt' => 'Save'))); ?>
+                    </button>
                     <button type="submit" value="Submit" class="sendBut" name="data[Action][noredirection]">
-                                <?php e($html->image('apply.png', array('alt' => 'Apply'))); ?>
-                            </button>
-                        <button type="button" id="saveForm" class="sendBut" onclick="javascript:(window.location='<?php echo $backUrl ?>')">
-                                <?php e($html->image('cancle.png', array('alt' => 'Cancle'))); ?>
-                            </button>
+                    <?php e($html->image('apply.png', array('alt' => 'Apply'))); ?>
+                    </button>
+                    <button type="button" id="saveForm" class="sendBut" onclick="javascript:(window.location='<?php echo $backUrl ?>')">
+                    <?php e($html->image('cancle.png', array('alt' => 'Cancle'))); ?>
+                    </button>
                     <?php  echo $this->renderElement('new_slider');  ?>
                 </div>
             </div>
@@ -616,7 +616,7 @@ if($this->data['Offer']['id']){
 		</div>
 	</div>
 	<?php }?>
-	<table class="table table-borderless">
+	<table class="table table-borderless addoffer">
 		<tr>
 			<td width="50%" valign="top" style="display:inline-block;">
 				<table cellspacing="5" cellpadding="0">
@@ -640,8 +640,13 @@ if($this->data['Offer']['id']){
 							</div>
 
 						</td>
+<<<<<<< HEAD
 						<td><span class="txtArea_top"> <span
 								class="txtArea_bot"> <?php echo $form->select("Offer.merchant_id",$merchantdropdown,$selectedmerchant, array('id' => 'merchant_id', 'style' =>'background: none repeat scroll 0% 0% transparent; margin-bottom: 6px; width:230px;',"class" =>"sample-class","maxlength" => "250"),"---Select---"); ?>
+=======
+						<td><span class="txtArea-top"> <span
+								class="txtArea-bot"> <?php echo $form->select("Offer.merchant_id",$merchantdropdown,$selectedmerchant, array('id' => 'merchant_id', 'style' =>'background: none repeat scroll 0% 0% transparent; margin-bottom: 6px; width:230px;',"class" =>"textfield-class form-control","maxlength" => "250"),"---Select---"); ?>
+>>>>>>> 757dbb0d16c2c03dee67a9c7402402681330ea58
 							</span>
 						</span></td>
 					</tr>
@@ -655,9 +660,15 @@ if($this->data['Offer']['id']){
 							</div>
 
 						</td>
+<<<<<<< HEAD
 						<td><span class="txtArea_top"> <span
 								class="txtArea_bot"> <?php 
 						echo $form->select("Offer.category_id",$categorydropdown,$selectedcategory, array('id' => 'category_id', 'style' =>'background: none repeat scroll 0% 0% transparent; margin-bottom: 6px; width:230px;',"class" =>"sample-class","maxlength" => "250"),"---Select---");
+=======
+						<td><span class="txtArea-top"> <span
+								class="txtArea-bot"> <?php 
+						echo $form->select("Offer.category_id",$categorydropdown,$selectedcategory, array('id' => 'category_id','div' => false, 'label' => '','style' =>'background: none repeat scroll 0% 0% transparent; margin-bottom: 6px; width:230px;',"class" =>"textfield-class form-control","maxlength" => "250"),"---Select---");
+>>>>>>> 757dbb0d16c2c03dee67a9c7402402681330ea58
 						?>
 							</span>
 						</span></td>
@@ -673,9 +684,15 @@ if($this->data['Offer']['id']){
 							</div>
 
 						</td>
+<<<<<<< HEAD
 						<td><span class="txtArea_top"> <span
 								class="txtArea_bot"> <?php 
 						echo $form->select("Offer.offer_type",$offertypetempdropdown,$selectedoffertypetemp, array('id' => 'offer_type', 'style' =>'background: none repeat scroll 0% 0% transparent; margin-bottom: 6px; width:230px;',"class" =>"sample-class","maxlength" => "250"),"---Select---");
+=======
+						<td><span class="txtArea-top"> <span
+								class="txtArea-bot"> <?php 
+						echo $form->select("Offer.offer_type",$offertypetempdropdown,$selectedoffertypetemp, array('id' => 'offer_type', 'div' => false, 'label' => '','style' =>'background: none repeat scroll 0% 0% transparent; margin-bottom: 6px; width:230px;',"class" =>"textfield-class form-control","maxlength" => "250"),"---Select---");
+>>>>>>> 757dbb0d16c2c03dee67a9c7402402681330ea58
 						?>
 							</span>
 						</span></td>
@@ -695,7 +712,7 @@ if($this->data['Offer']['id']){
 								float: left;
 							}
 							.floatright label {
-								padding-right: 8px;
+								padding-right: 5px;
 								padding-left: 3px;
 							}
 						</style>
@@ -814,9 +831,15 @@ if($this->data['Offer']['id']){
 						</td>
 						<td>
 							<div class="large">
+<<<<<<< HEAD
 								<span class="txtArea_top">
 									<span class="newtxtArea_bot">
 										<div class="scrolldown" id="charity">
+=======
+								<span class="txtArea-top">
+									<span class="newtxtArea-bot">
+										<div class="scrolldown form-control" id="charity">
+>>>>>>> 757dbb0d16c2c03dee67a9c7402402681330ea58
 										
 										</div>
 									</span>
@@ -832,7 +855,11 @@ if($this->data['Offer']['id']){
 								<label class="boldlabel">Related Event</label>
 							</div>
 						</td>
+<<<<<<< HEAD
 						<td><span class="txtArea_top"> <span class="txtArea_bot"> <span id="countrydiv"> <?php echo $form->select("Offer.event_id",$eventdropdown,$selectedevent,array('id' => 'event_id',"class"=>"multilist"),"None"); ?>
+=======
+						<td><span class="txtArea-top"> <span class="txtArea-bot"> <span id="countrydiv"> <?php echo $form->select("Offer.event_id",$eventdropdown,$selectedevent,array('id' => 'event_id',"class"=>"multi-list form-control"),"None"); ?>
+>>>>>>> 757dbb0d16c2c03dee67a9c7402402681330ea58
 								</span>
 							</span>
 						</span></td>
@@ -855,8 +882,13 @@ if($this->data['Offer']['id']){
 								<label class="boldlabel">Recur Pattern </label>
 							</div>
 						</td>
+<<<<<<< HEAD
 						<td><span class="txtArea_top"> <span
 								class="txtArea_bot"> <span id="countrydiv"> <?php echo $form->select("Offer.recur_pattern",$recur_pattern,null,array('id' => 'recur_pattern',"class"=>"multilist"),"--Select--"); ?>
+=======
+						<td><span class="txtArea-top"> <span
+								class="txtArea-bot"> <span id="countrydiv"> <?php echo $form->select("Offer.recur_pattern",$recur_pattern,null,array('id' => 'recur_pattern',"class"=>"multi-list form-control"),"--Select--"); ?>
+>>>>>>> 757dbb0d16c2c03dee67a9c7402402681330ea58
 								</span>
 							</span>
 						</span></td>
@@ -1195,10 +1227,10 @@ echo $form->input("Offer.monthly_weekof_noof_months", array('id' => 'monthly_wee
 						<td><span class="txtArea_top"> <span
 								class="txtArea_bot"> 
 								<select id="stime"
-									name="data[Offer][stime]" class="noBg"
-									style="border: none; width: 230px; margin-bottom: 7px;">
+									name="data[Offer][stime]" class="form-control"
+									style="width: 230px; margin-bottom: 7px;">
 										<?php echo $option_stime; ?>
-								</select> <?php //echo $form->select("Offer.stime",$timedropdown,$sel_stime,array('id' => 'country','class'=>'multilist',"---Select---"); ?>
+								</select> <?php //echo $form->select("Offer.stime",$timedropdown,$sel_stime,array('id' => 'country','class'=>'multi-list form-control',"---Select---"); ?>
 							</span>
 						</span></td>
 					</tr>
@@ -1210,12 +1242,19 @@ echo $form->input("Offer.monthly_weekof_noof_months", array('id' => 'monthly_wee
 								<label class="boldlabel">End Time </label>
 							</div>
 						</td>
+<<<<<<< HEAD
 						<td><span class="txtArea_top"> <span
 								class="txtArea_bot"> <select id="etime"
 									name="data[Offer][etime]" class="noBg"
 									style="border: none; width: 230px; margin-bottom: 7px;">
+=======
+						<td><span class="txtArea-top"> <span
+								class="txtArea-bot"> <select id="etime"
+									name="data[Offer][etime]" class="form-control"
+									style="width: 230px; margin-bottom: 7px;">
+>>>>>>> 757dbb0d16c2c03dee67a9c7402402681330ea58
 										<?php echo $option_etime; ?>
-								</select> <?php //echo $form->select("Offer.etime",$timedropdown,$sel_etime,array('id' => 'country','class'=>'multilist',"---Select---"); ?>
+								</select> <?php //echo $form->select("Offer.etime",$timedropdown,$sel_etime,array('id' => 'country','class'=>'multi-list form-control',"---Select---"); ?>
 							</span>
 						</span></td>
 					</tr>
@@ -1227,10 +1266,15 @@ echo $form->input("Offer.monthly_weekof_noof_months", array('id' => 'monthly_wee
 							<label class="boldlabel">Auto Respond Offer Email </label>
 						</div>
 					</td>
+<<<<<<< HEAD
 					<td><span class="txtArea_top"> <span
 							class="txtArea_bot"> <?php echo $form->select("Offer.auto_respond_offer_email",$responderdropdown,$sel_responder,array('id' => 'auto_respond_offer_email','class'=>'multilist'),array(''=>'--Select--')); ?>
+=======
+					<td><span class="txtArea-top"> <span
+							class="txtArea-bot"> <?php echo $form->select("Offer.auto_respond_offer_email",$responderdropdown,$sel_responder,array('id' => 'auto_respond_offer_email','class'=>'multi-list form-control'),array(''=>'--Select--')); ?>
+>>>>>>> 757dbb0d16c2c03dee67a9c7402402681330ea58
 						</span>
-					</span> <span class="btnLft"><input type="button" class="btnRht"
+					</span> <span class="btn-Lft"><input type="button" class="btn btn-primary btn-sm"
 							value="Add" name="Add" onclick="addEmailTempforAutoRespond();" />
 					</span></td>
 					</tr>
@@ -1246,9 +1290,9 @@ echo $form->input("Offer.monthly_weekof_noof_months", array('id' => 'monthly_wee
 						<td><span class="txtArea_top"> <span
 								class="txtArea_bot"> 
 				<?php  
-				echo $form->select("Offer.event_detail_page",$submenu,$event_detail_page,array('id' => 'event_detail_page','class'=>'multilist'),array(''=>'--Select--')); ?>
+				echo $form->select("Offer.event_detail_page",$submenu,$event_detail_page,array('id' => 'event_detail_page','class'=>'multi-list form-control'),array(''=>'--Select--')); ?>
 							</span>
-						</span> <span class="btnLft"><input type="button" class="btnRht"
+						</span> <span class="btn-Lft"><input type="button" class="btn btn-primary btn-sm"
 								value="Add" name="Add" onclick="addContentforEventDetails();" />
 						</span></td>
 					</tr>
@@ -1264,9 +1308,9 @@ echo $form->input("Offer.monthly_weekof_noof_months", array('id' => 'monthly_wee
 						<td><span class="txtArea_top"> <span
 								class="txtArea_bot"> 
 								
-					<?php  echo $form->select("Offer.merchant_detail_page",null,$merchant_detail_page,array('id' => 'merchant_detail_page','class'=>'multilist'),array(''=>'--Select--')); ?>
+					<?php  echo $form->select("Offer.merchant_detail_page",null,$merchant_detail_page,array('id' => 'merchant_detail_page','class'=>'multi-list form-control'),array(''=>'--Select--')); ?>
 							</span>
-						</span> <span class="btnLft"><input type="button" class="btnRht"
+						</span> <span class="btn-Lft"><input type="button" class="btn btn-primary btn-sm"
 								value="Add" name="Add" onclick="addContentforMerchantDetails();" />
 						</span></td>
 					</tr>
@@ -1277,10 +1321,15 @@ echo $form->input("Offer.monthly_weekof_noof_months", array('id' => 'monthly_wee
 								<label class="boldlabel">Offer Inquiry Page </label>
 							</div>
 						</td>
+<<<<<<< HEAD
 						<td><span class="txtArea_top"> <span
 								class="txtArea_bot"> <?php echo $form->select("Offer.offer_inquiry_page",$submenu,null,array('id' => 'offer_inquiry_page','class'=>'multilist'),array(''=>'--Select--')); ?>
+=======
+						<td><span class="txtArea-top"> <span
+								class="txtArea-bot"> <?php echo $form->select("Offer.offer_inquiry_page",$submenu,null,array('id' => 'offer_inquiry_page','class'=>'multi-list form-control'),array(''=>'--Select--')); ?>
+>>>>>>> 757dbb0d16c2c03dee67a9c7402402681330ea58
 							</span>
-						</span> <span class="btnLft"><input type="button" class="btnRht"
+						</span> <span class="btn-Lft"><input type="button" class="btn btn-primary btn-sm"
 								value="Add" name="Add" onclick="addContentforOfferDetails();" />
 						</span></td>
 					</tr>
@@ -1305,9 +1354,15 @@ echo $form->input("Offer.monthly_weekof_noof_months", array('id' => 'monthly_wee
 						
 					
 							<div class="large" >
+<<<<<<< HEAD
 							<span class="txtArea_top">
 					  		<span class="newtxtArea_bot">
 								<div class="scrolldown" id="merchant_location">
+=======
+							<span class="txtArea-top">
+					  		<span class="newtxtArea-bot">
+								<div class="scrolldown form-control" id="merchant_location">
+>>>>>>> 757dbb0d16c2c03dee67a9c7402402681330ea58
 								
 					  			
 								</div>
@@ -1324,8 +1379,13 @@ echo $form->input("Offer.monthly_weekof_noof_months", array('id' => 'monthly_wee
 								<label class="boldlabel">Short Description </label>
 							</div>
 						</td>
+<<<<<<< HEAD
 						<td><span class="txtArea_top"> <span
 								class="txtArea_bot"><?php echo $form->textarea("Offer.offerdescription", array('id' => 'offerdescription', 'div' => false, 'label' => '','cols' => '35', 'rows' => '4',"class" => "noBg",'style'=>'width:231px;'));?>
+=======
+						<td><span class="txtArea-top"> <span
+								class="txtArea-bot"><?php echo $form->textarea("Offer.offerdescription", array('id' => 'offerdescription', 'div' => false, 'label' => '','cols' => '35', 'rows' => '4',"class" => "form-control",'style'=>'width:231px;'));?>
+>>>>>>> 757dbb0d16c2c03dee67a9c7402402681330ea58
 							</span>
 						</span></td>
 					</tr>
@@ -1336,8 +1396,13 @@ echo $form->input("Offer.monthly_weekof_noof_months", array('id' => 'monthly_wee
 								<label class="boldlabel">Meta Description </label>
 							</div>
 						</td>
+<<<<<<< HEAD
 						<td><span class="txtArea_top"> <span
 								class="txtArea_bot"><?php echo $form->textarea("Offer.meta_description", array('id' => 'meta_description', 'div' => false, 'label' => '','cols' => '35', 'rows' => '4',"class" => "noBg",'style'=>'width:231px;'));?>
+=======
+						<td><span class="txtArea-top"> <span
+								class="txtArea-bot"><?php echo $form->textarea("Offer.meta_description", array('id' => 'meta_description', 'div' => false, 'label' => '','cols' => '35', 'rows' => '4',"class" => "form-control",'style'=>'width:231px;'));?>
+>>>>>>> 757dbb0d16c2c03dee67a9c7402402681330ea58
 							</span>
 						</span></td>
 					</tr>
