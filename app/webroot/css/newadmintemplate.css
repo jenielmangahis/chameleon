@@ -3997,9 +3997,9 @@ label.block {
 
 
 
-.ui-datepicker-trigger {
+.intp-Span .ui-datepicker-trigger {
 
-	position: absolute;
+	position: relative;
 
 	right: -30px;
 
@@ -4339,7 +4339,8 @@ ul.form-style li .intpSpan { display:block; margin-bottom:10px;}
 	.checkbox input[type="checkbox"] { margin-left:0;}
 	.checkbox { margin:0;}
 	
-	.intp-Span .form-control, textarea.form-control { width:auto;}
+	.intp-Span .form-control, textarea.form-control { width:100%;}
+	.updat { width:auto;}
 	
 	.table-responsive .right { margin-right:5px; float:none;}
 	.table-responsive .ckeditor { width:100% !important; border:1px solid #ddd;}
@@ -4405,6 +4406,8 @@ ul.form-style li .intpSpan { display:block; margin-bottom:10px;}
 	
 	.checkbox input[type="checkbox"] { margin-left:0;}
 	.checkbox { margin:0;}
+	
+	.updat { width:auto;}
 	
 	.row .box.col-xs-4 { width: auto; display:block; float:none;}
 	

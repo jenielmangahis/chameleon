@@ -74,7 +74,7 @@
     </div>
 </div>
 
- <!--inner-container starts here--><div  style="width:960px; margin:0 auto">
+ <!--inner-container starts here--><div class="midCont clearfix">
 
 <div class="">
 

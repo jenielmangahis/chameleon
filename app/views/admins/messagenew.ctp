@@ -152,38 +152,40 @@ $backUrl = $base_url_admin.'messagelist';
 
 </script>
 <div class="titlCont">
-<div style="width:960px; margin:0 auto;">
-<div align="center" class="slider" id="toppanel" style="height: 20px; top:13px;right: -50px;width:545px !important; text-align:right;">			
-	
-<?php if($msgholder){  ?>
+	<div class="slider-centerpage clearfix">
+    	<div class="center-Page col-sm-6">
+            <h2>Send A Message</h2>
+        </div>
+        <div class="slider-dashboard col-sm-6">
+        	<div class="icon-container">
+            	<?php if($msgholder){  ?>
                 <button type="button" id="saveForm" class="sendBut"  ONCLICK="javascript:(window.location='<?php echo $base_url_admin ?>membermessages/<?php echo $msgholder;?>')">
-				<?php e($html->image('cancle.png')) ?></button>
-            <?php }else{ ?>
-            <button type="button" id="saveForm" class="sendBut"  ONCLICK="javascript:(window.location='<?php echo $backUrl?>')">
-			<?php e($html->image('cancle.png')) ?>
-			</button>   
-          <?php  }?>
-		  <?php echo $this->renderElement('new_slider'); ?>		
-</div>
-			          
-        <span class="titlTxt">
-           Send A Message
-        </span>
-
-
+                <?php e($html->image('cancle.png')) ?></button>
+                <?php }else{ ?>
+                <button type="button" id="saveForm" class="sendBut"  ONCLICK="javascript:(window.location='<?php echo $backUrl?>')">
+                <?php e($html->image('cancle.png')) ?>
+                </button>   
+                <?php  }?>
+                <?php echo $this->renderElement('new_slider'); ?>		
+            </div>
+        </div>
         <div class="topTabs" style="height:25px;">
             <?php /*?><ul>
             <?php if($msgholder){  ?>
-                  <li><button type="button" id="saveForm" class="button"  ONCLICK="javascript:(window.location='<?php echo $base_url_admin ?>membermessages/<?php echo $msgholder;?>')"><span> Cancel</span></button></li>
+                  <li><button type="button" id="saveForm" class="btn btn-primary btn-sm"  ONCLICK="javascript:(window.location='<?php echo $base_url_admin ?>membermessages/<?php echo $msgholder;?>')"><span> Cancel</span></button></li>
             <?php }else{ ?>
-            <li><button type="button" id="saveForm" class="button"  ONCLICK="javascript:(window.location='<?php echo $backUrl?>')"><span> Cancel</span></button></li>    
+            <li><button type="button" id="saveForm" class="btn btn-primary btn-sm"  ONCLICK="javascript:(window.location='<?php echo $backUrl?>')"><span> Cancel</span></button></li>    
           <?php  }?>
                 
             </ul><?php */?>
         </div>
-		
-		
-		 <?php    $this->loginarea="admins";    $this->subtabsel="messagelist";
+    </div>
+</div>
+
+
+<div class="clearfix nav-submenu-container">
+	<div class="midCont submenu-Cont">
+		<?php    $this->loginarea="admins";    $this->subtabsel="messagelist";
 			
 			if($_GET['url'] === 'admins/messagelist/0'){
              echo $this->renderElement('survey_submenus');
@@ -196,11 +198,12 @@ $backUrl = $base_url_admin.'messagelist';
 			echo $this->renderElement('memberlist_submenus');
 				
 				
-				}?>    
-    </div></div>
+				}?>   
+    </div>
+</div>
 
 
-<div class="midCont" >	
+<div class="midCont table-responsive" >	
 
 
     <?php if($session->check('Message.flash')){ ?>
@@ -223,7 +226,7 @@ $backUrl = $base_url_admin.'messagelist';
         <input type="hidden" id="getmsgid" value="<?php if($msgid==null) {echo "0";}else{ echo $msgid;}?>"/>                                                 
         <?php echo $form->create("admins", array("action" => "messagenew",'type' => 'file','enctype'=>'multipart/form-data','name' => 'messagenew', 'id' => "messagenew","onsubmit"=>"return validatemsg();"))?>
 
-            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+            <table class="table table-borderless" width="100%" border="0" cellspacing="0" cellpadding="0">
 
 
                 <tr> <td valign="top" width="140px">
@@ -231,23 +234,23 @@ $backUrl = $base_url_admin.'messagelist';
                             <label class="boldlabel">Members <span style="color: red;">*</span></label>
 							
 							<div  style="margin-top:7px;">
-				<span  class="btnLft">
+				<span  class="btn-Lft">
 				<?php
 					e($html->link(
 								$html->tag('span', 'Add'),
 								array('controller'=>'admins','action'=>'addmember'),
-								array('class'=>'btnRht','escape' => false)
+								array('class'=>'btn-Rht btn btn-primary btn-sm','escape' => false)
 								)
 					);
 				?>
 				<?php /*?><a href="../addmember" target="_blank" >
-				<input type="button" value="Add" name="Add" tabindex=15 class="btnRht" /></a><?php */?>
+				<input type="button" value="Add" name="Add" tabindex=15 class="btn-Rht btn btn-primary btn-sm" /></a><?php */?>
 				</span>	</div>
 				
                         </div>  </td>   <td valign="top">
-                        <span class="txtArea_top" style="margin-bottom: 12px;">
-                            <span class="txtArea_bot">
-                                <select class="multilist noBg" empty="" size="7" id="recevier_id" name="recevier_id[]" multiple="multiple" >
+                        <span class="txtArea-top" style="margin-bottom: 12px;">
+                            <span class="txtArea-bot">
+                                <select class="multilist form-control noBg" empty="" size="7" id="recevier_id" name="recevier_id[]" multiple="multiple" >
                                 <option value="0">Select All </option>   
                                     <?php if($holderlist){
                                             foreach($holderlist as $holderdata){
@@ -271,8 +274,8 @@ $backUrl = $base_url_admin.'messagelist';
                             <label class="boldlabel">Subject <span style="color: red;">*</span></label>
                         </div>  </td>
                         <td valign="top">
-                        <span class="intpSpan" style="vertical-align: top;">
-                            <input type="text"  name="subject" id="subject"  class="inpt_txt_fld"/>  
+                        <span class="intp-Span" style="vertical-align: top;">
+                            <input type="text"  name="subject" id="subject"  class="inpt-txt-fld form-control"/>  
                         </span>
                     </td>
                 </tr>
@@ -283,15 +286,15 @@ $backUrl = $base_url_admin.'messagelist';
                             <label class="boldlabel">Message <span style="color: red;">*</span></label>
                         </div> </td>
                         <td valign="top">
-                      <!--  <span class="txtArea_top" style="width: 300px; background-image: none; padding-top: 0px;  background-color: #EBEBEB;">   
-                            <span class="txtArea_bot" style="background-image: none;"> 
-                                <textarea cols="41" rows="7" name="message" id="message"  class="noBg" style="border: 1px solid #B1B1B1" ></textarea>  
+                      <!--  <span class="txtArea-top" style="width: 300px; background-image: none; padding-top: 0px;  background-color: #EBEBEB;">   
+                            <span class="txtArea-bot" style="background-image: none;"> 
+                                <textarea cols="41" rows="7" name="message" id="message"  class="form-control noBg" style="border: 1px solid #B1B1B1" ></textarea>  
                             </span>
                         </span> -->
                         
-                          <span class="txtArea_top">
-                                <span class="txtArea_bot">
-                                 <textarea cols="35" rows="4" name="message" id="message"  class="noBg"  ></textarea>
+                          <span class="txtArea-top">
+                                <span class="txtArea-bot">
+                                 <textarea cols="35" rows="4" name="message" id="message"  class="form-control noBg"  ></textarea>
                                  </span>
                             </span>
                     </td>
@@ -300,7 +303,7 @@ $backUrl = $base_url_admin.'messagelist';
                 <tr>
                     <td >&nbsp;  </td>
                     <td align="left">
-                          <button  class="button" id="sendmessage" type="submit"><span> Send</span></button>
+                          <button  class="btn btn-primary btn-sm" id="sendmessage" type="submit"><span> Send</span></button>
                     </td>
                 </tr>
             </table>

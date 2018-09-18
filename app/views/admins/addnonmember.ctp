@@ -10,56 +10,45 @@
     <link rel="stylesheet" type="text/css" href="/js/datetimepicker/smothness/jquery_ui_datepicker.css">
 <!--container starts here-->
 <div class="container"> 
-<div class="titlCont">
-	<div style="width:960px; margin:0 auto;">
-		<?php /*?><div align="center" id="toppanel">
-			<div id="panel">
-					<div class="content clearfix">
-						<H1> Help</h1>
-						<p class="grey"><?php echo $hlpdata[0]['HelpContent']['content']; ?></p>
-					</div>
-					
-			</div> <!-- /login -->    
-
-			<!-- The tab on top -->    
-			<div class="tab">
-				<ul class="login">
-					<li id="toggle">
-					<a id="open" class="open" href="#."><span>Click Here to Open Help Box</span></a>
-
-						<a id="close" style="display: none;" class="close" href="#"><span>Click Here to Close Help Box</span></a>        
-					</li>
-				</ul> 
-			</div>
-		</div><?php */?>
-		<div align="center" class="slider" id="toppanel" style="height: 20px; top:13px;right:0px;width:545px !important; text-align:right;">	<?php 
-        //,"onsubmit"=>"return validateholder('add');"
-        echo $form->create("Admin", array("action" => "addnonmember",'type' => 'file','enctype'=>'multipart/form-data','name' => 'addholder','onsubmit'=>"return validateholder('add')", 'id' => "addholder"))?>			
-<button type="submit" value="Submit" class="sendBut" name="data[Action][redirectpage]"><?php e($html->image('save.png')) ?></button>
-<button type="submit" value="Submit" class="sendBut" name="data[Action][noredirection]"><?php e($html->image('apply.png')) ?></button>
-<button type="button" id="saveForm" class="sendBut"  ONCLICK="javascript:(window.location='<?php echo $base_url_admin.'nonmemberslist'; ?>')"><?php e($html->image('cancle.png')) ?></button>	
- <?php  echo $this->renderElement('new_slider');  ?>		
-</div>
-
-		<span class="titlTxt"> Non Member Registration </span>
-		<div class="topTabs" style="height:25px;">
+	<div class="titlCont">
+		<div class="slider-centerpage clearfix">
+        	<div class="center-Page col-sm-6">
+                <h2>Non Member Registration</h2>
+            </div>
+            <div class="slider-dashboard col-sm-6">
+            	<div class="icon-container">
+                	<?php 
+					//,"onsubmit"=>"return validateholder('add');"
+					echo $form->create("Admin", array("action" => "addnonmember",'type' => 'file','enctype'=>'multipart/form-data','name' => 'addholder','onsubmit'=>"return validateholder('add')", 'id' => "addholder"))?>			
+					<button type="submit" value="Submit" class="sendBut" name="data[Action][redirectpage]"><?php e($html->image('save.png')) ?></button>
+					<button type="submit" value="Submit" class="sendBut" name="data[Action][noredirection]"><?php e($html->image('apply.png')) ?></button>
+					<button type="button" id="saveForm" class="sendBut"  ONCLICK="javascript:(window.location='<?php echo $base_url_admin.'nonmemberslist'; ?>')"><?php e($html->image('cancle.png')) ?></button>	
+					<?php  echo $this->renderElement('new_slider');  ?>		
+                </div>
+            </div>
+            <div class="topTabs" style="height:25px;">
 			<?php /*?><ul>
 			<li><button type="submit" value="Submit" class="button" name="data[Action][redirectpage]"><span>Save</span></button></li>
 			<li><button type="submit" value="Submit" class="button" name="data[Action][noredirection]"><span>Apply</span></button></li>
 			<li><button type="button" id="saveForm" class="button"  ONCLICK="javascript:(window.location='<?php echo $base_url_admin.'nonmemberslist'; ?>')"><span> Cancel</span></button></li>
 			</ul><?php */?>
 		</div>
-		
-		<?php    $this->loginarea="admins";    $this->subtabsel="nonmemberslist";
+        </div>
+	</div>
+</div>
+</div>
+
+<div class="clearfix nav-submenu-container">
+    <div class="midCont submenu-Cont">
+       <?php    $this->loginarea="admins";    $this->subtabsel="nonmemberslist";
                 echo $this->renderElement('memberlist_submenus');  ?> 
-	</div>
-	</div>
+    </div>
 </div>
-</div>
+
 <!--rightpanel ends here-->
 
                             <!--inner-container starts here-->
-<div class="rightpanel">
+<div class="midCont clearfix">
 
 <script type="text/javascript">
     /* <![CDATA[ */
@@ -89,7 +78,7 @@
 </div> <?php } ?>
 
 
-<table cellspacing="10" cellpadding="0" align="center" >
+<table class="table table-borderless" cellspacing="10" cellpadding="0" align="center" >
   <tbody>
    <tr>
       <td colspan="5"><?php if($session->check('Message.flash')){ $session->flash(); } ?></td>
