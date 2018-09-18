@@ -93,8 +93,8 @@ $base_url = Configure::read('App.base_url');
 	var currDate  = dateobj.getFullYear();
 	$(function() {
 		$('#birthday').datepicker({
-			showOn: "button",
-			buttonImage: baseUrl+"img/calendar_new.png",
+			//showOn: "button",
+			//buttonImage: baseUrl+"img/calendar_new.png",
 			dateFormat: 'mm-dd-yy',
 			changeMonth: true,
 			changeYear:true,

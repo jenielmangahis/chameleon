@@ -17,7 +17,7 @@
      echo $javascript->link('admin_validate.js');
      echo $javascript->link('jquery.autocomplete.pack.js');     
      echo $html->css('jquery.autocomplete.css','stylesheet');
-     echo $javascript->link('facebox.js');
+     //echo $javascript->link('facebox.js');
 	 echo $javascript->link('common.js');
      echo $html->css('facebox.css','stylesheet');
      echo $html->css('css/slide.css','stylesheet');
@@ -57,6 +57,8 @@ var baseUrlAdmin = '<?php echo Configure::read('App.base_url_admin'); ?>';
 		$('#blck').fadeOut('slow');  
   }	
 </script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <?php
     echo $html->css('fullcalendar.css','stylesheet');
     echo $html->css('fullcalendar.print.css','stylesheet', array('media'=>'print'));
@@ -81,8 +83,7 @@ if( isMobile() ){
 <?php echo $content_for_layout ?>	
 <?php echo $this->renderElement('new_admin_footer'); ?>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
 </body>
 
 
