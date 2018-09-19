@@ -266,7 +266,7 @@ function addnewnote()
   <tr>
 			<td align="right" width="40%" class="lbltxtarea"><label class="boldlabel">Contacts</label>
 			<div  style="margin-top:7px;">
-				<span  class="btnLft"><input type="button" value="Add" name="Add" tabindex=15 class="btnRht" ONCLICK="addnewcontact()"/>
+				<span  class="btn-Lft"><input type="button" value="Add" name="Add" tabindex=15 class="btn-Rht btn btn-primary btn-sm" ONCLICK="addnewcontact()"/>
 				</span>	</div>
 			</td>
 			<td width="85%">
@@ -282,7 +282,7 @@ function addnewnote()
 				  <td width="32%" align="right">
 					<label class="boldlabel">Notes</label>
 					<div  style="margin-top:7px;">
-				<span  class="btnLft"><input type="button" value="Add" name="Add" tabindex=15 class="btnRht" ONCLICK="addnewnote()"/>
+				<span  class="btn-Lft"><input type="button" value="Add" name="Add" tabindex=15 class="btn-Rht btn btn-primary btn-sm" ONCLICK="addnewnote()"/>
 				</span>	</div>
 				 </td>
 				 <td width="30%">
@@ -362,7 +362,7 @@ echo (!empty($checkedrelproject) && in_array($projectdata['Note']['id'],$checked
 				  <td width="40%" align="right">
 					<label class="boldlabel">Licences</label>
 					<div  style="margin-top:7px;">
-				<span  class="btnLft"><input type="button" value="Add" name="Add" tabindex=15 class="btnRht" ONCLICK="addnewcontact()"/>
+				<span  class="btn-Lft"><input type="button" value="Add" name="Add" tabindex=15 class="btn-Rht btn btn-primary btn-sm" ONCLICK="addnewcontact()"/>
 				</span>	</div>
 				 </td>
 				 <td width="85%">
@@ -411,7 +411,7 @@ echo (!empty($checkedrelproject) && in_array($projectdata['Project']['id'],$chec
 				  <td width="40%" align="right">
 					<label class="boldlabel">Branches</label>
 					<div  style="margin-top:7px;">
-				<span  class="btnLft"><input type="button" value="Add" name="Add" tabindex=15 class="btnRht" ONCLICK="addnewcontact()"/>
+				<span  class="btn-Lft"><input type="button" value="Add" name="Add" tabindex=15 class="btn-Rht btn btn-primary btn-sm" ONCLICK="addnewcontact()"/>
 				</span>	</div>
 				 </td>
 				 <td width="85%">
@@ -458,7 +458,7 @@ echo (!empty($checkedrelproject) && in_array($projectdata['Project']['id'],$chec
 				  <td width="40%" align="right">
 					<label class="boldlabel">Agents</label>
 					<div  style="margin-top:7px;">
-				<span  class="btnLft"><input type="button" value="Add" name="Add" tabindex=15 class="btnRht" ONCLICK="addnewnote()"/>
+				<span  class="btn-Lft"><input type="button" value="Add" name="Add" tabindex=15 class="btn-Rht btn btn-primary btn-sm" ONCLICK="addnewnote()"/>
 				</span>	</div>
 				 </td>
 				 <td width="85%">
