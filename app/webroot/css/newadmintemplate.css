@@ -4340,7 +4340,9 @@ ul.form-style li .intpSpan { display:block; margin-bottom:10px;}
 	.checkbox { margin:0;}
 	
 	.intp-Span .form-control, textarea.form-control { width:100%;}
-	.updat { width:auto;}
+	.midCont .updat { width:auto !important; display:block;}
+	
+	.add-comm .frmbox .btn-Lft .btn { margin-bottom:8px;}
 	
 	.table-responsive .right { margin-right:5px; float:none;}
 	.table-responsive .ckeditor { width:100% !important; border:1px solid #ddd;}
@@ -4407,7 +4409,8 @@ ul.form-style li .intpSpan { display:block; margin-bottom:10px;}
 	.checkbox input[type="checkbox"] { margin-left:0;}
 	.checkbox { margin:0;}
 	
-	.updat { width:auto;}
+	.midCont .updat { width:auto !important; display:block;}
+	.add-comm .frmbox .btn-Lft .btn { margin-bottom:8px;}
 	
 	.row .box.col-xs-4 { width: auto; display:block; float:none;}
 	
@@ -4445,8 +4448,13 @@ ul.form-style li .intpSpan { display:block; margin-bottom:10px;}
 	.midCont1 { width:100%;}
 	.newtab { width:100%;}
 	
-	.frmbox2 { width:auto;}
-	.addlos .frmbox2 { float:none; width:auto;}
+	/*.frmbox2 { width:auto;}
+	.addlos .frmbox2, .eventcreate .frmbox2 { float:none; width:auto;}*/
+	
+	.frmbox { float:left; width:50%;}
+	.frmbox2 { float:right; width:50%;}
+	
+	.midCont .updat { width:auto !important; display:block;}
 	
 	.gryTop { padding:15px 5px;}
 	.new_filter { position:relative; left:0;}

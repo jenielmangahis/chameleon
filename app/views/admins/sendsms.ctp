@@ -92,66 +92,68 @@ $backUrl = $base_url.'admins/call/1'; ?>
         
 <div id="addcmp"  class="midCont table-responsive">	
 <?php if($session->check('Message.flash')) { echo $this->renderElement('error_message'); } ?>
-<table cellspacing="10" cellpadding="0">
-		
-  <?php if($session->check('Message.flash')){ ?>
-    <tr>
-      <td colspan="5"><?php $session->flash(); 
-      				//echo $form->error('Company.company_name', array('class' => 'msgTXt'));
-      				//echo $form->error('Company.company_type_id', array('class' => 'msgTXt'));
-      				
-      	?></td>
-    </tr>
-    <?php }?>  
-  
-   
-	<tr>
-		<td valign='middle' align="right"><label class="boldlabel">Text to#<span style="color:red">*</span></label></td>
-		<td>
-			<span class="intp-Span">
-	        	<?php echo $form->input("Sendsms.text_to", array('id' => 'text_to', 'div' => false, 'label' => '',"class" => "inpt_txt_fldss form-control","maxlength" => "150"));?>
-	        </span>
-		</td>		 
-	</tr>
-	<tr>
-							<td valign="top" align="right"><label class="boldlabel">Select Template <span
-									style="color: red;">*</span>
-							</label></td>
-							<td><span class="txtArea-top"> <span class="txtArea-bot"><?php echo $form->select("EmailTemplate.id",isset($template)?$template:'',null,array('id' => 'templateid','class'=>'multilists form-control','onchange'=>'showselecttemplate(this.value)'),"---Select---"); ?>
-                                         <?php echo $form->error('EmailTemplate.id', array('class' => 'errormsg')); ?> 
-								</span>
-							</span> </span> <span class="btn-Lft"><input type="button" class="btn-Rht btn btn-primary"
-									value="Add" name="Add" onclick="addEmailTempforTask();" />
-							</span></td>
-						</tr>	       
-	<tr>	 
-		<td valign='top' align="right"><label class="boldlabel">Text<span style="color:red">*</span></label></td>
-		<td>
-			<div class="large">
-			<span class="txtArea-top"> 
-				<span class="newtxtArea-bot">
-					<?php echo $form->textarea("Sendsms.text", array('id' => 'text', 'div' => false, 'label' => '',
-							'cols' => '35', 'rows' => '8',"class" => "multilists form-control", 'style'=>'width:370px'));?>
-				</span>
-			</span>
-			</div>
-		</td>
-	</tr>
-		 <tr>
-		<td valign='middle' align="right"><label class="boldlabel">Attach File<span style="color:red">*</span></label></td>
-		<td>
-			<span class="intp-Span">
-	        	<?php echo $form->input("Sendsms.attached_file", array('id' => 'subject', 'div' => false, 'label' => '',"class" => "inpt_txt_fldss form-control","maxlength" => "150"));?>
-	        </span>
-		</td>		 
-	</tr>
-	<tr>      
- 	<?php /*?><tr>
- 		<td colspan="2" style="text-align: left; padding: 20px 5px 20px 5px ;" class="top-bar">
- 			<?php  echo $this->renderElement('bottom_message');  ?>
-        </td>
-    </tr><?php */?>
- </table>
+    <div class="frmbox">
+        <table class="table table-borderless" cellspacing="10" cellpadding="0">
+            
+        <?php if($session->check('Message.flash')){ ?>
+        <tr>
+          <td colspan="5"><?php $session->flash(); 
+                        //echo $form->error('Company.company_name', array('class' => 'msgTXt'));
+                        //echo $form->error('Company.company_type_id', array('class' => 'msgTXt'));
+                        
+            ?></td>
+        </tr>
+        <?php }?>  
+        
+        
+        <tr>
+            <td valign='middle' align="right"><label class="boldlabel">Text to#<span style="color:red">*</span></label></td>
+            <td>
+                <span class="intp-Span">
+                    <?php echo $form->input("Sendsms.text_to", array('id' => 'text_to', 'div' => false, 'label' => '',"class" => "inpt-txt-flds form-control form-control","maxlength" => "150"));?>
+                </span>
+            </td>		 
+        </tr>
+        <tr>
+                                <td valign="top" align="right"><label class="boldlabel">Select Template <span
+                                        style="color: red;">*</span>
+                                </label></td>
+                                <td><span class="txtArea-top"> <span class="txtArea-bot"><?php echo $form->select("EmailTemplate.id",isset($template)?$template:'',null,array('id' => 'templateid','class'=>'multilists form-control','onchange'=>'showselecttemplate(this.value)'),"---Select---"); ?>
+                                             <?php echo $form->error('EmailTemplate.id', array('class' => 'errormsg')); ?> 
+                                    </span>
+                                </span> </span> <span class="btn-Lft"><input type="button" class="btn-Rht btn btn-primary"
+                                        value="Add" name="Add" onclick="addEmailTempforTask();" />
+                                </span></td>
+                            </tr>	       
+        <tr>	 
+            <td valign='top' align="right"><label class="boldlabel">Text<span style="color:red">*</span></label></td>
+            <td>
+                <div class="large">
+                <span class="txtArea-top"> 
+                    <span class="newtxtArea-bot">
+                        <?php echo $form->textarea("Sendsms.text", array('id' => 'text', 'div' => false, 'label' => '',
+                                'cols' => '35', 'rows' => '8',"class" => "multilists form-control"));?>
+                    </span>
+                </span>
+                </div>
+            </td>
+        </tr>
+             <tr>
+            <td valign='middle' align="right"><label class="boldlabel">Attach File<span style="color:red">*</span></label></td>
+            <td>
+                <span class="intp-Span">
+                    <?php echo $form->input("Sendsms.attached_file", array('id' => 'subject', 'div' => false, 'label' => '',"class" => "inpt-txt-flds form-control form-control","maxlength" => "150"));?>
+                </span>
+            </td>		 
+        </tr>
+        <tr>      
+        <?php /*?><tr>
+            <td colspan="2" style="text-align: left; padding: 20px 5px 20px 5px ;" class="top-bar">
+                <?php  echo $this->renderElement('bottom_message');  ?>
+            </td>
+        </tr><?php */?>
+        </table>
+    </div>
 <!--inner-container ends here-->
 <?php echo $form->end();?>
 </div>

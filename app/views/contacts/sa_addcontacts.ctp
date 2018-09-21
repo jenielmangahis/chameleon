@@ -119,7 +119,7 @@ $('#coNtact').addClass("butBgSelt");
       </div>
     </div>
     <?php } ?>
-    <div class="table-responsive">
+    <div class="responsive clearfix">
       <!-- ADD Sub Admin FORM BOF -->
       <!-- ADD FIELD BOF -->
       <table class="sa_addcontacts table table-borderless" width="100%">
@@ -147,225 +147,457 @@ $('#coNtact').addClass("butBgSelt");
             <span id='companydata'></span>
 		</td>
         </tr>
-        <tr>
-          <td class="col-sm-6" valign="top">
-          	<table cellspacing="10" cellpadding="0" align="center">
+        
+      </table>
+    
+    <div class="frmbox">
+        <table cellspacing="10" cellpadding="0" align="center">
               <tbody>
                 <tr>
-                  <td width="37%" align="right"><label class="boldlabel">Company <span class="red">*</span></label></td>
-                  <td width="30%"><label for="project_name"></label>
+                  <td align="right"><label class="boldlabel">Company <span class="red">*</span></label></td>
+                  <td><label for="project_name"></label>
                     <span class="txtArea-top"><span class="txtArea-bot">
                     <?php 
-			//var_dump($selectedcompany);
-			//print_r($companydropdown);
-			/*
-			if($selectedcompany){
-				echo "<script type='text/javascript'>getcompanyaddress($selectedcompany);</script>";
-			}else{
-				if($companydropdown){
-							foreach($companydropdown as $key => $value){
-									$firstid = $key;
-									break;
-							}
-							echo $selectedcompany = $firstid;
-							echo "<script type='text/javascript'>getcompanyaddress($selectedcompany);</script>";
-						  }
-				}
-			*/
-			echo "<script type='text/javascript'>getcompanyaddress($selectedcompany);</script>";
-			echo $form->select("Contact.company_id",$companydropdown,$selectedcompany,array('id' => 'company_id','class'=>'multilist form-control',"onchange"=>"getcompanyaddress(this.value);"),"---Select---"); ?>
+            //var_dump($selectedcompany);
+            //print_r($companydropdown);
+            /*
+            if($selectedcompany){
+                echo "<script type='text/javascript'>getcompanyaddress($selectedcompany);</script>";
+            }else{
+                if($companydropdown){
+                            foreach($companydropdown as $key => $value){
+                                    $firstid = $key;
+                                    break;
+                            }
+                            echo $selectedcompany = $firstid;
+                            echo "<script type='text/javascript'>getcompanyaddress($selectedcompany);</script>";
+                          }
+                }
+            */
+            echo "<script type='text/javascript'>getcompanyaddress($selectedcompany);</script>";
+            echo $form->select("Contact.company_id",$companydropdown,$selectedcompany,array('id' => 'company_id','class'=>'multi-list form-control',"onchange"=>"getcompanyaddress(this.value);"),"---Select---"); ?>
                     </span></span> </td>
-                  <td>&nbsp;</td>
-                  <td>&nbsp;</td>
-                  <td>&nbsp;</td>
+                  
                 </tr>
-				<?php
-				if($this->data['Contact']['id'] && $realeted_projects_flag == true) {
-				?>
-				<tr>
-                  <td width="35%" align="right" valign="top"><label class="boldlabel">Related to Project(s)</label></td>
-				  <td>
-				<?php
-				 //$realetedProjects = array();
-				 echo $form->select('ProjectOwner.owners',$realetedProjects, null,array('multiple'=>'multiple','id'=>'companies_bb','size'=>'4','empty'=>false,'class'=>'multilist form-control','tabindex'=>2,'style'=>'min-height:32px;','disabled'=>'disabled'));
-				?>
-				</td>
-				  <td>&nbsp;</td>
-                  <td>&nbsp;</td>
-                  <td>&nbsp;</td>
-                </tr>
-				<?php
-				}
-				?>
+                <?php
+                if($this->data['Contact']['id'] && $realeted_projects_flag == true) {
+                ?>
                 <tr>
-                  <td width="20%" align="right"><label class="boldlabel">First Name <span class="red">*</span></label></td>
-                  <td width="30%"><label for="project_name"></label>
-                    <span class="intp-Span"><?php echo $form->input("Contact.firstname", array('id' => 'firstname', 'div' => false, 'label' => '',"class" => "inpt-txt-fld form-control","maxlength" => "150"));?></span></td>
-                  <td>&nbsp;</td>
-                  <td>&nbsp;</td>
-                  <td>&nbsp;</td>
+                  <td align="right" valign="top"><label class="boldlabel">Related to Project(s)</label></td>
+                  <td>
+                <?php
+                 //$realetedProjects = array();
+                 echo $form->select('ProjectOwner.owners',$realetedProjects, null,array('multiple'=>'multiple','id'=>'companies_bb','size'=>'4','empty'=>false,'class'=>'multi-list form-control','tabindex'=>2,'style'=>'min-height:32px;','disabled'=>'disabled'));
+                ?>
+                </td>
+                  
+                </tr>
+                <?php
+                }
+                ?>
+                <tr>
+                  <td align="right"><label class="boldlabel">First Name <span class="red">*</span></label></td>
+                  <td><label for="project_name"></label>
+                    <span class="intp-Span"><?php echo $form->input("Contact.firstname", array('id' => 'firstname', 'div' => false, 'label' => '',"class" => "inpt-txt-fld form-control","maxlength" => "150"));?></span></td>                 
                 </tr>
                 <tr>
-                  <td width="20%" align="right"><label class="boldlabel">Last Name <span class="red">*</span></label></td>
-                  <td width="30%"><label for="project_name"></label>
-                    <span class="intp-Span"><?php echo $form->input("Contact.lastname", array('id' => 'lastname', 'div' => false, 'label' => '',"class" => "inpt-txt-fld form-control","maxlength" => "150"));?></span></td>
-                  <td>&nbsp;</td>
-                  <td>&nbsp;</td>
-                  <td>&nbsp;</td>
+                  <td align="right"><label class="boldlabel">Last Name <span class="red">*</span></label></td>
+                  <td><label for="project_name"></label>
+                    <span class="intp-Span"><?php echo $form->input("Contact.lastname", array('id' => 'lastname', 'div' => false, 'label' => '',"class" => "inpt-txt-fld form-control","maxlength" => "150"));?></span></td>                  
                 </tr>
                 <tr>
-                  <td width="20%" align="right"><label class="boldlabel">Title <span class="red">*</span></label></td>
-                  <td width="30%"><label for="project_name"></label>
-                    <span class="intp-Span"> <?php echo $form->input("Contact.jobtitle", array('id' => 'jobtitle', 'div' => false, 'label' => '',"class" => "inpt-txt-fld form-control","maxlength" => "200"));?></span></span></td>
-					<td>&nbsp;</td>
-					<td>&nbsp;</td>
-					<td>&nbsp;</td>
+                  <td align="right"><label class="boldlabel">Title <span class="red">*</span></label></td>
+                  <td><label for="project_name"></label>
+                    <span class="intp-Span"> <?php echo $form->input("Contact.jobtitle", array('id' => 'jobtitle', 'div' => false, 'label' => '',"class" => "inpt-txt-fld form-control","maxlength" => "200"));?></span></span></td>                    
                 </tr>
                 <?php if(!$this->data['Contact']['id']){ ?>
                 <tr>
-				  <td></td>
-				  <td align='left' colspan="2"><?php echo $form->input('sameascompany', array('type'=>'checkbox', 'label' => '','id'=>'sameascompany','onclick'=>'return putcountryaddress();','div'=>false )); ?> Check if same as Company Address</td>
-				  <td>&nbsp;</td>
-                  <td>&nbsp;</td>
+                  <td></td>
+                  <td align='left' colspan="2"><?php echo $form->input('sameascompany', array('type'=>'checkbox', 'label' => '','id'=>'sameascompany','onclick'=>'return putcountryaddress();','div'=>false )); ?> Check if same as Company Address</td>
                 </tr>
                 <?php } ?>
                 <tr>
-                  <td width="20%" align="right"><label class="boldlabel">Address <span class="red">*</span></label></td>
-                  <td width="30%"><label for="project_name"></label>
-                    <span class="intp-Span"><?php echo $form->input("Contact.address1", array('id' => 'address1', 'div' => false, 'label' => '',"class" => "inpt-txt-fld form-control","maxlength" => "200"));?></span></td>
-                  <td>&nbsp;</td>
-                  <td>&nbsp;</td>
-                  <td>&nbsp;</td>
+                  <td align="right"><label class="boldlabel">Address <span class="red">*</span></label></td>
+                  <td><label for="project_name"></label>
+                    <span class="intp-Span"><?php echo $form->input("Contact.address1", array('id' => 'address1', 'div' => false, 'label' => '',"class" => "inpt-txt-fld form-control","maxlength" => "200"));?></span></td>                
                 </tr>
                 <tr>
-                  <td width="20%" align="right"><label class="boldlabel">Country <span class="red">*</span></label></td>
-                  <td width="30%"><label for="project_name"></label>
-                    <span class="txtArea-top"><span class="txtArea-bot"> <?php echo $form->select("Contact.country",$countrydropdown,$selectedcountry,array('id' => 'country','class'=>'multilist form-control','onchange'=>'return getstateoptions(this.value,"Contact")'),array('254'=>'United States')); ?> </span></span></td>
-                  <td>&nbsp;</td>
-                  <td>&nbsp;</td>
-                  <td>&nbsp;</td>
+                  <td align="right"><label class="boldlabel">Country <span class="red">*</span></label></td>
+                  <td><label for="project_name"></label>
+                    <span class="txtArea-top"><span class="txtArea-bot"> <?php echo $form->select("Contact.country",$countrydropdown,$selectedcountry,array('id' => 'country','class'=>'multi-list form-control','onchange'=>'return getstateoptions(this.value,"Contact")'),array('254'=>'United States')); ?> </span></span></td>
                 </tr>
                 <tr>
-                  <td width="20%" align="right"><label class="boldlabel">State <span class="red">*</span></label></td>
-                  <td width="30%"><label for="project_name"></label>
-                    <span class="txtArea-top"><span class="txtArea-bot"> <span id="statediv"> <?php echo $form->select("Contact.state",$statedropdown,$selectedstate,array('id' => 'state','class'=>'multilist form-control'),"---Select---"); ?> </span></span> </span> </td>
-                  <td>&nbsp;</td>
-                  <td>&nbsp;</td>
-                  <td>&nbsp;</td>
+                  <td align="right"><label class="boldlabel">State <span class="red">*</span></label></td>
+                  <td><label for="project_name"></label>
+                    <span class="txtArea-top"><span class="txtArea-bot"> <span id="statediv"> <?php echo $form->select("Contact.state",$statedropdown,$selectedstate,array('id' => 'state','class'=>'multi-list form-control'),"---Select---"); ?> </span></span> </span> </td>
                 </tr>
                 <tr>
-                  <td width="20%" align="right"><label class="boldlabel">City <span class="red">*</span></label></td>
-                  <td width="30%"><label for="project_name"></label>
+                  <td align="right"><label class="boldlabel">City <span class="red">*</span></label></td>
+                  <td><label for="project_name"></label>
                     <span class="intp-Span"> <?php echo $form->input("Contact.city",array('id' => 'city', 'div' => false, 'label' => '',"class" => "inpt-txt-fld form-control","maxlength" => "150")); ?></span></td>
-                  <td>&nbsp;</td>
-                  <td>&nbsp;</td>
-                  <td>&nbsp;</td>
                 </tr>
                 <tr>
-                  <td width="20%" align="right"><label class="boldlabel">Zip/Postal Code <span class="red">*</span></label></td>
-                  <td width="30%"><label for="project_name"></label>
+                  <td align="right"><label class="boldlabel">Zip/Postal Code <span class="red">*</span></label></td>
+                  <td><label for="project_name"></label>
                     <span class="intp-Span"> <?php echo $form->input("Contact.zipcode", array('id' => 'zipcode', 'div' => false, 'label' => '',"class" => "inpt-txt-fld form-control","maxlength" => "10"));?></span></td>
-                  <td>&nbsp;</td>
-                  <td>&nbsp;</td>
-                  <td>&nbsp;</td>
                 </tr>
                 <tr>
                   <td colspan="5"><b>Any item with a</b> "<span class="red">*</span>" <b>requires an entry.</b></td>
                 </tr>
               </tbody>
-            </table></td>
-          <td class="col-sm-6" valign="top">
-          	<table cellspacing="10" cellpadding="0" align="center">
-              <tbody>
-                <tr>
-                  <td width="32%" align="right">
-				  <label class="boldlabel">Contact Type <span class="red">*</span></label></td>
-                  <td width="30%"><label for="project_name"></label>
-                    <span class="txtArea-top"><span class="txtArea-bot"> 
-					<?php 
-					
-					echo $form->select("Contact.contact_type_id",$contacttypedropdown,null,array('id' => 'contact_type_id','class'=>'multilist form-control'),"---Select---");
-					echo $form->hidden("default_contactType",array('value'=>$default_contactType,'id'=>'defaultContactType'));
-					?></span></span>
-                  <td>&nbsp;</td>
-                  <td>&nbsp;</td>
-                  <td>&nbsp;</td>
-                </tr>
-                <tr>
-                  <td width="20%" align="right"><label class="boldlabel">Phone </label></td>
-                  <td width="30%"><label for="project_name"></label>
-                    <span class="intp-Span"> <?php echo $form->input("Contact.busphone", array('id' => 'busphone', 'div' => false, 'label' => '',"class" => "inpt-txt-fld form-control","maxlength" => "12",'onblur' =>'USPhoneNumberFormat(this.value)'));?></span></td>
-                  <td>&nbsp;</td>
-                  <td>&nbsp;</td>
-                  <td>&nbsp;</td>
-                </tr>
-                <tr>
-                  <td width="20%" align="right"><label class="boldlabel">Fax </label></td>
-                  <td width="30%"><label for="project_name"></label>
-                    <span class="intp-Span"> <?php echo $form->input("Contact.fax", array('id' => 'fax', 'div' => false, 'label' => '',"class" => "inpt-txt-fld form-control","maxlength" => "12",'onblur' =>'USFaxNumberFormat(this.value)'));?></span></td>
-                  <td>&nbsp;</td>
-                  <td>&nbsp;</td>
-                  <td>&nbsp;</td>
-                </tr>
-                <tr>
-                  <td width="20%" align="right"><label class="boldlabel">Cell Phone </label></td>
-                  <td width="30%"><label for="project_name"></label>
-                    <span class="intp-Span"> <?php echo $form->input("Contact.mobile", array('id' => 'mobile', 'div' => false, 'label' => '',"class" => "inpt-txt-fld form-control","maxlength" => "12",'onblur' =>'USCellphoneNumberFormat(this.value)'));?></span></td>
-                  <td>&nbsp;</td>
-                  <td>&nbsp;</td>
-                  <td>&nbsp;</td>
-                </tr>
-                <tr>
-                  <td width="20%" align="right"><label class="boldlabel">Email <span class="red">*</span></label></td>
-                  <td width="30%"><label for="project_name"></label>
-                    <span class="intp-Span"> <?php echo $form->input("Contact.email", array('id' => 'email', 'div' => false, 'label' => '',"class" => "inpt-txt-fld form-control","maxlength" => "200"));?></span></td>
-                  <td>&nbsp;</td>
-                  <td>&nbsp;</td>
-                  <td>&nbsp;</td>
-                </tr>
-				<tr><td colspan="5">&nbsp;</td></tr>
-				<tr>
-				<td colspan="5" align="center">
-					<table style="display:none;" id="ProjectLoginDet">
-						<?php
-						if($this->data['Contact']['id'] && $realeted_projects_flag == true) {
-						?>
-						<tr>
-							<td colspan="2" align="center"><strong>Project Name</strong></td>
-						</tr>
-						<?php
-						}
-						?>
-						<tr>
-							<td colspan="2">&nbsp;</td>
-						</tr>
-						<tr>
-						  <td width="20%" align="right"><label class="boldlabel">Username</label></td>
-						  <td width="30%">
-						   <span class="intp-Span"><?php echo $form->input("Sponsor.username", array('id' => 'username', 'div' => false, 'label' => '',"class" => "inpt-txt-fld form-control","maxlength" => "150",'onchange' => 'ajaxuniquesponsorname(this.value)'));?>
-						 </span></td>
-						 
-						</tr>
-						<tr>
-						  <td width="20%" align="right"><label class="boldlabel">Password</label></td>
-						  <td width="30%">
-						  <span class="intp-Span"><?php echo $form->password("Sponsor.password", array('id' => 'password', 'div' => false, 'label' => '',"class" => "inpt-txt-fld form-control","maxlength" => "150"));?></span></td>
-						  
-						</tr>
-					</table>
-				
-				</td>
-				</tr>
-				
-				<?php
-				
-				?>
-              </tbody>
             </table>
-          </td>
-          </td>
-        </tr>
-      </table>
+    </div>
+    <div class="frmbox2">
+    	<table cellspacing="10" cellpadding="0" align="center" width="100%">
+					<tbody>
+						<tr>
+							<td align="right" width="140px"><label class="boldlabel">Status</label>
+							</td>
+							<td><?php 
+							$eachrow['CommunicationTask']['active_status'] = 0;
+							$recid = 1;
+							$modelname = '';
+							$redirectionurl = '';
+							$project_name = '';
+							if($eachrow['CommunicationTask']['active_status']=='0'){
+							e($html->link(
+		$html->image('active.gif',array('width'=>'10','height'=>'13','alt'=>'','title'=>'Click here to activate ')),
+		array('controller'=>'companies','action'=>'changestatus',$recid,$modelname,'1',$redirectionurl,'cngstatus'),
+		array('escape' => false)
+		)
+		);
+}else{
+	e($html->link(
+	$html->image('active.gif',array('width'=>'10','height'=>'13','alt'=>'','title'=>'Click here to activate ')),
+	array('controller'=>'companies','action'=>'changestatus',$recid,$modelname,'0',$redirectionurl,'cngstatus'),
+	array('escape' => false)
+	)
+	);
+}
+?></td>
+				</tr>
+						<tr>
+							<td align="right" width="140px"><label class="boldlabel">Recur Pattern</label></td>
+							<td><span class="txtArea-top"> <span class="txtArea-bot"> <span
+										id="countrydiv">
+										 <?php echo $form->
+										 select("CommunicationTask.recur_pattern",$recur_pattern,$sel_recur_pattern,array('id' => 
+										 'recur_pattern',"class"=>"multi-list form-control"),false); ?>
+										<script type="text/javascript">
+										 	$(function() { showRecurPatternOptions(); });
+										</script>
+									</span>
+								</span>
+							</span></td>
+						</tr>
+
+						<tr>
+							<td colspan="2">
+								<div id="daily_recur_pattern" style="display: none;">
+									<table>
+										<tbody>
+											<tr>
+												<td align="right" width="150px">&nbsp;</td>
+												<td><?php if($this->data['CommunicationTask']['daily_every_noof_days']!=""){  
+													$daily_every_noof_days=$this->data['CommunicationTask']['daily_every_noof_days'];
+												}else{ $daily_every_noof_days=1;
+}?>
+													<div>
+														<input type="radio"
+															name='data[CommunicationTask][daily_pattern]'
+															checked="checked" id="everyday" value='everyday'
+															<?php if($this->data['CommunicationTask']['daily_pattern']=='everyday'){  echo ' checked="checked" ';}else{ echo ' ';}?>>&nbsp;Every
+														<?php echo $form->text("CommunicationTask.daily_every_noof_days", array('id' => 'daily_every_noof_days', 'div' => false, 'label' => '','value' => $daily_every_noof_days,"style" => "width:50px; border: 1px solid #000;","maxlength" => "200"));?>
+														</span> Day(s)
+													</div> <br />
+												<div>
+														<input type='radio'
+															name='data[CommunicationTask][daily_pattern]'
+															id="everyweek" value='everyweek'
+															<?php if($this->data['CommunicationTask']['daily_pattern']=='everyweek'){  echo ' checked="checked" ';}else{ echo ' ';}?>>&nbsp;Every
+														Weekday
+													</div></td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+
+								<div id="weekly_recur_pattern" style="display: none;">
+									<table>
+										<tbody>
+											<tr>
+												<td align="right" width="150px">&nbsp;</td>
+												<td><?php if($this->data['CommunicationTask']['weekly_every_noof_weeks']!=""){  
+													$weekly_every_noof_weeks=$this->data['CommunicationTask']['weekly_every_noof_weeks'];
+												}else{ $weekly_every_noof_weeks=1;
+}?> Recur every <?php echo $form->text("CommunicationTask.weekly_every_noof_weeks", array('id' => 'weekly_every_noof_weeks', 'div' => false, 'label' => '', 'value' => $weekly_every_noof_weeks, "style" => "width:50px; border: 1px solid #000;","maxlength" => "200"));?>
+													week(s) on: <?php echo $form->input('CommunicationTask.weekly_monday', array('type'=>'checkbox','id'=>'weekly_monday', 'label' => ' Monday')); ?>
+													<?php echo $form->input('CommunicationTask.weekly_tuesday', array('type'=>'checkbox','id'=>'weekly_tuesday', 'label' => ' Tuesday')); ?>
+													<?php echo $form->input('CommunicationTask.weekly_wednesday', array('type'=>'checkbox','id'=>'weekly_wednesday', 'label' => ' Wednesday')); ?>
+													<?php echo $form->input('CommunicationTask.weekly_thursday', array('type'=>'checkbox','id'=>'weekly_thursday', 'label' => ' Thursday')); ?>
+													<?php echo $form->input('CommunicationTask.weekly_friday', array('type'=>'checkbox','id'=>'weekly_friday', 'label' => ' Friday')); ?>
+													<?php echo $form->input('CommunicationTask.weekly_saturday', array('type'=>'checkbox','id'=>'weekly_saturday', 'label' => ' Saturday')); ?>
+													<?php echo $form->input('CommunicationTask.weekly_sunday', array('type'=>'checkbox','id'=>'weekly_sunday', 'label' => ' Sunday')); ?>
+
+												</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+
+								<div id="monthly_recur_pattern" style="display: none;">
+									<table>
+										<tbody>
+											<tr>
+												<td align="right" width="150px">&nbsp;</td>
+												<td>
+													<div>
+														<input type="radio"
+															name='data[CommunicationTask][monthly_pattern]'
+															checked="checked" id="dayofeverymonth"
+															value='dayofeverymonth'
+															<?php if($this->data['CommunicationTask']['monthly_pattern']=='dayofeverymonth'){  echo ' checked="checked" ';}else{ echo ' ';}?>>&nbsp;Day
+														<?php 
+														if($this->data['CommunicationTask']['monthly_onof_day']!=""){
+$monthly_onof_day=$this->data['CommunicationTask']['monthly_onof_day'];
+}else{ $monthly_onof_day=date('d');
+}
+if($this->data['CommunicationTask']['monthly_every_noof_months']!=""){
+$monthly_every_noof_months=$this->data['CommunicationTask']['monthly_every_noof_months'];
+}else{ $monthly_every_noof_months=1;
+}
+?>
+														<?php echo $form->text("CommunicationTask.monthly_onof_day", array('id' => 'monthly_onof_day', 'div' => false, 'label' => '','value' => $monthly_onof_day,"style" => "width:35px; border: 1px solid #000;","maxlength" => "200"));?>
+														of every
+														<?php echo $form->text("CommunicationTask.monthly_every_noof_months", array('id' => 'monthly_every_noof_months', 'div' => false, 'label' => '','value' => $monthly_every_noof_months,"style" => "width:35px; border: 1px solid #000;","maxlength" => "200"));?>
+														month(s)
+													</div> <br />
+													<div>
+														<input type='radio'
+															name='data[CommunicationTask][monthly_pattern]'
+															id="weekdayofeverymonth" value='weekdayofeverymonth'
+															<?php if($this->data['CommunicationTask']['monthly_pattern']=='weekdayofeverymonth'){  echo ' checked="checked" ';}else{ echo ' ';}?>>&nbsp;
+														The &nbsp; <select style="border: 1px solid black;"
+															name="data[CommunicationTask][monthly_weeknumber]">
+															<option value="first"
+															<?php if($this->data['CommunicationTask']['monthly_weeknumber']=='first'){  echo ' selected="selected"  ';}else{ echo ' ';}?>>first</option>
+															<option value="second"
+															<?php if($this->data['CommunicationTask']['monthly_weeknumber']=='second'){  echo ' selected="selected"  ';}else{ echo ' ';}?>>second</option>
+															<option value="third"
+															<?php if($this->data['CommunicationTask']['monthly_weeknumber']=='third'){  echo ' selected="selected"  ';}else{ echo ' ';}?>>third</option>
+															<option value="fourth"
+															<?php if($this->data['CommunicationTask']['monthly_weeknumber']=='fourth'){  echo ' selected="selected"  ';}else{ echo ' ';}?>>fourth</option>
+															<option value="last"
+															<?php if($this->data['CommunicationTask']['monthly_weeknumber']=='last'){  echo ' selected="selected"  ';}else{ echo ' ';}?>>last</option>
+														</select> <select style="border: 1px solid black;"
+															name="data[CommunicationTask][monthly_weekday]">
+															<option value="Monday"
+															<?php if($this->data['CommunicationTask']['monthly_weekday']=='Monday'){  echo 'selected="selected"  ';}else{ echo ' ';}?>>Monday</option>
+															<option value="Tuesday"
+															<?php if($this->data['CommunicationTask']['monthly_weekday']=='Tuesday'){  echo ' selected="selected"  ';}else{ echo ' ';}?>>Tuesday</option>
+															<option value="Wednesday"
+															<?php if($this->data['CommunicationTask']['monthly_weekday']=='Wednesday'){  echo ' selected="selected"  ';}else{ echo ' ';}?>>Wednesday</option>
+															<option value="Thursday"
+															<?php if($this->data['CommunicationTask']['monthly_weekday']=='Thursday'){  echo ' selected="selected"  ';}else{ echo ' ';}?>>Thursday</option>
+															<option value="Friday"
+															<?php if($this->data['CommunicationTask']['monthly_weekday']=='Friday'){  echo ' selected="selected"  ';}else{ echo ' ';}?>>Friday</option>
+															<option value="Saturday"
+															<?php if($this->data['CommunicationTask']['monthly_weekday']=='Saturday'){  echo ' selected="selected"  ';}else{ echo ' ';}?>>Saturday</option>
+															<option value="Sunday"
+															<?php if($this->data['CommunicationTask']['monthly_weekday']=='Sunday'){  echo 'selected="selected"  ';}else{ echo ' ';}?>>Sunday</option>
+														</select> <br />
+														<br />&nbsp; &nbsp; of every &nbsp;
+														<?php 
+														if($this->data['CommunicationTask']['monthly_weekof_noof_months']!=""){
+$monthly_weekof_noof_months=$this->data['CommunicationTask']['monthly_weekof_noof_months'];
+}else{ $monthly_weekof_noof_months=1;
+}
+echo $form->input("CommunicationTask.monthly_weekof_noof_months", array('id' => 'monthly_weekof_noof_months','div' => false, 'label' => '','value' => $monthly_weekof_noof_months,'style'=>'border: 1px solid black;width:30px;'));?>
+														&nbsp;Month(s)
+													</div>
+
+												</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+
+								<div id="yearly_recur_pattern" style="display: none;">
+									<table>
+										<tbody>
+											<tr>
+												<td align="right" width="150px">&nbsp;</td>
+												<td><?php if($this->data['CommunicationTask']['yearly_everymonth_date']!=""){  
+													$yearly_everymonth_date=$this->data['CommunicationTask']['yearly_everymonth_date'];
+												}else{ $yearly_everymonth_date=date('d');
+}?> <input type="radio" value="everynoofmonths" id="everynoofmonths"
+													checked="checked"
+													name="data[CommunicationTask][yearly_pattern]"
+													<?php if($this->data['CommunicationTask']['yearly_pattern']=='everynoofmonths'){  echo ' checked="checked" ';}else{ echo ' ';}?>>
+													Every &nbsp; <select id="yearly_everymonth"
+													name="data[CommunicationTask][yearly_everymonth]"
+													style="border: 1px solid black;">
+														<option value="January"
+														<?php if($this->data['CommunicationTask']['yearly_everymonth']=='January'){  echo ' selected="selected"  ';}else{ echo ' ';}?>>January</option>
+														<option value="February"
+														<?php if($this->data['CommunicationTask']['yearly_everymonth']=='February'){  echo ' selected="selected"  ';}else{ echo ' ';}?>>February</option>
+														<option value="March"
+														<?php if($this->data['CommunicationTask']['yearly_everymonth']=='March'){  echo ' selected="selected"  ';}else{ echo ' ';}?>>March</option>
+														<option value="April"
+														<?php if($this->data['CommunicationTask']['yearly_everymonth']=='April'){  echo ' selected="selected"  ';}else{ echo ' ';}?>>April</option>
+														<option value="May"
+														<?php if($this->data['CommunicationTask']['yearly_everymonth']=='May'){  echo ' selected="selected"  ';}else{ echo ' ';}?>>May</option>
+														<option value="June"
+														<?php if($this->data['CommunicationTask']['yearly_everymonth']=='June'){  echo ' selected="selected" ';}else{ echo ' ';}?>>June</option>
+														<option value="July"
+														<?php if($this->data['CommunicationTask']['yearly_everymonth']=='July'){  echo ' selected="selected" ';}else{ echo ' ';}?>>July</option>
+														<option value="August"
+														<?php if($this->data['CommunicationTask']['yearly_everymonth']=='August'){  echo ' selected="selected" ';}else{ echo ' ';}?>>August</option>
+														<option value="September"
+														<?php if($this->data['CommunicationTask']['yearly_everymonth']=='September'){  echo ' selected="selected" ';}else{ echo ' ';}?>>September</option>
+														<option value="October"
+														<?php if($this->data['CommunicationTask']['yearly_everymonth']=='October'){  echo ' selected="selected" ';}else{ echo ' ';}?>>October</option>
+														<option value="November"
+														<?php if($this->data['CommunicationTask']['yearly_everymonth']=='November'){  echo ' selected="selected" ';}else{ echo ' ';}?>>November</option>
+														<option value="December"
+														<?php if($this->data['CommunicationTask']['yearly_everymonth']=='December'){  echo ' selected="selected" ';}else{ echo ' ';}?>>December</option>
+												</select> &nbsp;<?php echo $form->input("CommunicationTask.yearly_everymonth_date", array('id' => 'yearly_everymonth_date','div' => false, 'label' => '', 'value' => $yearly_everymonth_date,'style'=>'border: 1px solid black;width:30px;'));?><br />
+												<br /> <input type="radio" value="theweekofmonths"
+													id="theweekofmonths"
+													name="data[CommunicationTask][yearly_pattern]"
+													<?php if($this->data['CommunicationTask']['yearly_pattern']=='theweekofmonths'){  echo ' checked="checked" ';}else{ echo ' ';}?>>
+													The &nbsp; <select id="yearly_weeknumber"
+													name="data[CommunicationTask][yearly_weeknumber]"
+													style="border: 1px solid black;">
+														<option value="first"
+														<?php if($this->data['CommunicationTask']['yearly_weeknumber']=='first'){  echo ' selected="selected" ';}else{ echo ' ';}?>>first</option>
+														<option value="second"
+														<?php if($this->data['CommunicationTask']['yearly_weeknumber']=='second'){  echo ' selected="selected" ';}else{ echo ' ';}?>>second</option>
+														<option value="third"
+														<?php if($this->data['CommunicationTask']['yearly_weeknumber']=='third'){  echo ' selected="selected" ';}else{ echo ' ';}?>>third</option>
+														<option value="fourth"
+														<?php if($this->data['CommunicationTask']['yearly_weeknumber']=='fourth'){  echo ' selected="selected" ';}else{ echo ' ';}?>>fourth</option>
+														<option value="last"
+														<?php if($this->data['CommunicationTask']['yearly_weeknumber']=='last'){  echo ' selected="selected" ';}else{ echo ' ';}?>>last</option>
+												</select> <select id="yearly_weekday"
+													name="data[CommunicationTask][yearly_weekday]"
+													style="border: 1px solid black;">
+														<option value="Monday"
+														<?php if($this->data['CommunicationTask']['yearly_weekday']=='Monday'){  echo ' selected="selected" ';}else{ echo ' ';}?>>Monday</option>
+														<option value="Tuesday"
+														<?php if($this->data['CommunicationTask']['yearly_weekday']=='Tuesday'){  echo ' selected="selected" ';}else{ echo ' ';}?>>Tuesday</option>
+														<option value="Wednesday"
+														<?php if($this->data['CommunicationTask']['yearly_weekday']=='Wednesday'){  echo ' selected="selected" ';}else{ echo ' ';}?>>Wednesday</option>
+														<option value="Thursday"
+														<?php if($this->data['CommunicationTask']['yearly_weekday']=='Thursday'){  echo ' selected="selected" ';}else{ echo ' ';}?>>Thursday</option>
+														<option value="Friday"
+														<?php if($this->data['CommunicationTask']['yearly_weekday']=='Friday'){  echo ' selected="selected" ';}else{ echo ' ';}?>>Friday</option>
+														<option value="Saturday"
+														<?php if($this->data['CommunicationTask']['yearly_weekday']=='Saturday'){  echo ' selected="selected" ';}else{ echo ' ';}?>>Saturday</option>
+														<option value="Sunday"
+														<?php if($this->data['CommunicationTask']['yearly_weekday']=='Sunday'){  echo ' selected="selected" ';}else{ echo ' ';}?>>Sunday</option>
+												</select> <br />
+												<br /> &nbsp;&nbsp;&nbsp;&nbsp;of <select
+													id="yearly_weekof_month"
+													name="data[CommunicationTask][yearly_weekof_month]"
+													style="border: 1px solid black;">
+														<option value="January"
+														<?php if($this->data['CommunicationTask']['yearly_weekof_month']=="January"){  echo ' selected="selected" ';}else{ echo ' ';}?>>January</option>
+														<option value="February"
+														<?php if($this->data['CommunicationTask']['yearly_weekof_month']=="February"){  echo ' selected="selected" ';}else{ echo ' ';}?>>February</option>
+														<option value="March"
+														<?php if($this->data['CommunicationTask']['yearly_weekof_month']=="March"){  echo ' selected="selected" ';}else{ echo ' ';}?>>March</option>
+														<option value="April"
+														<?php if($this->data['CommunicationTask']['yearly_weekof_month']=='April'){  echo ' selected="selected" ';}else{ echo ' ';}?>>April</option>
+														<option value="May"
+														<?php if($this->data['CommunicationTask']['yearly_weekof_month']=='May'){  echo 'selected="selected" ';}else{ echo ' ';}?>>May</option>
+														<option value="June"
+														<?php if($this->data['CommunicationTask']['yearly_weekof_month']=='June'){  echo ' selected="selected" ';}else{ echo ' ';}?>>June</option>
+														<option value="July"
+														<?php if($this->data['CommunicationTask']['yearly_weekof_month']=='July'){  echo ' selected="selected" ';}else{ echo ' ';}?>>July</option>
+														<option value="August"
+														<?php if($this->data['CommunicationTask']['yearly_weekof_month']=='August'){  echo ' selected="selected" ';}else{ echo ' ';}?>>August</option>
+														<option value="September"
+														<?php if($this->data['CommunicationTask']['yearly_weekof_month']=='September'){  echo ' selected="selected" ';}else{ echo ' ';}?>>September</option>
+														<option value="October"
+														<?php if($this->data['CommunicationTask']['yearly_weekof_month']=='October'){  echo ' selected="selected" ';}else{ echo ' ';}?>>October</option>
+														<option value="November"
+														<?php if($this->data['CommunicationTask']['yearly_weekof_month']=='November'){  echo ' selected="selected" ';}else{ echo ' ';}?>>November</option>
+														<option value="December"
+														<?php if($this->data['CommunicationTask']['yearly_weekof_month']=='December'){  echo ' selected="selected" ';}else{ echo ' ';}?>>December</option>
+												</select></td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+
+							</td>
+						</tr>
+
+						<tr>
+							<td align="right" width="140px"><label class="boldlabel">Start <span
+									class="red">*</span>
+							</label>
+							</td>
+							<td><span class="intp-Span"><?php
+							if($this->data['CommunicationTask']['task_startdate']!=""){
+							$task_startdate= $this->data['CommunicationTask']['task_startdate'];
+					}else{
+						   $task_startdate= date('m-d-Y');
+					}
+		   echo $form->text("CommunicationTask.task_startdate", array('id' => 'task_startdate', 'div' => false, 'label' => '',"class"=>"inpt-txt-fld form-control","maxlength" => "200","style" => "width:200px", 'value'=>$task_startdate,'readonly'=>'readonly'));?></span>
+							</td>
+						</tr>
+
+						<tr>
+							<td align="right" width="140px"><label class="boldlabel">End <span
+									class="red">*</span>
+							</label></td>
+							<td><?php if($this->data['CommunicationTask']['task_end_after_occurrences']!=""){
+			$taskEndafterOccrrences=$this->data['CommunicationTask']['task_end_after_occurrences'];
+		}else{
+			  $taskEndafterOccrrences=1;
+		}?> <input type='radio' name='data[CommunicationTask][task_end]'
+								checked="checked" id="after_accurrences"
+								value='after_accurrences'
+								<?php if($this->data['CommunicationTask']['task_end']=='after_accurrences'){  echo ' checked="checked" ';}else{ echo ' ';}?>>
+								After: <?php echo $form->select("CommunicationTask.task_end_after_occurrences",array('1'=>'1','2'=>'2','3'=>'3','4'=>'4','5'=>'5','6'=>'6','7'=>'7','8'=>'8','9'=>'9','10'=>'10','11'=>'11','12'=>'12','13'=>'13','14'=>'14','15'=>'15','16'=>'16','17'=>'17','18'=>'18','19'=>'19','20'=>'20','21'=>'21','22'=>'22','23'=>'23','24'=>'24','25'=>'25','26'=>'26','27'=>'27','28'=>'28','29'=>'29','30'=>'30'),$taskEndafterOccrrences,array('id' => 'task_end_after_occurrences','style'=>'width:40px',"class"=>"",'label'=>'Occurrences'),false); ?>
+								Occurrences<br />
+							<br /> <input type='radio'
+								name='data[CommunicationTask][task_end]' id="by_date"
+								value='by_date'
+								<?php if($this->data['CommunicationTask']['task_end']=='by_date'){  echo ' checked="checked" ';}else{ echo ' ';}?>>
+								By: <span class="intp-Span"><?php echo $form->text("CommunicationTask.task_end_by_date", array('id' => 'task_end_by_date', 'div' => false, 'label' => '',"class"=>"inpt-txt-fld form-control","maxlength" => "200","style" => "width:160px",'readonly'=>'readonly'));?>
+							</span></td>
+						</tr>
+						<tr>
+							<td align="right" width="140px"><label class="boldlabel">Note</label>
+							</td>
+							<td><span class="txtArea-top"> <span class="txtArea-bot"><?php echo $form->input("CommunicationTask.task_note", array('id' => 'task_note', 'div' => false, 'label' => '','rows'=>'8','cols'=>'36','class' =>'form-control noBg'));?>
+								</span>
+							</span></td>
+						</tr>
+						<tr>
+							<td align="right" colspan="2">&nbsp;</td>
+						</tr>
+						<tr>
+							<td align="right" colspan="2">&nbsp;</td>
+						</tr>
+
+						<tr>
+							<td align="right" width="140px">&nbsp;</td>
+							<td><span class="btn-Lft">
+									<button name="runreport" id="runreport" class="btn-Rht btn btn-primary btn-sm"
+										value="RunReport" type="button">Run Report</button>
+							</span></td>
+						</tr>
+
+
+
+					</tbody>
+				</table>
+    </div>
+      
       <?php echo $form->end();?>
       <!-- ADD Sub Admin  FORM EOF -->
     </div>

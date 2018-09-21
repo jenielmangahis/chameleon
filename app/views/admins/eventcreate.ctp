@@ -598,7 +598,7 @@ function create_csv()
 <!--<div style="border-left: 0px none; text-align: right; padding-top: 5px; color: rgb(255, 255, 255);" class="top-bar">
 
 </div>-->
-<div class="midCont table-responsive">	
+<div class="midCont clearfix eventcreate">	
 
 
     <?php if($session->check('Message.flash')){ ?>
@@ -615,10 +615,24 @@ function create_csv()
 		</div>
 </div>
                                             <?php }?>
-<table class="table table-borderless">
+                                            
+                                            
+<!--<table class="table table-borderless">
 <tr>
 <td width="50%" valign="top">
-<table cellspacing="5" cellpadding="0" >
+
+</td>
+<td width="50%" valign="top">
+
+
+            
+            
+</td>
+</tr>
+</table>-->	
+
+<div class="frmbox">
+	<table cellspacing="5" cellpadding="0" >
 		
   
     <tr>
@@ -640,7 +654,7 @@ function create_csv()
         </div>
         </td>
 			<td>
-			<span class="intpSpan"><?php echo $form->input("Event.title", array('id' => 'title', 'div' => false, 'label' => '',"class" => "inpt_txt_fld","maxlength" => "150"));?></span></td>
+			<span class="intp-Span"><?php echo $form->input("Event.title", array('id' => 'title', 'div' => false, 'label' => '',"class" => "inpt-txt-fld form-control","maxlength" => "150"));?></span></td>
 		</tr>
         
         <tr>
@@ -651,10 +665,10 @@ function create_csv()
         
         </td>
             <td>
-                <span class="txtArea_top">
-                    <span class="txtArea_bot">
+                <span class="txtArea-top">
+                    <span class="txtArea-bot">
 					
-                   <?php  echo $form->select("Event.event_type",$event_type,null, array('id' => 'event_type', 'div' => false, 'label' => '','style' =>'background: none repeat scroll 0% 0% transparent; margin-bottom: 6px; width:230px;',"class" =>"","maxlength" => "250"),"---Select---");
+                   <?php  echo $form->select("Event.event_type",$event_type,null, array('id' => 'event_type', 'div' => false, 'label' => '','style' =>'background: none repeat scroll 0% 0% transparent; margin-bottom: 6px; width:100%;',"class" =>"form-control","maxlength" => "250"),"---Select---");
 					?>                    
                 </span>
                 </span></td>
@@ -673,16 +687,16 @@ function create_csv()
         
         </td>
             <td>
-                <span class="txtArea_top">
-                    <span class="txtArea_bot">
-                    <!--<select id="member_type" name="data[Event][member_type]" onchange="loadMemberEmails()" class="noBg" style="border: none; width: 230px; margin-bottom: 7px;">
+                <span class="txtArea-top">
+                    <span class="txtArea-bot">
+                    <!--<select id="member_type" name="data[Event][member_type]" onchange="loadMemberEmails()" class="form-control noBg" style="border: none; width: 230px; margin-bottom: 7px;">
                     <option value="all">All</option>                  
                     <option value="coin_holders">Coin Holders</option>                  
                     <option value="non_coin_holders">Non Coin Holders</option>                  
                     <option value="non_members">Non Members</option>                  
                     </select>-->
                     <?php 
-                        echo $form->select("Event.member_type",$member_type,Null, array('id' => 'member_type','onchange'=>"loadMemberEmails()", 'div' => false, 'label' => '','style' =>'background: none repeat scroll 0% 0% transparent; margin-bottom: 6px; width:230px;',"class" =>"","maxlength" => "250"),"---Select---");
+                        echo $form->select("Event.member_type",$member_type,Null, array('id' => 'member_type','onchange'=>"loadMemberEmails()", 'div' => false, 'label' => '','style' =>'background: none repeat scroll 0% 0% transparent; margin-bottom: 6px; width:100%;',"class" =>"form-control","maxlength" => "250"),"---Select---");
 
                         ?>
                     
@@ -700,11 +714,11 @@ function create_csv()
             <td >
             <table width="auto" border="0">
             <tr>
-            <td><span class="intpSpan"><?php echo $form->input("Event.max_attendees", array('id' => 'max_attendees', 'div' => false, 'label' => '',"class" => "inpt_txt_fld","maxlength" => "150",'style'=>'width:70px;'));?></span> </td>
+            <td><span class="intp-Span"><?php echo $form->input("Event.max_attendees", array('id' => 'max_attendees', 'div' => false, 'label' => '',"class" => "inpt-txt-fld form-control","maxlength" => "150",'style'=>'width:70px;'));?></span> </td>
             <td valign="top" style="width: 48px; padding: 3px 6px 9px 16px;">Start #</td>
-            <td><span class="intpSpan"><?php 
+            <td><span class="intp-Span"><?php 
                 //if($act=="edit")    $read_only="readonly";                
-                 echo $form->input("Event.max_attendees_start", array('id' => 'max_attendees_start','div' => false, 'label' => '',"class" => "inpt_txt_fld","maxlength" => "150",'style'=>'width:70px;'));?></span></td>
+                 echo $form->input("Event.max_attendees_start", array('id' => 'max_attendees_start','div' => false, 'label' => '',"class" => "inpt-txt-fld form-control","maxlength" => "150",'style'=>'width:70px;'));?></span></td>
             </tr>
             </table>           
                 </td>
@@ -719,11 +733,11 @@ function create_csv()
         </div>
         </td>
             <td>
-                                      <span class="txtArea_top">
-                    <span class="txtArea_bot">        <select id="stime" name="data[Event][stime]" class="noBg" style="border: none; width: 230px; margin-bottom: 7px;"> 
+                                      <span class="txtArea-top">
+                    <span class="txtArea-bot">        <select id="stime" name="data[Event][stime]" class="form-control noBg" style="width: 100%; margin-bottom: 7px;"> 
                     <?php echo $option_stime; ?>
                     </select>
-                    <?php //echo $form->select("Event.stime",$timedropdown,$sel_stime,array('id' => 'country','class'=>'multilist',"---Select---"); ?>
+                    <?php //echo $form->select("Event.stime",$timedropdown,$sel_stime,array('id' => 'country','class'=>'multi-list form-control',"---Select---"); ?>
                 </span>
                 </span>
                </td>
@@ -735,12 +749,12 @@ function create_csv()
         </div>
         </td>
             <td>
-                  <span class="txtArea_top">
-                    <span class="txtArea_bot">
-                    <select id="etime" name="data[Event][etime]" class="noBg" style="border: none; width: 230px; margin-bottom: 7px;">
+                  <span class="txtArea-top">
+                    <span class="txtArea-bot">
+                    <select id="etime" name="data[Event][etime]" class="form-control noBg" style="width: 100%; margin-bottom: 7px;">
                     <?php echo $option_etime; ?> 
                     </select>
-                    <?php //echo $form->select("Event.etime",$timedropdown,$sel_etime,array('id' => 'country','class'=>'multilist',"---Select---"); ?>
+                    <?php //echo $form->select("Event.etime",$timedropdown,$sel_etime,array('id' => 'country','class'=>'multi-list form-control',"---Select---"); ?>
                 </span>
                 </span></td>
             </tr>
@@ -756,9 +770,9 @@ function create_csv()
         </div>
         </td>
         <td>
-                  <span class="txtArea_top">
-                    <span class="txtArea_bot">
-                    <?php echo $form->select("Event.timezone_id",$timeZoneDropDown,null,array('id' => 'timezone_id','class'=>'multilist'),array(''=>"---Select---")); ?>
+                  <span class="txtArea-top">
+                    <span class="txtArea-bot">
+                    <?php echo $form->select("Event.timezone_id",$timeZoneDropDown,null,array('id' => 'timezone_id','class'=>'multi-list form-control'),array(''=>"---Select---")); ?>
                    
                 </span>
                 </span></td>
@@ -772,7 +786,7 @@ function create_csv()
         
         </td>
             <td>
-                <span class="intpSpan middle dateBut"><?php echo $form->text("Event.starttime", array('id' => 'starttime', 'value'=>(isset($sdate))?$sdate:'', 'div' => false, 'label' => '',"class" => "inpt_txt_fld","maxlength" => "200",'readonly'=>'readonly'));?></span></td>
+                <span class="intp-Span middle dateBut"><?php echo $form->text("Event.starttime", array('id' => 'starttime', 'value'=>(isset($sdate))?$sdate:'', 'div' => false, 'label' => '',"class" => "inpt-txt-fld form-control","maxlength" => "200",'readonly'=>'readonly'));?></span></td>
             </tr>      
         
         <tr>
@@ -782,10 +796,10 @@ function create_csv()
         </div>
         </td>
         <td>                            
-                  <span class="txtArea_top">
-        <span class="txtArea_bot">
+                  <span class="txtArea-top">
+        <span class="txtArea-bot">
             <span id="countrydiv">
-                <?php echo $form->select("Event.recur_pattern",$recur_pattern,null,array('id' => 'recur_pattern',"class"=>"multilist"),"None"); ?></span></span></span>
+                <?php echo $form->select("Event.recur_pattern",$recur_pattern,null,array('id' => 'recur_pattern',"class"=>"multi-list form-control"),"None"); ?></span></span></span>
              </td>
         </tr>
                                 
@@ -992,7 +1006,8 @@ function create_csv()
         </td>       
             <td>
             <div id="end_date_field" style="display: none;">
-                <span class="intpSpan middle"><?php echo $form->text("Event.endtime", array('id' => 'endtime','value'=>(isset($edate))?$edate:'', 'div' => false, 'label' => '',"class" => "inpt_txt_fld","maxlength" => "200",'readonly'=>'readonly'));?></span></div>
+                <span class="intp-Span middle"><?php echo $form->text("Event.endtime", array('id' => 'endtime','value'=>(isset($edate))?$edate:'', 'div' => false, 'label' => '',"class" => "inpt-txt-fld form-control","maxlength" => "200",'readonly'=>'readonly'));?></span></div>
+
             </td>
                 
         
@@ -1005,9 +1020,9 @@ function create_csv()
         </div>
         </td>
         <td>
-            <span class="txtArea_top">
-                <span class="txtArea_bot">
-                <?php echo $form->select("Event.rsvp_email",$respondaremail,null,array('id' => 'rsvp_email','class'=>'multilist'),array(''=>'--Select--')); ?>
+            <span class="txtArea-top">
+                <span class="txtArea-bot">
+                <?php echo $form->select("Event.rsvp_email",$respondaremail,null,array('id' => 'rsvp_email','class'=>'multi-list form-control'),array(''=>'--Select--')); ?>
                 </span>
             </span>
             <span class="btnLft"><input type="button"  class="btnRht" value="Add" name="Add" onclick="addEmailTempforRSVP();" /></span>
@@ -1021,9 +1036,9 @@ function create_csv()
         </div>
         </td>
         <td>
-       <span class="txtArea_top">
-                    <span class="txtArea_bot">
-                        <?php echo $form->select("Event.waitlist_email",$respondaremail,null,array('id' => 'waitlist_email','class'=>'multilist'),array(''=>'--Select--')); ?>
+       <span class="txtArea-top">
+                    <span class="txtArea-bot">
+                        <?php echo $form->select("Event.waitlist_email",$respondaremail,null,array('id' => 'waitlist_email','class'=>'multi-list form-control'),array(''=>'--Select--')); ?>
                     </span>
                 </span>
                 <span class="btnLft"><input type="button"  class="btnRht" value="Add" name="Add" onclick="addEmailTempforWaitList();" /></span>
@@ -1036,12 +1051,9 @@ function create_csv()
 
 
 			</table>
-</td>
-<td width="50%" valign="top">
-
-
-            
-            <table cellspacing="5" cellspacing="0">
+</div>
+<div class="frmbox2">
+	<table cellspacing="5" cellspacing="0">
                <tr>
 				<td>
 				<div class="updat">
@@ -1050,8 +1062,8 @@ function create_csv()
 			   
 				</td>
 				<td>
-					<span class="intpSpan"><?php echo $form->input("Event.location", array('id' => 'location', 'div' => false, 'label' => 
-					'',"class" => "inpt_txt_fld","maxlength" => "150"));?></span>
+					<span class="intp-Span"><?php echo $form->input("Event.location", array('id' => 'location', 'div' => false, 'label' => 
+					'',"class" => "inpt-txt-fld form-control","maxlength" => "150"));?></span>
 				</td>
 				</tr>
 				
@@ -1062,7 +1074,7 @@ function create_csv()
 				</div>
 			   </td>
 					<td>
-					<span class="intpSpan"><?php echo $form->input("Event.address", array('id' => 'address', 'div' => false, 'label' => '',"class" => "inpt_txt_fld","maxlength" => "150"));?></span>
+					<span class="intp-Span"><?php echo $form->input("Event.address", array('id' => 'address', 'div' => false, 'label' => '',"class" => "inpt-txt-fld form-control","maxlength" => "150"));?></span>
 				   </td>
 				</tr> 
 				
@@ -1072,8 +1084,8 @@ function create_csv()
 					<label class="boldlabel">Country </label>
 					</div>
 					</td>
-					<td><span class="txtArea_top"><span class="txtArea_bot">
-					<?php echo $form->select("Event.country",$countrydropdown,$selectedcountry,array('id' => 'country','style'=>'background: none repeat scroll 0% 0% transparent; margin-bottom: 6px; width:230px;','onchange'=>'return getstateoptions(this.value,"Event")'),array('254'=>'United States')); ?>
+					<td><span class="txtArea-top"><span class="txtArea-bot">
+					<?php echo $form->select("Event.country",$countrydropdown,$selectedcountry,array('id' => 'country','style'=>'background: none repeat scroll 0% 0% transparent; margin-bottom: 6px; width:100%;', "class"=>"form-control", 'onchange'=>'return getstateoptions(this.value,"Event")'),array('254'=>'United States')); ?>
 					<?php echo $form->error('Event.country', array('class' => 'errormsg')); ?> </span>
 					</td>
 					</tr>
@@ -1083,8 +1095,8 @@ function create_csv()
 						<label class="boldlabel">State</label>
 						</div>
 						</td>
-						<td><span class="txtArea_top"><span class="txtArea_bot">
-							<span id="statediv"><?php echo $form->select("Event.state",$statedropdown,$selectedstate,array('id' => 'state','style'=>'background: none repeat scroll 0% 0% transparent; margin-bottom: 6px; width:230px;'),"---Select---"); ?></span> </span></td>
+						<td><span class="txtArea-top"><span class="txtArea-bot">
+							<span id="statediv"><?php echo $form->select("Event.state",$statedropdown,$selectedstate,array('id' => 'state','style'=>'background: none repeat scroll 0% 0% transparent; margin-bottom: 6px; width:100%;', "class"=>"form-control"),"---Select---"); ?></span> </span></td>
             		</tr>
 					<tr>
 						<td>
@@ -1093,8 +1105,8 @@ function create_csv()
 						</div>
 						</td>
 						<td>
-						<label for="project_name"></label><span class="intpSpan">
-							<?php echo $form->input("Event.city",array('id' => 'city', 'div' => false, 'label' => '',"class" => "inpt_txt_fld","maxlength" => "150")); ?></span></td>
+						<label for="project_name"></label><span class="intp-Span">
+							<?php echo $form->input("Event.city",array('id' => 'city', 'div' => false, 'label' => '',"class" => "inpt-txt-fld form-control","maxlength" => "150")); ?></span></td>
 				</tr>
 
 				<tr>
@@ -1104,8 +1116,8 @@ function create_csv()
 					</div>
 					</td>
 					<td >
-					<label for="project_name"></label><span class="intpSpan">
-					<?php echo $form->input("Event.zipcode", array('id' => 'zipcode', 'div' => false, 'label' => '',"class" => "inpt_txt_fld","maxlength" => "10"));?></span></td>
+					<label for="project_name"></label><span class="intp-Span">
+					<?php echo $form->input("Event.zipcode", array('id' => 'zipcode', 'div' => false, 'label' => '',"class" => "inpt-txt-fld form-control","maxlength" => "10"));?></span></td>
 				</tr>       
            <tr>
         <td>
@@ -1114,8 +1126,8 @@ function create_csv()
         </div>
        </td>
             <td>
-            <span class="txtArea_top">
-                <span class="txtArea_bot"><?php echo $form->textarea("Event.eventdescription", array('id' => 'eventdescription', 'div' => false, 'label' => '','cols' => '35', 'rows' => '4',"class" => "noBg",'style'=>'width:231px;'));?></span></span></td>
+            <span class="txtArea-top">
+                <span class="txtArea-bot"><?php echo $form->textarea("Event.eventdescription", array('id' => 'eventdescription', 'div' => false, 'label' => '','cols' => '35', 'rows' => '4',"class" => "form-control noBg",'style'=>'width:231px;'));?></span></span></td>
         </tr> 
         
         <tr>
@@ -1125,8 +1137,8 @@ function create_csv()
         </div>
        </td>
             <td>
-            <span class="txtArea_top">
-                <span class="txtArea_bot"><?php echo $form->textarea("Event.meta_description", array('id' => 'meta_description', 'div' => false, 'label' => '','cols' => '35', 'rows' => '4',"class" => "noBg",'style'=>'width:231px;'));?></span></span></td>
+            <span class="txtArea-top">
+                <span class="txtArea-bot"><?php echo $form->textarea("Event.meta_description", array('id' => 'meta_description', 'div' => false, 'label' => '','cols' => '35', 'rows' => '4',"class" => "form-control noBg",'style'=>'width:231px;'));?></span></span></td>
         </tr> 
         
            
@@ -1165,7 +1177,7 @@ function create_csv()
        
         </td>
             <td>
-            <span class="intpSpan"><?php echo $form->input("Event.member_price", array('id' => 'member_price','div' => false, 'label' => '',"class" => "inpt_txt_fld","maxlength" => "150",'style'=>'width:100px;'));?></span></td>
+            <span class="intp-Span"><?php echo $form->input("Event.member_price", array('id' => 'member_price','div' => false, 'label' => '',"class" => "inpt-txt-fld form-control","maxlength" => "150",'style'=>'width:100px;'));?></span></td>
         </tr>
         <tr>
         <td>
@@ -1175,7 +1187,7 @@ function create_csv()
        
         </td>
             <td>
-            <span class="intpSpan"><?php echo $form->input("Event.non_member_price", array('id' => 'non_member_price','div' => false, 'label' => '',"class" => "inpt_txt_fld","maxlength" => "150",'style'=>'width:100px;'));?></span></td>
+            <span class="intp-Span"><?php echo $form->input("Event.non_member_price", array('id' => 'non_member_price','div' => false, 'label' => '',"class" => "inpt-txt-fld form-control","maxlength" => "150",'style'=>'width:100px;'));?></span></td>
         </tr>
         <tr>
         <td>
@@ -1185,7 +1197,7 @@ function create_csv()
        
         </td>
             <td>
-            <span class="intpSpan"><?php echo $form->input("Event.max_tickets_per_member", array('id' => 'max_tickets_per_member', 'div' => false, 'label' => '',"class" => "inpt_txt_fld","maxlength" => "150",'style'=>'width:100px;'));?></span></td>
+            <span class="intp-Span"><?php echo $form->input("Event.max_tickets_per_member", array('id' => 'max_tickets_per_member', 'div' => false, 'label' => '',"class" => "inpt-txt-fld form-control","maxlength" => "150",'style'=>'width:100px;'));?></span></td>
         </tr>
         
         
@@ -1225,7 +1237,7 @@ function create_csv()
 			</div>
 			</td>
             <td>
-					<span class="intpSpan"><?php echo $form->input("Event.event_detail_page", array('div' => false, 'label' => '',"class" => "inpt_txt_fld","maxlength" => "150"));?></span>
+					<span class="intp-Span"><?php echo $form->input("Event.event_detail_page", array('div' => false, 'label' => '',"class" => "inpt-txt-fld form-control","maxlength" => "150"));?></span>
 				</td>
          </tr>
 	
@@ -1236,8 +1248,8 @@ function create_csv()
 			</div>
 			</td>
 			 <td>
-				<span class="intpSpan">
-				<?php echo $form->input("Event.inquiry_detail_page", array('div' => false, 'label' => '','class' => 'inpt_txt_fld','maxlength' => '150')); ?> </span>
+				<span class="intp-Span">
+				<?php echo $form->input("Event.inquiry_detail_page", array('div' => false, 'label' => '','class' => 'inpt-txt-fld form-control','maxlength' => '150')); ?> </span>
 			</td>
           </tr>
 		
@@ -1249,10 +1261,10 @@ function create_csv()
 			</div>
 			</td>
             <td>            
-					<span class="txtArea_top">
-						<span class="txtArea_bot">					
+					<span class="txtArea-top">
+						<span class="txtArea-bot">					
 							<?php echo $form->select("Event.wp_event_detail_page",$submenu,null,array('id' => 
-							'event_detail_page','class'=>'multilist'),array(''=>'--Select--')); ?>
+							'event_detail_page','class'=>'multi-list form-control'),array(''=>'--Select--')); ?>
 						</span>
 					</span>
 					<span class="btnLft"><input type="button"  class="btnRht" value="Add" name="Add" onclick=
@@ -1268,9 +1280,9 @@ function create_csv()
         </td>
             <td>
             
-              <span class="txtArea_top">
-                                          <span class="txtArea_bot">
-                                            <?php echo $form->select("Event.wp_inquiry_detail_page",$submenu,null,array('id' => 'inquiry_detail_page','class'=>'multilist'),array(''=>'--Select--')); ?>
+              <span class="txtArea-top">
+                                          <span class="txtArea-bot">
+                                            <?php echo $form->select("Event.wp_inquiry_detail_page",$submenu,null,array('id' => 'inquiry_detail_page','class'=>'multi-list form-control'),array(''=>'--Select--')); ?>
                                           </span>
                                           </span>
                                           <span class="btnLft"><input type="button"  class="btnRht" value="Add" name="Add" onclick="addContentforInquiryDetails();" /></span>
@@ -1279,9 +1291,7 @@ function create_csv()
 	<?php } ?>	 		
         
         </table>
-</td>
-</tr>
-</table>					
+</div>				
 <!-- ADD Sub Admin  FORM EOF --> 
 <!--inner-container ends here-->
 

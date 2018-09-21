@@ -82,13 +82,10 @@ function addnewcontact(){
 
 
 <?php if($session->check('Message.flash')) { echo $this->renderElement('error_message'); } ?>
-<div class="mid-form clearfix table-responsive">
-
-<table class="table table-borderless" cellspacing="0" cellpadding="0" align="left" width="100%">
-	<tbody>
-		<tr>
-			<td width="50%" valign="top">
-				<table cellspacing="10" cellpadding="0" align="left" width="100%">
+<div class="mid-form clearfix">
+	
+    <div class="frmbox">
+    	<table cellspacing="10" cellpadding="0" align="left" width="100%">
 					<tbody>
 						<tr>
 							<td align="right">
@@ -337,9 +334,9 @@ function addnewcontact(){
 						</tr>
 					</tbody>
 				</table>
-			</td>
-			<td width="50%" valign="top">
-				<table cellspacing="10" cellpadding="0" align="center" width="100%">
+    </div>
+    <div class="frmbox2">
+    	<table cellspacing="10" cellpadding="0" align="center" width="100%">
 					<tbody>
 						<tr>
 							<td align="right" width="140px"><label class="boldlabel">Status</label>
@@ -687,10 +684,20 @@ echo $form->input("CommunicationTask.monthly_weekof_noof_months", array('id' => 
 
 					</tbody>
 				</table>
+    </div>
+
+<!--<table class="table table-borderless" cellspacing="0" cellpadding="0" align="left" width="100%">
+	<tbody>
+		<tr>
+			<td width="50%" valign="top">
+				
+			</td>
+			<td width="50%" valign="top">
+				
 			</td>
 		</tr>
 	</tbody>
-</table>
+</table>-->
 
 <script type="text/javascript">
 var dateobj = new Date();
