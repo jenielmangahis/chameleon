@@ -6,26 +6,28 @@ $backUrl = $base_url_admin.'mailtemplatelist';
 
 <!-- Body Panel starts -->
 <div class="titlCont">
+	<div class="slider-centerpage clearfix">
+    	<div class="center-Page col-sm-6">
+            <h2>Email Template Add/Edit</h2>
+        </div>
+        <div class="slider-dashboard col-sm-6">
+        	<div class="icon-container">
+            	<?php 
 
-<div class="myclass">
-<div class="slider" id="toppanel" style="height: 20px; top:13px;right: -50px;width:545px !important; text-align:right;">
-<?php 
-
-    echo $javascript->link('ckeditor/ckeditor'); 
-    echo $form->create("Admins", array("action" => "addmailtemplate",'name' => 'addmailtemplate', 'id' => "addmailtemplate","onsubmit"=>"return validatemailcontent('add');")); 
-    if($returnurl){ echo $form->hidden("returnurl", array('id' => 'returnurl', 'value'=>$returnurl)); }
-    if($extra){ echo $form->hidden("Admins.extra", array('id' => 'extra', 'value'=>$extra)); }
-    if($closeit=="yes"){   echo $form->hidden("closeit", array('id' => 'closeit', 'value'=>$closeit)); }
-
-?>
-		
-<button type="submit" value="Submit" class="sendBut" name="data[Action][redirectpage]"><?php e($html->image('action.png')); ?></button>
-<button type="submit" value="Submit" class="sendBut" name="data[Action][noredirection]"><?php e($html->image('apply.png')); ?></button>
-<button type="button" id="saveForm" class="sendBut"  ONCLICK="javascript:(window.location='<?php echo $backUrl ?>')" ><?php e($html->image('cancle.png')); ?></button>
-<?php  echo $this->renderElement('new_slider');  ?>			
-</div>
-        <span class="titlTxt">Email Template Add/Edit   </span>
-
+					echo $javascript->link('ckeditor/ckeditor'); 
+					echo $form->create("Admins", array("action" => "addmailtemplate",'name' => 'addmailtemplate', 'id' => "addmailtemplate","onsubmit"=>"return validatemailcontent('add');")); 
+					if($returnurl){ echo $form->hidden("returnurl", array('id' => 'returnurl', 'value'=>$returnurl)); }
+					if($extra){ echo $form->hidden("Admins.extra", array('id' => 'extra', 'value'=>$extra)); }
+					if($closeit=="yes"){   echo $form->hidden("closeit", array('id' => 'closeit', 'value'=>$closeit)); }
+				
+				?>
+						
+				<button type="submit" value="Submit" class="sendBut" name="data[Action][redirectpage]"><?php e($html->image('action.png')); ?></button>
+				<button type="submit" value="Submit" class="sendBut" name="data[Action][noredirection]"><?php e($html->image('apply.png')); ?></button>
+				<button type="button" id="saveForm" class="sendBut"  ONCLICK="javascript:(window.location='<?php echo $backUrl ?>')" ><?php e($html->image('cancle.png')); ?></button>
+				<?php  echo $this->renderElement('new_slider');  ?>	
+            </div>
+        </div>
         <div class="topTabs" style="height:25px;">
             <?php /*?><ul>
                 <li><button type="submit" value="Submit" class="button" name="data[Action][redirectpage]"><span>Save</span></button></li>
@@ -33,11 +35,16 @@ $backUrl = $base_url_admin.'mailtemplatelist';
                 <li><button type="button" id="saveForm" class="button"  ONCLICK="javascript:(window.location='<?php echo $backUrl ?>')" ><span> Cancel</span></button></li>
             </ul><?php */?>
         </div>
-        <div class="clear"></div>
-         <?php    $this->loginarea="admins";    $this->subtabsel="mailtemplatelist";
-             echo $this->renderElement('emails_submenus');  ?>  
-        
-    </div></div>
+    </div>
+</div>
+    
+    
+<div class="clearfix nav-submenu-container">
+	<div class="midCont">
+	   <?php    $this->loginarea="admins";    $this->subtabsel="mailtemplatelist";
+             echo $this->renderElement('emails_submenus');  ?> 
+    </div>
+</div>    
 
 <div class="midPadd" id="mailtmp">
 
@@ -46,68 +53,61 @@ $backUrl = $base_url_admin.'mailtemplatelist';
         <?php if($session->check('Message.flash')) { echo $this->renderElement('error_message'); } ?>
         <div class="clear"></div>
     </div>
+        <div class="clearfix">
+            <div class="frmbox">
+                <table cellspacing="5" cellpadding="0" align="center" width="100%">
+                                    <tbody>
+                                 
+                                        <tr>
+                                            <td width="25%" align="right"><label class="boldlabel">Template Name <span class="red">*</span></label></td>
+                                            <td width="75%"><span class="intp-Span"><?php echo $form->input("EmailTemplate.email_template_name", array('id' => 'email_template_name', 'div' => false, 'label' => '','style' =>'width:100%;',"class" => "inpt-txt-fld form-control","maxlength" => "250"));?></span></td>
+                                        </tr>
+        
+                                        <tr>
+                                            <td width="25%" align="right"><label class="boldlabel">Subject <span class="red">*</span></label></td>
+                                            <td width="75%"><span class="intp-Span"><?php echo $form->input("EmailTemplate.subject", array('id' => 'subject', 'div' => false, 'label' => '','style' =>'width:100%;',"class" => "inpt-txt-fld form-control","maxlength" => "250"));?></span></td>
+                                        </tr>
+                                        <tr>
+                                            <td  align="right"><label class="boldlabel">Sender <span class="red">*</span></label></td>
+                                            <td ><span class="intp-Span"><?php echo $form->input("EmailTemplate.sender", array('id' => 'sender', 'div' => false, 'label' => '','style' =>'width:100%;',"class" => "inpt-txt-fld form-control","maxlength" => "250", "value"=>$project['Sponsor']['email']));?></span></td>
+                                        </tr>
+        
+                                      
+                                    </tbody>
+                                </table>
+            </div>
+            <div class="frmbox2">
+                <table cellspacing="10" cellpadding="0" align="center" width="100%">
+                                    <tbody>
+        
+                                        <tr>
+                                            <td align="left" style="vertical-align: middle;">
+                                                <label class="boldlabel">CC Email To</label>
+                                            </td>
+                                        </tr>
+                                        <tr><td>                            
+                                                <span class="txtArea-top">
+                                                    <span class="newtxtArea-bot">
+                                                        <?php echo $form->input("EmailTemplate.send_cc_email_to", array('id' => 'send_cc_email_to', 'div' => false, 'label' => '','rows'=>'3','cols'=>'65','style' =>'width:100%;',"class" => "form-control noBg"));?>
+                                                    </span>
+                                                </span>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+            </div>
+            
+        </div>    
+        
     <br/>
     <div class="boxBor1">
-        <table cellspacing="10" cellpadding="0" align="center" width="100%">   
-            <tbody>
-                <tr>
-                    <td width="65%">
-                        <table cellspacing="5" cellpadding="0" align="center" width="100%">
-                            <tbody>
-                         
-                                <tr>
-                                    <td width="25%" align="right"><label class="boldlabel">Template Name <span class="red">*</span></label></td>
-                                    <td width="75%"><span class="intpSpan"><?php echo $form->input("EmailTemplate.email_template_name", array('id' => 'email_template_name', 'div' => false, 'label' => '','style' =>'width:400px;',"class" => "inpt_txt_fld","maxlength" => "250"));?></span></td>
-                                </tr>
-
-                                <tr>
-                                    <td width="25%" align="right"><label class="boldlabel">Subject <span class="red">*</span></label></td>
-                                    <td width="75%"><span class="intpSpan"><?php echo $form->input("EmailTemplate.subject", array('id' => 'subject', 'div' => false, 'label' => '','style' =>'width:400px;',"class" => "inpt_txt_fld","maxlength" => "250"));?></span></td>
-                                </tr>
-                                <tr>
-                                    <td  align="right"><label class="boldlabel">Sender <span class="red">*</span></label></td>
-                                    <td ><span class="intpSpan"><?php echo $form->input("EmailTemplate.sender", array('id' => 'sender', 'div' => false, 'label' => '','style' =>'width:400px;',"class" => "inpt_txt_fld","maxlength" => "250", "value"=>$project['Sponsor']['email']));?></span></td>
-                                </tr>
-
-                              
-                            </tbody>
-                        </table>
-                    </td>
-
-                    <td width="35%">
-                        <table cellspacing="10" cellpadding="0" align="center" width="100%">
-                            <tbody>
-
-                                <tr>
-                                    <td align="left" style="vertical-align: middle;">
-                                        <label class="boldlabel">CC Email To</label>
-                                    </td>
-                                </tr>
-                                <tr><td>                            
-                                        <span class="txtArea_top">
-                                            <span class="newtxtArea_bot">
-                                                <?php echo $form->input("EmailTemplate.send_cc_email_to", array('id' => 'send_cc_email_to', 'div' => false, 'label' => '','rows'=>'3','cols'=>'65','style' =>'width:230px;',"class" => "noBg"));?>
-                                            </span>
-                                        </span>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </td>
-                </tr>
-
-                <tr>
-                    <td colspan="2">   <?php    echo $form->textarea('EmailTemplate.content', array('id'=>'content','class'=>'ckeditor'));  ?>    </td>
-                </tr>       
-
-                <tr><td colspan="2">&nbsp;</td></tr>
-
-            </tbody>
-        </table>
+        <?php    echo $form->textarea('EmailTemplate.content', array('id'=>'content','class'=>'ckeditor'));  ?>
         <div style="margin-bottom: 10px ; text-align: left; color:black" class="top-bar">
         <?php  echo $this->renderElement('bottom_message');  ?>   </div>
 
-    </div></div> </div>
+    </div>
+  </div> 
+</div>
 
 <!--inner-container ends here-->
 
