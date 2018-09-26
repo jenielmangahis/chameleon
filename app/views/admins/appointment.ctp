@@ -625,7 +625,7 @@ function create_csv()
 </div>
    
    
-<div class="midCont">	
+<div class="midCont clearfix">	
 
 
     <?php if($session->check('Message.flash')){ ?>
@@ -641,11 +641,10 @@ function create_csv()
 	                <div class="msgBoxBotLft"><div class="msgBoxBotRht"><div class="msgBoxBotBg"></div></div></div>
 		</div>
 </div>
-                                            <?php }?>
-<table>
-<tr>
-<td width="50%" valign="top">
-<table cellspacing="5" cellpadding="0" >
+<?php }?>
+
+<div class="frmbox">
+	<table width="100%">
 		
   
     <tr>
@@ -681,7 +680,7 @@ function create_csv()
                 <span class="txtArea-top">
                     <span class="txtArea-bot">
 					
-                   <?php  echo $form->select("Event.event_type",$event_type,null, array('id' => 'event_type', 'div' => false, 'label' => '','style' =>'background: none repeat scroll 0% 0% transparent; margin-bottom: 6px; width:230px;',"class" =>"","maxlength" => "250"),"---Select---");
+                   <?php  echo $form->select("Event.event_type",$event_type,null, array('id' => 'event_type', 'div' => false, 'label' => '','style' =>'background: none repeat scroll 0% 0% transparent; margin-bottom: 6px; width:100%;',"class" =>"form-control","maxlength" => "250"),"---Select---");
 					?>                    
                 </span>
                 </span></td>
@@ -695,7 +694,7 @@ function create_csv()
         </td>
             <td>
                                       <span class="txtArea-top">
-                    <span class="txtArea-bot">        <select id="stime" name="data[Event][stime]" class="form-control noBg" style="border: none; width: 230px; margin-bottom: 7px;"> 
+                    <span class="txtArea-bot">        <select id="stime" name="data[Event][stime]" class="form-control noBg" style="width: 100%; margin-bottom: 7px;"> 
                     <?php echo $option_stime; ?>
                     </select>
                     <?php //echo $form->select("Event.stime",$timedropdown,$sel_stime,array('id' => 'country','class'=>'multi-list form-control',"---Select---"); ?>
@@ -712,7 +711,7 @@ function create_csv()
             <td>
                   <span class="txtArea-top">
                     <span class="txtArea-bot">
-                    <select id="etime" name="data[Event][etime]" class="form-control noBg" style="border: none; width: 230px; margin-bottom: 7px;">
+                    <select id="etime" name="data[Event][etime]" class="form-control noBg" style="width: 100%; margin-bottom: 7px;">
                     <?php echo $option_etime; ?> 
                     </select>
                     <?php //echo $form->select("Event.etime",$timedropdown,$sel_etime,array('id' => 'country','class'=>'multi-list form-control',"---Select---"); ?>
@@ -1013,37 +1012,12 @@ foreach($email_templates as $key =>$temp){
      
                 </td>
             </tr>  
-		   
-		   
-		   
-		   
-		   
-		   
-		   
-		   
-		   
-		   
-		   
-		   
-		   
-		   
-		   
-		   
-		   
-		   
-		   
-		   
-		   
-         
+   
 
-
-			</table>
-</td>
-<td width="50%" valign="top">
-
-
-            
-            <table cellspacing="5" cellspacing="0">
+    </table>
+</div>
+<div class="frmbox2">
+	<table width="98%">
 			
 			
 			
@@ -1094,7 +1068,7 @@ foreach($email_templates as $key =>$temp){
 					</div>
 					</td>
 					<td><span class="txtArea-top"><span class="txtArea-bot">
-					<?php echo $form->select("Event.country",$countrydropdown,$selectedcountry,array('id' => 'country','style'=>'background: none repeat scroll 0% 0% transparent; margin-bottom: 6px; width:230px;','onchange'=>'return getstateoptions(this.value,"Event")'),array('254'=>'United States')); ?>
+					<?php echo $form->select("Event.country",$countrydropdown,$selectedcountry,array('id' => 'country','class' => 'form-control','style'=>'background: none repeat scroll 0% 0% transparent; margin-bottom: 6px; width:100%;','onchange'=>'return getstateoptions(this.value,"Event")'),array('254'=>'United States')); ?>
 					<?php echo $form->error('Event.country', array('class' => 'errormsg')); ?> </span>
 					</td>
 					</tr>
@@ -1105,7 +1079,7 @@ foreach($email_templates as $key =>$temp){
 						</div>
 						</td>
 						<td><span class="txtArea-top"><span class="txtArea-bot">
-							<span id="statediv"><?php echo $form->select("Event.state",$statedropdown,$selectedstate,array('id' => 'state','style'=>'background: none repeat scroll 0% 0% transparent; margin-bottom: 6px; width:230px;'),"---Select---"); ?></span> </span></td>
+							<span id="statediv"><?php echo $form->select("Event.state",$statedropdown,$selectedstate,array('id' => 'state','class' => 'form-control','style'=>'background: none repeat scroll 0% 0% transparent; margin-bottom: 6px; width:100%;'),"---Select---"); ?></span> </span></td>
             		</tr>
 					<tr>
 						<td>
@@ -1136,7 +1110,7 @@ foreach($email_templates as $key =>$temp){
        </td>
             <td>
             <span class="txtArea-top">
-                <span class="txtArea-bot"><?php echo $form->textarea("Event.eventdescription", array('id' => 'eventdescription', 'div' => false, 'label' => '','cols' => '35', 'rows' => '4',"class" => "form-control noBg",'style'=>'width:231px;'));?></span></span></td>
+                <span class="txtArea-bot"><?php echo $form->textarea("Event.eventdescription", array('id' => 'eventdescription', 'div' => false, 'label' => '','cols' => '35', 'rows' => '4',"class" => "form-control noBg",'style'=>'width:100%;'));?></span></span></td>
         </tr> 
         
 		
@@ -1159,9 +1133,8 @@ foreach($email_templates as $key =>$temp){
   		
         
         </table>
-</td>
-</tr>
-</table>					
+</div>
+					
 <!-- ADD Sub Admin  FORM EOF --> 
 <!--inner-container ends here-->
 

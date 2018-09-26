@@ -52,140 +52,117 @@
 
 <div class="midPadd midCont" id="sndmail">
     <?php if($session->check('Message.flash')) { echo $this->renderElement('error_message'); } ?>          
-        <div class="top-bar" style="border-left:0px;">
         
-        </div>		 
-  
-                
-<div class="table-responsive" style="border:none;">  
-            <!-- START: New Design for send mail as per Requirement --> 
-            <table class="table table-borderless" cellspacing="5" cellpadding="0" align="left" width="100%">
-            <tbody>
-                <tr>
-                    <td width="50%" valign="top">     
-                        <table cellspacing="5" cellpadding="0" align="left" width="100%">
-                            <tbody>
-                                <tr>
-                                    <td width="140px" align="right">  <input type="hidden" id="current_domain" name="current_domain" value="<?php echo $current_domain;?>">
-                                        
-                                            <label class="boldlabel">Select Template </label>
-
-                                         
-                                    </td>
-                                    <td><!--<span class="txtArea_top">
-                                         <span class="txtArea_bot">-->
-                                         <?php echo $form->select("EmailTemplate.id",$templatedropdown,null,array('id' => 'templateid','class'=>'multilists form-control','onchange'=>'showselecttemplate(this.value)'),"---Select---"); ?>
-                                         <?php echo $form->error('EmailTemplate.id', array('class' => 'errormsg')); ?> 
-                                         </span>     </span></td>
-                                </tr>
-
-                                <tr>
-                                    <td align="right">                                        
-                                           <label class="boldlabel">Subject <span style="color: red;">*</span></label>
+        
+<div class="clearfix">
+    <div class="frmbox">
+        <table cellspacing="5" cellpadding="0" align="left" width="100%">
+                                <tbody>
+                                    <tr>
+                                        <td width="140px" align="right">  <input type="hidden" id="current_domain" name="current_domain" value="<?php echo $current_domain;?>">
+                                            
+                                                <label class="boldlabel">Select Template </label>
     
-                                    </td>
-                                    <td>
-                                    <span class="intp-Span" style="vertical-align: top"> 
-                                            <?php echo $form->input("EmailTemplate.subject", array('id' => 'subject', 'div' => false, 'label' => '','style' =>'',"class" => "inpt-txt-fld form-control","maxlength" => "250"));?>
-                                        </span>
-                                    </td>
-                                </tr>
-
-                                <tr>
-                                    <td align="right">
-                                       
-                                            <label class="boldlabel">Email from <span style="color: red;">*</span></label>
-
-                                    </td>
-                                    <td>
-                                    <span class="intp-Span" style="vertical-align: top">
-                                            <?php echo $form->input("EmailTemplate.fromid", array('id' => 'fromid', 'div' => false, 'label' => '','style' =>'',"class" => "inpt-txt-fld form-control"));?>
-                                        </span>
-                                    </td>
-                                </tr>
-                                
-                                 <!--<tr><td>&nbsp;</td><td>&nbsp;</td></tr>
-                                 <tr><td>&nbsp;</td><td>&nbsp;</td></tr>
-                                 <tr><td>&nbsp;</td><td>&nbsp;</td></tr>-->
-                                <tr>
-                                    <td align="right">
-                                       
-                                            <label class="boldlabel">Email To <span style="color: red;">*</span></label>                              
-                                        
-                                    </td>
-                                    <td>
-                                    <span class="txtArea-top">
-                                            <span class="newtxtArea-bot">
-                                                <?php echo $form->input("EmailTemplate.toid", array('id' => 'toid', 'div' => false, 'label' => '','rows'=>'7','cols'=>'65','style' =>'',"class" => "noBg form-control",'value'=>$toid));?>
+                                             
+                                        </td>
+                                        <td><!--<span class="txtArea_top">
+                                             <span class="txtArea_bot">-->
+                                             <?php echo $form->select("EmailTemplate.id",$templatedropdown,null,array('id' => 'templateid','class'=>'multilists form-control','onchange'=>'showselecttemplate(this.value)'),"---Select---"); ?>
+                                             <?php echo $form->error('EmailTemplate.id', array('class' => 'errormsg')); ?> 
+                                             </span>     </span></td>
+                                    </tr>
+    
+                                    <tr>
+                                        <td align="right">                                        
+                                               <label class="boldlabel">Subject <span style="color: red;">*</span></label>
+        
+                                        </td>
+                                        <td>
+                                        <span class="intp-Span" style="vertical-align: top"> 
+                                                <?php echo $form->input("EmailTemplate.subject", array('id' => 'subject', 'div' => false, 'label' => '','style' =>'',"class" => "inpt-txt-fld form-control","maxlength" => "250"));?>
                                             </span>
-                                        </span>
-                                    </td>
-                                </tr>
-
-
-
-                            </tbody>
-                        </table>  
-                    </td>
-
-                    <td width="50%" valign="top">
-                        <table cellspacing="10" cellpadding="0" align="center" width="100%">
-                            <tbody>
-                                
-                                <tr>
-                                    <td align="right" width="140px">
-                                        <label class="boldlabel">Member Type</label>
-                                    </td>
-                                    <td>
-                                    <span class="txtArea-top">
-                                            <span class="txtArea-bot">
-                                                <?php 
-                                                    echo $form->select("EmailTemplate.member_type",$member_type,'0', array('id' => 'member_type', 'div' => false, 'label' => '','style' =>'background: none repeat scroll 0% 0% transparent; margin-bottom: 6px;',"class" =>"form-control","maxlength" => ""),"---Select---");?>                                  </span>
-                                       </span>
-                                        
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td colspan="2">
-                                        <p ><label class="boldlabel">1. Select person you want to send email to</label></p>
-                                        <div id="contactemails" class="form-control" style=" background: none repeat scroll 0 0 #EBEBEB;  border: 1px solid #D3D3D3; display: block; font-size: 10px; height: 175px; overflow: auto; width: 100%;" > 
-                                        <!-- Contact Email list comes here --->
-                                        </div>
-                                      
-                                        <br />
-                                        <!-- <p ><i>Hint: Use the Ctrt or Shift keys to select multiple names</i> </p> -->
-                                        <p><label class="boldlabel">2. Click button below to add selected names to recipients</label></p>                    
-                                        <span><br />
-                                            <button type="button"  id="addrecipients" class="btn"><span>Add Recipients</span> </button>            
-                                        </span>
-
-                                    </td>
-                                </tr>
-
-                            </tbody>
-                        </table>      
-                    </td>
-                </tr>
-
-                <tr>
-                    <td valign="top" colspan="2"> <?php   echo $form->textarea('EmailTemplate.content', array('id'=>'content','class'=>'ckeditor'));      ?> </td>
-                </tr>       
-                <tr>
-                <td colspan="2"><button type="submit" value="Submit" class="btn" name="data[Action][redirectpage]"><span>Send</span></button></td>
-                </tr> 
-                        
-               <tr><td colspan="2"><div class="top-bar" style="text-align: left; padding-top: 5px; ">
-                                        <?php  echo $this->renderElement('bottom_message');  ?>
-
-                            </div></td></tr>
-            </tbody>
-        </table> 
-           <!-- END : New Design for send mail as per Requirement -->  
-                
-
-
-
+                                        </td>
+                                    </tr>
+    
+                                    <tr>
+                                        <td align="right">
+                                           
+                                                <label class="boldlabel">Email from <span style="color: red;">*</span></label>
+    
+                                        </td>
+                                        <td>
+                                        <span class="intp-Span" style="vertical-align: top">
+                                                <?php echo $form->input("EmailTemplate.fromid", array('id' => 'fromid', 'div' => false, 'label' => '','style' =>'',"class" => "inpt-txt-fld form-control"));?>
+                                            </span>
+                                        </td>
+                                    </tr>
+                                    
+                                     <!--<tr><td>&nbsp;</td><td>&nbsp;</td></tr>
+                                     <tr><td>&nbsp;</td><td>&nbsp;</td></tr>
+                                     <tr><td>&nbsp;</td><td>&nbsp;</td></tr>-->
+                                    <tr>
+                                        <td align="right">
+                                           
+                                                <label class="boldlabel">Email To <span style="color: red;">*</span></label>                              
+                                            
+                                        </td>
+                                        <td>
+                                        <span class="txtArea-top">
+                                                <span class="newtxtArea-bot">
+                                                    <?php echo $form->input("EmailTemplate.toid", array('id' => 'toid', 'div' => false, 'label' => '','rows'=>'7','cols'=>'65','style' =>'',"class" => "noBg form-control",'value'=>$toid));?>
+                                                </span>
+                                            </span>
+                                        </td>
+                                    </tr>
+    
+    
+    
+                                </tbody>
+                            </table>
     </div>
+    <div class="frmbox2">
+        <table cellspacing="10" cellpadding="0" align="center" width="100%">
+                                <tbody>
+                                    
+                                    <tr>
+                                        <td align="right" width="140px">
+                                            <label class="boldlabel">Member Type</label>
+                                        </td>
+                                        <td>
+                                        <span class="txtArea-top">
+                                                <span class="txtArea-bot">
+                                                    <?php 
+                                                        echo $form->select("EmailTemplate.member_type",$member_type,'0', array('id' => 'member_type', 'div' => false, 'label' => '','style' =>'background: none repeat scroll 0% 0% transparent; margin-bottom: 6px;',"class" =>"form-control","maxlength" => ""),"---Select---");?>                                  </span>
+                                           </span>
+                                            
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="2">
+                                            <p ><label class="boldlabel">1. Select person you want to send email to</label></p>
+                                            <div id="contactemails" class="form-control" style=" background: none repeat scroll 0 0 #EBEBEB;  border: 1px solid #D3D3D3; display: block; font-size: 10px; height: 175px; overflow: auto; width: 100%;" > 
+                                            <!-- Contact Email list comes here --->
+                                            </div>
+                                          
+                                            <br />
+                                            <!-- <p ><i>Hint: Use the Ctrt or Shift keys to select multiple names</i> </p> -->
+                                            <p><label class="boldlabel">2. Click button below to add selected names to recipients</label></p>                    
+                                            <span><br />
+                                                <button type="button"  id="addrecipients" class="btn"><span>Add Recipients</span> </button>            
+                                            </span>
+    
+                                        </td>
+                                    </tr>
+    
+                                </tbody>
+                            </table>
+    </div>
+</div>
+<br />
+<?php   echo $form->textarea('EmailTemplate.content', array('id'=>'content','class'=>'ckeditor'));      ?>
+<button type="submit" value="Submit" class="btn" name="data[Action][redirectpage]"><span>Send</span></button>
+<?php  echo $this->renderElement('bottom_message');  ?>
+  
     <div class="clear"></div>
 
 

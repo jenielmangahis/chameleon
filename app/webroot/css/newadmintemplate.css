@@ -1643,9 +1643,9 @@ ul .sub {
 
 .frmbox {
 
-	width: 400px;
+	width:48%;
 
-	float: left;
+	float: left; margin-right:2%;
 
 }
 
@@ -4149,7 +4149,7 @@ p.subtext {
 
 
 
-.points .checkbox, .points input[type="checkbox"] { position:relative; margin:0;}
+.points .checkbox, .points input[type="checkbox"], .event-task input[type="checkbox"] { position:relative; margin:0;}
 
 .intp-Span .form-control { margin-bottom:10px;}
 
@@ -4451,7 +4451,7 @@ ul.form-style li .intpSpan { display:block; margin-bottom:10px;}
 	/*.frmbox2 { width:auto;}
 	.addlos .frmbox2, .eventcreate .frmbox2 { float:none; width:auto;}*/
 	
-	.frmbox { float:left; width:50%;}
+	.frmbox { float:left; width:48%; margin-right:2%;}
 	.frmbox2 { float:right; width:50%;}
 	
 	.midCont .updat { width:auto !important; display:block;}

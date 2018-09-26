@@ -41,173 +41,169 @@ $backUrl = $base_url.'admins/donation';
 ?>
 
 <div class="container"> 
-<div class="titlCont">
-<div class="myclass">
-<div align="center" class="slider" id="toppanel" style="height: 20px; top:13px;right: -50px;width:545px !important; text-align:right;">
-<?php echo $form->create("admins", array("action" => $editLink,'name' => 'add_donations', 'id' => "add_donation", 'class' => 'adduser'));
-     ?>
-<button type="submit" value="Submit" class="sendBut" name="data[Action][redirectpage]"> <?php e($html->image('save.png', array('alt' => 'Save'))); ?></button>
+	<div class="titlCont">
+		<div class="slider-centerpage clearfix">
+        	<div class="center-Page col-sm-6">            	
+                <h2>Edit Donation type</h2>
+            </div>
+            <div class="slider-dashboard col-sm-6">
+            	<div class="icon-container">
+                	<?php echo $form->create("admins", array("action" => $editLink,'name' => 'add_donations', 'id' => "add_donation", 'class' => 'adduser'));
+					?>
+					<button type="submit" value="Submit" class="sendBut" name="data[Action][redirectpage]"> <?php e($html->image('save.png', array('alt' => 'Save'))); ?></button>
+					
+					<button type="submit" value="Submit" class="sendBut" name="data[Action][noredirection]"><?php e($html->image('apply.png', array('alt' => 'Apply'))); ?> </button>
+					<button type="button" id="saveForm" class="sendBut"  ONCLICK="javascript:(window.location='<?php echo $backUrl ?>')"><?php e($html->image('cancle.png', array('alt' => 'Cancle'))); ?>
+					</button>
+					<?php  echo $this->renderElement('new_slider');  ?>
+                </div>
+            </div>
+        </div>
 
-<button type="submit" value="Submit" class="sendBut" name="data[Action][noredirection]"><?php e($html->image('apply.png', array('alt' => 'Apply'))); ?> </button>
-<button type="button" id="saveForm" class="sendBut"  ONCLICK="javascript:(window.location='<?php echo $backUrl ?>')"><?php e($html->image('cancle.png', array('alt' => 'Cancle'))); ?>
-</button>
-	<?php  echo $this->renderElement('new_slider');  ?>
-</div>
 
-<span class="titlTxt">Edit Donation type</span>
-<div class="topTabs" style="height:25px;">
-<?php /*?><ul class="dropdown">
-<li>
-<button type="submit" value="Submit" class="button" name="data[Action][redirectpage]"> <span> Save </span>	</button>
-</li>
-<li>
-<button type="submit" value="Submit" class="button" name="data[Action][noredirection]"><span>Apply</span> </button>
-</li>
-<li>
-<button type="button" id="saveForm" class="button"  ONCLICK="javascript:(window.location='<?php echo $backUrl ?>')"><span> Cancel</span>
-</button>
-</li>
-
-</ul><?php */?>
-</div> 
-<?php    $this->loginarea="links";    $this->subtabsel="activelinklist";
+<div class="clearfix nav-submenu-container">
+	<div class="midCont submenu-Cont">
+		<?php    $this->loginarea="links";    $this->subtabsel="activelinklist";
             echo $this->renderElement('donation_submenus');  ?>
-<div class="clear"></div>
-<?php $this->mail_tasks="tabSelt"; ?>   
+        <div class="clear"></div>
+        <?php $this->mail_tasks="tabSelt"; ?> 
+    </div>
 </div>
 
 </div>
-<div class="midPadd" id="addcmp">
+<div class="midCont" id="addcmp">
 
 <?php if($session->check('Message.flash')) { echo $this->renderElement('error_message'); } ?>          
 
 <br />
 
 <div id="loading" style="display: none;"><img src="/img/ajax-pageloader.gif" alt="Imagecoins:pageloader" /></div>
-<div id="addcomm">
-<table cellspacing="0" cellpadding="0" align="left" width="100%">
-	<tbody>
-		<tr>
-			<td width="50%" valign="top">
-				<table cellspacing="10" cellpadding="0" align="left" width="100%">
-					<tbody>
-					
-					<tr>
-							<td align="right"><label class="boldlabel">Donation Source<span
-									style="color: red;">*</span>
-							</label></td>
-							<td><?php 
-						$options=array('Individual'=>'Individual','Company'=>'Company');
-						$attributes=array('legend'=>false,'class'=>'donationsource','readonly'=>'true');
-						echo $form->radio('Donation.donationsource',$options,$attributes);
-						?>
-							</td>
-						</tr>
-						<tr>
-							<td align="right"><label class="boldlabel">Donation Name<span
-									style="color: red;">*</span>
-							</label></td>
-							<td><span class="intpSpan" style="vertical-align: top"> 
-							<?php echo $form->input("Donation.donationname", array('id' => 'note', 'div' => false, 'label' => '','style' =>'width:231px;',"class" => "inpt_txt_fld"));?>
-							</span>
-							</td>
-						</tr>
-						<tr>
-                 <td align="right"><label class="boldlabel"> Donator Company <span class="red">*</span></label></td>
-                  <td ><label for="project_name"></label>
-                    <span class="txtArea_top"><span class="txtArea_bot">
-                   
-			  <?php 
-			  
-			  $donationcmp= $this->data['Donation']['donatorcompany']; ?>
-<select onchange="getcompanyaddress(this.value);" class="multilist" id="company_id" name="data[Donation][donatorcompany]">
-<option value="">---Select---</option>
-<?php
-
-foreach($selectedcompany as $c_name){
-?>
-
-<option value="<?php echo $c_name['Company']['company_name']; ?>" <?php if($c_name['Company']['company_name']===$donationcmp){ echo "selected";}?>><?php echo $c_name['Company']['company_name']; ?></option>
-
-<?php
-}
-?>
-
-</select>
-</span></span> </td>
- <td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
- </tr>
-
-<tr id="row_startdate" >
-						<td align="right"><label class="boldlabel"> Donator Date<span class="red">*</span></label></td>
-						
-						<td><span class="intpSpan" style="vertical-align: top"> 
-							<?php echo $form->text("Donation.created", array('id' => 'birthday', 'div' => false, 'label' => '',"class" => "inpt_txt_fld","maxlength" => "200",'readonly'=>'readonly'));?>
-							</span>
-							</td>
-					</tr>		
-		
-						
-						<tr>
-						<?php 
-			  
-			  $donationtype= $this->data['Donation']['donationtype']; ?>
-							<td align="right"><label class="boldlabel">Donation Type<span style="color: red;">*</span>
-							</label></td>
-							
-							
-							<td> <span class="txtArea_top"><span class="txtArea_bot">
-							
-<select class="multilist" id="company_id" name="data[Donation][donationtype]">
-<option value="">---Select---</option>
-<?php
-
-foreach($selectedtype as $t_name){
-?>
-
-<option value="<?php echo $t_name['DonationType']['type']; ?>" <?php if($t_name['DonationType']['type']===$donationtype){ echo "selected";}?>><?php echo $t_name['DonationType']['type']; ?></option>
-
-<?php
-}
-?>
-
-</select></span>
-							</span>
-							</td>
-						</tr>
-						
-						<tr>
-							<td align="right"><label class="boldlabel">Donation Amount<span
-									style="color: red;">*</span>
-							</label></td>
-							<td><span class="intpSpan" style="vertical-align: top"> 
-							<?php echo $form->input("Donation.donationammount", array('id' => 'note', 'div' => false, 'label' => '','style' =>'width:231px;',"class" => "inpt_txt_fld"));?>
-							</span>
-							</td>
-						</tr>
-						<tr>
-							<td align="right"><label class="boldlabel">Related Event<span
-									style="color: red;">*</span>
-							</label></td>
-							<td><span class="intpSpan" style="vertical-align: top"> 
-							<?php echo $form->input("Donation.relatedevent", array('id' => 'note', 'div' => false, 'label' => '','style' =>'width:231px;',"class" => "inpt_txt_fld"));?>
-							</span>
-							</td>
-						</tr>
-					</tbody>
-				</table>
-			</td>
-		
-						</tr>
-
-					
-
-		
-		
-	</tbody>
-</table>
+<div id="addcomm" class="clearfix">
+    <div class="frmbox3">
+        <table cellspacing="0" cellpadding="0" align="left" width="100%">
+            <tbody>
+                <tr>
+                    <td width="50%" valign="top">
+                        <table cellspacing="10" cellpadding="0" align="left" width="100%">
+                            <tbody>
+                            
+                            <tr>
+                                    <td align="right"><label class="boldlabel">Donation Source<span
+                                            style="color: red;">*</span>
+                                    </label></td>
+                                    <td><?php 
+                                $options=array('Individual'=>'Individual','Company'=>'Company');
+                                $attributes=array('legend'=>false,'class'=>'donationsource','readonly'=>'true');
+                                echo $form->radio('Donation.donationsource',$options,$attributes);
+                                ?>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td align="right"><label class="boldlabel">Donation Name<span
+                                            style="color: red;">*</span>
+                                    </label></td>
+                                    <td><span class="intp-Span" style="vertical-align: top"> 
+                                    <?php echo $form->input("Donation.donationname", array('id' => 'note', 'div' => false, 'label' => '','style' =>'width:100%;',"class" => "inpt-txt-fld form-control"));?>
+                                    </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                         <td align="right"><label class="boldlabel"> Donator Company <span class="red">*</span></label></td>
+                          <td ><label for="project_name"></label>
+                            <span class="txtArea-top"><span class="txtArea-bot">
+                           
+                      <?php 
+                      
+                      $donationcmp= $this->data['Donation']['donatorcompany']; ?>
+        <select onchange="getcompanyaddress(this.value);" class="multi-list form-control" id="company_id" name="data[Donation][donatorcompany]">
+        <option value="">---Select---</option>
+        <?php
+        
+        foreach($selectedcompany as $c_name){
+        ?>
+        
+        <option value="<?php echo $c_name['Company']['company_name']; ?>" <?php if($c_name['Company']['company_name']===$donationcmp){ echo "selected";}?>><?php echo $c_name['Company']['company_name']; ?></option>
+        
+        <?php
+        }
+        ?>
+        
+        </select>
+        </span></span> </td>
+         <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+         </tr>
+        
+        <tr id="row_startdate" >
+                                <td align="right"><label class="boldlabel"> Donator Date<span class="red">*</span></label></td>
+                                
+                                <td><span class="intp-Span" style="vertical-align: top"> 
+                                    <?php echo $form->text("Donation.created", array('id' => 'birthday', 'div' => false, 'label' => '',"class" => "inpt-txt-fld form-control","maxlength" => "200",'readonly'=>'readonly'));?>
+                                    </span>
+                                    </td>
+                            </tr>		
+                
+                                
+                                <tr>
+                                <?php 
+                      
+                      $donationtype= $this->data['Donation']['donationtype']; ?>
+                                    <td align="right"><label class="boldlabel">Donation Type<span style="color: red;">*</span>
+                                    </label></td>
+                                    
+                                    
+                                    <td> <span class="txtArea-top"><span class="txtArea-bot">
+                                    
+        <select class="multi-list form-control" id="company_id" name="data[Donation][donationtype]">
+        <option value="">---Select---</option>
+        <?php
+        
+        foreach($selectedtype as $t_name){
+        ?>
+        
+        <option value="<?php echo $t_name['DonationType']['type']; ?>" <?php if($t_name['DonationType']['type']===$donationtype){ echo "selected";}?>><?php echo $t_name['DonationType']['type']; ?></option>
+        
+        <?php
+        }
+        ?>
+        
+        </select></span>
+                                    </span>
+                                    </td>
+                                </tr>
+                                
+                                <tr>
+                                    <td align="right"><label class="boldlabel">Donation Amount<span
+                                            style="color: red;">*</span>
+                                    </label></td>
+                                    <td><span class="intp-Span" style="vertical-align: top"> 
+                                    <?php echo $form->input("Donation.donationammount", array('id' => 'note', 'div' => false, 'label' => '','style' =>'width:100%;',"class" => "inpt-txt-fld form-control"));?>
+                                    </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td align="right"><label class="boldlabel">Related Event<span
+                                            style="color: red;">*</span>
+                                    </label></td>
+                                    <td><span class="intp-Span" style="vertical-align: top"> 
+                                    <?php echo $form->input("Donation.relatedevent", array('id' => 'note', 'div' => false, 'label' => '','style' =>'width:100%;',"class" => "inpt-txt-fld form-control"));?>
+                                    </span>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </td>
+                
+                                </tr>
+        
+                            
+        
+                
+                
+            </tbody>
+        </table>
+    </div>
 <?php 
 $baseUrl = Configure::read('App.base_url'); 
 ?>

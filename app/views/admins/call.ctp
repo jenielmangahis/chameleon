@@ -96,50 +96,52 @@ $backUrl = $base_url.'admins/memberlist/secondlevel';
     </div>
 </div>
         
-<div id="addcmp"  class="midCont table-responsive">	
+<div id="addcmp"  class="midCont clearfix">	
 <?php if($session->check('Message.flash')) { echo $this->renderElement('error_message'); } ?>
-<table cellspacing="10" cellpadding="0">
-		
-  <?php if($session->check('Message.flash')){ ?>
-    <tr>
-      <td colspan="5"><?php $session->flash(); 
-      				//echo $form->error('Company.company_name', array('class' => 'msgTXt'));
-      				//echo $form->error('Company.company_type_id', array('class' => 'msgTXt'));
-      				
-      	?></td>
-    </tr>
-    <?php }?>  
-  
-   
-	<tr>
-		<td valign='middle' align="right"><label class="boldlabel">Call<span style="color:red">*</span></label></td>
-		<td>
-			<span class="intp-Span">
-	        	<?php echo $form->input("Note.subject", array('id' => 'subject', 'div' => false, 'label' => '',"class" => "form-control","maxlength" => "150"));?>
-	        </span>
-		</td>		 
-	</tr>
-		       
-	<tr>	 
-		<td valign='top' align="right"><label class="boldlabel">Name<span style="color:red">*</span></label></td>
-		<td>
-			<div class="large">
-			<span class="txt_Area_top">
-				<span class="newtxt_Area_bot">
-					<?php echo $form->textarea("Note.note", array('id' => 'note', 'div' => false, 'label' => '',
-							'cols' => '35', 'rows' => '4',"class" => "form-control", 'style'=>'width:370px'));?>
-				</span>
-			</span>
-			</div>
-		</td>
-	</tr>
-		       
- 	<?php /*?><tr>
- 		<td colspan="2" style="text-align: left; padding: 20px 5px 20px 5px ;" class="top-bar">
- 			<?php  echo $this->renderElement('bottom_message');  ?>
-        </td>
-    </tr><?php */?>
- </table>
+	<div class="frmbox3">
+        <table cellspacing="10" cellpadding="0">
+                
+          <?php if($session->check('Message.flash')){ ?>
+            <tr>
+              <td colspan="5"><?php $session->flash(); 
+                            //echo $form->error('Company.company_name', array('class' => 'msgTXt'));
+                            //echo $form->error('Company.company_type_id', array('class' => 'msgTXt'));
+                            
+                ?></td>
+            </tr>
+            <?php }?>  
+          
+           
+            <tr>
+                <td valign='middle' align="right"><label class="boldlabel">Call<span style="color:red">*</span></label></td>
+                <td>
+                    <span class="intp-Span">
+                        <?php echo $form->input("Note.subject", array('id' => 'subject', 'div' => false, 'label' => '',"class" => "form-control","maxlength" => "150"));?>
+                    </span>
+                </td>		 
+            </tr>
+                       
+            <tr>	 
+                <td valign='top' align="right"><label class="boldlabel">Name<span style="color:red">*</span></label></td>
+                <td>
+                    <div class="large">
+                    <span class="txt_Area_top">
+                        <span class="newtxt_Area_bot">
+                            <?php echo $form->textarea("Note.note", array('id' => 'note', 'div' => false, 'label' => '',
+                                    'cols' => '35', 'rows' => '4',"class" => "form-control", 'style'=>''));?>
+                        </span>
+                    </span>
+                    </div>
+                </td>
+            </tr>
+                       
+            <?php /*?><tr>
+                <td colspan="2" style="text-align: left; padding: 20px 5px 20px 5px ;" class="top-bar">
+                    <?php  echo $this->renderElement('bottom_message');  ?>
+                </td>
+            </tr><?php */?>
+         </table>
+     </div>
 <!--inner-container ends here-->
 <?php echo $form->end();?>
 </div>
