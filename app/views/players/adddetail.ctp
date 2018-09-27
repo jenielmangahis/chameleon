@@ -55,62 +55,57 @@ function addnewcontact(){
 
 <!-- Body Panel starts -->
 <div class="container">
-<div class="titlCont">
- <div style="width:960px; margin:0 auto;">
-<div class="slider" id="toppanel" style="height: 20px; top:13px;right: -50px;width:545px !important; text-align:right;">
-
-	<?php 
-	echo $form->create("players", array("action" => "adddetail".$isbranch.$editbranch,'type' => 'file','enctype'=>'multipart/form-data','name' => 'adddetail', 'id' => "adddetail","onsubmit"=>"return validatecompany('$act');"));
-	 echo $form->hidden("option", array('id' => 'option','value'=>"$option"));
-	 if($isbranch ==''){
-	 	echo $form->hidden("Company.id", array('id' => 'companyid'));
-	 }
-	 echo $form->hidden("projectname", array('id' => 'projectname','value'=>"$projectname"));
-	 echo $form->hidden("projectid", array('id' => 'projectid','value'=>"$project_id"));
-	?>
-	<button type="submit" style="padding:0px;" value="Submit" class="sendBut" name="data[Action][redirectpage]">
-	<?php e($html->image('save.png', array('alt' => 'Save'))); ?></button>
-	<button type="submit" style="padding:0px;" value="Submit" class="sendBut" name="data[Action][noredirection]">
-<?php e($html->image('apply.png', array('alt' => 'APPLY'))); ?></button>
-<button type="button" style="padding:0px;" id="saveForm" class="sendBut"  ONCLICK="javascript:(window.location='<?php echo $backUrl;?>')">
-<?php e($html->image('cancle.png', array('alt' => 'Cancle'))); ?></button>
-	<?php  echo $this->renderElement('new_slider');  ?>
+	<div class="titlCont">
+		<div class="slider-centerpage clearfix">
+        	<div class="center-Page col-sm-4">
+                <h2>
+					<?php 
+						if($this->data['Company']['id']){
+							$act = 'edit';
+							echo ($isbranch =='')?ucfirst($option):' Branch';
+							echo " Detail Add/Edit"; 
+						}else{
+							$act = 'add';
+							echo ($isbranch =='')?ucfirst($option):' Branch';
+							echo " Detail Add/Edit"; 
+						}	
+					?>
+                </h2>
+            </div>
+            <div class="slider-dashboard col-sm-8">
+            	<div class="icon-container">
+                	<?php 
+					echo $form->create("players", array("action" => "adddetail".$isbranch.$editbranch,'type' => 'file','enctype'=>'multipart/form-data','name' => 'adddetail', 'id' => "adddetail","onsubmit"=>"return validatecompany('$act');"));
+					echo $form->hidden("option", array('id' => 'option','value'=>"$option"));
+					if($isbranch ==''){
+					echo $form->hidden("Company.id", array('id' => 'companyid'));
+					}
+					echo $form->hidden("projectname", array('id' => 'projectname','value'=>"$projectname"));
+					echo $form->hidden("projectid", array('id' => 'projectid','value'=>"$project_id"));
+					?>
+					<button type="submit" style="padding:0px;" value="Submit" class="sendBut" name="data[Action][redirectpage]">
+					<?php e($html->image('save.png', array('alt' => 'Save'))); ?></button>
+					<button type="submit" style="padding:0px;" value="Submit" class="sendBut" name="data[Action][noredirection]">
+					<?php e($html->image('apply.png', array('alt' => 'APPLY'))); ?></button>
+					<button type="button" style="padding:0px;" id="saveForm" class="sendBut"  ONCLICK="javascript:(window.location='<?php echo $backUrl;?>')">
+					<?php e($html->image('cancle.png', array('alt' => 'Cancle'))); ?></button>
+					<?php  echo $this->renderElement('new_slider');  ?>
+                </div>
+            </div>
+        </div>
 </div>
-<?php /*?><span class="titlTxt1"  style=" padding: 16px 0;"> <?php  echo $current_company_name; echo ($current_company_name !='')? ' : ' :'';  ?></span><?php */?>
-	<span class="titlTxt">
-			<?php 
-				if($this->data['Company']['id']){
-					$act = 'edit';
-					echo ($isbranch =='')?ucfirst($option):' Branch';
-					echo " Detail Add/Edit"; 
-				}else{
-					$act = 'add';
-					echo ($isbranch =='')?ucfirst($option):' Branch';
-					echo " Detail Add/Edit"; 
-				}	
-			?>
-	</span>
-	
-	
-	
-	<div class="topTabs" style="height:25px;">
-		<?php /*?><ul class="dropdown">   
-		<li><button type="submit" style="padding:0px;" value="Submit" class="button" name="data[Action][redirectpage]"><span>Save</span></button></li>
-		<li><button type="submit" style="padding:0px;" value="Submit" class="button" name="data[Action][noredirection]"><span>Apply</span></button></li>
-		<li><button type="button" style="padding:0px;" id="saveForm" class="button"  ONCLICK="javascript:(window.location='<?php echo $backUrl;?>')"><span> Cancel</span></button></li>
-		</ul><?php */?>
-	</div>
-	<div class="clear"></div>
 
-	<?php $this->loginarea="players";$this->subtabsel="details"; 
+<div class="clearfix nav-submenu-container">
+    <div class="midCont submenu-Cont">
+     <?php $this->loginarea="players";$this->subtabsel="details"; 
 		if($option=='company'|| $option=='merchant'|| $option=='nonprofit')
 			
 			echo $this->renderElement('players/player_inner_submenu');
 		else
 		echo $this->renderElement('players/player_inner_submenu');
 			//echo $this->renderElement('players/player_inner_submenu2');
-	?>
-</div>
+	?>    
+    </div>
 </div>
 
 <?php switch($companytypecategoryid){

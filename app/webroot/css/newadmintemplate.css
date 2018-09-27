@@ -4397,7 +4397,7 @@ ul.form-style li .intpSpan { display:block; margin-bottom:10px;}
 	.rightpanel { min-height:0; min-width:0;}
 	.newtab { width:100%;}
 	
-	.frmbox { float:none; width:auto;}
+	.frmbox { float:none; width:auto; margin-right:0;}
 	.frmbox2 { float:none; width:auto;}
 	
 	.gryTop { padding:15px 5px;}
