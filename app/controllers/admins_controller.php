@@ -13390,12 +13390,13 @@ if(!$errormsg){
              App::import("Model", "MemberType");  
             $this->MemberType =  & new MemberType();
             $member_type=MemberType::MEMBER_TYPE_NON_HOLDER;  // get all non holders
-            $this->Pagination->total= count($this->Holder->getMemberListByProject($project_id, $member_type,$searchkey));
+            $this->Pagination->total= count($this->Holder->getMemberListByProject($member_type,$searchkey));
             list($order,$limit,$page) = $this->Pagination->init($condition,$field);
               if($order == "Holder.id ASC"){
                 $order = "Holder.created DESC,Holder.lastnameshow ASC, Holder.firstname ASC";
             }
-            $holderlist = $this->Holder->getMemberListByProject($project_id, $member_type,$searchkey,$order, $limit, $page);
+            $holderlist = $this->Holder->getMemberListByProject($member_type,$searchkey,$order, $limit, $page);
+            
             $this->set("holderlist",$holderlist); 
 
         }

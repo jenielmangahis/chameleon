@@ -2632,3 +2632,4 @@
 2018-06-14 07:10:39 Notice: Notice (8): Use of undefined constant email - assumed 'email' in [CORE/cake/libs/class_registry.php, line 140]
 2018-06-14 07:11:38 Notice: Notice (8): Use of undefined constant email - assumed 'email' in [CORE/cake/libs/class_registry.php, line 140]
 2018-06-14 07:12:59 Notice: Notice (8): Use of undefined constant email - assumed 'email' in [CORE/cake/libs/class_registry.php, line 140]
+2018-09-28 12:02:16 Debug: Notice (8): Use of undefined constant email - assumed 'email' in [CORE\cake\libs\class_registry.php, line 279]
