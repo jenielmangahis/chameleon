@@ -29,33 +29,11 @@ $('#type').addClass("butBgSelt");
                         </ul></li>
                 <a id="linkedit" onclick="editholder();" href="javascript:void(0)"><?php e($html->image('edit.png', array('alt' => 'Edit'))); ?></a>
                 </ul>
+                <?php echo $this->renderElement('new_slider'); ?>
             </div>
-             <?php echo $this->renderElement('new_slider'); ?>
+             
         </div>
-        
-        <div class="topTabs" style="height:25px;">
-        <?php /*?><ul class="dropdown">
-                <li class="">
-				<?php
-				e($html->link(
-					$html->tag('span', 'New'),
-					array('controller'=>'admins','action'=>'addcompanytype'),
-					array('escape' => false)
-					)
-				);
-				?>
-				</li>
-                <li><a class="tab2" href="javascript:void(0)"><span>Actions</span></a>
-                <ul class="sub_menu">
-                        <li><a onclick="return activatecontents('active','change');" href="javascript:void(0)">Publish</a></li>
-                        <li><a onclick="return activatecontents('deactive','change');" href="javascript:void(0)">Unpublish</a></li>
-                        <li><a onclick="return activatecontents('asd','del');" href="javascript:void(0)">Trash</a></li>
-                        <li class="botCurv"></li>
-                </ul></li>
-                <li><a id="linkedit" onclick="editholder();" href="javascript:void(0)"><span>Edit</span></a></li>
-        </ul><?php */?>
-        </div>
-        
+
     </div>
 
 </div>

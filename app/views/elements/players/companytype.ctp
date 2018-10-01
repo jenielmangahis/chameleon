@@ -138,34 +138,11 @@ $resetUrl = $base_url.'players/types/'.$option;
                     </script>
                     <?php
                 		e($html->link($html->image('back.png', array('alt' => 'back')) . ' ',array('controller'=>'players','action'=>'playerslist','company'),array('escape' => false))); ?>
+                        <?php echo $this->renderElement('new_slider'); ?>
                 </div>
-				<?php echo $this->renderElement('new_slider'); ?>                
+				                
             </div>
             
-            <!--<span class="titlTxt1">&nbsp;</span>
-            <span class="titlTxt"><?php //echo $page_title; ?></span>-->
-             <?php //if($usertype=='admin') {?><span class="titlTxt1"><?php //echo $project['Project']['project_name'];  ?> &nbsp;</span> <?php //} ?>
-            <div class="topTabs" style="padding-top:16px; height:25px;">
-			
-				<?php /*?><ul class="dropdown" >
-					<li>
-						<?php
-						e($html->link(
-									$html->tag('span', 'Back'),
-									array('controller'=>'players','action'=>'playerslist','company'),
-									array('escape' => false)
-									)
-						);
-						?>
-					  </li>	
-						
-						</ul><?php */?>
-						
-			</div>
-            
-		<!--<div align="center" class="slider" id="toppanel" style="height: 20px; top:13px;right:-50px;width:545px !important; text-align: right;">			
-
-			</div>-->
         </div>
      </div>
         
