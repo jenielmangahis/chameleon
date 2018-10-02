@@ -14346,7 +14346,11 @@ from master_points order by master_points.display_order asc");
                         }else{  
 						
                             ##insert login details for spacific holder
-                            if($this->User->Save($this->data['User'])){
+                            $data = $this->data['User'];
+                            if( $data['project_id'] <= 0 ){
+                                $data['project_id'] = 1;
+                            }
+                            if($this->User->Save($data)){
                                 $lastuserid = $this->User->getLastInsertId();
                                 $this->data['Holder']['project_id'] = $projectid;
                                 $this->data['Holder']['user_id'] = $lastuserid;
@@ -14379,15 +14383,18 @@ from master_points order by master_points.display_order asc");
 									$stateName = $this->getstatename($stateID);
 									$city = $this->data['Holder']['city'];
 									$arrayaddress = array($address, $countryName, $stateName, $city, $zip);
-									 $addressStr = str_replace(' ' ,'+',implode('+',$arrayaddress));
-									
-		$LatiLongi = file_get_contents('http://maps.googleapis.com/maps/api/geocode/json?address='.$addressStr.'&sensor=false');		
-			  		$jsondata = json_decode($LatiLongi,true);		
-					$this->data['Holder']['latitude'] = $jsondata['results'][0]['geometry']['location']['lat'];
-					$this->data['Holder']['lognitude'] = $jsondata['results'][0]['geometry']['location']['lng'];
-			}
-								                            
-                                if($this->Holder->Save($this->data['Holder'])){
+									$addressStr = str_replace(' ' ,'+',implode('+',$arrayaddress));
+                    									
+                    		        $LatiLongi = file_get_contents('http://maps.googleapis.com/maps/api/geocode/json?address='.$addressStr.'&sensor=false');		
+                    			  		$jsondata = json_decode($LatiLongi,true);		
+                    					$this->data['Holder']['latitude'] = $jsondata['results'][0]['geometry']['location']['lat'];
+                    					$this->data['Holder']['lognitude'] = $jsondata['results'][0]['geometry']['location']['lng'];
+                    			}
+								$data_holder = $this->data['Holder'];
+                                if( $data_holder['project_id'] <= 0 ){
+                                    $data_holder['project_id'] = 1;
+                                }                         
+                                if($this->Holder->Save($data_holder)){
                                     ##sending registration mail
                                     $retmsg="";
                                     $tomailid = $this->data['Holder']['email'];
@@ -14468,6 +14475,7 @@ from master_points order by master_points.display_order asc");
                                     $this->Session->setFlash('Error in processing.','default',array('class' => 'msgTXt'));
                                 }    
                             }else{
+
                                 $this->Session->setFlash('Error in processing.','default',array('class' => 'msgTXt'));            }
 							}
                     }else{
