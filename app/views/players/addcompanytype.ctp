@@ -3,39 +3,47 @@ $base_url = Configure::read('App.base_url');
 $backUrl = $base_url.'players/types/company';
 ?> 
 <div class="titlCont">
-<div class="centerPage">
-                
-       <div align="center" class="slider" id="toppanel" style="height: 20px; top:13px;right: -50px;width:545px !important; text-align:right;">			
-<?php echo $form->create("players", array("action" => "addcompanytype",'name' => 'addcompanytype', 'id' => "addcompanytype",'onsubmit' => 'return validatecompanytype("add");'));
-                echo $form->hidden("CompanyType.id", array('id' => 'companytypeid')); ?>
-				
-	   <?php if(isset($usertype) &&  $usertype == 'admin') { ?>
-                <button type="submit" value="Submit" class="sendBut" name="data[Action][redirectpage]"><?php e($html->image('save.png')); ?></button>
-		<button type="submit" value="Submit" class="sendBut" name="data[Action][noredirection]"><?php e($html->image('apply.png')); ?></button>
-		<?php } ?>
-      <a href="<?php echo $backUrl ?>"><?php e($html->image('cancle.png')); ?></a>
-        <?php  echo $this->renderElement('new_slider');  ?>
-</div>
- <span class="titlTxt1"><?php  //echo $project_name; echo ($project_name !='')? ' : ' :'';  ?></span>&nbsp;
-  <span class="titlTxt">Add Company Type </span>
-        <div class="topTabs" style="height:25px;">
-                
+	<div class="slider-centerpage clearfix">
+    	<div class="center-Page col-sm-4">			
+            <h2>
+                Add Company Type
+            </h2>
         </div>
-		<div class="clear"></div>
-		<?php $this->loginarea="players";    $this->subtabsel= 'company';
-                            echo $this->renderElement('players/player_type_submenus');  ?>   
-</div>  </div> 
+        <div class="slider-dashboard col-sm-8">
+        	<div class="icon-container">
+            	<?php echo $form->create("players", array("action" => "addcompanytype",'name' => 'addcompanytype', 'id' => "addcompanytype",'onsubmit' => 'return validatecompanytype("add");'));
+				echo $form->hidden("CompanyType.id", array('id' => 'companytypeid')); ?>
+				
+				<?php if(isset($usertype) &&  $usertype == 'admin') { ?>
+				<button type="submit" value="Submit" class="sendBut" name="data[Action][redirectpage]"><?php e($html->image('save.png')); ?></button>
+				<button type="submit" value="Submit" class="sendBut" name="data[Action][noredirection]"><?php e($html->image('apply.png')); ?></button>
+				<?php } ?>
+				<a href="<?php echo $backUrl ?>"><?php e($html->image('cancle.png')); ?></a>
+				<?php  echo $this->renderElement('new_slider');  ?>
+            </div>
+        </div>
+    </div>
 
+</div> 
+
+
+
+<div class="clearfix nav-submenu-container">
+    <div class="midCont submenu-Cont">
+    <?php $this->loginarea="players";    $this->subtabsel= 'company';
+                            echo $this->renderElement('players/player_type_submenus');  ?>   
+    </div>
+</div>
 	
-<div class="midPadd">
-		<div id="addcmp" style="height:300px;">
+<div class="midCont clearfix">
+		<div id="addcmp">
 
 	<?php if($session->check('Message.flash')) { echo $this->renderElement('error_message'); } ?>
 
 
 		<!-- ADD Sub Admin FORM BOF -->
                   
-		<table width="" align="" cellpadding="1" cellspacing="1">
+		<table width="100%" align="" cellpadding="1" cellspacing="1">
 		
 	
 		 
@@ -45,8 +53,8 @@ $backUrl = $base_url.'players/types/company';
 		<tr>
 		<td width="15%"  align="right"><label class="boldlabel">Category Type <span style="color: red;">*</span></label></td>
 			<td width="85%">
-				<span class="txtArea_top" id="spancat"><span class="txtArea_bot"><span id="compdiv">
-				<?php echo $form->select("CompanyTypeCategory.company_type_category_name", $companytypecategorydropdown, $selectedcompanytypecategory, array('id' => 'company_type_category_name','class'=>'multilist'),"---Select---");?>
+				<span class="txtArea-topv" id="spancat"><span class="txtAre-bot"><span id="compdiv">
+				<?php echo $form->select("CompanyTypeCategory.company_type_category_name", $companytypecategorydropdown, $selectedcompanytypecategory, array('id' => 'company_type_category_name','class'=>'multi-list form-control'),"---Select---");?>
 				</span></span></span>
 			<span class="intpSpan" id="spancattext" style="display:none" >
 				<?php echo $form->input("CompanyTypeCategory.company_type_category_name_text", array('id' => 'company_type_category_name_text', 'div' => false, 'label' => '',"class" => "inpt_txt_fld","maxlength" => "200"));?>	
@@ -59,23 +67,23 @@ $backUrl = $base_url.'players/types/company';
 			<td width="15%"  align="right"></td>
 			<td width="85%" height="45px" >&nbsp;&nbsp;
 			 <?php if(isset($this->data['CompanyType']['id']) && false){ ?>
-			<button type="button" value="add" class="button" id="btnedit"  >
+			<button type="button" value="add" class="btn btn-primary btn-sm" id="btnedit"  >
 				<span>Edit</span>
 			</button>
-			<button type="button" value="save" class="button"  id="btnupdate" style="display:none">
+			<button type="button" value="save" class="btn btn-primary btn-sm"  id="btnupdate" style="display:none">
 				<span>Update</span>
 			</button>
-			<button type="button" value="cancel" class="button"  id="btneditcancel"  style="display:none">
+			<button type="button" value="cancel" class="btn btn-primary btn-sm"  id="btneditcancel"  style="display:none">
 				<span>Cancel</span>
 			</button>
 			<?php }else{ ?>
-			<button type="button" value="add" class="button" id="btnadd"  >
+			<button type="button" value="add" class="btn btn-primary btn-sm" id="btnadd"  >
 				<span>ADD</span>
 			</button>
-			<button type="button" value="save" class="button"  id="btnsave" style="display:none">
+			<button type="button" value="save" class="btn btn-primary btn-sm"  id="btnsave" style="display:none">
 				<span>Save</span>
 			</button>
-			<button type="button" value="cancel" class="button"  id="btncancel"  style="display:none">
+			<button type="button" value="cancel" class="btn btn-primary btn-sm"  id="btncancel"  style="display:none">
 				<span>Cancel</span>
 			</button>
 			
@@ -105,8 +113,8 @@ $backUrl = $base_url.'players/types/company';
 		<tr>
 		<td width="15%"  align="right"><label class="boldlabel">Company Type Status </label></td>
 			<td width="85%">
-				<span class="txtArea_top" id="spansubcat"><span class="txtArea_bot"><span id="compdiv">
-				<?php echo $form->select("CompanyType.company_type_status_name", $companytypestatusdropdown, $selectedcompanytypestatus, array('id' => 'company_type_status_name','class'=>'multilist'),"---Select---");?>
+				<span class="txtArea-topv" id="spansubcat"><span class="txtAre-bot"><span id="compdiv">
+				<?php echo $form->select("CompanyType.company_type_status_name", $companytypestatusdropdown, $selectedcompanytypestatus, array('id' => 'company_type_status_name','class'=>'multi-list form-control'),"---Select---");?>
 				</span></span>	</span>
 			<span class="intpSpan" id="spansubcattext" style="display:none" >
 			<?php echo $form->input("CompanyTypeStatus.company_type_status_name_text", array('id' => 'company_type_status_name_text', 'div' => false, 'label' => '',"class" => "inpt_txt_fld","maxlength" => "200"));?>
@@ -122,26 +130,26 @@ $backUrl = $base_url.'players/types/company';
 			<td width="85%" height="45px" >&nbsp;&nbsp;
 			
 				 <?php if(isset($this->data['CompanyType']['id']) && false){ ?>
-										<button type="button" value="add" class="button" id="btnsubedit"  >
+										<button type="button" value="add" class="btn btn-primary btn-sm" id="btnsubedit"  >
 					<span>Edit</span>
 				</button>
-				<button type="button" value="save" class="button"  id="btnsubupdate" style="display:none">
+				<button type="button" value="save" class="btn btn-primary btn-sm"  id="btnsubupdate" style="display:none">
 					<span>Update</span>
 				</button>
-				<button type="button" value="cancel" class="button"  id="btnsubeditcancel"  style="display:none">
+				<button type="button" value="cancel" class="btn btn-primary btn-sm"  id="btnsubeditcancel"  style="display:none">
 					<span>Cancel</span>
 				</button>				
 				
 				<?php }else { ?>
 
 				
-				<button type="button" value="add" class="button" id="btnsubadd"  >
+				<button type="button" value="add" class="btn btn-primary btn-sm" id="btnsubadd"  >
 					<span>ADD</span>
 				</button>
-				<button type="button" value="save" class="button"  id="btnsubsave" style="display:none">
+				<button type="button" value="save" class="btn btn-primary btn-sm"  id="btnsubsave" style="display:none">
 					<span>Save</span>
 				</button>
-				<button type="button" value="cancel" class="button"  id="btnsubcancel"  style="display:none">
+				<button type="button" value="cancel" class="btn btn-primary btn-sm"  id="btnsubcancel"  style="display:none">
 					<span>Cancel</span>
 				</button>
 			 	<?php } ?>

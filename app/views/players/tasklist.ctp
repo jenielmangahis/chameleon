@@ -151,46 +151,7 @@ $('#playMnu').addClass("butBgSelt");
                 </div>
                 
             </div>
-            
-            <div class="topTabs" style="height:25px;">
-                <?php /*?><ul class="dropdown">
-                    <li>
-					<?php
-							e($html->link(
-								$html->tag('span', 'New'),
-								array('controller'=>'players','action'=>'addtask'),
-								array('escape' => false)
-								)
-							);
-						?>
-					</li>
-                    <li><a href="javascript:void(0)" class="tab2"><span>Actions</span></a>
-                        <ul class="sub_menu">
-                            <li><a href="javascript:void(0)" onclick="return activatecontents('asd','del');">Trash</a></li>
-                            <li class="botCurv"></li>
-                        </ul>
-                    </li>
-                    <li><a href="javascript:void(0)" onclick="editholder();" id="linkedit"><span>Edit</span></a></li>
-             
-<li>
-						<?php
-						e($html->link(
-									$html->tag('span', 'Back'),
-									array('controller'=>'players','action'=>'playerslist','company'),
-									array('escape' => false)
-									)
-						);
-						?>
-					  </li>	
-					  
-					  
-			 </ul><?php */?>
-            </div>
-            
-            <!--<div align="center" class="slider" id="toppanel" style="height: 20px; top:13px;right:-50px;width:545px !important; text-align:right;">	
-                           
-			</div>-->
-            
+       
         </div>
     
     
