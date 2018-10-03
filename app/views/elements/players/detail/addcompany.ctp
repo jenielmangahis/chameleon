@@ -30,8 +30,8 @@
 				<span class="txtArea-top">
 					<span class="newtxtArea-bot">
 					<?php //echo $form->select("Company.company_type_id",$companytypedropdown,$selectedcompanytype,array('id' => 'company_type_id','class'=>'multi-list form-control'),"---Select---"); ?>
-					
-					<?php echo $form->select("Company.company_type_id",$companytypedropdown,$selectedcompanytype,array('id' => 'company_type_id','class'=>'multi-list form-control','multiple'=>'multiple', 'size'=>'7',"---Select---")); ?>
+					<?php echo $form->input("Company.company_type_id", array('type' => 'select', 'options' => $companytypedropdown, 'empty' => "---Select---", 'id' => 'company_type_id', 'class' => 'form-control', 'label' => false)); ?>
+					<?php //echo $form->select("Company.company_type_id",$companytypedropdown,$selectedcompanytype,array('id' => 'company_type_id','class'=>'form-control','empty' => "false")); ?>
 					<!--<input type="hidden" name="data[Company][company_type_id]" id="company_type_id" value="<?php //echo $selectedcompanytype; ?> " />-->
 				</span>				</span></div></td>
 		 </tr>	

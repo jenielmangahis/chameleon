@@ -498,7 +498,8 @@ class PlayersController extends AppController
 		##check empty data
 		if(!empty($this->data)) {
 				$this->data['Company']['project_id'] = $projectid;
-				$this->Company->set($this->data);			
+				//$this->data['Company']['company_type_id']
+				$this->Company->set($this->data);	
 				#check server side validation
 				$errormsg = $this->Company->invalidFields();
 				if(!$errormsg){

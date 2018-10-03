@@ -1302,6 +1302,7 @@
                     if(is_array($adminpresent) && !empty($adminpresent)) {
                         $this->Session->write("Admin",$adminpresent);
 						$this->Session->write("UserLoginDetails",$adminpresent);
+                        $this->Session->write("sessionprojectid",1);
                         if($this->Session->read("Admin")){
                             $adm = $this->Session->read("Admin");
                             $_SESSION["Admin"] = $adm; 
