@@ -34,29 +34,37 @@ if($redirect!='')
 
      ?>
 <div class="container">
-<div class="titlCont">
-  <div class="myclass">
-    <div align="center" class="slider" id="toppanel" style="height: 20px; top:13px;right: -50px;width:545px !important; text-align:right;">
-<?php echo $form->create("admins", array("action" =>$actionRedirect, 'id' => "adddonationsuploade", 'class' => 'adduser','enctype' => 'multipart/form-data'));
-?>
-      <button type="submit" value="Submit" class="sendBut" name="data[Action][redirectpage]">
-      <?php e($html->image('save.png', array('alt' => 'Save'))); ?>
-      </button>
-      <button type="button" id="saveForm" class="sendBut"  ONCLICK="javascript:(window.location='<?php echo $backUrl ?>')">
-      <?php e($html->image('cancle.png', array('alt' => 'Cancle'))); ?>
-      </button>
-      <?php  echo $this->renderElement('new_slider');  ?>
-    </div>
-    <span class="titlTxt">Donation Upload Add</span>
-    <div class="topTabs" style="height:25px;">
-    </div>
-    <?php    $this->loginarea="links";    $this->subtabsel="activelinklist";
-            echo $this->renderElement('donation_submenus');  ?>
-    <div class="clear"></div>
-    <?php $this->mail_tasks="tabSelt"; ?>
-  </div>
+	<div class="titlCont">
+		<div class="slider-centerpage clearfix">
+        	<div class="center-Page col-sm-6">
+                <h2>Donation Upload Add</h2>
+            </div>
+            <div class="slider-dashboard col-sm-6">
+            	<div class="icon-container">
+                	<?php echo $form->create("admins", array("action" =>$actionRedirect, 'id' => "adddonationsuploade", 'class' => 'adduser','enctype' => 'multipart/form-data'));
+					?>
+					<button type="submit" value="Submit" class="sendBut" name="data[Action][redirectpage]">
+					<?php e($html->image('save.png', array('alt' => 'Save'))); ?>
+					</button>
+					<button type="button" id="saveForm" class="sendBut"  ONCLICK="javascript:(window.location='<?php echo $backUrl ?>')">
+					<?php e($html->image('cancle.png', array('alt' => 'Cancle'))); ?>
+					</button>
+					<?php  echo $this->renderElement('new_slider');  ?>
+                </div>
+            </div>
+        </div>
 </div>
-<div class="midPadd" id="addcmp">
+
+<div class="clearfix nav-submenu-container">
+	<div class="midCont submenu-Cont">
+		<?php    $this->loginarea="links";    $this->subtabsel="activelinklist";
+            echo $this->renderElement('donation_submenus');  ?>
+            <div class="clear"></div>
+            <?php $this->mail_tasks="tabSelt"; ?>  
+    </div>
+</div> 
+
+<div class="midPadd clearfix" id="addcmp">
 <?php if($session->check('Message.flash')) { echo $this->renderElement('error_message'); } ?>
 <br />
 <div id="loading" style="display: none;"><img src="/img/ajax-pageloader.gif" alt="Imagecoins:pageloader" /></div>
@@ -71,22 +79,22 @@ if($redirect!='')
           <tr>
             <td align="right"><label class="boldlabel">Donation Uploade Name<span
 									style="color: red;">*</span> </label></td>
-            <td><span class="intpSpan" style="vertical-align: top"> 
+            <td><span class="intp-Span" style="vertical-align: top"> 
 			
-			<?php echo $form->input("Donationupload.name", array('id' => 'name', 'div' => false, 'label' => '','style' =>'width:231px;',"class" => "inpt_txt_fld"));?> </span> </td>
+			<?php echo $form->input("Donationupload.name", array('id' => 'name', 'div' => false, 'label' => '','style' =>'width:231px;',"class" => "inpt-txt-fld form-control"));?> </span> </td>
           </tr>
           
           <tr>
             <td align="right"><label class="boldlabel">Donation File Name<span
 									style="color: red;">*</span> </label></td>
-            <td><span class="intpSpan" style="vertical-align: top"> 
+            <td><span class="intp-Span" style="vertical-align: top"> 
 			<?php //echo $form->file('filename'); ?>
-			<?php echo $form->input("Donationupload.filename", array('id' => 'filename', 'type'=>'file', 'div' => false, 'label' => '','style' =>'width:231px;',"class" => "inpt_txt_fld"));?> </span> </td>
+			<?php echo $form->input("Donationupload.filename", array('id' => 'filename', 'type'=>'file', 'div' => false, 'label' => '','style' =>'width:231px;',"class" => "inpt-txt-fld form-control"));?> </span> </td>
           </tr>
           <tr>
             <td align="right"><label class="boldlabel">Related Event<span
 									style="color: red;">*</span> </label></td>
-            <td><span class="intpSpan" style="vertical-align: top"> <?php echo $form->input("Donationupload.relatedevent", array('id' => 'relatedevent', 'div' => false, 'label' => '','style' =>'width:231px;',"class" => "inpt_txt_fld"));?> </span> </td>
+            <td><span class="intp-Span" style="vertical-align: top"> <?php echo $form->input("Donationupload.relatedevent", array('id' => 'relatedevent', 'div' => false, 'label' => '','style' =>'width:231px;',"class" => "inpt-txt-fld form-control"));?> </span> </td>
           </tr>
         </tbody>
       </table>

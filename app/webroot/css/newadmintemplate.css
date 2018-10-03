@@ -4356,6 +4356,8 @@ label { display:inline;}
 	
 	.row .box.col-xs-4 { width: auto; display:block; float:none;}
 	
+	.fc-header td { white-space:unset !important;}
+	
 	.footerTxt { position:relative; margin-bottom:0;}
 
 }
