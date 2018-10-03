@@ -150,30 +150,7 @@ $('#OfferMnu').removeClass("butBg");
 				echo $form->hidden("paramsVal", array('id' => 'paramsVal','value' =>"$paramsVal"));			
 			}
 			?>
-            <div class="topTabs" style="height:25px;">
-                <?php /*?><ul class="dropdown">
-                    <!--  <li>
-						<?php
-						e($html->link(
-									$html->tag('span', 'New'),
-									array('controller'=>'offers','action'=>'addoffer'),
-									array('escape' => false)
-									)
-						);
-						?>
-					  </li>   -->
-                     <!-- <li><a href="javascript:void(0)" class="tab2"><span>Actions</span></a>
-                    <ul class="sub_menu">
-                                           <!--<li><a href="javascript:void(0)" onclick="invitetooffer();" id="linkinvite">Invite</a></li>  -->
-                                           <!--<li><a href="javascript:void(0)" onClick="return activatecontents('active','change');">Publish</a></li>
-                                            <li><a href="javascript:void(0)" onClick="return activatecontents('deactive','change');">Unpublish</a></li>
-                                         <li><a href="javascript:void(0)" onClick="return activatecontents('asd','del');">Trash</a></li>
-                                         <li class="botCurv"></li>
-                                    </ul>
-                    </li>-->
-                    <li><a href="javascript:void(0)" onClick="editoffer();" id="linkedit"><span>Edit</span></a></li>         
-                </ul><?php */?>
-            </div>
+            
         </div>
    
 </div>

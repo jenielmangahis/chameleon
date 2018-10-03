@@ -44,43 +44,37 @@ $backDownloadholder = $base_url_admin.'downloaddonation';
 ?>
 
 <div class="container"> 
-<div class="titlCont">
-<div class="myclass">
-<div align="center" class="slider" id="toppanel" style="height: 20px; top:13px;right: -50px;width:545px !important; text-align:right;">
-<?php echo $form->create("admins", array("action" => $editLink,'name' => 'edit_donationuploade', 'id' => "edit_donationuploade", 'class' => 'adduser','enctype' => 'multipart/form-data'));
-     ?>
-<button type="submit" value="Submit" class="sendBut" name="data[Action][redirectpage]"> <?php e($html->image('save.png', array('alt' => 'Save'))); ?></button>
+	<div class="titlCont">
+		<div class="slider-centerpage clearfix">
+        	<div class="center-Page col-sm-6">
+                <h2>Edit Donation Upload</h2>
+            </div>
+            <div class="slider-dashboard col-sm-6">
+            	<div class="icon-container">
+                	<?php echo $form->create("admins", array("action" => $editLink,'name' => 'edit_donationuploade', 'id' => "edit_donationuploade", 'class' => 'adduser','enctype' => 'multipart/form-data'));
+					?>
+					<button type="submit" value="Submit" class="sendBut" name="data[Action][redirectpage]"> <?php e($html->image('save.png', array('alt' => 'Save'))); ?></button>
+					
+					<button type="submit" value="Submit" class="sendBut" name="data[Action][noredirection]"><?php e($html->image('apply.png', array('alt' => 'Apply'))); ?> </button>
+					<button type="button" id="saveForm" class="sendBut"  ONCLICK="javascript:(window.location='<?php echo $backUrl ?>')"><?php e($html->image('cancle.png', array('alt' => 'Cancle'))); ?>
+					</button>
+					<?php  echo $this->renderElement('new_slider');  ?>
+                </div>
+            </div>
+        </div>
 
-<button type="submit" value="Submit" class="sendBut" name="data[Action][noredirection]"><?php e($html->image('apply.png', array('alt' => 'Apply'))); ?> </button>
-<button type="button" id="saveForm" class="sendBut"  ONCLICK="javascript:(window.location='<?php echo $backUrl ?>')"><?php e($html->image('cancle.png', array('alt' => 'Cancle'))); ?>
-</button>
-	<?php  echo $this->renderElement('new_slider');  ?>
 </div>
 
-<span class="titlTxt">Edit Donation Upload</span>
-<?php /*?><span class="titlTxt">Donation Uplod:Upload Name<?php echo $this->data['Donationupload']['created'];?></span><?php */?>
-<div class="topTabs" style="height:25px;">
-<?php /*?><ul class="dropdown">
-<li>
-<button type="submit" value="Submit" class="button" name="data[Action][redirectpage]"> <span> Save </span>	</button>
-</li>
-<li>
-<button type="submit" value="Submit" class="button" name="data[Action][noredirection]"><span>Apply</span> </button>
-</li>
-<li>
-<button type="button" id="saveForm" class="button"  ONCLICK="javascript:(window.location='<?php echo $backUrl ?>')"><span> Cancel</span>
-</button>
-</li>
 
-</ul><?php */?>
+<div class="clearfix nav-submenu-container">
+	<div class="midCont submenu-Cont">
+		<?php    $this->loginarea="links";    $this->subtabsel="activelinklist";
+		echo $this->renderElement('donation_submenus');  ?>
+        <div class="clear"></div>
+        <?php $this->mail_tasks="tabSelt"; ?>   
+    </div>
 </div> 
-<?php    $this->loginarea="links";    $this->subtabsel="activelinklist";
-            echo $this->renderElement('donation_submenus');  ?>
-<div class="clear"></div>
-<?php $this->mail_tasks="tabSelt"; ?>   
-</div>
 
-</div>
 <div class="midPadd" id="addcmp">
 
 <?php if($session->check('Message.flash')) { echo $this->renderElement('error_message'); } ?>          
@@ -89,7 +83,7 @@ $backDownloadholder = $base_url_admin.'downloaddonation';
 
 <div id="loading" style="display: none;"><img src="/img/ajax-pageloader.gif" alt="Imagecoins:pageloader" /></div>
 <div id="addcomm">
-<table cellspacing="0" cellpadding="0" align="left" width="100%">
+<table cellspacing="0" cellpadding="0" align="left" width="90%">
 	<tbody>
 		<tr>
 			<td width="50%" valign="top">
@@ -100,8 +94,8 @@ $backDownloadholder = $base_url_admin.'downloaddonation';
 					<tr id="row_startdate" >
 						<td align="right"><label class="boldlabel">Date & Time of Upload<span class="red">*</span></label></td>
 						
-						<td><span class="intpSpan" style="vertical-align: top"> 
-							<?php echo $form->text("Donationupload.created", array('id' => 'birthday', 'div' => false, 'label' => '',"class" => "inpt_txt_fld","maxlength" => "200",'readonly'=>'readonly'));?>
+						<td><span class="intp-Span" style="vertical-align: top"> 
+							<?php echo $form->text("Donationupload.created", array('id' => 'birthday', 'div' => false, 'label' => '',"class" => "inpt-txt-fld form-control","maxlength" => "200",'readonly'=>'readonly'));?>
 							</span>
 							</td>
 					</tr>
@@ -109,33 +103,34 @@ $backDownloadholder = $base_url_admin.'downloaddonation';
 							<td align="right"><label class="boldlabel">Donation List Name<span
 									style="color: red;">*</span>
 							</label></td>
-							<td><span class="intpSpan" style="vertical-align: top"> <?php echo $form->input("Donationupload.name", array('id' => 'name', 'div' => false, 'label' => '','style' =>'width:231px;',"class" => "inpt_txt_fld"));?> </span>
+							<td><span class="intp-Span" style="vertical-align: top"> <?php echo $form->input("Donationupload.name", array('id' => 'name', 'div' => false, 'label' => '','style' =>'width:100%;',"class" => "inpt-txt-fld form-control"));?> </span>
 							</td>
 						</tr>
 						<tr>
 							<td align="right"><label class="boldlabel">Login Name<span
 									style="color: red;">*</span>
 							</label></td>
-							<td><span class="intpSpan" style="vertical-align: top"> 
-							<?php echo $form->input("Donationupload.loginname", array('id' => 'note', 'div' => false, 'label' => '','style' =>'width:231px;',"class" => "inpt_txt_fld"));?>
+							<td><span class="intp-Span" style="vertical-align: top"> 
+							<?php echo $form->input("Donationupload.loginname", array('id' => 'note', 'div' => false, 'label' => '','style' =>'width:100%;',"class" => "inpt-txt-fld form-control"));?>
 							</span>
 							</td>
 						</tr>
 						<tr>
                  <td align="right"><label class="boldlabel"> #of Record<span class="red">*</span></label></td>
-                  <td ><span class="intpSpan" style="vertical-align: top"> <?php echo $form->input("Donationupload.record", array('id' => 'name', 'div' => false, 'label' => '','style' =>'width:231px;',"class" => "inpt_txt_fld"));?></span> </td>
+                  <td ><span class="intp-Span" style="vertical-align: top"> <?php echo $form->input("Donationupload.record", array('id' => 'name', 'div' => false, 'label' => '','style' =>'width:100%;',"class" => "inpt-txt-fld form-control"));?></span> </td>
  </tr>
 
 		
 		<tr>
             <td align="right"><label class="boldlabel">Uploade File Name<span
 									style="color: red;">*</span> </label></td>
-            <td><span class="intpSpan" style="vertical-align: top"> 
-			<input type="text" value="<?php echo $this->data['Donationupload']['filename']; ?>"  name="file" readonly="readonly" style="width:231px;" class="inpt_txt_fld"/>
-			<?php //echo $form->input("Donationupload.filename", array('id' => 'name', 'div' => false, 'label' => '','style' =>'width:231px;',"class" => "inpt_txt_fld","name"=>"file1","readonly"=>"readonly" ));?> </span>
+            <td><span class="intp-Span" style="vertical-align: top"> 
+			<input type="text" value="<?php echo $this->data['Donationupload']['filename']; ?>"  name="file" readonly="readonly" style="width:100%;" class="inpt-txt-fld form-control"/>
+			<?php //echo $form->input("Donationupload.filename", array('id' => 'name', 'div' => false, 'label' => '','style' =>'width:100%;',"class" => "inpt-txt-fld form-control","name"=>"file1","readonly"=>"readonly" ));?> </span>
 			<?php $recid=$this->data['Donationupload']['id']; ?>
-			<span class="srchBg2"><input type="button" value="Download File" label="" onclick="jjavascript:(window.location='<?php echo $backDownloadholder ?>/<?php echo $recid; ?>')" > </span>
-		<span class="" style="vertical-align: top"> 	<?php echo $form->input("Donationupload.filename1", array('id' => 'filename1', 'type'=>'file', 'div' => false, 'label' => '','style' =>'width:231px;',"class" => ""));?></span>
+			<span class="srch-Bg2"><input class="btn btn-primary btn-sm" type="button" value="Download File" label="" onclick="jjavascript:(window.location='<?php echo $backDownloadholder ?>/<?php echo $recid; ?>')" > </span>
+            <br />
+		<span class="" style="vertical-align:top;"> 	<?php echo $form->input("Donationupload.filename1", array('id' => 'filename1', 'type'=>'file', 'div' => false, 'label' => '','style' =>'width:100%; margin:10px 0;',"class" => ""));?></span>
 			
 			</td>
           </tr>
@@ -147,8 +142,8 @@ $backDownloadholder = $base_url_admin.'downloaddonation';
 							<td align="right"><label class="boldlabel">Related Event<span
 									style="color: red;">*</span>
 							</label></td>
-							<td><span class="intpSpan" style="vertical-align: top"> 
-							<?php echo $form->input("Donationupload.relatedevent", array('id' => 'note', 'div' => false, 'label' => '','style' =>'width:231px;',"class" => "inpt_txt_fld"));?>
+							<td><span class="intp-Span" style="vertical-align: top"> 
+							<?php echo $form->input("Donationupload.relatedevent", array('id' => 'note', 'div' => false, 'label' => '','style' =>'width:100%;',"class" => "inpt-txt-fld form-control"));?>
 							</span>
 							</td>
 						</tr>

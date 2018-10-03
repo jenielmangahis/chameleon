@@ -52,53 +52,55 @@ function addnewcontact(){
 </script>
 
    <!-- Body Panel starts -->
- <div class="container">
- <div class="titlCont1" style="height:91px;">
-<div class="centerPage">
-<div align="center" class="slider" id="toppanel" style="height: 20px; top:13px;right:-50px;width:250px !important; text-align:right;">	
-<?php echo $form->create("prospects", array("action" => "addprospect",'type' => 'file','enctype'=>'multipart/form-data','name' => 'addprospect', 'id' => "addprospect","onsubmit"=>"return validateaddventorcompany('$act');"));
-	 echo $form->hidden("Company.id", array('id' => 'companyid'));
-	 echo $form->hidden("projectname", array('id' => 'projectname','value'=>"$projectname"));
-	 echo $form->hidden("projectid", array('id' => 'projectid','value'=>"$project_id"));
-	 echo $form->hidden("params", array('id' => 'params','value'=>"$params"));
-	 
-	?>
-<button type="submit" value="Submit" class="sendBut" name="data[Action][redirectpage]"><?php e($html->image('save.png')); ?></button>
-<button type="submit" value="Submit" class="sendBut" name="data[Action][noredirection]"><?php e($html->image('apply.png')); ?></button>
-<button type="button" id="saveForm" class="sendBut"  ONCLICK="javascript:(window.location='<?php echo $backUrl;?>')"><?php e($html->image('cancle.png')); ?></button>
-<?php  echo $this->renderElement('new_slider');  ?>
-</div>
-
-<?php  $titletext = ($usertype==trim("admin"))?$this->renderElement('project_name'):'';  
-	echo $titletext;
-?>     
-<span class="titlTxt">
-		<?php 
+<div class="container">
+	<div class="titlCont">
+    	<div class="slider-centerpage clearfix">
+        	<div class="center-Page col-sm-6">
+            	<?php  $titletext = ($usertype==trim("admin"))?$this->renderElement('project_name'):'';  
+					echo $titletext;
+				?> 
+            	<h2>
+                	<?php 
 			
-			if($this->data['Company']['id']){
-				$act = 'edit';
-				echo "Edit ". $params." Detail"; 
-			}else{
+						if($this->data['Company']['id']){
+							$act = 'edit';
+							echo "Edit ". $params." Detail"; 
+						}else{
+			
+							$act = 'add';
+							echo "Add New ".$params;
+						}	
+					?>
+                </h2>
+            </div>
+            <div class="slider-dashboard col-sm-6">
+            	<div class="icon-container">
+                	<?php echo $form->create("prospects", array("action" => "addprospect",'type' => 'file','enctype'=>'multipart/form-data','name' => 'addprospect', 'id' => "addprospect","onsubmit"=>"return validateaddventorcompany('$act');"));
+					echo $form->hidden("Company.id", array('id' => 'companyid'));
+					echo $form->hidden("projectname", array('id' => 'projectname','value'=>"$projectname"));
+					echo $form->hidden("projectid", array('id' => 'projectid','value'=>"$project_id"));
+					echo $form->hidden("params", array('id' => 'params','value'=>"$params"));
+					
+					?>
+					<button type="submit" value="Submit" class="sendBut" name="data[Action][redirectpage]"><?php e($html->image('save.png')); ?></button>
+					<button type="submit" value="Submit" class="sendBut" name="data[Action][noredirection]"><?php e($html->image('apply.png')); ?></button>
+					<button type="button" id="saveForm" class="sendBut"  ONCLICK="javascript:(window.location='<?php echo $backUrl;?>')"><?php e($html->image('cancle.png')); ?></button>
+					<?php  echo $this->renderElement('new_slider');  ?>
+                </div>
+            </div>
+        </div>
 
-				$act = 'add';
-				echo "Add New ".$params;
-			}	
-		?>
-	</span>
-	
-	<div class="topTabs" style="height:25px;">
-		<?php /*?><ul class="dropdown">   
-		<li><button type="submit" value="Submit" class="button" name="data[Action][redirectpage]"><span>Save</span></button></li>
-		<li><button type="submit" value="Submit" class="button" name="data[Action][noredirection]"><span>Apply</span></button></li>
-		<li><button type="button" id="saveForm" class="button"  ONCLICK="javascript:(window.location='<?php echo $backUrl;?>')"><span> Cancel</span></button></li>
-		</ul><?php */?>
-	</div>
-	<div class="clear"></div>    
-	
-</div>
- <div style="margin-left:5px;"><?php $this->loginarea="prospects";$this->subtabsel="projectvendorslist";
-       echo $this->renderElement('prospect_vendor_submenu');  ?></div>
 	   
 </div>
+<div class="clearfix nav-submenu-container">
+    <div class="midCont submenu-Cont">
+    	<?php $this->loginarea="prospects";$this->subtabsel="projectvendorslist";
+       echo $this->renderElement('prospect_vendor_submenu');  ?>
+    </div>
+</div>
+
+
  <?php echo $this->renderElement('commonhtml');  ?>
  </div>    
+
+

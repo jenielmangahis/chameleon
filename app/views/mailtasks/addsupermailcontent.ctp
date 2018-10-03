@@ -24,38 +24,40 @@ $backurl = $baseUrlAdmin.'help_list';
 <?php $lgrt = $session->read('newsortingby');?>
 
 <!-- Body Panel starts -->
-<div class="titlCont"><div class="myclass">
-<div class="slider" id="toppanel" style="height: 20px; top:13px;right:0px;width:545px !important; text-align:right;">
-<?php 
- echo $javascript->link('ckeditor/ckeditor');
+<div class="titlCont">
+	<div class="slider-centerpage clearfix">
+    	<div class="center-Page col-sm-4">		
+            <h2> Add New Template </h2>
+        </div>
+        <div class="slider-dashboard col-sm-8">
+        	<div class="icon-container">
+            	<?php echo $javascript->link('ckeditor/ckeditor');
 
- 
- echo $form->create("mailtasks", array("action" => "addsupermailcontent",'name' => 'addmailtemplate', 'id' => "addsupermailcontent","onsubmit"=>"return validatemailcontent('add');")); 
-  if($returnurl){ echo $form->hidden("returnurl", array('id' => 'returnurl', 'value'=>$returnurl)); }
-  if($closeit=="yes"){   echo $form->hidden("closeit", array('id' => 'closeit', 'value'=>$closeit)); }
-     echo $form->hidden("EmailTemplate.id", array('id' => 'templateid'));   
-  
- ?>
- <button type="submit" value="Submit" class="sendBut" name="data[Action][redirectpage]"><?php e($html->image('save.png')); ?></button>
-<button type="submit" value="Submit" class="sendBut" name="data[Action][noredirection]"><?php e($html->image('apply.png')); ?></button>
-<button type="button" id="saveForm" class="sendBut"  <?php if($returnurl){ echo "onclick='closemywindow();'"; }else{?>ONCLICK="Backurlsupermailcontent()" <?php } ?>><?php e($html->image('cancle.png')); ?></button>
-         <?php  echo $this->renderElement('new_slider');  ?>
-
-
-
+				echo $form->create("mailtasks", array("action" => "addsupermailcontent",'name' => 'addmailtemplate', 'id' => "addsupermailcontent","onsubmit"=>"return validatemailcontent('add');")); 
+				if($returnurl){ echo $form->hidden("returnurl", array('id' => 'returnurl', 'value'=>$returnurl)); }
+				if($closeit=="yes"){   echo $form->hidden("closeit", array('id' => 'closeit', 'value'=>$closeit)); }
+				echo $form->hidden("EmailTemplate.id", array('id' => 'templateid'));   
+				
+				?>
+				<button type="submit" value="Submit" class="sendBut" name="data[Action][redirectpage]"><?php e($html->image('save.png')); ?></button>
+				<button type="submit" value="Submit" class="sendBut" name="data[Action][noredirection]"><?php e($html->image('apply.png')); ?></button>
+				<button type="button" id="saveForm" class="sendBut"  <?php if($returnurl){ echo "onclick='closemywindow();'"; }else{?>ONCLICK="Backurlsupermailcontent()" <?php } ?>><?php e($html->image('cancle.png')); ?></button>
+				<?php  echo $this->renderElement('new_slider');  ?>
+            </div>
+        </div>
+    </div>
 </div>
 
-<span class="titlTxt">Add New Template
-</span>
 
-
-<div class="topTabs" style="height:25px;">
-
+<div class="clearfix nav-submenu-container">
+    <div class="midCont submenu-Cont">
+    	<?php $this->subtabsel="mailtemplatelist";   echo $this->renderElement('emails_submenus');?>  
+    </div>
 </div>
-  <?php $this->subtabsel="mailtemplatelist";   echo $this->renderElement('emails_submenus');?>    	
-</div></div>
 
-<div class="midPadd" id="mailtmp">
+
+
+<div class="midCont clearfix" id="mailtmp">
 
 <div class="boxBor1">
        
@@ -84,8 +86,8 @@ $backurl = $baseUrlAdmin.'help_list';
                                    
 								<td width="85%" valign="top">
 
-								<span class="txtArea_top"><span class="txtArea_bot"><span id="compdiv">	
-		<?php echo $form->select("EmailTemplate.email_template_type",$templatetypedropdown,$selectedtemplatetype, array('id' => 'email_template_type', 'div' => false, 'label' => '',"class" =>"multilist","maxlength" => "250"),"---Select---"); ?>
+								<span class="txtArea-top"><span class="txtArea-bot"><span id="compdiv">	
+		<?php echo $form->select("EmailTemplate.email_template_type",$templatetypedropdown,$selectedtemplatetype, array('id' => 'email_template_type', 'div' => false, 'label' => '',"class" =>"multi-list form-control","maxlength" => "250"),"---Select---"); ?>
 								</span></span></span>
 							
 								</td>
@@ -98,8 +100,8 @@ $backurl = $baseUrlAdmin.'help_list';
                          <td width="16%" align="right"><label class="boldlabel">Template Name <span class="red">*</span></label></td>
                                    
 								<td width="85%" valign="top">
-								<span class="intpSpan">
-											<?php echo $form->input("EmailTemplate.email_template_name", array('id' => 'email_template_name', 'div' => false, 'label' => '','style' =>'width:400px;',"class" => "inpt_txt_fld","maxlength" => "250",'disabled'=>true,'value'=>$this->data['EmailTemplate']['email_template_name']));?>
+								<span class="intp-Span">
+											<?php echo $form->input("EmailTemplate.email_template_name", array('id' => 'email_template_name', 'div' => false, 'label' => '','style' =>'width:100%;',"class" => "inpt-txt-fld form-control","maxlength" => "250",'disabled'=>true,'value'=>$this->data['EmailTemplate']['email_template_name']));?>
 										</span>
 							
 								</td>
@@ -109,8 +111,8 @@ $backurl = $baseUrlAdmin.'help_list';
                     <tr>
                      <td width="16%" align="right"><label class="boldlabel">Template Name <span class="red">*</span></label>&nbsp;</td>
 					 <td width="85%">
-										<span class="intpSpan">
-											<?php echo $form->input("EmailTemplate.email_template_name", array('id' => 'email_template_name', 'div' => false, 'label' => '','style' =>'width:400px;',"class" => "inpt_txt_fld","maxlength" => "250",'value'=>$this->data['EmailTemplate']['email_template_name']));?>
+										<span class="intp-Span">
+											<?php echo $form->input("EmailTemplate.email_template_name", array('id' => 'email_template_name', 'div' => false, 'label' => '','style' =>'width:100%;',"class" => "inpt-txt-fld form-control","maxlength" => "250",'value'=>$this->data['EmailTemplate']['email_template_name']));?>
 										</span>
 								</td>
                      
@@ -119,12 +121,12 @@ $backurl = $baseUrlAdmin.'help_list';
                    
                     <tr>
                      <td width="15%" align="right"><label class="boldlabel">Subject <span class="red">*</span></label></td>
-                     <td width="85%"><span class="intpSpan"><?php echo $form->input("EmailTemplate.subject", array('id' => 'subject', 'div' => false, 'label' => '','style' =>'width:400px;',"class" => "inpt_txt_fld","maxlength" => "250"));?></span></td>
+                     <td width="85%"><span class="intp-Span"><?php echo $form->input("EmailTemplate.subject", array('id' => 'subject', 'div' => false, 'label' => '','style' =>'width:100%;',"class" => "inpt-txt-fld form-control","maxlength" => "250"));?></span></td>
                     </tr>
                    <?php /* ?>
 				   <tr>
                      <td width="15%" align="right"><label class="boldlabel">Sender </label></td>
-                     <td width="85%"><span class="intpSpan"><?php echo $form->input("EmailTemplate.sender", array('id' => 'sender', 'div' => false, 'label' => '','style' =>'width:400px;',"class" => "inpt_txt_fld","maxlength" => "250", ));?></span></td>
+                     <td width="85%"><span class="intp-Span"><?php echo $form->input("EmailTemplate.sender", array('id' => 'sender', 'div' => false, 'label' => '','style' =>'width:400px;',"class" => "inpt-txt-fld form-control","maxlength" => "250", ));?></span></td>
                     </tr>
                     <?php */ ?>
 					<tr>
@@ -135,10 +137,10 @@ $backurl = $baseUrlAdmin.'help_list';
                     <tr>
 
 			<td colspan=2>
-                        <?php //echo $form->textarea("EmailTemplate.content", array('id' => 'content', 'div' => false, 'label' => '','cols' => '24', 'rows' => '4',"class" => "inpt_txt_fld"));?>
+                        <?php //echo $form->textarea("EmailTemplate.content", array('id' => 'content', 'div' => false, 'label' => '','cols' => '24', 'rows' => '4',"class" => "inpt-txt-fld form-control"));?>
                         <?php   
                                                 /*echo $form->create('EmailTemplate');  
-                                                echo $form->input('content', array('cols' => '100', 'rows' => '100','label'=>false,'div'=>false,'class'=>'inpt_txt_fld','style'=>"width:400px")); 
+                                                echo $form->input('content', array('cols' => '100', 'rows' => '100','label'=>false,'div'=>false,'class'=>'inpt-txt-fld form-control','style'=>"width:400px")); 
                                                 echo $fck->load('EmailTemplate/content','490','600'); 
                                                 echo $form->input('id', array('type'=>'hidden'));*/                                             
                                                 echo $form->textarea('EmailTemplate.content', array('id'=>'content','class'=>'ckeditor'));
