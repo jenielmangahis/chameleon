@@ -118,43 +118,35 @@ $('#btn_relate_to_comment').live('click',function(){
 ?>
 
 <div class="container"> 
-<div class="titlCont">
-<div class="myclass">
-
-<div align="center" class="slider" id="toppanel" style="height: 20px; top:13px;right:-50px;width:545px !important; text-align:right;">
-<?php echo $form->create("links", array("action" => $editLink,'name' => 'addlink', 'id' => "addlink", 'class' => 'adduser'));
-     ?>
-<button type="submit" value="Submit" class="sendBut" name="data[Action][redirectpage]"> <?php e($html->image('save.png')); ?>	</button>
-<button type="submit" value="Submit" class="sendBut" name="data[Action][noredirection]"><?php e($html->image('apply.png')); ?></button>
-<button type="button" id="saveForm" class="sendBut"  ONCLICK="javascript:(window.location='<?php echo $backUrl ?>')"><?php e($html->image('cancle.png')); ?>
-</button>
-	<?php  echo $this->renderElement('new_slider');  ?>
+	<div class="titlCont">
+    	<div class="slider-centerpage clearfix">
+        	<div class="center-Page col-sm-4">
+                <h2>Edit Link</h2>
+            </div>
+            <div class="slider-dashboard col-sm-8">
+            	<div class="icon-container">
+                	<?php echo $form->create("links", array("action" => $editLink,'name' => 'addlink', 'id' => "addlink", 'class' => 'adduser'));
+					?>
+					<button type="submit" value="Submit" class="sendBut" name="data[Action][redirectpage]"> <?php e($html->image('save.png')); ?>	</button>
+					<button type="submit" value="Submit" class="sendBut" name="data[Action][noredirection]"><?php e($html->image('apply.png')); ?></button>
+					<button type="button" id="saveForm" class="sendBut"  ONCLICK="javascript:(window.location='<?php echo $backUrl ?>')"><?php e($html->image('cancle.png')); ?>
+					</button>
+					<?php  echo $this->renderElement('new_slider');  ?>
+                </div>
+            </div>
+        </div>
 </div>
 
-<span class="titlTxt">Edit Link</span>
-<div class="topTabs" style="height:25px;">
-<?php /*?><ul class="dropdown">
-<li>
-<button type="submit" value="Submit" class="button" name="data[Action][redirectpage]"> <span> Save </span>	</button>
-</li>
-<li>
-<button type="submit" value="Submit" class="button" name="data[Action][noredirection]"><span>Apply</span> </button>
-</li>
-<li>
-<button type="button" id="saveForm" class="button"  ONCLICK="javascript:(window.location='<?php echo $backUrl ?>')"><span> Cancel</span>
-</button>
-</li>
-
-</ul><?php */?>
+<div class="clearfix nav-submenu-container">
+	<div class="midCont submenu-Cont">
+		<?php    $this->loginarea="links";    $this->subtabsel="activelinklist";
+				 echo $this->renderElement('links_submenus');  ?> 
+		<div class="clear"></div>
+		<?php $this->mail_tasks="tabSelt"; ?>   
+    </div>
 </div> 
- <?php    $this->loginarea="links";    $this->subtabsel="activelinklist";
-             echo $this->renderElement('links_submenus');  ?> 
-<div class="clear"></div>
-<?php $this->mail_tasks="tabSelt"; ?>   
-</div>
 
-</div>
-<div class="midPadd" id="addcmp">
+<div class="midCont clearfix" id="addcmp">
 
 <?php if($session->check('Message.flash')) { echo $this->renderElement('error_message'); } ?>          
 
@@ -162,7 +154,7 @@ $('#btn_relate_to_comment').live('click',function(){
 
 <div id="loading" style="display: none;"><img src="/img/ajax-pageloader.gif" alt="Imagecoins:pageloader" /></div>
 <div id="addcomm">
-<table cellspacing="0" cellpadding="0" align="left" width="100%">
+<table cellspacing="0" cellpadding="0" align="left" width="90%">
 	<tbody>
 		<tr>
 			<td width="50%" valign="top">
@@ -174,13 +166,13 @@ $('#btn_relate_to_comment').live('click',function(){
 <tr>
 	<td align="right">
 		<input type="hidden" id="current_domain" name="current_domain" value="">
-		<?php echo $form->input("Link.project_id", array('id' => 'project_id', 'type'=>'hidden', 'value'=>'1' ,'div' => false, 'label' => '','style' =>'width:200px;',"class"=>"inpt_txt_fld","maxlength" => "250"));?>
+		<?php echo $form->input("Link.project_id", array('id' => 'project_id', 'type'=>'hidden', 'value'=>'1' ,'div' => false, 'label' => '','style' =>'width:200px;',"class"=>"inpt-txt-fld form-control","maxlength" => "250"));?>
 		
 		<label class="boldlabel">Link Name <span style="color: red;">*</span>
 		</label>
 	</td>
 	<td>
-	<span class="intpSpan"><?php echo $form->input("Link.links_name", array('id' => 'links_name', 'div' => false, 'label' => '','style' =>'width:200px;',"class"=>"inpt_txt_fld","maxlength" => "250"));?>
+	<span class="intp-Span"><?php echo $form->input("Link.links_name", array('id' => 'links_name', 'div' => false, 'label' => '','style' =>'width:231px;',"class"=>"inpt-txt-fld form-control","maxlength" => "250"));?>
 	</span>
 	</td>
 </tr>
@@ -191,7 +183,7 @@ $('#btn_relate_to_comment').live('click',function(){
 <label class="boldlabel">Link Group<span
 style="color: red;">*</span>
 </label></td>
-<td><span class="txtArea_top"> <span class="txtArea_bot"> <?php 
+<td><span class="txtArea-top"> <span class="txtArea-bot"> <?php 
 if(isset($InsertGroupId))
 {
 	$gselected = $InsertGroupId;
@@ -200,10 +192,10 @@ else
 {
 	$gselected = $oldData['Link']['linkgroup'];
 }
-echo $form->select("Link.linkgroup",$groupdata,$gselected,array('id' => 'linkgroup','class'=>'multilist','onchange'=>'getEmailTemplate(this.value)'),array('0'=>'--Select--')); ?>
+echo $form->select("Link.linkgroup",$groupdata,$gselected,array('id' => 'linkgroup','class'=>'multi-list form-control','onchange'=>'getEmailTemplate(this.value)'),array('0'=>'--Select--')); ?>
 </span>
 </span>
-<span class="btnLft"><input type="button" class="btnRht"
+<span class="btn-Lft"><input type="button" class="btn-Rht btn btn-primary btn-sm"
 									value="Add" name="Add" onclick="addgrouplink();" />
 							</span>
 
@@ -217,7 +209,7 @@ echo $form->select("Link.linkgroup",$groupdata,$gselected,array('id' => 'linkgro
 <td align="right"><label class="boldlabel">Link Placement<span
 style="color: red;">*</span>
 </label></td>
-<td><span class="txtArea_top"> <span class="txtArea_bot"> <?php 
+<td><span class="txtArea-top"> <span class="txtArea-bot"> <?php 
 if(isset($InsertPlacementId))
 {
 	$lpselected = $InsertPlacementId;
@@ -227,10 +219,10 @@ else
 	$lpselected = $oldData['Link']['link_placement'];
 }
 //$option = array('Brochure'=>'Brochure' ,'Emails'=>'Emails', 'SMS'=>'SMS', 'Web_Page'=>'Web Page' , 'Video'=>'Video');
-echo $form->select("Link.link_placement",$placementdata,$lpselected,array('id' => 'link_placement','class'=>'multilist','onchange'=>'getEmailTemplate(this.value)'),array('0'=>'--Select--')); ?>
+echo $form->select("Link.link_placement",$placementdata,$lpselected,array('id' => 'link_placement','class'=>'multi-list form-control','onchange'=>'getEmailTemplate(this.value)'),array('0'=>'--Select--')); ?>
 </span>
 </span> 
-<span class="btnLft"><input type="button" class="btnRht"
+<span class="btn-Lft"><input type="button" class="btn-Rht btn btn-primary btn-sm"
 									value="Add" name="Add" onclick="addplacementlink();" />
 							</span>
 </td>
@@ -240,7 +232,7 @@ echo $form->select("Link.link_placement",$placementdata,$lpselected,array('id' =
 <tr> 
 <td align="right"><label class="boldlabel">Link Address<span style="color: red;">*</span>
 </label></td>
-<td><span class="txtArea_top"> <span class="txtArea_bot"> <?php 
+<td><span class="txtArea-top"> <span class="txtArea-bot"> <?php 
 //$option = array('test'=>'test', 'testone'=>'testone', 'testthree'=>'testthree');
 if(isset($InsertLinkAddressId))
 {
@@ -250,10 +242,10 @@ else
 {
 	$laselected = $oldData['Link']['link_address'];
 }
-echo $form->select("Link.link_address",$addressdata,$laselected,array('id' => 'link_address','class'=>'multilist','onchange'=>'getEmailTemplate(this.value)'),array('0'=>'--Select--')); ?>
+echo $form->select("Link.link_address",$addressdata,$laselected,array('id' => 'link_address','class'=>'multi-list form-control','onchange'=>'getEmailTemplate(this.value)'),array('0'=>'--Select--')); ?>
 								</span>
 							</span> 
-							<span class="btnLft"><input type="button" class="btnRht"
+							<span class="btn-Lft"><input type="button" class="btn-Rht btn btn-primary btn-sm"
 									value="Add" name="Add" onclick="addaddresslink();" />
 							</span>
 							</td>
@@ -262,7 +254,7 @@ echo $form->select("Link.link_address",$addressdata,$laselected,array('id' => 'l
 <tr> 
 	<td align="right"><label class="boldlabel">Related Form
 							</label></td>
-							<td><span class="txtArea_top"> <span class="txtArea_bot"> <?php 
+							<td><span class="txtArea-top"> <span class="txtArea-bot"> <?php 
 				if(isset($InsertRelatedFormId))
 				{	
 					$lrselected = $InsertRelatedFormId;
@@ -271,11 +263,11 @@ echo $form->select("Link.link_address",$addressdata,$laselected,array('id' => 'l
 				{
 					$lrselected = $oldData['Link']['related_form'];
 				}			
-			echo $form->select("Link.related_form",$formtypedata,$lrselected,array('id' => 'related_form','class'=>'multilist','onchange'=>'getEmailTemplate(this.value)'),array('0'=>'--Select--')); ?>
+			echo $form->select("Link.related_form",$formtypedata,$lrselected,array('id' => 'related_form','class'=>'multi-list form-control','onchange'=>'getEmailTemplate(this.value)'),array('0'=>'--Select--')); ?>
 								</span>
 							</span>
-							<span class="btnLft">
-							<input type="button" class="btnRht"
+							<span class="btn-Lft">
+							<input type="button" class="btn-Rht btn btn-primary btn-sm"
 									value="Add" name="Add" onclick="addforum();" />
 							</span>
 							</td>
@@ -287,11 +279,11 @@ echo $form->select("Link.link_address",$addressdata,$laselected,array('id' => 'l
 							</label></td>
 							<td>
 							
-							<span class="txtArea_top"> <span class="txtArea_bot"> 
+							<span class="txtArea-top"> <span class="txtArea-bot"> 
 <?php
 $option = array('Email'=>'Email' ,'Web_Page'=>'Web Page','PDF'=>'PDF','other'=>'Others');
 $rsselected = $oldData['Link']['survey'];	
-echo $form->select("Link.survey",$option,$rsselected,array('id' => 'survey','class'=>'multilist','onchange'=>'getEmailTemplate(this.value)'),array('0'=>'--Select--')); ?>
+echo $form->select("Link.survey",$option,$rsselected,array('id' => 'survey','class'=>'multi-list form-control','onchange'=>'getEmailTemplate(this.value)'),array('0'=>'--Select--')); ?>
 
 </span>
 	</span> </td>
@@ -301,7 +293,7 @@ echo $form->select("Link.survey",$option,$rsselected,array('id' => 'survey','cla
 							<td align="right"><label class="boldlabel">Enter Visual Text<span
 									style="color: red;">*</span>
 							</label></td>
-							<td><span class="intpSpan" style="vertical-align: top"> <?php echo $form->input("Link.visual_text", array('id' => 'visual_text', 'div' => false, 'label' => '','style' =>'width:231px;',"class" => "inpt_txt_fld"));?>
+							<td><span class="intp-Span" style="vertical-align: top"> <?php echo $form->input("Link.visual_text", array('id' => 'visual_text', 'div' => false, 'label' => '','style' =>'width:231px;',"class" => "inpt-txt-fld form-control"));?>
 							</span>
 							</td>
 						</tr>
@@ -311,15 +303,15 @@ echo $form->select("Link.survey",$option,$rsselected,array('id' => 'survey','cla
 							<td align="right"><label class="boldlabel">Created Link<span
 									style="color: red;">*</span>
 							</label></td>
-							<td><span class="intpSpan" style="vertical-align: top"> <?php echo $form->input("Link.created_link", array('id' => 'created_link', 'div' => false, 'label' => '','style' =>'width:231px;',"class" => "inpt_txt_fld",'readonly' =>'readonly'));?>
+							<td><span class="intp-Span" style="vertical-align: top"> <?php echo $form->input("Link.created_link", array('id' => 'created_link', 'div' => false, 'label' => '','style' =>'width:231px;',"class" => "inpt-txt-fld form-control",'readonly' =>'readonly'));?>
 							</span>
-							<span class="btnLft" id="btn1">
-							<input type="button" value="Update link" class="btnRht"
+							<span class="btn-Lft" id="btn1">
+							<input type="button" value="Update link" class="btn-Rht btn btn-primary btn-sm"
 									value="Add" name="Getsource"  onclick="getsource1();" />
 							</span>
 
-							<span class="btnLft" style="display:none;" id="btn2">
-							<input type="button" value="Copy" class="btnRht"
+							<span class="btn-Lft" style="display:none;" id="btn2">
+							<input type="button" value="Copy" class="btn-Rht btn btn-primary btn-sm"
 									 name="copysort" onclick="copysortcode();" id="copysort" />
 							</span>
 							</td>
@@ -329,7 +321,7 @@ echo $form->select("Link.survey",$option,$rsselected,array('id' => 'survey','cla
 							<td align="right" width="140px"><label class="boldlabel">Html Sort Code</label>
 							</td>
 							<td>
-							<span class="txtArea_top" id="txtHtmlSort"> <span class="txtArea_bot"><?php echo $form->input("Link.html_sortcode", array('id' => 'html_sortcode', 'div' => false, 'label' => '','rows'=>'8','cols'=>'36','class' =>'noBg noBgNew','readonly' => 'readonly'));?>
+							<span class="txtArea-top" id="txtHtmlSort"> <span class="txtArea-bot"><?php echo $form->input("Link.html_sortcode", array('id' => 'html_sortcode', 'div' => false, 'label' => '','rows'=>'8','cols'=>'36','class' =>'noBg form-control noBg form-controlNew','readonly' => 'readonly'));?>
 								</span>
 							</span>
 							<p id="spanHtmlSort" style="display:none;">
@@ -344,7 +336,7 @@ echo $form->select("Link.survey",$option,$rsselected,array('id' => 'survey','cla
 						<tr>
 							<td align="right"><label class="boldlabel">Link Redirect
 							</label></td>
-							<td><span class="intpSpan" style="vertical-align: top"> <?php echo $form->input("Link.redirect_link", array('id' => 'redirect_link', 'div' => false, 'label' => '','style' =>'width:231px;',"class" => "inpt_txt_fld"));?>
+							<td><span class="intp-Span" style="vertical-align: top"> <?php echo $form->input("Link.redirect_link", array('id' => 'redirect_link', 'div' => false, 'label' => '','style' =>'width:231px;',"class" => "inpt-txt-fld form-control"));?>
 							</span>
 							</td>
 						</tr>						
@@ -353,13 +345,13 @@ echo $form->select("Link.survey",$option,$rsselected,array('id' => 'survey','cla
 							<td align="right" width="140px"><label class="boldlabel">Start Date
 							</label>
 							</td>
-							<td><span class="intpSpan"><?php
+							<td><span class="intp-Span"><?php
 					if($this->data['Link']['startdate']!=""){
 							$startdate= $this->data['Link']['startdate'];
 					}else{
 						   $startdate= date('m-d-Y');
 					}
-		   echo $form->text("Link.startdate", array('id' => 'startdate', 'div' => false, 'label' => '',"class"=>"inpt_txt_fld","maxlength" => "200","style" => "width:200px", 'value'=>$startdate,'readonly'=>'readonly'));?>
+		   echo $form->text("Link.startdate", array('id' => 'startdate', 'div' => false, 'label' => '',"class"=>"inpt-txt-fld form-control","maxlength" => "200","style" => "width:231px", 'value'=>$startdate,'readonly'=>'readonly'));?>
 							</span></td>
 						</tr>
 
@@ -372,8 +364,8 @@ echo $form->select("Link.survey",$option,$rsselected,array('id' => 'survey','cla
         </div>
         </td>
             <td>
-                                      <span class="txtArea_top">
-                    <span class="txtArea_bot">        <select id="stime" name="data[Link][stime]" class="noBg" style="border: none; width: 230px; margin-bottom: 7px;"> 
+                                      <span class="txtArea-top">
+                    <span class="txtArea-bot">        <select id="stime" name="data[Link][stime]" class="noBg form-control" style="width: 230px; margin-bottom: 7px;"> 
                     <?php echo $option_stime; ?>
                     </select>
                    
@@ -385,13 +377,13 @@ echo $form->select("Link.survey",$option,$rsselected,array('id' => 'survey','cla
 							<td align="right" width="140px"><label class="boldlabel">End Date
 							</label>
 							</td>
-							<td><span class="intpSpan"><?php
+							<td><span class="intp-Span"><?php
 					if($this->data['Link']['startdate']!=""){
 							$startdate= $this->data['Link']['startdate'];
 					}else{
 						   $startdate= date('m-d-Y');
 					}
-		 echo $form->text("Link.enddate", array('id' => 'enddate', 'div' => false, 'label' => '',"class"=>"inpt_txt_fld","maxlength" => "200","style" => "width:200px",'readonly'=>'readonly'));?>
+		 echo $form->text("Link.enddate", array('id' => 'enddate', 'div' => false, 'label' => '',"class"=>"inpt-txt-fld form-control","maxlength" => "200","style" => "width:231px",'readonly'=>'readonly'));?>
 							</span></td>
 						</tr>
 
@@ -402,9 +394,9 @@ echo $form->select("Link.survey",$option,$rsselected,array('id' => 'survey','cla
         </div>
         </td>
             <td>
-                  <span class="txtArea_top">
-                    <span class="txtArea_bot">
-                    <select id="etime" name="data[Link][etime]" class="noBg" style="border: none; width: 230px; margin-bottom: 7px;">
+                  <span class="txtArea-top">
+                    <span class="txtArea-bot">
+                    <select id="etime" name="data[Link][etime]" class="noBg form-control" style="width: 230px; margin-bottom: 7px;">
                     <?php echo $option_etime; ?> 
                     </select>
                   
@@ -421,10 +413,10 @@ echo $form->select("Link.survey",$option,$rsselected,array('id' => 'survey','cla
         </div>
         </td>
         <td>                            
-                  <span class="txtArea_top">
-        <span class="txtArea_bot">
+                  <span class="txtArea-top">
+        <span class="txtArea-bot">
             <span id="countrydiv">
-                <?php echo $form->select("Link.recur_pattern",$recur_pattern,null,array('id' => 'recur_pattern',"class"=>"multilist"),"None"); ?></span></span></span>
+                <?php echo $form->select("Link.recur_pattern",$recur_pattern,null,array('id' => 'recur_pattern',"class"=>"multi-list form-control"),"None"); ?></span></span></span>
              </td>
         </tr>
 
@@ -433,7 +425,7 @@ echo $form->select("Link.survey",$option,$rsselected,array('id' => 'survey','cla
 	<tr>
 							<td align="right" width="140px"><label class="boldlabel">Discription</label>
 							</td>
-							<td><span class="txtArea_top"> <span class="txtArea_bot"><?php echo $form->input("Link.discription", array('id' => 'discription', 'div' => false, 'label' => '','rows'=>'8','cols'=>'36','class' =>'noBg'));?>
+							<td><span class="txtArea-top"> <span class="txtArea-bot"><?php echo $form->input("Link.discription", array('id' => 'discription', 'div' => false, 'label' => '','rows'=>'8','cols'=>'36','class' =>'noBg form-control'));?>
 								</span>
 							</span></td>
 						</tr>
@@ -444,10 +436,10 @@ echo $form->select("Link.survey",$option,$rsselected,array('id' => 'survey','cla
 <label class="boldlabel">Status<span
 style="color: red;">*</span>
 </label></td>
-<td><span class="txtArea_top"> <span class="txtArea_bot"> <?php 
+<td><span class="txtArea-top"> <span class="txtArea-bot"> <?php 
 $sselected = $oldData['Link']['status'];
 $option = array('a'=>'Active', 'd'=>'Deactive');
-echo $form->select("Link.status",$option,$sselected,array('id' => 'status','class'=>'multilist'),array('0'=>'--Select--')); ?>
+echo $form->select("Link.status",$option,$sselected,array('id' => 'status','class'=>'multi-list form-control'),array('0'=>'--Select--')); ?>
 </span>
 </span> </td>
 </tr>		

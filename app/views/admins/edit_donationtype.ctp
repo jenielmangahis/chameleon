@@ -18,42 +18,32 @@ $backUrl = $base_url.'admins/typelist';
 ?>
 
 <div class="container"> 
-<div class="titlCont">
-<div class="myclass">
-<div align="center" class="slider" id="toppanel" style="height: 20px; top:13px;right: -50px;width:545px !important; text-align:right">
-<?php echo $form->create("admins", array("action" => $editLink,'name' => 'add_donationtype', 'id' => "add_donationtype", 'class' => 'adduser'));
-     ?>
-<button type="submit" value="Submit" class="sendBut" name="data[Action][redirectpage]">
- <?php e($html->image('save.png', array('alt' => 'Save'))); ?></button>
-<button type="submit" value="Submit" class="sendBut" name="data[Action][noredirection]">
- <?php e($html->image('apply.png', array('alt' => 'Apply'))); ?></button>
-<button type="button" id="saveForm" class="sendBut"  ONCLICK="javascript:(window.location='<?php echo $backUrl ?>')">
- <?php e($html->image('cancle.png', array('alt' => 'Cancle'))); ?>
-</button>
-	<?php  echo $this->renderElement('new_slider');  ?>
+	<div class="titlCont">
+		<div class="slider-centerpage clearfix">
+        	<div class="center-Page col-sm-6">
+                <h2>Edit Donation type</h2>
+            </div>
+            <div class="slider-dashboard col-sm-6">
+            	<div class="icon-container">
+                	<?php echo $form->create("admins", array("action" => $editLink,'name' => 'add_donationtype', 'id' => "add_donationtype", 'class' => 'adduser'));
+					 ?>
+					<button type="submit" value="Submit" class="sendBut" name="data[Action][redirectpage]">
+					<?php e($html->image('save.png', array('alt' => 'Save'))); ?></button>
+					<button type="submit" value="Submit" class="sendBut" name="data[Action][noredirection]">
+					<?php e($html->image('apply.png', array('alt' => 'Apply'))); ?></button>
+					<button type="button" id="saveForm" class="sendBut"  ONCLICK="javascript:(window.location='<?php echo $backUrl ?>')">
+					<?php e($html->image('cancle.png', array('alt' => 'Cancle'))); ?>
+					</button>
+					<?php  echo $this->renderElement('new_slider');  ?>
+                </div>
+            </div>
+        </div>
+        
+        
+<?php $this->mail_tasks="tabSelt"; ?> 
 </div>
 
-<span class="titlTxt">Edit Donation type</span>
-<div class="topTabs" style="height:25px;">
-<?php /*?><ul class="dropdown">
-<li>
-<button type="submit" value="Submit" class="button" name="data[Action][redirectpage]"> <span> Save </span>	</button>
-</li>
-<li>
-<button type="submit" value="Submit" class="button" name="data[Action][noredirection]"><span>Apply</span> </button>
-</li>
-<li>
-<button type="button" id="saveForm" class="button"  ONCLICK="javascript:(window.location='<?php echo $backUrl ?>')"><span> Cancel</span>
-</button>
-</li>
 
-</ul><?php */?>
-</div> 
-<div class="clear"></div>
-<?php $this->mail_tasks="tabSelt"; ?>   
-</div>
-
-</div>
 <div class="midPadd" id="addcmp">
 
 <?php if($session->check('Message.flash')) { echo $this->renderElement('error_message'); } ?>          
@@ -62,7 +52,7 @@ $backUrl = $base_url.'admins/typelist';
 
 <div id="loading" style="display: none;"><img src="/img/ajax-pageloader.gif" alt="Imagecoins:pageloader" /></div>
 <div id="addcomm">
-<table cellspacing="0" cellpadding="0" align="left" width="100%">
+<table cellspacing="0" cellpadding="0" align="left" width="90%">
 	<tbody>
 		<tr>
 			<td width="50%" valign="top">
@@ -74,13 +64,13 @@ $backUrl = $base_url.'admins/typelist';
 <tr>
 	<td align="right">
 		<input type="hidden" id="current_domain" name="current_domain" value="">
-		<?php echo $form->input("Link.project_id", array('id' => 'project_id', 'type'=>'hidden', 'value'=>'1' ,'div' => false, 'label' => '','style' =>'width:200px;',"class"=>"inpt_txt_fld","maxlength" => "250"));?>
+		<?php echo $form->input("Link.project_id", array('id' => 'project_id', 'type'=>'hidden', 'value'=>'1' ,'div' => false, 'label' => '','style' =>'width:200px;',"class"=>"inpt-txt-fld form-control","maxlength" => "250"));?>
 		
 		<label class="boldlabel">Type <span style="color: red;">*</span>
 		</label>
 	</td>
 	<td>
-	<span class="intpSpan"><?php echo $form->input("DonationType.type", array('id' => 'type', 'div' => false, 'label' => '','style' =>'width:200px;',"class"=>"inpt_txt_fld","maxlength" => "250"));?>
+	<span class="intp-Span"><?php echo $form->input("DonationType.type", array('id' => 'type', 'div' => false, 'label' => '','style' =>'width:100%;',"class"=>"inpt-txt-fld form-control","maxlength" => "250"));?>
 	</span>
 	</td>
 </tr>
@@ -95,8 +85,8 @@ $backUrl = $base_url.'admins/typelist';
 							<td align="right"><label class="boldlabel">Note<span
 									style="color: red;">*</span>
 							</label></td>
-							<td><span class="intpSpan" style="vertical-align: top"> 
-							<?php echo $form->input("DonationType.note", array('id' => 'note', 'div' => false, 'label' => '','style' =>'width:231px;',"class" => "inpt_txt_fld"));?>
+							<td><span class="intp-Span" style="vertical-align: top"> 
+							<?php echo $form->input("DonationType.note", array('id' => 'note', 'div' => false, 'label' => '','style' =>'width:100%;',"class" => "inpt-txt-fld form-control"));?>
 							</span>
 							</td>
 						</tr>

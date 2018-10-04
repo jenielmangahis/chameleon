@@ -27,53 +27,46 @@
 	echo $javascript->link('ZeroClipboard');
 ?>   
 <div class="titlCont">
-<div class="myclass">
- <div class="slider" id="toppanel" style="height: 20px; top:13px;right: -50px;width:545px !important; text-align:right;">
-<?php echo $form->create("Survey", array("action" => "add_survey", "onsubmit"=>"return validate_survey();" ));
-  echo $form->hidden("Survey.id"); ?>
-<button type="submit" value="Submit" class="sendBut" name="data[Action][redirectpage]"><?php e($html->image('save.png')); ?></button>
-<button type="submit" value="Submit" class="sendBut" name="data[Action][noredirection]"><?php e($html->image('apply.png')); ?></button>
-<button type="button" id="saveForm" class="sendBut"  ONCLICK="javascript:(window.location='<?php echo $base_url ?>')"><?php e($html->image('cancle.png')); ?></button>
-<?php echo $this->renderElement('new_slider');   ?>
+	<div class="slider-centerpage clearfix">
+    	<div class="center-Page col-sm-4">
+            <h2>Survey Add/Edit</h2>
         </div>
-        <span class="titlTxt">
-            Survey Add/Edit
-        </span>
-       
-        <div class="topTabs" style="height:25px;">
-
+        <div class="slider-dashboard col-sm-8">
+        	<div class="icon-container">
+            	<?php echo $form->create("Survey", array("action" => "add_survey", "onsubmit"=>"return validate_survey();" ));
+				echo $form->hidden("Survey.id"); ?>
+				<button type="submit" value="Submit" class="sendBut" name="data[Action][redirectpage]"><?php e($html->image('save.png')); ?></button>
+				<button type="submit" value="Submit" class="sendBut" name="data[Action][noredirection]"><?php e($html->image('apply.png')); ?></button>
+				<button type="button" id="saveForm" class="sendBut"  ONCLICK="javascript:(window.location='<?php echo $base_url ?>')"><?php e($html->image('cancle.png')); ?></button>
+				<?php echo $this->renderElement('new_slider');   ?>
+            </div>
         </div>
-		<?php    $this->loginarea="surveys";    $this->subtabsel="survey_history";
-             echo $this->renderElement('survey_submenus');  ?>
     </div>
+
 </div>
 <!--titlCont1 ends here-->
 
+<div class="clearfix nav-submenu-container">
+	<div class="midCont submenu-Cont">
+		<?php    $this->loginarea="surveys";    $this->subtabsel="survey_history";
+             echo $this->renderElement('survey_submenus');  ?>  
+    </div>
+</div> 
+
 <!--inner-container starts here-->
-<div class="centerPage">
-        <div class="">
-            <div class="top-bar" style="border-left:0px;"></div>
-            <div class="">	
-                <?php if($session->check('Message.flash')) { echo $this->renderElement('error_message'); } ?>       
-                <div class="clear"></div>
-            </div>
-                <div style="border-left: 0px none; text-align: right; color: rgb(255, 255, 255);" class="top-bar" id="addcnttab"></div>
-                <table  cellpadding="5" cellspacing="8" align="center" width="70%" >
-                    <tbody>
-                        <tr>
-                            <td colspan="6"><?php if($session->check('Message.flash')){ $session->flash(); } ?></td>
-                        </tr>
-                        <tr>
-                           <td colspan="6" width="100%"> 
-                            <table  width="100%">
+<div class="midCont">
+        <div class="clearfix add_survery">
+        	<div class="frmbox">
+            	<table  width="90%">
+                	<tbody>
                             	<tr>
                                 	<td width="16%" style="padding-bottom: 12px;">
                                 		<label class="boldlabel">Survey Name<span style="color: red;">*</span>
                                 		</label>
                                 	</td>
                                     <td width="24%" align="left">
-                                    	<span class="intpSpan">
-                                    		<?php echo $form->input("Survey.survey_name", array("class" => "inpt_txt_fld","maxlength" => "200",'label'=>false));?>
+                                    	<span class="intp-Span">
+                                    		<?php echo $form->input("Survey.survey_name", array("class" => "inpt-txt-fld form-control","maxlength" => "200",'label'=>false));?>
                                     	</span>
                                     </td> 
                                     
@@ -81,34 +74,44 @@
                                    <td width="30%" align="right" valign="top" style="padding-top: 2px;">
                                     	<label class="boldlabel">Created Date </label>
                                     </td>  
-                                    <td width="30%" align="left" valign="top">
-                                        <span class="intpSpan">
-                                        	<?php echo $form->input("Survey.createddate", array("class" => "inpt_txt_fld","maxlength" => "200", 'value'=>date("m-d-Y", strtotime($this->data['Survey']['created'])),'label'=>false));?>
+                                    <td align="left" valign="top">
+                                        <span class="intp-Span">
+                                        	<?php echo $form->input("Survey.createddate", array("class" => "inpt-txt-fld form-control","maxlength" => "200", 'value'=>date("m-d-Y", strtotime($this->data['Survey']['created'])),'label'=>false));?>
                                        	</span>
                                     </td> 
                                    <?php }else{ ?>
-                                       <td width="60%"  colspan="2"  >&nbsp;</td>
+                                       
                                   <?php } ?>   
                                 </tr> 
+                                <tr>
+                                    <td colspan="6"><?php if($session->check('Message.flash')){ $session->flash(); } ?></td>
+                                </tr>
+                                <tr valign="top" >
+                                    <td  colspan="4">
+                                        <label>Background Color</label>
+                                        # <span class="intp-Span"><?php echo $form->input('Survey.bgcolor',array('class'=>'inpt-txt-fld1 form-control','div'=>false,'label'=>false,'value'=>'FFFFFF')); ?></span>
+                                        <label >Text Color</label>
+                                        # <span class="intp-Span"><?php echo $form->input('Survey.textcolor',array('class'=>'inpt-txt-fld1 form-control','div'=>false,'label'=>false,'value'=>'000000')); ?></span>
+                                    </td>
+                                    
+                                </tr>
+                              
+                            </tbody>    
 			 				</table>
-           				</td>
-        			</tr>
-					<tr valign="top" >
-						<td  colspan="4">
-							&nbsp;&nbsp;<label>Background Color</label>
-							# <span class="intpSpan"><?php echo $form->input('Survey.bgcolor',array('class'=>'inpt_txt_fld1','div'=>false,'label'=>false,'value'=>'FFFFFF')); ?></span> &nbsp;&nbsp;
-							<label >Text Color</label>
-							# <span class="intpSpan"><?php echo $form->input('Survey.textcolor',array('class'=>'inpt_txt_fld1','div'=>false,'label'=>false,'value'=>'000000')); ?></span>
-						</td>
-						<td colspan="2">&nbsp;</td>
-					</tr>  
+            </div>
+        
+            <div class="frmbox2">	
+                <?php if($session->check('Message.flash')) { echo $this->renderElement('error_message'); } ?>       
+                <div class="clear"></div>
+                <table  cellpadding="5" cellspacing="8" align="center">
+                    <tbody>
                     <tr>
                          <td width="1%"  align="left" valign="top"> <label class="boldlabel">Include</label></td>
                          <td width="1%"  align="left" valign="top"> <label class="boldlabel">Required</label></td>  
-                         <td width="20%" align="left" valign="top">&nbsp; </td>
+                         <td  align="left" valign="top">&nbsp; </td>
                          <td width="1%" align="left" valign="top"> <label class="boldlabel">Text</label></span></td>
                          <td width="1%" align="left" valign="top"> <label class="boldlabel">List</label></span></td>
-                         <td width="20%" align="left" valign="top">&nbsp; </td>  
+                         <td  align="left" valign="top">&nbsp; </td>  
                     </tr>
                     <?php for($i=0; $i<6 ; $i++ ){                   	?>
                     <tr  valign="top">
@@ -124,7 +127,7 @@
                             </td>       
                             
 							
-							<td  align="left" ><span class="intpSpan"><?php echo $form->input('SurveyQuestion.'.$i.'.question', array('class'=>'inpt_txt_fld','div'=>false,'label'=>false,"maxlength" => "200")); ?></span>
+							<td  align="left" ><span class="intp-Span"><?php echo $form->input('SurveyQuestion.'.$i.'.question', array('class'=>'inpt-txt-fld form-control','div'=>false,'label'=>false,"maxlength" => "200")); ?></span>
                             	<small>(Please enter label)</small>    
                             </td>
 							
@@ -140,9 +143,9 @@
                              </td>
                             <td  align="left" >
                              <div id="list2_opts" > 
-                                 <span class="txtArea_top">
-                                    <span class="newtxtArea_bot">
-                                    	<?php echo $form->input('SurveyQuestion.'.$i.'.answer_option',  array('div' => false, 'label' => '','rows'=>'3', "style" => "width:228px; margin-top:-4px;","class" => "noBg"));?>
+                                 <span class="txtArea-top">
+                                    <span class="newtxtArea-bot">
+                                    	<?php echo $form->input('SurveyQuestion.'.$i.'.answer_option',  array('div' => false, 'label' => '','rows'=>'3', "style" => "width:100%;margin-top:0px;","class" => "noBg form-control"));?>
                                 	</span>
                                  </span>
                               </div>    
@@ -164,13 +167,13 @@
 							<tr>
 								<td><label class="boldlabel">Email Template</label>
 								</td>
-								<td><span class="txtArea_top"> <span class="txtArea_bot"> <?php  echo $form->select("Survey.template",$templatedropdown, $sel_template, array('div' => false, 'label' => '','style' =>'background: none repeat scroll 0% 0% transparent; margin-bottom: 6px; width:230px;',"class" =>"","maxlength" => "250"),"---Select---");
+								<td><span class="txtArea-top"> <span class="txtArea-bot"> <?php  echo $form->select("Survey.template",$templatedropdown, $sel_template, array('div' => false, 'label' => '','style' =>' margin-bottom: 6px; width:100%;',"class" =>"form-control","maxlength" => "250"),"---Select---");
 								?></span>
 								</span>
 								</td>
 								<td><label class="boldlabel">Webpages</label>
 								</td>
-								<td><span class="txtArea_top"> <span class="txtArea_bot"> <?php  echo $form->select("Survey.webpage",$webpages, $sel_webpage, array('div' => false, 'label' => '','style' =>'background: none repeat scroll 0% 0% transparent; margin-bottom: 6px; width:230px;',"class" =>"","maxlength" => "250"),"---Select---");
+								<td><span class="txtArea-top"> <span class="txtArea-bot"> <?php  echo $form->select("Survey.webpage",$webpages, $sel_webpage, array('div' => false, 'label' => '','style' =>' margin-bottom: 6px; width:100%;',"class" =>"form-control","maxlength" => "250"),"---Select---");
 								?></span>
 								</span>
 								</td>
@@ -183,13 +186,13 @@
 						<label class="boldlabel">Email Responder</label>
 					</td>
 					<td align="left" colspan="4" valign="top">
-						<span class="txtArea_top">
-							<span class="txtArea_bot">
-								<?php  echo $form->select("Survey.responder",$respondaremail, $sel_responder, array('div' => false, 'label' => '','style' =>'background: none repeat scroll 0% 0% transparent; margin-bottom: 6px; width:230px;',"class" =>"","maxlength" => "250"),"---Select---");?>
+						<span class="txtArea-top">
+							<span class="txtArea-bot">
+								<?php  echo $form->select("Survey.responder",$respondaremail, $sel_responder, array('div' => false, 'label' => '','style' =>' margin-bottom: 6px; width:100%;',"class" =>"form-control","maxlength" => "250"),"---Select---");?>
 							</span>
 						</span> &nbsp;
-						<span class="btnLft">
-                             <input type="button" onclick="addEmailTempforResponse();" name="Add" value="Add" class="btnRht">
+						<span class="btn-Lft">
+                             <input type="button" onclick="addEmailTempforResponse();" name="Add" value="Add" class="btn-Rht btn btn-primary btn-sm">
                              </span>
 					</td>
 				</tr>
@@ -199,9 +202,9 @@
 					</td>
 					<td align="left" colspan="4" valign="top">
 						<div>
-							<span class="txtArea_topform">
-								<span class="txtArea_botform">
-								<textarea name="data[Survey][description]" style="background: none repeat scroll 0% 0% transparent; width: 420px;" class="socialtxtArea1" rows="5"><?php echo (isset($this->data['Survey']['description']))? $this->data['Survey']['description'] :''; ?></textarea>
+							<span class="txtArea-topform">
+								<span class="txtArea-botform">
+								<textarea name="data[Survey][description]" style="width: 100%;" class="form-control" rows="5"><?php echo (isset($this->data['Survey']['description']))? $this->data['Survey']['description'] :''; ?></textarea>
 							</span>
 							</span>
 						</div>
@@ -219,13 +222,13 @@
                                     <tbody><tr>
                                         <td width="66%">  
                                         <div>
-                                        <span class="txtArea_topform">
-                                            <span class="txtArea_botform">
-                                                <textarea id="codeval" style="background: none repeat scroll 0% 0% transparent; width: 420px;" class="socialtxtArea1" cols="2000" rows="5"></textarea>
+                                        <span class="txtArea-topform">
+                                            <span class="txtArea-botform">
+                                                <textarea id="codeval" style="width: 100%;" class="form-control" cols="2000" rows="5"></textarea>
                                                 </span></span></div></td>
                                         <td width="34%"> <div style="padding-left: 5px;">
                                         <ul style="list-style:none;">
-                                        <li><button type="button" value="Getsource" id="getiframesource" class="button" name="Getsource" ><span>Get iFrame Source</span></button></li>
+                                        <li><button type="button" value="Getsource" id="getiframesource" class="btn btn-primary btn-sm" name="Getsource" ><span>Get iFrame Source</span></button></li>
                                     <li><span>&nbsp;</span></li>
                                         <li id="d_clip_container"><button type="button" id="d_clip_button" value="Copy" class="newblue" name="copyb" onclick="this.form.codeval.focus();this.form.codeval.select();"><span>Copy</span></button></li>
                                         </ul>
@@ -238,7 +241,11 @@
                         <?php }?>
                         
                     </tbody>
-                </table>                                <!-- ADD Sub Admin  FORM EOF -->
+                </table>
+            </div>
+            
+                <div class="clearfix" style="border-left: 0px none; text-align: right; color: rgb(255, 255, 255);" class="top-bar clearfix" id="addcnttab"></div>
+                                                <!-- ADD Sub Admin  FORM EOF -->
 
         </div>
         

@@ -477,57 +477,48 @@ function create_csv()
     </script>
 
 <div class="titlCont">
-	<div class="centerPage">
-		<div align="center" class="slider" id="toppanel" style="height: 20px; top:13px;right:-50px;width:545px !important; text-align:right;">
-<?php echo $form->create("Coupon", array("action" => "addcoupon",'type' => 'file', "onsubmit"=>"return validateoffer('$act');"));
-	echo $form->hidden("Coupon.id");
-?>
-<button type="submit" value="Submit" class="sendBut" name="data[Action][redirectpage]">
-<?php e($html->image('save.png')); ?></button>
-<button type="submit" value="Submit" class="sendBut" name="data[Action][noredirection]">
-<?php e($html->image('apply.png')); ?></button>
-<button type="button" id="saveForm" class="sendBut" onclick="javascript:(window.location='<?php echo $backUrl ?>')"><?php e($html->image('cancle.png')); ?>
-</button>
-<?php  echo $this->renderElement('new_slider');  ?>	
-</div>	
-		<span class="titlTxt">Coupon Add/Edit</span> <input type="hidden"
-			id="current_domain" name="current_domain"
-			value="<?php echo $current_domain; ?>">
-		<?php if(!empty($params)) echo $form->hidden("params", array('id' => 'params','value'=>"$params"));?>
-		<div class="topTabs" style="height:25px;">
-			<?php /*?><ul>
-				<li><button type="submit" value="Submit" class="button"
-						name="data[Action][redirectpage]">
-						<span>Save</span>
-					</button></li>
-				<li><button type="submit" value="Submit" class="button"
-						name="data[Action][noredirection]">
-						<span>Apply</span>
-					</button></li>
-				<li><button type="button" id="saveForm" class="button"
-						onclick="javascript:(window.location='<?php echo $backUrl ?>')">
-						<span> Cancel</span>
-					</button></li>
-			</ul><?php */?>
-		</div>
-		<?php    $this->loginarea="coupons";    $this->subtabsel="couponlist";
-             echo $this->renderElement('coupons_submenus');  ?>
-	</div>
+	<div class="slider-centerpage clearfix">
+    	<div class="center-Page col-sm-6">
+            <h2>Coupon Add/Edit</h2>
+        </div>
+        <div class="slider-dashboard col-sm-6">
+        	<div class="icon-container">
+            	<?php echo $form->create("Coupon", array("action" => "addcoupon",'type' => 'file', "onsubmit"=>"return validateoffer('$act');"));
+				echo $form->hidden("Coupon.id");
+				?>
+				<button type="submit" value="Submit" class="sendBut" name="data[Action][redirectpage]">
+				<?php e($html->image('save.png')); ?></button>
+				<button type="submit" value="Submit" class="sendBut" name="data[Action][noredirection]">
+				<?php e($html->image('apply.png')); ?></button>
+				<button type="button" id="saveForm" class="sendBut" onclick="javascript:(window.location='<?php echo $backUrl ?>')"><?php e($html->image('cancle.png')); ?>
+				</button>
+				<?php  echo $this->renderElement('new_slider');  ?>	
+            </div>
+                <input type="hidden"
+                id="current_domain" name="current_domain"
+                value="<?php echo $current_domain; ?>">
+            <?php if(!empty($params)) echo $form->hidden("params", array('id' => 'params','value'=>"$params"));?>
+        </div>
+    </div>
+
 </div>
 
-<div></div>
 <!--rightpanel ends here-->
 
+<div class="clearfix nav-submenu-container">
+	<div class="midCont submenu-Cont">
+		<?php    $this->loginarea="coupons";    $this->subtabsel="couponlist";
+             echo $this->renderElement('coupons_submenus');  ?>
+    </div>
+</div> 
+
 <!--inner-container starts here-->
-<div class="centerPage"></div>
 <!-- ADD Sub Admin FORM BOF -->
 <!-- ADD FIELD BOF -->
 <br>
-<div
-	style="border-left: 0px none; text-align: right; padding-top: 5px; color: rgb(255, 255, 255);"
-	class="top-bar"></div>
-<div
-	class="" style="padding-left:0px">
+<!--<div style="border-left: 0px none; text-align: right; padding-top: 5px; color: rgb(255, 255, 255);" class="top-bar"></div>-->
+
+<div class="midCont clearfix">
 	<?php if($session->check('Message.flash')){ ?>
 	<div id="blck">
 		<div class="msgBoxTopLft">
@@ -549,10 +540,9 @@ function create_csv()
 		</div>
 	</div>
 	<?php }?>
-	<table width="80%">
-		<tr>
-			<td width="50%" valign="top">
-				<table cellspacing="5" cellpadding="0">
+    
+    <div class="frmbox">
+    	<table cellspacing="5" cellpadding="0">
 
 					<tr>
 						<td colspan="5"><?php if($session->check('Message.flash')){ 
@@ -571,7 +561,7 @@ function create_csv()
 								</label>
 							</div>
 						</td>
-						<td><span class="intpSpan"><?php echo $form->input("title", array('id' => 'offer_title','div' => false, 'label' => '',"class" => "inpt_txt_fld","maxlength" => "150"));?>
+						<td><span class="intp-Span"><?php echo $form->input("title", array('id' => 'offer_title','div' => false, 'label' => '',"class" => "inpt-txt-fld form-control","maxlength" => "150"));?>
 						</span></td>
 					</tr>
 
@@ -583,8 +573,8 @@ function create_csv()
 							</div>
 
 						</td>
-						<td><span class="txtArea_top"> <span class="txtArea_bot"> <?php 
-						echo $form->select("type",$coupontypedropdown,$selectedcoupontype, array('div' => false, 'label' => '','style' =>'background: none repeat scroll 0% 0% transparent; margin-bottom: 6px; width:230px;',"class" =>"","maxlength" => "250"),"---Select---");
+						<td><span class="txtArea-top"> <span class="txtArea-bot"> <?php 
+						echo $form->select("type",$coupontypedropdown,$selectedcoupontype, array('div' => false, 'label' => '','style' =>' margin-bottom: 6px; width:100%;',"class" =>"form-control","maxlength" => "250"),"---Select---");
 						?>
 							</span>
 						</span></td>
@@ -601,11 +591,11 @@ function create_csv()
 						<td>
 							<table align="center" style="vertical-align: middle;">
 								<tr>
-									<td><span class="intpSpan"> <?php echo $form->input("coupons", array('div' => false, 'label' => '',"class" => "inpt_txt_fld_small","maxlength" => "150"));?>
+									<td><span class="intp-Span"> <?php echo $form->input("coupons", array('div' => false, 'label' => '',"class" => "inpt-txt-fld form-control","maxlength" => "150"));?>
 									</span></td>
 									<td style="vertical-align:top"><label class="boldlabel">&nbsp;#Start</label>
 									</td>
-									<td><span class="intpSpan"> <?php echo $form->input("start", array('id' => 'coupon_value', 'div' => false, 'label' => '',"class" => "inpt_txt_fld_small","maxlength" => "150"));?>
+									<td><span class="intp-Span"> <?php echo $form->input("start", array('id' => 'coupon_value', 'div' => false, 'label' => '',"class" => "inpt-txt-fld form-control","maxlength" => "150"));?>
 									</span></td>
 								</tr>
 							</table>
@@ -622,11 +612,11 @@ function create_csv()
 						<td>
 							<table align="center" style="vertical-align: middle;">
 								<tr>
-									<td><span class="intpSpan"> <?php echo $form->input("coupon_cost", array('id' => 'coupon_cost', 'div' => false, 'label' => '',"class" => "inpt_txt_fld_small","maxlength" => "150"));?>
+									<td><span class="intp-Span"> <?php echo $form->input("coupon_cost", array('id' => 'coupon_cost', 'div' => false, 'label' => '',"class" => "inpt-txt-fld form-control","maxlength" => "150"));?>
 									</span></td>
 									<td><label class="boldlabel" style="padding-right:1px;vertical-align: middle;">&nbsp;$ Value<span style="color: red;">*</span>
 									</label></td>
-									<td><span class="intpSpan"> <?php echo $form->input("coupon_value", array('id' => 'coupon_value', 'div' => false, 'label' => '',"class" => "inpt_txt_fld_small","maxlength" => "150"));?>
+									<td><span class="intp-Span"> <?php echo $form->input("coupon_value", array('id' => 'coupon_value', 'div' => false, 'label' => '',"class" => "inpt-txt-fld form-control","maxlength" => "150"));?>
 									</span></td>
 								</tr>
 							</table>
@@ -642,11 +632,11 @@ function create_csv()
 						<td>
 							<table align="center" style="vertical-align: middle;">
 								<tr>
-									<td><span class="intpSpan"><?php echo $form->input("percent_discount", array('id' => 'percent_discount', 'div' => false, 'label' => '',"class" => "inpt_txt_fld_small","maxlength" => "150"));?>
+									<td><span class="intp-Span"><?php echo $form->input("percent_discount", array('id' => 'percent_discount', 'div' => false, 'label' => '',"class" => "inpt-txt-fld form-control","maxlength" => "150"));?>
 									</span></td>
 
 									<td><label class="boldlabel" style="vertical-align: middle;">&nbsp;OR&nbsp;$&nbsp;</label></td>
-									<td><span class="intpSpan"><?php echo $form->input("fixed_discount", array('id' => 'fixed_discount', 'div' => false, 'label' => '',"class" => "inpt_txt_fld_small","maxlength" => "150"));?>
+									<td><span class="intp-Span"><?php echo $form->input("fixed_discount", array('id' => 'fixed_discount', 'div' => false, 'label' => '',"class" => "inpt-txt-fld form-control","maxlength" => "150"));?>
 									</span></td>
 								</tr>
 							</table>
@@ -659,7 +649,7 @@ function create_csv()
 								<label class="boldlabel">Minimum Purchase</label>
 							</div>
 						</td>
-						<td><span class="intpSpan"><?php echo $form->input("minimum_purchase", array('id' => 'minimum_purchase', 'div' => false, 'label' => '',"class" => "inpt_txt_fld","maxlength" => "150"));?>
+						<td><span class="intp-Span"><?php echo $form->input("minimum_purchase", array('id' => 'minimum_purchase', 'div' => false, 'label' => '',"class" => "inpt-txt-fld form-control","maxlength" => "150"));?>
 						</span></td>
 					</tr>
 
@@ -671,8 +661,8 @@ function create_csv()
 								<label class="boldlabel">Recur Pattern </label>
 							</div>
 						</td>
-						<td><span class="txtArea_top"> <span class="txtArea_bot"> <span
-									id="countrydiv"> <?php echo $form->select("recur_pattern",$recur_pattern,null,array('id' => 'recur_pattern',"class"=>"multilist"),"--Select--"); ?>
+						<td><span class="txtArea-top"> <span class="txtArea-bot"> <span
+									id="countrydiv"> <?php echo $form->select("recur_pattern",$recur_pattern,null,array('id' => 'recur_pattern',"class"=>"multi-list form-control"),"--Select--"); ?>
 								</span>
 							</span>
 						</span></td>
@@ -686,7 +676,7 @@ function create_csv()
 							</div>
 
 						</td>
-						<td><span class="intpSpan middle"><?php echo $form->text("starttime", array('id' => 'starttime', 'div' => false, 'label' => '',"class" => "inpt_txt_fld","maxlength" => "200",'readonly'=>'readonly'));?>
+						<td><span class="intp-Span middle"><?php echo $form->text("starttime", array('id' => 'starttime', 'div' => false, 'label' => '',"class" => "inpt-txt-fld form-control","maxlength" => "200",'readonly'=>'readonly'));?>
 						</span></td>
 					</tr>
 
@@ -701,7 +691,7 @@ function create_csv()
 						</td>
 						<td>
 							<div id="end_date_field" style="display: none;">
-								<span class="intpSpan middle"><?php echo $form->text("endtime", array('id' => 'endtime', 'div' => false, 'label' => '',"class" => "inpt_txt_fld","maxlength" => "200",'readonly'=>'readonly'));?>
+								<span class="intp-Span middle"><?php echo $form->text("endtime", array('id' => 'endtime', 'div' => false, 'label' => '',"class" => "inpt-txt-fld form-control","maxlength" => "200",'readonly'=>'readonly'));?>
 								</span>
 							</div>
 						</td>
@@ -986,7 +976,7 @@ echo $form->input("monthly_weekof_noof_months", array('id' => 'monthly_weekof_no
 									name="data[Coupon][coupon_end]"
 									<?php echo (isset($end_by))?$end_by:'';?>> End by &nbsp; &nbsp;
 									<br /> <br />
-								<span class="intpSpan middle"><?php echo $form->text("end_by_date", array('id' => 'end_by_date', 'div' => false, 'label' => '',"class" => "inpt_txt_fld","maxlength" => "200",'readonly'=>'readonly','value'=>$end_by_date));?>
+								<span class="intp-Span middle"><?php echo $form->text("end_by_date", array('id' => 'end_by_date', 'div' => false, 'label' => '',"class" => "inpt-txt-fld form-control","maxlength" => "200",'readonly'=>'readonly','value'=>$end_by_date));?>
 								</span>
 
 							</div>
@@ -998,11 +988,11 @@ echo $form->input("monthly_weekof_noof_months", array('id' => 'monthly_weekof_no
 								<label class="boldlabel">Start Time </label>
 							</div>
 						</td>
-						<td><span class="txtArea_top"> <span class="txtArea_bot"> <select
-									id="stime" name="data[Coupon][stime]" class="noBg"
-									style="border: none; width: 230px; margin-bottom: 7px;">
+						<td><span class="txtArea-top"> <span class="txtArea-bot"> <select
+									id="stime" name="data[Coupon][stime]" class="noBg form-control"
+									style="width: 100%; margin-bottom: 7px;">
 										<?php echo $option_stime; ?>
-								</select> <?php //echo $form->select("stime",$timedropdown,$sel_stime,array('id' => 'country','class'=>'multilist',"---Select---"); ?>
+								</select> <?php //echo $form->select("stime",$timedropdown,$sel_stime,array('id' => 'country','class'=>'multi-list form-control',"---Select---"); ?>
 							</span>
 						</span></td>
 					</tr>
@@ -1012,11 +1002,11 @@ echo $form->input("monthly_weekof_noof_months", array('id' => 'monthly_weekof_no
 								<label class="boldlabel">End Time </label>
 							</div>
 						</td>
-						<td><span class="txtArea_top"> <span class="txtArea_bot"> <select
-									id="etime" name="data[Coupon][etime]" class="noBg"
-									style="border: none; width: 230px; margin-bottom: 7px;">
+						<td><span class="txtArea-top"> <span class="txtArea-bot"> <select
+									id="etime" name="data[Coupon][etime]" class="noBg form-control"
+									style="width: 100%; margin-bottom: 7px;">
 										<?php echo $option_etime; ?>
-								</select> <?php //echo $form->select("etime",$timedropdown,$sel_etime,array('id' => 'country','class'=>'multilist',"---Select---"); ?>
+								</select> <?php //echo $form->select("etime",$timedropdown,$sel_etime,array('id' => 'country','class'=>'multi-list form-control',"---Select---"); ?>
 							</span>
 						</span></td>
 					</tr>
@@ -1026,7 +1016,7 @@ echo $form->input("monthly_weekof_noof_months", array('id' => 'monthly_weekof_no
 								<label class="boldlabel">Auto Respond Email </label>
 							</div>
 						</td>
-						<td><span class="txtArea_top"> <span class="txtArea_bot"> <?php echo $form->select("auto_responder_email",$responderdropdown,$sel_responder,array('id' => 'auto_respond_offer_email','class'=>'multilist'),array(''=>'--Select--')); ?>
+						<td><span class="txtArea-top"> <span class="txtArea-bot"> <?php echo $form->select("auto_responder_email",$responderdropdown,$sel_responder,array('id' => 'auto_respond_offer_email','class'=>'multi-list form-control'),array(''=>'--Select--')); ?>
 							</span>
 						</span> <span class="btnLft"><input type="button" class="btnRht"
 								value="Add" name="Add" onclick="addEmailTempforAutoRespond();" />
@@ -1039,8 +1029,8 @@ echo $form->input("monthly_weekof_noof_months", array('id' => 'monthly_weekof_no
 								<label class="boldlabel">Inquiry Detail Page </label>
 							</div>
 						</td>
-						<td><span class="intpSpan">
-						<?php echo $form->input("coupon_detail_page", array('div' => false, 'label' => '','class' => 'inpt_txt_fld','maxlength' => '150')); ?>
+						<td><span class="intp-Span">
+						<?php echo $form->input("coupon_detail_page", array('div' => false, 'label' => '','class' => 'inpt-txt-fld form-control','maxlength' => '150')); ?>
 				
 						</span> </td>
 					</tr>
@@ -1052,8 +1042,8 @@ echo $form->input("monthly_weekof_noof_months", array('id' => 'monthly_weekof_no
 			</div>
 			</td>
 			 <td>
-				<span class="intpSpan">
-				<?php echo $form->input("inquiry_detail_page", array('div' => false, 'label' => '','class' => 'inpt_txt_fld','maxlength' => '150')); ?> </span>
+				<span class="intp-Span">
+				<?php echo $form->input("inquiry_detail_page", array('div' => false, 'label' => '','class' => 'inpt-txt-fld form-control','maxlength' => '150')); ?> </span>
 			</td>
           </tr>
 		
@@ -1064,8 +1054,8 @@ echo $form->input("monthly_weekof_noof_months", array('id' => 'monthly_weekof_no
 								<label class="boldlabel">Coupon Detail Page </label>
 							</div>
 						</td>
-						<td><span class="txtArea_top"> <span class="txtArea_bot"> <?php  
-				echo $form->select("coupon_detail_page",$webpages,$coupon_detail_page,array('class'=>'multilist'),array(''=>'--Select--')); ?>
+						<td><span class="txtArea-top"> <span class="txtArea-bot"> <?php  
+				echo $form->select("coupon_detail_page",$webpages,$coupon_detail_page,array('class'=>'multi-list form-control'),array(''=>'--Select--')); ?>
 							</span>
 						</span> </td>
 					</tr>
@@ -1076,17 +1066,15 @@ echo $form->input("monthly_weekof_noof_months", array('id' => 'monthly_weekof_no
 								<label class="boldlabel">Inquiry Detail Page </label>
 							</div>
 						</td>
-						<td><span class="txtArea_top"> <span class="txtArea_bot"> <?php  echo $form->select("inquiry_detail_page",$webpages,$inquiry_detail_page,array('class'=>'multilist'),array(''=>'--Select--')); ?>
+						<td><span class="txtArea-top"> <span class="txtArea-bot"> <?php  echo $form->select("inquiry_detail_page",$webpages,$inquiry_detail_page,array('class'=>'multi-list form-control'),array(''=>'--Select--')); ?>
 							</span>
 						</span></td>
 					</tr>
 	<?php } ?>	 	
 				</table>
-
-			</td>
-			<td width="50%" valign="top">
-
-				<table cellspacing="5" cellspacing="0">
+    </div>
+    <div class="frmbox2">
+    	<table cellspacing="5" cellspacing="0">
 					<tr>
 						<td>
 							<div class="updat">
@@ -1098,8 +1086,8 @@ echo $form->input("monthly_weekof_noof_months", array('id' => 'monthly_weekof_no
 
 
 							<div class="large">
-								<span class="txtArea_top"> <span class="newtxtArea_bot">
-										<div class="scrolldown" id="location"></div>
+								<span class="txtArea-top"> <span class="newtxtArea-bot">
+										<div class="scrolldown form-control" id="location"></div>
 								</span>
 								</span>
 							</div>
@@ -1113,7 +1101,7 @@ echo $form->input("monthly_weekof_noof_months", array('id' => 'monthly_weekof_no
 								<label class="boldlabel">Short Description </label>
 							</div>
 						</td>
-						<td><span class="txtArea_top"> <span class="txtArea_bot"><?php echo $form->textarea("short_description", array('div' => false, 'label' => '','cols' => '35', 'rows' => '4',"class" => "noBg",'style'=>'width:231px;'));?>
+						<td><span class="txtArea-top"> <span class="txtArea-bot"><?php echo $form->textarea("short_description", array('div' => false, 'label' => '','cols' => '35', 'rows' => '4',"class" => "noBg form-control",'style'=>'width:231px;'));?>
 							</span>
 						</span></td>
 					</tr>
@@ -1124,7 +1112,7 @@ echo $form->input("monthly_weekof_noof_months", array('id' => 'monthly_weekof_no
 								<label class="boldlabel">Meta Description </label>
 							</div>
 						</td>
-						<td><span class="txtArea_top"> <span class="txtArea_bot"><?php echo $form->textarea("meta_description", array('id' => 'meta_description', 'div' => false, 'label' => '','cols' => '35', 'rows' => '4',"class" => "noBg",'style'=>'width:231px;'));?>
+						<td><span class="txtArea-top"> <span class="txtArea-bot"><?php echo $form->textarea("meta_description", array('id' => 'meta_description', 'div' => false, 'label' => '','cols' => '35', 'rows' => '4',"class" => "noBg form-control",'style'=>'width:231px;'));?>
 							</span>
 						</span>
 						</td>
@@ -1187,9 +1175,8 @@ echo $form->input("monthly_weekof_noof_months", array('id' => 'monthly_weekof_no
 						</td>
 					</tr>
 				</table>
-			</td>
-		</tr>
-	</table>
+    </div>
+    
 	<span style="text-align: left; padding-top: 5px;" class="top-bar"><b>Any
 			item with a "<span style="color: red;">*</span>" requires an entry.
 	</b><br /> </span>
@@ -1197,7 +1184,7 @@ echo $form->input("monthly_weekof_noof_months", array('id' => 'monthly_weekof_no
 	<!--inner-container ends here-->
 	<?php echo $form->end();?>
 </div>
-<div></div>
+
 
 <div class="clear"></div>
 <script type="text/javascript">

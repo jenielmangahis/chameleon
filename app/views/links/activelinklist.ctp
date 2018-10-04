@@ -136,34 +136,6 @@ function activatecontents(act,op)
                 </div>
                 
             </div>
-            <!--<div align="center" class="slider" id="toppanel" style="height: 20px; top:13px;right:-50px;width:545px !important; text-align:right;">			
-            </div>
-            <span class="titlTxt"> Active Link List </span>-->
-            <div class="topTabs" style="height:25px;">
-<?php /*?><ul class="dropdown">
-<li>
-<?php
-	e($html->link(
-		$html->tag('span', 'New'),
-		array('controller'=>'links','action'=>'addlink'),
-		array('escape' => false)
-		)
-	);
-?>
-
-</li>
-<li><a href="javascript:void(0)" class="tab2"><span>Actions</span></a>
-<ul class="sub_menu">
-                                 <!--li><a href="javascript:void(0)" onclick="return activatecontents('active','change');">Publish</a></li>
-                                 <li><a href="javascript:void(0)" onclick="return activatecontents('deactive','change');">Unpublish</a></li-->
-                                 <!--li><a href="javascript:void(0)">Copy</a></li-->
-                                 <li><a href="javascript:void(0)" onclick="return activatecontents('asd','del');">Trash</a></li>
-                     <li class="botCurv"></li>
-                        </ul>
-</li>
-<li><a href="javascript:void(0)" onclick="editcontent();" id="linkedit"><span>Edit</span></a></li>
-</ul><?php */?>
-</div>
         </div>
 
 </div>

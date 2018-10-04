@@ -153,30 +153,7 @@ $csvUrl = $base_url.'coupons/download_coupon_list/current';
                 </div>
                 
             </div>
-            <div class="topTabs" style="height:25px;">
-                <?php /*?><ul class="dropdown">
-                      <li>
-						<?php
-						e($html->link(
-									$html->tag('span', 'New'),
-									array('controller'=>'coupons','action'=>'addcoupon'),
-									array('escape' => false)
-									)
-						);
-						?>
-					  </li>   
-                      <li><a href="javascript:void(0)" class="tab2"><span>Actions</span></a>
-                    <ul class="sub_menu">
-                                           <!--<li><a href="javascript:void(0)" onclick="invitetooffer();" id="linkinvite">Invite</a></li>  -->
-                                            <li><a href="javascript:void(0)" onclick="return activatecontents('active','change');">Publish</a></li>
-                                            <li><a href="javascript:void(0)" onclick="return activatecontents('deactive','change');">Unpublish</a></li>
-                                         <li><a href="javascript:void(0)" onclick="return activatecontents('asd','del');">Trash</a></li>
-                                         <li class="botCurv"></li>
-                                    </ul>
-                    </li>
-                    <li><a href="javascript:void(0)" onclick="editoffer();" id="linkedit"><span>Edit</span></a></li>         
-                </ul><?php */?>
-            </div>
+            
         </div>
         
 </div>
