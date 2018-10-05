@@ -4295,6 +4295,8 @@ label { display:inline;}
 
 .add_survery .intp-Span .form-control { height:34px;}
 
+.intp-Span .ui-datepicker-trigger img { padding-bottom:10px;}
+
 /*--------------------------------RESPONSIVE AREA--------------------------*/
 
 
@@ -4357,6 +4359,7 @@ label { display:inline;}
 	.sa_addcontacts > tbody tr td.col-sm-6:last-child {  display:inline-block; padding-left:0; padding-right:0;}
 	
 	.row .box.col-xs-4 { width: auto; display:block; float:none;}
+	.frmbox fieldset { width:100%;}
 	
 	.fc-header td { white-space:unset !important;}
 	

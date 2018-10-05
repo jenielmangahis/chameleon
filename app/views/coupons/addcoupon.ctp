@@ -1018,7 +1018,7 @@ echo $form->input("monthly_weekof_noof_months", array('id' => 'monthly_weekof_no
 						</td>
 						<td><span class="txtArea-top"> <span class="txtArea-bot"> <?php echo $form->select("auto_responder_email",$responderdropdown,$sel_responder,array('id' => 'auto_respond_offer_email','class'=>'multi-list form-control'),array(''=>'--Select--')); ?>
 							</span>
-						</span> <span class="btnLft"><input type="button" class="btnRht"
+						</span> <span class="btn-Lft"><input type="button" class="btn-Rht btn btn-primary btn-sm"
 								value="Add" name="Add" onclick="addEmailTempforAutoRespond();" />
 						</span></td>
 					</tr>

@@ -72,84 +72,81 @@ $backUrl = $base_url_admin.'qrcodegenerate';
 
 <!--inner-container starts here-->
 
-<div class="midCont">
+<div class="midCont clearfix">
 
     <?php if($session->check('Message.flash')) { echo $this->renderElement('error_message'); } ?>
 
     <!-- top curv image starts -->
 
     <!-- ADD Sub Admin  FORM EOF -->
-    <div class="table-responsive" style="border: 0px solid #CFCFCF;  line-height: 25px; ">
+    <div class="clearfix" style="border: 0px solid #CFCFCF;  line-height: 25px; ">
         <?php echo $form->create("Admins", array("action" => "qrcodegenerate",'name' => 'qrcodegenerator', 'id' => "qrcodegenerator", 'onsubmit' => "javascript : return validateQRData(this.value);")); ?>  
-        <table class="table table-borderless"  style="border: 1px solid #CFCFCF;  line-height: 25px; " cellspacing="5"  width="100%" class="border_shadow">
-            <tr>
-                <td width="60%" style="border-right: 2px solid #CFCFCF;" valign="top">
+        <?php echo $form->end();?>
+        <div class="frmbox">
+        	<b>QR- Code Generator </b>
+
+            <input type="hidden" id="current_domain" value="<?php echo $current_domain;?>">
+            <input type="hidden" id="is_download" value="0">
+
+            <fieldset>
+                <legend style="font-weight: bold; padding: 0pt 5px;">Content type:</legend>
+                <p>
+                    <input type="hidden" name="qr_cnt_frmt" id="qr_cnt_frmt" value="" />
+
+                    <input  checked="checked"    type="radio" name="qr_cnt_type" id="qr_cnt_type_url" value="qr_cnt_type_url"  <?php if(isset($qr_cnt_type) &&  $qr_cnt_type=="qr_cnt_type_url") {?> checked="checked" <?php } ?>/>
+                    <label style="display: inline-block; width: auto; text-align: left; margin-bottom: 3px; margin-right: 10px;" for="qr_cnt_type_url">URL</label>
+
+                 <!--   <input  type="radio" name="qr_cnt_type" id="qr_cnt_type_text" value="qr_cnt_type_text"  />
+                    <label style="display: inline-block; width: auto; text-align: left; margin-bottom: 3px; margin-right: 10px;" for="qr_cnt_type_text">Text</label>
+
+
+                    <input  type="radio" name="qr_cnt_type" id="qr_cnt_type_tel" value="qr_cnt_type_tel" />
+                    <label style="display: inline-block; width: auto; text-align: left; margin-bottom: 3px; margin-right: 10px;" for="qr_cnt_type_tel">Phone Number</label>
+
+                    <input type="radio" name="qr_cnt_type" id="qr_cnt_type_sms" value="qr_cnt_type_sms" />
+                    <label style="display: inline-block; width: auto; text-align: left; margin-bottom: 3px; margin-right: 10px;" for="qr_cnt_type_sms">SMS</label> -->
+                </p>
+
+            </fieldset>
+            <fieldset>
+                <legend style="font-weight: bold; padding: 0pt 5px;">Content:</legend>
+
+                <p>
+                    <span id="fs">
+                        <label style="display: inline-block; width: 150px; text-align: left; margin-right: 16px;  margin-bottom: 10px; vertical-align: top;" for="qr_cnt">URL</label>    
+                        <span class="intp-Span"><input type="text" name="qr_cnt" id="qr_cnt" value="<?php if(isset($qr_cnt) &&  $qr_cnt!="") { echo $qr_cnt; }else{ echo "http://example.com";} ?>" class="inpt-txt-fld form-control" style="vertical-align: baseline;"  /> </span>
+                    </span>
+                </p>
+
+            </fieldset>
+            <p>&nbsp;</p> 
+            <p>
+                <label for="qr_size">Size</label>
                 
-                    <b>QR- Code Generator </b>
+                <?php if(!isset($qr_size) ||  $qr_size==""){$qr_size="L"; } ?>
+                <span class="txtArea-top clearfix" style="padding-top:10px;">
+                    <span class="txtArea-bot">
+                        <select style="border:1px solid #ddd; width: 235px; margin-top: -5px;" class="noBg form-control"  name="qr_size" id="qr_size">
 
-                    <input type="hidden" id="current_domain" value="<?php echo $current_domain;?>">
-                    <input type="hidden" id="is_download" value="0">
+                            <option   value="S"  <?php if(isset($qr_size) &&  $qr_size=="S") {?> selected="selected"  <?php } ?> >Small</option>
 
-                    <fieldset>
-                        <legend style="font-weight: bold; padding: 0pt 5px;">Content type:</legend>
-                        <p>
-                            <input type="hidden" name="qr_cnt_frmt" id="qr_cnt_frmt" value="" />
+                            <option   value="M" <?php if(isset($qr_size) &&  $qr_size=="M") {?> selected="selected"  <?php } ?> >Medium</option>
 
-                            <input  checked="checked"    type="radio" name="qr_cnt_type" id="qr_cnt_type_url" value="qr_cnt_type_url"  <?php if(isset($qr_cnt_type) &&  $qr_cnt_type=="qr_cnt_type_url") {?> checked="checked" <?php } ?>/>
-                            <label style="display: inline-block; width: auto; text-align: left; margin-bottom: 3px; margin-right: 10px;" for="qr_cnt_type_url">URL</label>
+                            <option   value="L" <?php if(isset($qr_size) &&  $qr_size=="L") {?> selected="selected"  <?php } ?> >Large</option>
 
-                         <!--   <input  type="radio" name="qr_cnt_type" id="qr_cnt_type_text" value="qr_cnt_type_text"  />
-                            <label style="display: inline-block; width: auto; text-align: left; margin-bottom: 3px; margin-right: 10px;" for="qr_cnt_type_text">Text</label>
+                            <option   value="XL" <?php if(isset($qr_size) &&  $qr_size=="XL") {?> selected="selected"  <?php } ?> >Extra Large</option>
 
-
-                            <input  type="radio" name="qr_cnt_type" id="qr_cnt_type_tel" value="qr_cnt_type_tel" />
-                            <label style="display: inline-block; width: auto; text-align: left; margin-bottom: 3px; margin-right: 10px;" for="qr_cnt_type_tel">Phone Number</label>
-
-                            <input type="radio" name="qr_cnt_type" id="qr_cnt_type_sms" value="qr_cnt_type_sms" />
-                            <label style="display: inline-block; width: auto; text-align: left; margin-bottom: 3px; margin-right: 10px;" for="qr_cnt_type_sms">SMS</label> -->
-                        </p>
-
-                    </fieldset>
-                    <fieldset>
-                        <legend style="font-weight: bold; padding: 0pt 5px;">Content:</legend>
-
-                        <p>
-                            <span id="fs">
-                                <label style="display: inline-block; width: 150px; text-align: left; margin-right: 16px;  margin-bottom: 10px; vertical-align: top;" for="qr_cnt">URL</label>    
-                                <span class="intp-Span"><input type="text" name="qr_cnt" id="qr_cnt" value="<?php if(isset($qr_cnt) &&  $qr_cnt!="") { echo $qr_cnt; }else{ echo "http://example.com";} ?>" class="inpt-txt-fld form-control" style="vertical-align: baseline;"  /> </span>
-                            </span>
-                        </p>
-
-                    </fieldset>
-                    <p>&nbsp;</p> 
-                    <p>
-                        <label  style="display: inline-block; width: 150px; text-align: left; margin-right: 16px; font-weight: bold; margin-bottom: 10px; vertical-align: top;" for="qr_size">Size</label>
-                        <?php if(!isset($qr_size) ||  $qr_size==""){$qr_size="L"; } ?>
-                        <span class="txtArea-top">
-                            <span class="txtArea-bot">
-                                <select style="border:1px solid #ddd; width: 235px; margin-top: -5px;" class="noBg form-control"  name="qr_size" id="qr_size">
-
-                                    <option   value="S"  <?php if(isset($qr_size) &&  $qr_size=="S") {?> selected="selected"  <?php } ?> >Small</option>
-
-                                    <option   value="M" <?php if(isset($qr_size) &&  $qr_size=="M") {?> selected="selected"  <?php } ?> >Medium</option>
-
-                                    <option   value="L" <?php if(isset($qr_size) &&  $qr_size=="L") {?> selected="selected"  <?php } ?> >Large</option>
-
-                                    <option   value="XL" <?php if(isset($qr_size) &&  $qr_size=="XL") {?> selected="selected"  <?php } ?> >Extra Large</option>
-
-                                </select>
-                            </span>
-                        </span>
-                    </p>
-                    <p>&nbsp;</p> 
-                    <p>
-                        <button name="getqrcode" id="getqrcode" class="btn btn-success btn-sm" value="getqrcode" type="submit" ><span>Generate QR Code</span></button>
-                    </p>
-                </td> 
-
-                <td width="40%" valign="top" style="padding-left: 10px;"> 
-               
-                    <b>QR- Code </b>
+                        </select>
+                    </span>
+                </span>
+            </p>
+            <p>&nbsp;</p> 
+            <p>
+                <button name="getqrcode" id="getqrcode" class="btn btn-success btn-sm" value="getqrcode" type="submit" ><span>Generate QR Code</span></button>
+            </p>
+        </div>
+        <div class="frmbox2 clearfix">
+        	<b>QR- Code </b>
                     <br/>
                     <div id="qrimg" >  
                    <?php 
@@ -193,11 +190,10 @@ $backUrl = $base_url_admin.'qrcodegenerate';
                 <strong> Please Generate <br/>QR-Code Image</strong>
                  </div>
             <?php }?>
-                   </div>   
-                </td>
-            </tr>
-
-        </table>        <?php echo $form->end();?>   
+                   </div>
+        </div>
+              
+		   
     </div>       
 </div>
 
