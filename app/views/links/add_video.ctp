@@ -4,38 +4,28 @@ $backUrl = $base_url.'links/videoslink';
 ?>
 
 <div class="container"> 
-<div class="titlCont">
+	<div class="titlCont">
+		<div class="slider-centerpage clearfix">
+        	<div class="center-Page col-sm-6">
+                <h2>Add Video</h2>
+            </div>
+            <div class="slider-dashboard col-sm-6">
+            	<div class="icon-container">
+                	<?php echo $form->create("links", array("action" => "add_video",'name' => 'Video', 'id' => "Video", 'class' => 'adduser','enctype'=>'multipart/form-data'));
+					?>
+					<button type="submit" value="Submit" class="sendBut" name="data[Action][redirectpage]"> <?php e($html->image('save.png')); ?>	</button>
+					<button type="button" id="saveForm" class="sendBut"  ONCLICK="javascript:(window.location='<?php echo $backUrl ?>')"><?php e($html->image('cancle.png')); ?>
+					</button>
+						<?php  echo $this->renderElement('new_slider');  ?>
+                </div>
+            </div>
+        </div>
 
-
-<div class="myclass">
-<div align="center" class="slider" id="toppanel" style="height: 20px; top:13px;right:-50px;width:545px !important; text-align:right;">
-<?php echo $form->create("links", array("action" => "add_video",'name' => 'Video', 'id' => "Video", 'class' => 'adduser','enctype'=>'multipart/form-data'));
-?>
-<button type="submit" value="Submit" class="sendBut" name="data[Action][redirectpage]"> <?php e($html->image('save.png')); ?>	</button>
-<button type="button" id="saveForm" class="sendBut"  ONCLICK="javascript:(window.location='<?php echo $backUrl ?>')"><?php e($html->image('cancle.png')); ?>
-</button>
-	<?php  echo $this->renderElement('new_slider');  ?>
+<?php $this->mail_tasks="tabSelt"; ?>
 </div>
 
-<span class="titlTxt">Add Video</span>
-<div class="topTabs" style="height:25px;">
-<?php /*?><ul class="dropdown">
-<li>
-<button type="submit" value="Submit" class="button" name="data[Action][redirectpage]"> <span> Save </span>	</button>
-</li>
-<li>
-<button type="button" id="saveForm" class="button"  ONCLICK="javascript:(window.location='<?php echo $backUrl ?>')"><span> Cancel</span>
-</button>
-</li>
 
-</ul><?php */?>
-</div> 
-<div class="clear"></div>
-<?php $this->mail_tasks="tabSelt"; ?>   
-</div>
-
-</div>
-<div class="midPadd" id="addcmp">
+<div class="midCont clearfix" id="addcmp">
 
 <?php if($session->check('Message.flash')) { echo $this->renderElement('error_message'); } ?>          
 
@@ -43,11 +33,11 @@ $backUrl = $base_url.'links/videoslink';
 
 <div id="loading" style="display: none;"><img src="/img/ajax-pageloader.gif" alt="Imagecoins:pageloader" /></div>
 <div id="addcomm">
-<table cellspacing="0" cellpadding="0" align="left" width="100%">
+<table cellspacing="0" cellpadding="0" align="left" width="90%">
 	<tbody>
 		<tr>
 			<td width="50%" valign="top">
-				<table cellspacing="10" cellpadding="0" align="left" width="100%">
+				<table cellspacing="10" cellpadding="0" align="left" width="90%">
 					<tbody>
 
 <tr>
@@ -56,23 +46,23 @@ $backUrl = $base_url.'links/videoslink';
 		</label>
 	</td>
 	<td>
-		<span class="intpSpan">
-				<?php echo $form->input("Video.video_name", array('div' => false, 'label' => '','style' =>'width:200px;',"class"=>"inpt_txt_fld","maxlength" => "250"));?>
+		<span class="intp-Span">
+				<?php echo $form->input("Video.video_name", array('div' => false, 'label' => '','style' =>'width:100%;',"class"=>"inpt-txt-fld form-control","maxlength" => "250"));?>
 		</span>
 	</td>
 </tr>					
 					
 <tr>
 <td align="right">
-		<?php echo $form->input("Video.project_id", array('id' => 'project_id', 'type'=>'hidden', 'value'=>'1' ,'div' => false, 'label' => '','style' =>'width:200px;',"class"=>"inpt_txt_fld","maxlength" => "250"));?>
+		<?php echo $form->input("Video.project_id", array('id' => 'project_id', 'type'=>'hidden', 'value'=>'1' ,'div' => false, 'label' => '','style' =>'width:100%;',"class"=>"inpt-txt-fld form-control","maxlength" => "250"));?>
 
 <label class="boldlabel">Video Link Address<span
 style="color: red;">*</span>
 </label></td>
 
 <td>
-		<span class="intpSpan">
-				<?php echo $form->input("Video.video_link_address", array('div' => false, 'label' => '','style' =>'width:200px;',"class"=>"inpt_txt_fld","maxlength" => "250"));?>
+		<span class="intp-Span">
+				<?php echo $form->input("Video.video_link_address", array('div' => false, 'label' => '','style' =>'width:100%;',"class"=>"inpt-txt-fld form-control","maxlength" => "250"));?>
 		</span>
 </td>
 </tr>
@@ -84,10 +74,10 @@ style="color: red;">*</span>
 		</label>
 	</td>
 	<td>
-		<span class="intpSpan">
-				<?php echo $form->input("Video.video_file", array('div' => false, 'label' => '',"class"=>"inpt_file_fld fileUpload",'type'=>'file'));?>
-				<?php echo $form->input("videoUpload", array('div' => false, 'label' => '','name'=>'videoUpload', 'style' =>'width:200px;',"class"=>"inpt_txt_fld fileUploadtext","maxlength" => "250","readonly"=>"readonly","value" => $this->data['Video']['video_file']));?>
-				<span class="btnLft addBut"><input type="button"  name="Add" value="Add" class="btnRht">
+		<span class="intp-Span">
+				<?php echo $form->input("Video.video_file", array('div' => false, 'label' => '',"class"=>"inpt-file-fld file-Upload",'type'=>'file'));?>
+				<?php echo $form->input("videoUpload", array('div' => false, 'label' => '','name'=>'videoUpload', 'style' =>'width:100%; margin:10px 0;',"class"=>"inpt-txt-fld form-control fileUpload-text","maxlength" => "250","readonly"=>"readonly","value" => $this->data['Video']['video_file']));?>
+				<span class="btn-Lft "><input type="button"  name="Add" value="Add" class="btn-Rht btn btn-primary btn-sm">
 							</span>
 		</span>
 	</td>
@@ -101,12 +91,16 @@ style="color: red;">*</span>
 	<td>
 
 		
-		<span class="txtArea_top"> <span class="txtArea_bot"><?php echo $form->input("Video.description", array('div' => false, 'label' => '','rows'=>'8','cols'=>'36','class' =>'noBg'));?>
+		<span class="txtArea-bot"> <span class="txtArea-bot"><?php echo $form->input("Video.description", array('div' => false, 'label' => '','rows'=>'8','cols'=>'36','class' =>'noBg form-control'));?>
 								</span>
 							</span>
 	</td>
 </tr>
 
+	</tbody>
+</table>
+			</td>
+		</tr>
 	</tbody>
 </table>
 <div class="clear"></div>

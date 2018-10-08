@@ -10,36 +10,29 @@ if($redirect!='')
 }
 ?>
 <div class="container"> 
-<div class="titlCont">
-<div class="myclass">
-<div class="slider" id="toppanel" style="height: 20px; top:13px;right:-50px;width:545px !important; text-align:right;">	
-<?php echo $form->create("links", array("action" =>$actionRedirect,'name' => 'Placement', 'id' => "Placement", 'class' => 'adduser'));
- ?>
-<button type="submit" value="Submit" class="sendBut" name="data[Action][redirectpage]"><?php e($html->image('save.png')); ?>	</button>
-<button type="button" id="saveForm" class="sendBut"  ONCLICK="javascript:(window.location='<?php echo $backUrl ?>')"><?php e($html->image('cancle.png')); ?>
-</button>
-<?php  echo $this->renderElement('new_slider');  ?>
+	<div class="titlCont">
+		<div class="slider-centerpage clearfix">
+        	<div class="center-Page col-sm-6">
+                <h2>Add Placement</h2>
+            </div>
+            <div class="slider-dashboard col-sm-6">
+            	<div class="icon-container">
+                	<?php echo $form->create("links", array("action" =>$actionRedirect,'name' => 'Placement', 'id' => "Placement", 'class' => 'adduser'));
+					 ?>
+					<button type="submit" value="Submit" class="sendBut" name="data[Action][redirectpage]"><?php e($html->image('save.png')); ?>	</button>
+					<button type="button" id="saveForm" class="sendBut"  ONCLICK="javascript:(window.location='<?php echo $backUrl ?>')"><?php e($html->image('cancle.png')); ?>
+					</button>
+					<?php  echo $this->renderElement('new_slider');  ?>
+                </div>
+            </div>
+        </div>
+        
+        
+<?php $this->mail_tasks="tabSelt"; ?> 
 </div>
 
-<span class="titlTxt">Add Placement</span>
-<div class="topTabs" style="height:25px;">
-<?php /*?><ul class="dropdown">
-<li>
-<button type="submit" value="Submit" class="button" name="data[Action][redirectpage]"> <span> Save </span>	</button>
-</li>
-<li>
-<button type="button" id="saveForm" class="button"  ONCLICK="javascript:(window.location='<?php echo $backUrl ?>')"><span> Cancel</span>
-</button>
-</li>
 
-</ul><?php */?>
-</div> 
-<div class="clear"></div>
-<?php $this->mail_tasks="tabSelt"; ?>   
-</div>
-
-</div>
-<div class="midPadd" id="addcmp">
+<div class="midCont" id="addcmp">
 
 <?php if($session->check('Message.flash')) { echo $this->renderElement('error_message'); } ?>          
 
@@ -51,7 +44,7 @@ if($redirect!='')
 	<tbody>
 		<tr>
 			<td width="50%" valign="top">
-				<table cellspacing="10" cellpadding="0" align="left" width="100%">
+				<table cellspacing="10" cellpadding="0" align="left" width="90%">
 					<tbody>
 
 
@@ -62,10 +55,10 @@ if($redirect!='')
 		</label>
 	</td>
 	<td>
-		<span class="intpSpan">
-				<?php echo $form->input("Placement.place_name", array('div' => false, 'label' => '','style' =>'width:200px;',"class"=>"inpt_txt_fld","maxlength" => "250"));?>
+		<span class="intp-Span">
+				<?php echo $form->input("Placement.place_name", array('div' => false, 'label' => '','style' =>'width:200px;',"class"=>"inpt-txt-fld form-control","maxlength" => "250"));?>
 				
-						<?php echo $form->input("Placement.project_id", array('id' => 'project_id', 'type'=>'hidden', 'value'=>'1' ,'div' => false, 'label' => '','style' =>'width:200px;',"class"=>"inpt_txt_fld","maxlength" => "250"));?>
+						<?php echo $form->input("Placement.project_id", array('id' => 'project_id', 'type'=>'hidden', 'value'=>'1' ,'div' => false, 'label' => '','style' =>'width:200px;',"class"=>"inpt-txt-fld form-control","maxlength" => "250"));?>
 		</span>
 	</td>
 </tr>
@@ -79,7 +72,7 @@ if($redirect!='')
 	<td>
 
 		
-		<span class="txtArea_top"> <span class="txtArea_bot"><?php echo $form->input("Placement.description", array('div' => false, 'label' => '','rows'=>'8','cols'=>'36','class' =>'noBg'));?>
+		<span class="txtArea-top "> <span class="txtArea-bot"><?php echo $form->input("Placement.description", array('div' => false, 'label' => '','rows'=>'8','cols'=>'36','class' =>'noBg form-control'));?>
 								</span>
 							</span>
 	</td>

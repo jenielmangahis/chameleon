@@ -31,41 +31,39 @@
             } 
 </script>    
 <div class="titlCont">
-    <div class="myclass">
-    <div align="center" class="slider" id="toppanel" style="height: 20px; top:11px;right: -50px;width:545px !important; text-align:right;">
-            <?php 
-                # set help condition
-                App::import("Model", "HelpContent");
-                $this->HelpContent =  & new HelpContent();
-                $condition = "HelpContent.id = '47'";  
-                $hlpdata= $this->HelpContent->find('all',array("conditions"=>$condition));
-                $this->set("hlpdata",$hlpdata);
-                # set help condition   
-              
-            ?>
-       
-
-        <?php echo $form->create("Admins", array("action" => "formtype_add",'type' => 'file','enctype'=>'multipart/form-data','name' => 'formtype_add', 'id' => "formtype_add", "onsubmit"=>"return validate_formadd();" ));
-        if(isset($formtypeid)){
-            echo $form->hidden("FormType.id", array('id' => 'formtype_id', 'div' => false, 'label' => '', 'value' => $formtypeid, "class" => "inpt_txt_fld","maxlength" => "200"));
-			
-        }
-        if(isset($redirect)&&$redirect!=null){
-            echo $form->hidden("Newredirect", array('id' => 'Newredirect', 'div' => false, 'label' => '', 'value' => $redirect, "class" => "inpt_txt_fld","maxlength" => "200"));
-        }
-          ?>
-<button type="submit" value="Submit" class="sendBut" name="data[Action][redirectpage]"><?php e($html->image('save.png')); ?></button>
-<button type="submit" value="Submit" class="sendBut" name="data[Action][noredirection]"><?php e($html->image('apply.png')); ?></button>
-<button type="button" id="saveForm" class="sendBut"  ONCLICK="javascript:(window.location='<?php echo $base_url_admin ?>formtypelist')"><?php e($html->image('cancle.png')); ?></button>
-<?php echo $this->renderElement('new_slider'); ?> 
-   </div>
- <span class="titlTxt">
-            Form Add/Edit
-        </span>
-        <div class="topTabs" style="height:25px;">
-
+	<div class="slider-centerpage clearfix">
+    	<div class="center-Page col-sm-6">
+            <h2>Form Add/Edit</h2>
         </div>
-
+        <div class="slider-dashboard col-sm-6">
+        	<div class="icon-container">
+            	<?php 
+					# set help condition
+					App::import("Model", "HelpContent");
+					$this->HelpContent =  & new HelpContent();
+					$condition = "HelpContent.id = '47'";  
+					$hlpdata= $this->HelpContent->find('all',array("conditions"=>$condition));
+					$this->set("hlpdata",$hlpdata);
+					# set help condition   
+				  
+				?>
+				
+				
+				<?php echo $form->create("Admins", array("action" => "formtype_add",'type' => 'file','enctype'=>'multipart/form-data','name' => 'formtype_add', 'id' => "formtype_add", "onsubmit"=>"return validate_formadd();" ));
+				if(isset($formtypeid)){
+				echo $form->hidden("FormType.id", array('id' => 'formtype_id', 'div' => false, 'label' => '', 'value' => $formtypeid, "class" => "inpt-txt-fld form-control","maxlength" => "200"));
+				
+				}
+				if(isset($redirect)&&$redirect!=null){
+				echo $form->hidden("Newredirect", array('id' => 'Newredirect', 'div' => false, 'label' => '', 'value' => $redirect, "class" => "inpt-txt-fld form-control","maxlength" => "200"));
+				}
+				?>
+				<button type="submit" value="Submit" class="sendBut" name="data[Action][redirectpage]"><?php e($html->image('save.png')); ?></button>
+				<button type="submit" value="Submit" class="sendBut" name="data[Action][noredirection]"><?php e($html->image('apply.png')); ?></button>
+				<button type="button" id="saveForm" class="sendBut"  ONCLICK="javascript:(window.location='<?php echo $base_url_admin ?>formtypelist')"><?php e($html->image('cancle.png')); ?></button>
+				<?php echo $this->renderElement('new_slider'); ?> 
+            </div>
+        </div>
     </div>
 
 </div>
@@ -73,7 +71,7 @@
 
 
 <!--inner-container starts here-->
-<div class="centerPage">
+<div class="midCont clearfix">
    <div class="">
     
         <div class="">
@@ -104,16 +102,16 @@
                                 <tr>
                                     <td width="16%" style="padding-bottom: 12px;">
                                   <label class="boldlabel">Name of Form Type <span style="color: red;">*</span></label></td>
-                                    <td width="24%" align="left"> <span class="intpSpan"><?php echo $form->input("FormType.formtype_name", array('id' => 'formtype_name', 'div' => false, 'label' => '',"class" => "inpt_txt_fld","maxlength" => "200"));?></span> </td>
+                                    <td width="24%" align="left"> <span class="intp-Span"><?php echo $form->input("FormType.formtype_name", array('id' => 'formtype_name', 'div' => false, 'label' => '',"class" => "inpt-txt-fld form-control","maxlength" => "200"));?></span> </td>
                                     <?php if(isset($formtypeid)){ 
                                         $addemailtempurl="/admins/addmailtemplate/formtype_add_id_".$formtypeid;
                                         ?> 
                                     <td width="30%" align="right" valign="top" style="padding-top: 2px;"> <label class="boldlabel">Created Date </label></td>  
                                     <td width="30%" align="left" valign="top">
-                                      <span class="intpSpan"><?php echo $form->input("createddate", array('id' => 'formtype_name', 'div' => false, 'label' => '',"class" => "inpt_txt_fld","maxlength" => "200", 'value'=>date("m-d-Y", strtotime($this->data['FormType']['created']))));?></span> </td>
+                                      <span class="intp-Span"><?php echo $form->input("createddate", array('id' => 'formtype_name', 'div' => false, 'label' => '',"class" => "inpt-txt-fld form-control","maxlength" => "200", 'value'=>date("m-d-Y", strtotime($this->data['FormType']['created']))));?></span> </td>
                                    </td> 
                                    <?php }else{   $addemailtempurl="/admins/addmailtemplate/formtype_add"; ?>
-                                       <td width="60%"  colspan="2"  >&nbsp;</td>
+                                       <!--<td colspan="2"  >&nbsp;</td>-->
                                   <?php } ?>   
                                 </tr> 
 								
@@ -126,9 +124,9 @@
 		<tr  valign="top" >
 			<td  colspan="4">
 				&nbsp;&nbsp;<label>Background Color</label>
-				# <span class="intpSpan"><?php echo $form->input('FormType.backcolor',array('class'=>'inpt_txt_fld1','div'=>false,'label'=>false)); ?></span> &nbsp;&nbsp;
+				# <span class="intp-Span"><?php echo $form->input('FormType.backcolor',array('class'=>'inpt-txt-fld form-control','div'=>false,'label'=>false)); ?></span> &nbsp;&nbsp;
 				<label >Text Color</label>
-				# <span class="intpSpan"><?php echo $form->input('FormType.textcolor',array('class'=>'inpt_txt_fld1','div'=>false,'label'=>false)); ?></span>
+				# <span class="intp-Span"><?php echo $form->input('FormType.textcolor',array('class'=>'inpt-txt-fld form-control','div'=>false,'label'=>false)); ?></span>
 			</td>
 			
 		</tr>  
@@ -160,13 +158,7 @@
                             <td width="60%" colspan="2" >&nbsp;  </td>  
                         </tr>
                         
-                 <!--     <tr  valign="top">
-                            <td  align="center" width="7%"><input type="checkbox" id="chk_email" name="chkfld[]" value="fld_email" class="checkid" checked="checked" style="display: none;" ></td>       
-                            <td  align="center" width="8%"><input type="checkbox" id="req_email" name="reqfld[]" value="req_email" class="checkid" checked="checked" style="display: none;" ></td>       
-                            <td  align="left" width="25%"><label class="boldlabel">Email</label></td>
-                            <td width="60%" colspan="2" >&nbsp;  </td>
-                        </tr>
-					-->
+
                         
                       <tr  valign="top">
                             <td  align="center" width="7%"><input type="checkbox" id="chk_addr1" name="chkfld[]" value="fld_address1" class="checkid"  <?php if($this->data['FormType']['fld_address1']==1){ echo 'checked="checked"'; }?> ></td>       
@@ -217,14 +209,14 @@
                        <tr valign="top">
                             <td  align="center" width="7%"><input type="checkbox" id="chk_list1" name="chkfld[]" value="fld_list1" class="checkid" <?php if($this->data['FormType']['fld_list1']==1){ echo 'checked="checked"'; }?>></td>       
                             <td  align="center" width="8%"><input type="checkbox" id="req_list1" name="reqfld[]" value="req_list1" class="checkid"  <?php if($this->data['FormType']['req_list1']==1){ echo 'checked="checked"'; }?> ></td>       
-                            <td  align="left" width="25%"> <span class="intpSpan"><?php echo $form->input("FormType.fld_list1_label", array('id' => 'fld_list1_label', 'div' => false,  'label' => '',"class" => "inpt_txt_fld","maxlength" => "200"));?></span>
+                            <td  align="left" width="25%"> <span class="intp-Span"><?php echo $form->input("FormType.fld_list1_label", array('id' => 'fld_list1_label', 'div' => false,  'label' => '',"class" => "inpt-txt-fld form-control","maxlength" => "200"));?></span>
                            <small>(Please enter label)</small>    
                             </td>
                             <td width="35%">
                                   <div id="list1_opts" >
-                                 <span class="txtArea_top">
-                                            <span class="newtxtArea_bot">
-                                                <?php echo $form->input("FormType.fld_list1_options", array('id' => 'fld_list1_options', 'div' => false, 'label' => '','rows'=>'5',"class" => "noBg",  "style" => "width:228px; margin-top:-4px;", "value"=> $this->data['FormType']['fld_list1_options']));?>
+                                 <span class="txtArea-top">
+                                            <span class="newtxtArea-bot">
+                                                <?php echo $form->input("FormType.fld_list1_options", array('id' => 'fld_list1_options', 'div' => false, 'label' => '','rows'=>'5',"class" => "noBg form-control",  "style" => "width:100%; ", "value"=> $this->data['FormType']['fld_list1_options']));?>
                                             </span>
                                         </span> <br/>
                                         <small>(Please Enter options)</small>  
@@ -237,15 +229,15 @@
                          <tr  valign="top">
                             <td  align="center" width="7%"><input type="checkbox" id="chk_list2" name="chkfld[]" value="fld_list2" class="checkid" <?php if($this->data['FormType']['fld_list2']==1){ echo 'checked="checked"'; }?> ></td>       
                             <td  align="center" width="8%"><input type="checkbox" id="req_list2" name="reqfld[]" value="req_list2" class="checkid" <?php if($this->data['FormType']['req_list2']==1){ echo 'checked="checked"'; }?>></td>       
-                            <td  align="left" width="25%"> <span class="intpSpan">
-                            <?php echo $form->input("FormType.fld_list2_label", array('id' => 'fld_list2_label', 'div' => false,  'label' => '',"class" => "inpt_txt_fld","maxlength" => "200"));?></span>
+                            <td  align="left" width="25%"> <span class="intp-Span">
+                            <?php echo $form->input("FormType.fld_list2_label", array('id' => 'fld_list2_label', 'div' => false,  'label' => '',"class" => "inpt-txt-fld form-control","maxlength" => "200"));?></span>
                              <small>(Please enter label for list)</small>    
                             </td>
                             <td width="35%">     
                                <div id="list2_opts" > 
-                                 <span class="txtArea_top">
-                                            <span class="newtxtArea_bot">
-                                                <?php echo $form->input("FormType.fld_list2_options", array('id' => 'fld_list2_options', 'div' => false, 'label' => '','rows'=>'5', "style" => "width:228px; margin-top:-4px;","class" => "noBg", "value"=> $this->data['FormType']['fld_list2_options']));?>
+                                 <span class="txtArea-top">
+                                            <span class="newtxtArea-bot">
+                                                <?php echo $form->input("FormType.fld_list2_options", array('id' => 'fld_list2_options', 'div' => false, 'label' => '','rows'=>'5', "style" => "width:100%; ","class" => "noBg form-control", "value"=> $this->data['FormType']['fld_list2_options']));?>
                                             </span>
                                         </span>   <br/>
                                       <small>(Please Enter options)</small>   
@@ -265,12 +257,12 @@
                          <tr>
                             <td  colspan="3" align="right" valign="top" width="40%" style="padding-top: 4px;"> <label class="boldlabel">Email Template Response </label></td>
                             <td width="60%">
-                                      <span class="txtArea_top">
+                                      <span class="txtArea-top">
                                 <span class="txtArea_bot">
-                                      <?php echo $form->select('FormType.emailtemplate_toresponce',$respondaremail, $selectedtemplateresponce,array('id'=>'emailtemplate_toresponce','empty'=>false,'class'=>'multilist multi'),"---Select---");?>
+                                      <?php echo $form->select('FormType.emailtemplate_toresponce',$respondaremail, $selectedtemplateresponce,array('id'=>'emailtemplate_toresponce','empty'=>false,'class'=>'multi-list form-control'),"---Select---");?>
                                 </span>     </span> &nbsp;
-                                <span class="btnLft">
-                             <input type="button" onclick="addEmailTempforResponse();" name="Add" value="Add" class="btnRht">
+                                <span class="btn-Lft">
+                             <input type="button" onclick="addEmailTempforResponse();" name="Add" value="Add" class="btn-Rht btn btn-primary btn-sm">
                              </span>
                          </td>                               
                         </tr>
@@ -278,9 +270,9 @@
 						<tr>
                             <td  colspan="3" align="right" valign="top" width="40%" style="padding-top: 2px;"> <label class="boldlabel">CC Email <!--<span style="color: red;">*</span>--></label></td>
                             <td colspan="2" width="60%">
-                            <span class="txtArea_topform" style ="width:250px;">
-                                            <span class="txtArea_botform">
-                                        <?php echo $form->textarea("FormType.fld_ccemail", array('id' => 'ccmail', 'div' => false, 'label' => '','cols' => '40', 'rows' => '3',"class" => "socialtxtArea1", "style" => "background: none repeat scroll 0% 0% transparent; width: 220px;"));?>
+                            <span class="txtArea-topform" style ="width:250px;">
+                                            <span class="txtArea-botform">
+                                        <?php echo $form->textarea("FormType.fld_ccemail", array('id' => 'ccmail', 'div' => false, 'label' => '','cols' => '40', 'rows' => '3',"class" => "socialtxt-Area1 form-control", "style" => "width:100%;"));?>
                                     </span></span>
                          </td>
                         </tr>
@@ -289,12 +281,12 @@
                           <tr>
                             <td  colspan="3" align="right" valign="top" width="40%" style="padding-top: 4px;"> <label class="boldlabel">Company Type</label></td>
                             <td width="60%" colspan="2"> 
-                                      <span class="txtArea_top">
+                                      <span class="txtArea-top">
                                 <span class="txtArea_bot">
-                                      <?php echo $form->select('FormType.company_type',$companytypedropdown, null,array('id'=>'company_type','empty'=>false,'class'=>'multilist multi'), "-- Select --");?>
+                                      <?php echo $form->select('FormType.company_type',$companytypedropdown, null,array('id'=>'company_type','empty'=>false,'class'=>'multi-list form-control'), "-- Select --");?>
                                 </span>     </span>  &nbsp;
-  <span class="btnLft" >
-                             <input type="button" onclick="addNewCompanyType();"  name="Add" value="Add" class="btnRht">  
+  <span class="btn-Lft" >
+                             <input type="button" onclick="addNewCompanyType();"  name="Add" value="Add" class="btn-Rht btn btn-primary btn-sm">  
                            
                              </span>        
                          </td>
@@ -304,12 +296,12 @@
                          <tr>
                             <td  colspan="3" align="right" valign="top" width="40%" style="padding-top: 4px;"> <label class="boldlabel">Contact Type</label></td>
                             <td  width="60%">
-                                      <span class="txtArea_top">
+                                      <span class="txtArea-top">
                                 <span class="txtArea_bot">
-                                      <?php echo $form->select('FormType.contact_type',$contacttypedropdown, null,array('id'=>'contact_type','empty'=>false,'class'=>'multilist multi'), "-- Select --");?>
+                                      <?php echo $form->select('FormType.contact_type',$contacttypedropdown, null,array('id'=>'contact_type','empty'=>false,'class'=>'multi-list form-control'), "-- Select --");?>
                                 </span>     </span> &nbsp;
-                               <span class="btnLft">
-                             <input type="button" onclick="addNewContactType();"  name="Add" value="Add" class="btnRht">  
+                               <span class="btn-Lft">
+                             <input type="button" onclick="addNewContactType();"  name="Add" value="Add" class="btn-Rht btn btn-primary btn-sm">  
                              </span>   
                          </td>
                           
@@ -318,9 +310,9 @@
                          <tr>
                             <td  colspan="3" align="right" valign="top" width="40%" style="padding-top: 2px;"> <label class="boldlabel">Form Description <!--<span style="color: red;">*</span>--></label></td>
                             <td colspan="2" width="60%">
-                            <span class="txtArea_topform">
-                                            <span class="txtArea_botform">
-                                        <?php echo $form->textarea("FormType.form_description", array('id' => 'form_description', 'div' => false, 'label' => '','cols' => '200', 'rows' => '5',"class" => "socialtxtArea1", "style" => "background: none repeat scroll 0% 0% transparent; width: 420px;"));?>
+                            <span class="txtArea-topform">
+                                            <span class="txtArea-botform">
+                                        <?php echo $form->textarea("FormType.form_description", array('id' => 'form_description', 'div' => false, 'label' => '','cols' => '200', 'rows' => '5',"class" => "socialtxt-Area1 form-control", "style" => "width: 100%;"));?>
                                     </span></span>
                          </td>
                         </tr>
@@ -333,9 +325,9 @@
                                     <tbody><tr>
                                         <td width="66%">  
                                         <div>
-                                        <span class="txtArea_topform">
-                                            <span class="txtArea_botform">
-                                                <textarea id="codeval" style="background: none repeat scroll 0% 0% transparent; width: 420px;" class="socialtxtArea1" cols="2000" rows="5"></textarea>
+                                        <span class="txtArea-topform">
+                                            <span class="txtArea-botform">
+                                                <textarea id="codeval" style="width: 100%;" class="socialtxt-Area1 form-control" cols="2000" rows="5"></textarea>
                                                 </span></span></div></td>
                                         <td width="34%"> <div style="padding-left: 5px;">
                                         <ul style="list-style:none;">
