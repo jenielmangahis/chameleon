@@ -34,14 +34,14 @@ $backUrl = $base_url_admin.'event_types';
 <div class="boxBor1 midCont">
     <div class="boxPad">
         <div class="clearfix">
-             <div id="addprjtype" class="centePage">     
+             <div id="addprjtype" class="centePage clearfix">     
                 <?php if($session->check('Message.flash')) { echo $this->renderElement('error_message'); } ?>
                 
 	<?php if($session->check('Message.flash')){ $session->flash(); }
                                 echo $form->error('EventType.event_type', array('class' => 'errormsg'));  ?>
 					
 	<div class="frmbox">
-    	<table>
+    	<table width="90%">
             <tr>
                 <td align="right">
                     <div class="updat">
@@ -63,7 +63,7 @@ $backUrl = $base_url_admin.'event_types';
                 </td>
                 <td>
                     <span class="txtArea-top"> 
-                        <span class="newtxtArea-bot"><?php echo $form->textarea("EventType.event_type_desp", array('id' => 'event_type_desp', 'div' => false, 'label' => '','cols' => '27', 'rows' => '4',"class" => "form-control noBg",'style'=>'width:225px;'));?></span>
+                        <span class="newtxtArea-bot"><?php echo $form->textarea("EventType.event_type_desp", array('id' => 'event_type_desp', 'div' => false, 'label' => '','cols' => '27', 'rows' => '4',"class" => "form-control noBg",'style'=>'width:100%;'));?></span>
                     </span>
                 </td>
             </tr>
@@ -73,7 +73,7 @@ $backUrl = $base_url_admin.'event_types';
         </div>
     </div>
     <div class="frmbox2">
-    	<table>
+    	<table width="50%">
             <tr>
                 <td align="left">
                     <div class="updat">

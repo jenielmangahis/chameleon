@@ -53,10 +53,6 @@ $backUrl = $base_url_admin.'socialnetwork';
             </div>
             
         </div>
-         <?php  //echo $this->renderElement('project_name');  ?>
-         <div class="topTabs">
-
-	</div>
     </div>    
 </div>
 
@@ -85,7 +81,7 @@ $backUrl = $base_url_admin.'socialnetwork';
 		<!-- top curv image starts -->
         
 	    <div class="tbl-Data1 table-responsive">
-		<table class="table table-striped table-bordered table-hover" width="960px;" border="0" cellspacing="0" cellpadding="0" class="admgrid"> 
+		<table class="table table-striped table-bordered table-hover" width="100%;" border="0" cellspacing="0" cellpadding="0" class="admgrid"> 
 		<tr class="tr_Bg">
 		<th class="" style='width:70px;' align="center" valign="middle">
 		    <?php
@@ -464,8 +460,8 @@ echo "&nbsp;&nbsp;&nbsp;&nbsp;";
 <table class="table table-borderless" width="100%" cellspacing="0" cellpadding="0" border="0">
             <tbody><tr>
               <td width="66%">
-            <div style="padding-left: 90px;">
-    <span class="social-txttop"><span class="social-Span"><textarea id="codeval" style="width: 500px;" class="socialtxtArea1 form-control" cols="2000" rows="5"></textarea></span></span></div></td>
+            <div>
+    <span class="social-txttop"><span class="social-Span"><textarea id="codeval" style="width:100%;" class="socialtxtArea1 form-control" cols="2000" rows="5"></textarea></span></span></div></td>
         <td width="36%"><div class="">
             <ul style="list-style:none;">
             <li><button type="button" value="Getsource" class="btn btn-primary" name="Getsource" onclick="getsource();init();"><span>Get iFrame Source</span></button></li>

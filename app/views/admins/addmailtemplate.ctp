@@ -46,7 +46,7 @@ $backUrl = $base_url_admin.'mailtemplatelist';
     </div>
 </div>    
 
-<div class="midPadd" id="mailtmp">
+<div class="midCont clearfix" id="mailtmp">
 
     <div class="boxBor1">
 
@@ -55,7 +55,7 @@ $backUrl = $base_url_admin.'mailtemplatelist';
     </div>
         <div class="clearfix">
             <div class="frmbox">
-                <table cellspacing="5" cellpadding="0" align="center" width="100%">
+                <table cellspacing="5" cellpadding="0" align="center" width="90%">
                                     <tbody>
                                  
                                         <tr>
@@ -77,7 +77,7 @@ $backUrl = $base_url_admin.'mailtemplatelist';
                                 </table>
             </div>
             <div class="frmbox2">
-                <table cellspacing="10" cellpadding="0" align="center" width="100%">
+                <table cellspacing="10" cellpadding="0" align="center" width="90%">
                                     <tbody>
         
                                         <tr>

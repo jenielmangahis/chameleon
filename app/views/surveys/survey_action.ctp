@@ -37,24 +37,24 @@ $backUrl = $base_url.'surveys';
 </script>
 
 <div class="titlCont">
-<div class="myclass">
-<div class="slider" id="toppanel" style="height: 20px; top:13px;right: -50px;width:545px !important; text-align:right;">
-<?php echo $form->create("Surveys", array("action" => "survey_action", "onsubmit"=>"return validateactionform();")); 
-echo $form->hidden("SurveyAction.id");        ?>
-<button type="submit" value="Submit" class="sendBut" name="data[Action][redirectpage]"><?php e($html->image('save.png')); ?></button>
-<button type="submit" value="Submit" class="sendBut" name="data[Action][noredirection]"><?php e($html->image('apply.png')); ?></button>
-<button type="button" id="saveForm" class="sendBut"  ONCLICK="javascript:(window.location='<?php echo $base_url.'/surveyactionlist' ?>')"><?php e($html->image('cancle.png')); ?></button>
-            <?php echo $this->renderElement('new_slider');   ?>
+	<div class="slider-centerpage clearfix">
+    	<div class="center-Page col-sm-6">
+            <h2>Survey Action List</h2>
         </div>
-        <span class="titlTxt"> Survey Action List </span>
-           
-        <div class="topTabs">
-         
+        <div class="slider-dashboard col-sm-6">
+        	<div class="icon-container">
+				<?php echo $form->create("Surveys", array("action" => "survey_action", "onsubmit"=>"return validateactionform();")); 
+				echo $form->hidden("SurveyAction.id");        ?>
+				<button type="submit" value="Submit" class="sendBut" name="data[Action][redirectpage]"><?php e($html->image('save.png')); ?></button>
+				<button type="submit" value="Submit" class="sendBut" name="data[Action][noredirection]"><?php e($html->image('apply.png')); ?></button>
+				<button type="button" id="saveForm" class="sendBut"  ONCLICK="javascript:(window.location='<?php echo $base_url.'/surveyactionlist' ?>')"><?php e($html->image('cancle.png')); ?></button>
+				<?php echo $this->renderElement('new_slider');   ?>
+            </div>
         </div>
     </div>
 </div>
 
-<div class="centerPage">
+<div class="midCont clearfix">
     	<div class="top-bar" style="border-left:0px;"></div>
             <div class="">	
                 <?php if($session->check('Message.flash')) { echo $this->renderElement('error_message'); } ?>       
@@ -65,15 +65,15 @@ echo $form->hidden("SurveyAction.id");        ?>
 
      
         
-            <table  cellpadding="5" cellspacing="8" align="center" width="70%" >
+            <table  cellpadding="5" cellspacing="8" align="center" width="90%" >
                 <tr>
                     <td valign="top">
                         <div class="updat" style="vertical-align: top;">
                             <label class="boldlabel">Survey Action  <span style="color: red;">*</span></label>
                         </div>  </td>
                         <td valign="top">
-                        <span class="intpSpan" style="vertical-align: top;">
-                            <?php echo $form->input("SurveyAction.action_title", array("class" => "inpt_txt_fld",'label'=>false));?>  
+                        <span class="intp-Span" style="vertical-align: top;">
+                            <?php echo $form->input("SurveyAction.action_title", array("class" => "inpt-txt-fld form-control",'label'=>false));?>  
                         </span>
                     </td>
                 </tr>

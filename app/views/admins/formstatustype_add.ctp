@@ -3,26 +3,34 @@
 ?>
 
 
-<div class="titlCont"><div class="myclass">
-    <div align="center" class="slider" id="toppanel" style="height: 20px; top:11px;right: -50px;width:545px !important; text-align:right;">  
-			<?php echo $form->create("Admin", array("action" => "formstatustype_add",'name' => 'blogadd','enctype'=>'multipart/form-data','onsubmit'=>'return validatestatustype();' ,'id' => "formstatustype_add")); 
-        if($statustypeid){
-            echo $form->input("FormSubmitStatustype.id", array('id' => 'title','value'=>$statustypeid, 'div' => false, 'label' => '',"class" => "inpt_txt_fld","maxlength" => "150"));
-        }
-        
-        ?>
-<button type="submit" value="Submit" class="sendBut" name="data[Action][redirectpage]"><?php e($html->image('save.png')); ?></button>
-<button type="submit" value="Submit" class="sendBut" name="data[Action][noredirection]"><?php e($html->image('apply.png')); ?></button>
-<button type="button" id="saveForm" class="sendBut"  ONCLICK="javascript:(window.location='<?php echo $base_url_admin ?>formstatustypelist')"><?php e($html->image('cancle.png')); ?></button> 
-				<?php  echo $this->renderElement('new_slider');  ?>
+<div class="titlCont">
+	<div class="slider-centerpage clearfix">
+    	<div class="center-Page col-sm-6">
+            <h2><?php echo $statustypepageaction;?> Form Status Type Add/Edit</h2>
         </div>
-        <span class="titlTxt"><?php echo $statustypepageaction;?> Form Status Type Add/Edit </span>
-       <div class="topTabs">
+        <div class="slider-dashboard col-sm-6">
+        	<div class="icon-container">
+				<?php echo $form->create("Admin", array("action" => "formstatustype_add",'name' => 'blogadd','enctype'=>'multipart/form-data','onsubmit'=>'return validatestatustype();' ,'id' => "formstatustype_add")); 
+                if($statustypeid){
+                echo $form->input("FormSubmitStatustype.id", array('id' => 'title','value'=>$statustypeid, 'div' => false, 'label' => '',"class" => "inpt-txt-fld form-control","maxlength" => "150"));
+                }
+                
+                ?>
+                <button type="submit" value="Submit" class="sendBut" name="data[Action][redirectpage]"><?php e($html->image('save.png')); ?></button>
+                <button type="submit" value="Submit" class="sendBut" name="data[Action][noredirection]"><?php e($html->image('apply.png')); ?></button>
+                <button type="button" id="saveForm" class="sendBut"  ONCLICK="javascript:(window.location='<?php echo $base_url_admin ?>formstatustypelist')"><?php e($html->image('cancle.png')); ?></button> 
+                <?php  echo $this->renderElement('new_slider');  ?>
+            </div>
+        </div>
+    </div>
 
-        </div>
-    </div></div>
+
+</div>
 <div class="top-bar" style="border-left:0px;">
 </div><br />
+
+
+
 
 <div class="midPadd">
     <div>
@@ -33,7 +41,7 @@
 
         <!-- ADD FIELD BOF -->
 
-            <table cellspacing="10" cellpadding="0" align="center" width="100%" style="min-height: 250px;">
+            <table cellspacing="10" cellpadding="0" align="center" width="90%" style="min-height: 250px;">
                 <tbody>
                     <tr>
                         <td colspan="2"><?php if($session->check('Message.flash')){ $session->flash(); } 
@@ -49,8 +57,8 @@
                             </div>
                         </td>
                         <td width="80%">
-                            <span class="intpSpan">
-                                <?php echo $form->input("FormSubmitStatustype.statustype_name", array('id' => 'statustype_name','div' => false, 'label' => '',"class" => "inpt_txt_fld","maxlength" => "150"));?>
+                            <span class="intp-Span">
+                                <?php echo $form->input("FormSubmitStatustype.statustype_name", array('id' => 'statustype_name','div' => false, 'label' => '',"class" => "inpt-txt-fld form-control","maxlength" => "150"));?>
                             </span>
                         </td>
 						<td>

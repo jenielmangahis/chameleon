@@ -53,7 +53,7 @@ $('#calendar').fullCalendar({
 <div class="midCont">
 
 <br /><br />
-<div id='calendar' style='width: 900px; margin: 0 auto;'></div>
+<div id='calendar' style='width:100%; margin: 0 auto;'></div>
   
 </div>
 

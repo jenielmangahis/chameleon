@@ -7,34 +7,35 @@ $backUrl = $base_url.'coupons/layout';
 
 <!-- Body Panel starts -->
 <div class="container">
-
    <div class="titlCont">
-   <div class="myclass">
-   <div align="center" class="slider" id="toppanel" style="height: 20px; top:13px;right:-50px;width:545px !important; text-align:right;">
-			<?php
-	echo $javascript->link('ckeditor/ckeditor'); 
-    echo $form->create("coupons", array("action" => "addcouponlayout",'name' => 'addcouponlayout', 'id' => "addcouponlayout","onsubmit"=>"return validateCouponLayout('add');"));
-    echo $form->hidden("CouponLayout.id", array('id' => 'id'));
-    echo $form->hidden("CouponLayout.project_id", array('value' => '1'));
- ?>
- <button type="submit" value="Submit" class="sendBut" name="data[Action][redirectpage]"><?php e($html->image('save.png')); ?></button>
- <button type="submit" value="Submit" class="sendBut" name="data[Action][noredirection]"><?php e($html->image('apply.png')); ?></button>
- <button type="button" id="saveForm" class="sendBut" ONCLICK="javascript:(window.location='<?php echo $backUrl;?>')"><?php e($html->image('cancle.png')); ?></button>
-                <?php  echo $this->renderElement('new_slider');  ?>
+   		<div class="slider-centerpage clearfix">
+    	<div class="center-Page col-sm-6">
+            <h2>Coupon layout Add/Edit</h2>
+        </div>
+        <div class="slider-dashboard col-sm-6">
+        	<div class="icon-container">
+            	<?php
+				echo $javascript->link('ckeditor/ckeditor'); 
+				echo $form->create("coupons", array("action" => "addcouponlayout",'name' => 'addcouponlayout', 'id' => "addcouponlayout","onsubmit"=>"return validateCouponLayout('add');"));
+				echo $form->hidden("CouponLayout.id", array('id' => 'id'));
+				echo $form->hidden("CouponLayout.project_id", array('value' => '1'));
+				?>
+				<button type="submit" value="Submit" class="sendBut" name="data[Action][redirectpage]"><?php e($html->image('save.png')); ?></button>
+				<button type="submit" value="Submit" class="sendBut" name="data[Action][noredirection]"><?php e($html->image('apply.png')); ?></button>
+				<button type="button" id="saveForm" class="sendBut" ONCLICK="javascript:(window.location='<?php echo $backUrl;?>')"><?php e($html->image('cancle.png')); ?></button>
+				<?php  echo $this->renderElement('new_slider');  ?>
             </div>
-            <span class="titlTxt"> Coupon layout Add/Edit  </span>
-          <div class="topTabs" style="height:25px;">
-            <?php /*?><ul>
-                <li><button type="submit" value="Submit" class="button" name="data[Action][redirectpage]"><span>Save</span></button></li>
-                <li><button type="submit" value="Submit" class="button" name="data[Action][noredirection]"><span>Apply</span></button></li>
-                <li><button type="button" id="saveForm" class="button" ONCLICK="javascript:(window.location='<?php echo $backUrl;?>')"><span> Cancel</span></button></li>
-            </ul><?php */?>
         </div>
-          <?php    $this->loginarea="coupons";    $this->subtabsel="layouts";
-             echo $this->renderElement('coupons_submenus');  ?>    
-        </div>
-        </div>
+    </div>
+</div>
 
+
+<div class="clearfix nav-submenu-container">
+	<div class="midCont submenu-Cont">
+		 <?php    $this->loginarea="coupons";    $this->subtabsel="layouts";
+             echo $this->renderElement('coupons_submenus');  ?>
+    </div>
+</div> 
 
 <div class="midCont">
 
@@ -59,15 +60,15 @@ $backUrl = $base_url.'coupons/layout';
 
                                 <tr>
                                     <td width="25%"><label class="boldlabel">Coupon Layout Name <span class="red">*</span></label></td>
-                                    <td width="75%"><span class="intpSpan"><?php echo $form->input("CouponLayout.layout_name", array('id' => 'layout_name', 'div' => false, 'label' => '','style' =>'width:230px;',"class" => "inpt_txt_fld","maxlength" => "250"));?></span></td>
+                                    <td width="75%"><span class="intp-Span"><?php echo $form->input("CouponLayout.layout_name", array('id' => 'layout_name', 'div' => false, 'label' => '','style' =>'width:100%;',"class" => "inpt-txt-fld form-control","maxlength" => "250"));?></span></td>
                                 </tr>
 
                                 <tr>
                                     <td width="25%"><label class="boldlabel">Description<span class="red">*</span></label></td>
                                     <td width="75%">
-									<span class="txtArea_top">
-                                            <span class="newtxtArea_bot">
-                                                <?php echo $form->input("CouponLayout.description", array('id' => 'description', 'div' => false, 'label' => '','rows'=>'3','cols'=>'65','style' =>'width:230px;',"class" => "noBg"));?>
+									<span class="txtArea-top">
+                                            <span class="newtxtArea-bot">
+                                                <?php echo $form->input("CouponLayout.description", array('id' => 'description', 'div' => false, 'label' => '','rows'=>'3','cols'=>'65','style' =>'width:100%;',"class" => "noBg form-control"));?>
                                             </span>
                                         </span>
 									</td>

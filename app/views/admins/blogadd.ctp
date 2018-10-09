@@ -45,24 +45,21 @@ $backUrl = $base_url_admin.'bloglist';
 
         </script>
 		<!--container starts here-->
-<div class="titlCont"><div class="myclass">
-<div class="slider" id="toppanel" style="height: 20px; top:13px;right: -50px;width:545px !important; text-align:right;">         
-<?php echo $form->create("Admins", array("action" => "blogadd",'name' => 'blogadd','enctype'=>'multipart/form-data','onsubmit'=>'return validateblog();' ,'id' => "blogadd")); ?>
-<button type="submit" value="Submit" class="sendBut" name="data[Action][redirectpage]"><?php e($html->image('save.png')); ?></button>
-<button type="submit" value="Submit" class="sendBut" name="data[Action][noredirection]"><?php e($html->image('apply.png')); ?></button>
-<button type="button" id="saveForm" class="sendBut"  ONCLICK="javascript:(window.location='<?php echo $backUrl ?>')"><?php e($html->image('cancle.png')); ?></button>
-<?php  echo $this->renderElement('new_slider');  ?>
-</div>
-        
-        <?php  echo $this->renderElement('project_name');  ?> 
-        <span class="titlTxt">
-            <?php echo $blogpageaction;?> Blog
-        </span>
-		<?php    
-				$this->loginarea="admins";
-				$this->subtabsel="bloglist";
-                echo $this->renderElement('setting_submenus');
-			  ?>
+<div class="titlCont">
+	<div class="slider-centerpage clearfix">
+        <div class="center-Page col-sm-6">  
+        	          	
+            <h2><?php  //echo $this->renderElement('project_name');  ?> <?php echo $blogpageaction;?> Blog</h2>
+        </div>
+        <div class="slider-dashboard col-sm-6">
+        	<div class="icon-container">
+            	<?php echo $form->create("Admins", array("action" => "blogadd",'name' => 'blogadd','enctype'=>'multipart/form-data','onsubmit'=>'return validateblog();' ,'id' => "blogadd")); ?>
+                <button type="submit" value="Submit" class="sendBut" name="data[Action][redirectpage]"><?php e($html->image('save.png')); ?></button>
+                <button type="submit" value="Submit" class="sendBut" name="data[Action][noredirection]"><?php e($html->image('apply.png')); ?></button>
+                <button type="button" id="saveForm" class="sendBut"  ONCLICK="javascript:(window.location='<?php echo $backUrl ?>')"><?php e($html->image('cancle.png')); ?></button>
+                <?php  echo $this->renderElement('new_slider');  ?>
+            </div>            
+        </div>
     </div>
 </div>
 
@@ -100,9 +97,23 @@ $backUrl = $base_url_admin.'bloglist';
     }				
 </script>
 
-<!--inner-container starts here--><div class="rightpanel">
 
-    <div class="midPadd">
+<div class="clearfix nav-submenu-container">
+	<div class="midCont submenu-Cont">
+		<?php    
+		$this->loginarea="admins";
+		$this->subtabsel="bloglist";
+		echo $this->renderElement('setting_submenus');
+		?>
+    </div>
+</div> 
+
+<!--inner-container starts here-->
+
+
+<div class="right-panel">
+
+    <div class="midCont clearfix">
         <div class="">
 
             <?php if($session->check('Message.flash')) { echo $this->renderElement('error_message'); } ?>
@@ -126,8 +137,8 @@ $backUrl = $base_url_admin.'bloglist';
                             </div>
                         </td>
                         <td width="80%">
-                            <span class="intpSpan">
-                                <?php echo $form->input("Blog.title", array('id' => 'title','div' => false, 'label' => '',"class" => "inpt_txt_fld","maxlength" => "150"));?>
+                            <span class="intp-Span">
+                                <?php echo $form->input("Blog.title", array('id' => 'title','div' => false, 'label' => '',"class" => "inpt-txt-fld form-control","maxlength" => "150"));?>
                             </span>
                         </td>
                     </tr>
@@ -141,8 +152,8 @@ $backUrl = $base_url_admin.'bloglist';
                             </div>
                         </td>
                         <td>
-                            <span class="txtArea_top">
-                                <span class="txtArea_bot"><?php echo $form->textarea("Blog.introcontent", array('id' => 'introcontent', 'div' => false, 'label' => '','cols' => '35', 'rows' => '4',"class" => "noBg"));?>
+                            <span class="txtArea-top">
+                                <span class="txtArea-bot"><?php echo $form->textarea("Blog.introcontent", array('id' => 'introcontent', 'div' => false, 'label' => '','cols' => '35', 'rows' => '4',"class" => "noBg form-control"));?>
                                 </span>
                             </span>
                         </td>
@@ -155,8 +166,8 @@ $backUrl = $base_url_admin.'bloglist';
                             </div>
                         </td>
                         <td>
-                            <span class="intpSpan">
-                                <?php echo $form->input("Blog.metakeyword", array('id' => 'metakeyword','div' => false, 'label' => '',"class" => "inpt_txt_fld","maxlength" => "150"));?>
+                            <span class="intp-Span">
+                                <?php echo $form->input("Blog.metakeyword", array('id' => 'metakeyword','div' => false, 'label' => '',"class" => "inpt-txt-fld form-control","maxlength" => "150"));?>
                             </span>
                         </td>
                     </tr>
@@ -168,8 +179,8 @@ $backUrl = $base_url_admin.'bloglist';
                             </div>
                         </td>
                         <td>
-                            <span class="intpSpan">
-                                <?php echo $form->input("Blog.metadescription", array('id' => 'metadescription', 'div' => false, 'label' => '',"class" => "inpt_txt_fld","maxlength" => "150"));?>
+                            <span class="intp-Span">
+                                <?php echo $form->input("Blog.metadescription", array('id' => 'metadescription', 'div' => false, 'label' => '',"class" => "inpt-txt-fld form-control","maxlength" => "150"));?>
                             </span>
                         </td>
                     </tr>

@@ -16,13 +16,6 @@
                 <?php  echo $this->renderElement('new_slider');  ?>
             </div>
         </div>
-        <div class="topTabs" style="height:25px;">
-            <?php /*?><ul>
-                <li><button id = "submit" type="submit" value="Submit" class="button" name="data[Action][redirectpage]"><span>Save</span></button></li>
-                <li><button id = "apply" type="submit" value="Submit" class="button" name="data[Action][noredirection]"><span>Apply</span></button></li>
-                <li><button type="button" id="saveForm" class="button"  ONCLICK="javascript:(window.location='<?php echo $backUrl ?>')"><span> Cancel</span></button></li>
-            </ul><?php */?>
-        </div>
     </div>
 </div>   
 
@@ -39,7 +32,7 @@ if($_GET['url'] === 'admins/suggestedlist/0'){
 </div>
 
 
-<div class="midCont">
+<div class="midCont clearfix">
     <?php if($session->check('Message.flash')){ ?> 
         <div id="blck" style="padding-top: 0px;"> 
             <div class="msgBoxTopLft">
@@ -62,8 +55,8 @@ if($_GET['url'] === 'admins/suggestedlist/0'){
             </div>
         </div> 
         <?php } ?>
-    <div class="left table-responsive" style="min-height:360px">
-        <table class="table table-borderless" width="700px" align="center" cellpadding="1" cellspacing="0">
+    <div class="clearfix" style="min-height:360px">
+        <table width="90%" align="center" cellpadding="1" cellspacing="0">
             <tr>
                 <td colspan='3'><?php if($session->check('Message.flash')){ $session->flash(); }
                         echo $form->error('ProjectType.project_type_name', array('class' => 'errormsg'));
@@ -79,7 +72,7 @@ if($_GET['url'] === 'admins/suggestedlist/0'){
                 </td>
             </tr>
             <tr>
-                <td align="right" style="width:250px;"><label class="boldlabel">Suggested Comment Types<!--Maximum # of comments per Holder--></label></td>
+                <td align="right"><label class="boldlabel">Suggested Comment Types<!--Maximum # of comments per Holder--></label></td>
                 <?php //DebugBreak();
                     App::import("Model", "CommentType");
                     $this->CommentType =   & new CommentType();
@@ -132,7 +125,7 @@ if($_GET['url'] === 'admins/suggestedlist/0'){
 
                             echo "</td><td>";
 							//print_r($commenttypedropdown)
-                            echo $form->select("ProjectType.commenttypeoption".$i,$commenttypedropdown,$comment_type_id['ProjectCommentType']['comment_type_id'],array('id' => 'commenttypevalue'.$i, 'div' => false,"class" => "newcontactInput", 'label' => '','onchange'=>'check_selected_suggested(this.value,this.id)'),array('0'=>'--Select--'));
+                            echo $form->select("ProjectType.commenttypeoption".$i,$commenttypedropdown,$comment_type_id['ProjectCommentType']['comment_type_id'],array('id' => 'commenttypevalue'.$i, 'div' => false,"class" => "newcontact-Input form-control", 'label' => '','onchange'=>'check_selected_suggested(this.value,this.id)'),array('0'=>'--Select--'));
                             echo "<div class='clear'></div>";
                         }
                     ?>
@@ -156,7 +149,7 @@ if($_GET['url'] === 'admins/suggestedlist/0'){
                         $default_comment_type = !empty($comment_type_id['CommentType']['id']) ? $comment_type_id['CommentType']['id'] : 0;
 						// print "COMMENTTYPE:".$comment_type_id.":PROJECTTYPEID:".$ProjectTypeId.":i:".$i;
 
-                        echo $form->select("ProjectType.additionalcomment",$commenttypedropdown,$default_comment_type,array('id' => 'additionalcomment',"class" => "newcontactInput", 'div' => false, 'label' => '','onchange'=>'check_selected(this.value,this.id)'),array('0'=>'--Select--'));
+                        echo $form->select("ProjectType.additionalcomment",$commenttypedropdown,$default_comment_type,array('id' => 'additionalcomment',"class" => "newcontact-Input form-control", 'div' => false, 'label' => '','onchange'=>'check_selected(this.value,this.id)'),array('0'=>'--Select--'));
                     ?></span></span>
                     <?php //echo $form->select("additionalcomment",array('0'=>'Misc.Additional Comment'),0,array('id' => 'additionalcomment'),false); ?>
                 </td>
