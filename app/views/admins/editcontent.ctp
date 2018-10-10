@@ -3,51 +3,55 @@ $base_url_admin = Configure::read('App.base_url_admin');
 $lgrt = $session->read('newsortingby');
 $backUrl = $base_url_admin.'contentlist';
 ?>
+<div class="clearfix"></div>
+
 <div class="titlCont">
-<div class="myclass">
+<div class="slider-centerpage clearfix">
+    	<div class="center-Page col-sm-6">
+            <h2>Edit Web Page</h2>
+        </div>
+        <div class="slider-dashboard col-sm-6">
+        	<div class="icon-container">
+            	<?php 
 
-<?php 
-
-if(empty($extra) && $returnurl=="")
-{
-   
-	$head="Edit Web Page" ;
-}
-else
-{
-    if($extra=="detail" || $returnurl=="detail")
-        $head="Event Detail";
-    else if($extra=="sponsor" || $returnurl=="sponsor")
-        $head="Sponsor Detail";
-    else if($extra=="inquiry" || $returnurl=="inquiry")
-        $head="Inquiry Detail";
-    else
-       $head="Edit Web Page" ;
-}
-
-?>
-<div class="slider" id="toppanel" style="height: 20px; top:13px;right: -50px;width:545px !important; text-align:right;">	
-
-<?php echo $form->create("Admins", array("action" => "editcontent/$contentid",'type' => 'file','enctype'=>'multipart/form-data','name' => 'editcontent', 'id' => "editcontent",'onsubmit' => 'return validatecontentpage();'));
-echo $form->hidden("Content.id", array('id' => 'contentid'));
-	
-if($returnurl){ echo $form->hidden("returnurl", array('id' => 'returnurl', 'value'=>$returnurl)); }
-    if($closeit=="yes"){   echo $form->hidden("Admins.closeit", array('id' => 'closeit', 'value'=>$closeit)); }
-    if(isset($extra) && !empty($extra)){
-			echo $form->hidden("Admins.extra", array('id' => 'extra', 'value'=>$extra)); 
-		}
-    if(isset($event_title) && !empty($event_title)){ echo $form->hidden("Admins.event_title", array('id' => 'event_title', 'value'=>$event_title)); }
-?>
-<button type="submit" value="Submit" class="sendBut" name="data[Action][redirectpage]"><?php e($html->image('save.png')); ?></button>
-<button type="submit" value="Submit" class="sendBut" name="data[Action][noredirection]"><?php e($html->image('apply.png')); ?></button>
-<button type="button" id="saveForm" class="sendBut"   <?php if($returnurl && $returnurl!="detail" && $returnurl!="sponsor" && $returnurl!="inquiry"){ echo "onclick='closemywindow();'"; }else{?>ONCLICK="javascript:(window.location='<?php echo $backUrl;?>')" <?php } ?> ><?php e($html->image('cancle.png')); ?></button>
-<?php  echo $this->renderElement('new_slider');   ?>
+					if(empty($extra) && $returnurl=="")
+					{
+					   
+						$head="Edit Web Page" ;
+					}
+					else
+					{
+						if($extra=="detail" || $returnurl=="detail")
+							$head="Event Detail";
+						else if($extra=="sponsor" || $returnurl=="sponsor")
+							$head="Sponsor Detail";
+						else if($extra=="inquiry" || $returnurl=="inquiry")
+							$head="Inquiry Detail";
+						else
+						   $head="Edit Web Page" ;
+					}
+					
+					?>
+            
+            
+					<?php echo $form->create("Admins", array("action" => "editcontent/$contentid",'type' => 'file','enctype'=>'multipart/form-data','name' => 'editcontent', 'id' => "editcontent",'onsubmit' => 'return validatecontentpage();'));
+                    echo $form->hidden("Content.id", array('id' => 'contentid'));
+                        
+                    if($returnurl){ echo $form->hidden("returnurl", array('id' => 'returnurl', 'value'=>$returnurl)); }
+                        if($closeit=="yes"){   echo $form->hidden("Admins.closeit", array('id' => 'closeit', 'value'=>$closeit)); }
+                        if(isset($extra) && !empty($extra)){
+                                echo $form->hidden("Admins.extra", array('id' => 'extra', 'value'=>$extra)); 
+                            }
+                        if(isset($event_title) && !empty($event_title)){ echo $form->hidden("Admins.event_title", array('id' => 'event_title', 'value'=>$event_title)); }
+                    ?>
+                    <button type="submit" value="Submit" class="sendBut" name="data[Action][redirectpage]"><?php e($html->image('save.png')); ?></button>
+                    <button type="submit" value="Submit" class="sendBut" name="data[Action][noredirection]"><?php e($html->image('apply.png')); ?></button>
+                    <button type="button" id="saveForm" class="sendBut"   <?php if($returnurl && $returnurl!="detail" && $returnurl!="sponsor" && $returnurl!="inquiry"){ echo "onclick='closemywindow();'"; }else{?>ONCLICK="javascript:(window.location='<?php echo $backUrl;?>')" <?php } ?> ><?php e($html->image('cancle.png')); ?></button>
+                    <?php  echo $this->renderElement('new_slider');   ?>
+            </div>
+        </div>
+    </div>	
 </div>
- <?php  echo $this->renderElement('project_name');  ?>
-<span class="titlTxt"> <?php echo $head; ?>
-</span>
-
-</div></div>
 
 <?php 
 echo $javascript->link('ckeditor/ckeditor'); 
@@ -83,9 +87,11 @@ echo $javascript->link('ckeditor/ckeditor');
 	}
 </script>
 
-<!--inner-container starts here--><div class="rightpanel">
+<!--inner-container starts here-->
 
-<div class="midPadd">
+<div class="right-panel">
+
+<div class="midCont">
 <?php if($session->check('Message.flash')) { echo $this->renderElement('error_message'); } ?>
 
     <?php 
@@ -111,21 +117,21 @@ echo $javascript->link('ckeditor/ckeditor');
 					
 					<tr>
 					<td width="35%" align="right"><label class="boldlabel">Navigation <span style="color: red;">*</span></label></td>
-						<td width="65%"><span class="intpSpannew"><?php echo $form->input("Content.title", array('id' => 'title', 'div' => false, 'label' => '',"class" => "inpt_txt_fld","maxlength" => "250","readonly"=>"readonly"));?></span></td>
+						<td width="65%"><span class="intp-Spannew"><?php echo $form->input("Content.title", array('id' => 'title', 'div' => false, 'label' => '',"class" => "inpt-txt-fld form-control","maxlength" => "250","readonly"=>"readonly"));?></span></td>
 					</tr>
 				
 			<?php } else{ ?>
 					<tr>
 					<td align="right"><label class="boldlabel">Navigation <span style="color: red;">*</span></label></td>
-						<td><span class="intpSpannew"><?php echo $form->input("Content.title", array('id' => 'title', 'div' => false, 'label' => '',"class" => "inpt_txt_fld","maxlength" => "250",'onblur'=>"fillspacealias()"));?></span></td>
+						<td><span class="intp-Spannew"><?php echo $form->input("Content.title", array('id' => 'title', 'div' => false, 'label' => '',"class" => "inpt-txt-fld form-control","maxlength" => "250",'onblur'=>"fillspacealias()"));?></span></td>
 					</tr>
 			<?php } ?>
 					<tr>
 					<td align="right"><label class="boldlabel">Alias<span style="color: red;">&nbsp;&nbsp;</span></label></td>
-						<td><span class="intpSpannew"><?php echo $form->input("Content.alias", array('id' => 'alias', 'div' => false, 'label' => '','readonly' => 'readonly',"class" => "inpt_txt_fld","maxlength" => "250"));?></span></td>
+						<td><span class="intp-Spannew"><?php echo $form->input("Content.alias", array('id' => 'alias', 'div' => false, 'label' => '','readonly' => 'readonly',"class" => "inpt-txt-fld form-control","maxlength" => "250"));?></span></td>
 					</tr><tr>
 					<td align="right"><label class="boldlabel">Page Title <span style="color: red;">*</span></label></td>
-						<td><span class="intpSpannew"><?php echo $form->input("Content.metatitle", array('id' => 'metatitle', 'div' => false, 'label' => '',"class" => "inpt_txt_fld","maxlength" => "250"));?></span></td>
+						<td><span class="intp-Spannew"><?php echo $form->input("Content.metatitle", array('id' => 'metatitle', 'div' => false, 'label' => '',"class" => "inpt-txt-fld form-control","maxlength" => "250"));?></span></td>
 					</tr>
 					
 					<tr>
@@ -162,7 +168,7 @@ echo $javascript->link('ckeditor/ckeditor');
                     </tr>
             <tr>
 <td width="35%"  align="right" class="lbltxtarea"><label class="boldlabel">Header Image</label></td>
-<td width="65%"><span class="intpSpannew"><?php echo $form->input("header_image", array('type'=>'file','id' => 'header_image', 'div' => false, 'label' => '',"class" => "inpt_txt_fld","maxlength" => "250"));?></span></td>
+<td width="65%"><span class="intp-Spannew"><?php echo $form->input("header_image", array('type'=>'file','id' => 'header_image', 'div' => false, 'label' => '',"class" => "inpt-txt-fld form-control","maxlength" => "250"));?></span></td>
 </tr>
 					</tbody>
 					</table>

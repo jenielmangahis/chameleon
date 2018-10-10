@@ -25,9 +25,6 @@ $backUrl = $base_url_Admin;
             </div>
             
         </div>
-        <div class="topTabs">
-           
-        </div>
     </div>
     
 </div>
@@ -48,12 +45,12 @@ $backUrl = $base_url_Admin;
     <?php if($session->check('Message.flash')) { echo $this->renderElement('error_message'); } ?>
     <!-- top curv image starts -->
     <!-- ADD Sub Admin  FORM EOF -->
-    <div class="table-responsive">
-        <table class="table table-borderless">
+    <div class="clearfix">
+        <table width="90%">
             <tr>
-                <td width="180px" align="right"><span class="spnclass"> Register Component</span></td>
-                <td width="600px">
-                    <div style="padding-left:0px;"><span class="txtArea-top1">
+                <td  align="right"><span class="spnclass"> Register Component</span></td>
+                <td >
+                    <div style="padding-left:0px; margin-right:10px;"><span class="txtArea-top1">
                             <span class="txtArea-bot1"><textarea  id="codeval1" class="multilist_1 form-control" cols="2000" rows="5"></textarea></span></span></div>
                     &nbsp;&nbsp;&nbsp; 
                 </td>
@@ -67,9 +64,9 @@ $backUrl = $base_url_Admin;
                 </td>
             </tr>
             <tr>
-                <td width="180px" align="right"><span class="spnclass"> Login Component</span></td>
-                <td width="600px">
-                    <div style="padding-left:0px;"><span class="txtArea-top1">
+                <td  align="right"><span class="spnclass"> Login Component</span></td>
+                <td >
+                    <div style="padding-left:0px; margin-right:10px;"><span class="txtArea-top1">
                             <span class="txtArea-bot1"><textarea  id="codeval2" class="multilist_1 form-control" cols="2000" rows="5"></textarea></span></span></div>
                     &nbsp;&nbsp;&nbsp; 
                 </td>
@@ -83,9 +80,9 @@ $backUrl = $base_url_Admin;
                 </td>
             </tr>
             <tr>
-                <td width="180px" align="right"><span class="spnclass">Coin & Comments Component</span></td>
-                <td width="600px">
-                    <div style="padding-left:0px;"><span class="txtArea-top1">
+                <td  align="right"><span class="spnclass">Coin & Comments Component</span></td>
+                <td >
+                    <div style="padding-left:0px; margin-right:10px;"><span class="txtArea-top1">
                             <span class="txtArea-bot1"><textarea  id="codeval3" class="multilist_1 form-control" cols="2000" rows="5"></textarea></span></span></div>
                     &nbsp;&nbsp;&nbsp;
                 </td>
@@ -100,9 +97,9 @@ $backUrl = $base_url_Admin;
             </tr>
     
             <tr>
-                <td width="180px" align="right"><span class="spnclass">Event Component</span></td>
-                <td width="600px">
-                    <div style="padding-left:0px;"><span class="txtArea-top1">
+                <td  align="right"><span class="spnclass">Event Component</span></td>
+                <td >
+                    <div style="padding-left:0px; margin-right:10px;"><span class="txtArea-top1">
                             <span class="txtArea-bot1"><textarea  id="codeval4" class="multilist_1 form-control" cols="2000" rows="5"></textarea></span></span></div>
                     &nbsp;&nbsp;&nbsp;
                 </td>
@@ -117,9 +114,9 @@ $backUrl = $base_url_Admin;
             </tr>
     
             <tr>
-                <td width="180px" align="right"><span class="spnclass">Blog Component</span></td>
-                <td width="600px">
-                    <div style="padding-left:0px;"><span class="txtArea-top1">
+                <td  align="right"><span class="spnclass">Blog Component</span></td>
+                <td >
+                    <div style="padding-left:0px; margin-right:10px;"><span class="txtArea-top1">
                             <span class="txtArea-bot1"><textarea  id="codeval5" class="multilist_1 form-control" cols="2000" rows="5"></textarea></span></span></div>
                     &nbsp;&nbsp;&nbsp;
                 </td>
@@ -134,9 +131,9 @@ $backUrl = $base_url_Admin;
             </tr>
     
             <tr>
-                <td width="180px" align="right"><span class="spnclass">Chat Component</span></td>
-                <td width="600px">
-                    <div style="padding-left:0px;"><span class="txtArea-top1">
+                <td  align="right"><span class="spnclass">Chat Component</span></td>
+                <td >
+                    <div style="padding-left:0px; margin-right:10px;"><span class="txtArea-top1">
                             <span class="txtArea-bot1"><textarea name="codeval6"  id="codeval6" class="multilist_1 form-control" cols="2000" rows="5"></textarea></span></span></div>
                     &nbsp;&nbsp;&nbsp;
                 </td>
@@ -151,19 +148,19 @@ $backUrl = $base_url_Admin;
             </tr>
             
             <tr>
-                <td width="180px" align="right"><span class="spnclass">Single Event Component</span></td>
-                <td width="600px">
+                <td  align="right"><span class="spnclass">Single Event Component</span></td>
+                <td >
                 Select Event:
                 <span class="txtArea-top">
                         <span class="txtArea-bot">
                 <?php 
-                            echo $form->select("Event.event_title",$event_titles,0, array('id' => 'event_title', 'div' => false, 'label' => '','style' =>'background: none repeat scroll 0% 0% transparent; margin-bottom: 6px; width:230px;',"class" =>"form-controld","maxlength" => "250"),"---Select---");
+                            echo $form->select("Event.event_title",$event_titles,0, array('id' => 'event_title', 'div' => false, 'label' => '','style' =>'width:100%; margin-top:10px;',"class" =>"form-control","maxlength" => "250"),"---Select---");
     
                 ?>
                 </span>
                 </span>
                 <br />
-                    <div style="padding-left:0px;"><span class="txtArea-top1">
+                    <div style="padding-left:0px; margin-right:10px;"><span class="txtArea-top1">
                             <span class="txtArea-bot1"><textarea name="codeval7"  id="codeval7" class="multilist_1 form-control" cols="2000" rows="5"></textarea></span></span></div>
                     &nbsp;&nbsp;&nbsp;
                 </td>

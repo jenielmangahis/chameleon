@@ -4152,6 +4152,7 @@ p.subtext {
 .points .checkbox, .points input[type="checkbox"], .event-task input[type="checkbox"] { position:relative; margin:0;}
 
 .intp-Span .form-control { margin-bottom:10px;}
+.themeTblData .intp-Span select.form-control { background:none; height:auto; width:auto; border:1px solid #ccc;}
 
 .form-control { margin-bottom:10px;}
 
@@ -4192,6 +4193,8 @@ ul.form-style li .intpSpan { display:block; margin-bottom:10px;}
 
 .frmbox label { display:inline;}
 label { display:inline;}
+
+#ZeroClipboardMovie_1, #ZeroClipboardMovie_2, #ZeroClipboardMovie_3 { display:none;}
 
 /*----------------------------NAVIGATION AREA--------------------*/
 

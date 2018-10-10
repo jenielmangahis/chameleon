@@ -122,9 +122,9 @@ $backUrl = $base_url_admin.'contentlist';
     </div>
   </div>
   <?php } ?>
-  <div class="themeTblData table-responsive">
+  <div class="themeTblData clearfix">
     <div id="Themes">
-    <table class="table table-borderless" width="100%" align="center" cellpadding="0" cellspacing="0">
+    <table  align="center" cellpadding="0" cellspacing="0">
       <?php if($session->check('Message.flash')){ ?>
       <tr>
         <td align="center">
@@ -135,7 +135,7 @@ $backUrl = $base_url_admin.'contentlist';
       <tr>
         <td>
           <input type="hidden" value="<?php echo $this->data['Theme']['id'] ?>" id="themeid" name="data[Theme][themeid]"/>
-          <table class="themetbl1 table table-borderless" width="100%" cellpadding="0" cellspacing="10">
+          <table class="themetbl1" cellpadding="0" cellspacing="10">
             <tr class="clearfix">
               <td class="col-sm-6 themetbl1-td1" >
                 <fieldset>
@@ -160,19 +160,19 @@ $backUrl = $base_url_admin.'contentlist';
                     </span></li>
                     <li>
                       <label>Border Color</label>
-                      <span class="intpSpan"><em>#</em><?php echo $form->input('Theme.bordercolor',array('class'=>'inpt_txt_fld1','div'=>false,'label'=>false)); ?></span>
+                      <span class="intp-Span"><em>#</em><?php echo $form->input('Theme.bordercolor',array('class'=>'inpt-txt-fld1 form-control','div'=>false,'label'=>false)); ?></span>
 					 
 							  
                       <label>Border Width px</label>
-                      <span class="intpSpan"><?php echo $form->input('Theme.borderwidth',array('class'=>'inpt_txt_fld1','div'=>false,'label'=>false)); ?></span></li>
+                      <span class="intp-Span"><?php echo $form->input('Theme.borderwidth',array('class'=>'inpt-txt-fld1 form-control','div'=>false,'label'=>false)); ?></span></li>
                     <li>
                       <label>Menu Color </label>
-                      <span class="intpSpan"><em>#</em><?php echo $form->input('Theme.menubgcolor',array('class'=>'inpt_txt_fld1','div'=>false,'label'=>false)); ?></span>
+                      <span class="intp-Span"><em>#</em><?php echo $form->input('Theme.menubgcolor',array('class'=>'inpt-txt-fld1 form-control','div'=>false,'label'=>false)); ?></span>
                       <label>Menu Height px</label>
-                      <span class="intpSpan"><?php echo $form->input('Theme.menuheight',array('class'=>'inpt_txt_fld1','div'=>false,'label'=>false)); ?></span></li>
+                      <span class="intp-Span"><?php echo $form->input('Theme.menuheight',array('class'=>'inpt-txt-fld1 form-control','div'=>false,'label'=>false)); ?></span></li>
                     <li>
                       <label>Dropdown Menu</label>
-                      <span class="intpSpan"><em>#</em><?php echo $form->input('Theme.dropdowntextcolor',array('class'=>'inpt_txt_fld1','div'=>false,'label'=>false)); ?></span></li>
+                      <span class="intp-Span"><em>#</em><?php echo $form->input('Theme.dropdowntextcolor',array('class'=>'inpt-txt-fld1 form-control','div'=>false,'label'=>false)); ?></span></li>
                   </ul>
                 </fieldset>              </td>
               <td class="col-sm-6 themetbl1-td2" >
@@ -181,23 +181,23 @@ $backUrl = $base_url_admin.'contentlist';
                   <ul class="form-style">
                     <li>
                       <label class="themetbl1_td2_lbl">Around Coins</label>
-                      <span class="intpSpan"><em>#</em><?php echo $form->input('Theme.bgaroundcoins',array('id'=>'bgaroundcoins','class'=>'inpt_txt_fld1','div'=>false,'label'=>false)); ?></span>
-                      <textarea class="form-control" id="codeval1" cols="200" rows="2"></textarea>
+                      <span class="intp-Span"><em>#</em><?php echo $form->input('Theme.bgaroundcoins',array('id'=>'bgaroundcoins','class'=>'inpt-txt-fld1 form-control','div'=>false,'label'=>false)); ?></span>
+                      <textarea style="margin-top:10px;" class="form-control" id="codeval1" cols="200" rows="2"></textarea>
                       <button type="button" value="Getsource1" class="btn btn-sm btn-primary" name="Getsource" onClick="getsource1();"><span>Get iFrame Source</span></button>
 					                       <button type="button" id="coins_clip_button" value="Copy" class="new-blue btn btn-sm btn-success" name="copyb" ><span>Copy</span></button>
                     </li>
                     <li>
                       <label class="themetbl1_td2_lbl" >Register Button</label>
-                      <span class="intpSpan"><em>#</em><?php echo $form->input('Theme.bgregisterbtn',array('id'=>'bgregisterbtn','class'=>'inpt_txt_fld1','div'=>false,'label'=>false)); ?></span>
-                      <textarea class="form-control" id="codeval2" cols="200" rows="2"  ></textarea>
+                      <span class="intp-Span"><em>#</em><?php echo $form->input('Theme.bgregisterbtn',array('id'=>'bgregisterbtn','class'=>'inpt-txt-fld1 form-control','div'=>false,'label'=>false)); ?></span>
+                      <textarea style="margin-top:10px;" class="form-control" id="codeval2" cols="200" rows="2"  ></textarea>
                       <button type="button" value="Getsource2" class="btn btn-sm btn-primary" name="Getsource" onClick="getsource2();"><span>Get iFrame Source</span></button>
                       <button type="button" id="register_clip_button" value="Copy" class="new-blue btn btn-sm btn-success" name="copyb" ><span>Copy</span></button>
 					 
 					</li>
                     <li>
                       <label class="themetbl1_td2_lbl" >Comment Button</label>
-                      <span class="intpSpan"><em>#</em><?php echo $form->input('Theme.bgcommentbtn',array('id'=>'bgcommentbtn','class'=>'inpt_txt_fld1','div'=>false,'label'=>false)); ?></span>
-                      <textarea class="form-control"  id="codeval3" cols="200" rows="2"></textarea>
+                      <span class="intp-Span"><em>#</em><?php echo $form->input('Theme.bgcommentbtn',array('id'=>'bgcommentbtn','class'=>'inpt-txt-fld1 form-control','div'=>false,'label'=>false)); ?></span>
+                      <textarea style="margin-top:10px;" class="form-control"  id="codeval3" cols="200" rows="2"></textarea>
                       <button type="button" value="Getsource3" class=" btn btn-sm btn-primary" name="Getsource" onClick="getsource3();"><span>Get iFrame Source</span></button>
                       <button type="button" id="comment_clip_button" value="Copy" class="new-blue btn btn-sm btn-success" name="copyb" ><span>Copy</span></button>
                     </li>
@@ -209,7 +209,7 @@ $backUrl = $base_url_admin.'contentlist';
       </tr>
       <tr>
         <td>
-          <table class="themetbl2 table table-borderless" width="100%" cellpadding="0" cellspacing="8">
+          <table class="themetbl2"  cellpadding="0" cellspacing="8">
             <tr>
               <td class="themetbl2_td1">
                 <fieldset style="border: 1px solid #d2d2d2; padding: 10px;">
@@ -217,7 +217,7 @@ $backUrl = $base_url_admin.'contentlist';
                   <ul class="form-style">
                     <li>
                       <label>Website Header </label>
-                      <?php echo $form->file('Project.coinlogo',array('id'=> 'logo',"class" => "input-file"));?>
+                      <?php echo $form->file('Project.coinlogo',array('id'=> 'logo',"class" => "input_file form-control"));?>
                       <div style="color: LightSlateGray; font-size: 11px;font-style: italic; padding-left:135px;"> Recommended width 960px or 1020px depending on page width. </div>
                       
 					  <?php if(!empty($existingHeaderImages) && false) { ?>
@@ -257,13 +257,13 @@ $backUrl = $base_url_admin.'contentlist';
                       <span ><?php echo $form->checkbox('Theme.no_header_img', array('value' => 1,'div'=>false,'label'=>false));  ?></span> </li>
                     <li>
                       <label>Header Color</label>
-                      <span class="intpSpan"><em>#</em><?php echo $form->input('Theme.headercolor',array('class'=>'inpt_txt_fld1','div'=>false,'label'=>false)); ?></span> </li>
+                      <span class="intp-Span"><em>#</em><?php echo $form->input('Theme.headercolor',array('class'=>'inpt-txt-fld1 form-control','div'=>false,'label'=>false)); ?></span> </li>
                     <li>
                       <label>Header Separator</label>
-                      <span class="intpSpan"><em>#</em><?php echo $form->input('Theme.headerseperator',array('class'=>'inpt_txt_fld1','div'=>false,'label'=>false)); ?></span> </li>
+                      <span class="intp-Span"><em>#</em><?php echo $form->input('Theme.headerseperator',array('class'=>'inpt-txt-fld1 form-control','div'=>false,'label'=>false)); ?></span> </li>
                     <li>
                       <label>Footer Separator</label>
-                      <span class="intpSpan"><em>#</em><?php echo $form->input('Theme.footerseprator',array('class'=>'inpt_txt_fld1','div'=>false,'label'=>false)); ?> </span> </li>
+                      <span class="intp-Span"><em>#</em><?php echo $form->input('Theme.footerseprator',array('class'=>'inpt-txt-fld1 form-control','div'=>false,'label'=>false)); ?> </span> </li>
                   </ul>
                 </fieldset>
               </td>
@@ -273,26 +273,26 @@ $backUrl = $base_url_admin.'contentlist';
                   <ul class="form-style">
                     <li>
                       <label class="inline">Font</label>
-                      <span class="intpSpan">
+                      <span class="intp-Span">
                       <?php
 				 //$optionsfont = array('0' => 'Arial', '1' => 'TNR');
-				 echo $form->select('Theme.pagefont',$fontdropdown, $selectedfontpage ,array('id'=>'pagefont','empty'=>false,'class'=>'multilist multi'), "-- Select --");  ?>
+				 echo $form->select('Theme.pagefont',$fontdropdown, $selectedfontpage ,array('id'=>'pagefont','empty'=>false,'class'=>'multi-list form-control'), "-- Select --");  ?>
                       </span> </li>
                     <li>
                       <label>Body Text</label>
-                      <span class="intpSpan"><em>#</em><?php echo $form->input('Theme.bodytextcolor',array('class'=>'inpt_txt_fld1','div'=>false,'label'=>false)); ?></span></li>
+                      <span class="intp-Span"><em>#</em><?php echo $form->input('Theme.bodytextcolor',array('class'=>'inpt-txt-fld1 form-control','div'=>false,'label'=>false)); ?></span></li>
                     <li>
                       <label>Links</label>
-                      <span class="intpSpan"><em>#</em><?php echo $form->input('Theme.linkcolor',array('class'=>'inpt_txt_fld1','div'=>false,'label'=>false)); ?></span> </li>
+                      <span class="intp-Span"><em>#</em><?php echo $form->input('Theme.linkcolor',array('class'=>'inpt-txt-fld1 form-control','div'=>false,'label'=>false)); ?></span> </li>
                     <li>
                       <label>html &lt;h1&gt; tag</label>
-                      <span class="intpSpan"><em>#</em><?php echo $form->input('Theme.headercolor1',array('class'=>'inpt_txt_fld1','div'=>false,'label'=>false)); ?></span></li>
+                      <span class="intp-Span"><em>#</em><?php echo $form->input('Theme.headercolor1',array('class'=>'inpt-txt-fld1 form-control','div'=>false,'label'=>false)); ?></span></li>
                     <li>
                       <label> html &lt;h2&gt; tag </label>
-                      <span class="intpSpan"><em>#</em><?php echo $form->input('Theme.headercolor2',array('class'=>'inpt_txt_fld1','div'=>false,'label'=>false)); ?></span></li>
+                      <span class="intp-Span"><em>#</em><?php echo $form->input('Theme.headercolor2',array('class'=>'inpt-txt-fld1 form-control','div'=>false,'label'=>false)); ?></span></li>
                     <li>
                       <label> html &lt;h3&gt; tag </label>
-                      <span class="intpSpan"><em>#</em><?php echo $form->input('Theme.headercolor3',array('class'=>'inpt_txt_fld1','div'=>false,'label'=>false)); ?></span></li>
+                      <span class="intp-Span"><em>#</em><?php echo $form->input('Theme.headercolor3',array('class'=>'inpt-txt-fld1 form-control','div'=>false,'label'=>false)); ?></span></li>
                   </ul>
                 </fieldset>
               </td>
@@ -302,11 +302,11 @@ $backUrl = $base_url_admin.'contentlist';
                   <ul class="form-style">
                     <li>
                       <label class="inline">Font</label>
-                      <span class="intpSpan"><?php echo $form->select('Theme.menufont',$fontdropdown, $selectedfontmenu ,array('id'=>'menufont','class'=>'multilist multi'), "-- Select --"); ?></span></li>
+                      <span class="intp-Span"><?php echo $form->select('Theme.menufont',$fontdropdown, $selectedfontmenu ,array('id'=>'menufont','class'=>'multi-list form-control'), "-- Select --"); ?></span></li>
                    <li>
 				   	<label class="inline">Size</label>
 				 <?php	$sizearray = range(8, 30); ?>
-					<span class="intpSpan"><?php echo $form->select('Theme.fontsize',$sizearray, $selectedfontsize ,array('id'=>'fontsize','class'=>'multilist multi sizeselect'), "- Size -"); ?></span>
+					<span class="intp-Span"><?php echo $form->select('Theme.fontsize',$sizearray, $selectedfontsize ,array('id'=>'fontsize','class'=>'multi-list form-control sizeselect'), "- Size -"); ?></span>
 					<script type="text/javascript">
 					
 						
@@ -356,16 +356,16 @@ $backUrl = $base_url_admin.'contentlist';
 				   
 				    <li>
                       <label>Menu</label>
-                      <span class="intpSpan"><em>#</em><?php echo $form->input('Theme.menucolor',array('class'=>'inpt_txt_fld1','div'=>false,'label'=>false)); ?></span></li>
+                      <span class="intp-Span"><em>#</em><?php echo $form->input('Theme.menucolor',array('class'=>'inpt-txt-fld1 form-control','div'=>false,'label'=>false)); ?></span></li>
                     <li>
                       <label>Hover Menu</label>
-                      <span class="intpSpan"><em>#</em><?php echo $form->input('Theme.menuhover',array('class'=>'inpt_txt_fld1','div'=>false,'label'=>false)); ?></span> </li>
+                      <span class="intp-Span"><em>#</em><?php echo $form->input('Theme.menuhover',array('class'=>'inpt-txt-fld1 form-control','div'=>false,'label'=>false)); ?></span> </li>
                     <li>
                       <label>Active Menu</label>
-                      <span class="intpSpan"><em>#</em><?php echo $form->input('Theme.menuactive',array('class'=>'inpt_txt_fld1','div'=>false,'label'=>false)); ?></span> </li>
+                      <span class="intp-Span"><em>#</em><?php echo $form->input('Theme.menuactive',array('class'=>'inpt-txt-fld1 form-control','div'=>false,'label'=>false)); ?></span> </li>
                     <li>
                       <label>Register &amp; Login</label>
-                      <span class="intpSpan"><em>#</em><?php echo $form->input('Theme.menuspecial',array('class'=>'inpt_txt_fld1','div'=>false,'label'=>false)); ?></span> </li>
+                      <span class="intp-Span"><em>#</em><?php echo $form->input('Theme.menuspecial',array('class'=>'inpt-txt-fld1 form-control','div'=>false,'label'=>false)); ?></span> </li>
                   </ul>
                 </fieldset>
               </td>
@@ -375,7 +375,7 @@ $backUrl = $base_url_admin.'contentlist';
                   <ul class="form-style">
                     <li>
                       <label class="block">Site Background Image </label>
-                      <?php echo $form->file('Theme.sitebackgroundimage',array('id'=> 'backgroundimage', 'class'=>'input-file'));?>
+                      <?php echo $form->file('Theme.sitebackgroundimage',array('id'=> 'backgroundimage', 'class'=>'input_file form-control'));?>
                       <?php if(!empty($existingBgImages) && false) { ?>
                       <div id="siteBkImage">
                         <style>
@@ -411,10 +411,10 @@ $backUrl = $base_url_admin.'contentlist';
                     </li>
                     <li>
                       <label>Site Background</label>
-                      <span class="intpSpan"><em>#</em><?php echo $form->input('Theme.bodybgcolor',array('class'=>'inpt_txt_fld1','div'=>false,'label'=>false)); ?></span> </li>
+                      <span class="intp-Span"><em>#</em><?php echo $form->input('Theme.bodybgcolor',array('class'=>'inpt-txt-fld1 form-control','div'=>false,'label'=>false)); ?></span> </li>
                     <li>
                       <label class="block">Page Background Image </label>
-                      <?php echo $form->file('Theme.pagebackgroundimage',array('id'=> 'pagebackgroundimage',"class" => "input-file"));?>
+                      <?php echo $form->file('Theme.pagebackgroundimage',array('id'=> 'pagebackgroundimage',"class" => "input_file form-control"));?>
                       <?php if(!empty($existingPageBgImages)&& false) { ?>
                       <div id="siteBkImage">
                         <style>
@@ -451,10 +451,10 @@ $backUrl = $base_url_admin.'contentlist';
                     </li>
                     <li>
                       <label>Page Background</label>
-                      <span class="intpSpan"><em>#</em><?php echo $form->input('Theme.bodycolor',array('class'=>'inpt_txt_fld1','div'=>false,'label'=>false)); ?></span> </li>
+                      <span class="intp-Span"><em>#</em><?php echo $form->input('Theme.bodycolor',array('class'=>'inpt-txt-fld1 form-control','div'=>false,'label'=>false)); ?></span> </li>
                     <li>
                       <label>Forms Background</label>
-                      <span class="intpSpan"><em>#</em><?php echo $form->input('Theme.formscolor',array('class'=>'inpt_txt_fld1','div'=>false,'label'=>false)); ?></span> </li>
+                      <span class="intp-Span"><em>#</em><?php echo $form->input('Theme.formscolor',array('class'=>'inpt-txt-fld1 form-control','div'=>false,'label'=>false)); ?></span> </li>
                   </ul>
                 </fieldset>
               </td>
@@ -471,13 +471,13 @@ $backUrl = $base_url_admin.'contentlist';
                   <legend>For Register and Login Page</legend>
                   <ul class="form-style"><li>
                     <label>Label Text Color</label>
-                     <span class="intpSpan"><em>#</em><?php echo $form->input('Theme.labeltextcolor',array('id'=>'labeltextcolor','class'=>'inpt_txt_fld1','div'=>false,'label'=>false)); ?></span></li>
+                     <span class="intp-Span"><em>#</em><?php echo $form->input('Theme.labeltextcolor',array('id'=>'labeltextcolor','class'=>'inpt-txt-fld1 form-control','div'=>false,'label'=>false)); ?></span></li>
                      <li>
                     <label>Text Color</label>
-                    <span class="intpSpan"><em>#</em><?php echo $form->input('Theme.systemtextcolor',array('id'=>'systemtextcolor','class'=>'inpt_txt_fld1','div'=>false,'label'=>false)); ?></span></li>
+                    <span class="intp-Span"><em>#</em><?php echo $form->input('Theme.systemtextcolor',array('id'=>'systemtextcolor','class'=>'inpt-txt-fld1 form-control','div'=>false,'label'=>false)); ?></span></li>
                     <li>
                     <label>Links Color</label>
-                    <span class="intpSpan"><em>#</em><?php echo $form->input('Theme.systemlinkcolor',array('id'=>'systemlinkcolor','class'=>'inpt_txt_fld1','div'=>false,'label'=>false)); ?></span> </li></ul>
+                    <span class="intp-Span"><em>#</em><?php echo $form->input('Theme.systemlinkcolor',array('id'=>'systemlinkcolor','class'=>'inpt-txt-fld1 form-control','div'=>false,'label'=>false)); ?></span> </li></ul>
                 </fieldset>
               </td>
               <td class="themetbl3_td2 col-sm-7" >
@@ -485,47 +485,47 @@ $backUrl = $base_url_admin.'contentlist';
                   <legend>Member Dashboard &amp; Pages</legend>
                   <ul class="form-style box1"><li>
                     <label>Label Text Color</label>
-                     <span class="intpSpan"><em>#</em><?php echo $form->input('Theme.dashboardlabelcolor',array('id'=>'dashboardlabelcolor','class'=>'inpt_txt_fld1','div'=>false,'label'=>false)); ?></span>
+                     <span class="intp-Span"><em>#</em><?php echo $form->input('Theme.dashboardlabelcolor',array('id'=>'dashboardlabelcolor','class'=>'inpt-txt-fld1 form-control','div'=>false,'label'=>false)); ?></span>
                      </li>
                      <li>
                     <label>Special Text Color</label>
-                    <span class="intpSpan"><em>#</em><?php echo $form->input('Theme.dashboardspecialtextcolor',array('id'=>'dashboardtextcolor','class'=>'inpt_txt_fld1','div'=>false,'label'=>false)); ?></span></li>
+                    <span class="intp-Span"><em>#</em><?php echo $form->input('Theme.dashboardspecialtextcolor',array('id'=>'dashboardtextcolor','class'=>'inpt-txt-fld1 form-control','div'=>false,'label'=>false)); ?></span></li>
                     <li>
                     <label>Links Color</label>
-                    <span class="intpSpan"><em>#</em><?php echo $form->input('Theme.dashboardlinkcolor',array('id'=>'dashboardlinkcolor','class'=>'inpt_txt_fld1','div'=>false,'label'=>false)); ?></span></li>
+                    <span class="intp-Span"><em>#</em><?php echo $form->input('Theme.dashboardlinkcolor',array('id'=>'dashboardlinkcolor','class'=>'inpt-txt-fld1 form-control','div'=>false,'label'=>false)); ?></span></li>
                   </ul>
                   <ul class="form-style box2">
                   <li>
                     <label>Menu Text Color</label>
-                    <span class="intpSpan"><em>#</em><?php echo $form->input('Theme.dashboardmenutextcolor',array('id'=>'dashboardmenutextcolor','class'=>'inpt_txt_fld1','div'=>false,'label'=>false)); ?></span></li>
+                    <span class="intp-Span"><em>#</em><?php echo $form->input('Theme.dashboardmenutextcolor',array('id'=>'dashboardmenutextcolor','class'=>'inpt-txt-fld1 form-control','div'=>false,'label'=>false)); ?></span></li>
                     <li>
                     <label>Menu Background Color</label>
-                    <span class="intpSpan"><em>#</em><?php echo $form->input('Theme.dashboardmenubgcolor',array('id'=>'dashboardmenubgcolor','class'=>'inpt_txt_fld1','div'=>false,'label'=>false)); ?></span></li>
+                    <span class="intp-Span"><em>#</em><?php echo $form->input('Theme.dashboardmenubgcolor',array('id'=>'dashboardmenubgcolor','class'=>'inpt-txt-fld1 form-control','div'=>false,'label'=>false)); ?></span></li>
                     <li>
                     <label  class="boldlabel" style="display: inline-block;  text-align: right; margin-bottom: 10px;">Menu Hover Color</label>
-                    <span class="intpSpan"><em>#</em><?php echo $form->input('Theme.dashboardmenuhovercolor',array('id'=>'dashboardmenuhovercolor','class'=>'inpt_txt_fld1','div'=>false,'label'=>false)); ?> </span></li>
+                    <span class="intp-Span"><em>#</em><?php echo $form->input('Theme.dashboardmenuhovercolor',array('id'=>'dashboardmenuhovercolor','class'=>'inpt-txt-fld1 form-control','div'=>false,'label'=>false)); ?> </span></li>
                     <li>
                     <label>Selected Menu Tab Color</label>
-                    <span class="intpSpan"><em>#</em><?php echo $form->input('Theme.dashboardselectmenucolor',array('id'=>'dashboardselectmenucolor','class'=>'inpt_txt_fld1','div'=>false,'label'=>false)); ?> </span></li>
+                    <span class="intp-Span"><em>#</em><?php echo $form->input('Theme.dashboardselectmenucolor',array('id'=>'dashboardselectmenucolor','class'=>'inpt-txt-fld1 form-control','div'=>false,'label'=>false)); ?> </span></li>
                     <li>
                     <label>Menu Separator Color</label>
-                    <span class="intpSpan"><em>#</em><?php echo $form->input('Theme.dashboardmenuseparatorcolor',array('id'=>'dashboardmenuseparatorcolor','class'=>'inpt_txt_fld1','div'=>false,'label'=>false)); ?> </span></li></ul>
+                    <span class="intp-Span"><em>#</em><?php echo $form->input('Theme.dashboardmenuseparatorcolor',array('id'=>'dashboardmenuseparatorcolor','class'=>'inpt-txt-fld1 form-control','div'=>false,'label'=>false)); ?> </span></li></ul>
                     
                     
                   <ul class="form-style box3"><li>  <label>Profile Progress bar Color</label>
-                    <span class="intpSpan"><em>#</em><?php echo $form->input('Theme.progressbarcolor',array('id'=>'progressbarcolor','class'=>'inpt_txt_fld1','div'=>false,'label'=>false)); ?></span></li>
+                    <span class="intp-Span"><em>#</em><?php echo $form->input('Theme.progressbarcolor',array('id'=>'progressbarcolor','class'=>'inpt-txt-fld1 form-control','div'=>false,'label'=>false)); ?></span></li>
                     <li>
                     <label>Save &amp; Apply Button Background</label>
-                    <span class="intpSpan"><em>#</em><?php echo $form->input('Theme.saveapplybg',array('id'=>'saveapplybg','class'=>'inpt_txt_fld1','div'=>false,'label'=>false)); ?></span></li>
+                    <span class="intp-Span"><em>#</em><?php echo $form->input('Theme.saveapplybg',array('id'=>'saveapplybg','class'=>'inpt-txt-fld1 form-control','div'=>false,'label'=>false)); ?></span></li>
                     <li>
                     <label>Save &amp; Apply Button Hover Color</label>
-                    <span class="intpSpan"><em>#</em><?php echo $form->input('Theme.saveapplyhover',array('id'=>'saveapplyhover','class'=>'inpt_txt_fld1','div'=>false,'label'=>false)); ?></span></li>
+                    <span class="intp-Span"><em>#</em><?php echo $form->input('Theme.saveapplyhover',array('id'=>'saveapplyhover','class'=>'inpt-txt-fld1 form-control','div'=>false,'label'=>false)); ?></span></li>
                     <li>
                     <label>Save &amp; Apply Separator Color</label>
-                    <span class="intpSpan"><em>#</em><?php echo $form->input('Theme.saveapplyseparator',array('id'=>'saveapplyseparator','class'=>'inpt_txt_fld1','div'=>false,'label'=>false)); ?></span></li>
+                    <span class="intp-Span"><em>#</em><?php echo $form->input('Theme.saveapplyseparator',array('id'=>'saveapplyseparator','class'=>'inpt-txt-fld1 form-control','div'=>false,'label'=>false)); ?></span></li>
                     <li>
                     <label>Save &amp; Apply Text Color</label>
-                    <span class="intpSpan"><em>#</em><?php echo $form->input('Theme.saveapplytextcolor',array('id'=>'saveapplytextcolor','class'=>'inpt_txt_fld1','div'=>false,'label'=>false)); ?></span></li></ul>
+                    <span class="intp-Span"><em>#</em><?php echo $form->input('Theme.saveapplytextcolor',array('id'=>'saveapplytextcolor','class'=>'inpt-txt-fld1 form-control','div'=>false,'label'=>false)); ?></span></li></ul>
                 </fieldset>
               </td>
             </tr>
@@ -533,6 +533,7 @@ $backUrl = $base_url_admin.'contentlist';
         </td>
       </tr>
     </table>
+    </div>
   </div>
   <?php echo $form->end(); ?> 
   <!-- ADD Sub Admin  FORM EOF --> 

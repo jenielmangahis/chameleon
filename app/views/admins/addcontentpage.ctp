@@ -5,45 +5,47 @@ $backUrl = $base_url_admin.$lgrt;
 ?>
 <!--container starts here-->
 <div class="titlCont">
-<div class="myclass">
-<div align="center" class="slider" id="toppanel">
-<?php 
-if($extra=="" && $returnurl=="")
-{
-    //echo $this->renderElement('new_slider');  
-	$head="Add New Web Page" ;
-}
-else
-{
-    if($extra=="detail" || $returnurl=="detail")
-        $head="Event Detail";
-    else
-    if($extra=="sponsor" || $returnurl=="sponsor")
-        $head="Sponsor Detail";
-    else
-    if($extra=="inquiry" || $returnurl=="inquiry")
-        $head="Inquiry Detail";
-    else
-       $head="Add New Web Page" ;
-}
-?>
-</div>
-<div class="slider" id="toppanel" style="height: 20px; top:13px;right: -50px;width:545px !important; text-align:right;">					
-
-<?php echo $form->create("Admins", array("action" => "addcontentpage",'name' => 'addcontentpage','onsubmit'=>'return validatecontentpage();' ,'id' => "addcontentpage"));
-if($returnurl){ echo $form->hidden("returnurl", array('id' => 'returnurl', 'value'=>$returnurl)); }
-    if($closeit=="yes"){   echo $form->hidden("closeit", array('id' => 'closeit', 'value'=>$closeit)); }
-    if($extra){ echo $form->hidden("extra", array('id' => 'extra', 'value'=>$extra)); }
-    if(isset($event_title) && !empty($event_title)){ echo $form->hidden("event_title", array('id' => 'event_title', 'value'=>$event_title)); }
-?>
-<button type="submit" value="Submit" class="sendBut" name="data[Action][redirectpage]"><?php e($html->image('save.png')); ?></button>
-<button type="submit" value="Submit" class="sendBut" name="data[Action][noredirection]"><?php e($html->image('apply.png')); ?></button>
-<button type="button" id="saveForm" class="sendBut"   <?php if($returnurl && $returnurl!="detail" && $returnurl!="sponsor" && $returnurl!="inquiry"){ echo "onclick='closemywindow();'"; }else{?>ONCLICK="javascript:(window.location='<?php echo $backUrl;?>')" <?php } ?> ><?php e($html->image('cancle.png')); ?></button>
-<?php echo $this->renderElement('new_slider');  ?>
-</div>
- <?php  echo $this->renderElement('project_name');  ?>
-<span class="titlTxt"><?php echo $head;?></span>
-</div>
+	<div class="slider-centerpage clearfix">
+    	<div class="center-Page col-sm-6">
+            <h2>Add New Webpage</h2>
+        </div>
+        <div class="slider-dashboard col-sm-6">
+        	<div class="icon-container">
+            	<?php 
+				if($extra=="" && $returnurl=="")
+				{
+					//echo $this->renderElement('new_slider');  
+					$head="Add New Web Page" ;
+				}
+				else
+				{
+					if($extra=="detail" || $returnurl=="detail")
+						$head="Event Detail";
+					else
+					if($extra=="sponsor" || $returnurl=="sponsor")
+						$head="Sponsor Detail";
+					else
+					if($extra=="inquiry" || $returnurl=="inquiry")
+						$head="Inquiry Detail";
+					else
+					   $head="Add New Web Page" ;
+				}
+				?>
+            
+            
+            	<?php echo $form->create("Admins", array("action" => "addcontentpage",'name' => 'addcontentpage','onsubmit'=>'return validatecontentpage();' ,'id' => "addcontentpage"));
+				if($returnurl){ echo $form->hidden("returnurl", array('id' => 'returnurl', 'value'=>$returnurl)); }
+					if($closeit=="yes"){   echo $form->hidden("closeit", array('id' => 'closeit', 'value'=>$closeit)); }
+					if($extra){ echo $form->hidden("extra", array('id' => 'extra', 'value'=>$extra)); }
+					if(isset($event_title) && !empty($event_title)){ echo $form->hidden("event_title", array('id' => 'event_title', 'value'=>$event_title)); }
+				?>
+				<button type="submit" value="Submit" class="sendBut" name="data[Action][redirectpage]"><?php e($html->image('save.png')); ?></button>
+				<button type="submit" value="Submit" class="sendBut" name="data[Action][noredirection]"><?php e($html->image('apply.png')); ?></button>
+				<button type="button" id="saveForm" class="sendBut"   <?php if($returnurl && $returnurl!="detail" && $returnurl!="sponsor" && $returnurl!="inquiry"){ echo "onclick='closemywindow();'"; }else{?>ONCLICK="javascript:(window.location='<?php echo $backUrl;?>')" <?php } ?> ><?php e($html->image('cancle.png')); ?></button>
+				<?php echo $this->renderElement('new_slider');  ?>
+            </div>
+        </div>
+    </div>
 </div>
 
 <?php 
@@ -81,10 +83,10 @@ echo $javascript->link('ckeditor/ckeditor');
 </script>
 
 <!--inner-container starts here-->
-<div class="rightpanel">
+<div class="right-panel">
 
-<div class="midPadd">
-                <div class="">
+<div class="midCont">
+                <div class="clearfix">
 
 	<?php if($session->check('Message.flash')) { echo $this->renderElement('error_message'); } ?>
 
@@ -93,7 +95,7 @@ echo $javascript->link('ckeditor/ckeditor');
     {
 ?>
         <div class="frmbox mgrt80">
-		<table cellspacing="15" cellpadding="0" align="center" width="100%">
+		<table cellspacing="15" cellpadding="0" align="center" width="90%">
                   <tbody>
                    <!-- <tr>
                       <td colspan="2"><?php if($session->check('Message.flash')){ $session->flash(); } 
@@ -105,25 +107,25 @@ echo $javascript->link('ckeditor/ckeditor');
                     -->
                     <tr>
                      <td width="35%" align="right"><label class="boldlabel">Navigation <span style="color: red;">*</span></label></td>
-                            <td width="65%"><span class="intpSpannew"><?php echo $form->input("Content.title", array('id' => 'title', 'div' => false, 'label' => '',"class" => "inpt_txt_fld","maxlength" => "250","onblur"=>"fillspacealias()"));?></span></td>
+                            <td width="65%"><span class="intp-Spannew"><?php echo $form->input("Content.title", array('id' => 'title', 'div' => false, 'label' => '',"class" => "inpt-txt-fld form-control","maxlength" => "250","onblur"=>"fillspacealias()"));?></span></td>
                     </tr>
                      <tr>
                      <td  align="right"><label class="boldlabel">Alias <span style="color: red;">*</span></label></td>
-                        <td width="85%"><span class="intpSpannew"><?php echo $form->input("Content.alias", array('id' => 'alias', 'div' => false, 'label' => '',"class" => "inpt_txt_fld","maxlength" => "250"));?></span></td>
+                        <td width="85%"><span class="intp-Spannew"><?php echo $form->input("Content.alias", array('id' => 'alias', 'div' => false, 'label' => '',"class" => "inpt-txt-fld form-control","maxlength" => "250"));?></span></td>
                     </tr>
                     <tr>
                      <td width="35%"  align="right"><label class="boldlabel">Page Title <span style="color: red;">*</span></label></td>
-                        <td width="85%"><span class="intpSpannew"><?php echo $form->input("Content.metatitle", array('id' => 'metatitle', 'div' => false, 'label' => '',"class" => "inpt_txt_fld","maxlength" => "250"));?></span></td>
+                        <td width="85%"><span class="intp-Spannew"><?php echo $form->input("Content.metatitle", array('id' => 'metatitle', 'div' => false, 'label' => '',"class" => "inpt-txt-fld form-control","maxlength" => "250"));?></span></td>
                     </tr>
                     
                     <tr>
                         <td align="right"><label class="boldlabel">Parent Menu</label></td>
 
-                        <td width="85%" ><span class="txtArea_top"><span class="txtArea_bot">
+                        <td width="85%" ><span class="txtArea-bot"><span class="txtArea_bot">
 			<?php 
                         if(!isset($data['Content']['parent_id']) || empty($data['Content']['parent_id']))
 						$data['Content']['parent_id'] = 0;
-						echo $form->select("Content.parent_id",$submenu,$data['Content']['parent_id'], array('id' => 'submenu', 'div' => false, 'label' => '','style' =>'background: none repeat scroll 0% 0% transparent; margin-bottom: 6px; width:230px;',"class" =>"","maxlength" => "250"),"---Select---");
+						echo $form->select("Content.parent_id",$submenu,$data['Content']['parent_id'], array('id' => 'submenu', 'div' => false, 'label' => '','style' =>'margin-bottom: 6px; width:100%;',"class" =>"form-control","maxlength" => "250"),"---Select---");
 
 			?>
    			 </span>   </span></td>
@@ -148,7 +150,7 @@ echo $javascript->link('ckeditor/ckeditor');
     
                     <tr>
 <td width="35%"  align="right" class="lbltxtarea"><label class="boldlabel">Header Image</label></td>
-<td width="65%"><span class="intpSpannew"><?php echo $form->input("header_image", array('type'=>'file','id' => 'header_image', 'div' => false, 'label' => '',"class" => "inpt_txt_fld","maxlength" => "250"));?></span><br />If left blank then Header image specified in themes section will be applied.</td>
+<td width="65%"><span class="intp-Spannew"><?php echo $form->input("header_image", array('type'=>'file','id' => 'header_image', 'div' => false, 'label' => '',"class" => "inpt-txt-fld form-control","maxlength" => "250"));?></span><br />If left blank then Header image specified in themes section will be applied.</td>
 </tr>
 			   
                         
@@ -158,24 +160,24 @@ echo $javascript->link('ckeditor/ckeditor');
                 </tbody>
                 </table>
 	      </div>
-	     <div class="frmbox">
-	     <table cellspacing="15" cellpadding="0" align="center" width="120%">
+	     <div class="frmbox2">
+	     <table cellspacing="15" cellpadding="0" align="center" width="90%">
               <tbody>	
 		<!--<tr>
                      <td width="40%"  align="right" class="lbltxtarea"><label class="boldlabel">Metakeyword </label>&nbsp;</td>
                         <td width="60%">
-			<span class="newtxtArea_top">
-			<span class="newtxtArea_bot">
-			<?php //echo $form->input("Content.metakeyword", array('id' => 'metakeyword', 'div' => false, "class" =>  "noBg",'rows'=>"3",'cols' => "35",'label' => '',"maxlength" => "250",'style' =>"height:53px;"));?></span></span></td>
+			<span class="newtxtArea-bot">
+			<span class="newtxtArea-bot">
+			<?php //echo $form->input("Content.metakeyword", array('id' => 'metakeyword', 'div' => false, "class" =>  "noBg form-control",'rows'=>"3",'cols' => "35",'label' => '',"maxlength" => "250",'style' =>"height:53px;"));?></span></span></td>
 			</tr>-->
 			<tr>
 			<td align="right" class="lbltxtarea"><label class="boldlabel">Metadescription</label><br/>  
             <span style="font-size: 11px; padding-right: 16px;">(Recommended 100</span><br/><span style="font-size: 11px; padding-right: 16px;"> characters)</span>
             </td>
                         <td>
-			<span class="newtxtArea_top">
-			<span class="newtxtArea_bot">
-			<?php echo $form->input("Content.metadescription", array('id' => 'metadescription', 'div' => false, 'label' => '',"class" =>  "noBg",'rows'=>"3",'cols' => "35","maxlength" => "250",'style' =>"height:100px; width: 225px;"));?></span></span></td>
+			<span class="newtxtArea-bot">
+			<span class="newtxtArea-bot">
+			<?php echo $form->input("Content.metadescription", array('id' => 'metadescription', 'div' => false, 'label' => '',"class" =>  "noBg form-control",'rows'=>"3",'cols' => "35","maxlength" => "250",'style' =>"width: 100%;"));?></span></span></td>
                     </tr>
                     
                     
