@@ -10,17 +10,18 @@
 </title>
 <?php 
     
-     echo $javascript->link('jquery.js');
-     echo $javascript->link('admin_validate.js');
-     echo $javascript->link('jquery.autocomplete.pack.js');
-     echo $html->css('newadmintemplate.css','stylesheet');
-     echo $html->css('jquery.autocomplete.css','stylesheet');
-     echo $javascript->link('facebox.js');
-        echo $html->css('facebox.css','stylesheet');
-     echo $html->css('css/slide.css','stylesheet');
-        echo $html->css('css/style.css','stylesheet');
-        echo $javascript->link('slide.js');   
-        $project_name_default='default';
+    echo $javascript->link('jquery.js');
+    echo $javascript->link('admin_validate.js');
+    echo $javascript->link('jquery.autocomplete.pack.js');
+    echo $html->css('newadmintemplate.css','stylesheet');
+    echo $html->css('jquery.autocomplete.css','stylesheet');
+    echo $javascript->link('facebox.js');
+    echo $html->css('facebox.css','stylesheet');
+    echo $html->css('css/slide.css','stylesheet');
+    echo $html->css('css/style.css','stylesheet');
+    echo $html->css('bootstrap/css/bootstrap.css','stylesheet');
+    echo $javascript->link('slide.js');   
+    $project_name_default='default';
     echo $html->css('/css/'.$project_name_default.'/chat');
    if($_SERVER['REQUEST_URI'] == '/admins/login'|| $_SERVER['REQUEST_URI'] == '/admins/forgotpassword/') {
             //echo $html->css('structure.css','stylesheet');
