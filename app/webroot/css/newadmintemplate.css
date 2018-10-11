@@ -4298,7 +4298,10 @@ label { display:inline;}
 
 .add_survery .intp-Span .form-control { height:34px;}
 
+.checkbox-addroll .checkbox label { padding-left:0;}
+
 .intp-Span .ui-datepicker-trigger img { padding-bottom:10px;}
+
 
 /*--------------------------------RESPONSIVE AREA--------------------------*/
 
@@ -4351,6 +4354,9 @@ label { display:inline;}
 	.midCont .updat { width:auto !important; display:block;}
 	
 	.add-comm .frmbox .btn-Lft .btn { margin-bottom:8px;}
+	
+	.add_role tr td.checkbox-addroll { display:inline-block; width:50%}
+	.add_role tr td.checkbox-addroll div.checkbox { margin:8px 0;} 
 	
 	.table-responsive .right { margin-right:5px; float:none;}
 	.table-responsive .ckeditor { width:100% !important; border:1px solid #ddd;}
@@ -4422,6 +4428,8 @@ label { display:inline;}
 	
 	.midCont .updat { width:auto !important; display:block;}
 	.add-comm .frmbox .btn-Lft .btn { margin-bottom:8px;}
+	
+	.add_role tr td.checkbox-addroll div.checkbox { margin:8px 0;}
 	
 	.row .box.col-xs-4 { width: auto; display:block; float:none;}
 	

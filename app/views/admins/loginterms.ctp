@@ -77,7 +77,7 @@ $backUrl = $base_url_Admin;
 	
 		    <tr>
 		     <td width="10%" align="right"><label class="boldlabel">Title <span style="color: red;">*</span></label></td>
-		     <td width="90%"><span class="intp-Span"><?php echo $form->input("Term.termstitle", array('id' => 'termstitle', 'div' => false, 'label' => '','style' =>'width:400px;',"class" => "inpt-txt-fld form-control","maxlength" => "250"));?></span></td>
+		     <td width="90%"><span class="intp-Span"><?php echo $form->input("Term.termstitle", array('id' => 'termstitle', 'div' => false, 'label' => '','style' =>'width:100%;',"class" => "inpt-txt-fld form-control","maxlength" => "250"));?></span></td>
 		    </tr>
 		    <tr>
 		      <td width="100%" colspan=2 style="vertical-align:top" ><!--<label class="boldlabel">Content: <span style="color: red;">*</span></label>-->
@@ -100,7 +100,7 @@ $backUrl = $base_url_Admin;
 		    <tr>
 		     <td width="10%" align="right"><label class="boldlabel">Title <span style="color: red;">*</span></label></td>
 		     <td  width="90%"><span class="intp-Span">
-		    	<?php echo $form->input("Term.privacytitle", array('id' => 'privacytitle', 'div' => false, 'label' => '','style' =>'width:400px;',"class" => "inpt-txt-fld form-control","maxlength" => "250"));?></span></td></tr>
+		    	<?php echo $form->input("Term.privacytitle", array('id' => 'privacytitle', 'div' => false, 'label' => '','style' =>'width:100%;',"class" => "inpt-txt-fld form-control","maxlength" => "250"));?></span></td></tr>
 		     <tr>
 		      <td width="100%" colspan=2 style="vertical-align:top"><!--<label class="boldlabel">Content: <span style="color: red;">*</span></label>-->
 		      <?php //echo $form->textarea("Term.privacycontent", array('id' => 'privacycontent', 'div' => false, 'label' => '','cols' => '24', 'rows' => '4',"class" => "contactInput"));?>

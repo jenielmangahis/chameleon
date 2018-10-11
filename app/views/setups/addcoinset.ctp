@@ -23,34 +23,33 @@
     /* ]]> */
 </script>
 <div class="container">     
-<div class="titlCont">
-<div class="myclass">
-<div class="slider" id="toppanel" style="height: 20px; top:13px;right: -50px;width:545px !important; text-align:right;">  
-<?php echo $form->create("Setups", array("action" => "addcoinset",'type' => 'file','name' => 'addcoinset', 'id' => "addcoinset",'onsubmit'=>'return validatecoinset("add")'))?>
-<button type="submit" value="Submit" class="sendBut" name="data[Action][redirectpage]"><?php e($html->image('save.png')); ?></button>
-<button type="submit" value="Submit" class="sendBut" name="data[Action][noredirection]"><?php e($html->image('apply.png')); ?></button>
-<button type="button" id="saveForm" class="sendBut"  ONCLICK="javascript:(window.location='<?php echo $backUrl ?>')"><?php e($html->image('cancle.png')); ?></button>
-                <?php  echo $this->renderElement('new_slider');  ?>
+	<div class="titlCont">
+		<div class="slider-centerpage clearfix">
+                <div class="center-Page col-sm-6">
+                    <h2>Coinset Setup</h2>
+                </div>
+                <div class="slider-dashboard col-sm-6">
+                    <div class="icon-container">
+                        <?php echo $form->create("Setups", array("action" => "addcoinset",'type' => 'file','name' => 'addcoinset', 'id' => "addcoinset",'onsubmit'=>'return validatecoinset("add")'))?>
+                        <button type="submit" value="Submit" class="sendBut" name="data[Action][redirectpage]"><?php e($html->image('save.png')); ?></button>
+                        <button type="submit" value="Submit" class="sendBut" name="data[Action][noredirection]"><?php e($html->image('apply.png')); ?></button>
+                        <button type="button" id="saveForm" class="sendBut"  ONCLICK="javascript:(window.location='<?php echo $backUrl ?>')"><?php e($html->image('cancle.png')); ?></button>
+                        <?php  echo $this->renderElement('new_slider');  ?>
+                </div>
             </div>
-</div>
-<div class="topTabs" style="height:25px;"></div>
-        <span class="titlTxt">
-            Coinset Setup
-        </span>
-
-
-<?php    $this->loginarea="setups";    $this->subtabsel="coinsetlist";
-                    echo $this->renderElement('setup_submenus');  ?> 
-  </div>			
-	
- 
-
-    
+        </div>
+	</div>			
 </div>
 <!--inner-container starts here-->
 
+<div class="clearfix nav-submenu-container">
+	<div class="midCont submenu-Cont">
+		<?php    $this->loginarea="setups";    $this->subtabsel="coinsetlist";
+                    echo $this->renderElement('setup_submenus');  ?>   
+    </div>
+</div>
 
-<div class="centerPage" id="newsetttab">
+<div class="midCont clearfix" id="newsetttab">
     <?php if($session->check('Message.flash')){ ?> 
         <div id="blck"> 
             <div class="msgBoxTopLft"><div class="msgBoxTopRht"><div class="msgBoxTopBg"></div></div></div>
@@ -91,99 +90,10 @@
     <!--<div class="">    -->
     <div style="border-left: 0px none; text-align: right; padding-top: 5px; color: rgb(255, 255, 255);" class="top-bar"> </div>
     <br/>
-    <div style="float: right;">
     
-    <?php
-        if(isset($sidea_image)!="" || isset($sideb_image)!="" || isset($edge_image)!="")
-        {
-            ?>
-        <div style="margin-left: 100px;">
-            <?php echo $form->input("Coinset.use_pre_artwork", array('id' => 'use_pre_artwork', 'div' => false, 'label' => '','type'=>'checkbox'));?> &nbsp;&nbsp;&nbsp;<b> Use Previous Artwork</b>
-        </div>
-    <?php }?>
-        <br /><br />
-
-        <div id="pre_artwork_content" style="position: relative; text-align: center; min-height: 150px; min-width: 360px; display: none;">
-            <?php if($sidea_image!="")
-                {
-                ?>
-                SIDE A
-                <?php echo $html->image('/img/cckiller/upload/'.$sidea_image, array('class'=>'','width'=>'107','height'=>'109','align'=>'middle'));?><br />
-                <?php
-                }
-                if($sideb_image!="")
-                {
-                ?>
-                SIDE B
-                <?php echo $html->image('/img/cckiller/upload/'.$sideb_image, array('class'=>'','width'=>'107','height'=>'109','align'=>'middle'));?><br />
-                <?php
-                }
-                if($edge_image!="")
-                {
-                ?>
-                EDGE
-              <?php echo $html->image('/img/'.$project_name.'/upload/'.$edge_image, array('class'=>'','align'=>'middle'));?><br />
-                <?php
-                }
-            ?>
-            <br /><br />
-        </div>
-        <div>
-            <table width="425px" class="left">
-                <tbody>   
-                <tr class="upload_content">
-                        <td width="30%" valign="top" align="right" style="padding-top: 4px;"><label class="boldlabel">Side A Image <span style="color: red;">*</span></label></td>
-                        <td width="70%"> <span class="intpSpan">
-                            <input type="file" value="" class="inpt_txt_fld" id="sidea" name="data[Coinset][coinsidea]"></span><br>
-                            <span style="color: LightSlateGray; font-size: 11px; font-style: italic;">Recommended file size 250x250 pixels</span><br>
-                            <span style="color: LightSlateGray; font-size: 11px; font-style: italic;">Format:Transparent PNG or GIF.</span><br>
-                            <span style="color: LightSlateGray; font-size: 11px; font-style: italic;">Click over the image for Original view.</span>
-                            <?php if(!empty($this->data['Coinset']['sidea'])){ echo $project_name;die("hi");?> 
-                                <span id="divimagecoina" >
-                                    <div align="left"><img src="<?php echo "/img/".$project_name."/uploads/". $this->data['Coinset']['sidea'] ;?>"></div> 
-                                </span>
-                                <?php }else{ ?></td><?php } ?>
-                    </tr>    
-                    <tr class="upload_content">
-                        <td valign="top" align="right" style="padding-top: 4px;"><label class="boldlabel">Side B Image <span style="color: red;">*</span></label></td>
-                        <td> <span class="intpSpan"><input type="file" value="" class="inpt_txt_fld" id="sideb" name="data[Coinset][coinsideb]"></span><br>
-                            <span style="color: LightSlateGray; font-size: 11px; font-style: italic;">Recommended file size 250x250 pixels</span><br>
-                            <span style="color: LightSlateGray; font-size: 11px; font-style: italic;">Format:Transparent PNG or GIF.</span><br>    
-                            <span style="color: LightSlateGray; font-size: 11px; font-style: italic;">Click over the image for Original view.</span>
-                            <?php if(!empty($this->data['Coinset']['sideb'])){?> 
-                                <span id="divimagecoina" >
-
-                                    <div align="left"><img src="<?php echo "/img/".$project['Project']['project_name']."/uploads/". $this->data['Coinset']['sideb'] ;?>"></div> 
-                                </span>
-
-                                <?php }else{ ?></td><?php } ?>
-                    </tr>
-                    <tr class="upload_content">
-                        <td valign="top" align="right" style="padding-top: 4px;"><label class="boldlabel">Edge Image <span style="color: red;">*</span></label></td>
-                        <td valign="top"> <span class="intpSpan"><input type="file" value="" class="inpt_txt_fld" id="coinedge" name="data[Coinset][coinedge]"></span><br>
-                            <span style="color: LightSlateGray; font-size: 11px; font-style: italic;">Recommended file size 300x12.</span>
-                            <br>&nbsp; </td> 
-                    </tr>
-                    <tr>
-                        <td valign="top" align="right" style="padding-top: 7px;"><label class="boldlabel">Serial on side</label></td>
-                        <td>    <span class="txtArea_top">
-                            <span class="txtArea_bot">
-                            <select class="multilist" id="serialdisplayside" label="" name="data[Coinset][serialdisplayside]">
-                                        <option value="A">Side A</option>
-                                        <option value="B">Side B</option>
-                                    </select></span></span></td>
-
-                    </tr>
-                    
-
-                </tbody>
-            </table>
-
-        </div>    
-
-    </div>
-    <div class="frmbox mgrt115">
-        <table cellspacing="0" cellpadding="0" align="center" align="center" width="500px" class="left">
+    <div class="clearfix">
+    	<div class="frmbox mgrt115">
+        <table cellspacing="0" cellpadding="0" align="center" align="center" width="90%" class="left">
             <tbody>
             <tr>
                 <td colspan="5"><?php echo $form->hidden("shippingvalue", array('id' => 'shippingvalue'));
@@ -197,25 +107,25 @@
 
             <tr>
                 <td width="30%" align="right"><label class="boldlabel">Name <span style="color: red;"></span></label></td>
-                <td width="70%" style="padding-left: 31px; padding-top: 12px;">
-                    <span class="intpSpan"><?php echo $form->input("Coinset.coinset_name", array('id' => 'name', 'div' => false, 'label' => '',"class" => "inpt_txt_fld","maxlength" => "200",'value'=>isset($coinsetname)?$coinsetname:'01','readonly'=>'readonly'));?></span></td>
+                <td width="70%" >
+                    <span class="intp-Span"><?php echo $form->input("Coinset.coinset_name", array('id' => 'name', 'div' => false, 'label' => '',"class" => "inpt-txt-fld form-control","maxlength" => "200",'value'=>isset($coinsetname)?$coinsetname:'01','readonly'=>'readonly'));?></span></td>
 
             </tr>
 
             <tr>
                 <td align="right"><label class="boldlabel"># of Units <span style="color: red;">*</span></label></td>
-                <td  style="padding-left: 31px; padding-top: 12px;">
+                <td  >
 
-                    <span class="intpSpan"><?php echo $form->input("Coinset.numunits", array('id' => 'units', 'div' => false, 'label' => '',"class" => "inpt_txt_fld","maxlength" => "7",'onkeyup'=>'setcoinsetinfo();','onkeydown'=>'setcoinsetinfo();','onchange'=>'setcoinsetinfo();','blue'=>'setcoinsetinfo();'));?></span></td>
+                    <span class="intp-Span"><?php echo $form->input("Coinset.numunits", array('id' => 'units', 'div' => false, 'label' => '',"class" => "inpt-txt-fld form-control","maxlength" => "7",'onkeyup'=>'setcoinsetinfo();','onkeydown'=>'setcoinsetinfo();','onchange'=>'setcoinsetinfo();','blue'=>'setcoinsetinfo();'));?></span></td>
             </tr>
         </table>  
 
-        <table cellspacing="0" cellpadding="0" align="center" align="center" width="500px" class="left">   
+        <table cellspacing="0" cellpadding="0" align="center" align="center" width="90%" class="left">   
             <tbody>
                 <tr>
                     <td width="30%" align="right"><label class="boldlabel">Serial # Prefix </label></td>
-                    <td style="padding-left: 31px; padding-top: 12px;">
-                        <span class="intpSpan"><?php echo $form->input("Coinset.serialprefix", array('id' => 'name', 'div' => false, 'label' => '',"class" => "inpt_txt_fld","maxlength" => "200",'style'=>'width:60px;'));?></span></td>
+                    <td >
+                        <span class="intp-Span"><?php echo $form->input("Coinset.serialprefix", array('id' => 'name', 'div' => false, 'label' => '',"class" => "inpt-txt-fld form-control","maxlength" => "200",'style'=>'width:100%;'));?></span></td>
 
                 </tr>
 
@@ -223,21 +133,21 @@
                     <td align="right"><label class="boldlabel">Serial # Start <span style="color: red;">*</span></label></td>
                     <?php if(isset($totalreccount) > 1){ ?>
                         <td style="padding-top:12px;padding-left:31px;" ><span style="display:block;float:left;padding-top:3px;padding-right:5px;">
-                            </span><span class="intpSpan"><?php echo $form->input("Coinset.startserialnum", array('id' => 'startser', 'div' => false, 'label' => '',"class" => "inpt_txt_fld","maxlength" => "200",'value'=>"$lastserno",'readonly'=>'readonly','style'=>'width:80px;'));?></span>
+                            </span><span class="intp-Span"><?php echo $form->input("Coinset.startserialnum", array('id' => 'startser', 'div' => false, 'label' => '',"class" => "inpt-txt-fld form-control","maxlength" => "200",'value'=>"$lastserno",'readonly'=>'readonly','style'=>'width:100%;'));?></span>
 
                         </td>
 
                         <?php }else{ ?>
-                        <td style="padding-top: 12px;padding-left:31px;" ><span style="display:block;float:left;padding-top:3px;padding-right:5px;">
-                            </span><span class="intpSpan"><?php echo $form->input("Coinset.startserialnum", array('id' => 'startser', 'div' => false, 'label' => '',"class" => "inpt_txt_fld","maxlength" => "200",'value'=>"$lastserno",'onkeyup'=>'setcoinsetinfo();','onkeydown'=>'setcoinsetinfo();','onchange'=>'setcoinsetinfo();','blue'=>'setcoinsetinfo();','style'=>'width:80px;'));?></span></td>
+                        <td  ><span style="display:block;float:left;padding-top:3px;padding-right:5px;">
+                            </span><span class="intp-Span"><?php echo $form->input("Coinset.startserialnum", array('id' => 'startser', 'div' => false, 'label' => '',"class" => "inpt-txt-fld form-control","maxlength" => "200",'value'=>"$lastserno",'onkeyup'=>'setcoinsetinfo();','onkeydown'=>'setcoinsetinfo();','onchange'=>'setcoinsetinfo();','blue'=>'setcoinsetinfo();','style'=>'width:100%;'));?></span></td>
                         <?php } ?>
 
                 </tr>
 
                 <tr>
                     <td align="right"><label class="boldlabel">Serial # End <span style="color: red;">*</span></label></td>
-                    <td style="padding-top: 12px;padding-left:31px;" ><span style="display:block;float:left;padding-top:3px;padding-right:5px;">
-                        </span><span class="intpSpan"><?php echo $form->input("Coinset.endserialnum", array('id' => 'ending', 'div' => false, 'label' => '',"class" => "inpt_txt_fld","maxlength" => "200",'value'=>"$lastserno",'readonly'=>'readonly','style'=>'width:80px;'));?></span></td>
+                    <td  ><span style="display:block;float:left;padding-top:3px;padding-right:5px;">
+                        </span><span class="intp-Span"><?php echo $form->input("Coinset.endserialnum", array('id' => 'ending', 'div' => false, 'label' => '',"class" => "inpt-txt-fld form-control","maxlength" => "200",'value'=>"$lastserno",'readonly'=>'readonly','style'=>'width:100%;'));?></span></td>
                 </tr>
 
                 <tr>
@@ -245,18 +155,18 @@
 
                 <tr>
                     <td align="right"><label class="boldlabel">Verification Code <span style="color: red;"></span></label></td>
-                    <td style="padding-left: 31px; padding-top: 12px;">
+                    <td >
 
-                        <span class="intpSpan"><?php echo $form->input("Coinset.verifycode", array('id' => 'verifycode', 'div' => false, 'label' => '',"class" => "inpt_txt_fld","maxlength" => "3",'style'=>'width:80px;'));?></span></td>
+                        <span class="intp-Span"><?php echo $form->input("Coinset.verifycode", array('id' => 'verifycode', 'div' => false, 'label' => '',"class" => "inpt-txt-fld form-control","maxlength" => "3",'style'=>'width:100%;'));?></span></td>
                 </tr>
 
                 <!--<tr>
                 <td width="15%"><label class="boldlabel">Project Type <span style="color: red;">*</span></label></td>
                 <td width="85%">
                 <?php //echo "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";  ?>
-                <span class="txtArea_top">
-                <span class="txtArea_bot">
-                <?php// echo $form->select("project_type_id",$projectypedropdown,$selectedprojecttype,array('id' => 'project_type_id','class'=>'multilist'/*,'disabled'=>'disabled'*/),"---Select---");//pr($selectedprojecttype);  ?>
+                <span class="txtArea-top">
+                <span class="txtArea-bot">
+                <?php// echo $form->select("project_type_id",$projectypedropdown,$selectedprojecttype,array('id' => 'project_type_id','class'=>'multi-list form-control'/*,'disabled'=>'disabled'*/),"---Select---");//pr($selectedprojecttype);  ?>
                 </span>
                 </span></td>
                 </tr>-->
@@ -268,6 +178,102 @@
         </table>
 
     </div>
+        <div class="frmbox2">
+        
+            <div>
+                <table width="90%" class="left">
+                    <tbody>   
+                    <tr>
+                    	<td>
+                        	<?php
+								if(isset($sidea_image)!="" || isset($sideb_image)!="" || isset($edge_image)!="")
+								{
+									?>
+								<div style="margin-left: 100px;">
+									<?php echo $form->input("Coinset.use_pre_artwork", array('id' => 'use_pre_artwork', 'div' => false, 'label' => '','type'=>'checkbox'));?> <b> Use Previous Artwork</b>
+								</div>
+							<?php }?>
+                            <div id="pre_artwork_content" style="position: relative; text-align: center; min-height: 150px; min-width: 360px; display: none;">
+                <?php if($sidea_image!="")
+                    {
+                    ?>
+                    SIDE A
+                    <?php echo $html->image('/img/cckiller/upload/'.$sidea_image, array('class'=>'','width'=>'107','height'=>'109','align'=>'middle'));?><br />
+                    <?php
+                    }
+                    if($sideb_image!="")
+                    {
+                    ?>
+                    SIDE B
+                    <?php echo $html->image('/img/cckiller/upload/'.$sideb_image, array('class'=>'','width'=>'107','height'=>'109','align'=>'middle'));?><br />
+                    <?php
+                    }
+                    if($edge_image!="")
+                    {
+                    ?>
+                    EDGE
+                  <?php echo $html->image('/img/'.$project_name.'/upload/'.$edge_image, array('class'=>'','align'=>'middle'));?><br />
+                    <?php
+                    }
+                ?>
+                <br /><br />
+            </div>
+                        </td>
+                    </tr>
+                    <tr class="upload_content">
+                            <td width="30%" valign="top" align="right" style="padding-top: 4px;"><label class="boldlabel">Side A Image <span style="color: red;">*</span></label></td>
+                            <td width="70%"> <span class="intp-Span">
+                                <input type="file" value="" class="inpt-txt-fld form-control" id="sidea" name="data[Coinset][coinsidea]"></span><br>
+                                <span style="color: LightSlateGray; font-size: 11px; font-style: italic;">Recommended file size 250x250 pixels</span><br>
+                                <span style="color: LightSlateGray; font-size: 11px; font-style: italic;">Format:Transparent PNG or GIF.</span><br>
+                                <span style="color: LightSlateGray; font-size: 11px; font-style: italic;">Click over the image for Original view.</span>
+                                <?php if(!empty($this->data['Coinset']['sidea'])){ echo $project_name;die("hi");?> 
+                                    <span id="divimagecoina" >
+                                        <div align="left"><img src="<?php echo "/img/".$project_name."/uploads/". $this->data['Coinset']['sidea'] ;?>"></div> 
+                                    </span>
+                                    <?php }else{ ?></td><?php } ?>
+                        </tr>    
+                        <tr class="upload_content">
+                            <td valign="top" align="right" style="padding-top: 4px;"><label class="boldlabel">Side B Image <span style="color: red;">*</span></label></td>
+                            <td> <span class="intp-Span"><input type="file" value="" class="inpt-txt-fld form-control" id="sideb" name="data[Coinset][coinsideb]"></span><br>
+                                <span style="color: LightSlateGray; font-size: 11px; font-style: italic;">Recommended file size 250x250 pixels</span><br>
+                                <span style="color: LightSlateGray; font-size: 11px; font-style: italic;">Format:Transparent PNG or GIF.</span><br>    
+                                <span style="color: LightSlateGray; font-size: 11px; font-style: italic;">Click over the image for Original view.</span>
+                                <?php if(!empty($this->data['Coinset']['sideb'])){?> 
+                                    <span id="divimagecoina" >
+    
+                                        <div align="left"><img src="<?php echo "/img/".$project['Project']['project_name']."/uploads/". $this->data['Coinset']['sideb'] ;?>"></div> 
+                                    </span>
+    
+                                    <?php }else{ ?></td><?php } ?>
+                        </tr>
+                        <tr class="upload_content">
+                            <td valign="top" align="right" style="padding-top: 4px;"><label class="boldlabel">Edge Image <span style="color: red;">*</span></label></td>
+                            <td valign="top"> <span class="intp-Span"><input type="file" value="" class="inpt-txt-fld form-control" id="coinedge" name="data[Coinset][coinedge]"></span><br>
+                                <span style="color: LightSlateGray; font-size: 11px; font-style: italic;">Recommended file size 300x12.</span>
+                                <br>&nbsp; </td> 
+                        </tr>
+                        <tr>
+                            <td valign="top" align="right" style="padding-top: 7px;"><label class="boldlabel">Serial on side</label></td>
+                            <td>    <span class="txtArea-top">
+                                <span class="txtArea-bot">
+                                <select class="multi-list form-control" id="serialdisplayside" label="" name="data[Coinset][serialdisplayside]">
+                                            <option value="A">Side A</option>
+                                            <option value="B">Side B</option>
+                                        </select></span></span></td>
+    
+                        </tr>
+                        
+    
+                    </tbody>
+                </table>
+    
+            </div>    
+    
+        </div>
+    </div>
+    
+    
     <div class="clear"></div> 
 
 

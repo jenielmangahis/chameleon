@@ -54,7 +54,7 @@
     </div>
 </div>     
     
-<div class="midCont table-responsive id="Detail">   
+<div class="midCont clearfix" id="Detail">   
     		<?php 
 				echo $form->hidden("Project.id", array('id' => 'projectid'));
 				echo $form->hidden("Sponsor.id", array('id' => 'sponsorid','value'=>$sponserid));
@@ -62,13 +62,13 @@
 			
         <?php if($session->check('Message.flash')) { echo $this->renderElement('error_message'); } ?>
     
-        <div>	
+        <div class="clearfix">	
             <div class="frmbox mgrt115">
-                <table class="table table-borderless" cellpadding="0" align="center" width="435px" class='left' cellspacing="10" style="margin-top:-5px;">
+                <table cellpadding="0" align="center" width="90%" class='left' cellspacing="10" style="margin-top:-5px;">
                     <tbody>
 			          <tr>  
-                            <td width="36%" align="right" class="lbltxtarea"><label class="boldlabel">Project Name </label></td>
-                            <td width="30%"><label for="detail_project_name"></label>
+                            <td  align="right" class="lbltxtarea"><label class="boldlabel">Project Name </label></td>
+                            <td ><label for="detail_project_name"></label>
                                 <span class="intp-Span"><?php echo $form->input("Project.detail_project_name", array('id' => 'detail_project_name','readonly' => true, 'div' => false, 'label' => '',"class" => "inpt-txt-fld form-control","maxlength" => "200"));?></span></td>
 
                         </tr>							
@@ -102,7 +102,7 @@
                                     <span class="newtxtArea-bot">
                                         <?php 
 										
-										echo $form->select('coinsetsdisplay',$arraycoinset, null,array('multiple'=>'multiple','id'=>'emaillists','size'=>'7','empty'=>false,'class'=>'multilist multi form-control'));?>
+										echo $form->select('coinsetsdisplay',$arraycoinset, null,array('multiple'=>'multiple','id'=>'emaillists','size'=>'7','empty'=>false,'class'=>'multi-list form-control'));?>
                                     </span>
                                 </div>
                                 <span class="btn-Lft"><input type="button" class="btn-Rht btn btn-sm btn-primary" value="View" name="view" id="view_coinset"/></span><span style="display:inline-block;width:8px"></span><span class="btn-Lft"><input type="button"  class="btn-Rht btn btn-sm btn-primary" value="Add" name="Add" ONCLICK="javascript:(window.location='<?php echo $base_url_admin ?>addcoinset')" /></span>
@@ -191,7 +191,7 @@
                         <span class="txtArea-top"><span class="txtArea-bot">
                                 <?php 
 								//pr($billingType_list);
-								echo $form->select("Project.billing_type_id",$billingType_list,null,array('id' => 'billing_type_id',"class"=>"multilist form-control",'disabled'=>'disabled' ),"---Select---"); ?>
+								echo $form->select("Project.billing_type_id",$billingType_list,null,array('id' => 'billing_type_id',"class"=>"multi-list form-control",'disabled'=>'disabled' ),"---Select---"); ?>
                         </span></span>
                         
                         </td>
@@ -208,8 +208,8 @@
                 </table>
 
             </div>
-            <div class="frmbox">
-                <table cellspacing="10" class='left' width="432px" style="margin-top:-5px;">
+            <div class="frmbox2">
+                <table cellspacing="10" class='left' width="90%" style="margin-top:-5px;">
                     <tr>
                         <td align="right" class="lbltxtarea"><label class="boldlabel">Date Created </label></td>
                         <td ><span class="intp-Span"><?php echo $form->text("createddate", array('value'=>$datecre,'id' => 'created', 'div' => false, 'label' => '',"class" => "inpt-txt-fld form-control","maxlength" => "200",'readonly'=>'readonly'));?></span></td>
@@ -246,7 +246,7 @@
        <span class="txtArea-top">
                                 
 								<span class="txtArea-bot">
-                                    <span id="compdiv"> <?php echo $form->select("Sponsor.country",$countrydropdown,null,array('id' => 'country','class'=>'multilist form-control','onchange'=>'return getstateoptions(this.value,"Company")'),array('254'=>'United States')); ?></span></span></span></td>
+                                    <span id="compdiv"> <?php echo $form->select("Sponsor.country",$countrydropdown,null,array('id' => 'country','class'=>'multi-list form-control','onchange'=>'return getstateoptions(this.value,"Company")'),array('254'=>'United States')); ?></span></span></span></td>
      
     </tr>
 	<tr>
@@ -256,7 +256,7 @@
                                 
 								<span class="txtArea-bot">
                                    <span id="statediv">
-                                    <?php echo $form->select("Sponsor.state",$statedropdown,null,array('id' => 'state',"class" => "multilist form-control"),"---Select---"); ?></span></span></span></td>
+                                    <?php echo $form->select("Sponsor.state",$statedropdown,null,array('id' => 'state',"class" => "multi-list form-control"),"---Select---"); ?></span></span></span></td>
       
     </tr>
      <tr>
@@ -317,6 +317,7 @@
     <input type="hidden" id="current_domain" name="current_domain" value="<?php echo $current_domain;?>">
     <?php echo $form->end();?>
 </div>
+
 
 
 <div class="clear"></div>
