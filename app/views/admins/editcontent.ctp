@@ -91,7 +91,7 @@ echo $javascript->link('ckeditor/ckeditor');
 
 <div class="right-panel">
 
-<div class="midCont">
+<div class="midCont clearfix">
 <?php if($session->check('Message.flash')) { echo $this->renderElement('error_message'); } ?>
 
     <?php 
@@ -100,7 +100,7 @@ echo $javascript->link('ckeditor/ckeditor');
 ?>
 
 <div class="frmbox mgrt80">
-			<table cellspacing="15" cellpadding="0" align="center" width="440px">
+			<table cellspacing="15" cellpadding="0" align="center" width="90%">
 					<tbody>
 					<?php if($session->check('Message.flash')){ ?>
 					<tr>
@@ -139,11 +139,11 @@ echo $javascript->link('ckeditor/ckeditor');
 						
 			<td   align="right"><label class="boldlabel">Parent Menu</label>&nbsp;&nbsp;</td>
 			
-						<td><span class="newtxtArea_top"><span class="txtArea_bot">
+						<td><span class="newtxtArea-top"><span class="txtArea_bot">
 			<?php 
 						if(!isset($data['Content']['parent_id']) || empty($data['Content']['parent_id']))
 						$data['Content']['parent_id'] = 0;
-						echo $form->select("Content.parent_id",$submenu,$data['Content']['parent_id'], array('id' => 'submenu', 'div' => false, 'label' => '','style' =>'background: none repeat scroll 0% 0% transparent; margin-bottom: 6px; width:230px;',"class" =>"","maxlength" => "250"),"---Select---");
+						echo $form->select("Content.parent_id",$submenu,$data['Content']['parent_id'], array('id' => 'submenu', 'div' => false, 'label' => '','style' =>' margin-bottom: 6px; width:100%;',"class" =>"form-control","maxlength" => "250"),"---Select---");
 			
 			?>
 			</span>   </span></td>
@@ -173,17 +173,18 @@ echo $javascript->link('ckeditor/ckeditor');
 					</tbody>
 					</table>
 </div>
-<div class="frmbox ">
-			<table cellspacing="15" cellpadding="0" align="center" width="460px">
+<div class="frmbox2">
+			<table cellspacing="15" cellpadding="0" align="center" width="90%">
 					<tbody>
 					<tr>
 					<td align="right" class="lbltxtarea"><label class="boldlabel">Meta Description</label><br/>
                       <span style="font-size: 11px; padding-right: 22px;">(Recommended 100</span><br/><span style="font-size: 11px; padding-right: 22px;"> characters)</span>
                     </td>
-						<td><span class="newtxtArea_top">
-						<span class="newtxtArea_bot"><?php echo $form->input("Content.metadescription", array('id' => 'metadescription', 'div' => false,'style' =>"height:100px; width: 225px;",'label' => '',"class" => "noBg",'rows'=>"3",'cols' => "35","maxlength" => "250"));?></span></td>
+						<td><span class="newtxtArea-top">
+						<span class="newtxtArea-bot"><?php echo $form->input("Content.metadescription", array('id' => 'metadescription', 'div' => false,'style' =>"height:100px; width: 100%;",'label' => '',"class" => "noBg form-control",'rows'=>"3",'cols' => "35","maxlength" => "250"));?></span></td>
 					</tr>
-			</tbody></table>
+			</tbody>
+            </table>
 </div>
     <?php
     }
@@ -205,7 +206,7 @@ echo $javascript->link('ckeditor/ckeditor');
 					</tbody>
 					</table>
 
-<div class="">
+<div class="clearfix">
 <table>
 <tr><td colspan="4">&nbsp;</td></tr>
                 <?php if(isset($this->data['Content']['alias']) && ($this->data['Content']['alias']=='home_page' || $this->data['Content']['alias']=='home-page')){ ?>
