@@ -253,7 +253,7 @@ $('#compAnies').addClass("butBgSelt");
                              <tr>
                               <td align="right"><label class="boldlabel">Note </label></td>
                               <td ><label for="project_name"></label>
-                               <span class="txtArea-top"><span class="txtArea-bot"><?php echo $form->textarea("Company.notes", array('id' => 'notes', 'div' => false, 'label' => '','cols' => '24', 'rows' => '4',"class" => "noBg"));?></span></span></td>
+                               <span class="txtArea-top"><span class="txtArea-bot"><?php echo $form->textarea("Company.notes", array('id' => 'notes', 'div' => false, 'label' => '','cols' => '24', 'rows' => '4',"class" => "form-control"));?></span></span></td>
                              
                             </tr>
                             <tr>

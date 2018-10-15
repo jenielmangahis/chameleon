@@ -1,8 +1,21 @@
+<?php 
+    echo $javascript->link('datetimepicker/jquery-1.4.2.min.js');
+    echo $javascript->link('datetimepicker/jquery-ui-1.8.custom.min.js');
+    echo $html->css('/css/jquery_ui_datepicker');
+    echo $html->css('timepicker_plug/css/style');
+?>  
 <script type="text/javascript">
 $(document).ready(function() {
 $('#coNtact').removeClass("butBg");
 $('#coNtact').addClass("butBgSelt");
-}); 
+$('#task_startdate').datepicker({
+      showOn: "button",
+      buttonImage: baseUrl+"img/calendar_new.png",
+      dateFormat: 'mm-dd-yy',
+      changeMonth: true,
+      changeYear:true
+    });
+});
 </script>
 <?php 
         if($this->data['Contact']['id']){
@@ -533,7 +546,7 @@ echo $form->input("CommunicationTask.monthly_weekof_noof_months", array('id' => 
 
 							</td>
 						</tr>
-
+           
 						<tr>
 							<td align="right" width="140px"><label class="boldlabel">Start <span
 									class="red">*</span>
