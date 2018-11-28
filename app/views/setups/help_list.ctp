@@ -8,8 +8,8 @@
         </div><span class="titlTxt">Site Help List </span>
         <div class="topTabs">
                 <ul class="dropdown">
-        
-                        <li><a id="linkedit" onclick="editholderhelplist();" href="javascript:void(0)"><span>Edit</span></a></li>
+                    <li><a href="<?php echo Configure::read('App.base_url');?>/setups/addhelp"><span>Add</span></a></li>
+                    <li><a id="linkedit" onclick="editholderhelplist();" href="javascript:void(0)"><span>Edit</span></a></li>
                 </ul>
                 </div>
                 <div class="clear"></div>
