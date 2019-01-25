@@ -43,7 +43,7 @@ $url= Configure::read('App.base_url').$project_name;
 	<li>|</li>
 	<?php 	
 	
- $condition = "Content.active_status='1' and Content.delete_status='0' and parent_id ='0' and (is_sytem!='2') and `Content`.`internal_alias` !='home-page' ".$show_web_only."  ".$globalcondition." ".$showcommenttab;
+ $condition = "Content.project_id =" . $project['Project']['id'] . " and Content.active_status='1' and Content.delete_status='0' and parent_id ='0' and (is_sytem!='2') and `Content`.`internal_alias` !='home-page' ".$show_web_only."  ".$globalcondition." ".$showcommenttab;
 		$contentdetails = $this->Content->find('all', array('conditions' => $condition,'order'=>'file_sequence'));
 //echo "<pre>"; print_r($contentdetails); 
 	foreach($contentdetails as $convalue)
