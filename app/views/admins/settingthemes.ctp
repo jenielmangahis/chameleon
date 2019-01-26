@@ -450,6 +450,10 @@ $backUrl = $base_url_admin.'contentlist';
                    
                     </li>
                     <li>
+                      <label>Select Themes</label>
+                      <span class="intp-Span"><em>#</em><?php echo $form->select('Theme.theme',$options_themes, '' ,array('id'=>'theme','empty'=>false,'class'=>'multi-list form-control'), "-- Select --"); ?></span> </li>
+                    <li>
+                    <li>
                       <label>Page Background</label>
                       <span class="intp-Span"><em>#</em><?php echo $form->input('Theme.bodycolor',array('class'=>'inpt-txt-fld1 form-control','div'=>false,'label'=>false)); ?></span> </li>
                     <li>
