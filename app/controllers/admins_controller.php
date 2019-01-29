@@ -15997,7 +15997,8 @@ from master_points order by master_points.display_order asc");
             # set help condition   
 			//print_r($this->data);
 			//die("tetst 111");
-            $project_id = $this->Session->read("sessionprojectid");
+            //$project_id = $this->Session->read("sessionprojectid");
+            $project_id = 1; 
             $project_name=$this->Session->read("projectwebsite_name_admin");  
             $this->set('current_project_name',$project_name);     // used in project_name element file  
             $this->set("project_name",$project_name);   
@@ -16174,9 +16175,12 @@ from master_points order by master_points.display_order asc");
                 }
 
             }
+
+            $options_themes = array(0 => 'default', 1 => 'Theme1', 2 => 'Theme2');
             $this->data1=$this->Project->find('first',array('conditions'=>array('id'=>$project_id)));
             $this->data = $this->Theme->find('first',array('conditions'=>array('project_id'=>$project_id)));
 			
+            $this->set('options_themes', $options_themes);
 			$this->set('existingBgImages',$existingBgImages);
 			$this->set('existingHeaderImages',$existingHeaderImages);
 			$this->set('existingPageBgImages',$existingPageBgImages);

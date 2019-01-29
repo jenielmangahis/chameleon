@@ -18,7 +18,7 @@
 
         var $name = 'Companies';
 
-        var $uses     = array('Project','Sponsor','Comment','Subcomment','Content','CoinsHolder','Coinset','Holder','EmailTemplate','User','UserSession','Country','Company','CompanyType','Contact','Term','CoinTransferRequest','ProjectGraphic','CommentType','ProjectCommentType','Point','Invitation', 'ProductType','PricingType','PointArchiveUser','MailFooter','RecurringEvent','SystemPricing','SystemVersion','UserAgreement','SpamPolicy','Term');
+        var $uses     = array('Project', 'Theme', 'Sponsor','Comment','Subcomment','Content','CoinsHolder','Coinset','Holder','EmailTemplate','User','UserSession','Country','Company','CompanyType','Contact','Term','CoinTransferRequest','ProjectGraphic','CommentType','ProjectCommentType','Point','Invitation', 'ProductType','PricingType','PointArchiveUser','MailFooter','RecurringEvent','SystemPricing','SystemVersion','UserAgreement','SpamPolicy','Term');
 
         var $helpers = array('Common','Pagination','Html', 'Form','Session','Qrcode','Javascript','Tinymce','Recaptcha','Fck','Csv','csv','Ajax','Calendar');
 
@@ -313,436 +313,176 @@
 
 
           function index() {
-
 		    //Configure::write('debug', 2);    
-
+            $theme = $this->Theme->find("first", array("conditions" => array("Theme.project_id" => 1)));
+            print_r($theme);exit;
 			$this->layout= 'layout';
-
             $current_domain= $_SERVER['HTTP_HOST'];
-
             $is_redirect="";
-
-
-
             //if take project through /projectname
-
 			//print_r($this->params);
-
              $project_name = strtolower($this->params['url']['url']);
-
-             //$project_name = strtolower($project_name);           
-
-             $project_name = strtolower('cckiller');           
-
-            
-
-			//if take project through /projectname   
-
+             //$project_name = strtolower($project_name);  
+             $project_name = strtolower('cckiller');    
+			//if take project through /projectname
             //if take project through site URl   
-
             //$project_data=$this->Project->find("first",array("conditions"=>array("url like '%$current_domain'")));
-
             //$project_name = $project_data['Project']['project_name'];  
-
-            //if take project through site URl     
-
-			
-
+            //if take project through site URl  
             if(!empty($project_name)&&($project_name!='/') &&($project_name!='register') &&($project_name!='login')){
-
 				$project_name=$project_name;
-
             } else {
-
-
-
                 //$this->redirect('indexhome');
-
                  if(!empty($project_name) && (($project_name=='register') || ($project_name=='login'))){
-
                      $is_redirect=$project_name;
-
                      $project_name="";
-
                   }  
-
-            
-
            // $project_data=$this->Project->find("first",array("conditions"=>array("url like '%$current_domain'")));
-
-		   
-
                   $project_data=$this->Project->find("first",array("conditions"=>array("Project.id" => "1")));
-
-
-
-			
-
-			
-
             $project_name = $project_data['Project']['system_name'];  
-
-
-
               if($project_name=="" || $project_name==NULL)
-
                 $project_name = "cckiller";        //if no project set default project i.e imagecoins
-
-
-
             }
-
-
-
-			
-
             $project_name = strtolower($project_name);
-
             $this->set('page_url',"home_page");
-
-
-
-
-
             $this->Project->bindModel(array('hasOne' => array('Sponsor' => array('foreignKey' => false,'conditions' => array('Sponsor.id = Project.sponsor_id' )))));
-
             //$condition="Project.system_name='".$project_name."' and Project.active_status='1' and Project.delete_status='0'";
-
             $condition="Project.id='1' and Project.active_status='1' and Project.delete_status='0'";
-
             $projectDetails = $this->Project->find($condition,NULL,NULL,NULL,NULL,1);
-
-
-
             //checking project name in database
-
             if(is_array($projectDetails) && !empty($projectDetails)) 
-
             {
-
                 if(empty($projectDetails['Sponsor']['sponsor_name'] )){
-
-                    
-
 					$this->redirect(array('controller'=>'companies','action'=>'sitenotconfigured'));
-
                 }else{
-
                     // Check User Login for different projects
-
                     $prjid = $this->Session->read('CurrentProject');
-
                     if($prjid != $projectDetails['Project']['id'])
-
                     {
-
                         $this->Session->delete('CurrentProject');
-
                         $this->Session->delete('User');
-
                     }
-
                     // Check User Login for different projects End
-
-
-
                     $this->Session->write('projectwebsite_id', $projectDetails['Project']['id']);
-
                     $this->Session->write('projectwebsite_name', $projectDetails['Project']['system_name']);
-
                    //$_SESSION['projectwebsite_id']=$projectDetails['Project']['id'];
-
-
-
-
-
-                    
-
                     $projectDetails=$this->getprojectdetails($projectDetails['Project']['id']);
-
-
-
                     // Set Cookie for Project
-
                     $this->Cookie->name = 'project'; 
-
                     $this->Cookie->time =  18000;  // or '1 hour' 
-
                     $this->Cookie->path = '/'; 
-
                     $this->Cookie->domain = 'localhost';   
-
                     $this->Cookie->secure = false;  //i.e. only sent if using secure HTTPS 
-
                     $this->Cookie->key = 'qSI232qs*&sXOw!';
-
                     $arr['name']=$projectDetails['Project']['project_name'];
-
                     $arr['id']=$projectDetails['Project']['id'];
-
                     $arr1 = serialize($arr);
-
                     $this->Cookie->write("proj_dtl",$arr1);
-
                     // Set Cookie for Project End    
-
-
-
                     $this->Cookie->write("name",$projectDetails['Project']['system_name']); 
-
                     $this->Cookie->write("id",$projectDetails['Project']['id']); 
-
-
-
-
-
                     $this->set('project',$projectDetails);
-
                     $this->set('project_name',$project_name);
-
-
-
                     $conditioncoinset = "project_id = '".$projectDetails['Project']['id']."' and  active_status='1' and delete_status='0'";
-
                     ##check already exists company name
-
                     $consetdata1 = $this->Coinset->find('first',array("conditions"=>$conditioncoinset));
-
                     $this->set('coinsdetail',$consetdata1);
-
-
-
                     $condition="(Content.internal_alias='home-page' or Content.alias='home-page' or Content.alias='home_page') and Content.project_id=".$projectDetails['Project']['id']." and Content.active_status='1' and Content.delete_status='0' ";
 
-
-
                     $noofcomments = $this->Comment->find('count',array('conditions' => "Comment.project_id='".$projectDetails['Project']['id']."'  and Comment.offensive='0'  and  Comment.active_status='1' and Comment.delete_status='0'"));
-
 					  //echo $condition;exit;
-
                     $page_content= $this->Content->find($condition,NULL,NULL,NULL,NULL,1);
-
-
-
                     if(isset($page_content['Content']['content'])&&$page_content['Content']['content']!='')
-
                     {
-
                            $page_content['Content']['content'] =  $this->replace_srt_code($page_content['Content']['content']); 
-
                     }    
-
                     //pr($page_content); 
-
                     //set page footer
-
                     App::import('Model','PageFooter');
-
                     $this->PageFooter = new PageFooter();
-
                     $cond="project_id='".$this->Session->read("projectwebsite_id")."'";
-
                     $page_footer_dt=$this->PageFooter->find("first",array('conditions'=>$cond));
-
-                    
-
-					                    
-
                     $page_footer_content=$page_footer_dt['PageFooter']['page_footer_content'];
-
                     $this->set("page_footer_content",$page_footer_content);
-
-					
-
 					$google_metatag=$projectDetails['Project']['google_metatag'];
-
                     $yahoo_metatag=$projectDetails['Project']['yahoo_metatag'];
-
                     $bing_metatag=$projectDetails['Project']['bing_metatag'];
-
-
-
                     $this->set('meta_description',$page_content['Content']['metadescription']);
-
                     $this->set('meta_keyword',$page_content['Content']['metakeyword']);
-
                     $this->set('meta_title',$page_content['Content']['metatitle']);
-
                     $this->set('page_title',$page_content['Content']['metatitle']);
-
                     $this->set('noofcomments',$noofcomments);
-
-					
-
                     $this->set('page_content',$page_content);
-
                     $this->set('google_metatag',$google_metatag);
-
                     $this->set('yahoo_metatag',$yahoo_metatag);
-
                     $this->set('bing_metatag',$bing_metatag);
-
-
-
-
-
                     $datastyle=$this->getstyles();
-
                     $this->Session->delete('styledata');
-
                     $this->set('styledata',$datastyle);
-
                     $this->Session->write("styledata",$datastyle);
-
                     $dataprojects=$this->getprojectdetails1();
-
                     $this->set('dataprojects',$dataprojects);
-
                 }
-
-
-
                 // For Showing social icons
 
                 App::import('Model','ProjectGraphic');
-
                 $this->ProjectGraphic = new ProjectGraphic();
-
-
-
                 $socialiconsArr = $this->ProjectGraphic->find('all',array('conditions'=>array('ProjectGraphic.project_id'=>$projectDetails['Project']['id'],'ProjectGraphic.active_status'=>1, 'ProjectGraphic.delete_status'=>0 ,'ProjectGraphic.home_icon'=>1), 'order'=>'ProjectGraphic.id ASC'));
-
                 $this->set('socialicons',$socialiconsArr);
-
                 // For Showing social icons End
 
-
-
                 // For Right side bar items
-
                 if($projectDetails['ProjectType']['registrationbox_verification']==1 || $projectDetails['Project']['is_showcoins']==1 || count($socialiconsArr)>0)
-
                 {
-
                     $this->set("rightbar",1);
-
                 }
-
                 else
-
                 {
-
                     $this->set('rightbar',0);
-
                 }
-
                 // For Right side bar items end
-
-
-
             }else{
-
-
-
                 $this->redirect('/companies/notavailable');
-
             }
-
-            
-
             if($is_redirect=="register"){
-
                  $this->redirect(array('controller','companies','action'=>'registeruser'));
-
             }
-
-            
-
             if($is_redirect=="login"){
-
                  $this->redirect(array('controller'=>'companies','action'=>'login'));
-
             }
-
-              
-
-             
 
             if(isset($_GET['register_redirect']))
-
             {
-
                 if($_GET['t_id'])
-
                     $this->redirect(array('controller'=>'companies','action'=>'registeruser?t_id='.$_GET['t_id']));
-
                 else
-
                 if($_GET['invite_id'])
-
                     $this->redirect(array('controller'=>'companies','action'=>'registeruser?invite_id='.$_GET['invite_id']));
-
-                else                                                                               
-
+                else                                     
                     $this->redirect(array('controller','companies','action'=>'registeruser'));
-
             }
-
-                 
 
             if(isset($_GET['show_comment_link']))
-
             {
-
                $this->redirect(array('controller'=>'companies','action'=>'login?show_comment_link='.$_GET['show_comment_link']));
-
             }    
-
-          
-
             //Check if email un-subscription link clicks from email footer   
-
              if(isset($_GET['email_subscriptions']))
-
             {
-
                     $this->redirect(array('controller'=>'companies','action'=>'login?redirecttopage=email_subscriptions'));
-
-
-
             } 
 
-
-
             // Check if email optout link clicks from email footer
-
             if(isset($_GET['optout']))
-
             {
-
             	$this->redirect(array('controller'=>'companies','action'=>'login?redirecttopage=optout'));
-
-            
-
             }
-
-
-
              // Check if project privacy page  link clicks from email footer   
-
             if(isset($_GET['destinationpage']) && $_GET['destinationpage']=="privacy")
-
             {
-
                     $this->redirect(array('controller'=>'companies','action'=>$_GET['destinationpage']));
-
-
-
             }                                                                       
-
         }
-
-
 
         function indexhome(){
 
@@ -17651,7 +17391,6 @@
 
 
             if(isset($this->data)){
-
 
 
                 //...This if for login purpose
@@ -38622,8 +38361,6 @@ function selectstateoptions($countryid='',$modelname=''){
 
             }
 
-			
-
            if(isset($this->data['Holder'])){        
 
 				
@@ -38923,7 +38660,6 @@ function selectstateoptions($countryid='',$modelname=''){
             }
 
 			//var_dump($reg_now);
-
             if($reg_now){
 
                 // Save user data  
@@ -39700,8 +39436,6 @@ function selectstateoptions($countryid='',$modelname=''){
 
 			}
 
-			
-
 			require 'twitter/EpiCurl.php'; 
 
             require 'twitter/EpiOAuth.php';
@@ -39730,10 +39464,9 @@ function selectstateoptions($countryid='',$modelname=''){
 
 			$secret = $projectDetails['Project']['twitterSecret'];			
 
-			$twitterObjUnAuth = new EpiTwitter($consumer_key, $consumer_secret);
+			//$twitterObjUnAuth = new EpiTwitter($consumer_key, $consumer_secret);
 
-			$url = $twitterObjUnAuth->getAuthenticateUrl();				
-
+			//$url = $twitterObjUnAuth->getAuthenticateUrl();
             $this->set("twitter_url",$url); 		            
 
 
