@@ -315,8 +315,14 @@
           function index() {
 		    //Configure::write('debug', 2);    
             $theme = $this->Theme->find("first", array("conditions" => array("Theme.project_id" => 1)));
-            print_r($theme);exit;
-			$this->layout= 'layout';
+            if( $theme['Theme']['theme'] == 1 ){
+                $this->layout= 'Theme1/layout';
+            }elseif( $theme['Theme']['theme'] == 2 ){
+                $this->layout= 'Theme2/layout';
+            }else{
+                $this->layout= 'layout';   
+            }
+			
             $current_domain= $_SERVER['HTTP_HOST'];
             $is_redirect="";
             //if take project through /projectname
