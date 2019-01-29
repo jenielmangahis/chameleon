@@ -205,11 +205,11 @@ App::import('Vendor', 'google/contrib', array('file' => 'Google_PlusService.php'
                         
 				<?php      
                      if(isset($redirecttopage)){
-                           $page_action=$base_url.'companies/login?redirecttopage='.$redirecttopage;
+                           $page_action=$base_url.'/companies/login?redirecttopage='.$redirecttopage;
                      }else if(isset($show_comment)){
-                           $page_action=$base_url.'companies/login?show_comment_link=1';
+                           $page_action=$base_url.'/companies/login?show_comment_link=1';
                      }else{
-                          $page_action=$baseUrl.'companies/login';
+                          $page_action=$baseUrl.'/companies/login';
                      }
                      
                  echo  $form->create('User',array('action'=>$page_action,'id'=>'SignupForm','url'=>$page_action ,'onsubmit' => 'return validatelogin("add");'));?>
