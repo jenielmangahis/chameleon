@@ -44,7 +44,7 @@ h6 {
 }
 
 .bg-primary {
-  background-color: #F05F40 !important;
+  background-color: #efefef !important;
 }
 
 .bg-dark {
@@ -56,7 +56,7 @@ h6 {
 }
 
 section {
-  padding: 8rem 0;
+  padding: 0;
 }
 
 .section-heading {
@@ -136,7 +136,7 @@ img::-moz-selection {
 @media (min-width: 992px) {
   #mainNav {
     border-color: transparent;
-    background-color: transparent;
+    background-color:#555;
   }
   #mainNav .navbar-brand {
     color: rgba(255, 255, 255, 0.7);
@@ -178,7 +178,7 @@ img::-moz-selection {
 header.masthead {
   padding-top: 10rem;
   padding-bottom: calc(10rem - 56px);
-  background-image: url("../img/header.jpg");
+  background-color:#0095e5;
   background-position: center center;
   background-size: cover;
 }
@@ -317,3 +317,26 @@ header.masthead p {
   -webkit-box-shadow: 0 0 0 0.2rem rgba(240, 95, 64, 0.5) !important;
   box-shadow: 0 0 0 0.2rem rgba(240, 95, 64, 0.5) !important;
 }
+
+
+
+
+
+.leftPanel #services { width:1080px; margin:0 auto;}
+.leftPanel #services table { width:auto !important;}
+
+.leftPanel #services table h1 { font-weight:bold; line-height:1.4em;}
+.leftPanel #services > p { line-height:1.8em;}
+
+
+
+
+
+
+
+
+
+
+
+
+
