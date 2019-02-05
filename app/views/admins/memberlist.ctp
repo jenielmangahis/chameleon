@@ -284,7 +284,8 @@ $backDownloadholder = $base_url_admin.'downloadholder';
                          }else if($membertype=="Non Holder")   { 
                               $editmemnerpage="editnonholder/".$recid;      
                          }else{
-                             $editmemnerpage="#";
+                            $editmemnerpage="editnonholder/".$recid;    
+                             //$editmemnerpage="#";
                          }
                          //$donationlevel=$eachrow['DonationLevel']['level_name'];    
                         $points=$eachrow[0]['totalpoints'];      
