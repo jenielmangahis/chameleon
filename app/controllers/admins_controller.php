@@ -90,6 +90,7 @@
             ##set default selected
             //Configure::write('debug',3 );    
             $this->Session->delete('sessionprojectid');
+            $this->Session->write("sessionprojectid",$projectid); 
             $this->set("selectedprojectid",'0');
 	        $this->set("hlpdata",$this->getHelpContent(54));
             //App::import("Model", "Holder");
