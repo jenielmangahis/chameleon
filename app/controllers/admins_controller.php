@@ -15064,6 +15064,11 @@ from master_points order by master_points.display_order asc");
 
             App::import("Model", "CommunicationTaskHistory");
             $this->CommunicationTaskHistory =   & new CommunicationTaskHistory(); 
+            $this->CommunicationTaskHistory->bindModel(array('belongsTo'=>array(
+            'EmailTemplate'=>array(
+            'foreignKey'=>false,
+            'conditions'=>'EmailTemplate.id = CommunicationTaskHistory.email_template_id'
+            ))));
 
             $condition = "CommunicationTaskHistory.memberid=" . $this->data['Holder']['id'];
             $communicationTaskHistories = $this->CommunicationTaskHistory->find('all', array('conditions' => $condition));
@@ -27636,6 +27641,11 @@ if(sizeof($result) > 0)
  function view_email( $id ){
     App::import("Model", "CommunicationTaskHistory");
     $this->CommunicationTaskHistory =   & new CommunicationTaskHistory();
+    $this->CommunicationTaskHistory->bindModel(array('belongsTo'=>array(
+    'EmailTemplate'=>array(
+    'foreignKey'=>false,
+    'conditions'=>'EmailTemplate.id = CommunicationTaskHistory.email_template_id'
+    ))));
     $condition = "CommunicationTaskHistory.id=" . $id;
     $communicationTaskHistory = $this->CommunicationTaskHistory->find('first', array('conditions' => $condition));
     $this->set('communicationTaskHistory', $communicationTaskHistory);

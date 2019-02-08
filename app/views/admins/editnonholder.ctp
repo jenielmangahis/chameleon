@@ -515,6 +515,7 @@ ini_set('display_errors', 0);
                                         <tr>
                                             <th></th>
                                             <th>Subject</th>
+                                            <th>Template</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -529,6 +530,7 @@ ini_set('display_errors', 0);
                                                     ?>
                                                 </td>
                                                 <td><?= $ct['CommunicationTaskHistory']['email_subject']; ?></td>
+                                                <td><?= $ct['EmailTemplate']['email_template_name']; ?></td>
                                             </tr>
                                         <?php } ?>
                                     </tbody>
