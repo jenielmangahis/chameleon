@@ -511,7 +511,7 @@ ini_set('display_errors', 0);
                                 <br />
                                 <table class="table">
                                     <thead>
-                                        <tr><th colspan="2" style="background-color: #286090;color:#ffffff;">EMAILS SENT</th></tr>
+                                        <tr><th colspan="3" style="background-color: #286090;color:#ffffff;">EMAILS SENT</th></tr>
                                         <tr>
                                             <th></th>
                                             <th>Subject</th>
