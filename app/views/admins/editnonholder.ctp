@@ -508,6 +508,31 @@ ini_set('display_errors', 0);
                                     </tbody>
         
                                 </table>
+                                <br />
+                                <table class="table">
+                                    <thead>
+                                        <tr><th colspan="2" style="background-color: #286090;color:#ffffff;">EMAILS SENT</th></tr>
+                                        <tr>
+                                            <th></th>
+                                            <th>Subject</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <?php foreach($communicationTaskHistories as $ct){ ?>
+                                            <tr>
+                                                <td>
+                                                    <?php 
+                                                        echo $html->link("View",array('controller'=>'admins','action'=>'view_email', $ct['CommunicationTaskHistory']['id']),array('class' => 'btn btn-primary', 'escape' => false));
+                                                    ?>
+                                                    <?php 
+                                                        echo $html->link("Add",array('controller'=>'admins','action'=>'sendtempmail', $this->data['Holder']['id']),array('class' => 'btn btn-primary', 'escape' => false));
+                                                    ?>
+                                                </td>
+                                                <td><?= $ct['CommunicationTaskHistory']['email_subject']; ?></td>
+                                            </tr>
+                                        <?php } ?>
+                                    </tbody>
+                                </table>
             </div>
         </div>
     </div>

@@ -9651,7 +9651,7 @@ if(!$errormsg){
             $checkempty =true;
 			$this->set('adminmail', Admin::ADMIN_EMAIL);
             if(!empty($this->data)){   
-				
+
                 if($this->data['EmailTemplate']['subject']=="" || $this->data['EmailTemplate']['content']=="" || $this->data['EmailTemplate']['toid']=="" || $this->data['EmailTemplate']['fromid']==""){
                     $this->Session->setFlash("All the fields are mandatory.",'default',array('class' => 'msgTXt'));
                     $checkempty = false;
@@ -15061,7 +15061,13 @@ from master_points order by master_points.display_order asc");
             $this->Holder->id = $holderid;
 
             $this->data = $this->Holder->read();
-			
+
+            App::import("Model", "CommunicationTaskHistory");
+            $this->CommunicationTaskHistory =   & new CommunicationTaskHistory(); 
+
+            $condition = "CommunicationTaskHistory.memberid=" . $this->data['Holder']['id'];
+            $communicationTaskHistories = $this->CommunicationTaskHistory->find('all', array('conditions' => $condition));
+            $this->set('communicationTaskHistories', $communicationTaskHistories);
 			//$this->pl($this->data);
             $userid = $this->data['Holder']['user_id'];
             $condition = "id = '".$userid."'";
@@ -27625,6 +27631,14 @@ if(sizeof($result) > 0)
 		echo $out;
 		exit;	
 	}					
+ }
+
+ function view_email( $id ){
+    App::import("Model", "CommunicationTaskHistory");
+    $this->CommunicationTaskHistory =   & new CommunicationTaskHistory();
+    $condition = "CommunicationTaskHistory.id=" . $id;
+    $communicationTaskHistory = $this->CommunicationTaskHistory->find('first', array('conditions' => $condition));
+    $this->set('communicationTaskHistory', $communicationTaskHistory);
  }
 	 
 }

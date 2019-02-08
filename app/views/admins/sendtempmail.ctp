@@ -102,8 +102,9 @@
 			<label class="boldlabel">Email To <span style="color: red;">*</span></label>                              
 		</td>
 		<td>
-			 <?php
-					if(!empty($toid) && isset($toid)){	echo $toid;	}else{	echo "john@gosocialpartners.com"; }	?>
+            <span class="intp-Span" style="vertical-align: top">
+                <?php echo $form->input("EmailTemplate.toid", array('id' => 'toid', 'div' => false, 'label' => '','placeholder' => 'recipient@domain.com', 'style' =>'width:231px;',"class" => "inpt-txt-fld form-control",'value'=>$toid));?>
+            </span>
 		</td>
 	</tr>
 								
