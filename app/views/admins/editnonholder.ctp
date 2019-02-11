@@ -519,11 +519,13 @@ ini_set('display_errors', 0);
             <div class="table-cont">
                 <table class="table table-striped table-bordered">
                         <thead>
-                            <tr><th colspan="3" style="background-color: #286090;color:#ffffff;">EMAILS SENT</th></tr>
                             <tr>
-                                <th></th>
+                            	<th class="title_btn" colspan="3" style="background-color: #286090;color:#ffffff;"> <h4 class="left">EMAILS SENT</h4> <button class="btn btn-success right add-btn">Add</button></th> 
+                            </tr>
+                            <tr>                                
                                 <th>Subject</th>
                                 <th>Template</th>
+                                <th></th>
                             </tr>
                         </thead>
                         <tbody>
@@ -546,7 +548,7 @@ ini_set('display_errors', 0);
                             <tr>
                                 <td>
                                     <button class="btn btn-primary">View</button>
-                                    <button class="btn btn-primary">Add</button>
+                                    
                                 </td>
                                 <td><?php echo "This is a subject"; ?></td>
                                 <td><?php echo "This is a template"; ?></td>    

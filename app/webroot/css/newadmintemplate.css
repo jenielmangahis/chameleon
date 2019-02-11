@@ -4303,6 +4303,9 @@ label { display:inline;}
 .intp-Span .ui-datepicker-trigger img { padding-bottom:10px;}
 
 .midCont .table-cont { margin:20px 0;}
+
+.title_btn .add-btn { margin-top:3px;}
+.title_btn h4 { font-weight:bold; font-size:18px; text-indent:20px;}
   
 
 /*--------------------------------RESPONSIVE AREA--------------------------*/
