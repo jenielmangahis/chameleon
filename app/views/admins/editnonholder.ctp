@@ -545,11 +545,11 @@ ini_set('display_errors', 0);
                             <?php } ?>
                             <tr>
                                 <td>
-                                    <button class="btn btn-primary">Testing</button>
-                                    <button class="btn btn-primary">Testing</button>
+                                    <button class="btn btn-primary">View</button>
+                                    <button class="btn btn-primary">Add</button>
                                 </td>
-                                <td><?= $ct['CommunicationTaskHistory']['email_subject']; ?></td>
-                                <td><?= $ct['EmailTemplate']['email_template_name']; ?></td>    
+                                <td><?php echo "This is a subject"; ?></td>
+                                <td><?php echo "This is a template"; ?></td>    
                             </tr>
                         </tbody>
                     </table>
