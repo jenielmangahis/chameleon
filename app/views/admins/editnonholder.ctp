@@ -535,13 +535,19 @@ ini_set('display_errors', 0);
                                         <?php 
                                             echo $html->link("Add",array('controller'=>'admins','action'=>'sendtempmail', $this->data['Holder']['id']),array('class' => 'btn btn-primary', 'escape' => false));
                                         ?>
-                                    </td>
+                                    </td>                                    
                                     <td><?= $ct['CommunicationTaskHistory']['email_subject']; ?></td>
                                     <td><?= $ct['EmailTemplate']['email_template_name']; ?></td>                                    
                                 </tr>
                                                                                    
                                 
                             <?php } ?>
+                            <tr>
+                                <td>
+                                    <button class="btn btn-primary">Testing</button>
+                                    <button class="btn btn-primary">Testing</button>
+                                </td>
+                            </tr>
                         </tbody>
                     </table>
                 </div>
