@@ -515,12 +515,11 @@ ini_set('display_errors', 0);
             </div>
             
             <div class="clearfix"></div>
-            
-            <div class="table-cont">
-                <table class="table table-striped table-bordered">
+                <div class="table-cont">
+                    <table class="table table-striped table-bordered">
                         <thead>
                             <tr>
-                            	<th class="title_btn" colspan="3" style="background-color: #286090;color:#ffffff;"> <h4 class="left">EMAILS SENT</h4> <button class="btn btn-success right add-btn">Add</button></th> 
+                            	<th class="title_btn" colspan="3" style="background-color: #286090;color:#ffffff;"> <h4 class="left">EMAILS SENT</h4><?php echo $html->link("Add",array('controller'=>'admins','action'=>'sendtempmail', $this->data['Holder']['id']),array('class' => 'btn btn-success right add-btn', 'escape' => false));?></th> 
                             </tr>
                             <tr>                 
                             	<th></th>               
@@ -531,12 +530,9 @@ ini_set('display_errors', 0);
                         <tbody>
                             <?php foreach($communicationTaskHistories as $ct){ ?>
                                 <tr>
-                                    <td>
+                                    <td class="w_10">
                                         <?php 
                                             echo $html->link("View",array('controller'=>'admins','action'=>'view_email', $ct['CommunicationTaskHistory']['id']),array('class' => 'btn btn-primary', 'escape' => false));
-                                        ?>
-                                        <?php 
-                                            echo $html->link("Add",array('controller'=>'admins','action'=>'sendtempmail', $this->data['Holder']['id']),array('class' => 'btn btn-primary', 'escape' => false));
                                         ?>
                                     </td>                                    
                                     <td><?= $ct['CommunicationTaskHistory']['email_subject']; ?></td>
@@ -545,18 +541,39 @@ ini_set('display_errors', 0);
                                                                                    
                                 
                             <?php } ?>
-                            <tr>
-                                <td class="w_10">
-                                    <button class="btn btn-primary">View</button>
-                                    
-                                </td>
-                                <td><?php echo "This is a subject"; ?></td>
-                                <td><?php echo "This is a template"; ?></td>    
-                            </tr>
                         </tbody>
                     </table>
                 </div>
-            
+
+                <div class="table-cont">
+                    <table class="table table-striped table-bordered">
+                        <thead>
+                            <tr>
+                                <th class="title_btn" colspan="4" style="background-color: #286090;color:#ffffff;"> <h4 class="left">EVENTS</h4><?php echo $html->link("Add",array('controller'=>'admins','action'=>'appointment', $this->data['Holder']['id']),array('class' => 'btn btn-success right add-btn', 'escape' => false));?></th> 
+                            </tr>
+                            <tr>                 
+                                <th></th>               
+                                <th class="w_40">Title</th>
+                                <th class="w_40">Start Time</th>    
+                                <th class="w_40">End Time</th>                                
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php foreach($events as $e){ ?>
+                                <tr>
+                                    <td class="w_10">
+                                        <?php 
+                                            echo $html->link("View",array('controller'=>'admins','action'=>'eventcreate', $e['Event']['id']),array('class' => 'btn btn-primary', 'escape' => false));
+                                        ?>
+                                    </td>                                    
+                                    <td><?= $e['Event']['title']; ?></td>
+                                    <td><?= $e['Event']['starttime']; ?></td>   
+                                    <td><?= $e['Event']['endtime']; ?></td>                                    
+                                </tr>
+                            <?php } ?>
+                        </tbody>
+                    </table>
+                </div>
         </div>
     </div>
 

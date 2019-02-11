@@ -15069,10 +15069,15 @@ from master_points order by master_points.display_order asc");
             'foreignKey'=>false,
             'conditions'=>'EmailTemplate.id = CommunicationTaskHistory.email_template_id'
             ))));
-
             $condition = "CommunicationTaskHistory.memberid=" . $this->data['Holder']['id'];
             $communicationTaskHistories = $this->CommunicationTaskHistory->find('all', array('conditions' => $condition));
             $this->set('communicationTaskHistories', $communicationTaskHistories);
+
+            App::import("Model", "Event");
+            $this->Event = & new Event();
+            $condition = "Event.memberid=" . $this->data['Holder']['id'];
+            $events = $this->Event->find('all', array('conditions' => $condition));
+            $this->set('events', $events);
 			//$this->pl($this->data);
             $userid = $this->data['Holder']['user_id'];
             $condition = "id = '".$userid."'";
@@ -18911,6 +18916,7 @@ from master_points order by master_points.display_order asc");
             ##check empty data
 
             if(!empty($this->data)) {  
+                $this->data['Event']['memberid'] = $this->Session->read("event_id");
        			$this->data['Event']['project_id'] = $projectid;
                 $this->Event->set($this->data);
                 $errormsg = $this->Event->invalidFields();
@@ -20188,7 +20194,9 @@ from master_points order by master_points.display_order asc");
             ##check empty data
 
             if(!empty($this->data)) {  
+                $this->data['Event']['memberid'] = $eventid;
        			$this->data['Event']['project_id'] = $projectid;
+                print_r($this->data);exit;
                 $this->Event->set($this->data);
                 $errormsg = $this->Event->invalidFields();
                 if(!$errormsg){
