@@ -521,6 +521,7 @@ ini_set('display_errors', 0);
                         <thead>
                             <tr><th colspan="3" style="background-color: #286090;color:#ffffff;">EMAILS SENT</th></tr>
                             <tr>
+                                <th></th>
                                 <th>Subject</th>
                                 <th>Template</th>
                             </tr>
@@ -547,6 +548,8 @@ ini_set('display_errors', 0);
                                     <button class="btn btn-primary">Testing</button>
                                     <button class="btn btn-primary">Testing</button>
                                 </td>
+                                <td><?= $ct['CommunicationTaskHistory']['email_subject']; ?></td>
+                                <td><?= $ct['EmailTemplate']['email_template_name']; ?></td>    
                             </tr>
                         </tbody>
                     </table>
