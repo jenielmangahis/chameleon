@@ -4305,8 +4305,12 @@ label { display:inline;}
 .midCont .table-cont { margin:20px 0;}
 
 .title_btn .add-btn { margin-top:3px;}
-.title_btn h4 { font-weight:bold; font-size:18px; text-indent:20px;}
-  
+.title_btn h4 { font-weight:bold; font-size:18px; text-indent:10px;}
+
+.w_40 { width:40%;}
+.w_20 { width:20%;} 
+.w_10 { width:10%;}
+.w_10 .btn { display:block; margin:0 auto; padding:4px 20px;}
 
 /*--------------------------------RESPONSIVE AREA--------------------------*/
 

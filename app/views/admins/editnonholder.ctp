@@ -522,10 +522,10 @@ ini_set('display_errors', 0);
                             <tr>
                             	<th class="title_btn" colspan="3" style="background-color: #286090;color:#ffffff;"> <h4 class="left">EMAILS SENT</h4> <button class="btn btn-success right add-btn">Add</button></th> 
                             </tr>
-                            <tr>                                
-                                <th>Subject</th>
-                                <th>Template</th>
-                                <th></th>
+                            <tr>                 
+                            	<th></th>               
+                                <th class="w_40">Subject</th>
+                                <th class="w_40">Template</th>                                
                             </tr>
                         </thead>
                         <tbody>
@@ -546,7 +546,7 @@ ini_set('display_errors', 0);
                                 
                             <?php } ?>
                             <tr>
-                                <td>
+                                <td class="w_10">
                                     <button class="btn btn-primary">View</button>
                                     
                                 </td>
