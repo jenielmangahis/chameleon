@@ -359,29 +359,40 @@ $('#prosMnu').addClass("butBgSelt");
 								);
 								?>
 								</td>
+                                <td align="left" valign="middle">
+                                    <?php
+                                    e($html->link(
+                                    $html->tag('span', $state?$state:'N/A'),
+                                    array('controller'=>'prospects','action'=>'addmerchant',$recid,'Marchant'),
+                                    array('escape' => false)
+                                    )
+                                );
+                                ?>
+                                </td>
 								 <td align="center" valign="middle" class='newtblbrd'>
-		<?php 
-		if($eachrow['Company']['active_status']=='1'){
-			e($html->link(
-				$html->image('active.gif',array('width'=>'10','height'=>'13','alt'=>'','title'=>'Click here to deactivate '.$eachrow['Company']['company_name'])),
-				array('controller'=>'prospects','action'=>'changestatus',$recid,$modelname,'0',$redirectionurl,'cngstatus'),
-				array('escape' => false),
-				'Are you sure you want to Deactivate Merchant ?',
-                false
-				)
-			);
-		} else {
-			e($html->link(
-				$html->image('deactive.gif',array('width'=>'10','height'=>'13','alt'=>'','title'=>'Click here to activate '.$eachrow['Company']['company_name'])),
-				array('controller'=>'prospects','action'=>'changestatus',$recid,$modelname,'1',$redirectionurl,'cngstatus'),
-				array('escape' => false),
-				'Are you sure you want to Activate Merchant ?',
-                false
-				)
-			);
-		}			
-		?>
-		</td>
+                        		<?php 
+                        		if($eachrow['Company']['active_status']=='1'){
+                        			e($html->link(
+                        				$html->image('active.gif',array('width'=>'10','height'=>'13','alt'=>'','title'=>'Click here to deactivate '.$eachrow['Company']['company_name'])),
+                        				array('controller'=>'prospects','action'=>'changestatus',$recid,$modelname,'0',$redirectionurl,'cngstatus'),
+                        				array('escape' => false),
+                        				'Are you sure you want to Deactivate Merchant ?',
+                                        false
+                        				)
+                        			);
+                        		} else {
+                        			e($html->link(
+                        				$html->image('deactive.gif',array('width'=>'10','height'=>'13','alt'=>'','title'=>'Click here to activate '.$eachrow['Company']['company_name'])),
+                        				array('controller'=>'prospects','action'=>'changestatus',$recid,$modelname,'1',$redirectionurl,'cngstatus'),
+                        				array('escape' => false),
+                        				'Are you sure you want to Activate Merchant ?',
+                                        false
+                        				)
+                        			);
+                        		}			
+                        		?>
+
+                        		</td>
                             </tr>
                             <?php } else { ?>
 

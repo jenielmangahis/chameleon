@@ -157,7 +157,8 @@ class ProspectsController extends AppController
 										'conditions'=>'Company.company_type_id = CompanyType.id '
 								))));
 						//echo $condition;
-						$companydtlarr = $this->Company->find('all',array("conditions"=>$condition, 'order' =>$order, 'limit' => $limit, 'page' => $page));
+						//$companydtlarr = $this->Company->find('all',array("conditions"=>$condition, 'order' =>$order, 'limit' => $limit, 'page' => $page));
+						$companydtlarr = $this->Company->find('all',array('order' =>$order, 'limit' => $limit, 'page' => $page));
 						//echo '<pre>';print_r($companydtlarr);
 		    ##set project type data in variable
 						$this->set("companydata",$companydtlarr);
