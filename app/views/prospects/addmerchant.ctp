@@ -497,6 +497,69 @@ echo (!empty($prospectnonprofitid) && in_array($prospectnonprofit['Company']['id
 <?php echo $form->end();?>
 
 </div>
+
+<div class="clearfix"></div>
+			<div class="row">
+					<div class="table-cont">
+                    <table class="table table-striped table-bordered">
+                        <thead>
+                            <tr>
+                            	<th class="title_btn" colspan="3" style="background-color: #286090;color:#ffffff;"> <h4 class="left">EMAILS SENT</h4><?php echo $html->link("Add",array('controller'=>'admins','action'=>'sendtempmail'),array('class' => 'btn btn-success right add-btn', 'escape' => false));?></th> 
+                            </tr>
+                            <tr>                 
+                            	<th></th>               
+                                <th class="w_40">Subject</th>
+                                <th class="w_40">Template</th>                                
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php foreach($communicationTaskHistories as $ct){ ?>
+                                <tr>
+                                    <td class="w_10">
+                                        <?php 
+                                            echo $html->link("View",array('controller'=>'admins','action'=>'view_email', $ct['CommunicationTaskHistory']['id']),array('class' => 'btn btn-primary', 'escape' => false));
+                                        ?>
+                                    </td>                                    
+                                    <td><?= $ct['CommunicationTaskHistory']['email_subject']; ?></td>
+                                    <td><?= $ct['EmailTemplate']['email_template_name']; ?></td>                                    
+                                </tr>
+                                                                                   
+                                
+                            <?php } ?>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="table-cont">
+                    <table class="table table-striped table-bordered">
+                        <thead>
+                            <tr>
+                                <th class="title_btn" colspan="4" style="background-color: #286090;color:#ffffff;"> <h4 class="left">EVENTS</h4><?php echo $html->link("Add",array('controller'=>'admins','action'=>'appointment'),array('class' => 'btn btn-success right add-btn', 'escape' => false));?></th> 
+                            </tr>
+                            <tr>                 
+                                <th></th>               
+                                <th class="w_40">Title</th>
+                                <th class="w_40">Start Time</th>    
+                                <th class="w_40">End Time</th>                                
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php foreach($events as $e){ ?>
+                                <tr>
+                                    <td class="w_10">
+                                        <?php 
+                                            echo $html->link("View",array('controller'=>'admins','action'=>'eventcreate', $e['Event']['id']),array('class' => 'btn btn-primary', 'escape' => false));
+                                        ?>
+                                    </td>                                    
+                                    <td><?= $e['Event']['title']; ?></td>
+                                    <td><?= $e['Event']['starttime']; ?></td>   
+                                    <td><?= $e['Event']['endtime']; ?></td>                                    
+                                </tr>
+                            <?php } ?>
+                        </tbody>
+                    </table>
+                </div>
+			</div>
 </div>
   
 

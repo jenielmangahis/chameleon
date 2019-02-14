@@ -169,6 +169,7 @@ class ProspectsController extends AppController
 	function addmerchant($companyid='', $hqid=0){
 		Configure::write('debug', 0);
 		$usertype = $this->session_check_usertype();
+		$project_id = $this->Session->read("sessionprojectid");    
 		$this->set('usertype',$usertype);
 		if($usertype==trim("user")){
 			$this->session_check_user();
@@ -534,6 +535,23 @@ class ProspectsController extends AppController
 				$this->set("selectedstate",$statid);
 			}
 		}
+
+		App::import("Model", "CommunicationTaskHistory");
+        $this->CommunicationTaskHistory =   & new CommunicationTaskHistory(); 
+        $this->CommunicationTaskHistory->bindModel(array('belongsTo'=>array(
+        'EmailTemplate'=>array(
+        'foreignKey'=>false,
+        'conditions'=>'EmailTemplate.id = CommunicationTaskHistory.email_template_id'
+        ))));
+        $condition = "CommunicationTaskHistory.project_id=" . $project_id;
+        $communicationTaskHistories = $this->CommunicationTaskHistory->find('all', array('conditions' => $condition));
+        $this->set('communicationTaskHistories', $communicationTaskHistories);
+
+        App::import("Model", "Event");
+        $this->Event = & new Event();
+        $condition = "Event.project_id=" . $project_id;
+        $events = $this->Event->find('all', array('conditions' => $condition));
+        $this->set('events', $events);
 
 		## Categry Drop down
 		$this->categorydropdown();
