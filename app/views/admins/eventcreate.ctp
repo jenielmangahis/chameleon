@@ -166,8 +166,8 @@ function create_csv()
                 });
                 
                 $('#endtime').datepicker({
-                    showOn: "button",
-                    buttonImage: baseUrl+"img/calendar_new.png",
+                    //showOn: "button",
+                    //buttonImage: baseUrl+"img/calendar_new.png",
                     dateFormat: 'mm-dd-yy',
                     changeMonth: true,
                     changeYear:true,

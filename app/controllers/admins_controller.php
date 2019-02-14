@@ -18209,7 +18209,7 @@ from master_points order by master_points.display_order asc");
         {
             
             $this->session_check_admin();
-            $project_id ='0';
+            $project_id =$this->Session->read("sessionprojectid");
             $current_domain =$_SERVER['HTTP_HOST'];
 			if($current_domain == "192.168.1.21"){
 			      $current_domain=$current_domain."/cckiller";
@@ -18229,7 +18229,6 @@ from master_points order by master_points.display_order asc");
 
             // insert rows to an array.
             for ($a=0; count($events)> $a; $a++){
-                
             $validate_event = $this->Event->find('all',array('conditions' => "Event.id='".$events[$a]['RecurringEvent']['event_id']."' and Event.active_status='1' and Event.delete_status='0'"));
             
                 if(!empty($validate_event))
@@ -18895,7 +18894,7 @@ from master_points order by master_points.display_order asc");
         function eventcreate($eventid=''){
 
              $this->session_check_admin();
-             $project_id = '1';
+             $project_id = $this->Session->read("sessionprojectid");
 			 if($eventid > 0 ){
 			 	$this->set('eid',$eventid);	
 				 $this->Session->write("event_id",$eventid);

@@ -1,12 +1,12 @@
 <?php  
  //echo $form->select("$modelname.state",$statedropdown,$selectedstate,array('id' => 'state','class'=>'multilist'),"---Select---"); 
       echo '<option value="">---Select---</option>';
-  foreach($templatedropdown as $key=>$template){
+  foreach($templatedropdown as $template){
       $sel='';
-      if($key== $selectedid){
+      if($template['EmailTemplate']['id']== $selectedid){
           $sel='selected="selected"';
       }
-      echo '<option value="'.$key.'" '.$sel.'>'.$template.'</option>';
+      echo '<option value="'.$template['EmailTemplate']['id'].'" '.$sel.'>'.$template['EmailTemplate']['email_template_name'].'</option>';
   }
  
  ?>
