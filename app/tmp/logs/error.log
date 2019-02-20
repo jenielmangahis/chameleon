@@ -1,0 +1,2 @@
+2019-02-19 14:55:16 Warning: Warning (2): Missing argument 1 for ContactLicenseController::license_list(), called in D:\xampp\htdocs\wolf\git\chameleon\cake\libs\object.php on line 231 and defined in [APP\controllers\contact_license_controller.php, line 77]
+2019-02-19 14:55:50 Warning: Warning (2): Missing argument 1 for ContactLicenseController::license_list(), called in D:\xampp\htdocs\wolf\git\chameleon\cake\libs\object.php on line 231 and defined in [APP\controllers\contact_license_controller.php, line 77]
