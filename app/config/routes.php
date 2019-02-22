@@ -43,6 +43,7 @@
 	Router::connect('relationships/addlos', array('controller' => 'contacts', 'action' =>  'addlos'));
 	Router::connect('relationships/sa_contactlist', array('controller' => 'contacts', 'action' =>  'sa_contactlist'));
 	Router::connect('/players/types/companies', array('controller' => 'players', 'action' =>  'types','company'));
+    Router::connect('/contact_licenses/addlicense', array('controller' => 'contact_license', 'action' =>  'addlicense'));
 	Router::connect('/offers/current', array('controller' => 'offers', 'action' =>  'offerlist','secondlevel'));
 
      $current_domain = $_SERVER['HTTP_HOST'];

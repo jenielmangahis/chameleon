@@ -128,12 +128,12 @@ $backDownloadholder = $base_url_admin.'downloadholder';
        <div class="titlCont">
 	   	<div class="slider-centerpage clearfix">            
             <div class="center-Page col-sm-6">
-            	<h2> All Contacts List  </h2>
+            	<h2> License list for <?= $holder['Holder']['firstname']; ?>  </h2>
             </div>
             <div class="slider-dashboard col-sm-6"> <!--<div class="slider" id="toppanel" style="height: 20px; top:13px;right: -50px;width:545px !important; text-align:right;">-->                
                     <div class="icon-container">
 						<?php
-                                    e($html->link($html->image('new.png') . ' ','addlicense/' . $contact_id,array('escape' => false)));
+                                    e($html->link($html->image('new.png') . ' ','addlicense/' . $holder_id,array('escape' => false)));
                                     ?>
                                     <a href="javascript:void(0)" onclick="return activatecontents('asd','del');">
                                     <?php e($html->image('action.png')) ?>
@@ -204,7 +204,6 @@ $backDownloadholder = $base_url_admin.'downloadholder';
 <div class="midCont" id="newhldtab">
 
     <?php if($session->check('Message.flash')) { echo $this->renderElement('error_message'); } ?>
-
     <!-- top curv image starts -->
     <div>
         <!--<span class="topLft_curv"></span>
@@ -216,179 +215,43 @@ $backDownloadholder = $base_url_admin.'downloadholder';
                     document.adminhome.submit();
                 }
             </script>
-		<div class="new_filter">
-            <span class="spnFilt">Filter:</span>
-				<span class="srchBg"><?php echo $form->input("searchkey", array('id' => 'searchkey', 'div' => false, 'label' => '',"maxlength" => "200"));?></span><span class="srchBg2">
-					<?php echo $form->submit("Go", array('id' => 'searchkeysubmit', 'div' => false, 'label' => ''));
-
-                    if(isset($this->data['Admins']['searchkey']) && $this->data['Admins']['searchkey'] !=""){
-                        echo $form->submit("Reset", array('id' => 'searchkey', 'div' => false, 'label' => '','onclick'=>'document.getElementById("searchkey").value=""'));
-                    }
-                ?> 
-                
-            </span>
-            <span class="srchBg2">
-                <input type="button" value="Reset" label="" onclick="javascript:(window.location='<?php echo $backMemberList ?>')" id="locaa">&nbsp;&nbsp;  
-            </span><span class="srchBg2"><input type="button" value="Csv file download" label="" onclick="jjavascript:(window.location='<?php echo $backDownloadholder ?>')" > </span>
-		</div>
         </div>
         <div class="clear"></div></div>
-    <div class="tblData table-responsive">
-        <table class="table table-striped table-bordered" width="100%" border="0" cellspacing="0" cellpadding="0">
-            <tr class="trBg">
-                <th align="center" valign="middle" style="width:1%">#</th>
-                <th align="center" valign="middle" style="width:2%"><input type="checkbox" value="" name="checkall" id="checkall" /></th>
-                <th align="center" valign="middle" style="width:12%"><span class="right"><?php echo $pagination->sortBy('lastnameshow', $html->image('sorting_arow.png',array('width'=>'10','height'=>'13','alt'=>'')),null,null,' ',' ');
-				 ?></span>Last Name</th>
-                <th align="center" valign="middle" style="width:12%"><span class="right"><?php echo $pagination->sortBy('firstname', $html->image('sorting_arow.png',array('width'=>'10','height'=>'13','alt'=>'')),null,null,' ',' ');
-				 ?></span>First Name</th>
-                
-				 <th align="center" valign="middle" style="width:14%"><span class="right"><?php echo $pagination->sortBy('created', $html->image('sorting_arow.png',array('width'=>'10','height'=>'13','alt'=>'')),null,null,' ',' ');
-				 ?></span>Register Date</th>
-                <th align="center" valign="middle" style="width:14%"><span class="right"><?php echo $pagination->sortBy('screenname', $html->image('sorting_arow.png',array('width'=>'10','height'=>'13','alt'=>'')),null,null,' ',' ');
-				 ?></span>Screen Name</th>
-                <th align="center" valign="middle" style="width:14%"><span class="right"><?php echo $pagination->sortBy('member_type',$html->image('sorting_arow.png',array('width'=>'10','height'=>'13','alt'=>'')),null,null,' ',' ');
-				 ?></span>Member Type</th>
-               <!-- <th align="center" valign="middle" style="width:15%"><span class="right"><?php echo $pagination->sortBy('donation_level', $html->image('sorting_arow.png',array('width'=>'10','height'=>'13','alt'=>'')),null,null,' ',' ');
-				 ?></span>Donation Level</th>
-                <th align="center" valign="middle" style="width:8%"><span class="right"><?php echo $pagination->sortBy('points', $html->image('sorting_arow.png',array('width'=>'10','height'=>'13','alt'=>'')),null,null,' ',' ');
-				 ?></span>Points</th>-->
-                <th align="center" valign="middle" style="width:5%"><span class="right"><?php echo $pagination->sortBy('active_status ', $html->image('sorting_arow.png',array('width'=>'10','height'=>'13','alt'=>'')),null,null,' ',' ');
-				 ?></span>Status</th>
-            </tr>
-            <?php $i=1;?>
-            <?php if($memberlist){
-                    $created="";              
-                    foreach($memberlist as $eachrow){
-                        $recid = $eachrow['Holder']['id'];
-                        $userid = $eachrow['Holder']['user_id'];
-                        $modelname = "Holder";
-                        $othermodelname = "User";
-                        $redirectionurl = "memberlist";
-                        $screenname=$eachrow['Holder']['screenname'];
-                        $firstname = $eachrow['Holder']['firstname'];
-                        if($firstname) $firstname = AppController::WordLimiter($firstname,25);
-                        $lastnameshow = $eachrow['Holder']['lastnameshow'];
-                        if($lastnameshow) $lastnameshow = AppController::WordLimiter($lastnameshow,25);
-                        $email = $eachrow['Holder']['email'];
-                        if($email) $email = AppController::WordLimiter($email,30);
-                        $created = $eachrow['Holder']['created'];
-                        if($eachrow['Holder']['created'] !='0000-00-00'){
-                            $created = AppController::usdateformat($eachrow['Holder']['created']);
-                        }
-						
-                         $membertype=$eachrow['MemberType']['member_type'];   
-                         
-                         if($membertype=="Holder")   {
-                             $editmemnerpage="editholder/".$recid;
-                         }else if($membertype=="Non Holder")   { 
-                              $editmemnerpage="editnonholder/".$recid;      
-                         }else{
-                            $editmemnerpage="editnonholder/".$recid;    
-                             //$editmemnerpage="#";
-                         }
-                         //$donationlevel=$eachrow['DonationLevel']['level_name'];    
-                        $points=$eachrow[0]['totalpoints'];      
-                      if($i%2 == 0 ){
+        <div class="tblData table-responsive">
+            <table class="table table-striped table-bordered" width="100%" border="0" cellspacing="0" cellpadding="0">
+                <tr class="trBg">
+                    <th align="center" valign="middle" style="width:1%">#</th>
+                    <th align="center" valign="middle" style="width:2%"><input type="checkbox" value="" name="checkall" id="checkall" /></th>
+                    <th align="center" valign="middle">License Number</th>
+                    <th align="center" valign="middle">Status</th>
+                </tr>
+                <?php $i = 1; foreach($contactLicenses as $cl){ ?>
+                <?php 
+                    if($i%2 == 0 ){
                        $cls="altrow";        
-                     } else{
+                    }else{
                         $cls=""; 
-                     }
-
-                    ?>
-                    <tr class='<?php echo $cls; ?>'>    
-                            <td align="center" class='newtblbrd'><span style='color:#4d4d4d;'><?php echo $i++;?></span></td>
-                            <td align="center" class='newtblbrd'>
-                                <a><span>
-                                    <input type="checkbox"  class="checkid" name="checkid[]" value="<?php echo $recid; ?>" />
-                                    <input type="hidden" class="edit_link" value="<?php echo $editmemnerpage ?>">
-                                </span></a>
-                            </td>
-                               <td align="left" valign="middle" class='newtblbrd'>
-								
-								<?php
-									e($html->link(
-										$html->tag('span', ($lastnameshow)?$lastnameshow:"N/A"),
-										array('controller'=>'admins','action'=>$editmemnerpage),
-										array('escape' => false)
-										)
-									);			
-								?>
-							</td>    
-                            <td align="left" valign="middle" class='newtblbrd'>
-								
-								<?php
-									e($html->link(
-										$html->tag('span', ($firstname)?$firstname:"N/A"),
-										array('controller'=>'admins','action'=>$editmemnerpage),
-										array('escape' => false)
-										)
-									);			
-								?>
-							</td>
-                           
-							<td align="center" valign="middle" class='newtblbrd'><span style='color:#4d4d4d;'><?php echo $created?$created:"N/A"; ?></span></td>
-                            <td align="left" valign="middle" class='newtblbrd'>
-								
-								<?php
-									e($html->link(
-										$html->tag('span', ($screenname)?$screenname:"N/A"),
-										array('controller'=>'admins','action'=>$editmemnerpage),
-										array('escape' => false)
-										)
-									);			
-								?>
-
-							</td>
-                            <td align="left" valign="middle" class='newtblbrd'>
-								<?php
-									e($html->link(
-										$html->tag('span', ($membertype)?$membertype:"N/A"),
-										array('controller'=>'admins','action'=>$editmemnerpage),
-										array('escape' => false)
-										)
-									);			
-								?>
-
-							</td>
-                           
-                            <td align="center" valign="middle" class='newtblbrd'><?php if($eachrow['Holder']['active_status']=='1'){ 
-								e($html->link(
-									$html->image('active.gif',array('width'=>'10','height'=>'13','alt'=>'','title'=>'Click here to deactivate '.$firstname)),
-									array('controller'=>'admins','action'=>'changestatus',$recid,$modelname,'0',$redirectionurl,'cngstatus'),
-									array('escape' => false)
-									)
-								);
-							}
-							else{
-
-								e($html->link(
-									$html->image('deactive.gif',array('width'=>'10','height'=>'13','alt'=>'dfdd','title'=>'Click here to activate '.$firstname)),
-									array('controller'=>'admins','action'=>'changestatus',$recid,$modelname,'1',$redirectionurl,$othermodelname,$recid),
-									array('escape' => false)
-									)
-								);
-							}
-							?></td>
-                      </tr>
-                    <?php } }else{ ?>
-                <tr><td colspan="9" align="center">No member(s) found.</td></tr>
-                <?php  } ?>
-
-        </table>
-
-
-
-
-    </div>
-    <div>
-        <!--<span class="botLft_curv"></span>
-        <span class="botRht_curv"></span>-->
-        
-        <div class="gryBot">
-            <?php  echo $this->renderElement('newpagination');  ?>
+                    }
+                ?>
+                <tr class='<?php echo $cls; ?>'>    
+                    <td align="center" class='newtblbrd'><span style='color:#4d4d4d;'><?php echo $i++;?></span></td>
+                    <td align="center" class='newtblbrd'>
+                        <a><span>
+                            <input type="checkbox"  class="checkid" name="checkid[]" value="<?php echo $recid; ?>" />
+                            <input type="hidden" class="edit_link" value="<?php echo $editmemnerpage ?>">
+                        </span></a>
+                    </td>
+                    <td align="left" class='newtblbrd'><?= $cl['ContactLicense']['license_number']; ?></td>
+                    <td align="left" class='newtblbrd'><?= $cl['ContactLicense']['status']; ?></td>
+                </tr>
+                <?php $i++; } ?>
+            </table>
         </div>
-        <div class="clear"></div>
+    <div>
+    <div class="gryBot">
+        <?php  echo $this->renderElement('newpagination');  ?>
     </div>
+    <div class="clear"></div>
+</div>
 <!--inner-container ends here-->
-      </div>    
+</div>    

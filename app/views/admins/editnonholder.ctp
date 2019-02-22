@@ -24,6 +24,7 @@ ini_set('display_errors', 0);
                     $ids = $this->params['pass'][0]; 
                     e($html->link($html->image('call.png', array('alt' => 'Call')) . ' ' . __(''), $base_url_admin."call/n/".$ids,array('escape' => false)));
                     e($html->link($html->image('email.png', array('alt' => 'Email')) . ' ' . __(''), $base_url_admin."sendtempmail/".$ids,array('escape' => false)));
+                    e($html->link($html->image('take.png', array('alt' => 'Contact License')) . ' ',array('controller'=>'contact_license','action'=>'license_list',$ids),array('escape' => false)));
                     //e($html->link($html->image('email.png', array('width' => '42', 'height' => '41')) . ' ','editnonholder/sendtempmail/'.$this->params['pass'][0],array('escape' => false)));
                     
                     e($html->link($html->image('sms.png', array('alt' => 'Sms')) . ' ' . __(''), $base_url_admin."sendsms/1",array('escape' => false)));

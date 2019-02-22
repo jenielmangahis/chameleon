@@ -25,7 +25,7 @@ $base_url = Configure::read('App.base_url');
         </div>
         <div class="slider-dashboard col-sm-6">
         	<div class="icon-container">
-            	<?php echo $form->create("Admin", array("action" => "addmember",'type' => 'file','enctype'=>'multipart/form-data','name' => 'addholder','onsubmit'=>"return validateholders();", 'id' => "addholder")) ?>	
+            	<?php echo $form->create("ContactLicense", array("action" => "addlicense",'name' => 'addlicense', 'id' => "addlicense")) ?>	
                 <button type="submit" value="Submit" class="sendBut" name="data[Action][redirectpage]">
                 <?php e($html->image('save.png')); ?></button>
                 <button type="submit" value="Submit" class="sendBut" name="data[Action][noredirection]">
@@ -117,6 +117,7 @@ $base_url = Configure::read('App.base_url');
 	</script>
 </div>
 <div id="hld">	
+  <input type="hidden" name="data[ContactLicense][holder_id]", value="<?= $holder_id; ?>" />
 	 <?php if($session->check('Message.flash')) { echo $this->renderElement('error_message'); } ?>
 		<table cellspacing="5" cellpadding="0" align="center" >
   <tbody>
